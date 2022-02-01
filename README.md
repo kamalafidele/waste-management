@@ -9,6 +9,6 @@ In today’s world, not owning a system that records data in money providing act
 
 ## Contributors
 
-<a href = "https://github.com/Tanu-N-Prabhu/Python/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = kamalafidele/waste-management"/>
+<a href="https://github.com/kamalafidele/waste-management/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=kamalafidele/waste-management" />
 </a>
