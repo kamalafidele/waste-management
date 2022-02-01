@@ -1,5 +1,6 @@
 # WASTE AND SECURITY MANAGEMENT SYSTEM
-## Year 2 C Rwanda Coding Academy
+## Rwanda Coding Academy
+### Year 2 C
 
 This project is built to address the lack of systems that help the government provide both security and garbage collecting services.
 
