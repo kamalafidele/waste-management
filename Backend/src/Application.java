@@ -13,6 +13,7 @@ public class Application {
                  ThreadHandler threadHandler=new ThreadHandler(socket);
                  threadHandler.start();
              }
+
         }catch(IOException exception){}
     }
 }
