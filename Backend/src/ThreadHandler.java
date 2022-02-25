@@ -1,24 +1,42 @@
+import Controllers.CompanyController;
+
 import java.io.*;
 import java.net.Socket;
+import java.time.LocalDate;
 
 public class ThreadHandler extends Thread{
     Socket socket;
 
+    //REGISTERING ALL CONTROLLERS
+    private CompanyController companyController;
+
     public ThreadHandler(Socket socket){
         this.socket=socket;
+        companyController=new CompanyController();
     }
 
     @Override
     public void run(){
         try{
             System.out.println("Client connected");
-            BufferedReader reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            System.out.println(reader.readLine());
 
-            PrintWriter writer=new PrintWriter(socket.getOutputStream(),true);
-            writer.println("Hello our client");
-            //socket.close();
+            DataInputStream fromClient=new DataInputStream(socket.getInputStream());
+            DataOutputStream toClient=new DataOutputStream(socket.getOutputStream());
 
+            //READING REQUESTS FROM THE CLIENT
+            String request=fromClient.readUTF();
+
+            switch (request.split("/")[0]){
+                case "company":
+                    companyController.filterRequest(request,toClient);
+                  break;
+                default:
+                    toClient.writeUTF("Undefined request");
+                  break;
+            }
+
+            socket.close();
         }catch(IOException exception){}
     }
+
 }
