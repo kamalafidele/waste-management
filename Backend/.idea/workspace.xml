@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/CompanyRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/CompanyRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThreadHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +30,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -72,7 +65,7 @@
       <workItem from="1645610935190" duration="91000" />
       <workItem from="1645611371030" duration="2694000" />
       <workItem from="1645726841446" duration="3897000" />
-      <workItem from="1645766722446" duration="6293000" />
+      <workItem from="1645766722446" duration="6605000" />
     </task>
     <servers />
   </component>
@@ -89,5 +82,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
