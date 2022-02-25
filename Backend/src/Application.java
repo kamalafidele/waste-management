@@ -14,6 +14,8 @@ public class Application {
                  threadHandler.start();
              }
 
-        }catch(IOException exception){}
+        }catch(IOException exception){
+            exception.printStackTrace();
+        }
     }
 }
