@@ -2,6 +2,7 @@ package Controllers;
 
 import Models.Company;
 import Repositories.CompanyRepo;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -20,9 +21,9 @@ public class CompanyController {
     }
 
     // THIS METHOD DETERMINES WHAT OPERATION REQUESTED BY CLIENT
-    public void filterRequest(String request, DataOutputStream toClient){
+    public void filterRequest( String request, DataOutputStream toClient ) {
         this.toClient=toClient;
-        switch (request.split("/")[1]){
+        switch (request.split("/")[1]) {
             case "getAll":
                 getCompanies();
               break;
@@ -36,13 +37,13 @@ public class CompanyController {
     }
 
     //THIS METHOD ADDS A COMPANY TO THE DATABASE
-    public void addCompany(){
+    public void addCompany() {
 
     }
 
 
      //THIS METHOD GETS ALL COMPANIES IN THE DATABASE
-    public void getCompanies(){
+    public void getCompanies() {
         List<Company> companies= new ArrayList<>();
         ResultSet resultSet=companyRepo.findAll();
         try{
@@ -52,15 +53,20 @@ public class CompanyController {
                 ,resultSet.getLong(4),resultSet.getLong(5));
                 companies.add(company);
             }
-        }catch(SQLException exception){}
+        }catch( SQLException exception ){}
 
-        sendResponse(companies.toString());
+        ObjectMapper mapper=new ObjectMapper();
+
+        try{
+            sendResponse(mapper.writeValueAsString(companies));
+        }catch (IOException exception){}
+
     }
 
     // THIS A METHOD FOR SENDING
-    public void sendResponse(String response){
-        try{
+    public void sendResponse( String response ) {
+        try {
             toClient.writeUTF(response);
-        }catch (IOException exception){}
+        } catch ( IOException exception ) {}
     }
 }
