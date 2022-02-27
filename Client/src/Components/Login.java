@@ -11,8 +11,12 @@ public class Login {
 
     //ALL NEEDED COMPONENTS WILL BE REGISTERED HERE
     /* EXAMPLE: Admin admin = new Admin(); */
+    Wallet wallet;
+    Company company;
 
-    public Login(){}
+    public Login(){
+        company=new Company();
+    }
 
     public void handleLogin(DataOutputStream toServer, DataInputStream fromServer){
         this.toServer=toServer;
@@ -47,9 +51,7 @@ public class Login {
                   break;
             }
         } while (choice != 0);
-
     }
-
     public void adminLogin(){
         System.out.println("ADD YOUR LOGIC IN THIS METHOD ");
     }
