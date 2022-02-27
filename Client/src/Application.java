@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.Socket;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Application {
@@ -63,6 +64,8 @@ public class Application {
 
         }catch(IOException exception){
             exception.printStackTrace();
+        }catch (InputMismatchException exception){
+            System.out.println("Please be serious!");
         }
     }
 }
