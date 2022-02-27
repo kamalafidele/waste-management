@@ -4,6 +4,7 @@ import Repositories.WalletRepo;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.DataOutputStream;
+import java.sql.ResultSet;
 
 public class WalletContoller {
     private DataOutputStream toClient;
@@ -17,7 +18,7 @@ public class WalletContoller {
 
     public void getWallet(String request, DataOutputStream toClient){
         this.toClient = toClient;
-        int walletId = Integer.parseInt(request);
-        
+        int userId = Integer.parseInt(request);
+        ResultSet walletResult = walletRepo.findWalletById(userId);
     }
 }
