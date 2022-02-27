@@ -11,11 +11,8 @@ public class Login {
 
     //ALL NEEDED COMPONENTS WILL BE REGISTERED HERE
     /* EXAMPLE: Admin admin = new Admin(); */
-    Wallet wallet;
-    Company company;
 
     public Login(){
-        company=new Company();
     }
 
     public void handleLogin(DataOutputStream toServer, DataInputStream fromServer){
@@ -23,7 +20,6 @@ public class Login {
         this.fromServer=fromServer;
         int choice=0;
 
-        do {
             System.out.println("############## WELCOME TO WS APP     #################");
             System.out.println("############## USE AVAILABLE OPTIONS #################");
             System.out.println("1. LOGIN AS ADMIN ");
@@ -50,8 +46,9 @@ public class Login {
                     System.out.println("_____ PLEASE CHOOSE A VALID OPTION ______");
                   break;
             }
-        } while (choice != 0);
+
     }
+
     public void adminLogin(){
         System.out.println("ADD YOUR LOGIC IN THIS METHOD ");
     }

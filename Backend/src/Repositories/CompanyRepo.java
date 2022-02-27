@@ -15,7 +15,7 @@ public class CompanyRepo {
           return database.select("SELECT * FROM Company");
       }
 
-      public ResultSet findById(int id){
+      public ResultSet findById(long id){
           return database.select("SELECT * FROM Company WHERE id = "+id);
       }
 
