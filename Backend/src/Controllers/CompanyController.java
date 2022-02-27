@@ -11,13 +11,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class CompanyController {
-    DataOutputStream toClient;
+    private DataOutputStream toClient;
     private CompanyRepo companyRepo;
+    private ObjectMapper mapper;
 
     public CompanyController(){
         companyRepo=new CompanyRepo();
+        mapper=new ObjectMapper();
     }
 
     // THIS METHOD DETERMINES WHAT OPERATION REQUESTED BY CLIENT
@@ -27,8 +28,11 @@ public class CompanyController {
             case "getAll":
                 getCompanies();
               break;
+            case "getSingle":
+                getCompany(Long.valueOf(request.split("/")[2]));
+              break;
             case "insert":
-                addCompany();
+                addCompany(request.split("/")[2]);
               break;
             default:
                 sendResponse("Please specify your request");
@@ -36,13 +40,32 @@ public class CompanyController {
         }
     }
 
-    //THIS METHOD ADDS A COMPANY TO THE DATABASE
-    public void addCompany() {
+    public void addCompany(String data) {
+        try{
+            Company company=mapper.readValue(data,Company.class);
+            companyRepo.save(company);
 
+            sendResponse("Company added successfully");
+        }catch (IOException exception){}
     }
 
+    public void getCompany(long companyId){
+       ResultSet resultSet=companyRepo.findById(companyId);
+       Company company=new Company();
 
-     //THIS METHOD GETS ALL COMPANIES IN THE DATABASE
+       try{
+           while(resultSet.next()){
+               company.setId(resultSet.getLong(1));
+               company.setName(resultSet.getString(2));
+               company.setEmail(resultSet.getString(3));
+               company.setPaymentCode(resultSet.getLong(4));
+           }
+
+           sendResponse(mapper.writeValueAsString(company));
+
+       } catch (IOException | SQLException exception){}
+    }
+
     public void getCompanies() {
         List<Company> companies= new ArrayList<>();
         ResultSet resultSet=companyRepo.findAll();
@@ -53,14 +76,10 @@ public class CompanyController {
                 ,resultSet.getLong(4),resultSet.getLong(5));
                 companies.add(company);
             }
-        }catch( SQLException exception ){}
 
-        ObjectMapper mapper=new ObjectMapper();
-
-        try{
             sendResponse(mapper.writeValueAsString(companies));
-        }catch (IOException exception){}
 
+        }catch( IOException | SQLException exception ){}
     }
 
     // THIS A METHOD FOR SENDING
@@ -69,4 +88,5 @@ public class CompanyController {
             toClient.writeUTF(response);
         } catch ( IOException exception ) {}
     }
+
 }

@@ -13,7 +13,6 @@ public class Login {
     /* EXAMPLE: Admin admin = new Admin(); */
 
     public Login(){
-
     }
 
     public void handleLogin(DataOutputStream toServer, DataInputStream fromServer){
@@ -21,7 +20,6 @@ public class Login {
         this.fromServer=fromServer;
         int choice=0;
 
-        do {
             System.out.println("############## WELCOME TO WS APP     #################");
             System.out.println("############## USE AVAILABLE OPTIONS #################");
             System.out.println("1. LOGIN AS ADMIN ");
@@ -48,7 +46,6 @@ public class Login {
                     System.out.println("_____ PLEASE CHOOSE A VALID OPTION ______");
                   break;
             }
-        } while (choice != 0);
 
     }
 
