@@ -1,6 +1,6 @@
-package Models;
+package DataHandlers;
 
-public class CustomerInvoices {
+public class CustomerInvoicesHandler {
     private Integer invoice_id ;
     private String invoice_date;
     private Integer generation_time;
