@@ -2,7 +2,6 @@ import Controllers.CompanyController;
 
 import java.io.*;
 import java.net.Socket;
-import java.time.LocalDate;
 
 public class ThreadHandler extends Thread{
     Socket socket;
