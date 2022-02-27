@@ -27,7 +27,7 @@ public class Application {
             application.login.handleLogin(toServer,fromServer);
 
         }catch(IOException exception){
-
+             exception.printStackTrace();
         }
     }
 }
