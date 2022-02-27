@@ -13,7 +13,7 @@ public class Main {
     public static final String ANSI_RESET = "\u001B[0m";
 
     public static void welcomePage() throws Exception {
-        // This is where the call the user View methods will be done
+        // This is just a user welcome component 🤠🤠 ...in progress
         System.out.println("\n\n\n                                                                                                       ");
         System.out.println("\t\t\t\t                                                                                                       ");
         System.out.println("\n\n\n                                                                                                       ");
@@ -36,7 +36,9 @@ public class Main {
 
     }
     public static void welcomeToWASM() {
+        
         RequestBody requestBody = new RequestBody();
+        // This is where the call the user View methods will be done
        String toContinue;
         do {
             int choice;
