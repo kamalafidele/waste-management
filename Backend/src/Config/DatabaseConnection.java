@@ -6,7 +6,7 @@ public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
     String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1";
     String username="root";
-    String password="";
+    String password="Saad@123";
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
@@ -19,7 +19,9 @@ public class DatabaseConnection {
           if(connection != null)
               statement=connection.createStatement();
 
-        }catch(Exception exception){}
+        }catch(Exception exception){
+            exception.printStackTrace();
+        }
     }
 
     public boolean createTable( String createStatement ) {

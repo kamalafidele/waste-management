@@ -1,3 +1,5 @@
+import Components.Admin;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.InputMismatchException;
@@ -40,7 +42,8 @@ public class Application {
 
             switch (choice){
                 case 1:
-                    System.out.println("You are an admin");
+                    Admin admin = new Admin();
+                    Boolean loggedIn = admin.login();
                     break;
                 case 2:
                     System.out.println("You are a district!");
