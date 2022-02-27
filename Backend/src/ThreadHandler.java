@@ -2,7 +2,6 @@ import Controllers.CompanyController;
 
 import java.io.*;
 import java.net.Socket;
-import java.time.LocalDate;
 
 public class ThreadHandler extends Thread{
     Socket socket;
@@ -30,6 +29,8 @@ public class ThreadHandler extends Thread{
                 case "company":
                     companyController.filterRequest(request,toClient);
                   break;
+                case "wallet":
+                    // a call to wallet controller
                 default:
                     toClient.writeUTF("Undefined request");
                   break;
