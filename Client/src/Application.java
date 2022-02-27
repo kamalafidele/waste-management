@@ -35,7 +35,7 @@ public class Application {
             System.out.println(response);
 
         }catch(IOException exception){
-
+            exception.printStackTrace();
         }
     }
 }
