@@ -14,7 +14,7 @@ import java.util.List;
 
 public class CompanyController {
     DataOutputStream toClient;
-    private CompanyRepo companyRepo;
+    private final CompanyRepo companyRepo;
 
     public CompanyController(){
         companyRepo=new CompanyRepo();
@@ -24,15 +24,9 @@ public class CompanyController {
     public void filterRequest( String request, DataOutputStream toClient ) {
         this.toClient=toClient;
         switch (request.split("/")[1]) {
-            case "getAll":
-                getCompanies();
-              break;
-            case "insert":
-                addCompany();
-              break;
-            default:
-                sendResponse("Please specify your request");
-              break;
+            case "getAll" -> getCompanies();
+            case "insert" -> addCompany();
+            default -> sendResponse("Please specify your request");
         }
     }
 
@@ -53,13 +47,17 @@ public class CompanyController {
                 ,resultSet.getLong(4),resultSet.getLong(5));
                 companies.add(company);
             }
-        }catch( SQLException exception ){}
+        }catch( SQLException exception ){
+            exception.printStackTrace();
+        }
 
         ObjectMapper mapper=new ObjectMapper();
 
         try{
             sendResponse(mapper.writeValueAsString(companies));
-        }catch (IOException exception){}
+        }catch (IOException exception){
+            exception.printStackTrace();
+        }
 
     }
 
@@ -67,6 +65,8 @@ public class CompanyController {
     public void sendResponse( String response ) {
         try {
             toClient.writeUTF(response);
-        } catch ( IOException exception ) {}
+        } catch ( IOException exception ) {
+            exception.printStackTrace();
+        }
     }
 }
