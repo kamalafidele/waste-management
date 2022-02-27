@@ -2,6 +2,7 @@
   <library name="mysql-connector">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/Backend/libs/mysql-connector.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Backend/libs/jackson-all-1.9.9.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
