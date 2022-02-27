@@ -58,12 +58,13 @@ public class Main {
             System.out.println("\t\t\t||-------------------------------------------------------------------||");
             System.out.println("\t\t\t\t  Enter your choice                                              ");
             choice = scanner.nextInt();
-            toContinue= scanner.next();
-        System.out.print("\t\tDo you want to continue? (y/n): ");
-        toContinue = scanner.next();
         switch (choice){
             // Here is where to treat all the case according to the users choice
         }
+           // Asking the user if he or she wants to continue
+        toContinue= scanner.next();
+        System.out.print("\t\tDo you want to continue? (y/n): ");
+        toContinue = scanner.next();
     }while (toContinue.equalsIgnoreCase("y") || toContinue.equalsIgnoreCase("yes"));
     }
 
