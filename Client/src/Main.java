@@ -13,7 +13,6 @@ public class Main {
     public static final String ANSI_RESET = "\u001B[0m";
 
     public static void welcomePage() throws Exception {
-        // This is where the call the user View methods will be done
         System.out.println("\n\n\n                                                                                                       ");
         System.out.println("\t\t\t\t                                                                                                       ");
         System.out.println("\n\n\n                                                                                                       ");
