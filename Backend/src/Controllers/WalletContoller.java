@@ -9,5 +9,11 @@ public class WalletContoller {
     private static DataOutputStream toClient;
     private static WalletRepo walletRepo;
     private ObjectMapper mapper;
+
+    public WalletContoller(){
+        walletRepo = new WalletRepo();
+        mapper = new ObjectMapper();
+    }
+
     
 }
