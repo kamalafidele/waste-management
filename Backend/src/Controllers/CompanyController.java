@@ -2,6 +2,7 @@ package Controllers;
 
 import Models.Company;
 import Repositories.CompanyRepo;
+import Controllers.AnalyticsController;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.DataOutputStream;
@@ -34,6 +35,11 @@ public class CompanyController {
             case "insert":
                 addCompany(request.split("/")[2]);
               break;
+            case "analytics":
+                AnalyticsController analyticsController = new AnalyticsController();
+                analyticsController.filterRequest(request, toClient);
+                break;
+
             default:
                 sendResponse("Please specify your request");
               break;
