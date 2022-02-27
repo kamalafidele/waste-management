@@ -6,7 +6,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import java.io.DataOutputStream;
 
 public class WalletContoller {
-    private static DataOutputStream toClient;
+    private DataOutputStream toClient;
     private static WalletRepo walletRepo;
     private ObjectMapper mapper;
 
@@ -15,5 +15,9 @@ public class WalletContoller {
         mapper = new ObjectMapper();
     }
 
-    
+    public void getWallet(String request, DataOutputStream toClient){
+        this.toClient = toClient;
+        int walletId = Integer.parseInt(request);
+        
+    }
 }
