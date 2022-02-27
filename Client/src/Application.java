@@ -3,6 +3,11 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Application {
+
+    // just some colors
+    public static final String BLUE = "\033[0;34m";
+    public static final String RESET = "\033[0m";
+
     public static void main(String[] args){
         Scanner keyboard=new Scanner(System.in);
         try{
@@ -11,10 +16,21 @@ public class Application {
             DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
             DataInputStream  fromServer=new DataInputStream(socket.getInputStream());
 
-            System.out.print("Enter something: ");
-            String request=keyboard.nextLine();
 
-            toServer.writeUTF(request);
+            System.out.println("\n\n\n");
+            System.out.println(BLUE + "\t\t\t   --                  ----");
+            System.out.println(BLUE + "\t\t\t    \\\\              //\\\\");
+            System.out.println(BLUE + "\t\t\t     \\\\            //  \\\\");
+            System.out.println(BLUE + "\t\t\t      \\\\          //    \\\\");
+            System.out.println(BLUE + "\t\t\t       \\\\        //      \\\\");
+            System.out.println(BLUE + "\t\t\t        \\\\      //        \\\\");
+            System.out.println(BLUE + "\t\t\t         \\\\    //          \\\\");
+            System.out.println(BLUE + "\t\t\t          \\\\  //            \\\\");
+            System.out.println(BLUE + "\t\t\t             --                  --");
+            System.out.println(BLUE + "\t\t\t       ");
+            System.out.println(BLUE + "\t\t\t    \\");
+            System.out.println(BLUE + "\t\t\t    \\");
+
             String response=fromServer.readUTF();
             System.out.println(response);
 
