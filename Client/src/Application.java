@@ -12,6 +12,7 @@ public class Application {
         Scanner keyboard=new Scanner(System.in);
         try{
             Socket socket=new Socket("localhost",2500);
+            int choice = 0;
 
             DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
             DataInputStream  fromServer=new DataInputStream(socket.getInputStream());
@@ -34,7 +35,7 @@ public class Application {
             System.out.println("4.Confirmer");
             System.out.println("5.House");
             System.out.print("Your choice: ");
-            int choice = keyboard.nextInt();
+            choice = keyboard.nextInt();
 
             switch (choice){
                 case 1:
@@ -53,6 +54,7 @@ public class Application {
                     System.out.println("You are a house!");
                     break;
                 default:
+                    System.out.println("Please be serious!");
                     break;
             }
 
