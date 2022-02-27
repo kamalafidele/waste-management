@@ -86,7 +86,9 @@ public class CompanyController {
     public void sendResponse( String response ) {
         try {
             toClient.writeUTF(response);
-        } catch ( IOException exception ) {}
+        } catch ( IOException exception ) {
+            exception.printStackTrace();
+        }
     }
 
 }
