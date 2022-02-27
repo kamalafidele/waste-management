@@ -20,7 +20,7 @@ public class DatabaseConnection {
               statement=connection.createStatement();
 
         }catch(Exception exception){
-            exception.printStackTrace();
+            System.out.println("CONNECTION TO DATABASE FAILED");
         }
     }
 
