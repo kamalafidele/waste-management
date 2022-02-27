@@ -24,7 +24,7 @@ public class ThreadHandler extends Thread{
 
             //READING REQUESTS FROM THE CLIENT
             String request=fromClient.readUTF();
-
+           //users/get/none
             switch (request.split("/")[0]){
                 case "company":
                     companyController.filterRequest(request,toClient);
