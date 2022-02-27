@@ -10,7 +10,7 @@ public class Wallet {
     DataOutputStream outToServer;
     DataInputStream fromServer;
 
-    WalletHandler balance;
+   
     public void showWallet(DataOutputStream outToServer, DataInputStream fromServer){
         this.outToServer=outToServer;
         this.fromServer=fromServer;
