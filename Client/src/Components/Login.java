@@ -2,6 +2,7 @@ package Components;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Login {
@@ -11,8 +12,10 @@ public class Login {
 
     //ALL NEEDED COMPONENTS WILL BE REGISTERED HERE
     /* EXAMPLE: Admin admin = new Admin(); */
+    Company company;
 
     public Login(){
+        company=new Company();
     }
 
     public void handleLogin(DataOutputStream toServer, DataInputStream fromServer){
@@ -50,7 +53,7 @@ public class Login {
     }
 
     public void adminLogin(){
-        System.out.println("ADD YOUR LOGIC IN THIS METHOD ");
+       System.out.println("ADD YOUR LOGIC IN THIS METHOD ");
     }
 
     public void companyLogin(){
