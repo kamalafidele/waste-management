@@ -11,6 +11,8 @@ public class Login {
 
     //ALL NEEDED COMPONENTS WILL BE REGISTERED HERE
     /* EXAMPLE: Admin admin = new Admin(); */
+    Wallet wallet;
+    Company company;
 
     public Login(){
     }
@@ -46,9 +48,7 @@ public class Login {
                     System.out.println("_____ PLEASE CHOOSE A VALID OPTION ______");
                   break;
             }
-
     }
-
     public void adminLogin(){
         System.out.println("ADD YOUR LOGIC IN THIS METHOD ");
     }
