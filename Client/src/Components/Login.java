@@ -12,7 +12,9 @@ public class Login {
     //ALL NEEDED COMPONENTS WILL BE REGISTERED HERE
     /* EXAMPLE: Admin admin = new Admin(); */
 
-    public Login(){}
+    public Login(){
+
+    }
 
     public void handleLogin(DataOutputStream toServer, DataInputStream fromServer){
         this.toServer=toServer;
