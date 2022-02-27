@@ -13,12 +13,8 @@ public class customerInvoicesRepo {
     public customerInvoicesRepo(){
         database=new DatabaseConnection();
     }
-    public ResultSet findAll(){
-        return database.select("SELECT * FROM Company");
-    }
-
-    public ResultSet findById(int id){
-        return database.select("SELECT * FROM Company WHERE id = "+id);
+    public ResultSet findById(int userId){
+        return database.select("SELECT * FROM CustomerInvoices WHERE userid = "+userId);
     }
 
     public void save(CustomerInvoices newInvoice){
