@@ -17,19 +17,14 @@ public class Application {
             DataInputStream  fromServer=new DataInputStream(socket.getInputStream());
 
 
-            System.out.println("\n\n\n");
-            System.out.println(BLUE + "\t\t\t   --                  ----");
-            System.out.println(BLUE + "\t\t\t    \\\\              //\\\\");
-            System.out.println(BLUE + "\t\t\t     \\\\            //  \\\\");
-            System.out.println(BLUE + "\t\t\t      \\\\          //    \\\\");
-            System.out.println(BLUE + "\t\t\t       \\\\        //      \\\\");
-            System.out.println(BLUE + "\t\t\t        \\\\      //        \\\\");
-            System.out.println(BLUE + "\t\t\t         \\\\    //          \\\\");
-            System.out.println(BLUE + "\t\t\t          \\\\  //            \\\\");
-            System.out.println(BLUE + "\t\t\t             --                  --");
-            System.out.println(BLUE + "\t\t\t       ");
-            System.out.println(BLUE + "\t\t\t    \\");
-            System.out.println(BLUE + "\t\t\t    \\");
+            System.out.println("");
+            System.out.println(BLUE + "\t\t\t    \\\\              //\\\\             //   ==================   ||\\\\             //||   ================== ");
+            System.out.println(BLUE + "\t\t\t     \\\\            //  \\\\           //    ||                   || \\\\           // ||   ||");
+            System.out.println(BLUE + "\t\t\t      \\\\          //    \\\\         //     ||                   ||  \\\\         //  ||   ||");
+            System.out.println(BLUE + "\t\t\t       \\\\        //      \\\\       //      ==================   ||   \\\\       //   ||   ================== ");
+            System.out.println(BLUE + "\t\t\t        \\\\      //        \\\\     //                       ||   ||    \\\\     //    ||                   || ");
+            System.out.println(BLUE + "\t\t\t         \\\\    //          \\\\   //                        ||   ||     \\\\   //     ||                   ||");
+            System.out.println(BLUE + "\t\t\t          \\\\  //            \\\\ //         ==================   ||      \\\\ //      ||   ================== ");
 
             String response=fromServer.readUTF();
             System.out.println(response);
