@@ -1,5 +1,8 @@
+import Components.Admin;
+
 import java.io.*;
 import java.net.Socket;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Application {
@@ -18,14 +21,14 @@ public class Application {
             DataInputStream  fromServer=new DataInputStream(socket.getInputStream());
 
 
-            System.out.println("--------------------------------------------------WELCOME TO----------------------------------------------" + RESET);
-            System.out.println(BLUE + "\\\\              //\\\\             //   ==================   ||\\\\             //||   ================== " + RESET);
-            System.out.println(BLUE + " \\\\            //  \\\\           //    ||                   || \\\\           // ||   ||" + RESET);
-            System.out.println(BLUE + "  \\\\          //    \\\\         //     ||                   ||  \\\\         //  ||   ||" + RESET);
-            System.out.println(BLUE + "   \\\\        //      \\\\       //      ==================   ||   \\\\       //   ||   ================== " + RESET);
-            System.out.println(BLUE + "    \\\\      //        \\\\     //                       ||   ||    \\\\     //    ||                   || " + RESET);
-            System.out.println(BLUE + "     \\\\    //          \\\\   //                        ||   ||     \\\\   //     ||                   ||" + RESET);
-            System.out.println(BLUE + "      \\\\  //            \\\\ //         ==================   ||      \\\\ //      ||   ================== " + RESET);
+            System.out.println("--------------------------------------------------WELCOME TO----------------------------------------------          " + RESET);
+            System.out.println(BLUE + "\\\\              //\\\\             //   ==================   ||\\\\             //||   ==================  " + RESET);
+            System.out.println(BLUE + " \\\\            //  \\\\           //    ||                   || \\\\           // ||   ||                  " + RESET);
+            System.out.println(BLUE + "  \\\\          //    \\\\         //     ||                   ||  \\\\         //  ||   ||                  " + RESET);
+            System.out.println(BLUE + "   \\\\        //      \\\\       //      ==================   ||   \\\\       //   ||   ==================  " + RESET);
+            System.out.println(BLUE + "    \\\\      //        \\\\     //                       ||   ||    \\\\     //    ||                   ||  " + RESET);
+            System.out.println(BLUE + "     \\\\    //          \\\\   //                        ||   ||     \\\\   //     ||                   ||  " + RESET);
+            System.out.println(BLUE + "      \\\\  //            \\\\ //         ==================   ||      \\\\ //      ||   ==================  " + RESET);
             System.out.println("\n\n");
 
             System.out.println("--------Please choose your role----------");
@@ -39,7 +42,8 @@ public class Application {
 
             switch (choice){
                 case 1:
-                    System.out.println("You are an admin");
+                    Admin admin = new Admin(toServer);
+                    admin.handleAdmin();
                     break;
                 case 2:
                     System.out.println("You are a district!");
@@ -64,6 +68,8 @@ public class Application {
 
         }catch(IOException exception){
             exception.printStackTrace();
+        }catch (InputMismatchException exception){
+            System.out.println("Please be serious!");
         }
     }
 }
