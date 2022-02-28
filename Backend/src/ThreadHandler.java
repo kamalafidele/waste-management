@@ -2,6 +2,7 @@ import Controllers.CompanyController;
 
 import java.io.*;
 import java.net.Socket;
+import java.sql.SQLException;
 
 public class ThreadHandler extends Thread{
     Socket socket;
@@ -17,6 +18,7 @@ public class ThreadHandler extends Thread{
     @Override
     public void run(){
         try{
+            CompanyController company = new CompanyController();
             System.out.println("Client connected");
 
             DataInputStream fromClient=new DataInputStream(socket.getInputStream());
@@ -32,12 +34,15 @@ public class ThreadHandler extends Thread{
                 case "wallet":
                     // a call to wallet controller
                 default:
+                    System.out.println(request.split("/")[0]);
                     toClient.writeUTF("Undefined request");
                   break;
             }
 
             socket.close();
-        }catch(IOException exception){}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

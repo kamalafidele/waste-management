@@ -1,43 +1,50 @@
 package Models;
 
+import java.sql.Time;
+import java.util.Date;
+
 public class CustomerInvoices {
-    private Integer invoice_id ;
-    private String invoice_date;
-    private Integer generation_time;
+    private Long invoice_id ;
+    private Date invoice_date;
+    private Time generation_time;
     private String service_paid;
-    private Integer amount;
-
-    public Integer getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
-    }
-
+    private Long amount;
     private Integer user_id;
 
-    public Integer getInvoice_id() {
+    public CustomerInvoices(){}
+
+    public CustomerInvoices(Long invoice_id, Date invoice_date, Time generation_time, String service_paid, Long amount)
+    {
+        this.invoice_id = invoice_id;
+        this.invoice_date = invoice_date;
+        this.generation_time = generation_time;
+        this.service_paid = service_paid;
+        this.amount = amount;
+    }
+
+    public void setUser_id(Integer user_id) {this.user_id = user_id;}
+
+    public Long getInvoice_id() {
         return invoice_id;
     }
 
     public void setInvoice_id(Integer invoice_id) {
-        this.invoice_id = invoice_id;
+        this.invoice_id = Long.valueOf(invoice_id);
     }
 
-    public String getInvoice_date() {
+    public Date getInvoice_date() {
         return invoice_date;
     }
 
-    public void setInvoice_date(String invoice_date) {
+    public void setInvoice_date(Date invoice_date) {
         this.invoice_date = invoice_date;
     }
 
-    public Integer getGeneration_time() {
+    public Time getGeneration_time() {
         return generation_time;
     }
 
-    public void setGeneration_time(Integer generation_time) {
+    public void setGeneration_time(Time generation_time) {
         this.generation_time = generation_time;
     }
 
@@ -49,11 +56,12 @@ public class CustomerInvoices {
         this.service_paid = service_paid;
     }
 
-    public Integer getAmount() {
+    public Long getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(Long amount) {
         this.amount = amount;
     }
+
 }

@@ -1,9 +1,61 @@
 package Components;
 
+import DataHandlers.CompanyHandler;
+import DataHandlers.CustomerInvoicesHandler;
+import org.codehaus.jackson.JsonNode;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.util.JSONPObject;
+import org.codehaus.jackson.type.TypeReference;
+
+import java.io.*;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
-public class customerInvoice {
+public class customerInvoice  {
+    ObjectMapper mapper;
+
+    public void createTable (String response) throws Exception {
+
+
+
+        System.out.println("######################### REGISTERED COMPANIES ###################################### ");
+        System.out.println("|------------|-------------|-----------|---------|----------------|-------------------|");
+        System.out.println("| Invoice Id |   User Name |  Service  |  Amount |  Invoice date  |  Generation Time  |");
+        System.out.println("|------------|-------------|-----------|---------|----------------|-------------------|\n");
+
+//        System.out.println(response.length());
+        System.out.println(response);
+//        String[] str = response.split("/}");
+
+//        ObjectMapper objMap  = new ObjectMapper();
+//        JsonNode nameNode = objMap.readValue(response, JsonNode.class);
+//        JsonNode invoice_id = nameNode.get("invoice_id");
+//        String invoice = nameNode.asText();
+//        System.out.println(invoice);
+
+//        for(int i=0; i<str.length; i++){
+//            System.out.println(str);
+//        }
+//        while (invoiceIterator.hasNext()){
+//            handler=invoiceIterator.next();
+//            System.out.println("| "+handler.getInvoice_id()+" |"+handler.getUser_id()+" |  "+handler.getService_paid()+" "
+//                    +handler.getAmount()+ "  "+handler.getInvoice_date()+"  "+ handler.getGeneration_time()+"  ");
+//            System.out.println("|------------|-------------|-----------|---------|----------------|-------------------|");
+//        }
+    }
+
     public void mainMethod() throws Exception {
+
+        Socket socket = new Socket("localhost",2500);
+        OutputStream req = socket.getOutputStream();
+        DataOutputStream toServer = new DataOutputStream(req);
+
+        InputStream res = socket.getInputStream();
+        DataInputStream fromServer =  new DataInputStream(res);
+        String response;
+
         System.out.println("\t\t\t --------------------------------------------");
         System.out.println("\t\t\t+             INVOICE MANAGEMENT            + ");
         System.out.println("\t\t\t --------------------------------------------");
@@ -15,8 +67,20 @@ public class customerInvoice {
         System.out.println("Enter choice: ");
         int choice = scanner.nextInt();
        switch (choice){
-           case 1 -> System.out.println("Call the function to the list of all invoices");
-           case 2 ->System.out.println("Display the dates of the available invoices and ask them which one they want to download");
+           case 1 -> {
+               System.out.println("Company > Invoices > View all invoices.");
+               toServer.writeUTF("company/getInvoices/1");
+               response = fromServer.readUTF();
+               createTable(response);
+               break;
+           }
+           case 2 -> {
+               System.out.println("Company > Invoices > Download invoice.");
+               toServer.writeUTF("company/downloadInvoice/1");
+               response = fromServer.readUTF();
+               System.out.println(response);
+               break;
+           }
            default ->System.out.println(" \t\t\t\t Invalid input");
        }
     }

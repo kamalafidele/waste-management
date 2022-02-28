@@ -1,6 +1,8 @@
 import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
+import Components.customerInvoice;
+import DataHandlers.CustomerInvoicesHandler;
 
 public class Application {
 
@@ -34,6 +36,7 @@ public class Application {
             System.out.println("3.Company");
             System.out.println("4.Confirmer");
             System.out.println("5.House");
+            System.out.println("6.Invoices");
             System.out.print("Your choice: ");
             choice = keyboard.nextInt();
 
@@ -53,12 +56,22 @@ public class Application {
                 case 5:
                     System.out.println("You are a house!");
                     break;
+                case 6:
+                    customerInvoice customer = new customerInvoice();
+                    try {
+                        customer.mainMethod();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+
+                    break;
                 default:
                     System.out.println("Please be serious!");
                     break;
             }
 
             String response=fromServer.readUTF();
+
             System.out.println(response);
 
         }catch(IOException exception){
