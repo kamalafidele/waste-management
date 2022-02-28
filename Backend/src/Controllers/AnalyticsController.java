@@ -28,7 +28,7 @@ public class AnalyticsController {
                 getAnnualAnalytics();
                 break;
             case "download":
-                downloadAnalytics();
+                downloadAnalytics(request.split("/")[2]);
                 break;
             default:
                 sendResponse("Please specify your request....");
@@ -37,8 +37,15 @@ public class AnalyticsController {
     }
 
     public void getWeeklyAnalytics(String sender){
-//        System.out.println("Weekly analytics");
-        sendResponse("Weekly analytics");
+        if(sender == "district"){
+//            Logic for district weekly analytics
+            sendResponse("District Weekly analytics");
+        }
+
+        if(sender == "company"){
+//            Logic for company weekly analytics
+            sendResponse("Company weekly analytics");
+        }
     }
     public void getMonthlyAnalytics(){
         System.out.println("Monthly analytics");
@@ -46,8 +53,9 @@ public class AnalyticsController {
     public void getAnnualAnalytics(){
         System.out.println("Annual analytics");
     }
-    public void downloadAnalytics(){
+    public void downloadAnalytics(String period){
         System.out.println("Analytics downloaded");
+        saveIntoFIle("What to be saved");
     }
     public void sendResponse( String response ) {
         try {
@@ -55,5 +63,8 @@ public class AnalyticsController {
         } catch ( IOException exception ) {
             exception.printStackTrace();
         }
+    }
+    public void saveIntoFIle(String content){
+//        The logic to save a .txt file containing analytics
     }
 }
