@@ -5,24 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="customerInvoice control">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/AnalyticsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/AnalyticsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/CompanyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/CompanyController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/CustomerInvoices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/CustomerInvoices.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/Wallet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/AnalyticsRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/AnalyticsRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/CompanyRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/CompanyRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/WalletRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/customerInvoicesRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/customerInvoicesRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CustomerInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CustomerInvoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repositories/CompanyRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/CompanyRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/customerInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/customerInvoice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/CompanyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/CompanyHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/CustomerInvoicesHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/CustomerInvoicesHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/WalletHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/WalletHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/CompanyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/CompanyHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,13 +44,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,7 +69,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -98,6 +102,7 @@
       <workItem from="1645611371030" duration="2694000" />
       <workItem from="1645726841446" duration="3897000" />
       <workItem from="1645766722446" duration="6605000" />
+      <workItem from="1646066282995" duration="4976000" />
     </task>
     <task id="LOCAL-00001" summary="customerInvoice control">
       <created>1646022290178</created>
@@ -134,6 +139,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
