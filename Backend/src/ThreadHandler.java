@@ -39,6 +39,7 @@ public class ThreadHandler extends Thread{
                     // a call to wallet controller
                 case "payment":
                     //payment controller
+                    paymentController.checkRequest(request,toClient);
                 default:
                     toClient.writeUTF("Undefined request");
                   break;
