@@ -1,43 +1,54 @@
 package Models;
 
+import java.sql.Date;
+import java.sql.Time;
+
 public class CustomerInvoices {
     private Integer invoice_id ;
-    private String invoice_date;
-    private Integer generation_time;
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    private Integer userId;
+    private Date invoice_date;
+    private Time generation_time;
     private String service_paid;
     private Integer amount;
 
-    public Integer getUser_id() {
-        return user_id;
+    public void CustomerInvoices(Integer invoice_id,Integer userId,Date invoice_date, Time generation_time,String service_paid,Integer amount){
+        this.invoice_id=invoice_id;
+        this.invoice_date=invoice_date;
+        this.generation_time=generation_time;
+        this.service_paid=service_paid;
+        this.amount=amount;
+        this.userId=userId;
     }
-
-    public void setUser_id(Integer user_id) {
-        this.user_id = user_id;
-    }
-
-    private Integer user_id;
 
     public Integer getInvoice_id() {
         return invoice_id;
     }
 
-    public void setInvoice_id(Integer invoice_id) {
-        this.invoice_id = invoice_id;
-    }
-
-    public String getInvoice_date() {
+    public Date getInvoice_date() {
         return invoice_date;
     }
 
-    public void setInvoice_date(String invoice_date) {
+    public void setInvoice_date(Date invoice_date) {
         this.invoice_date = invoice_date;
     }
 
-    public Integer getGeneration_time() {
+    public void setInvoice_id(Integer invoice_id) {
+        this.invoice_id = invoice_id;
+    }
+    public Time getGeneration_time() {
         return generation_time;
     }
 
-    public void setGeneration_time(Integer generation_time) {
+    public void setGeneration_time(Time generation_time) {
         this.generation_time = generation_time;
     }
 
