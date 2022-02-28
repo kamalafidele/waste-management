@@ -19,10 +19,12 @@ public class DatabaseConnection {
           if(connection != null)
               statement=connection.createStatement();
 
-        }catch(Exception exception){}
+        }catch(Exception exception){
+            System.out.println("CONNECTION TO DATABASE FAILED");
+        }
     }
 
-    public boolean createTable(String createStatement){
+    public boolean createTable( String createStatement ) {
         try{
             statement.execute(createStatement);
             return true;
@@ -31,7 +33,7 @@ public class DatabaseConnection {
         }
     }
 
-    public boolean insert(String insertStatement){
+    public boolean insert( String insertStatement ) {
         try{
             statement.execute(insertStatement);
             return true;
@@ -40,7 +42,7 @@ public class DatabaseConnection {
         }
     }
 
-    public ResultSet select(String selectStatement){
+    public ResultSet select( String selectStatement ) {
        try{
            data=statement.executeQuery(selectStatement);
            return data;
@@ -49,7 +51,7 @@ public class DatabaseConnection {
        }
     }
 
-    public boolean update(String updateStatement){
+    public boolean update( String updateStatement ) {
         try{
             statement.execute(updateStatement);
             return true;
