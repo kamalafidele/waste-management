@@ -2,7 +2,6 @@ package Controllers;
 
 import Models.Company;
 import Repositories.CompanyRepo;
-
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.sql.ResultSet;
