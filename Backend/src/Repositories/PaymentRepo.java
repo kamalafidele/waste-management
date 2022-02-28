@@ -9,7 +9,7 @@ public class PaymentRepo {
     public PaymentRepo(){
         database=new DatabaseConnection();
     }
-    public ResultSet findDebt(){
-        return database.select("select * from wallet where amount<0");
+    public ResultSet findDebt(int userId) {
+        return database.select("SELECT * FROM wallets where user_id="+userId);
     }
 }

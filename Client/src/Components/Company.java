@@ -24,7 +24,6 @@ public class Company {
         this.toServer=toServer;
         this.fromServer=fromServer;
         String request="company/getAll/none";
-
         try{
             toServer.writeUTF(request);
             String response=fromServer.readUTF();

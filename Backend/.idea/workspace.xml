@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repositories/PaymentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/PaymentRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Payment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
