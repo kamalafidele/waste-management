@@ -1,6 +1,6 @@
 package utils;
 
-public class ClientTokenGenerator {
+public class TokenGenerator {
     private static final String ALPHA_NUMERIC_STRING = "0123456789";
 
     //generate unique token
