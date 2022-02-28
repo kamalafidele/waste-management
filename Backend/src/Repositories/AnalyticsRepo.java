@@ -13,8 +13,8 @@ public class AnalyticsRepo {
     }
 
     public String companyAnalytics(String period){
-        String analytics = "Number of service provided by us:  2\nTotal amount of money so far : 20000frw\n" +
-                "Percentage at which service is provided: 80%\n========END========";
+        String analytics = "========ANALYTICS========\nNumber of service provided by us:  2\nTotal amount of money so far : 20000frw\n" +
+                "Percentage at which service is provided: 80%\n========== END ==========";
 //        select analytics for company in the specified period
         return analytics;
     }

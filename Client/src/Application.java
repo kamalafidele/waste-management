@@ -57,7 +57,7 @@ public class Application {
                 case 5:
                     System.out.println("You are a house!");
                     break;
-                
+
                 default:
                     System.out.println("Please be serious!");
                     break;
@@ -67,6 +67,7 @@ public class Application {
             System.out.println(response);
 
         }catch(IOException exception){
+            System.out.println("here");
             exception.printStackTrace();
         }catch (InputMismatchException exception){
             System.out.println("Please be serious!");

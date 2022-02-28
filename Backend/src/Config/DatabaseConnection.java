@@ -6,7 +6,7 @@ public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
     String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1";
     String username="root";
-    String password="Saad@123";
+    String password="2021";
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
@@ -21,6 +21,7 @@ public class DatabaseConnection {
 
         }catch(Exception exception){
             System.out.println("CONNECTION TO DATABASE FAILED");
+            exception.printStackTrace();
         }
     }
 

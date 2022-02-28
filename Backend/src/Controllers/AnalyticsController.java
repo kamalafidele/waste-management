@@ -28,7 +28,7 @@ public class AnalyticsController {
                 getAnalytics(sender, "year");
                 break;
             case "download":
-                downloadAnalytics(request.split("/")[2]);
+                downloadAnalytics(request.split("/")[3]);
                 break;
             default:
                 sendResponse("Please specify your request....");
@@ -37,12 +37,12 @@ public class AnalyticsController {
     }
 
     public void getAnalytics(String sender, String period){
-        if(sender == "district"){
+        if(sender.equals("district")){
 //            Logic for district analytics in the given period
             sendResponse("District analytics");
         }
 
-        if(sender == "company"){
+        if(sender.equals("company")){
             String analytics = analyticsRepo.companyAnalytics(period);
             sendResponse(analytics);
         }
