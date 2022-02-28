@@ -42,8 +42,8 @@ public class Application {
 
             switch (choice){
                 case 1:
-                    Admin admin = new Admin();
-                    Boolean loggedIn = admin.login();
+                    Admin admin = new Admin(toServer);
+                    admin.handleAdmin();
                     break;
                 case 2:
                     System.out.println("You are a district!");
@@ -57,6 +57,7 @@ public class Application {
                 case 5:
                     System.out.println("You are a house!");
                     break;
+                
                 default:
                     System.out.println("Please be serious!");
                     break;
