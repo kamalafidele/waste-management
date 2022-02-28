@@ -63,7 +63,7 @@ public class Application {
                     break;
             }
 
-            String response=fromServer.readUTF();
+            String response= fromServer.readUTF();
             System.out.println(response);
 
         }catch(IOException exception){
