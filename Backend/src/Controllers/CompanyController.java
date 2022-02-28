@@ -34,8 +34,6 @@ public class CompanyController {
     public void addCompany() {
 
     }
-
-
      //THIS METHOD GETS ALL COMPANIES IN THE DATABASE
     public void getCompanies() {
         List<Company> companies= new ArrayList<>();
