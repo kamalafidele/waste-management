@@ -1,5 +1,9 @@
+import Components.Admin;
+import Components.House.House;
+
 import java.io.*;
 import java.net.Socket;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import Components.customerInvoice;
 import DataHandlers.CustomerInvoicesHandler;
@@ -20,14 +24,14 @@ public class Application {
             DataInputStream  fromServer=new DataInputStream(socket.getInputStream());
 
 
-            System.out.println("--------------------------------------------------WELCOME TO----------------------------------------------" + RESET);
-            System.out.println(BLUE + "\\\\              //\\\\             //   ==================   ||\\\\             //||   ================== " + RESET);
-            System.out.println(BLUE + " \\\\            //  \\\\           //    ||                   || \\\\           // ||   ||" + RESET);
-            System.out.println(BLUE + "  \\\\          //    \\\\         //     ||                   ||  \\\\         //  ||   ||" + RESET);
-            System.out.println(BLUE + "   \\\\        //      \\\\       //      ==================   ||   \\\\       //   ||   ================== " + RESET);
-            System.out.println(BLUE + "    \\\\      //        \\\\     //                       ||   ||    \\\\     //    ||                   || " + RESET);
-            System.out.println(BLUE + "     \\\\    //          \\\\   //                        ||   ||     \\\\   //     ||                   ||" + RESET);
-            System.out.println(BLUE + "      \\\\  //            \\\\ //         ==================   ||      \\\\ //      ||   ================== " + RESET);
+            System.out.println("--------------------------------------------------WELCOME TO----------------------------------------------          " + RESET);
+            System.out.println(BLUE + "\\\\              //\\\\             //   ==================   ||\\\\             //||   ==================  " + RESET);
+            System.out.println(BLUE + " \\\\            //  \\\\           //    ||                   || \\\\           // ||   ||                  " + RESET);
+            System.out.println(BLUE + "  \\\\          //    \\\\         //     ||                   ||  \\\\         //  ||   ||                  " + RESET);
+            System.out.println(BLUE + "   \\\\        //      \\\\       //      ==================   ||   \\\\       //   ||   ==================  " + RESET);
+            System.out.println(BLUE + "    \\\\      //        \\\\     //                       ||   ||    \\\\     //    ||                   ||  " + RESET);
+            System.out.println(BLUE + "     \\\\    //          \\\\   //                        ||   ||     \\\\   //     ||                   ||  " + RESET);
+            System.out.println(BLUE + "      \\\\  //            \\\\ //         ==================   ||      \\\\ //      ||   ==================  " + RESET);
             System.out.println("\n\n");
 
             System.out.println("--------Please choose your role----------");
@@ -42,7 +46,8 @@ public class Application {
 
             switch (choice){
                 case 1:
-                    System.out.println("You are an admin");
+                    Admin admin = new Admin(toServer,fromServer);
+                    admin.handleAdmin();
                     break;
                 case 2:
                     System.out.println("You are a district!");
@@ -54,7 +59,8 @@ public class Application {
                     System.out.println("You are a confirmer!");
                     break;
                 case 5:
-                    System.out.println("You are a house!");
+                    House house = new House(toServer);
+                    house.handleHouse();
                     break;
                 case 6:
                     customerInvoice customer = new customerInvoice();
@@ -65,17 +71,17 @@ public class Application {
                     }
 
                     break;
+                
                 default:
                     System.out.println("Please be serious!");
                     break;
             }
 
-            String response=fromServer.readUTF();
-
-            System.out.println(response);
 
         }catch(IOException exception){
             exception.printStackTrace();
+        }catch (InputMismatchException exception){
+            System.out.println("Please be serious!");
         }
     }
 }

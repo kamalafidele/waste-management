@@ -24,12 +24,17 @@ public class customerInvoicesRepo {
     }
 
     // THIS A METHOD FOR SENDING
-    public void sendResponse( String response ) {
+    public void sendResponse( String response ) throws IOException, SQLException {
         try {
             toClient.writeUTF(response);
         } catch ( IOException exception ) {
             exception.printStackTrace();
         }
+
+//    public void save(CustomerInvoices newInvoice){
+//        database.insert("INSERT INTO CustomerInvoices(userId,invoice_date,generation_time,service_paid,amount) " +
+//                "VALUES ("+newInvoice.getUserId()+","+ newInvoice.getInvoice_date()+","+newInvoice.getGeneration_time()+","+
+//                newInvoice.getService_paid()+","+newInvoice.getAmount()+")");
     }
 
     public void downloadInvoice(int invoice_id, DataOutputStream client) throws Exception {

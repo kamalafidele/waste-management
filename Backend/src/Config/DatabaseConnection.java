@@ -19,7 +19,9 @@ public class DatabaseConnection {
           if(connection != null)
               statement=connection.createStatement();
 
-        }catch(Exception exception){}
+        }catch(Exception exception){
+            System.out.println("CONNECTION TO DATABASE FAILED");
+        }
     }
 
     public boolean createTable( String createStatement ) {

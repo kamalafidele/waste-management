@@ -17,33 +17,11 @@ public class customerInvoice  {
     ObjectMapper mapper;
 
     public void createTable (String response) throws Exception {
-
-
-
         System.out.println("######################### REGISTERED COMPANIES ###################################### ");
         System.out.println("|------------|-------------|-----------|---------|----------------|-------------------|");
         System.out.println("| Invoice Id |   User Name |  Service  |  Amount |  Invoice date  |  Generation Time  |");
         System.out.println("|------------|-------------|-----------|---------|----------------|-------------------|\n");
-
-//        System.out.println(response.length());
         System.out.println(response);
-//        String[] str = response.split("/}");
-
-//        ObjectMapper objMap  = new ObjectMapper();
-//        JsonNode nameNode = objMap.readValue(response, JsonNode.class);
-//        JsonNode invoice_id = nameNode.get("invoice_id");
-//        String invoice = nameNode.asText();
-//        System.out.println(invoice);
-
-//        for(int i=0; i<str.length; i++){
-//            System.out.println(str);
-//        }
-//        while (invoiceIterator.hasNext()){
-//            handler=invoiceIterator.next();
-//            System.out.println("| "+handler.getInvoice_id()+" |"+handler.getUser_id()+" |  "+handler.getService_paid()+" "
-//                    +handler.getAmount()+ "  "+handler.getInvoice_date()+"  "+ handler.getGeneration_time()+"  ");
-//            System.out.println("|------------|-------------|-----------|---------|----------------|-------------------|");
-//        }
     }
 
     public void mainMethod() throws Exception {
@@ -82,6 +60,7 @@ public class customerInvoice  {
                break;
            }
            default ->System.out.println(" \t\t\t\t Invalid input");
+
        }
     }
 }
