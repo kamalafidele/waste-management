@@ -1,4 +1,5 @@
 import Controllers.CompanyController;
+import Controllers.NotificationController;
 
 import java.io.*;
 import java.net.Socket;
@@ -8,11 +9,14 @@ public class ThreadHandler extends Thread{
 
     //REGISTERING ALL CONTROLLERS
     private CompanyController companyController;
+    private NotificationController notificationController;
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
         companyController=new CompanyController();
+        notificationController = new NotificationController();
     }
+
 
     @Override
     public void run(){
@@ -24,7 +28,6 @@ public class ThreadHandler extends Thread{
 
             //READING REQUESTS FROM THE CLIENT
             String request=fromClient.readUTF();
-            
             switch (request.split("/")[0]){
                 case "admin":
 
@@ -34,6 +37,8 @@ public class ThreadHandler extends Thread{
                   break;
                 case "wallet":
                     // a call to wallet controller
+                case "notification":
+                    notificationController.filterRequest(request,toClient);
                 default:
                     toClient.writeUTF("Undefined request");
                   break;
