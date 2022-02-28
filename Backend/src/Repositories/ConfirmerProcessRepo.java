@@ -12,10 +12,10 @@ public class ConfirmerProcessRepo {
     public ConfirmerProcessRepo(Long id,String Village,String Company,String HouseCode){
 
     }
-    public ResultSet findALl(){
+    public ResultSet findAll(){
         return this.dbconn.select("select * from ConfirmerProcess");
     }
-    public ResultSet findById( int id){
+    public ResultSet findById(long id){
         return this.dbconn.select("select * from ConfirmerProcess where id = " + id);
     }
 
