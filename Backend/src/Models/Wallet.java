@@ -4,7 +4,9 @@ public class Wallet {
     private Integer wallet_id;
     private Integer balance ;
     private Integer user_id;
-
+    private Integer company_id;
+    private Integer district_id;
+    private Integer admins_id;
     public Integer getUser_id() {
         return user_id;
     }
@@ -37,9 +39,6 @@ public class Wallet {
         this.admins_id = admins_id;
     }
 
-    private Integer company_id;
-    private Integer district_id;
-    private Integer admins_id;
     public void Wallet(Integer wallet_id, Integer balance, Integer user_id){
         this.wallet_id=wallet_id;
         this.balance=balance;
