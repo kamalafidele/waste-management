@@ -57,6 +57,7 @@ public class Application {
                 case 5:
                     System.out.println("You are a house!");
                     break;
+
                 default:
                     System.out.println("Please be serious!");
                     break;
