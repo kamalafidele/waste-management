@@ -1,4 +1,5 @@
 import Controllers.CompanyController;
+import Controllers.HouseController;
 
 import java.io.*;
 import java.net.Socket;
@@ -8,10 +9,12 @@ public class ThreadHandler extends Thread{
 
     //REGISTERING ALL CONTROLLERS
     private CompanyController companyController;
+    private HouseController houseController;
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
         companyController=new CompanyController();
+        houseController=new HouseController();
     }
 
     @Override
@@ -32,6 +35,9 @@ public class ThreadHandler extends Thread{
                 case "company":
                     companyController.filterRequest(request,toClient);
                   break;
+                case "citizen":
+                    houseController.filterRequest(request,toClient);
+                    break;
                 case "wallet":
                     // a call to wallet controller
                 default:

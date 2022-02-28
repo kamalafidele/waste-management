@@ -1,4 +1,6 @@
 import Components.Admin;
+import Components.Company;
+import Components.House.House;
 
 import java.io.*;
 import java.net.Socket;
@@ -55,7 +57,8 @@ public class Application {
                     System.out.println("You are a confirmer!");
                     break;
                 case 5:
-                    System.out.println("You are a house!");
+                    House house = new House(toServer);
+                    house.handleHouse();
                     break;
                 
                 default:
