@@ -8,7 +8,11 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jackson-all-1.9.9" level="project" />
+<<<<<<< HEAD
     <orderEntry type="module" module-name="Backend" />
     <orderEntry type="library" name="jackson-core-2.13.1" level="project" />
+=======
+    <orderEntry type="library" name="libs" level="project" />
+>>>>>>> a63e6427dc8341b8b62aa6b184c0834aaf1c636d
   </component>
 </module>
