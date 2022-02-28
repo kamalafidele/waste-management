@@ -14,6 +14,7 @@ public class ThreadHandler extends Thread{
     public ThreadHandler(Socket socket){
         this.socket=socket;
         companyController=new CompanyController();
+        houseController=new HouseController();
     }
 
     @Override

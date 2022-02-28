@@ -16,6 +16,7 @@ public class House {
 //    private String token;
     DataOutputStream toServer;
     Scanner keyboard = new Scanner(System.in);
+//    citizen/insert/{ "fullnames" : "karera marvin", "nid" : "12345678", "telno" : "indmts22", "telno" : "250788124399", "sector" : "niboye","cell" : "lorem", "village" : "indamutsa" }
 
     public House(){};
     public House(DataOutputStream toServer){
@@ -26,7 +27,7 @@ public class House {
         System.out.print("\n");
         System.out.println("--------Login as an House!----------");
         System.out.print("Your token: ");
-        String token = keyboard.nextLine();
+        String token = keyboard.next();
 
         //call login function
         boolean loggedIn = login(token);

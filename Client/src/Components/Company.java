@@ -9,6 +9,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 
 // THIS COMPANY COMPONENT
 public class Company {
@@ -24,6 +25,9 @@ public class Company {
         this.toServer=toServer;
         this.fromServer=fromServer;
         String request="company/getAll/none";
+//        Scanner keyboard = new Scanner(System.in);
+//        System.out.print("Your request: ");
+//        String request = keyboard.nextLine();
 
         try{
             toServer.writeUTF(request);

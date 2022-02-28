@@ -34,13 +34,13 @@ public class HouseRepo {
                 System.out.println("Token already exists");
                 token=house.getToken();
                 database.insert("INSERT INTO clients(fullnames,nid,houseno,telno,sector,cell,village,token) VALUES ("+house.getFullnames()+","+house.getNid()+","+house.getHouseno()+","+house.getTelno()+","+house.getSector()+","+house.getCell()+","+house.getVillage()+","+token+")");
-                System.out.println("House saved");
+                System.out.println("Client saved");
                 System.out.println("Token: "+token);
             }
             else{
                 //insert
                 database.insert("INSERT INTO clients(fullnames,nid,houseno,telno,sector,cell,village,token) VALUES ("+house.getFullnames()+","+house.getNid()+","+house.getHouseno()+","+house.getTelno()+","+house.getSector()+","+house.getCell()+","+house.getVillage()+","+token+")");
-                System.out.println("House saved");
+                System.out.println("Client saved");
                 System.out.println("Token: "+token);
             }
         } catch (SQLException e) {

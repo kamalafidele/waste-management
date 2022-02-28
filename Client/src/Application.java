@@ -1,4 +1,5 @@
 import Components.Admin;
+import Components.Company;
 import Components.House.House;
 
 import java.io.*;
@@ -65,8 +66,6 @@ public class Application {
                     break;
             }
 
-            String response=fromServer.readUTF();
-            System.out.println(response);
 
         }catch(IOException exception){
             exception.printStackTrace();
