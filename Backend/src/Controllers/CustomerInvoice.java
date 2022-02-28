@@ -29,16 +29,16 @@ public class CustomerInvoice {
 
             while(resultSet.next()){
               cInvoice.setInvoice_id(resultSet.getInt(1));
-              cInvoice.setUser_id(userId);
-              cInvoice.setInvoice_date(resultSet.getString("invoice_date"));
-              cInvoice.setGeneration_time(resultSet.getString(4));
+              cInvoice.setUserId(userId);
+              cInvoice.setInvoice_date(resultSet.getDate("invoice_date"));
+              cInvoice.setGeneration_time(resultSet.getTime(4));
               cInvoice.setService_paid(resultSet.getString(5));
               cInvoice.setAmount(resultSet.getInt(6));
             }
 
         sendResponse(mapper.writeValueAsString(cInvoice));
 
-        }catch( SQLException exception ){}
+        }catch(IOException | SQLException exception ){}
     }
 
     public void saveInvoice(String data){
