@@ -33,4 +33,10 @@ public class WalletContoller {
         int districtId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByDistrictId(districtId);
     }
+
+    public void getCompanyWallet(String request, DataOutputStream toClient){
+        this.toClient = toClient;
+        int companyId = Integer.parseInt(request);
+        ResultSet walletResult = walletRepo.findWalletByCompanyId(companyId);
+    }
 }
