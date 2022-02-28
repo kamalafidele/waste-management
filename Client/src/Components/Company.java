@@ -9,12 +9,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-<<<<<<< HEAD
-import java.util.Random;
-=======
->>>>>>> be1894b5cd572b56a361b3342da7b00e04700a2d
 import java.util.Scanner;
-
+import java.util.Random;
 // THIS COMPANY COMPONENT
 public class Company {
     DataOutputStream toServer;
