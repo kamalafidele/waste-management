@@ -47,7 +47,7 @@ public class HouseController {
         try{
             houseRepo.createClientTable();
 
-            sendResponse("Client added successfully");
+            sendResponse("ClientTable create successfully");
         }catch ( Exception e){}
     }
 
