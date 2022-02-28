@@ -19,13 +19,13 @@ public class AnalyticsController {
         String sender = request.split("/")[0];
         switch (request.split("/")[2]) {
             case "getWeekly":
-                getWeeklyAnalytics(sender);
+                getAnalytics(sender, "week");
                 break;
             case "getMonthly":
-                getMonthlyAnalytics();
+                getAnalytics(sender, "month");
                 break;
             case "getAnnual":
-                getAnnualAnalytics();
+                getAnalytics(sender, "year");
                 break;
             case "download":
                 downloadAnalytics(request.split("/")[2]);
@@ -36,23 +36,18 @@ public class AnalyticsController {
         }
     }
 
-    public void getWeeklyAnalytics(String sender){
+    public void getAnalytics(String sender, String period){
         if(sender == "district"){
-//            Logic for district weekly analytics
-            sendResponse("District Weekly analytics");
+//            Logic for district analytics in the given period
+            sendResponse("District analytics");
         }
 
         if(sender == "company"){
-//            Logic for company weekly analytics
-            sendResponse("Company weekly analytics");
+            String analytics = analyticsRepo.companyAnalytics(period);
+            sendResponse(analytics);
         }
     }
-    public void getMonthlyAnalytics(){
-        System.out.println("Monthly analytics");
-    }
-    public void getAnnualAnalytics(){
-        System.out.println("Annual analytics");
-    }
+
     public void downloadAnalytics(String period){
         System.out.println("Analytics downloaded");
         saveIntoFIle("What to be saved");
