@@ -1,21 +1,23 @@
 package Models;
 
-public class ConfirmerProcess{
+public class ConfirmerProcess {
     private Long id;
     private String Village;
     private String Company;
     private String HouseCode;
-}
 
-public ConfirmerProcess(){
 
-}
-public ConfirmerProcess(Long id,String Village,String Company,String HouseCode){
-    this.id=id;
-    this.Village=Village;
-    this.Company=Company;
-    this.HouseCode=HouseCode;
-}
+    public ConfirmerProcess() {
+
+    }
+
+    public ConfirmerProcess(Long id, String Village, String Company, String HouseCode) {
+        this.id = id;
+        this.Village = Village;
+        this.Company = Company;
+        this.HouseCode = HouseCode;
+    }
+
     public Long getId() {
         return id;
     }
@@ -47,3 +49,5 @@ public ConfirmerProcess(Long id,String Village,String Company,String HouseCode){
     public void setHouseCode(String houseCode) {
         HouseCode = houseCode;
     }
+
+}
