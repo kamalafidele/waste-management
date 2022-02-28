@@ -9,10 +9,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-<<<<<<< HEAD
 import java.util.Random;
-=======
->>>>>>> be1894b5cd572b56a361b3342da7b00e04700a2d
 import java.util.Scanner;
 
 // THIS COMPANY COMPONENT
@@ -31,9 +28,6 @@ public class Company {
 
     public void displayCompanies(){
         String request="company/getAll/none";
-//        Scanner keyboard = new Scanner(System.in);
-//        System.out.print("Your request: ");
-//        String request = keyboard.nextLine();
 
         try{
             toServer.writeUTF(request);
