@@ -34,6 +34,11 @@ public class CompanyController {
             case "insert":
                 addCompany(request.split("/")[2]);
               break;
+            case "analytics":
+                AnalyticsController analyticsController = new AnalyticsController();
+                analyticsController.filterRequest(request, toClient);
+                break;
+
             default:
                 sendResponse("Please specify your request");
               break;
@@ -86,7 +91,9 @@ public class CompanyController {
     public void sendResponse( String response ) {
         try {
             toClient.writeUTF(response);
-        } catch ( IOException exception ) {}
+        } catch ( IOException exception ) {
+            exception.printStackTrace();
+        }
     }
 
 }
