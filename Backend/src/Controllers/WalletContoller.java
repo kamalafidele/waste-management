@@ -22,5 +22,15 @@ public class WalletContoller {
         ResultSet walletResult = walletRepo.findWalletByUserId(userId);
     }
 
-    
+    public void getAdminWallet(String request, DataOutputStream toClient){
+        this.toClient = toClient;
+        int adminId = Integer.parseInt(request);
+        ResultSet walletResult = walletRepo.findWalletByAdminId(adminId);
+    }
+
+    public void getDistrictWallet(String request, DataOutputStream toClient){
+        this.toClient = toClient;
+        int districtId = Integer.parseInt(request);
+        ResultSet walletResult = walletRepo.findWalletByDistrictId(districtId);
+    }
 }
