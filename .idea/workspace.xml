@@ -2,8 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="294ad6f5-700c-471f-9c2e-beeae862115a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Backend/src/Repositories/ConfirmerProcessRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/.idea/libraries/jackson_core_2_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/Application.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/Controllers/CompanyController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/Models/Company.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/Models/ConfirmerProcess.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/Models/CustomerInvoices.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/Models/Wallet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/Repositories/CompanyRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/Repositories/ConfirmerProcessRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/Repositories/WalletRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/Repositories/customerInvoicesRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/out/production/Backend/ThreadHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/.idea/libraries/jackson_core_2_13_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/libs/jackson-all-1.9.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/Config/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/.idea/libraries/jackson_core_2_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/Client.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,24 +39,35 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JDBCDemo" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="jackson-all-1.9.9.jar" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/Backend/libs/jackson-all-1.9.9.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -50,7 +80,9 @@
       <workItem from="1645767420658" duration="619000" />
       <workItem from="1645781412063" duration="260000" />
       <workItem from="1645781700064" duration="1832000" />
-      <workItem from="1645983534640" duration="7640000" />
+      <workItem from="1645983534640" duration="8861000" />
+      <workItem from="1646022148903" duration="1522000" />
+      <workItem from="1646027991129" duration="31000" />
     </task>
     <servers />
   </component>
@@ -68,5 +100,19 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Backend/src/Application.class</url>
+          <line>13</line>
+          <properties class="Application" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
