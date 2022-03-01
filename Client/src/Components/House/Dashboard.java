@@ -20,6 +20,7 @@ public class Dashboard {
             switch (choice){
                 case 1:
                     System.out.println("wastes payment");
+                    myMethod();
                     break;
                 case 2:
                     System.out.println("security payment");
@@ -36,4 +37,8 @@ public class Dashboard {
                     break;
             }
     }
+    public void myMethod(){
+        System.out.println("my method");
+    }
 }
+
