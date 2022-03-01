@@ -17,12 +17,12 @@ public class Payment {
 
     public void handleMomopayment(){
         System.out.print("Telephone: ");
-        int telephoneNumber = scanner.nextInt();
+        String telephoneNumber = scanner.next();
         System.out.print("Amount: ");
         int amount = scanner.nextInt();
 
         // Formulating a request and making a request
-        String request = "payment/momopayment/" + amount;
+        String request = "payment/momopayment/" + telephoneNumber +"/"+amount;
         try{
             this.toServer.writeUTF(request);
             String responseFromServer = fromServer.readUTF();

@@ -6,7 +6,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.util.Scanner;
 
-public class House extends Dashboard{
+public class House{
 //    private String fullnames;
 //    private String nid;
 //    private String houseno;
