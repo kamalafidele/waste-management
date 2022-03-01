@@ -1,6 +1,7 @@
 import Controllers.CompanyController;
 import Controllers.HouseController;
 import Controllers.PaymentController;
+import Controllers.WalletContoller;
 
 import java.io.*;
 import java.net.Socket;
@@ -12,13 +13,14 @@ public class ThreadHandler extends Thread{
     private CompanyController companyController;
     private HouseController houseController;
     private PaymentController paymentController;
+    private WalletContoller walletContoller;
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
         companyController=new CompanyController();
         houseController=new HouseController();
         paymentController=new PaymentController();
-
+        walletContoller = new WalletContoller();
     }
 
     @Override
@@ -34,7 +36,6 @@ public class ThreadHandler extends Thread{
             
             switch (request.split("/")[0]){
                 case "admin":
-
                     break;
                 case "company":
                     companyController.filterRequest(request,toClient);
@@ -46,7 +47,12 @@ public class ThreadHandler extends Thread{
                     paymentController.filterRequest(request,toClient);
                     break;
                 case "wallet":
-                    // a call to wallet controller
+                    /*
+                    * wallets endpoint
+                    * /wallet/(admin|company|district|user)/id
+                    * */
+                    walletContoller.whichWallet(request, toClient);
+                    break;
                 default:
                     toClient.writeUTF("Undefined request");
                   break;

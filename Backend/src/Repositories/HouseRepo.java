@@ -13,7 +13,7 @@ public class HouseRepo {
     }
 
     public void createClientTable(){
-        String query="CREATE TABLE IF NOT EXISTS clients(id INTEGER PRIMARY KEY AUTO_INCREMENT,fullnames VARCHAR(255),nid VARCHAR(255),houseno VARCHAR(255),telno VARCHAR(255),sector VARCHAR(255),cell VARCHAR(255),village VARCHAR(255),token VARCHAR(255))";
+        String query="CREATE TABLE IF NOT EXISTS clients(id INTEGER PRIMARY KEY AUTO_INCREMENT,fullnames VARCHAR(255),nid VARCHAR(255),houseno VARCHAR(255),telno VARCHAR(255),sector VARCHAR(255),cell VARCHAR(255),village VARCHAR(255),token VARCHAR(255) unique)";
         database.createTable(query);
     }
 
@@ -26,20 +26,20 @@ public class HouseRepo {
     }
 
     public void save(House house){
-        String token=house.getToken();
+        String token=house.genPin();
         //check if token exists
         ResultSet resultSet=database.select("SELECT * FROM clients WHERE token = "+token);
         try {
             if(resultSet.next()){
                 System.out.println("Token already exists");
-                token=house.getToken();
-                database.insert("INSERT INTO clients(fullnames,nid,houseno,telno,sector,cell,village,token) VALUES ("+house.getFullnames()+","+house.getNid()+","+house.getHouseno()+","+house.getTelno()+","+house.getSector()+","+house.getCell()+","+house.getVillage()+","+token+")");
+                token=house.genPin();
+                database.insert("INSERT INTO clients(fullnames,nid,houseno,telno,sector,cell,village,token) VALUES ('"+house.getFullnames()+"','"+house.getNid()+"','"+house.getHouseno()+"','"+house.getTelno()+"','"+house.getSector()+"','"+house.getCell()+"','"+house.getVillage()+"','"+token+"')");
                 System.out.println("Client saved");
-                System.out.println("Token: "+token);
+                System.out.println("New Token: "+token);
             }
             else{
                 //insert
-                database.insert("INSERT INTO clients(fullnames,nid,houseno,telno,sector,cell,village,token) VALUES ("+house.getFullnames()+","+house.getNid()+","+house.getHouseno()+","+house.getTelno()+","+house.getSector()+","+house.getCell()+","+house.getVillage()+","+token+")");
+                database.insert("INSERT INTO clients(fullnames,nid,houseno,telno,sector,cell,village,token) VALUES ('"+house.getFullnames()+"','"+house.getNid()+"','"+house.getHouseno()+"','"+house.getTelno()+"','"+house.getSector()+"','"+house.getCell()+"','"+house.getVillage()+"','"+token+"')");
                 System.out.println("Client saved");
                 System.out.println("Token: "+token);
             }

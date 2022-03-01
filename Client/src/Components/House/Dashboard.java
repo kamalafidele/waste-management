@@ -26,7 +26,12 @@ public class Dashboard {
 
             switch (choice){
                 case 1:
+<<<<<<< HEAD
                     payment.handlePaymentMethods();
+=======
+                    System.out.println("wastes payment");
+                    myMethod();
+>>>>>>> 38904140fc567db62c8cfd7a01689b2ea96c681a
                     break;
                 case 2:
                     payment.handlePaymentMethods();
@@ -42,4 +47,8 @@ public class Dashboard {
                     break;
             }
     }
+    public void myMethod(){
+        System.out.println("my method");
+    }
 }
+

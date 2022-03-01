@@ -6,6 +6,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class PaymentController {
     private PaymentRepo paymentRepo;
@@ -49,9 +50,15 @@ public class PaymentController {
                 String phoneNumber = request.split("/")[2];
                 this.momoPayment(phoneNumber);
                 break;
+            case "checkSecurityDebt":
+                checkSecurityDebt();
+                break;
         }
     }
 
+    public void checkSecurityDebt(){
+
+    }
     public void sendResponse( String response ) {
         try {
             toClient.writeUTF(response);
