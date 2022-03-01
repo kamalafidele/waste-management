@@ -57,7 +57,9 @@ public class Application {
                 case 5:
                     System.out.println("You are a house!");
                     break;
-
+                case 6:
+                    toServer.writeUTF("company/analytics/getMonthly/3");
+                    break;
                 default:
                     System.out.println("Please be serious!");
                     break;
