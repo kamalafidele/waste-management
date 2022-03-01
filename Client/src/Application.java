@@ -1,5 +1,4 @@
 import Components.Admin;
-import Components.Company;
 import Components.House.House;
 
 import java.io.*;
@@ -44,7 +43,7 @@ public class Application {
 
             switch (choice){
                 case 1:
-                    Admin admin = new Admin(toServer);
+                    Admin admin = new Admin(toServer,fromServer);
                     admin.handleAdmin();
                     break;
                 case 2:
