@@ -34,8 +34,7 @@ public class Dashboard {
 
             switch (choice){
                 case 1:
-                    System.out.println("wastes payment");
-                    myMethod();
+                    payment.handlePaymentMethods();
                     break;
                 case 2:
                     payment.handlePaymentMethods();
@@ -52,8 +51,6 @@ public class Dashboard {
                     break;
             }
     }
-    public void myMethod(){
-        System.out.println("my method");
-    }
+
 }
 

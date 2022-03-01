@@ -63,7 +63,7 @@ public class Payment {
         int amount = scanner.nextInt();
 
         // Formulating a request and making a request
-        String request = "payment/momopayment/" + telephoneNumber +"/"+amount;
+        String request = "payment/momopayment/" + telephoneNumber +"/"+amount +"/"+1234;
         try{
             this.toServer.writeUTF(request);
             String responseFromServer = fromServer.readUTF();

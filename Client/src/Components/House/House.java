@@ -1,8 +1,6 @@
 package Components.House;
 
-
 import Components.House.Dashboard;
-
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.util.Scanner;
