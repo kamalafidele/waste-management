@@ -6,7 +6,7 @@ public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
     String url="jdbc:mysql://localhost:3306/year2?characterEncoding=latin1";
     String username="root";
-    String password="";
+    String password="ae789789";
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
@@ -20,6 +20,7 @@ public class DatabaseConnection {
               statement=connection.createStatement();
 
         }catch(Exception exception){
+            System.out.println("Error: "+exception);
             System.out.println("CONNECTION TO DATABASE FAILED");
         }
     }
@@ -38,6 +39,7 @@ public class DatabaseConnection {
             statement.execute(insertStatement);
             return true;
         }catch(SQLException exception){
+            exception.printStackTrace();
             return false;
         }
     }

@@ -1,4 +1,5 @@
 import Components.Admin;
+import Components.Company;
 import Components.House.House;
 
 import java.io.*;
@@ -54,13 +55,14 @@ public class Application {
                     break;
                 case 3:
                     System.out.println("You are a company!");
+                    new Company(toServer,fromServer).displayCompanies();
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
                     break;
                 case 5:
                     House house = new House(toServer);
-                    house.handleHouse();
+                    house.handleHouse(fromServer, toServer);
                     break;
                 case 6:
                     customerInvoice customer = new customerInvoice();

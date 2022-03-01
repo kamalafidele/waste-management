@@ -78,7 +78,9 @@ public class HouseController {
             if (!resultSet.next()){
                 System.out.println("No such user");
             }
-            while(resultSet.next()){
+//            while(resultSet.next()){
+
+                house.setId(resultSet.getInt(1));
                 house.setFullnames(resultSet.getString(1));
                 house.setNid(resultSet.getString(2));
                 house.setHouseno(resultSet.getString(3));
@@ -87,9 +89,10 @@ public class HouseController {
                 house.setCell(resultSet.getString(6));
                 house.setVillage(resultSet.getString(7));
                 house.setToken(resultSet.getString(8));
-            }
+//            }
 
             sendResponse(mapper.writeValueAsString(house));
+            System.out.println("House found " + mapper.writeValueAsString(house));
 
         } catch (IOException | SQLException exception){}
     }
@@ -100,7 +103,7 @@ public class HouseController {
 //        try{
 //            // THIS LOOP IS FOR INSERTING FETCHED COMPANIES TO THE LIST
 //            while(resultSet.next()){
-//                House house=new House(resultSet.getLong(1),resultSet.getString(2));
+//                House house=new House(resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6),resultSet.getString(7),resultSet.getString(8),resultSet.getString(9));
 //                houses.add(house);
 //            }
 //
