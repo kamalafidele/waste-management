@@ -1,5 +1,11 @@
 package Components.House;
 
+<<<<<<< HEAD
+import Components.House.Dashboard;
+
+import java.io.DataInputStream;
+=======
+>>>>>>> 38904140fc567db62c8cfd7a01689b2ea96c681a
 import java.io.DataOutputStream;
 import java.util.Scanner;
 
@@ -21,7 +27,7 @@ public class House{
         this.toServer = toServer;
     }
 
-    public void handleHouse(){
+    public void handleHouse(DataInputStream fromServer, DataOutputStream toServer){
         System.out.print("\n");
         System.out.println("--------Login as an House!----------");
         System.out.print("Your pin: ");
@@ -34,7 +40,7 @@ public class House{
         }else{
             //dashboard
             Dashboard dashboard = new Dashboard();
-            dashboard.handleDashboard();
+            dashboard.handleDashboard(fromServer, toServer);
         }
     }
 
