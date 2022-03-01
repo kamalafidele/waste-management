@@ -11,8 +11,22 @@ public class PaymentRepo {
         database=new DatabaseConnection();
     }
 
-    public ResultSet findMomoAccountByNumber(int phoneNumber){
+    public ResultSet findMomoAccountByNumber(String phoneNumber){
         return database.select("SELECT * FROM momoAccount where phoneNber = "+phoneNumber);
+    }
+
+
+    public void transferMoney(String phoneNumber, int amount, int userId){
+
+        // Reduce money from momoaccount table
+
+        database.update("update momoaccount set balance = balance - " + amount + " where phoneNber = "+phoneNumber) ;
+
+        // Increase  money to wallets table
+
+        database.update("update customer_wallets set balance = balance + " + amount + " where user_Id = "+ userId) ;
+
+
     }
 
     public ResultSet findById(long id){

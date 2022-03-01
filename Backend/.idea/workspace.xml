@@ -9,6 +9,8 @@
       <change afterPath="$PROJECT_DIR$/src/Repositories/NotificationRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/NotificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/NotificationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/HouseRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/HouseRepo.class" afterDir="false" />
@@ -26,7 +28,11 @@
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/CompanyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/CompanyHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/WalletHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/WalletHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Components/House/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/House/House.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../Client/src/Components/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Notification.java" afterDir="false" />
+=======
+>>>>>>> 38904140fc567db62c8cfd7a01689b2ea96c681a
+>>>>>>> 4c105e2086982015697e6c219f1b6922169f0032
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

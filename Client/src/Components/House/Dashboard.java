@@ -19,7 +19,8 @@ public class Dashboard {
         this.toServer = toServer;
     }
 
-    public void handleDashboard(){
+    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer){
+            Payment payment = new Payment(fromServer, toServer);
             int choice = 0;
             System.out.println("\n");
             System.out.println("--------Dashboard--------");
@@ -37,7 +38,7 @@ public class Dashboard {
                     myMethod();
                     break;
                 case 2:
-                    System.out.println("You are going to pay security ");
+                    payment.handlePaymentMethods();
                     break;
                 case 3:
                     System.out.println("invoices");
