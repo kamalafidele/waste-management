@@ -33,7 +33,7 @@ public class Dashboard {
                     System.out.println("invoices");
                     break;
                 case 4:
-                    System.out.println("Notifications&messages");
+                    System.out.println("Notifications & Messages");
                     break;
                 default:
                     System.out.println("Please be serious!");

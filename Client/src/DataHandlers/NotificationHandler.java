@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class NotificationHandler {
     private Long notificationId;
-    private Integer userId;
+    private Integer token;
     private String notificationType;
     private String message;
     private String viewStatus;
@@ -18,9 +18,9 @@ public class NotificationHandler {
     public NotificationHandler(){
 
     }
-    public NotificationHandler(Long notificationId, Integer userId, String notificationType, String message, String viewStatus,Date sentDate){
+    public NotificationHandler(Long notificationId, Integer token, String notificationType, String message, String viewStatus, Date sentDate){
         this.notificationId = notificationId;
-        this.userId = userId;
+        this.token = token;
         this.notificationType = notificationType;
         this.message = message;
         this.viewStatus = viewStatus;
@@ -34,12 +34,12 @@ public class NotificationHandler {
         this.notificationId = notificationId;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getToken() {
+        return token;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setToken(Integer token) {
+        this.token = token;
     }
 
     public String getNotificationType() {

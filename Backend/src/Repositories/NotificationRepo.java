@@ -24,7 +24,7 @@ public class NotificationRepo{
 
     public void save(Notification notification){
         database.insert("INSERT INTO Notification(userId, notificationType, message, sentDate) VALUES("
-                + notification.getUserId() + "," + notification.getNotificationType() + "," + notification.getMessage()
+                + notification.getToken() + "," + notification.getNotificationType() + "," + notification.getMessage()
                 + "," + notification.getViewStatus() + "," + notification.getSentDate() + ")");
     }
 }
