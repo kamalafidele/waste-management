@@ -30,7 +30,6 @@ public class ThreadHandler extends Thread{
             
             switch (request.split("/")[0]){
                 case "admin":
-
                     break;
                 case "company":
                     companyController.filterRequest(request,toClient);
@@ -40,6 +39,7 @@ public class ThreadHandler extends Thread{
                     break;
                 case "wallet":
                     // a call to wallet controller
+                    break;
                 default:
                     toClient.writeUTF("Undefined request");
                   break;
