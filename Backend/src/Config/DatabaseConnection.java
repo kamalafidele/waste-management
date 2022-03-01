@@ -22,6 +22,7 @@ public class DatabaseConnection {
         }catch(Exception exception){
             System.out.println("Error: "+exception);
             System.out.println("CONNECTION TO DATABASE FAILED");
+            exception.printStackTrace();
         }
     }
 
