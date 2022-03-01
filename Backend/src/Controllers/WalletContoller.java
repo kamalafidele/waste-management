@@ -18,16 +18,16 @@ public class WalletContoller {
             String ownerId = request.split("/")[2];
             switch (request.split("/")[1]) {
                 case "admin":
-                    getAdminWallet(ownerId, toClient);
+                    getAdminWallet(ownerId);
                     break;
                 case "company":
-                    getCompanyWallet(ownerId, toClient);
+                    getCompanyWallet(ownerId);
                     break;
                 case "district":
-                    getDistrictWallet(ownerId, toClient);
+                    getDistrictWallet(ownerId);
                     break;
                 case "client":
-                    getUserWallet(ownerId, toClient);
+                    getUserWallet(ownerId);
                     break;
                 default:
                     returnWallet("Please specify the wallet owner type!");
@@ -52,25 +52,25 @@ public class WalletContoller {
         mapper = new ObjectMapper();
     }
 
-    public void getUserWallet(String request, DataOutputStream toClient){
+    public void getUserWallet(String request){
         this.toClient = toClient;
         int userId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByUserId(userId);
     }
 
-    public void getAdminWallet(String request, DataOutputStream toClient){
+    public void getAdminWallet(String request){
         this.toClient = toClient;
         int adminId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByAdminId(adminId);
     }
 
-    public void getDistrictWallet(String request, DataOutputStream toClient){
+    public void getDistrictWallet(String request){
         this.toClient = toClient;
         int districtId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByDistrictId(districtId);
     }
 
-    public void getCompanyWallet(String request, DataOutputStream toClient){
+    public void getCompanyWallet(String request){
         this.toClient = toClient;
         int companyId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByCompanyId(companyId);
