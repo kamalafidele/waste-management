@@ -35,12 +35,13 @@ public class HouseRepo {
                 token=house.getToken();
                 database.insert("INSERT INTO clients(fullnames,nid,houseno,telno,sector,cell,village,token) VALUES ("+house.getFullnames()+","+house.getNid()+","+house.getHouseno()+","+house.getTelno()+","+house.getSector()+","+house.getCell()+","+house.getVillage()+","+token+")");
                 System.out.println("Client saved");
-                System.out.println("Token: "+token);
+                System.out.println("New Token: "+token);
             }
             else{
                 //insert
                 database.insert("INSERT INTO clients(fullnames,nid,houseno,telno,sector,cell,village,token) VALUES ("+house.getFullnames()+","+house.getNid()+","+house.getHouseno()+","+house.getTelno()+","+house.getSector()+","+house.getCell()+","+house.getVillage()+","+token+")");
                 System.out.println("Client saved");
+                System.out.println("fullnames: " + house.getFullnames());
                 System.out.println("Token: "+token);
             }
         } catch (SQLException e) {
