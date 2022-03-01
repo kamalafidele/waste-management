@@ -102,6 +102,13 @@ public class WalletContoller {
         this.toClient = toClient;
         int companyId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByCompanyId(companyId);
-        
+        try{
+            while(walletResult.next()){
+                wallet.setWallet_id(walletResult.getInt(1));
+                wallet.setAdmins_id(walletResult.getInt(2));
+                wallet.setBalance(walletResult.getInt(3));
+            }
+            returnWallet(mapper.writeValueAsString(wallet));
+        } catch (IOException | SQLException exception){}
     }
 }
