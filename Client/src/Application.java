@@ -58,7 +58,7 @@ public class Application {
                     System.out.println("You are a confirmer!");
                     break;
                 case 5:
-                    House house = new House(toServer);
+                    House house = new House(toServer, fromServer);
                     house.handleHouse();
                     break;
                 
