@@ -22,7 +22,6 @@ public class Wallet {
         }
         catch (IOException e){
             e.printStackTrace();
-
         }
     }
 }
