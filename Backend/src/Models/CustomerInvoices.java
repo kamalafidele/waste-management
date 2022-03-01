@@ -5,6 +5,7 @@ import java.sql.Time;
 import java.util.Date;
 
 public class CustomerInvoices {
+<<<<<<< HEAD
     private Long invoice_id ;
     private Date invoice_date;
     private Time generation_time;
@@ -21,6 +22,29 @@ public class CustomerInvoices {
         this.generation_time = generation_time;
         this.service_paid = service_paid;
         this.amount = amount;
+=======
+    private Integer invoice_id ;
+    private Integer userId;
+    private Date invoice_date;
+    private Time generation_time;
+    private String service_paid;
+    private Integer amount;
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public void CustomerInvoices(Integer invoice_id,Integer userId,Date invoice_date, Time generation_time,String service_paid,Integer amount){
+        this.invoice_id=invoice_id;
+        this.invoice_date=invoice_date;
+        this.generation_time=generation_time;
+        this.service_paid=service_paid;
+        this.amount=amount;
+        this.userId=userId;
+>>>>>>> 8664a4200e2629c24112932f6d13c9dab3306e17
     }
 
     public void setUser_id(Integer user_id) {this.user_id = user_id;}
