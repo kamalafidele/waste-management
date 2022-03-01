@@ -26,13 +26,13 @@ public class HouseRepo {
     }
 
     public void save(House house){
-        String token=house.getToken();
+        String token=house.genPin();
         //check if token exists
         ResultSet resultSet=database.select("SELECT * FROM clients WHERE token = "+token);
         try {
             if(resultSet.next()){
                 System.out.println("Token already exists");
-                token=house.getToken();
+                token=house.genPin();
                 database.insert("INSERT INTO clients(fullnames,nid,houseno,telno,sector,cell,village,token) VALUES ("+house.getFullnames()+","+house.getNid()+","+house.getHouseno()+","+house.getTelno()+","+house.getSector()+","+house.getCell()+","+house.getVillage()+","+token+")");
                 System.out.println("Client saved");
                 System.out.println("New Token: "+token);

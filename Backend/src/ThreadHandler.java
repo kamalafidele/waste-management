@@ -33,7 +33,6 @@ public class ThreadHandler extends Thread{
             
             switch (request.split("/")[0]){
                 case "admin":
-
                     break;
                 case "company":
                     companyController.filterRequest(request,toClient);
