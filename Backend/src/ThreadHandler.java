@@ -42,7 +42,8 @@ public class ThreadHandler extends Thread{
                     houseController.filterRequest(request,toClient);
                     break;
                 case "wallet":
-
+                    walletContoller.whichWallet(request, toClient);
+                    break;
                 default:
                     toClient.writeUTF("Undefined request");
                   break;
