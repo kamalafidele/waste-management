@@ -62,12 +62,14 @@ public class House {
     public void setSector(String sector) {
         this.sector = sector;
     }
+
     public String getCell() {
         return cell;
     }
     public void setCell(String cell) {
         this.cell = cell;
     }
+
     public String getVillage() {
         return village;
     }
@@ -76,6 +78,13 @@ public class House {
     }
 
     public String getToken() {
+        return token;
+    }
+    public void setToken(String token){
+        this.token = token;
+    }
+
+    public String genPin() {
         int count = 0;
         String ALPHA_NUMERIC_STRING = "0123456789";
         StringBuilder builder = new StringBuilder();
@@ -84,10 +93,6 @@ public class House {
             builder.append(ALPHA_NUMERIC_STRING.charAt(character));
             count++;
         }
-        token = builder.toString();
-        return token;
-    }
-    public void setToken(String token){
-        this.token = token;
+        return builder.toString();
     }
 }
