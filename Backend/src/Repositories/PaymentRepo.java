@@ -22,4 +22,7 @@ public class PaymentRepo {
     public boolean save(Company company){
         return database.insert("INSERT INTO Company(name,email,paymentCode) VALUES ('"+company.getName()+"','"+company.getEmail()+"','"+ company.getPaymentCode()+"')");
     }
+    public ResultSet getBalance(long id){
+        return database.select("SELECT  * FROM client_wallets where userId="+id);
+    }
 }

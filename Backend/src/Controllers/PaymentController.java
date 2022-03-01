@@ -2,6 +2,7 @@ package Controllers;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 public class PaymentController {
 
@@ -18,10 +19,14 @@ public class PaymentController {
             case "momopayment":
                 this.momoPayment();
                 break;
+            case "checkSecurityDebt":
+                checkSecurityDebt();
 
         }
     }
+    public void checkSecurityDebt(){
 
+    }
     public void sendResponse( String response ) {
         try {
             toClient.writeUTF(response);
