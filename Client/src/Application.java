@@ -2,7 +2,9 @@ import Components.Admin;
 import Components.Company;
 import Components.House.House;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.Socket;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -20,7 +22,7 @@ public class Application {
             int choice = 0;
 
             DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
-            DataInputStream  fromServer=new DataInputStream(socket.getInputStream());
+            DataInputStream fromServer=new DataInputStream(socket.getInputStream());
 
 
             System.out.println("--------------------------------------------------WELCOME TO----------------------------------------------          " + RESET);
@@ -58,7 +60,7 @@ public class Application {
                     System.out.println("You are a confirmer!");
                     break;
                 case 5:
-                    House house = new House(toServer);
+                    House house = new House(toServer, fromServer);
                     house.handleHouse(fromServer, toServer);
                     break;
                 
