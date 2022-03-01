@@ -1,4 +1,5 @@
 import Components.Admin;
+import Components.House.House;
 
 import java.io.*;
 import java.net.Socket;
@@ -42,7 +43,7 @@ public class Application {
 
             switch (choice){
                 case 1:
-                    Admin admin = new Admin(toServer);
+                    Admin admin = new Admin(toServer,fromServer);
                     admin.handleAdmin();
                     break;
                 case 2:
@@ -55,15 +56,15 @@ public class Application {
                     System.out.println("You are a confirmer!");
                     break;
                 case 5:
-                    System.out.println("You are a house!");
+                    House house = new House(toServer);
+                    house.handleHouse();
                     break;
+                
                 default:
                     System.out.println("Please be serious!");
                     break;
             }
 
-            String response=fromServer.readUTF();
-            System.out.println(response);
 
         }catch(IOException exception){
             exception.printStackTrace();

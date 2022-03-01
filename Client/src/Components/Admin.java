@@ -1,5 +1,6 @@
 package Components;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.util.Scanner;
 
@@ -7,11 +8,13 @@ public class Admin {
     private String username;
     private String password;
     DataOutputStream toServer;
+    DataInputStream fromServer;
     Scanner keyboard = new Scanner(System.in);
 
     public Admin(){};
-    public Admin(DataOutputStream toServer){
+    public Admin(DataOutputStream toServer, DataInputStream fromServer){
         this.toServer = toServer;
+        this.fromServer=fromServer;
     };
 
     public void handleAdmin(){
