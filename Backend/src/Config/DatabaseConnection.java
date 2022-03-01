@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
-    String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1";
+    String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1&zeroDateTimeBehavior=convertToNull";
     String username="root";
     String password="ae789789";
     Connection connection=null;
@@ -22,6 +22,7 @@ public class DatabaseConnection {
         }catch(Exception exception){
             System.out.println("Error: "+exception);
             System.out.println("CONNECTION TO DATABASE FAILED");
+            exception.printStackTrace();
         }
     }
 
