@@ -1,5 +1,6 @@
 package Controllers;
 
+import Models.Wallet;
 import Repositories.WalletsRepoHandler;
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -74,5 +75,10 @@ public class WalletContoller {
         this.toClient = toClient;
         int companyId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByCompanyId(companyId);
+    }
+
+    public void handleWalletResult(ResultSet walletResult){
+        Wallet wallet = new Wallet();
+        
     }
 }
