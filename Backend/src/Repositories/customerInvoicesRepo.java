@@ -41,14 +41,14 @@ public class customerInvoicesRepo {
         this.toClient = client;
         System.out.println("Downloading invoice "+invoice_id);
         DatabaseConnection con = new DatabaseConnection();
-        File downloads = new File("./downloads");
+        File downloads = new File("C:/Users/rwanda coding/Downloads/");
         if(!downloads.exists()) {
             downloads.mkdir();
         }
-        File myFile = new File("./downloads/"+invoice_id+".txt");
+        File myFile = new File("C:/Users/rwanda coding/Downloads/"+invoice_id+".txt");
 
         if(myFile.createNewFile() || myFile.exists()) {
-            ResultSet set = con.getById("SELECT * from customerinvoices where invoice_id = 1;");
+            ResultSet set = con.getById("SELECT * from customerinvoices where invoice_id = "+invoice_id+";");
                 while(set.next()){
                     String invoice = "| ---------------- Invoice ---------------- |\n\n";
                     invoice += "|   No      :           " + set.getString("invoice_id") + "\n";
@@ -57,7 +57,7 @@ public class customerInvoicesRepo {
                     invoice += "|   Time    :           " + set.getTime("generation_time") + "\n\n";
                     invoice += "| ----------- Done on " + set.getDate("invoice_date") + " ---------- |";
 
-                    FileWriter myWriter = new FileWriter("./downloads/" + invoice_id + ".txt");
+                    FileWriter myWriter = new FileWriter("C:/Users/rwanda coding/Downloads/"+invoice_id+".txt");
                     myWriter.write(invoice);
                     myWriter.close();
                     toClient.writeUTF("Finished downloading invoice " + invoice_id + " !!");

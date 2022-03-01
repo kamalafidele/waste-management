@@ -54,7 +54,9 @@ public class customerInvoice  {
            }
            case 2 -> {
                System.out.println("Company > Invoices > Download invoice.");
-               toServer.writeUTF("company/downloadInvoice/1");
+               System.out.print("Enter the invoice id: ");
+               int invoice_id = scanner.nextInt();
+               toServer.writeUTF("company/downloadInvoice/"+invoice_id);
                response = fromServer.readUTF();
                System.out.println(response);
                break;
