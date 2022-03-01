@@ -42,6 +42,10 @@ public class ThreadHandler extends Thread{
                     houseController.filterRequest(request,toClient);
                     break;
                 case "wallet":
+                    /*
+                    * wallets endpoint
+                    * /wallet/(admin|company|district|user)/id
+                    * */
                     walletContoller.whichWallet(request, toClient);
                     break;
                 default:
