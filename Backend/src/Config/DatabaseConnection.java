@@ -20,6 +20,7 @@ public class DatabaseConnection {
               statement=connection.createStatement();
 
         }catch(Exception exception){
+            System.out.println("Error: "+exception);
             System.out.println("CONNECTION TO DATABASE FAILED");
             exception.printStackTrace();
         }

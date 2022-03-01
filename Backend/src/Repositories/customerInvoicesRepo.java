@@ -19,7 +19,7 @@ public class customerInvoicesRepo {
 
     public void save(CustomerInvoices newInvoice){
         database.insert("INSERT INTO CustomerInvoices(userId,invoice_date,generation_time,service_paid,amount) " +
-                "VALUES ("+newInvoice.getUser_id()+","+ newInvoice.getInvoice_date()+","+newInvoice.getGeneration_time()+","+
+                "VALUES ("+newInvoice.getUserId()+","+ newInvoice.getInvoice_date()+","+newInvoice.getGeneration_time()+","+
                 newInvoice.getService_paid()+","+newInvoice.getAmount()+")");
     }
 }
