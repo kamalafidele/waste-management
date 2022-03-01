@@ -105,7 +105,7 @@ public class WalletContoller {
         try{
             while(walletResult.next()){
                 wallet.setWallet_id(walletResult.getInt(1));
-                wallet.setAdmins_id(walletResult.getInt(2));
+                wallet.setCompany_id(walletResult.getInt(2));
                 wallet.setBalance(walletResult.getInt(3));
             }
             returnWallet(mapper.writeValueAsString(wallet));
