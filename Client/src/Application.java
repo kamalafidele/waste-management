@@ -51,6 +51,7 @@ public class Application {
                     System.out.println("You are a district!");
                     break;
                 case 3:
+                    new Company(toServer,fromServer).displayCompanies();
                     System.out.println("You are a company!");
                     break;
                 case 4:
