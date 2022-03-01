@@ -13,8 +13,10 @@ public class WalletContoller {
     private DataOutputStream toClient;
     private static WalletsRepoHandler walletRepo;
     private ObjectMapper mapper;
+    private Wallet wallet;
 
     public void whichWallet( String request, DataOutputStream toClient ) {
+        wallet = new Wallet();
         try {
             this.toClient = toClient;
             String ownerId = request.split("/")[2];
@@ -58,7 +60,6 @@ public class WalletContoller {
         this.toClient = toClient;
         int userId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByUserId(userId);
-        Wallet wallet = new Wallet();
         try{
             while(walletResult.next()){
                 wallet.setWallet_id(walletResult.getInt(1));
@@ -73,6 +74,14 @@ public class WalletContoller {
         this.toClient = toClient;
         int adminId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByAdminId(adminId);
+        try{
+            while(walletResult.next()){
+                wallet.setWallet_id(walletResult.getInt(1));
+                wallet.setAdmins_id(walletResult.getInt(2));
+                wallet.setBalance(walletResult.getInt(3));
+            }
+            returnWallet(mapper.writeValueAsString(wallet));
+        } catch (IOException | SQLException exception){}
     }
 
     public void getDistrictWallet(String request){
