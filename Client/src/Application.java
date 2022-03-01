@@ -1,5 +1,4 @@
 import Components.Admin;
-import Components.Company;
 import Components.House.House;
 
 import java.io.*;

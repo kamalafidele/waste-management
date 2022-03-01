@@ -9,8 +9,9 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
+
 // THIS COMPANY COMPONENT
 public class Company {
     DataOutputStream toServer;
@@ -27,9 +28,6 @@ public class Company {
 
     public void displayCompanies(){
         String request="company/getAll/none";
-//        Scanner keyboard = new Scanner(System.in);
-//        System.out.print("Your request: ");
-//        String request = keyboard.nextLine();
 
         try{
             toServer.writeUTF(request);
@@ -68,13 +66,12 @@ public class Company {
         System.out.print( "Enter company email: " );
         companyHandler.setEmail( keyboard.nextLine() );
         Random random=new Random();
-      long paymentCode=random.nextLong();
+        long paymentCode=random.nextLong(500_000_000);
         companyHandler.setPaymentCode( paymentCode );
 
         try{
             String companyAsJson=mapper.writeValueAsString( companyHandler );
-//            sendRequest( "company/addCompany/" + companyAsJson );
-            sendRequest("citizen/create/none");
+            sendRequest( "company/addCompany/" + companyAsJson );
             String response= fromServer.readUTF();
             System.out.println( response );
         }catch (IOException exception){}

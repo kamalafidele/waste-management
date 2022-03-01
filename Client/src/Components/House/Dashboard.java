@@ -1,9 +1,13 @@
 package Components.House;
 
+import Components.Payment;
+
+
 import java.util.Scanner;
 
 public class Dashboard {
     Scanner keyboard = new Scanner(System.in);
+
 
     public void handleDashboard(){
             int choice = 0;
@@ -19,10 +23,10 @@ public class Dashboard {
 
             switch (choice){
                 case 1:
-                    System.out.println("wastes payment");
+                    System.out.println("You are going to pay wastes ");
                     break;
                 case 2:
-                    System.out.println("security payment");
+                    System.out.println("You are going to pay security ");
                     break;
                 case 3:
                     System.out.println("invoices");
@@ -30,7 +34,6 @@ public class Dashboard {
                 case 4:
                     System.out.println("Notifications&messages");
                     break;
-
                 default:
                     System.out.println("Please be serious!");
                     break;
