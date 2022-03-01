@@ -39,6 +39,7 @@ public class DatabaseConnection {
             statement.execute(insertStatement);
             return true;
         }catch(SQLException exception){
+            exception.printStackTrace();
             return false;
         }
     }
