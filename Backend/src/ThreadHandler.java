@@ -11,17 +11,11 @@ public class ThreadHandler extends Thread{
     Socket socket;
 
     //REGISTERING ALL CONTROLLERS
-<<<<<<< HEAD
     private final CompanyController companyController;
     private final NotificationController notificationController;
     private final HouseController houseController;
     private final WalletContoller walletContoller;
-=======
-    private CompanyController companyController;
-    private HouseController houseController;
-    private PaymentController paymentController;
-    private WalletContoller walletContoller;
->>>>>>> 4c105e2086982015697e6c219f1b6922169f0032
+    private final PaymentController paymentController;
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
