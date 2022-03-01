@@ -4,12 +4,13 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 
 public class PaymentController {
+    public void PaymentContoller(){};
 
     private DataOutputStream toClient;
 
     public void momoPayment(){
         // Sending response to the client
-        sendResponse("Server listened to your request");
+        sendResponse("Your momo payment has completed successfully");
     };
 
     public void filterRequest( String request, DataOutputStream toClient ) {
@@ -18,7 +19,6 @@ public class PaymentController {
             case "momopayment":
                 this.momoPayment();
                 break;
-
         }
     }
 

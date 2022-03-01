@@ -2,10 +2,11 @@ package Components.House;
 
 import Components.House.Dashboard;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.util.Scanner;
 
-public class House {
+public class House extends Dashboard{
 //    private String fullnames;
 //    private String nid;
 //    private String houseno;
@@ -23,7 +24,7 @@ public class House {
         this.toServer = toServer;
     };
 
-    public void handleHouse(){
+    public void handleHouse(DataInputStream fromServer, DataOutputStream toServer){
         System.out.print("\n");
         System.out.println("--------Login as an House!----------");
         System.out.print("Your token: ");
@@ -36,7 +37,7 @@ public class House {
         }else{
             //dashboard
             Dashboard dashboard = new Dashboard();
-            dashboard.handleDashboard();
+            dashboard.handleDashboard(fromServer, toServer);
         }
     }
 

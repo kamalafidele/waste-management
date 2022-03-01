@@ -57,7 +57,7 @@ public class Application {
                     break;
                 case 5:
                     House house = new House(toServer);
-                    house.handleHouse();
+                    house.handleHouse(fromServer, toServer);
                     break;
                 
                 default:

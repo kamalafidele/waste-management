@@ -10,7 +10,7 @@ public class Payment {
     DataOutputStream toServer;
     DataInputStream fromServer;
 
-    public Payment(DataOutputStream toServer, DataInputStream fromServer){
+    public Payment(DataInputStream fromServer, DataOutputStream toServer){
         this.toServer = toServer;
         this.fromServer = fromServer;
     }
