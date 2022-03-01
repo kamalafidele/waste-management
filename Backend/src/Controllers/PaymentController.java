@@ -1,5 +1,7 @@
 package Controllers;
 
+import Repositories.PaymentRepo;
+
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.List;
 public class PaymentController {
 
     private DataOutputStream toClient;
-
+    PaymentRepo paymentRepo=new PaymentRepo();
     public void momoPayment(){
         // Sending response to the client
         sendResponse("Server listened to your request");
@@ -24,8 +26,8 @@ public class PaymentController {
 
         }
     }
-    public void checkSecurityDebt(){
-
+    public void checkSecurityDebt(long userId){
+        paymentRepo.getBalance(userId);
     }
     public void sendResponse( String response ) {
         try {
