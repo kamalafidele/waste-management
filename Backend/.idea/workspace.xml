@@ -4,22 +4,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="">
+    <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="customerInvoice control">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector__2_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/ConfirmerProcessController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/CustomerInvoice.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/HouseController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Backend/Models/ConfirmerProcess.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Backend/Models/House.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/ConfirmerProcessRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/HouseRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Backend/utils/TokenGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/ConfirmerProcessController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/CustomerInvoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/HouseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/ConfirmerProcess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repositories/ConfirmerProcessRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repositories/HouseRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repositories/PaymentRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/TokenGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/src/Components/House/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/src/Components/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/jackson_all_1_9_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/libs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/waste-management.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/AnalyticsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/AnalyticsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/CompanyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/CompanyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/Admin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/Company.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/CustomerInvoices.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/CustomerInvoices.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/Wallet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/AnalyticsRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/AnalyticsRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/CompanyRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/CompanyRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/WalletRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/WalletsRepoHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/WalletsRepoHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/customerInvoicesRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/customerInvoicesRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repositories/CompanyRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/CompanyRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThreadHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company$1.class" afterDir="false" />
@@ -29,6 +67,11 @@
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/CompanyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/CompanyHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/CustomerInvoicesHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/CustomerInvoicesHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/WalletHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/WalletHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/CompanyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/CompanyHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +88,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
@@ -56,12 +107,20 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+    <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25VSo5Z0A2owCmp78o6zq8e2noB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -77,6 +136,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="utils" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -104,7 +168,16 @@
       <workItem from="1645611371030" duration="2694000" />
       <workItem from="1645726841446" duration="3897000" />
       <workItem from="1645766722446" duration="6605000" />
+      <workItem from="1646066282995" duration="4976000" />
     </task>
+    <task id="LOCAL-00001" summary="customerInvoice control">
+      <created>1646022290178</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646022290178</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,7 +188,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="gisele" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -124,17 +209,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Application.java</url>
-          <line>3</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="customerInvoice control" />
+    <option name="LAST_COMMIT_MESSAGE" value="customerInvoice control" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

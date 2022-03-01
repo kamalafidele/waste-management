@@ -7,6 +7,8 @@ public class DatabaseConnection {
     String url="jdbc:mysql://localhost:3306/wasteManagementDatabase?characterEncoding=latin1";
     String username="root";
     String password="ae789789";
+
+
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
