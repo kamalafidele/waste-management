@@ -1,11 +1,7 @@
 package Components.House;
 
-<<<<<<< HEAD
 import Components.House.Dashboard;
-
 import java.io.DataInputStream;
-=======
->>>>>>> 38904140fc567db62c8cfd7a01689b2ea96c681a
 import java.io.DataOutputStream;
 import java.util.Scanner;
 
