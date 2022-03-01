@@ -27,7 +27,7 @@ public class Notification {
     public void displayAllNotifications(DataOutputStream toServer, DataInputStream fromServer){
         this.toServer=toServer;
         this.fromServer=fromServer;
-        String request="notification/getAll/token";
+        String request="notification/getAll/1111";
 
         try{
             toServer.writeUTF(request);

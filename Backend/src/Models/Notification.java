@@ -1,11 +1,11 @@
 package Models;
-/*
-*
-* @author: Fiat Bruno
-*
-*/
 
 import java.util.Date;
+ /*
+ * @author: Fiat Bruno
+ *
+ */
+
 
 public class Notification {
     private Long notificationId;

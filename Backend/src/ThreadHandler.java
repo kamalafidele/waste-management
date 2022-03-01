@@ -10,10 +10,10 @@ public class ThreadHandler extends Thread{
     Socket socket;
 
     //REGISTERING ALL CONTROLLERS
-    private CompanyController companyController;
-    private NotificationController notificationController;
-    private HouseController houseController;
-    private WalletContoller walletContoller;
+    private final CompanyController companyController;
+    private final NotificationController notificationController;
+    private final HouseController houseController;
+    private final WalletContoller walletContoller;
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
@@ -57,9 +57,10 @@ public class ThreadHandler extends Thread{
                     toClient.writeUTF("Undefined request");
                   break;
             }
-
             socket.close();
-        }catch(IOException exception){}
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
 }
