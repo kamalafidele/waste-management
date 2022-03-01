@@ -13,23 +13,29 @@ public class WalletContoller {
     private ObjectMapper mapper;
 
     public void whichWallet( String request, DataOutputStream toClient ) {
-        this.toClient = toClient;
-        switch (request.split("/")[1]) {
-            case "admin":
-                getAdminWallet(request, toClient);
-                break;
-            case "company":
-                getCompanyWallet(request, toClient);
-                break;
-            case "district":
-                getDistrictWallet(request, toClient);
-                break;
-            case "client":
-                getUserWallet(request, toClient);
-                break;
-            default:
-                returnWallet("Please specify the wallet owner type!");
-                break;
+        try {
+            this.toClient = toClient;
+            String ownerId = request.split("/")[2];
+            switch (request.split("/")[1]) {
+                case "admin":
+                    getAdminWallet(ownerId, toClient);
+                    break;
+                case "company":
+                    getCompanyWallet(ownerId, toClient);
+                    break;
+                case "district":
+                    getDistrictWallet(ownerId, toClient);
+                    break;
+                case "client":
+                    getUserWallet(ownerId, toClient);
+                    break;
+                default:
+                    returnWallet("Please specify the wallet owner type!");
+                    break;
+            }
+        }
+        catch (Exception e){
+            returnWallet("Please specify the wallet owner id!");
         }
     }
 
