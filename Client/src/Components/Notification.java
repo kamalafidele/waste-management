@@ -41,8 +41,8 @@ public class Notification {
             System.out.println("|------------|----------------------------------|-----------------------------------|");
             while (notificationIterator.hasNext()){
                 NotificationHandler handler=notificationIterator.next();
-                System.out.println("| "+handler.getNotificationType()+"          |"+(handler.getMessage().length() <= 18 ? handler.getMessage() : handler.getMessage().substring(0,18))
-                        +"                |"+handler.getViewStatus()+"   ");
+                System.out.println("|    "+handler.getNotificationId()+"       |    "+ handler.getNotificationType()
+                        +"              |    "+handler.getMessage()+"   ");
                 System.out.println("|------------|----------------------------------|-----------------------------------|");
             }
 
