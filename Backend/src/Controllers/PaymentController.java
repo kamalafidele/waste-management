@@ -26,8 +26,8 @@ public class PaymentController {
 
         }
     }
-    public void checkSecurityDebt(long userId){
-        paymentRepo.getBalance(userId);
+    public void checkSecurityDebt(){
+//        paymentRepo.getBalance(userId);
     }
     public void sendResponse( String response ) {
         try {
