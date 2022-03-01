@@ -15,9 +15,11 @@ public class CompanyController {
     private DataOutputStream toClient;
     private CompanyRepo companyRepo;
     private ObjectMapper mapper;
+    AnalyticsController analyticsController;
 
     public CompanyController(){
         companyRepo=new CompanyRepo();
+        analyticsController=new AnalyticsController();
         mapper=new ObjectMapper();
     }
 
@@ -31,11 +33,10 @@ public class CompanyController {
             case "getSingle":
                 getCompany(Long.valueOf(request.split("/")[2]));
               break;
-            case "insert":
+            case "addCompany":
                 addCompany(request.split("/")[2]);
               break;
             case "analytics":
-                AnalyticsController analyticsController = new AnalyticsController();
                 analyticsController.filterRequest(request, toClient);
                 break;
 
@@ -48,10 +49,13 @@ public class CompanyController {
     public void addCompany(String data) {
         try{
             Company company=mapper.readValue(data,Company.class);
-            companyRepo.save(company);
-
-            sendResponse("Company added successfully");
-        }catch (IOException exception){}
+            if(companyRepo.save(company))
+              sendResponse("Company added successfully");
+            else
+              sendResponse("Adding company failed! Try again");
+        }catch (IOException exception){
+            sendResponse("Adding company failed! Try again");
+        }
     }
 
     public void getCompany(long companyId){
@@ -78,7 +82,7 @@ public class CompanyController {
             // THIS LOOP IS FOR INSERTING FETCHED COMPANIES TO THE LIST
             while(resultSet.next()){
                 Company company=new Company(resultSet.getLong(1),resultSet.getString(2),resultSet.getString(3)
-                ,resultSet.getLong(4),resultSet.getLong(5));
+                ,resultSet.getLong(4));
                 companies.add(company);
             }
 
