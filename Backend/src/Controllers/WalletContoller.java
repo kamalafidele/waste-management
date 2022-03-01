@@ -7,6 +7,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class WalletContoller {
     private DataOutputStream toClient;
@@ -57,6 +58,15 @@ public class WalletContoller {
         this.toClient = toClient;
         int userId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByUserId(userId);
+        Wallet wallet = new Wallet();
+        try{
+            while(walletResult.next()){
+                wallet.setWallet_id(walletResult.getInt(1));
+                wallet.setUser_id(walletResult.getInt(2));
+                wallet.setBalance(walletResult.getInt(3));
+            }
+            returnWallet(mapper.writeValueAsString(wallet));
+        } catch (IOException | SQLException exception){}
     }
 
     public void getAdminWallet(String request){
@@ -75,10 +85,5 @@ public class WalletContoller {
         this.toClient = toClient;
         int companyId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByCompanyId(companyId);
-    }
-
-    public void handleWalletResult(ResultSet walletResult){
-        Wallet wallet = new Wallet();
-        
     }
 }
