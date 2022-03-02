@@ -33,11 +33,58 @@ public class Admin {
         boolean loggedIn = loggedIn();
 
         if(!loggedIn){
-         login();
+            String loginRes = login();
+
+            if(Objects.equals(loginRes, "false")){
+                System.out.println("--------Invalid credentials!----------");
+                System.out.println("\n");
+            }else{
+                try {
+                    //record that admin is loggedIn
+                    String data = "true";
+                    fileOut = new FileOutputStream(file);
+                    fileOut.write(data.getBytes(), 0, data.length());
+                }catch(Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        try {
+            //admin dashboard
+            System.out.println("\n");
+            System.out.println("--------Welcome abroad!----------");
+
+            //admin dashboard
+            System.out.println("1. Check districts");
+            System.out.println("2. Your wallet");
+            System.out.println("3. Your analytics");
+            System.out.println("4. logout");
+
+            //choose
+            int choice;
+            System.out.print("Choose: ");
+            choice = keyboard.nextInt();
+            switch (choice){
+                case 1:
+                    System.out.println("see districts");
+                    break;
+                case 2:
+                    System.out.println("see wallet");
+                    break;
+                case 3:
+                    System.out.println("see analytics");
+                    break;
+                case 4:
+                    System.out.println("logout");
+                    break;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
         }
     }
 
-    public void login()  {
+    public String login()  {
         try {
             //create login info object
             loginInfos = new LoginInfo();
@@ -51,13 +98,16 @@ public class Admin {
             loginInfos.setPassword(keyboard.next());
 
             //call login function
+            toServer.flush();
             this.sendRequest("admin/login/" + mapper.writeValueAsString(loginInfos));
-            String response = fromServer.readUTF();
-            System.out.println(response);
 
-        }catch (IOException e){
+            return fromServer.readUTF();
+
+        }catch (Exception e){
             e.printStackTrace();
         }
+
+        return "false";
 
     }
 
