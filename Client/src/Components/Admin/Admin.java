@@ -2,13 +2,7 @@ package Components.Admin;
 
 import DataHandlers.Admin.LoginInfo;
 import org.codehaus.jackson.map.ObjectMapper;
-
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.*;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -18,14 +12,20 @@ public class Admin {
     DataInputStream fromServer;
     ObjectMapper mapper;
     Scanner keyboard;
+    FileInputStream fileIn;
+    FileOutputStream fileOut;
+    InputStreamReader streamReader;
+    BufferedReader bufferedReader;
+    File file;
 
     public Admin(){}
 
-    public Admin(DataOutputStream toServer, DataInputStream fromServer){
+    public Admin(DataOutputStream toServer, DataInputStream fromServer) {
         this.toServer = toServer;
         this.fromServer=fromServer;
         mapper = new ObjectMapper();
         keyboard = new Scanner(System.in);
+        file = new File("loggedIn.txt");
     }
 
     public void handleAdmin(){
@@ -64,12 +64,22 @@ public class Admin {
     public boolean loggedIn(){
         //checking if admin is loggedIn
         try {
-            Path filename =  Paths.get("/home/saad/Desktop/SAAD/SCHOOL/waste-management/Client/src/Components/Admin/loggedIn.txt");
-            String fileContent = Files.readString(filename);
 
-            if(Objects.equals(fileContent, "true")){
-                return true;
+            if(!file.exists()){
+                boolean createFile = file.createNewFile();
+                String data = "false";
+                fileOut = new FileOutputStream(file);
+                fileOut.write(data.getBytes(), 0, data.length());
+                return false;
+            }else{
+                fileIn = new FileInputStream(file);
+                streamReader = new InputStreamReader(fileIn);
+                bufferedReader = new BufferedReader(streamReader);
+                String content = bufferedReader.readLine();
+
+                return !Objects.equals(content, "false");
             }
+
         }catch(IOException e){
             e.printStackTrace();
         }
