@@ -52,6 +52,9 @@ public class Admin {
 
             //call login function
             this.sendRequest("admin/login/" + mapper.writeValueAsString(loginInfos));
+            String response = fromServer.readUTF();
+            System.out.println(response);
+
         }catch (IOException e){
             e.printStackTrace();
         }
