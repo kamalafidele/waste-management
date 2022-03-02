@@ -17,13 +17,32 @@ public class PaymentController {
     };
 
     private DataOutputStream toClient;
-    public void momoPayment(String phoneNumber){
+
+    public void momoPayment(String phoneNumber, int amount, String token){
+        //Checking if the amount > 1000
+        System.out.println("The amount "+amount);
+        System.out.println("The boolean result "+(amount > 1000));
+
+        if (amount > 1000){
+            sendResponse("The maximum amount is 1000");
+            return;
+        }
+
+
         // Sending response to the client
         ResultSet resultSet = paymentRepo.findMomoAccountByNumber(phoneNumber);
         String phoneNber = "0";
+        int momoBalance = 0;
         try{
             while(resultSet.next()){
                 phoneNber = resultSet.getString("phoneNber");
+                momoBalance = resultSet.getInt("balance");
+            }
+
+            // Checking if the amount provided by the user is not greater than the amount of money on momo acc.
+            if (amount > momoBalance){
+                sendResponse("You don't have sufficient money on your account !");
+                return;
             }
         }catch (SQLException exception){
             exception.printStackTrace();
@@ -37,8 +56,8 @@ public class PaymentController {
             sendResponse("The number you entered doesn't have momo account.Please make sure you entered the right number ");
             return;
         }
-
-
+        paymentRepo.transferMoney(phoneNber, amount, token);
+        sendResponse("Your payment has been recorded!");
 
 
     };
@@ -48,7 +67,9 @@ public class PaymentController {
         switch (request.split("/")[1]) {
             case "momopayment":
                 String phoneNumber = request.split("/")[2];
-                this.momoPayment(phoneNumber);
+                int amount =Integer.parseInt(request.split("/")[3]);
+                String token = request.split("/")[4];
+                this.momoPayment(phoneNumber, amount, token);
                 break;
             case "checkWasteDebt":
                 long userId=Long.valueOf(request.split("/")[2]);

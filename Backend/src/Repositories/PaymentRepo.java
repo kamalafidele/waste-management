@@ -4,6 +4,7 @@ import Config.DatabaseConnection;
 import Models.Company;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class PaymentRepo {
     DatabaseConnection database;
@@ -16,15 +17,24 @@ public class PaymentRepo {
     }
 
 
-    public void transferMoney(String phoneNumber, int amount, int userId){
+    public void transferMoney(String phoneNumber, int amount, String token){
 
         // Reduce money from momoaccount table
 
         database.update("update momoaccount set balance = balance - " + amount + " where phoneNber = "+phoneNumber) ;
 
         // Increase  money to wallets table
+        ResultSet resultSet = database.select("SELECT * FROM clients WHERE token=" + token);
+        try{
+            int UserId = 0;
+            while(resultSet.next()){
+                UserId = resultSet.getInt("id");
+            }
+            database.update("update customer_wallets set balance = balance + " + amount + " where user_Id = "+ UserId);
+        }catch (SQLException exception){
+            exception.printStackTrace();
+        }
 
-        database.update("update customer_wallets set balance = balance + " + amount + " where user_Id = "+ userId) ;
 
 
     }

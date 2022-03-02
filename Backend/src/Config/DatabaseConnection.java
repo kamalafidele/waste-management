@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
-    String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1";
+    String url="jdbc:mysql://localhost:3306/year2?characterEncoding=latin1";
     String username="root";
     String password="kayitare@123";
     Connection connection=null;
@@ -22,6 +22,7 @@ public class DatabaseConnection {
         }catch(Exception exception){
             System.out.println("Error: "+exception);
             System.out.println("CONNECTION TO DATABASE FAILED");
+            exception.printStackTrace();
         }
     }
 
@@ -59,6 +60,15 @@ public class DatabaseConnection {
             return true;
         }catch (SQLException exception){
             return false;
+        }
+    }
+
+    public ResultSet getById( String updateStatement ) {
+        try{
+            data = statement.executeQuery(updateStatement);
+            return data;
+        }catch (SQLException exception){
+            return data;
         }
     }
 }
