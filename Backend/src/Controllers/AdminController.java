@@ -31,8 +31,10 @@ public class AdminController {
         try {
             Admin admin = mapper.readValue(data, Admin.class);
 
-            if(adminRepo.login(admin.getUsername(), admin.getPassword())){
+            if(adminRepo.login(admin)){
                 sendResponse("admin loggedIn");
+            }else{
+                sendResponse("invalid inputs");
             }
 
         } catch (IOException e) {

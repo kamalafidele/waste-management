@@ -1,6 +1,7 @@
 package Repositories;
 
 import Config.DatabaseConnection;
+import Models.Admin;
 
 import java.sql.ResultSet;
 
@@ -11,10 +12,14 @@ public class AdminRepo {
         this.database = new DatabaseConnection();
     }
 
-    public boolean login(String username, String password){
+    public boolean login(Admin admin){
         //login the admin
-        ResultSet result = database.select("SELECT * FROM admin WHERE username = " + username + " AND password = " + password);
-        System.out.println(result);
+        ResultSet result = database.select("SELECT * FROM admin WHERE username = '"+admin.getUsername()+"' AND password = '"+admin.getPassword()+"' ");
+
+        if(result != null){
+            return true;
+        }
+
         return false;
     }
 
