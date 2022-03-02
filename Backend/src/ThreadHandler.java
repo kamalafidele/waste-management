@@ -74,6 +74,8 @@ public class ThreadHandler extends Thread{
             socket.close();
         }catch(IOException e){
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
