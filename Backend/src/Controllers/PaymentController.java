@@ -61,6 +61,49 @@ public class PaymentController {
 
 
     };
+    public void bankPayment(int accNumber, int amount, String token){
+        //Checking if the amount > 1000
+        System.out.println("The amount "+amount);
+        System.out.println("The boolean result "+(amount > 1000));
+
+        if (amount > 1000){
+            sendResponse("The maximum amount is 1000");
+            return;
+        }
+
+
+        // Sending response to the client
+        ResultSet resultSet = paymentRepo.findBankAccount(accNumber);
+        int accNber = 0;
+        int bankBalance = 0;
+        try{
+            while(resultSet.next()){
+                accNber = resultSet.getInt("accNber");
+                bankBalance = resultSet.getInt("balance");
+            }
+
+            // Checking if the amount provided by the user is not greater than the amount of money on momo acc.
+            if (amount > bankBalance){
+                sendResponse("You don't have sufficient money on your account !");
+                return;
+            }
+        }catch (SQLException exception){
+            exception.printStackTrace();
+        }
+
+        System.out.println(accNber);
+        System.out.println(accNumber);
+
+
+        if(accNber!= accNumber){
+            sendResponse("The entered bank account doesn't exist!! ");
+            return;
+        }
+        paymentRepo.transferFunds(accNber, amount, token);
+        sendResponse("Your payment has been recorded!");
+
+
+    };
 
     public void filterRequest( String request, DataOutputStream toClient ) {
         this.toClient=toClient;
@@ -70,6 +113,12 @@ public class PaymentController {
                 int amount =Integer.parseInt(request.split("/")[3]);
                 String token = request.split("/")[4];
                 this.momoPayment(phoneNumber, amount, token);
+                break;
+            case "bankpayment":
+                int accNumber = Integer.parseInt(request.split("/")[2]);
+                int bamount =Integer.parseInt(request.split("/")[3]);
+                String btoken = request.split("/")[4];
+                this.bankPayment(accNumber, bamount, btoken);
                 break;
             case "checkWasteDebt":
                 long userId=Long.valueOf(request.split("/")[2]);
