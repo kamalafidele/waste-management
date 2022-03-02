@@ -61,10 +61,10 @@ public class Application {
                     System.out.println("You are a confirmer!");
                     break;
                 case 5:
+                    System.out.println("You are a citizen!");
                     House house = new House(toServer, fromServer);
                     house.handleHouse(fromServer, toServer);
                     break;
-                
                 default:
                     System.out.println("Please be serious!");
                     break;
@@ -72,6 +72,7 @@ public class Application {
 
 
         }catch(IOException exception){
+            System.out.println("here");
             exception.printStackTrace();
         }catch (InputMismatchException exception){
             System.out.println("Please be serious!");
