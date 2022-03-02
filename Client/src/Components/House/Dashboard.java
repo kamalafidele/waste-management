@@ -1,11 +1,26 @@
 package Components.House;
 
+import Components.Company;
+import Components.Notification;
+import Components.Payment;
+
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.util.Scanner;
 
 public class Dashboard {
     Scanner keyboard = new Scanner(System.in);
+    DataOutputStream toServer;
+    DataInputStream fromServer;
 
-    public void handleDashboard(){
+    public Dashboard(DataOutputStream toServer, DataInputStream fromServer){
+        this.fromServer = fromServer;
+        this.toServer = toServer;
+    }
+
+    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer){
+            Payment payment = new Payment(fromServer, toServer);
             int choice = 0;
             System.out.println("\n");
             System.out.println("--------Dashboard--------");
@@ -19,21 +34,23 @@ public class Dashboard {
 
             switch (choice){
                 case 1:
-                    System.out.println("wastes payment");
+                    payment.handlePaymentMethods();
                     break;
                 case 2:
-                    System.out.println("security payment");
+                    payment.handlePaymentMethods();
                     break;
                 case 3:
                     System.out.println("invoices");
                     break;
                 case 4:
-                    System.out.println("Notifications&messages");
+                    System.out.println("Notifications & Messages");
+                    new Notification().displayAllNotifications(toServer, fromServer);
                     break;
-
                 default:
                     System.out.println("Please be serious!");
                     break;
             }
     }
+
 }
+
