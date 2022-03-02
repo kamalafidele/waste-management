@@ -24,7 +24,7 @@ public class Payment {
                 checkSecurityDebt(toServer,fromServer);
                 break;
             case 2:
-                checkWasteDebt(toServer,fromServer);
+                checkWasteDebt();
                 break;
             default:
                 System.out.println("please be serious");
@@ -35,24 +35,25 @@ public class Payment {
         this.fromServer=fromServer;
         String request="payment/checkSecurityDebt";
         try {
-            toServer.writeUTF(request);
-            String response=fromServer.readUTF();
+            this.toServer.writeUTF(request);
+            String response=this.fromServer.readUTF();
             System.out.println(response);
         }
         catch (IOException ie){
             System.out.println("An error occured");
+            ie.printStackTrace();
         }
     }
-    public void checkWasteDebt(DataOutputStream toServer,DataInputStream fromServer){
-        this.toServer=toServer;
-        this.fromServer=fromServer;
-        String request="payment/checkWasteDebt";
+    public void checkWasteDebt(){
+        long userId=1;
+        String request="payment/checkWasteDebt/"+userId;
         try {
             toServer.writeUTF(request);
             String response=fromServer.readUTF();
             System.out.println(response);
         }
         catch (IOException ie){
+            ie.printStackTrace();
             System.out.println("An error occured");
         }
     }

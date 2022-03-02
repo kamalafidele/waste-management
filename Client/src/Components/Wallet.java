@@ -9,19 +9,27 @@ import java.io.IOException;
 public class Wallet {
     DataOutputStream outToServer;
     DataInputStream fromServer;
+    String userRole="company";
+    Integer userId=1;
 
-   
-    public void showWallet(DataOutputStream outToServer, DataInputStream fromServer){
-        this.outToServer=outToServer;
+    public Wallet(DataOutputStream toServer, DataInputStream fromServer) {
+        this.outToServer=toServer;
         this.fromServer=fromServer;
-        String request="wallet/getBalance";
+    }
+
+
+    public void showWallet(){
+        String request="wallet/"+userRole+"/"+userId;
         try {
             outToServer.writeUTF(request);
             String response=fromServer.readUTF();
-            System.out.printf("response: " + response);
+            System.out.printf("Your wallet balance is: " + response +" Rwf");
         }
         catch (IOException e){
             e.printStackTrace();
         }
+    }
+    public void checkTheUserRole() {
+        //This will be a method to check the role of the user that's logged in
     }
 }

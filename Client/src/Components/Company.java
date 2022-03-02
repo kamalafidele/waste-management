@@ -27,9 +27,7 @@ public class Company {
     }
 
     public void displayCompanies(){
-//        String request="company/getAll/none";
-        System.out.println("enter request");
-        String request = keyboard.nextLine();
+       String request="company/getAll/none";
 
         try{
             toServer.writeUTF(request);

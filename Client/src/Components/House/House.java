@@ -16,11 +16,19 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
-public class House extends Dashboard {
+public class House{
+//    private String fullnames;
+//    private String nid;
+//    private String houseno;
+//    private String telno;
+//    private String sector;
+//    private String cell;
+//    private String village;
 
     DataOutputStream toServer;
     DataInputStream fromServer;
     Scanner keyboard = new Scanner(System.in);
+
     ObjectMapper mapper;
 //    citizen/insert/{ "fullnames" : "karera marvin", "nid" : "12345678", "telno" : "indmts22", "telno" : "250788124399", "sector" : "niboye","cell" : "lorem", "village" : "indamutsa" }
 //    citizen/getSingle/12349
