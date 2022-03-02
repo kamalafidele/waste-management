@@ -19,7 +19,7 @@ public class Application {
     public static void main(String[] args){
         Scanner keyboard=new Scanner(System.in);
         try{
-            Socket socket=new Socket("localhost",2500);
+            Socket socket=new Socket("localhost",3000);
             int choice = 0;
 
             DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());

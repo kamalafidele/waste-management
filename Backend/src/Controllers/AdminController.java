@@ -9,8 +9,8 @@ import java.io.IOException;
 public class AdminController {
 
     private DataOutputStream toClient;
-    private ObjectMapper mapper;
-    private AdminRepo adminRepo;
+    private final ObjectMapper mapper;
+    private final AdminRepo adminRepo;
 
     public AdminController(){
         this.mapper = new ObjectMapper();

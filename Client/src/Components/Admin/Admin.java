@@ -37,20 +37,24 @@ public class Admin {
         }
     }
 
-    public void login(){
-        //create login info object
-        loginInfos = new LoginInfo();
+    public void login()  {
+        try {
+            //create login info object
+            loginInfos = new LoginInfo();
 
-        //get inputs from user
-        System.out.print("\n");
-        System.out.println("--------Login as an admin!----------");
-        System.out.print("Username: ");
-        loginInfos.setUsername(keyboard.next());
-        System.out.print("Password: ");
-        loginInfos.setPassword(keyboard.next());
+            //get inputs from user
+            System.out.print("\n");
+            System.out.println("--------Login as an admin!----------");
+            System.out.print("Username: ");
+            loginInfos.setUsername(keyboard.next());
+            System.out.print("Password: ");
+            loginInfos.setPassword(keyboard.next());
 
-        //call login function
-        this.sendRequest("/admin/login" + loginInfos);
+            //call login function
+            this.sendRequest("admin/login/" + mapper.writeValueAsString(loginInfos));
+        }catch (IOException e){
+            e.printStackTrace();
+        }
 
     }
 
