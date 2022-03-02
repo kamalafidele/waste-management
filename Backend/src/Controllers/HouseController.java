@@ -24,6 +24,7 @@ public class HouseController {
     // THIS METHOD DETERMINES WHAT OPERATION REQUESTED BY CLIENT
     public void filterRequest(String request, DataOutputStream toClient) {
         this.toClient=toClient;
+
         switch (request.split("/")[1]) {
 //            case "getAll":
 //                getClients();
@@ -32,7 +33,7 @@ public class HouseController {
                 createClientTable();
                 break;
             case "getSingle":
-                getOneClient(String.valueOf(request.split("/")[2]));
+                getOneClient(request.split("/")[2]);
                 break;
             case "insert":
                 addClient(request.split("/")[2]);
@@ -66,10 +67,9 @@ public class HouseController {
         House house=new House();
 
         try{
-            if (!resultSet.next()){
-                System.out.println("No such user");
-            }
-//            while(resultSet.next()){
+            if (!resultSet.next())
+                sendResponse("No such user");
+            else{
                 house.setFullnames(resultSet.getString(2));
                 house.setNid(resultSet.getString(3));
                 house.setHouseno(resultSet.getString(4));
@@ -78,12 +78,14 @@ public class HouseController {
                 house.setCell(resultSet.getString(7));
                 house.setVillage(resultSet.getString(8));
                 house.setToken(resultSet.getString(9));
-//            }
+            }
 
             sendResponse(mapper.writeValueAsString(house));
             System.out.println("House found " + mapper.writeValueAsString(house));
 
-        } catch (IOException | SQLException exception){}
+        } catch (IOException | SQLException exception){
+            exception.printStackTrace();
+        }
     }
 
 //    public void getClients() {

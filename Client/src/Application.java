@@ -58,7 +58,8 @@ public class Application {
                     System.out.println("You are a confirmer!");
                     break;
                 case 5:
-                    House house = new House(toServer);
+                    System.out.println("You are a citizen!");
+                    House house = new House(toServer, fromServer);
                     house.handleHouse();
                     break;
                 
