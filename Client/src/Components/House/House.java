@@ -6,6 +6,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 
 import java.io.DataInput;
+import Components.House.Dashboard;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -30,13 +31,14 @@ public class House extends Dashboard {
         mapper = new ObjectMapper();
     }
 
-    public void handleHouse(){
+    public void handleHouse(DataInputStream fromServer, DataOutputStream toServer){
         System.out.print("\n");
         System.out.println("--------Login as a house owner!----------");
         System.out.print("Your pin: ");
         String token = keyboard.nextLine();
 
         //call login function
+
         login(token);
     }
     public void sendRequest( String request ){
@@ -48,21 +50,21 @@ public class House extends Dashboard {
     public void login(String token){
         //calling login api
         String request = "citizen/getSingle/" + token;
-      try{
+        try{
             toServer.writeUTF(request);
             HouseHandler handler=mapper.readValue(fromServer.readUTF(),HouseHandler.class);
-          if(handler.getFullnames() != null) {
-              //dashboard
-              System.out.println("Successfully logged in!");
-              Dashboard dashboard = new Dashboard(toServer, fromServer);
-              dashboard.handleDashboard(handler);
-              return;
-          }
-          System.out.println("Invalid login, Try again!");
-          return;
+            if(handler.getFullnames() != null) {
+                //dashboard
+                System.out.println("Successfully logged in!");
+                Dashboard dashboard = new Dashboard(toServer, fromServer);
+                dashboard.handleDashboard(handler);
+                return;
+            }
+            System.out.println("Invalid login, Try again!");
+            return;
         }catch (IOException exception){
-          System.out.println("Invalid login, Try again!");
-          return;
+            System.out.println("Invalid login, Try again!");
+            return;
         }
     }
 }

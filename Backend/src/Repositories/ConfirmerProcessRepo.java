@@ -15,12 +15,12 @@ public class ConfirmerProcessRepo {
     public ResultSet findAll(){
         return this.dbconn.select("select * from ConfirmerProcess");
     }
-    public ResultSet findById(long id){
-        return this.dbconn.select("select * from ConfirmerProcess where id = " + id);
+    public ResultSet findByHouseCode(String HouseCode){
+        return this.dbconn.select("select * from ConfirmerProcess where HouseCode = " + HouseCode);
     }
 
     public void save(ConfirmerProcess c1){
         DatabaseConnection con1 = this.dbconn;
-        con1.insert("INSERT INTO ConfirmerProcess(id,Village,Company,HouseCode) VALUES (" + c1.getId()+ "," + c1.getVillage() + "," + c1.getCompany() + "," + c1.getHouseCode() + ")");
+        con1.insert("INSERT INTO ConfirmerProcess(id,Village,Company,HouseCode) VALUES (" + c1.getId()+ "','" + c1.getVillage() + "','" + c1.getCompany() + "','" + c1.getHouseCode() + ")");
     }
 }

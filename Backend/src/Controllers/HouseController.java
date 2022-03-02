@@ -67,9 +67,12 @@ public class HouseController {
         House house=new House();
 
         try{
-            if (!resultSet.next())
-                sendResponse("No such user");
-            else{
+            if (!resultSet.next()){
+                System.out.println("No such user");
+            }else {
+//            while(resultSet.next()){
+            System.out.println("id: " + resultSet.getInt(1));
+                house.setId(resultSet.getInt(1));
                 house.setFullnames(resultSet.getString(2));
                 house.setNid(resultSet.getString(3));
                 house.setHouseno(resultSet.getString(4));
@@ -87,22 +90,6 @@ public class HouseController {
             exception.printStackTrace();
         }
     }
-
-//    public void getClients() {
-//        List<House> houses= new ArrayList<>();
-//        ResultSet resultSet=houseRepo.findAll();
-//        try{
-//            // THIS LOOP IS FOR INSERTING FETCHED COMPANIES TO THE LIST
-//            while(resultSet.next()){
-//                House house=new House(resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6),resultSet.getString(7),resultSet.getString(8),resultSet.getString(9));
-//                houses.add(house);
-//            }
-//
-//            sendResponse(mapper.writeValueAsString(houses));
-//
-//        }catch( IOException | SQLException exception ){}
-//    }
-
     // THIS A METHOD FOR SENDING
     public void sendResponse( String response ) {
         try {

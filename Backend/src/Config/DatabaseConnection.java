@@ -22,6 +22,7 @@ public class DatabaseConnection {
         }catch(Exception exception){
             System.out.println("Error: "+exception);
             System.out.println("CONNECTION TO DATABASE FAILED");
+            exception.printStackTrace();
         }
     }
 
@@ -39,6 +40,7 @@ public class DatabaseConnection {
             statement.execute(insertStatement);
             return true;
         }catch(SQLException exception){
+            exception.printStackTrace();
             return false;
         }
     }

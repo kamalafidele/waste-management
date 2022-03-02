@@ -1,5 +1,8 @@
+import Controllers.AdminController;
 import Controllers.CompanyController;
+import Controllers.NotificationController;
 import Controllers.HouseController;
+import Controllers.PaymentController;
 import Controllers.WalletContoller;
 
 import java.io.*;
@@ -9,16 +12,24 @@ public class ThreadHandler extends Thread{
     Socket socket;
 
     //REGISTERING ALL CONTROLLERS
-    private CompanyController companyController;
-    private HouseController houseController;
-    private WalletContoller walletContoller;
+
+    private final CompanyController companyController;
+    private final NotificationController notificationController;
+    private final HouseController houseController;
+    private final WalletContoller walletContoller;
+    private final PaymentController paymentController;
+    private final AdminController adminController;
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
-        companyController=new CompanyController();
-        houseController=new HouseController();
-        walletContoller = new WalletContoller();
+        this.companyController=new CompanyController();
+        this.notificationController = new NotificationController();
+        this.houseController=new HouseController();
+        this.paymentController=new PaymentController();
+        this.walletContoller = new WalletContoller();
+        this.adminController = new AdminController();
     }
+
 
     @Override
     public void run(){
@@ -30,9 +41,9 @@ public class ThreadHandler extends Thread{
 
             //READING REQUESTS FROM THE CLIENT
             String request=fromClient.readUTF();
-            
             switch (request.split("/")[0]){
                 case "admin":
+                    adminController.handleRequest(request, toClient);
                     break;
                 case "company":
                     companyController.filterRequest(request,toClient);
@@ -40,20 +51,27 @@ public class ThreadHandler extends Thread{
                 case "citizen":
                     houseController.filterRequest(request,toClient);
                     break;
+                case "payment":
+                    paymentController.filterRequest(request,toClient);
+                    break;
                 case "wallet":
+                    // a call to wallet controller
                     /*
                     * wallets endpoint
                     * /wallet/(admin|company|district|user)/id
                     * */
                     walletContoller.whichWallet(request, toClient);
                     break;
+                case "notification":
+                    notificationController.filterRequest(request,toClient);
                 default:
                     toClient.writeUTF("Undefined request");
                   break;
             }
-
             socket.close();
-        }catch(IOException exception){}
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
 }
