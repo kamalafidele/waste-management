@@ -39,6 +39,8 @@ public class WalletContoller {
             }
         }
         catch (Exception e){
+            e.printStackTrace();
+            System.out.println(e.getMessage());
             returnWallet("Please specify the wallet owner id!");
         }
     }
@@ -102,13 +104,12 @@ public class WalletContoller {
         this.toClient = toClient;
         int companyId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByCompanyId(companyId);
+        System.out.println(walletResult);
         try{
             while(walletResult.next()){
-                wallet.setWallet_id(walletResult.getInt(1));
-                wallet.setCompany_id(walletResult.getInt(2));
-                wallet.setBalance(walletResult.getInt(3));
+                wallet.setBalance(walletResult.getInt(1));
             }
-            returnWallet(mapper.writeValueAsString(wallet));
-        } catch (IOException | SQLException exception){}
+            returnWallet(String.valueOf(wallet.getBalance()));
+        } catch (SQLException exception){}
     }
 }

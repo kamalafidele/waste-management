@@ -1,7 +1,6 @@
-package Models;
+package DataHandlers;
 
-public class House {
-    private int id;
+public class HouseHandler {
     private String fullnames;
     private String nid;
     private String houseno;
@@ -10,22 +9,20 @@ public class House {
     private String cell;
     private String village;
     private String token;
-    private String message;
 
-    public House() {}
+    public HouseHandler() {}
 
-//    public House( String fullnames, String nid, String houseno, String telno, String sector, String cell, String village, String token) {
-//        this.fullnames = fullnames;
-//        this.nid = nid;
-//        this.houseno = houseno;
-//        this.telno = telno;
-//        this.sector = sector;
-//        this.cell = cell;
-//        this.village = village;
-//        this.token = token;
-//    }
+    public HouseHandler( String fullnames, String nid, String houseno, String telno, String sector, String cell, String village, String token) {
+        this.fullnames = fullnames;
+        this.nid = nid;
+        this.houseno = houseno;
+        this.telno = telno;
+        this.sector = sector;
+        this.cell = cell;
+        this.village = village;
+        this.token = token;
+    }
 
-    public  void setId(int id) { this.id = id;}
 
     public String getFullnames() {
         return fullnames;
@@ -85,13 +82,6 @@ public class House {
     }
     public void setToken(String token){
         this.token = token;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     public String genPin() {

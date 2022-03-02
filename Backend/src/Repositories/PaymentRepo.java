@@ -66,6 +66,7 @@ public class PaymentRepo {
         return database.insert("INSERT INTO Company(name,email,paymentCode) VALUES ('"+company.getName()+"','"+company.getEmail()+"','"+ company.getPaymentCode()+"')");
     }
     public ResultSet getBalance(long id){
-        return database.select("SELECT  * FROM client_wallets where userId="+id);
+        return database.select("SELECT  * FROM customer_wallets where user_id="+id);
     }
+    public ResultSet getUserById(String token){return database.select("SELECT * FROM clients where token="+token);}
 }

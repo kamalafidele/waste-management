@@ -7,6 +7,7 @@ import Controllers.WalletContoller;
 
 import java.io.*;
 import java.net.Socket;
+import java.sql.SQLException;
 
 public class ThreadHandler extends Thread{
     Socket socket;
@@ -18,10 +19,7 @@ public class ThreadHandler extends Thread{
     private final HouseController houseController;
     private final WalletContoller walletContoller;
     private final PaymentController paymentController;
-//    private CompanyController companyController;
-//    private HouseController houseController;
-    private AdminController adminController;
-
+    private final AdminController adminController;
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
@@ -30,12 +28,14 @@ public class ThreadHandler extends Thread{
         houseController=new HouseController();
         paymentController=new PaymentController();
         walletContoller = new WalletContoller();
+        adminController = new AdminController();
     }
 
 
     @Override
     public void run(){
         try{
+            CompanyController company = new CompanyController();
             System.out.println("Client connected");
 
             DataInputStream fromClient=new DataInputStream(socket.getInputStream());
@@ -67,11 +67,14 @@ public class ThreadHandler extends Thread{
                 case "notification":
                     notificationController.filterRequest(request,toClient);
                 default:
+                    System.out.println(request.split("/")[0]);
                     toClient.writeUTF("Undefined request");
                   break;
             }
             socket.close();
         }catch(IOException e){
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
