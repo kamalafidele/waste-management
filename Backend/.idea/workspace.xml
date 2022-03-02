@@ -4,10 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="customerInvoice control">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ConfirmerProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ConfirmerProcessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/ConfirmerProcessRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/ConfirmerProcessRepo.java" afterDir="false" />
     <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/loggedIn.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Client/src/Components/Admin/loggedIn.txt" afterDir="false" />
