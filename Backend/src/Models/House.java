@@ -1,6 +1,7 @@
 package Models;
 
 public class House {
+    private int id;
     private String fullnames;
     private String nid;
     private String houseno;
@@ -24,6 +25,7 @@ public class House {
 //        this.token = token;
 //    }
 
+    public  void setId(int id) { this.id = id;}
 
     public String getFullnames() {
         return fullnames;
