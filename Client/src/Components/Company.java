@@ -66,7 +66,7 @@ public class Company {
         System.out.print( "Enter company email: " );
         companyHandler.setEmail( keyboard.nextLine() );
         Random random=new Random();
-        long paymentCode=random.nextLong(500_000_000);
+        long paymentCode=random.nextLong();
         companyHandler.setPaymentCode( paymentCode );
 
         try{

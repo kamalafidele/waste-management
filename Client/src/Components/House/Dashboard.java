@@ -3,11 +3,21 @@ package Components.House;
 import Components.Payment;
 
 
+
+import java.io.*;
 import java.util.Scanner;
 
 public class Dashboard {
+    DataOutputStream toServer;
+    DataInputStream fromClient;
     Scanner keyboard = new Scanner(System.in);
 
+    Payment payment = new Payment(toServer,fromClient);
+
+    public Dashboard(DataInputStream fromClient, DataOutputStream toServer) {
+        this.toServer = toServer;
+        this.fromClient = fromClient;
+    }
 
     public void handleDashboard(){
             int choice = 0;
@@ -23,10 +33,10 @@ public class Dashboard {
 
             switch (choice){
                 case 1:
-                    System.out.println("You are going to pay wastes ");
+                    payment.handlePaymentMethods();
                     break;
                 case 2:
-                    System.out.println("You are going to pay security ");
+                    payment.handlePaymentMethods();
                     break;
                 case 3:
                     System.out.println("invoices");

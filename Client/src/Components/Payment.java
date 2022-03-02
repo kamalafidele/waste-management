@@ -2,6 +2,7 @@ package Components;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Payment {
@@ -10,9 +11,10 @@ public class Payment {
     DataOutputStream toServer;
     DataInputStream fromServer;
 
-    public Payment(DataOutputStream toServer, DataInputStream fromServer){
+
+    public Payment(DataOutputStream toServer, DataInputStream fromClient) {
         this.toServer = toServer;
-        this.fromServer = fromServer;
+        this.fromServer = fromClient;
     }
 
     public void handleMomopayment(){
@@ -22,7 +24,7 @@ public class Payment {
         int amount = scanner.nextInt();
 
         // Formulating a request and making a request
-        String request = "payment/momopayment/" + amount;
+        String request = "payment/momopayment/none" + amount;
         try{
             this.toServer.writeUTF(request);
             String responseFromServer = fromServer.readUTF();
@@ -37,7 +39,24 @@ public class Payment {
 
     };
     public void handleBankpayment(){
-        System.out.println("I am a handleMomopayment");
+//        System.out.println("I am a handleBankpayment");
+        System.out.print("Enter Bank Account Number: ");
+        int accNumber = scanner.nextInt();
+        System.out.print("Enter Amount: ");
+        int amount = scanner.nextInt();
+
+        // Formulating a request and making a request
+        String request = "payment/bankpayment/" + amount;
+        try{
+            this.toServer.writeUTF(request);
+            String responseFromServer = fromServer.readUTF();
+            System.out.println("Hello world !");
+
+            System.out.println("Response from the server: " + responseFromServer);
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
     };
 
     public void handlePaymentMethods(){

@@ -2,6 +2,7 @@ package Components.House;
 
 import Components.House.Dashboard;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.util.Scanner;
 
@@ -15,11 +16,13 @@ public class House {
 //    private String village;
 //    private String token;
     DataOutputStream toServer;
+    DataInputStream fromClient;
     Scanner keyboard = new Scanner(System.in);
 //    citizen/insert/{ "fullnames" : "karera marvin", "nid" : "12345678", "telno" : "indmts22", "telno" : "250788124399", "sector" : "niboye","cell" : "lorem", "village" : "indamutsa" }
 
     public House(){};
-    public House(DataOutputStream toServer){
+    public House(DataInputStream fromClient, DataOutputStream toServer){
+        this.fromClient=fromClient;
         this.toServer = toServer;
     };
 
@@ -35,7 +38,7 @@ public class House {
             System.out.println("Try again!");
         }else{
             //dashboard
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(fromClient,toServer);
             dashboard.handleDashboard();
         }
     }
