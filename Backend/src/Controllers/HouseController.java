@@ -40,11 +40,11 @@ public class HouseController {
             case "insert":
                 addClient(request.split("/")[2]);
                 break;
-                case "getInvoices":
-                customerInvoice.getInvoices(Integer.parseInt(request.split("/")[2]), toClient);
-                break;
             case "downloadInvoice":
                 customerInvoice.downloadInvoice(Integer.parseInt(request.split("/")[2]), toClient);
+                break;
+            case "getInvoices":
+                customerInvoice.getInvoices(Integer.parseInt(request.split("/")[2]), toClient);
                 break;
             default:
                 sendResponse("Please specify your request");
