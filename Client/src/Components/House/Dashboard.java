@@ -79,6 +79,7 @@ public class Dashboard {
             System.out.println("2.Pay security");
             System.out.println("3.Your invoices");
             System.out.println("4.Notifications&messages");
+            System.out.println("5. check your debt");
             System.out.print("Your choice: ");
             choice = keyboard.nextInt();
 
@@ -95,6 +96,9 @@ public class Dashboard {
                 case 4:
                     System.out.println("Notifications & Messages");
                     new Notification().displayAllNotifications(toServer, fromServer);
+                    break;
+                case 5:
+                    payment.checkWasteDebt();
                     break;
                 default:
                     System.out.println("Please be serious!");
