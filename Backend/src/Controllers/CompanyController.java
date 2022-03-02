@@ -1,8 +1,10 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Models.Company;
 import Repositories.CompanyRepo;
 import org.codehaus.jackson.map.ObjectMapper;
+import Repositories.customerInvoicesRepo;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -24,8 +26,10 @@ public class CompanyController {
     }
 
     // THIS METHOD DETERMINES WHAT OPERATION REQUESTED BY CLIENT
-    public void filterRequest( String request, DataOutputStream toClient ) {
+    public void filterRequest( String request, DataOutputStream toClient ) throws Exception {
         this.toClient=toClient;
+        // Get invoice controllers
+        customerInvoicesRepo customerInvoice = new customerInvoicesRepo();
         switch (request.split("/")[1]) {
             case "getAll":
                 getCompanies();
@@ -36,6 +40,12 @@ public class CompanyController {
             case "addCompany":
                 addCompany(request.split("/")[2]);
               break;
+            case "getInvoices":
+                customerInvoice.getInvoices(Integer.parseInt(request.split("/")[2]), toClient);
+                break;
+            case "downloadInvoice":
+                customerInvoice.downloadInvoice(Integer.parseInt(request.split("/")[2]), toClient);
+                break;
             case "analytics":
                 analyticsController.filterRequest(request, toClient);
                 break;
@@ -99,5 +109,4 @@ public class CompanyController {
             exception.printStackTrace();
         }
     }
-
 }

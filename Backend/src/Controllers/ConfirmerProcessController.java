@@ -25,7 +25,7 @@ public class ConfirmerProcessController {
                 getAllConfirmed();
                 break;
             case "getOneConfirmed":
-                getConfirmed(Long.valueOf(request.split("/")[2]));
+                getConfirmed(request.split("/")[2]);
                 break;
 
             case "insert":
@@ -55,8 +55,8 @@ public class ConfirmerProcessController {
         }
     }
 
-    public void getConfirmed(long confirmedId){
-        ResultSet resultSet = confirmerProcessRepo.findById(confirmedId);
+    public void getConfirmed(String housecode){
+        ResultSet resultSet = confirmerProcessRepo.findByHouseCode(housecode);
         ConfirmerProcess confirmerProcess = new ConfirmerProcess();
         try {
             while(resultSet.next()){
