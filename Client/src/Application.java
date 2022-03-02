@@ -1,5 +1,13 @@
-import java.io.*;
+
+import Components.Admin.Admin;
+import Components.Company;
+import Components.House.House;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.Socket;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Application {
@@ -15,17 +23,17 @@ public class Application {
             int choice = 0;
 
             DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
-            DataInputStream  fromServer=new DataInputStream(socket.getInputStream());
+            DataInputStream fromServer=new DataInputStream(socket.getInputStream());
 
 
-            System.out.println("--------------------------------------------------WELCOME TO----------------------------------------------" + RESET);
-            System.out.println(BLUE + "\\\\              //\\\\             //   ==================   ||\\\\             //||   ================== " + RESET);
-            System.out.println(BLUE + " \\\\            //  \\\\           //    ||                   || \\\\           // ||   ||" + RESET);
-            System.out.println(BLUE + "  \\\\          //    \\\\         //     ||                   ||  \\\\         //  ||   ||" + RESET);
-            System.out.println(BLUE + "   \\\\        //      \\\\       //      ==================   ||   \\\\       //   ||   ================== " + RESET);
-            System.out.println(BLUE + "    \\\\      //        \\\\     //                       ||   ||    \\\\     //    ||                   || " + RESET);
-            System.out.println(BLUE + "     \\\\    //          \\\\   //                        ||   ||     \\\\   //     ||                   ||" + RESET);
-            System.out.println(BLUE + "      \\\\  //            \\\\ //         ==================   ||      \\\\ //      ||   ================== " + RESET);
+            System.out.println("--------------------------------------------------WELCOME TO----------------------------------------------          " + RESET);
+            System.out.println(BLUE + "\\\\              //\\\\             //   ==================   ||\\\\             //||   ==================  " + RESET);
+            System.out.println(BLUE + " \\\\            //  \\\\           //    ||                   || \\\\           // ||   ||                  " + RESET);
+            System.out.println(BLUE + "  \\\\          //    \\\\         //     ||                   ||  \\\\         //  ||   ||                  " + RESET);
+            System.out.println(BLUE + "   \\\\        //      \\\\       //      ==================   ||   \\\\       //   ||   ==================  " + RESET);
+            System.out.println(BLUE + "    \\\\      //        \\\\     //                       ||   ||    \\\\     //    ||                   ||  " + RESET);
+            System.out.println(BLUE + "     \\\\    //          \\\\   //                        ||   ||     \\\\   //     ||                   ||  " + RESET);
+            System.out.println(BLUE + "      \\\\  //            \\\\ //         ==================   ||      \\\\ //      ||   ==================  " + RESET);
             System.out.println("\n\n");
 
             System.out.println("--------Please choose your role----------");
@@ -39,30 +47,35 @@ public class Application {
 
             switch (choice){
                 case 1:
-                    System.out.println("You are an admin");
+                    Admin admin = new Admin(toServer,fromServer);
+                    admin.handleAdmin();
                     break;
                 case 2:
                     System.out.println("You are a district!");
                     break;
                 case 3:
                     System.out.println("You are a company!");
+                    new Company(toServer,fromServer).displayCompanies();
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
                     break;
                 case 5:
-                    System.out.println("You are a house!");
+                    System.out.println("You are a citizen!");
+                    House house = new House(toServer, fromServer);
+                    house.handleHouse(fromServer, toServer);
                     break;
                 default:
                     System.out.println("Please be serious!");
                     break;
             }
 
-            String response=fromServer.readUTF();
-            System.out.println(response);
 
         }catch(IOException exception){
+            System.out.println("here");
             exception.printStackTrace();
+        }catch (InputMismatchException exception){
+            System.out.println("Please be serious!");
         }
     }
 }

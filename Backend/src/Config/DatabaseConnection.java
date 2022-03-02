@@ -6,7 +6,7 @@ public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
     String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1";
     String username="root";
-    String password="";
+    String password="2021";
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
@@ -19,7 +19,11 @@ public class DatabaseConnection {
           if(connection != null)
               statement=connection.createStatement();
 
-        }catch(Exception exception){}
+        }catch(Exception exception){
+            System.out.println("Error: "+exception);
+            System.out.println("CONNECTION TO DATABASE FAILED");
+            exception.printStackTrace();
+        }
     }
 
     public boolean createTable( String createStatement ) {
@@ -36,6 +40,7 @@ public class DatabaseConnection {
             statement.execute(insertStatement);
             return true;
         }catch(SQLException exception){
+            exception.printStackTrace();
             return false;
         }
     }
