@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="customerInvoice control">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/ConfirmerProcessController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/ConfirmerProcess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repositories/ConfirmerProcessRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ConfirmerProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ConfirmerProcessController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repositories/ConfirmerProcessRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/ConfirmerProcessRepo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
