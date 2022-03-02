@@ -78,7 +78,25 @@ public class Payment {
 
     };
     public void handleBankpayment(){
-        System.out.println("I am a handleMomopayment");
+
+//        System.out.println("I am a handleBankpayment");
+        System.out.print("Enter BankAccount Number: ");
+        String accNumber = scanner.next();
+        System.out.print("Enter Amount: ");
+        int amount = scanner.nextInt();
+
+        // Formulating a request and making a request
+        String request = "payment/bankpayment/" + accNumber +"/"+amount +"/"+1234;
+        try{
+            this.toServer.writeUTF(request);
+            String responseFromServer = fromServer.readUTF();
+            System.out.println("Hello world !");
+
+            System.out.println("Response from the server: " + responseFromServer);
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
     };
 
     public void handlePaymentMethods(){

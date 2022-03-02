@@ -15,7 +15,9 @@ public class PaymentRepo {
     public ResultSet findMomoAccountByNumber(String phoneNumber){
         return database.select("SELECT * FROM momoAccount where phoneNber = "+phoneNumber);
     }
-
+    public ResultSet findBankAccount(int bankAcc){
+        return database.select("SELECT * FROM bankAccounts where accNber = "+bankAcc);
+    }
 
     public void transferMoney(String phoneNumber, int amount, String token){
 
@@ -37,6 +39,23 @@ public class PaymentRepo {
 
 
 
+    }
+    public void transferFunds(int accNber,int amount,String token){
+        // Reduce money from bankaccount table
+
+        database.update("update bankAccounts set balance = balance - " + amount + " where accNber = "+accNber) ;
+
+        // Increase  money to wallets table
+        ResultSet resultSet = database.select("SELECT * FROM clients WHERE token=" + token);
+        try{
+            int UserId = 0;
+            while(resultSet.next()){
+                UserId = resultSet.getInt("id");
+            }
+            database.update("update customer_wallets set balance = balance + " + amount + " where user_Id = "+ UserId);
+        }catch (SQLException exception){
+            exception.printStackTrace();
+        }
     }
 
     public ResultSet findById(long id){

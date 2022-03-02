@@ -18,8 +18,8 @@ public class ThreadHandler extends Thread{
     private final HouseController houseController;
     private final WalletContoller walletContoller;
     private final PaymentController paymentController;
-    private CompanyController companyController;
-    private HouseController houseController;
+//    private CompanyController companyController;
+//    private HouseController houseController;
     private AdminController adminController;
 
 
