@@ -15,6 +15,8 @@
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Payment.class" afterDir="false" />
+    <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="customerInvoice control">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +54,13 @@
     <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -76,8 +85,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JAVA/Threading" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -127,6 +135,8 @@
       <workItem from="1646076763456" duration="2408000" />
       <workItem from="1645766722446" duration="6605000" />
       <workItem from="1646066282995" duration="4976000" />
+      <workItem from="1646204891625" duration="45000" />
+      <workItem from="1646207126183" duration="76000" />
     </task>
     <task id="LOCAL-00001" summary="customerInvoice control">
       <created>1646022290178</created>
