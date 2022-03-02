@@ -1,4 +1,5 @@
-import Components.Admin;
+
+import Components.Admin.Admin;
 import Components.Company;
 import Components.House.House;
 

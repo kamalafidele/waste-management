@@ -1,3 +1,4 @@
+import Controllers.AdminController;
 import Controllers.CompanyController;
 import Controllers.NotificationController;
 import Controllers.HouseController;
@@ -11,11 +12,16 @@ public class ThreadHandler extends Thread{
     Socket socket;
 
     //REGISTERING ALL CONTROLLERS
+
     private final CompanyController companyController;
     private final NotificationController notificationController;
     private final HouseController houseController;
     private final WalletContoller walletContoller;
     private final PaymentController paymentController;
+    private CompanyController companyController;
+    private HouseController houseController;
+    private AdminController adminController;
+
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
@@ -39,6 +45,7 @@ public class ThreadHandler extends Thread{
             String request=fromClient.readUTF();
             switch (request.split("/")[0]){
                 case "admin":
+                    adminController.handleRequest(request, toClient);
                     break;
                 case "company":
                     companyController.filterRequest(request,toClient);
