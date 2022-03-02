@@ -5,7 +5,11 @@ import java.sql.Time;
 
 public class CustomerInvoices {
     private Integer invoice_id ;
-
+    private Integer userId;
+    private Date invoice_date;
+    private Time generation_time;
+    private String service_paid;
+    private Integer amount;
     public Integer getUserId() {
         return userId;
     }
@@ -13,12 +17,6 @@ public class CustomerInvoices {
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
-
-    private Integer userId;
-    private Date invoice_date;
-    private Time generation_time;
-    private String service_paid;
-    private Integer amount;
 
     public void CustomerInvoices(Integer invoice_id,Integer userId,Date invoice_date, Time generation_time,String service_paid,Integer amount){
         this.invoice_id=invoice_id;
