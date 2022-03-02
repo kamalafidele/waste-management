@@ -18,18 +18,16 @@ public class ThreadHandler extends Thread{
     private final HouseController houseController;
     private final WalletContoller walletContoller;
     private final PaymentController paymentController;
-    private CompanyController companyController;
-    private HouseController houseController;
-    private AdminController adminController;
-
+    private final AdminController adminController;
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
-        companyController=new CompanyController();
-        notificationController = new NotificationController();
-        houseController=new HouseController();
-        paymentController=new PaymentController();
-        walletContoller = new WalletContoller();
+        this.companyController=new CompanyController();
+        this.notificationController = new NotificationController();
+        this.houseController=new HouseController();
+        this.paymentController=new PaymentController();
+        this.walletContoller = new WalletContoller();
+        this.adminController = new AdminController();
     }
 
 

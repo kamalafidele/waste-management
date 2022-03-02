@@ -8,6 +8,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -56,13 +57,13 @@ public class Admin {
     public boolean loggedIn(){
         //checking if admin is loggedIn
         try {
-            Path filename =  Path.of("jetbrains://idea/navigate/reference?project=Client&path=Components/Admin/loggedIn.txt");
+            Path filename =  Paths.get("/home/saad/Desktop/SAAD/SCHOOL/waste-management/Client/src/Components/Admin/loggedIn.txt");
             String fileContent = Files.readString(filename);
 
             if(Objects.equals(fileContent, "true")){
                 return true;
             }
-        } catch (IOException e) {
+        }catch(IOException e){
             e.printStackTrace();
         }
 
