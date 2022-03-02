@@ -7,7 +7,17 @@
     <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/AdminRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/AdminRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repositories/AdminRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/AdminRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThreadHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

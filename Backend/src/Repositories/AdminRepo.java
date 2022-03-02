@@ -13,7 +13,7 @@ public class AdminRepo {
 
     public boolean login(String username, String password){
         //login the admin
-        ResultSet result = database.select("SELECT * FROM Admin WHERE username = " + username + " AND password = " + password);
+        ResultSet result = database.select("SELECT * FROM admin WHERE username = " + username + " AND password = " + password);
         System.out.println(result);
         return false;
     }
