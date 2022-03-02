@@ -56,7 +56,7 @@ public class HouseController {
         try{
             houseRepo.createClientTable();
 
-            sendResponse("ClientTable create successfully");
+            sendResponse("Client Table create successfully");
         }catch ( Exception e){}
     }
 
@@ -64,9 +64,9 @@ public class HouseController {
         try{
             House house=mapper.readValue(data,House.class);
             houseRepo.save(house);
+            sendResponse(house.getMessage());
 
-            sendResponse("Client added successfully");
-        }catch (IOException exception){}
+        }catch (Exception exception){ exception.printStackTrace();}
     }
 
     //login&profile
