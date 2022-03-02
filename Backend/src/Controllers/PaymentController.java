@@ -87,7 +87,7 @@ public class PaymentController {
             }
             System.out.println(balance);
             if(balance>0){
-                System.out.println("you dont have a debt");
+                System.out.println("you don't have a debt");
                 sendResponse("ooh wow you don't have any debt \t you have: "+balance+"Frw in wallet");
                 return;
             }

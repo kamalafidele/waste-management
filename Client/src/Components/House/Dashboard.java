@@ -19,7 +19,6 @@ public class Dashboard {
     DataInputStream fromServer;
     ObjectMapper mapper;
     Scanner keyboard = new Scanner(System.in);
-
     public Dashboard() {
     }
 
@@ -39,6 +38,7 @@ public class Dashboard {
         System.out.println("3.Your invoices");
         System.out.println("4.Notifications&messages");
         System.out.println("5.View your profile");
+        System.out.println("6. check debt");
         System.out.print("Your choice: ");
         choice = keyboard.nextInt();
 
@@ -59,6 +59,7 @@ public class Dashboard {
             case 5:
                 viewProfile(handler);
                 break;
+            case 6:
             default:
                 System.out.println("Please be serious!");
                 break;
