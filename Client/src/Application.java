@@ -1,6 +1,7 @@
 
 import Components.Admin.Admin;
 import Components.House.House;
+import Components.Wallet;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -54,9 +55,11 @@ public class Application {
                     break;
                 case 2:
                     System.out.println("You are a district!");
+                    new Company(toServer,fromServer).addCitizen();
                     break;
                 case 3:
                     System.out.println("You are a company!");
+                    new Wallet(toServer,fromServer).showWallet();
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
