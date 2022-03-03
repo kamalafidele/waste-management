@@ -3,6 +3,7 @@ package Controllers;
 import Models.Company;
 import Repositories.CompanyRepo;
 import org.codehaus.jackson.map.ObjectMapper;
+import Repositories.customerInvoicesRepo;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -16,16 +17,19 @@ public class CompanyController {
     private CompanyRepo companyRepo;
     private ObjectMapper mapper;
     AnalyticsController analyticsController;
+    customerInvoicesRepo customerInvoice;
 
     public CompanyController(){
         companyRepo=new CompanyRepo();
         analyticsController=new AnalyticsController();
+        customerInvoice = new customerInvoicesRepo();
         mapper=new ObjectMapper();
     }
 
     // THIS METHOD DETERMINES WHAT OPERATION REQUESTED BY CLIENT
-    public void filterRequest( String request, DataOutputStream toClient ) {
+    public void filterRequest( String request, DataOutputStream toClient ) throws Exception {
         this.toClient=toClient;
+
         switch (request.split("/")[1]) {
             case "getAll":
                 getCompanies();
@@ -36,6 +40,12 @@ public class CompanyController {
             case "addCompany":
                 addCompany(request.split("/")[2]);
               break;
+            case "getInvoices":
+                customerInvoice.getInvoices(Integer.parseInt(request.split("/")[2]), toClient);
+                break;
+            case "downloadInvoice":
+                customerInvoice.downloadInvoice(Integer.parseInt(request.split("/")[2]), toClient);
+                break;
             case "analytics":
                 analyticsController.filterRequest(request, toClient);
                 break;
@@ -91,7 +101,7 @@ public class CompanyController {
         }catch( IOException | SQLException exception ){}
     }
 
-    // THIS A METHOD FOR SENDING
+    // THIS A METHOD FOR SENDING RESPONSE TO THE CLIENT
     public void sendResponse( String response ) {
         try {
             toClient.writeUTF(response);
@@ -99,5 +109,4 @@ public class CompanyController {
             exception.printStackTrace();
         }
     }
-
 }

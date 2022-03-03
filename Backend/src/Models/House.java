@@ -10,6 +10,7 @@ public class House {
     private String cell;
     private String village;
     private String token;
+    private String message;
 
     public House() {}
 
@@ -84,6 +85,13 @@ public class House {
     }
     public void setToken(String token){
         this.token = token;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String genPin() {

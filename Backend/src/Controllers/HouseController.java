@@ -2,7 +2,9 @@ package Controllers;
 
 import Models.House;
 import Repositories.HouseRepo;
+import Repositories.customerInvoicesRepo;
 import org.codehaus.jackson.map.ObjectMapper;
+import Repositories.customerInvoicesRepo;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -22,9 +24,9 @@ public class HouseController {
     }
 
     // THIS METHOD DETERMINES WHAT OPERATION REQUESTED BY CLIENT
-    public void filterRequest(String request, DataOutputStream toClient) {
+    public void filterRequest(String request, DataOutputStream toClient) throws Exception {
         this.toClient=toClient;
-
+        customerInvoicesRepo customerInvoice = new customerInvoicesRepo();
         switch (request.split("/")[1]) {
 //            case "getAll":
 //                getClients();
@@ -38,6 +40,12 @@ public class HouseController {
             case "insert":
                 addClient(request.split("/")[2]);
                 break;
+            case "downloadInvoice":
+                customerInvoice.downloadInvoice(Integer.parseInt(request.split("/")[2]), toClient);
+                break;
+            case "getInvoices":
+                customerInvoice.getInvoices(Integer.parseInt(request.split("/")[2]), toClient);
+                break;
             default:
                 sendResponse("Please specify your request");
                 break;
@@ -48,7 +56,7 @@ public class HouseController {
         try{
             houseRepo.createClientTable();
 
-            sendResponse("ClientTable create successfully");
+            sendResponse("Client Table create successfully");
         }catch ( Exception e){}
     }
 
@@ -56,9 +64,9 @@ public class HouseController {
         try{
             House house=mapper.readValue(data,House.class);
             houseRepo.save(house);
+            sendResponse(house.getMessage());
 
-            sendResponse("Client added successfully");
-        }catch (IOException exception){}
+        }catch (Exception exception){ exception.printStackTrace();}
     }
 
     //login&profile
