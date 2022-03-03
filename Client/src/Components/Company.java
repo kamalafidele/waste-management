@@ -37,7 +37,7 @@ public class Company {
     }
 
     public void displayCompanies(){
-        String request="company/getAll/none";
+       String request="company/getAll/none";
 
         try{
             toServer.writeUTF(request);
