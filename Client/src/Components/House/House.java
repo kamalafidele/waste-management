@@ -30,7 +30,7 @@ public class House{
     Scanner keyboard = new Scanner(System.in);
 
     ObjectMapper mapper;
-//    citizen/insert/{ "fullnames" : "karera marvin", "nid" : "12345678", "telno" : "indmts22", "telno" : "250788124399", "sector" : "niboye","cell" : "lorem", "village" : "indamutsa" }
+//    citizen/insert/{ "name" : "karera marvin", "sector" : "niboye","cell" : "lorem", "village" : "indamutsa" }
 //    citizen/getSingle/12349
 
     public House(DataOutputStream toServer, DataInputStream fromServer) {
@@ -46,7 +46,6 @@ public class House{
         String token = keyboard.nextLine();
 
         //call login function
-
         login(token);
     }
     public void sendRequest( String request ){
@@ -61,6 +60,7 @@ public class House{
         try{
             toServer.writeUTF(request);
             HouseHandler handler=mapper.readValue(fromServer.readUTF(),HouseHandler.class);
+            System.out.println(handler.getFullnames());
             if(handler.getFullnames() != null) {
                 //dashboard
                 System.out.println("Successfully logged in!");

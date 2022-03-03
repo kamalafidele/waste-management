@@ -79,20 +79,14 @@ public class HouseController {
                 System.out.println("No such user");
             }else {
 //            while(resultSet.next()){
-            System.out.println("id: " + resultSet.getInt(1));
                 house.setId(resultSet.getInt(1));
-                house.setFullnames(resultSet.getString(2));
-                house.setNid(resultSet.getString(3));
-                house.setHouseno(resultSet.getString(4));
-                house.setTelno(resultSet.getString(5));
-                house.setSector(resultSet.getString(6));
-                house.setCell(resultSet.getString(7));
-                house.setVillage(resultSet.getString(8));
-                house.setToken(resultSet.getString(9));
+                house.setName(resultSet.getString(2));
+                house.setPin(resultSet.getString(3));
+                house.setSectorId(resultSet.getString(4));
+                house.setWalletId(resultSet.getString(5));
+                sendResponse(mapper.writeValueAsString(house));
+                System.out.println("House found " + mapper.writeValueAsString(house));
             }
-
-            sendResponse(mapper.writeValueAsString(house));
-            System.out.println("House found " + mapper.writeValueAsString(house));
 
         } catch (IOException | SQLException exception){
             exception.printStackTrace();

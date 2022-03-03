@@ -1,5 +1,6 @@
 
 import Components.Admin.Admin;
+import Components.Company;
 import Components.House.House;
 import Components.Wallet;
 
