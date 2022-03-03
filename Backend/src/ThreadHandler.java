@@ -22,18 +22,19 @@ public class ThreadHandler extends Thread{
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
-        this.companyController=new CompanyController();
-        this.notificationController = new NotificationController();
-        this.houseController=new HouseController();
-        this.paymentController=new PaymentController();
-        this.walletContoller = new WalletContoller();
-        this.adminController = new AdminController();
+        companyController=new CompanyController();
+        notificationController = new NotificationController();
+        houseController=new HouseController();
+        paymentController=new PaymentController();
+        walletContoller = new WalletContoller();
+        adminController = new AdminController();
     }
 
 
     @Override
     public void run(){
         try{
+            CompanyController company = new CompanyController();
             System.out.println("Client connected");
 
             DataInputStream fromClient=new DataInputStream(socket.getInputStream());
@@ -65,11 +66,12 @@ public class ThreadHandler extends Thread{
                 case "notification":
                     notificationController.filterRequest(request,toClient);
                 default:
+                    System.out.println(request.split("/")[0]);
                     toClient.writeUTF("Undefined request");
                   break;
             }
             socket.close();
-        }catch(IOException e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
