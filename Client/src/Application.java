@@ -1,6 +1,5 @@
 
 import Components.Admin.Admin;
-import Components.Company;
 import Components.House.House;
 import Components.Wallet;
 
@@ -60,6 +59,7 @@ public class Application {
                     break;
                 case 3:
                     System.out.println("You are a company!");
+                    new Wallet(toServer,fromServer).showWallet();
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
