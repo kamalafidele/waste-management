@@ -54,7 +54,12 @@ public class WalletContoller {
     }
 
     public void getWalletBalance(ResultSet walletBalance) {
-
+        try{
+            while(walletBalance.next()){
+                wallet.setBalance(walletBalance.getInt(1));
+            }
+            returnWallet(String.valueOf(wallet.getBalance()));
+        } catch (SQLException exception){}
     }
 
     public WalletContoller(){
@@ -66,12 +71,7 @@ public class WalletContoller {
         this.toClient = toClient;
         int userId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByUserId(userId);
-        try{
-            while(walletResult.next()){
-                wallet.setBalance(walletResult.getInt(1));
-            }
-            returnWallet(String.valueOf(wallet.getBalance()));
-        } catch (SQLException exception){}
+        getWalletBalance(walletResult);
     }
 
     public void getAdminWallet(String request){
