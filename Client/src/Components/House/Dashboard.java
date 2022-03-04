@@ -1,6 +1,7 @@
 package Components.House;
 
 import Components.Company;
+import Components.Debt;
 import Components.Notification;
 import Components.Payment;
 import DataHandlers.HouseHandler;
@@ -72,6 +73,7 @@ public class Dashboard {
 
     public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer){
             Payment payment = new Payment(fromServer, toServer);
+            Debt debt=new Debt(fromServer,toServer);
             int choice = 0;
             System.out.println("\n");
             System.out.println("--------Dashboard--------");
@@ -99,7 +101,7 @@ public class Dashboard {
                     new Notification().displayAllNotifications(toServer, fromServer);
                     break;
                 case 5:
-                    payment.checkWasteDebt();
+                    debt.checkDebt();
                     break;
                 default:
                     System.out.println("Please be serious!");

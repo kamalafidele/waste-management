@@ -1,6 +1,7 @@
 package Repositories;
 
 import Config.DatabaseConnection;
+import Controllers.DebtController;
 import Models.Company;
 
 import java.sql.ResultSet;
@@ -11,7 +12,7 @@ public class PaymentRepo {
     public PaymentRepo(){
         database=new DatabaseConnection();
     }
-
+    DebtController debtController=new DebtController();
     public ResultSet findMomoAccountByNumber(String phoneNumber){
         return database.select("SELECT * FROM momoAccount where phoneNber = "+phoneNumber);
     }

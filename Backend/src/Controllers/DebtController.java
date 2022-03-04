@@ -9,6 +9,7 @@ import java.sql.SQLException;
 public class DebtController {
     private DebtRepo debtRepo;
     private DataOutputStream toClient;
+    public long balance;
     public DebtController(){
         debtRepo=new DebtRepo();
     };
@@ -16,13 +17,12 @@ public class DebtController {
         this.toClient=toClient;
         switch (request.split("/")[1]) {
             case "checkWasteDebt":
-                long userId=Long.valueOf(request.split("/")[2]);
+                String userId=String.valueOf(request.split("/")[2]);
                 checkWasteDebt(userId);
                 break;
         }
     }
-    public void checkWasteDebt(long userId){
-        long balance=0;
+    public void checkWasteDebt(String userId){
         try {
             ResultSet result=debtRepo.getBalance(userId);
             while (result.next()){
@@ -46,6 +46,23 @@ public class DebtController {
         catch (SQLException sql){
             System.out.println(sql.getMessage());
             sql.printStackTrace();
+        }
+    }
+    public boolean isDebtLimit(String userId){
+        ResultSet result=debtRepo.getBalance(userId);
+        try {
+            while(result.next()){
+                this.balance=result.getLong(3);
+            }
+            if(this.balance<=-3000){
+                sendResponse("OOPS you have reached maximum debt");
+                return false;
+            }
+            return true;
+        }
+        catch (SQLException sql){
+            sql.printStackTrace();
+            return false;
         }
     }
     public void sendResponse( String response ) {
