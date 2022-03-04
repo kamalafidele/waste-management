@@ -24,6 +24,8 @@ public class AdminController {
             case "login":
                 login(request.split("/")[2]);
                 break;
+            default:
+                break;
         }
     }
 
@@ -32,9 +34,9 @@ public class AdminController {
             Admin admin = mapper.readValue(data, Admin.class);
 
             if(adminRepo.login(admin)){
-                sendResponse("admin loggedIn");
+                sendResponse("true");
             }else{
-                sendResponse("invalid inputs");
+                sendResponse("false");
             }
 
         } catch (IOException e) {
