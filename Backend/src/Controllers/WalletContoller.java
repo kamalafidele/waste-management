@@ -64,12 +64,10 @@ public class WalletContoller {
         ResultSet walletResult = walletRepo.findWalletByUserId(userId);
         try{
             while(walletResult.next()){
-                wallet.setWallet_id(walletResult.getInt(1));
-                wallet.setUser_id(walletResult.getInt(2));
-                wallet.setBalance(walletResult.getInt(3));
+                wallet.setBalance(walletResult.getInt(1));
             }
-            returnWallet(mapper.writeValueAsString(wallet));
-        } catch (IOException | SQLException exception){}
+            returnWallet(String.valueOf(wallet.getBalance()));
+        } catch (SQLException exception){}
     }
 
     public void getAdminWallet(String request){
@@ -78,12 +76,10 @@ public class WalletContoller {
         ResultSet walletResult = walletRepo.findWalletByAdminId(adminId);
         try{
             while(walletResult.next()){
-                wallet.setWallet_id(walletResult.getInt(1));
-                wallet.setAdmins_id(walletResult.getInt(2));
-                wallet.setBalance(walletResult.getInt(3));
+                wallet.setBalance(walletResult.getInt(1));
             }
-            returnWallet(mapper.writeValueAsString(wallet));
-        } catch (IOException | SQLException exception){}
+            returnWallet(String.valueOf(wallet.getBalance()));
+        } catch (SQLException exception){}
     }
 
     public void getDistrictWallet(String request){
@@ -92,19 +88,16 @@ public class WalletContoller {
         ResultSet walletResult = walletRepo.findWalletByDistrictId(districtId);
         try{
             while(walletResult.next()){
-                wallet.setWallet_id(walletResult.getInt(1));
-                wallet.setDistrict_id(walletResult.getInt(2));
-                wallet.setBalance(walletResult.getInt(3));
+                wallet.setBalance(walletResult.getInt(1));
             }
-            returnWallet(mapper.writeValueAsString(wallet));
-        } catch (IOException | SQLException exception){}
+            returnWallet(String.valueOf(wallet.getBalance()));
+        } catch (SQLException exception){}
     }
 
     public void getCompanyWallet(String request){
         this.toClient = toClient;
         int companyId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByCompanyId(companyId);
-        System.out.println(walletResult);
         try{
             while(walletResult.next()){
                 wallet.setBalance(walletResult.getInt(1));
