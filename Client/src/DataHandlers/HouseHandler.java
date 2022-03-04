@@ -1,17 +1,17 @@
-package Models;
+package DataHandlers;
 
-public class House {
+public class HouseHandler {
     private int id;
-//    id, name, pin, sectorId, walletId
+    //    id, name, pin, sectorId, walletId
     private String name;
     private String pin;
     private String sectorId;
     private String walletId;
     private String message;
 
-    public House() {}
+    public HouseHandler() {}
 
-    public House(int id, String name, String pin, String sectorId, String walletId, String message) {
+    public HouseHandler(int id, String name, String pin, String sectorId, String walletId, String message) {
         this.id = id;
         this.name = name;
         this.pin = pin;

@@ -1,6 +1,11 @@
 package Repositories;
 
 import Config.DatabaseConnection;
+
+import java.sql.ResultSet;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class AnalyticsRepo {
     DatabaseConnection database;
     public AnalyticsRepo(){
@@ -12,10 +17,9 @@ public class AnalyticsRepo {
         return "";
     }
 
-    public String companyAnalytics(String period){
-        String analytics = "Number of service provided by us:  2\nTotal amount of money so far : 20000frw\n" +
-                "Percentage at which service is provided: 80%\n========END========";
-//        select analytics for company in the specified period
-        return analytics;
+    public ResultSet companyAnalytics(String period, Integer senderId){
+        return database.select("select name, balance from company c join " +
+                "companies_wallets cw on c.id = cw.company_id where id = " + senderId);
     }
+
 }
