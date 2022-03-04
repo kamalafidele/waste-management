@@ -23,8 +23,8 @@ public class House{
     Scanner keyboard = new Scanner(System.in);
 
     ObjectMapper mapper;
-//    citizen/insert/{ "name" : "karera marvin", "sectorId" : "niboye","walletId" : "lorem" }
-//    citizen/getSingle/12349
+//    citizen/insert/{ "name" : "karera marvin", "sectorId" : 1,"walletId" : 1 }
+//    citizen/getSingle/1000
 
     public House(DataOutputStream toServer, DataInputStream fromServer) {
         this.toServer = toServer;
@@ -53,8 +53,8 @@ public class House{
         try{
             toServer.writeUTF(request);
             HouseHandler handler=mapper.readValue(fromServer.readUTF(),HouseHandler.class);
-            System.out.println(handler.getFullnames());
-            if(handler.getFullnames() != null) {
+            System.out.println(handler.getName());
+            if(handler.getName() != null) {
                 //dashboard
                 System.out.println("Successfully logged in!");
                 Dashboard dashboard = new Dashboard(toServer, fromServer);

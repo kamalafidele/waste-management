@@ -4,14 +4,14 @@ public class House {
     private int id;
 //    id, name, pin, sectorId, walletId
     private String name;
-    private String pin;
-    private String sectorId;
-    private String walletId;
+    private int pin;
+    private int sectorId;
+    private int walletId;
     private String message;
 
     public House() {}
 
-    public House(int id, String name, String pin, String sectorId, String walletId, String message) {
+    public House(int id, String name, int pin, int sectorId, int walletId, String message) {
         this.id = id;
         this.name = name;
         this.pin = pin;
@@ -36,27 +36,27 @@ public class House {
         this.name = name;
     }
 
-    public String getPin() {
+    public int getPin() {
         return pin;
     }
 
-    public void setPin(String pin) {
+    public void setPin(int pin) {
         this.pin = pin;
     }
 
-    public String getSectorId() {
+    public int getSectorId() {
         return sectorId;
     }
 
-    public void setSectorId(String sectorId) {
+    public void setSectorId(int sectorId) {
         this.sectorId = sectorId;
     }
 
-    public String getWalletId() {
+    public int getWalletId() {
         return walletId;
     }
 
-    public void setWalletId(String walletId) {
+    public void setWalletId(int walletId) {
         this.walletId = walletId;
     }
 
