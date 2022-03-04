@@ -3,12 +3,14 @@ package Repositories;
 import Config.DatabaseConnection;
 import Controllers.DebtController;
 import Models.Company;
+//import Models.Company;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PaymentRepo {
     DatabaseConnection database;
+    Company company;
     public PaymentRepo(){
         database=new DatabaseConnection();
     }

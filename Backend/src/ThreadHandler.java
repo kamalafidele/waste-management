@@ -2,7 +2,6 @@ import Controllers.*;
 
 import java.io.*;
 import java.net.Socket;
-import java.sql.SQLException;
 
 public class ThreadHandler extends Thread{
     Socket socket;
@@ -70,8 +69,6 @@ public class ThreadHandler extends Thread{
                   break;
             }
             socket.close();
-        }catch(IOException e){
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

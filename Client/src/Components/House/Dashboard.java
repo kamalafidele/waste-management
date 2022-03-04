@@ -72,6 +72,7 @@ public class Dashboard {
     }
 
     public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer){
+    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer, HouseHandler handler){
             Payment payment = new Payment(fromServer, toServer);
             Debt debt=new Debt(fromServer,toServer);
             int choice = 0;
@@ -83,15 +84,14 @@ public class Dashboard {
             System.out.println("3.Your invoices");
             System.out.println("4.Notifications&messages");
             System.out.println("5. check your debt");
+            System.out.println("6. view profile");
             System.out.print("Your choice: ");
             choice = keyboard.nextInt();
 
             switch (choice){
                 case 1:
-                    payment.handlePaymentMethods();
-                    break;
                 case 2:
-//                    payment.handlePaymentMethods();
+                    payment.handlePaymentMethods();
                     break;
                 case 3:
                     System.out.println("invoices");
@@ -103,6 +103,9 @@ public class Dashboard {
                 case 5:
                     debt.checkDebt();
                     break;
+                case 6:
+                    viewProfile(handler);
+                break;
                 default:
                     System.out.println("Please be serious!");
                     break;

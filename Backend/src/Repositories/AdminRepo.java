@@ -14,13 +14,19 @@ public class AdminRepo {
 
     public boolean login(Admin admin){
         //login the admin
-        ResultSet result = database.select("SELECT * FROM admin WHERE username = '"+admin.getUsername()+"' AND password = '"+admin.getPassword()+"' ");
+        try{
 
-        if(result != null){
-            return true;
+            ResultSet result = database.select("SELECT * FROM admin WHERE username = '"+admin.getUsername()+"' AND password = '"+admin.getPassword()+"' ");
+            if(result.next()){
+                return true;
+            }
+
+        }catch (Exception e) {
+            e.printStackTrace();
         }
 
         return false;
+
     }
 
 }
