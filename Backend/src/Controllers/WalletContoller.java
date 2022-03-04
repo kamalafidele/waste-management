@@ -85,6 +85,7 @@ public class WalletContoller {
         this.toClient = toClient;
         int districtId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByDistrictId(districtId);
+        getWalletBalance(walletResult);
     }
 
     public void getCompanyWallet(String request){
