@@ -1,7 +1,7 @@
 package Models;
 
 public class ConfirmerProcess {
-    private Long id;
+    private int id;
     private String Village;
     private String Company;
     private String HouseCode;
@@ -11,18 +11,18 @@ public class ConfirmerProcess {
 
     }
 
-    public ConfirmerProcess(Long id, String Village, String Company, String HouseCode) {
+    public ConfirmerProcess(int id, String Village, String Company, String HouseCode) {
         this.id = id;
         this.Village = Village;
         this.Company = Company;
         this.HouseCode = HouseCode;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

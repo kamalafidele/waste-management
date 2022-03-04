@@ -1,5 +1,4 @@
 package Controllers;
-
 import Models.ConfirmerProcess;
 import Repositories.ConfirmerProcessRepo;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -60,7 +59,7 @@ public class ConfirmerProcessController {
         ConfirmerProcess confirmerProcess = new ConfirmerProcess();
         try {
             while(resultSet.next()){
-                confirmerProcess.setId((resultSet.getLong(1)));
+                confirmerProcess.setId((resultSet.getInt(1)));
                 confirmerProcess.setVillage(resultSet.getString(2));
                 confirmerProcess.setCompany(resultSet.getString(3));
                 confirmerProcess.setHouseCode(resultSet.getString(4));
@@ -76,7 +75,7 @@ public class ConfirmerProcessController {
         ResultSet resultsAll = confirmerProcessRepo.findAll();
         try{
             while (resultsAll.next()){
-                ConfirmerProcess confirmed = new ConfirmerProcess(resultsAll.getLong(1), resultsAll.getString(2), resultsAll.getString(3),resultsAll.getString(4) );
+                ConfirmerProcess confirmed = new ConfirmerProcess(resultsAll.getInt(1), resultsAll.getString(2), resultsAll.getString(3),resultsAll.getString(4) );
                 confirmedlist.add(confirmed);
             }
         }catch (Exception e){

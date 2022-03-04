@@ -4,9 +4,9 @@ import java.sql.*;
 
 public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
-    String url="jdbc:mysql://localhost:3306/wastemanagementdatabase?characterEncoding=latin1";
+    String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1";
     String username="root";
-    String password="ae789789";
+    String password="teta2005";
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
@@ -37,7 +37,7 @@ public class DatabaseConnection {
 
     public boolean insert( String insertStatement ) {
         try{
-            statement.execute(insertStatement);
+            statement.execute( insertStatement );
             return true;
         }catch(SQLException exception){
             exception.printStackTrace();
@@ -47,7 +47,7 @@ public class DatabaseConnection {
 
     public ResultSet select( String selectStatement ) {
        try{
-           data=statement.executeQuery(selectStatement);
+           data=statement.executeQuery( selectStatement );
            return data;
        }catch (SQLException exception){
             return data;
@@ -56,10 +56,28 @@ public class DatabaseConnection {
 
     public boolean update( String updateStatement ) {
         try{
-            statement.execute(updateStatement);
+            statement.execute( updateStatement );
             return true;
         }catch (SQLException exception){
             return false;
+        }
+    }
+
+   public boolean delete( String deleteStatement){
+       try{
+         statement.execute( deleteStatement );
+         return true; 
+       }catch ( SQLException exception){
+           return false;
+       }
+   }
+
+    public ResultSet getById( String updateStatement ) {
+        try{
+            data = statement.executeQuery( updateStatement );
+            return data;
+        }catch (SQLException exception){
+            return data;
         }
     }
 }
