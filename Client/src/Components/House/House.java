@@ -17,14 +17,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class House{
-//    private String fullnames;
-//    private String nid;
-//    private String houseno;
-//    private String telno;
-//    private String sector;
-//    private String cell;
-//    private String village;
-
     DataOutputStream toServer;
     DataInputStream fromServer;
     Scanner keyboard = new Scanner(System.in);
@@ -60,8 +52,8 @@ public class House{
         try{
             toServer.writeUTF(request);
             HouseHandler handler=mapper.readValue(fromServer.readUTF(),HouseHandler.class);
-            System.out.println(handler.getFullnames());
-            if(handler.getFullnames() != null) {
+            System.out.println(handler.getName());
+            if(handler.getName() != null) {
                 //dashboard
                 System.out.println("Successfully logged in!");
                 Dashboard dashboard = new Dashboard(toServer, fromServer);
