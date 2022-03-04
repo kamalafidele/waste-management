@@ -7,12 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class HouseRepo {
-    public String insertQuery = "INSERT INTO citizen(name, pin, sectorId, walletId) VALUES ('\"+house.getName()+\"','\"+house.getPin()+\"','\"+house.getSectorId()+\"','\"+house.getWalletId()+\"')";
+//    public String insertQuery = "INSERT INTO citizen(name, pin, sectorId, walletId) VALUES ('\"+house.getName()+\"','\"+house.getPin()+\"','\"+house.getSectorId()+\"','\"+house.getWalletId()+\"')";
     DatabaseConnection database;
     public HouseRepo(){
         database=new DatabaseConnection();
     }
-//    id, name, pin, sectorId, walletId
+
     public void createClientTable(){
         String query="CREATE TABLE citizen(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(90) NOT NULL, pin BIGINT NOT NULL, sectorId INT NOT NULL, walletId INT NOT NULL, UNIQUE(pin), FOREIGN KEY(sectorId) REFERENCES Sector(id),FOREIGN KEY(walletId) REFERENCES Wallet(id));";
         database.createTable(query);
@@ -34,7 +34,7 @@ public class HouseRepo {
             if(resultSet.next()){
                 System.out.println("Token already exists");
                 token=house.genPin();
-                boolean query = database.insert(insertQuery);
+                boolean query = database.insert("INSERT INTO citizen(name, pin, sectorId, walletId) VALUES ('"+house.getName()+"','"+token+"','"+house.getSectorId()+"','"+house.getWalletId()+"')");
                 if(query){
                     house.setMessage("Citizen saved successfully");
                     System.out.println(house.getMessage());
@@ -47,7 +47,7 @@ public class HouseRepo {
             }
             else{
                 //insert
-                boolean query = database.insert(insertQuery);
+                boolean query = database.insert("INSERT INTO citizen(name, pin, sectorId, walletId) VALUES ('"+house.getName()+"','"+token+"','"+house.getSectorId()+"','"+house.getWalletId()+"')");
                 if(query){
                     house.setMessage("Citizen saved successfully");
                     System.out.println(house.getMessage());
