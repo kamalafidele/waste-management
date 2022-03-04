@@ -92,6 +92,6 @@ public class WalletContoller {
         this.toClient = toClient;
         int companyId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByCompanyId(companyId);
-        
+        getWalletBalance(walletResult);
     }
 }
