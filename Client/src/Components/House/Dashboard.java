@@ -1,6 +1,7 @@
 package Components.House;
 
 import Components.Company;
+import Components.Debt;
 import Components.Notification;
 import Components.Payment;
 import DataHandlers.HouseHandler;
@@ -19,7 +20,6 @@ public class Dashboard {
     DataInputStream fromServer;
     ObjectMapper mapper;
     Scanner keyboard = new Scanner(System.in);
-
     public Dashboard() {
     }
 
@@ -29,8 +29,52 @@ public class Dashboard {
         ObjectMapper mapper;
     }
 
+    public void handleDashboard(HouseHandler handler) {
+        int choice = 0;
+        System.out.println("\n");
+        System.out.println("--------Dashboard--------");
+        System.out.println("--------Please choose an option----------");
+        System.out.println("1.Pay wastes");
+        System.out.println("2.Pay security");
+        System.out.println("3.Your invoices");
+        System.out.println("4.Notifications&messages");
+        System.out.println("5.View your profile");
+        System.out.println("6. check debt");
+        System.out.print("Your choice: ");
+        choice = keyboard.nextInt();
+
+        switch (choice) {
+            case 1:
+                System.out.println("wastes payment");
+                myMethod();
+                break;
+            case 2:
+                System.out.println("You are going to pay security ");
+                break;
+            case 3:
+                System.out.println("invoices");
+                break;
+            case 4:
+                System.out.println("Notifications&messages");
+                break;
+            case 5:
+                viewProfile(handler);
+                break;
+            case 6:
+            default:
+                System.out.println("Please be serious!");
+                break;
+        }
+    }
+
+    public void myMethod() {
+        System.out.println("my method");
+    }
+
+    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer){
     public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer, HouseHandler handler){
             Payment payment = new Payment(fromServer, toServer);
+            Debt debt=new Debt(fromServer,toServer);
             int choice = 0;
             System.out.println("\n");
             System.out.println("--------Dashboard--------");
@@ -57,7 +101,7 @@ public class Dashboard {
                     new Notification().displayAllNotifications(toServer, fromServer);
                     break;
                 case 5:
-                    payment.checkWasteDebt();
+                    debt.checkDebt();
                     break;
                 case 6:
                     viewProfile(handler);

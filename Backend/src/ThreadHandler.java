@@ -13,7 +13,7 @@ public class ThreadHandler extends Thread{
     private final WalletController walletController;
     private final PaymentController paymentController;
     private final AdminController adminController;
-
+    private final DebtController debtController;
     public ThreadHandler(Socket socket){
         this.socket=socket;
         companyController=new CompanyController();
@@ -22,6 +22,7 @@ public class ThreadHandler extends Thread{
         paymentController=new PaymentController();
         walletController = new WalletController();
         adminController = new AdminController();
+        debtController=new DebtController();
     }
 
 
@@ -59,6 +60,8 @@ public class ThreadHandler extends Thread{
                     break;
                 case "notification":
                     notificationController.filterRequest(request,toClient);
+                case "debt":
+                    debtController.filterRequest(request,toClient);
                 default:
                     System.out.println(request.split("/")[0]);
                     toClient.writeUTF("Undefined request");
