@@ -81,9 +81,9 @@ public class HouseController {
 //            while(resultSet.next()){
                 house.setId(resultSet.getInt(1));
                 house.setName(resultSet.getString(2));
-                house.setPin(resultSet.getString(3));
-                house.setSectorId(resultSet.getString(4));
-                house.setWalletId(resultSet.getString(5));
+                house.setPin(resultSet.getInt(3));
+                house.setSectorId(resultSet.getInt(4));
+                house.setWalletId(resultSet.getInt(5));
                 sendResponse(mapper.writeValueAsString(house));
                 System.out.println("House found " + mapper.writeValueAsString(house));
             }
