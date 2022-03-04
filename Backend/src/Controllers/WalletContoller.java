@@ -53,6 +53,10 @@ public class WalletContoller {
         }
     }
 
+    public void getWalletBalance(ResultSet walletBalance) {
+
+    }
+
     public WalletContoller(){
         walletRepo = new WalletsRepoHandler();
         mapper = new ObjectMapper();
