@@ -17,12 +17,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class House{
+
     DataOutputStream toServer;
     DataInputStream fromServer;
     Scanner keyboard = new Scanner(System.in);
 
     ObjectMapper mapper;
-//    citizen/insert/{ "name" : "karera marvin", "sector" : "niboye","cell" : "lorem", "village" : "indamutsa" }
+//    citizen/insert/{ "name" : "karera marvin", "sectorId" : "niboye","walletId" : "lorem" }
 //    citizen/getSingle/12349
 
     public House(DataOutputStream toServer, DataInputStream fromServer) {
@@ -57,7 +58,7 @@ public class House{
                 //dashboard
                 System.out.println("Successfully logged in!");
                 Dashboard dashboard = new Dashboard(toServer, fromServer);
-                dashboard.handleDashboard(handler);
+                dashboard.handleDashboard(fromServer, toServer, handler);
                 return;
             }
             System.out.println("Invalid login, Try again!");
