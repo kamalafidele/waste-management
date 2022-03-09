@@ -46,13 +46,15 @@ public class PaymentRepo {
         database.update("update bankAccounts set balance = balance - " + amount + " where accNber = "+accNber) ;
 
         // Increase  money to wallets table
-        ResultSet resultSet = database.select("SELECT * FROM clients WHERE token=" + token);
+        ResultSet resultSet = database.select("SELECT * FROM citizen WHERE pin=" + token);
         try{
-            int UserId = 0;
+            int walletId = 0;
             while(resultSet.next()){
-                UserId = resultSet.getInt("id");
+//                UserId = resultSet.getInt("id");
+                walletId = resultSet.getInt("walletId");
             }
-            database.update("update customer_wallets set balance = balance + " + amount + " where user_Id = "+ UserId);
+//            database.update("update customer_wallets set balance = balance + " + amount + " where user_Id = "+ UserId);
+            database.update("update wallet set amount = amount + " + amount + " where id = "+ walletId);
         }catch (SQLException exception){
             exception.printStackTrace();
         }
@@ -66,7 +68,7 @@ public class PaymentRepo {
         return database.insert("INSERT INTO Company(name,email,paymentCode) VALUES ('"+company.getName()+"','"+company.getEmail()+"','"+ company.getPaymentCode()+"')");
     }
     public ResultSet getBalance(long id){
-        return database.select("SELECT  * FROM customer_wallets where user_id="+id);
+        return database.select("SELECT  * FROM wallets where id="+id);
     }
-    public ResultSet getUserById(String token){return database.select("SELECT * FROM clients where token="+token);}
+    public ResultSet getUserById(String token){return database.select("SELECT * FROM citizen where pin="+token);}
 }

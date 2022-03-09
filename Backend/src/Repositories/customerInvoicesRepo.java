@@ -48,7 +48,7 @@ public class customerInvoicesRepo {
         File myFile = new File("C:/Users/rwanda coding/Downloads/"+invoice_id+".txt");
 
         if(myFile.createNewFile() || myFile.exists()) {
-            ResultSet set = con.getById("SELECT * from customerinvoices where invoice_id = "+invoice_id+";");
+            ResultSet set = con.select("SELECT * from customerinvoices where invoice_id = "+invoice_id+";");
                 while(set.next()){
                     String invoice = "| ---------------- Invoice ---------------- |\n\n";
                     invoice += "|   No      :           " + set.getString("invoice_id") + "\n";
@@ -76,7 +76,7 @@ public class customerInvoicesRepo {
 
         String res = "";
         String response = null;
-        ResultSet set = con.getById("SELECT * from customerinvoices where userId = "+userId+";");
+        ResultSet set = con.select("SELECT * from customerinvoices where userId = "+userId+";");
         try {
             if(!set.next()){
                 response = "There is no invoice for the user!";

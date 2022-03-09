@@ -87,7 +87,7 @@ public class Payment {
         int amount = scanner.nextInt();
 
         // Formulating a request and making a request
-        String request = "payment/bankpayment/" + accNumber +"/"+amount +"/"+1234;
+        String request = "payment/bankpayment/" + accNumber +"/"+amount +"/"+ 1000;
         try{
             this.toServer.writeUTF(request);
             String responseFromServer = fromServer.readUTF();
