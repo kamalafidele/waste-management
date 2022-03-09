@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class WalletContoller {
+public class WalletController {
     private DataOutputStream toClient;
     private static WalletsRepoHandler walletRepo;
     private ObjectMapper mapper;
@@ -53,7 +53,16 @@ public class WalletContoller {
         }
     }
 
-    public WalletContoller(){
+    public void getWalletBalance(ResultSet walletBalance) {
+        try{
+            while(walletBalance.next()){
+                wallet.setBalance(walletBalance.getInt(1));
+            }
+            returnWallet(String.valueOf(wallet.getBalance()));
+        } catch (SQLException exception){}
+    }
+
+    public WalletController(){
         walletRepo = new WalletsRepoHandler();
         mapper = new ObjectMapper();
     }
@@ -62,54 +71,27 @@ public class WalletContoller {
         this.toClient = toClient;
         int userId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByUserId(userId);
-        try{
-            while(walletResult.next()){
-                wallet.setWallet_id(walletResult.getInt(1));
-                wallet.setUser_id(walletResult.getInt(2));
-                wallet.setBalance(walletResult.getInt(3));
-            }
-            returnWallet(mapper.writeValueAsString(wallet));
-        } catch (IOException | SQLException exception){}
+        getWalletBalance(walletResult);
     }
 
     public void getAdminWallet(String request){
         this.toClient = toClient;
         int adminId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByAdminId(adminId);
-        try{
-            while(walletResult.next()){
-                wallet.setWallet_id(walletResult.getInt(1));
-                wallet.setAdmins_id(walletResult.getInt(2));
-                wallet.setBalance(walletResult.getInt(3));
-            }
-            returnWallet(mapper.writeValueAsString(wallet));
-        } catch (IOException | SQLException exception){}
+        getWalletBalance(walletResult);
     }
 
     public void getDistrictWallet(String request){
         this.toClient = toClient;
         int districtId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByDistrictId(districtId);
-        try{
-            while(walletResult.next()){
-                wallet.setWallet_id(walletResult.getInt(1));
-                wallet.setDistrict_id(walletResult.getInt(2));
-                wallet.setBalance(walletResult.getInt(3));
-            }
-            returnWallet(mapper.writeValueAsString(wallet));
-        } catch (IOException | SQLException exception){}
+        getWalletBalance(walletResult);
     }
 
     public void getCompanyWallet(String request){
         this.toClient = toClient;
         int companyId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByCompanyId(companyId);
-        System.out.println(walletResult);
-        try{
-            while(walletResult.next()){
-                wallet.setBalance(walletResult.getInt(1));
-            }
-            returnWallet(String.valueOf(wallet.getBalance()));
-        } catch (SQLException exception){}
+        getWalletBalance(walletResult);
     }
 }
