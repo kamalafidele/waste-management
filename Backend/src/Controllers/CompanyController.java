@@ -3,7 +3,7 @@ package Controllers;
 import Models.Company;
 import Repositories.CompanyRepo;
 import org.codehaus.jackson.map.ObjectMapper;
-import Repositories.customerInvoicesRepo;
+import Repositories.CustomerInvoicesRepo;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -17,12 +17,12 @@ public class CompanyController {
     private CompanyRepo companyRepo;
     private ObjectMapper mapper;
     AnalyticsController analyticsController;
-    customerInvoicesRepo customerInvoice;
+    CustomerInvoicesRepo customerInvoice;
 
     public CompanyController(){
         companyRepo=new CompanyRepo();
         analyticsController=new AnalyticsController();
-        customerInvoice = new customerInvoicesRepo();
+        customerInvoice = new CustomerInvoicesRepo();
         mapper=new ObjectMapper();
     }
 

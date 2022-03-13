@@ -23,8 +23,8 @@ public class House{
     Scanner keyboard = new Scanner(System.in);
 
     ObjectMapper mapper;
-//    citizen/insert/{ "name" : "karera marvin", "sectorId" : 1,"walletId" : 1 }
-//    citizen/getSingle/1000
+//    citizen/insert/{ "name" : "karera marvin", "email" : "kars@gmail.com", "phone" : "0781234567", "role" : 3, "wallet" : 1, "location" : 1 }
+//    citizen/getSingle/12349
 
     public House(DataOutputStream toServer, DataInputStream fromServer) {
         this.toServer = toServer;
