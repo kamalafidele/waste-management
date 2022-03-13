@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="customerInvoice control">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    <list default="true" id="7091923a-20d4-43ef-a5d4-3a175d31356e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/HouseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/HouseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/House.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/DebtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DebtController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThreadHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Debt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Debt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/HouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/HouseHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +35,21 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="25uXN9a48AQM8TyQ4EBo6dq9T1w" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -55,7 +68,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -81,7 +94,71 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="customerInvoice control" />
       <created>1645610933770</created>
-      <changelist id="7091923a-20d4-43ef-a5d4-3a175d31356e" name="Changes" comment="" />
-      <created>1646377937925</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+      <updated>1646377937925</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Jabes" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Jabes" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="customerInvoice control" />
+    <option name="LAST_COMMIT_MESSAGE" value="customerInvoice control" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Models/House.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -71,7 +71,7 @@ public class Dashboard {
         System.out.println("my method");
     }
 
-    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer){
+//    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer){
     public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer, HouseHandler handler){
             Payment payment = new Payment(fromServer, toServer);
             Debt debt=new Debt(fromServer,toServer);
