@@ -3,10 +3,10 @@ import Controllers.CompanyController;
 import Controllers.NotificationController;
 import Controllers.HouseController;
 import Controllers.PaymentController;
-import Controllers.WalletContoller;
-
+import Controllers.WalletController;
 import java.io.*;
 import java.net.Socket;
+
 
 public class ThreadHandler extends Thread{
     Socket socket;
@@ -16,7 +16,7 @@ public class ThreadHandler extends Thread{
     private final CompanyController companyController;
     private final NotificationController notificationController;
     private final HouseController houseController;
-    private final WalletContoller walletContoller;
+    private final WalletController walletContoller;
     private final PaymentController paymentController;
     private AdminController adminController;
 
@@ -27,7 +27,7 @@ public class ThreadHandler extends Thread{
         notificationController = new NotificationController();
         houseController=new HouseController();
         paymentController=new PaymentController();
-        walletContoller = new WalletContoller();
+        walletContoller = new WalletController();
     }
 
 
@@ -45,12 +45,12 @@ public class ThreadHandler extends Thread{
                 case "admin":
                     adminController.handleRequest(request, toClient);
                     break;
-                case "company":
-                    companyController.filterRequest(request,toClient);
-                  break;
-                case "citizen":
-                    houseController.filterRequest(request,toClient);
-                    break;
+//                case "company":
+//                    companyController.filterRequest(request,toClient);
+//                  break;
+//                case "citizen":
+//                    houseController.filterRequest(request,toClient);
+//                    break;
                 case "payment":
                     paymentController.filterRequest(request,toClient);
                     break;
