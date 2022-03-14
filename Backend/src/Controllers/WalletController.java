@@ -26,6 +26,7 @@ public class WalletController {
         try {
             this.toClient = toClient;
             String ownerId = request.split("/")[1];
+            getUserWallet(ownerId);
         }
         catch (Exception e){
             e.printStackTrace();
