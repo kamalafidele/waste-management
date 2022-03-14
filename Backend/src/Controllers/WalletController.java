@@ -15,6 +15,11 @@ public class WalletController {
     private ObjectMapper mapper;
     private Wallet wallet;
 
+    public WalletController(){
+        walletRepo = new WalletsRepoHandler();
+        mapper = new ObjectMapper();
+    }
+
     public void whichWallet( String request, DataOutputStream toClient ) {
         wallet = new Wallet();
         System.out.println(request);
@@ -45,11 +50,6 @@ public class WalletController {
             }
             returnWallet(String.valueOf(wallet.getBalance()));
         } catch (SQLException exception){}
-    }
-
-    public WalletController(){
-        walletRepo = new WalletsRepoHandler();
-        mapper = new ObjectMapper();
     }
 
     public void getUserWallet(String request){
