@@ -20,24 +20,7 @@ public class WalletController {
         System.out.println(request);
         try {
             this.toClient = toClient;
-            String ownerId = request.split("/")[2];
-            switch (request.split("/")[1]) {
-                case "admin":
-                    getAdminWallet(ownerId);
-                    break;
-                case "company":
-                    getCompanyWallet(ownerId);
-                    break;
-                case "district":
-                    getDistrictWallet(ownerId);
-                    break;
-                case "client":
-                    getUserWallet(ownerId);
-                    break;
-                default:
-                    returnWallet("Please specify the wallet owner type!");
-                    break;
-            }
+            String ownerId = request.split("/")[1];
         }
         catch (Exception e){
             e.printStackTrace();
