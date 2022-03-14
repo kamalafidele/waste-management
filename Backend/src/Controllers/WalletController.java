@@ -61,6 +61,7 @@ public class WalletController {
         }
         catch (Exception e){
             e.printStackTrace();
+            returnWallet("Null wallet");
         }
     }
 }
