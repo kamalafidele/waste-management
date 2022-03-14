@@ -65,12 +65,4 @@ public class WalletController {
         ResultSet walletResult = walletRepo.findWalletByAdminId(adminId);
         getWalletBalance(walletResult);
     }
-
-    public void getDistrictWallet(String request){
-        this.toClient = toClient;
-        int districtId = Integer.parseInt(request);
-        ResultSet walletResult = walletRepo.findWalletByDistrictId(districtId);
-        getWalletBalance(walletResult);
-    }
-    
 }
