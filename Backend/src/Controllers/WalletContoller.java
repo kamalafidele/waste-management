@@ -17,6 +17,7 @@ public class WalletContoller {
 
     public void whichWallet( String request, DataOutputStream toClient ) {
         wallet = new Wallet();
+        System.out.println(request);
         try {
             this.toClient = toClient;
             String ownerId = request.split("/")[2];
@@ -47,6 +48,7 @@ public class WalletContoller {
 
     public void returnWallet( String response ) {
         try {
+            System.out.println("SENT RESPONSE");
             toClient.writeUTF(response);
         } catch ( IOException exception ) {
             exception.printStackTrace();
@@ -76,6 +78,7 @@ public class WalletContoller {
         this.toClient = toClient;
         int adminId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByAdminId(adminId);
+
         try{
             while(walletResult.next()){
                 wallet.setWallet_id(walletResult.getInt(1));
