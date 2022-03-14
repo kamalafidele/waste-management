@@ -55,7 +55,12 @@ public class WalletController {
     public void getUserWallet(String request){
         this.toClient = toClient;
         int userId = Integer.parseInt(request);
-        ResultSet walletResult = walletRepo.findWalletByUserId(userId);
-        getWalletBalance(walletResult);
+        try {
+            ResultSet walletResult = walletRepo.findWalletByUserId(userId);
+            getWalletBalance(walletResult);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
