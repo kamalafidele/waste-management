@@ -11,7 +11,7 @@ public class WalletsRepoHandler {
     }
     public ResultSet findWalletByCompanyId(int companyId){
 
-        return database.select("select amount from wallet w inner join company c on a.walletId=w.id where c.id= "+companyId);
+        return database.select("select amount from wallet w inner join company c on c.walletId=w.id where c.id= "+companyId);
     }
     public ResultSet findWalletByDistrictId(int district_id){
         return database.select("select amount from wallet w inner join district d on d.walletId=w.id where d.id="+district_id);

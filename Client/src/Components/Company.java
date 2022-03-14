@@ -33,7 +33,8 @@ public class Company {
             toServer.writeUTF(request);
             String response=fromServer.readUTF();
             System.out.println(response);
-        }catch (Exception ex){}    }
+        }catch (Exception ex){}
+    }
 
     public void displayCompanies(){
        String request="company/getAll/none";
