@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="40098456-60c6-4aeb-8896-539afe23d8d7" name="Changes" comment="customerInvoice control">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/NotificationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/NotificationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/NotificationRepo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +121,7 @@
       <workItem from="1646066282995" duration="4976000" />
       <workItem from="1646204891625" duration="45000" />
       <workItem from="1646207126183" duration="76000" />
-      <workItem from="1647259119973" duration="2039000" />
+      <workItem from="1647259119973" duration="3052000" />
     </task>
     <task id="LOCAL-00001" summary="customerInvoice control">
       <created>1646022290178</created>

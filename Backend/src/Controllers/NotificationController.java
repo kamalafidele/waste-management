@@ -27,10 +27,10 @@ public class NotificationController {
     public void filterRequest(String request, DataOutputStream toClient) {
         this.toClient=toClient;
         String[] requestArray = request.split("/");
-        int token = parseInt(requestArray[2]);
+        int receiver = parseInt(requestArray[2]);
         switch (requestArray[1]) {
-            case "getAll" -> getAllNotifications(token);
-            case "getUnread" -> getByViewStatusNotifications("unread", token);
+            case "getAll" -> getAllNotifications(receiver);
+            case "getUnread" -> getByViewStatusNotifications("unread", receiver);
             default -> sendResponse("Please specify your request (Be serious!)");
         }
     }
@@ -38,8 +38,8 @@ public class NotificationController {
     private void insertNotificationsToList(List<Notification> notifications, ResultSet resultSet) {
         try{
             while(resultSet.next()){
-                Notification notification = new Notification(resultSet.getLong(1), resultSet.getInt(2), resultSet.getString(3),
-                        resultSet.getString(4), resultSet.getString(5), resultSet.getDate(6));
+                Notification notification = new Notification(resultSet.getLong(1), resultSet.getString(2), resultSet.getString(3),
+                        resultSet.getInt(4), resultSet.getString(5), resultSet.getString(6), resultSet.getDate(7));
                 notifications.add(notification);
             }
             sendResponse(mapper.writeValueAsString(notifications));

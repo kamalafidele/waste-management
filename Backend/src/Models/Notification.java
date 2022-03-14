@@ -9,18 +9,20 @@ import java.util.Date;
 
 public class Notification {
     private Long notificationId;
+    private String title;
+    private String content;
     private Integer receiver;
     private String type;
-    private String content;
     private String viewStatus;
     private Date sentDate;
 
     public Notification(){
 
     }
-    public Notification(Long notificationId, Integer token, String type, String content, String viewStatus, Date sentDate){
+    public Notification(Long notificationId, String title, String content, Integer receiver, String type, String viewStatus, Date sentDate){
         this.notificationId = notificationId;
-        this.receiver = token;
+        this.title = title;
+        this.receiver = receiver;
         this.type = type;
         this.content = content;
         this.viewStatus = viewStatus;
@@ -74,4 +76,11 @@ public class Notification {
         this.sentDate = sentDate;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
