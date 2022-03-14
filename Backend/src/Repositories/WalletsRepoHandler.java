@@ -9,17 +9,20 @@ public class WalletsRepoHandler {
     public WalletsRepoHandler(){
         database=new DatabaseConnection();
     }
-    public ResultSet findWalletByCompanyId(int companyId){
-
-        return database.select("select amount from wallet w inner join company c on c.walletId=w.id where c.id= "+companyId);
-    }
-    public ResultSet findWalletByDistrictId(int district_id){
-        return database.select("select amount from wallet w inner join district d on d.walletId=w.id where d.id="+district_id);
-    }
-    public ResultSet findWalletByUserId(int userid){
-        return database.select("select amount from wallet w inner join citizen c on c.walletId=w.id where c.id"+userid);
-    }
-    public ResultSet findWalletByAdminId(int admins_id){
-        return database.select("select amount from wallet w inner join admin a on a.walletId=w.id where a.id = "+admins_id);
+//    public ResultSet findWalletByCompanyId(int companyId){
+//
+//        return database.select("select amount from wallet w inner join users c on c.walletId=w.id where c.id= "+companyId);
+//    }
+//    public ResultSet findWalletByDistrictId(int district_id){
+//        return database.select("select amount from wallet w inner join users d on d.walletId=w.id where d.id="+district_id);
+//    }
+//    public ResultSet findWalletByUserId(int userid){
+//        return database.select("select amount from wallet w inner join users c on c.walletId=w.id where c.id"+userid);
+//    }
+//    public ResultSet findWalletByAdminId(int admins_id){
+//        return database.select("select amount from wallet w inner join users a on a.walletId=w.id where a.id = "+admins_id);
+//    }
+    public ResultSet findWallet(int userId){
+        return database.select("select amount from wallet w inner join users u on u.wallet=w.id where u.id = "+userId);
     }
 }
