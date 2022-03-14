@@ -16,7 +16,7 @@ public class DistrictDemo {
         //login the admin
         try{
 
-            ResultSet result = database.select("SELECT * from districts WHERE districtToken"=district.getdistrictToken());
+            ResultSet result = database.select("SELECT * from districts WHERE districtToken"=district.getdistrictToken() AND "password"=);
             if(result.next()){
                 return true;
             }
