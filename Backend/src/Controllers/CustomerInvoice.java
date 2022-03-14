@@ -1,7 +1,7 @@
 package Controllers;
 
 import Models.CustomerInvoices;
-import Repositories.customerInvoicesRepo;
+import Repositories.CustomerInvoicesRepo;
 import org.codehaus.jackson.map.ObjectMapper;
 
 
@@ -10,11 +10,11 @@ import java.io.*;
 
 
 public class CustomerInvoice {
-    private customerInvoicesRepo customerInvoicesRepo;
+    private CustomerInvoicesRepo customerInvoicesRepo;
     private ObjectMapper mapper;
     private DataOutputStream reply;
       public CustomerInvoice(){
-       customerInvoicesRepo=new customerInvoicesRepo();
+       customerInvoicesRepo=new CustomerInvoicesRepo();
         mapper = new ObjectMapper();
     }
 
