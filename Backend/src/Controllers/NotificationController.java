@@ -48,31 +48,49 @@ public class NotificationController {
         }
     }
 
-    public void getAllNotifications(int token){
+    public void getAllNotifications(int receiver){
         List<Notification> notifications = new ArrayList<>();
-        ResultSet resultSet = notificationRepo.findAll(token);
+        ResultSet resultSet = notificationRepo.findAll(receiver);
         insertNotificationsToList(notifications, resultSet);
     }
 
-    public void getByViewStatusNotifications(String viewStatus, int token){
+    public void getByViewStatusNotifications(String viewStatus, int receiver){
         List<Notification> unreadNotifications = new ArrayList<>();
-        ResultSet resultSet = notificationRepo.findByViewStatus(viewStatus, token);
+        ResultSet resultSet = notificationRepo.findByViewStatus(viewStatus, receiver);
         insertNotificationsToList(unreadNotifications, resultSet);
     }
 
-    public void createNotification(int token, String notificationType){
+    public void createNotification(int receiver, String notification_type){
         Notification notification = new Notification();
         Date date = new Date();
         notification.setSentDate(date);
-        notification.setReceiver(token);
+        notification.setReceiver(receiver);
 
-        switch (notificationType) {
-            case "ServiceNotification" -> notification.setContent("Hello! We are going to collect garbage after three days");
-            case "providedServiceNotification" -> notification.setContent("Hello! Your garbage was collected today");
-            case "paymentDueNotification" -> notification.setContent("Hello! Three days remaining inorder to pay for garbage collection");
-            case "paymentWarningNotification" -> notification.setContent("Hello! It's been a long time since you paid your garbage collection. If any further delay charges may apply");
-            case "paymentSuccessfulNotification" -> notification.setContent("Hello! Payment successful");
-            case "reportAvailableNotification" -> notification.setContent("Hello! View last months report(analytics)");
+        switch (notification_type) {
+            case "ServiceNotification" -> {
+                notification.setContent("Hello! We are going to collect garbage after three days");
+                notification.setTitle("Providing Service Soon");
+            }
+            case "providedServiceNotification" -> {
+                notification.setContent("Hello! Your garbage was collected today");
+                notification.setTitle("Service Provided");
+            }
+            case "paymentDueNotification" -> {
+                notification.setContent("Hello! Three days remaining inorder to pay for garbage collection");
+                notification.setTitle("Due Payment");
+            }
+            case "paymentWarningNotification" -> {
+                notification.setContent("Hello! It's been a long time since you paid your garbage collection. If any further delay charges may apply");
+                notification.setTitle("Payment Warning");
+            }
+            case "paymentSuccessfulNotification" -> {
+                notification.setContent("Hello! Payment successful");
+                notification.setTitle("Successful Payment");
+            }
+            case "reportAvailableNotification" -> {
+                notification.setContent("Hello! View last months report(analytics)");
+                notification.setTitle("Report Available");
+            }
             default -> System.out.println("Invalid notification type");
         }
 
