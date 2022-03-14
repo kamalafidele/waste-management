@@ -64,15 +64,15 @@ public class NotificationController {
         Notification notification = new Notification();
         Date date = new Date();
         notification.setSentDate(date);
-        notification.setToken(token);
+        notification.setReceiver(token);
 
         switch (notificationType) {
-            case "ServiceNotification" -> notification.setMessage("Hello! We are going to collect garbage after three days");
-            case "providedServiceNotification" -> notification.setMessage("Hello! Your garbage was collected today");
-            case "paymentDueNotification" -> notification.setMessage("Hello! Three days remaining inorder to pay for garbage collection");
-            case "paymentWarningNotification" -> notification.setMessage("Hello! It's been a long time since you paid your garbage collection. If any further delay charges may apply");
-            case "paymentSuccessfulNotification" -> notification.setMessage("Hello! Payment successful");
-            case "reportAvailableNotification" -> notification.setMessage("Hello! View last months report(analytics)");
+            case "ServiceNotification" -> notification.setContent("Hello! We are going to collect garbage after three days");
+            case "providedServiceNotification" -> notification.setContent("Hello! Your garbage was collected today");
+            case "paymentDueNotification" -> notification.setContent("Hello! Three days remaining inorder to pay for garbage collection");
+            case "paymentWarningNotification" -> notification.setContent("Hello! It's been a long time since you paid your garbage collection. If any further delay charges may apply");
+            case "paymentSuccessfulNotification" -> notification.setContent("Hello! Payment successful");
+            case "reportAvailableNotification" -> notification.setContent("Hello! View last months report(analytics)");
             default -> System.out.println("Invalid notification type");
         }
 
