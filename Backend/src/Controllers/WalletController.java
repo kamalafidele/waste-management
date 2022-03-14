@@ -36,7 +36,6 @@ public class WalletController {
 
     public void returnWallet( String response ) {
         try {
-            System.out.println("SENT RESPONSE");
             toClient.writeUTF(response);
         } catch ( IOException exception ) {
             exception.printStackTrace();
