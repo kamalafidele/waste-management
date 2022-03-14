@@ -15,29 +15,18 @@ public class WalletController {
     private ObjectMapper mapper;
     private Wallet wallet;
 
+    public WalletController(){
+        walletRepo = new WalletsRepoHandler();
+        mapper = new ObjectMapper();
+    }
+
     public void whichWallet( String request, DataOutputStream toClient ) {
         wallet = new Wallet();
         System.out.println(request);
         try {
             this.toClient = toClient;
-            String ownerId = request.split("/")[2];
-            switch (request.split("/")[1]) {
-                case "admin":
-                    getAdminWallet(ownerId);
-                    break;
-                case "company":
-                    getCompanyWallet(ownerId);
-                    break;
-                case "district":
-                    getDistrictWallet(ownerId);
-                    break;
-                case "client":
-                    getUserWallet(ownerId);
-                    break;
-                default:
-                    returnWallet("Please specify the wallet owner type!");
-                    break;
-            }
+            String ownerId = request.split("/")[1];
+            getUserWallet(ownerId);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -48,7 +37,6 @@ public class WalletController {
 
     public void returnWallet( String response ) {
         try {
-            System.out.println("SENT RESPONSE");
             toClient.writeUTF(response);
         } catch ( IOException exception ) {
             exception.printStackTrace();
@@ -64,36 +52,16 @@ public class WalletController {
         } catch (SQLException exception){}
     }
 
-    public WalletController(){
-        walletRepo = new WalletsRepoHandler();
-        mapper = new ObjectMapper();
-    }
-
     public void getUserWallet(String request){
         this.toClient = toClient;
         int userId = Integer.parseInt(request);
-        ResultSet walletResult = walletRepo.findWalletByUserId(userId);
-        getWalletBalance(walletResult);
-    }
-
-    public void getAdminWallet(String request){
-        this.toClient = toClient;
-        int adminId = Integer.parseInt(request);
-        ResultSet walletResult = walletRepo.findWalletByAdminId(adminId);
-        getWalletBalance(walletResult);
-    }
-
-    public void getDistrictWallet(String request){
-        this.toClient = toClient;
-        int districtId = Integer.parseInt(request);
-        ResultSet walletResult = walletRepo.findWalletByDistrictId(districtId);
-        getWalletBalance(walletResult);
-    }
-
-    public void getCompanyWallet(String request){
-        this.toClient = toClient;
-        int companyId = Integer.parseInt(request);
-        ResultSet walletResult = walletRepo.findWalletByCompanyId(companyId);
-        getWalletBalance(walletResult);
+        try {
+            ResultSet walletResult = walletRepo.findWalletByUserId(userId);
+            getWalletBalance(walletResult);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            returnWallet("Null wallet");
+        }
     }
 }
