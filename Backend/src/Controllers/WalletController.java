@@ -58,11 +58,4 @@ public class WalletController {
         ResultSet walletResult = walletRepo.findWalletByUserId(userId);
         getWalletBalance(walletResult);
     }
-
-    public void getAdminWallet(String request){
-        this.toClient = toClient;
-        int adminId = Integer.parseInt(request);
-        ResultSet walletResult = walletRepo.findWalletByAdminId(adminId);
-        getWalletBalance(walletResult);
-    }
 }
