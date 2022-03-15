@@ -13,7 +13,7 @@ public class ThreadHandler extends Thread{
     private final WalletController walletController;
     private final PaymentController paymentController;
     private final AdminController adminController;
-
+    private final DebtController debtController;
     public ThreadHandler(Socket socket){
         this.socket=socket;
         companyController=new CompanyController();
@@ -22,20 +22,20 @@ public class ThreadHandler extends Thread{
         paymentController=new PaymentController();
         walletController = new WalletController();
         adminController = new AdminController();
+        debtController=new DebtController();
     }
 
 
     @Override
     public void run(){
         try{
-            CompanyController company = new CompanyController();
             System.out.println("Client connected");
 
             DataInputStream fromClient=new DataInputStream(socket.getInputStream());
             DataOutputStream toClient=new DataOutputStream(socket.getOutputStream());
 
             //READING REQUESTS FROM THE CLIENT
-            String request=fromClient.readUTF();
+            String request = fromClient.readUTF();
             switch (request.split("/")[0]){
                 case "admin":
                     adminController.handleRequest(request, toClient);
@@ -59,6 +59,8 @@ public class ThreadHandler extends Thread{
                     break;
                 case "notification":
                     notificationController.filterRequest(request,toClient);
+                case "debt":
+                    debtController.filterRequest(request,toClient);
                 default:
                     System.out.println(request.split("/")[0]);
                     toClient.writeUTF("Undefined request");
