@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="40098456-60c6-4aeb-8896-539afe23d8d7" name="Changes" comment="customerInvoice control" />
     <list default="true" id="be78f8c7-d870-4cb2-b1b6-94c3b9aa4cfc" name="Changes" comment="customerInvoice control">
       <change afterPath="$PROJECT_DIR$/../.autogit/autogit.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-10-1-51.txt" afterDir="false" />
