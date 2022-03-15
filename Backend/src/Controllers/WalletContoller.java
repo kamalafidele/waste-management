@@ -33,6 +33,9 @@ public class WalletContoller {
                 case "client":
                     getUserWallet(ownerId);
                     break;
+                case "getWalletCount":
+                    walletCount();
+                    break;
                 default:
                     returnWallet("Please specify the wallet owner type!");
                     break;
@@ -59,7 +62,6 @@ public class WalletContoller {
     }
 
     public void getUserWallet(String request){
-        this.toClient = toClient;
         int userId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByUserId(userId);
         try{
@@ -73,7 +75,6 @@ public class WalletContoller {
     }
 
     public void getAdminWallet(String request){
-        this.toClient = toClient;
         int adminId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByAdminId(adminId);
         try{
@@ -87,7 +88,6 @@ public class WalletContoller {
     }
 
     public void getDistrictWallet(String request){
-        this.toClient = toClient;
         int districtId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByDistrictId(districtId);
         try{
@@ -101,7 +101,6 @@ public class WalletContoller {
     }
 
     public void getCompanyWallet(String request){
-        this.toClient = toClient;
         int companyId = Integer.parseInt(request);
         ResultSet walletResult = walletRepo.findWalletByCompanyId(companyId);
         System.out.println(walletResult);
@@ -111,5 +110,16 @@ public class WalletContoller {
             }
             returnWallet(String.valueOf(wallet.getBalance()));
         } catch (SQLException exception){}
+    }
+
+    public void walletCount(){
+        ResultSet resultSet= walletRepo.findWalletsCount();
+        try{
+            while(resultSet.next()){
+                toClient.writeUTF(String.valueOf(resultSet.getInt("totalWallets")));
+            }
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
     }
 }

@@ -21,4 +21,12 @@ public class WalletsRepoHandler {
     public ResultSet findWalletByAdminId(int admins_id){
         return database.select("SELECT balance FROM admins_wallet WHERE admins_id = "+admins_id);
     }
+
+    public ResultSet findWalletsCount(){
+        return database.select("SELECT COUNT(*) AS totalWallets FROM Wallet;");
+    }
+
+    public boolean addWallet(){
+        return database.insert("INSERT INTO Wallet (amount) VALUES (0) ");
+    }
 }
