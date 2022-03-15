@@ -9,20 +9,22 @@ import java.util.Date;
 
 public class Notification {
     private Long notificationId;
-    private Integer token;
-    private String notificationType;
-    private String message;
+    private String title;
+    private String content;
+    private Integer receiver;
+    private String type;
     private String viewStatus;
     private Date sentDate;
 
     public Notification(){
 
     }
-    public Notification(Long notificationId, Integer token, String notificationType, String message, String viewStatus, Date sentDate){
+    public Notification(Long notificationId, String title, String content, Integer receiver, String type, String viewStatus, Date sentDate){
         this.notificationId = notificationId;
-        this.token = token;
-        this.notificationType = notificationType;
-        this.message = message;
+        this.title = title;
+        this.receiver = receiver;
+        this.type = type;
+        this.content = content;
         this.viewStatus = viewStatus;
         this.sentDate = sentDate;
     }
@@ -34,28 +36,28 @@ public class Notification {
         this.notificationId = notificationId;
     }
 
-    public Integer getToken() {
-        return token;
+    public Integer getReceiver() {
+        return receiver;
     }
 
-    public void setToken(Integer token) {
-        this.token = token;
+    public void setReceiver(Integer receiver) {
+        this.receiver = receiver;
     }
 
-    public String getNotificationType() {
-        return notificationType;
+    public String getType() {
+        return type;
     }
 
-    public void setNotificationType(String notificationType) {
-        this.notificationType = notificationType;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getMessage() {
-        return message;
+    public String getContent() {
+        return content;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getViewStatus() {
@@ -74,4 +76,11 @@ public class Notification {
         this.sentDate = sentDate;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
