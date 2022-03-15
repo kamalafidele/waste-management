@@ -106,7 +106,7 @@ public class DistrictDashboard {
             String loginRes = login();
 
             if(Objects.equals(loginRes, "false")){
-                System.out.println("--------Invalid credentials!----------");
+                System.out.println("--------Invalid Inputs----------");
                 System.out.println("\n");
             }else{
                 try {

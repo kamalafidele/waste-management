@@ -5,40 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c0a7eec-7ea6-4b28-b3c9-6eefe622eff8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-12-40-23.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/jackson_all_1_9_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/libs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/waste-management.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/.idea/runConfigurations.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-13-10-46.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/isLogged.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/LoginData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/Admin/Admin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/Admin/loggedIn.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/Company$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/Company.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/Confirmer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/Debt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/House/Dashboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/House/House.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/Notification$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/Notification.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/Payment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/Wallet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/Components/customerInvoice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/DataHandlers/Admin/LoginInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/DataHandlers/CompanyHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/DataHandlers/ConfirmationProcessHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/DataHandlers/CustomerInvoicesHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/DataHandlers/HouseHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/DataHandlers/LoginData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/DataHandlers/NotificationHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/Client/DataHandlers/WalletHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/DistrictController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/DistrictController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/DistrictRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/DistrictRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,10 +36,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Backend" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -98,7 +77,7 @@
       <workItem from="1647265667116" duration="18000" />
       <workItem from="1647320617627" duration="560000" />
       <workItem from="1647322125813" duration="974000" />
-      <workItem from="1647342499089" duration="65000" />
+      <workItem from="1647342499089" duration="1792000" />
     </task>
     <servers />
   </component>
