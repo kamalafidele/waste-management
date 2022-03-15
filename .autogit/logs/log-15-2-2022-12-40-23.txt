@@ -1,0 +1,22 @@
+-------------------- Auto-Git Log --------------------
+		Tue Mar 15 2022 12:40:23 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* Backend/src/Config/DatabaseConnection.java
+* Client/src/Application.java
+* out/production/Client/Application.class
+* out/production/Client/Components/Company.class
+* out/production/Client/Components/Debt.class
+* out/production/Client/Components/District/DistrictDashboard.class
+* out/production/Client/DataHandlers/CompanyHandler.class
+
+
+Created files:
+* .autogit/logs/log-15-2-2022-12-10-6.txt
+
+
+Deleted files:
+
+
+Renamed files:
