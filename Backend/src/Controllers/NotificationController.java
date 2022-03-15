@@ -29,9 +29,14 @@ public class NotificationController {
         String[] requestArray = request.split("/");
         int token = parseInt(requestArray[2]);
         switch (requestArray[1]) {
-            case "getAll" -> getAllNotifications(token);
-            case "getUnread" -> getByViewStatusNotifications("unread", token);
-            default -> sendResponse("Please specify your request (Be serious!)");
+            case "getAll" :
+                getAllNotifications(token);
+                break;
+            case "getUnread":
+                getByViewStatusNotifications("unread", token);
+                break;
+            default:
+                sendResponse("Please specify your request (Be serious!)");
         }
     }
 
@@ -67,13 +72,27 @@ public class NotificationController {
         notification.setToken(token);
 
         switch (notificationType) {
-            case "ServiceNotification" -> notification.setMessage("Hello! We are going to collect garbage after three days");
-            case "providedServiceNotification" -> notification.setMessage("Hello! Your garbage was collected today");
-            case "paymentDueNotification" -> notification.setMessage("Hello! Three days remaining inorder to pay for garbage collection");
-            case "paymentWarningNotification" -> notification.setMessage("Hello! It's been a long time since you paid your garbage collection. If any further delay charges may apply");
-            case "paymentSuccessfulNotification" -> notification.setMessage("Hello! Payment successful");
-            case "reportAvailableNotification" -> notification.setMessage("Hello! View last months report(analytics)");
-            default -> System.out.println("Invalid notification type");
+            case "ServiceNotification":
+                notification.setMessage("Hello! We are going to collect garbage after three days");
+                break;
+            case "providedServiceNotification":
+                notification.setMessage("Hello! Your garbage was collected today");
+                break;
+            case "paymentDueNotification":
+                notification.setMessage("Hello! Three days remaining inorder to pay for garbage collection");
+                break;
+            case "paymentWarningNotification":
+                notification.setMessage("Hello! It's been a long time since you paid your garbage collection. I" +
+                        "f any further delay charges may apply");
+                break;
+            case "paymentSuccessfulNotification":
+                notification.setMessage("Hello! Payment successful");
+                break;
+            case "reportAvailableNotification":
+                notification.setMessage("Hello! View last months report(analytics)");
+                break;
+            default:
+                System.out.println("Invalid notification type");
         }
 
         notificationRepo.save(notification);
