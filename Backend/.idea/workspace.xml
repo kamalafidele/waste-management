@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be78f8c7-d870-4cb2-b1b6-94c3b9aa4cfc" name="Changes" comment="customerInvoice control">
-      <change afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-13-41-5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-14-11-30.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +70,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Client" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -121,7 +123,9 @@
       <workItem from="1646204891625" duration="45000" />
       <workItem from="1646207126183" duration="76000" />
       <workItem from="1647342491269" duration="49000" />
-      <workItem from="1647342590231" duration="2113000" />
+      <workItem from="1647342590231" duration="2197000" />
+      <workItem from="1647354827242" duration="596000" />
+      <workItem from="1647368713820" duration="683000" />
     </task>
     <task id="LOCAL-00001" summary="customerInvoice control">
       <created>1646022290178</created>

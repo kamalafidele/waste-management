@@ -1,5 +1,6 @@
 package Components.District;
 
+import Components.Company;
 import Components.Wallet;
 
 import DataHandlers.LoginData;
@@ -16,7 +17,7 @@ import java.util.Scanner;
 public class DistrictDashboard {
 
     LoginData logindata;
-
+    Company company;
     DataOutputStream toServer;
     DataInputStream fromServer;
     ObjectMapper mapper;
@@ -126,7 +127,6 @@ public class DistrictDashboard {
 
             System.out.println("1.User registration");
             System.out.println("2. Creating Company");
-            System.out.println("3. Confirmer");
             System.out.println("3. Citizen Registration");
 
             int choice;
@@ -138,11 +138,10 @@ public class DistrictDashboard {
                     break;
                 case 2:
                     System.out.println(" Creating Company");
+                    Company company=new Company(toServer,fromServer);
+                    company.addCompany();
                     break;
-                case 3:
-                    System.out.println("Confirmer");
-                    break;
-                    case 4:
+                    case 3:
                     System.out.println("Citizen Registration");
                     break;
             }

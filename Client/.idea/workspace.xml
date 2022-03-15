@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c0a7eec-7ea6-4b28-b3c9-6eefe622eff8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-13-41-5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-14-11-30.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -66,7 +69,8 @@
       <workItem from="1647265667116" duration="18000" />
       <workItem from="1647320617627" duration="560000" />
       <workItem from="1647322125813" duration="974000" />
-      <workItem from="1647342499089" duration="2204000" />
+      <workItem from="1647342499089" duration="2968000" />
+      <workItem from="1647368747151" duration="947000" />
     </task>
     <servers />
   </component>
