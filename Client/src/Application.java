@@ -1,6 +1,8 @@
 
 import Components.Admin.Admin;
+import Components.Company;
 import Components.House.House;
+import Components.District.DistrictDashboard;
 import Components.Wallet;
 
 import java.io.DataInputStream;
@@ -55,9 +57,12 @@ public class Application {
                     break;
                 case 2:
                     System.out.println("You are a district!");
+                    DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
+                    districtDashboard.handleDistrict();
                     break;
                 case 3:
                     System.out.println("You are a company!");
+                    new Company(toServer,fromServer).addCitizen();
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
