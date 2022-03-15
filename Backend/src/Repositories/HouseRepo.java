@@ -12,52 +12,43 @@ public class HouseRepo {
         database=new DatabaseConnection();
     }
 
-    public void createClientTable(){
-        String query="CREATE TABLE IF NOT EXISTS clients(id INTEGER PRIMARY KEY AUTO_INCREMENT,fullnames VARCHAR(255) not null unique,nid VARCHAR(255) unique,houseno VARCHAR(255),telno VARCHAR(255) unique,sector VARCHAR(255),cell VARCHAR(255),village VARCHAR(255),token VARCHAR(255) not null unique)";
-        database.createTable(query);
-    }
-
 //    public ResultSet findAll(){
-//        return database.select("SELECT * FROM clients");
+//        return database.select("SELECT * FROM citizen");
 //    }
 
-    public ResultSet findByToken(String token){
-        return database.select("SELECT * FROM clients WHERE token = "+token);
+    public ResultSet findByToken(String pin){
+        return database.select("SELECT * FROM users WHERE pin = "+pin);
     }
-
-//    public ResultSet findByNames(String names){
-//        return database.select("SELECT * FROM clients WHERE token = "+names);
-//    }
 
     public void save(House house){
-        String token=house.genPin();
+        String pin=house.genPin();
         //check if token exists
-        ResultSet resultSet=database.select("SELECT * FROM clients WHERE token = "+token);
+        ResultSet resultSet=database.select("SELECT * FROM users WHERE pin = "+pin);
         try {
             if(resultSet.next()){
-                System.out.println("Token already exists");
-                token=house.genPin();
-                boolean query = database.insert("INSERT INTO clients(fullnames,nid,houseno,telno,sector,cell,village,token) VALUES ('"+house.getFullnames()+"','"+house.getNid()+"','"+house.getHouseno()+"','"+house.getTelno()+"','"+house.getSector()+"','"+house.getCell()+"','"+house.getVillage()+"','"+token+"')");
+                System.out.println("Pin already exists");
+                pin=house.genPin();
+                boolean query = database.insert("INSERT INTO users(name, email, Phone, pin, Role, Wallet, Location) VALUES ('"+house.getName()+"','"+house.getEmail()+"','"+house.getPhone()+"','"+pin+"','"+house.getRole()+"','"+house.getWallet()+"','"+house.getLocation()+"')");
                 if(query){
-                    house.setMessage("Client saved successfully");
+                    house.setMessage("Citizen saved successfully");
                     System.out.println(house.getMessage());
-                    System.out.println("Token: "+token);
+                    System.out.println("Pin: "+pin);
                 }
                 else{
-                    house.setMessage("Unable to save client");
+                    house.setMessage("Unable to save citizen");
                     System.out.println(house.getMessage());
                 }
             }
             else{
                 //insert
-                boolean query = database.insert("INSERT INTO clients(fullnames,nid,houseno,telno,sector,cell,village,token) VALUES ('"+house.getFullnames()+"','"+house.getNid()+"','"+house.getHouseno()+"','"+house.getTelno()+"','"+house.getSector()+"','"+house.getCell()+"','"+house.getVillage()+"','"+token+"')");
+                boolean query = database.insert("INSERT INTO users(name, email, Phone, pin, Role, Wallet, Location) VALUES ('"+house.getName()+"','"+house.getEmail()+"','"+house.getPhone()+"','"+pin+"','"+house.getRole()+"','"+house.getWallet()+"','"+house.getLocation()+"')");
                 if(query){
-                    house.setMessage("Client saved successfully");
+                    house.setMessage("Citizen saved successfully");
                     System.out.println(house.getMessage());
-                    System.out.println("Token: "+token);
+                    System.out.println("Pin: "+pin);
                 }
                 else{
-                    house.setMessage("Unable to save client");
+                    house.setMessage("Unable to save citizen");
                     System.out.println(house.getMessage());
                 }
             }

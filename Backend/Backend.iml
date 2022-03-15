@@ -9,8 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jackson-all-1.9.9" level="project" />
     <orderEntry type="library" name="libs" level="project" />
-    <orderEntry type="library" name="libs" level="project" />
-    <orderEntry type="library" name="jackson-all-1.9.9" level="project" />
-    <orderEntry type="library" name="mysql-connector (2)" level="project" />
+    <orderEntry type="library" name="mysql-connector (3)" level="project" />
   </component>
 </module>
