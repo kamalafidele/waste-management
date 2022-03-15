@@ -27,11 +27,11 @@ public class Notification {
     public void displayAllNotifications(DataOutputStream toServer, DataInputStream fromServer){
         this.toServer=toServer;
         this.fromServer=fromServer;
-        String request="notification/getAll/2";
+        String request="notification/getAll/4";
 
         try{
             toServer.writeUTF(request);
-            String response=fromServer.readUTF();
+            String response = fromServer.readUTF();
             ArrayList<NotificationHandler> notifications=mapper.readValue(response,new TypeReference<ArrayList<NotificationHandler>>(){});
             Iterator<NotificationHandler> notificationIterator= notifications.iterator();
 
