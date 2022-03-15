@@ -29,13 +29,15 @@ public class ThreadHandler extends Thread{
     @Override
     public void run(){
         try{
+            CompanyController company = new CompanyController();
             System.out.println("Client connected");
 
             DataInputStream fromClient=new DataInputStream(socket.getInputStream());
             DataOutputStream toClient=new DataOutputStream(socket.getOutputStream());
-
+            DebtController debt=new DebtController();
             //READING REQUESTS FROM THE CLIENT
-            String request = fromClient.readUTF();
+            String request=fromClient.readUTF();
+            System.out.println(request);
             switch (request.split("/")[0]){
                 case "admin":
                     adminController.handleRequest(request, toClient);
@@ -60,6 +62,7 @@ public class ThreadHandler extends Thread{
                 case "notification":
                     notificationController.filterRequest(request,toClient);
                 case "debt":
+                    System.out.println("in debts");
                     debtController.filterRequest(request,toClient);
                 default:
                     System.out.println(request.split("/")[0]);

@@ -17,6 +17,7 @@ public class DebtController {
         this.toClient=toClient;
         switch (request.split("/")[1]) {
             case "checkWasteDebt":
+                System.out.println("hey there");
                 String userId=String.valueOf(request.split("/")[2]);
                 checkWasteDebt(userId);
                 break;
@@ -42,6 +43,7 @@ public class DebtController {
                 sendResponse("you have a debt of: "+balance+"Frw in wallet");
                 return;
             }
+            System.out.println(userId);
         }
         catch (SQLException sql){
             System.out.println(sql.getMessage());

@@ -21,8 +21,10 @@ public class Debt {
          switch (option){
              case 1:
                  checkSecurityDebt();
+                 System.out.println("waste debt");
                  break;
              case 2:
+                 System.out.println("waste debt");
                  checkWasteDebt();
                  break;
              default:
@@ -34,8 +36,9 @@ public class Debt {
         String request="debt/checkSecurityDebt/"+userId;
         try {
             toServer.writeUTF(request);
-            String response=fromServer.readUTF();
-            System.out.println(response);
+//            String response=fromServer.readUTF();
+//            System.out.println(response);
+//            toServer.writeUTF("HEY SERVER");
         }
         catch (IOException ie){
             ie.printStackTrace();
@@ -47,8 +50,8 @@ public class Debt {
         String request="debt/checkWasteDebt/"+userId;
         try {
             toServer.writeUTF(request);
-            String response=fromServer.readUTF();
-            System.out.println(response);
+//            String response=fromServer.readUTF();
+//            System.out.println(response);
         }
         catch (IOException ie){
             ie.printStackTrace();
