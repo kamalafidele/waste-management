@@ -5,7 +5,7 @@ import Models.District;
 
 import java.sql.ResultSet;
 
-public class DistrictDemo {
+public class DistrictRepo {
     private DatabaseConnection database;
 
     public DistrictRepo(){
@@ -15,8 +15,10 @@ public class DistrictDemo {
     public boolean login(District district) {
    
         try{
+
             ResultSet answer = database.select("SELECT * FROM districts WHERE districtToken = '"+district.getdistrictToken()+"' AND password = '"+district.getPassword()+"' ");
-            if(result.next()){
+
+            if(answer.next()){
                 return true;
             }
 

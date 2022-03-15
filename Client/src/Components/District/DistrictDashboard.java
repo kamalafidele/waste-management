@@ -1,7 +1,9 @@
 package Components.District;
 
 import Components.Wallet;
+
 import DataHandlers.LoginData;
+
 
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -12,7 +14,9 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class DistrictDashboard {
+
     LoginData logindata;
+
     DataOutputStream toServer;
     DataInputStream fromServer;
     ObjectMapper mapper;
@@ -35,11 +39,13 @@ public class DistrictDashboard {
     public String login()  {
         try {
 
+
             logindata = new LoginData();
 
             System.out.print("\n");
             System.out.println("-------- District Login!----------");
             System.out.print("districtToken: ");
+
             logindata.setDistrictToken(keyboard.next());
             System.out.print("Password: ");
             logindata.setPassword(keyboard.next());
@@ -47,6 +53,7 @@ public class DistrictDashboard {
 
             toServer.flush();
             this.sendRequest("District/login/" + mapper.writeValueAsString(logindata));
+
 
             return fromServer.readUTF();
 
