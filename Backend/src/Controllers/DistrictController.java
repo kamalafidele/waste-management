@@ -1,20 +1,20 @@
 package Controllers;
-import Models.Admin;
-import Repositories.AdminRepo;
+import Models.District;
+import Repositories.DistrictRepo;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-public class AdminController {
+public class DistrictController {
 
     private DataOutputStream toClient;
     private final ObjectMapper mapper;
-    private final AdminRepo adminRepo;
+    private final DistrictRepo districtRepo;
 
-    public AdminController(){
+    public DistrictController(){
         this.mapper = new ObjectMapper();
-        this.adminRepo = new AdminRepo();
+        this.districtRepo = new DistrictRepo();
     };
 
     public void handleRequest(String request, DataOutputStream toClient){
@@ -31,9 +31,9 @@ public class AdminController {
 
     public void login(String data){
         try {
-            Admin admin = mapper.readValue(data, Admin.class);
+            District district = mapper.readValue(data, District.class);
 
-            if(adminRepo.login(admin)){
+            if(districtRepo.login(district)){
                 sendResponse("true");
             }else{
                 sendResponse("false");

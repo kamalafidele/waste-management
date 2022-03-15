@@ -29,14 +29,13 @@ public class ThreadHandler extends Thread{
     @Override
     public void run(){
         try{
-            CompanyController company = new CompanyController();
             System.out.println("Client connected");
 
             DataInputStream fromClient=new DataInputStream(socket.getInputStream());
             DataOutputStream toClient=new DataOutputStream(socket.getOutputStream());
 
             //READING REQUESTS FROM THE CLIENT
-            String request=fromClient.readUTF();
+            String request = fromClient.readUTF();
             switch (request.split("/")[0]){
                 case "admin":
                     adminController.handleRequest(request, toClient);

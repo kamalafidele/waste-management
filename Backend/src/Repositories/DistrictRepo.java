@@ -5,19 +5,20 @@ import Models.District;
 
 import java.sql.ResultSet;
 
-public class DistrictDemo {
+public class DistrictRepo {
     private DatabaseConnection database;
 
-    public DistrictDemo(){
+    public DistrictRepo(){
         this.database = new DatabaseConnection();
     }
 
     public boolean login(District district) {
-        //login the admin
+   
         try{
 
-            ResultSet result = database.select("SELECT * from districts WHERE districtToken = " + district.getdistrictToken() + "AND password =");
-            if(result.next()){
+            ResultSet answer = database.select("SELECT * FROM districts WHERE districtToken = '"+district.getdistrictToken()+"' AND password = '"+district.getPassword()+"' ");
+
+            if(answer.next()){
                 return true;
             }
 
