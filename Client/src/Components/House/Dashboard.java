@@ -69,9 +69,9 @@ public class Dashboard {
     }
 
     public void viewProfile(HouseHandler handler) {
-        System.out.println("######################### HOUSE INFORMATION ###################################### ");
-        ////    id, name, pin, sectorId, walletId
-        System.out.println( BLUE + " Your full name: " + RESET + handler.getName());
-        System.out.println( BLUE + " Your login pin: " + RESET + handler.getPin());
+        System.out.println("######################### YOUR INFORMATION (CITIZEN)###################################### ");
+        System.out.println( BLUE + " Name: " + RESET + handler.getName());
+        System.out.println( BLUE + " Email: " + RESET + handler.getEmail());
+        System.out.println( BLUE + " Phone: " + RESET + handler.getPhone());
     }
 }
