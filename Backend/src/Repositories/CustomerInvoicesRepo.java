@@ -4,7 +4,6 @@ package Repositories;
 
 import Config.DatabaseConnection;
 import Models.CustomerInvoices;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.*;
 import java.sql.ResultSet;
@@ -12,11 +11,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class customerInvoicesRepo {
+public class CustomerInvoicesRepo {
     private DataOutputStream toClient;
 
     DatabaseConnection database;
-    public customerInvoicesRepo(){
+    public CustomerInvoicesRepo(){
         database=new DatabaseConnection();
     }
     public ResultSet findById(int userId){

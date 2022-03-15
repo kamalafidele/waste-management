@@ -1,8 +1,12 @@
 package Components.Admin;
 
+import Components.Wallet;
 import DataHandlers.Admin.LoginInfo;
 import org.codehaus.jackson.map.ObjectMapper;
+
+
 import java.io.*;
+import java.net.Socket;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -51,6 +55,9 @@ public class Admin {
         }
 
         try {
+//            Socket socket=new Socket("localhost",3000);
+//            DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
+//            DataInputStream fromServer=new DataInputStream(socket.getInputStream());
             //admin dashboard
             System.out.println("\n");
             System.out.println("--------Welcome abroad!----------");
@@ -70,7 +77,7 @@ public class Admin {
                     System.out.println("see districts");
                     break;
                 case 2:
-                    System.out.println("see wallet");
+                    new Wallet(toServer,fromServer).showWallet();
                     break;
                 case 3:
                     System.out.println("see analytics");

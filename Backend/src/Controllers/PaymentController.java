@@ -17,7 +17,8 @@ public class PaymentController {
     };
 
     private DataOutputStream toClient;
-
+    DebtController debtController=new DebtController();
+    long balance=debtController.balance;
     public void momoPayment(String phoneNumber, int amount, String token){
         //Checking if the amount > 1000
         System.out.println("The amount "+amount);
@@ -27,8 +28,6 @@ public class PaymentController {
             sendResponse("The maximum amount is 1000");
             return;
         }
-
-
         // Sending response to the client
         ResultSet resultSet = paymentRepo.findMomoAccountByNumber(phoneNumber);
         String phoneNber = "0";
@@ -56,7 +55,14 @@ public class PaymentController {
             sendResponse("The number you entered doesn't have momo account.Please make sure you entered the right number ");
             return;
         }
+        if (debtController.isDebtLimit(token)){
+            if(amount<1000){
+                sendResponse("You can not have another debt please complete previous one");
+                return;
+            }
+        }
         paymentRepo.transferMoney(phoneNber, amount, token);
+
         sendResponse("Your payment has been recorded!");
 
 
@@ -136,7 +142,7 @@ public class PaymentController {
             }
             System.out.println(balance);
             if(balance>0){
-                System.out.println("you dont have a debt");
+                System.out.println("you don't have a debt");
                 sendResponse("ooh wow you don't have any debt \t you have: "+balance+"Frw in wallet");
                 return;
             }
