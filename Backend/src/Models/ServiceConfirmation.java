@@ -5,21 +5,18 @@ import java.util.Date;
 public class ServiceConfirmation {
     private int id;
     private int serviceId;
-    private int companyId;
-    private Date date;
-    private int Confirmer;
+    private int shiftId;
+    private int ConfirmerId;
 
 
     public ServiceConfirmation() {
-
     }
 
-    public ServiceConfirmation(int id,int serviceId,int companyId,Date date,int Confirmer) {
+    public ServiceConfirmation(int id,int serviceId,int shiftId,Date date,int Confirmer) {
         this.id = id;
         this.serviceId=serviceId;
-        this.companyId = companyId;
-        this.date=date;
-        this.Confirmer=Confirmer;
+        this.shiftId=shiftId;
+        this.ConfirmerId=Confirmer;
     }
 
     public int getId() {
@@ -37,28 +34,21 @@ public class ServiceConfirmation {
     public void setServiceId(int serviceId) {
         this.serviceId = serviceId;
     }
-    public int getCompanyId() {
-        return companyId;
+
+    public int getShiftId() {
+        return shiftId;
     }
 
-    public void setCompanyId(int companyId) {
-        this.companyId = companyId;
+    public void setShiftId(int shiftId) {
+        this.shiftId = shiftId;
     }
 
-    public Date getDate() {
-        return date;
+    public int getConfirmerId() {
+        return ConfirmerId;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public int getConfirmer() {
-        return Confirmer;
-    }
-
-    public void setConfirmer(int confirmer) {
-        Confirmer = confirmer;
+    public void setConfirmerId(int confirmerId) {
+        ConfirmerId = confirmerId;
     }
 
 }
