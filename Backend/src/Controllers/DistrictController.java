@@ -6,13 +6,13 @@ import org.codehaus.jackson.map.ObjectMapper;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-public class AdminController {
+public class DistrictController {
 
     private DataOutputStream toClient;
     private final ObjectMapper mapper;
     private final AdminRepo adminRepo;
 
-    public AdminController(){
+    public DistrictController(){
         this.mapper = new ObjectMapper();
         this.adminRepo = new AdminRepo();
     };

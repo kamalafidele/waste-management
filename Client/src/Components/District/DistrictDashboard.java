@@ -1,7 +1,7 @@
 package Components.District;
 
 import Components.Wallet;
-import DataHandlers.District.LoginInfo;
+//import DataHandlers.District.LoginInfo;
 import org.codehaus.jackson.map.ObjectMapper;
 
 
@@ -10,8 +10,8 @@ import java.net.Socket;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class District {
-    LoginInfo loginInfos;
+public class DistrictDashboard {
+    //LoginInfo loginInfos;
     DataOutputStream toServer;
     DataInputStream fromServer;
     ObjectMapper mapper;
@@ -22,9 +22,9 @@ public class District {
     BufferedReader bufferedReader;
     File file;
 
-    public District(){}
+    public DistrictDashboard(){}
 
-    public District(DataOutputStream toServer, DataInputStream fromServer) {
+    public DistrictDashboard(DataOutputStream toServer, DataInputStream fromServer) {
         this.toServer = toServer;
         this.fromServer=fromServer;
         mapper = new ObjectMapper();
@@ -88,18 +88,18 @@ public class District {
     public String login()  {
         try {
 
-            loginInfos = new LoginInfo();
+            //loginInfos = new LoginInfo();
 
             System.out.print("\n");
             System.out.println("--------Login as an District!----------");
             System.out.print("districtToken: ");
-            loginInfos.setUsername(keyboard.next());
+            //loginInfos.setUsername(keyboard.next());
             System.out.print("Password: ");
-            loginInfos.setPassword(keyboard.next());
+            //loginInfos.setPassword(keyboard.next());
 
 
             toServer.flush();
-            this.sendRequest("District/login/" + mapper.writeValueAsString(loginInfos));
+            //this.sendRequest("District/login/" + mapper.writeValueAsString(loginInfos));
 
             return fromServer.readUTF();
 

@@ -2,6 +2,7 @@ package Models;
 
 public class District {
     private String districtId;
+    private String username;
     private String password;
 
     public District(){}
@@ -16,6 +17,14 @@ public class District {
     }
 
     public void setdistrictToken(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
         this.username = username;
     }
 
