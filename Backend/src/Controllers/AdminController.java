@@ -24,6 +24,11 @@ public class AdminController {
             case "login":
                 login(request.split("/")[2]);
                 break;
+
+            case "createadmin":
+                createAdmin(request.split("/")[2]);
+                break;
+
             default:
                 break;
         }
@@ -31,9 +36,24 @@ public class AdminController {
 
     public void login(String data){
         try {
+                Admin admin = mapper.readValue(data, Admin.class);
+
+                if(adminRepo.login(admin)){
+                    sendResponse("true");
+                }else{
+                    sendResponse("false");
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+        }
+    }
+
+    public void createAdmin(String data){
+        try {
             Admin admin = mapper.readValue(data, Admin.class);
 
-            if(adminRepo.login(admin)){
+            if(adminRepo.createAdmin(admin)){
                 sendResponse("true");
             }else{
                 sendResponse("false");
@@ -43,6 +63,7 @@ public class AdminController {
             e.printStackTrace();
         }
     }
+
 
     public void sendResponse(String response){
         try {

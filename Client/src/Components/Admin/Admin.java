@@ -28,58 +28,59 @@ public class Admin {
         file = new File("loggedIn.txt");
     }
 
-    public void handleAdmin(){
+    public void handleAdmin() {
         //check if user is logged in
         boolean loggedIn = loggedIn();
 
-        if(!loggedIn){
-            String loginRes = login();
+        try {
+            if (!loggedIn) {
+                String loginRes = login();
 
-            if(Objects.equals(loginRes, "false")){
-                System.out.println("--------Invalid credentials!----------");
+                if (Objects.equals(loginRes, "false")) {
+                    System.out.println("--------Invalid credentials!----------");
+                    System.out.println("\n");
+                } else {
+                    try {
+                        //record that admin is loggedIn
+                        String data = "true";
+                        fileOut = new FileOutputStream(file);
+                        fileOut.write(data.getBytes(), 0, data.length());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            } else {
+                //admin dashboard
                 System.out.println("\n");
-            }else{
-                try {
-                    //record that admin is loggedIn
-                    String data = "true";
-                    fileOut = new FileOutputStream(file);
-                    fileOut.write(data.getBytes(), 0, data.length());
-                }catch(Exception e) {
-                    e.printStackTrace();
+                System.out.println("--------Welcome abroad!----------");
+
+                //admin dashboard
+                System.out.println("1. Check districts");
+                System.out.println("2. Your wallet");
+                System.out.println("3. Your analytics");
+                System.out.println("4. logout");
+
+                //choose
+                int choice;
+                System.out.print("Choose: ");
+                choice = keyboard.nextInt();
+                switch (choice) {
+                    case 1:
+                        System.out.println("see districts");
+                        break;
+                    case 2:
+                        System.out.println("see wallet");
+                        break;
+                    case 3:
+                        System.out.println("see analytics");
+                        break;
+                    case 4:
+                        System.out.println("logout");
+                        break;
                 }
             }
-        }
 
-        try {
-            //admin dashboard
-            System.out.println("\n");
-            System.out.println("--------Welcome abroad!----------");
-
-            //admin dashboard
-            System.out.println("1. Check districts");
-            System.out.println("2. Your wallet");
-            System.out.println("3. Your analytics");
-            System.out.println("4. logout");
-
-            //choose
-            int choice;
-            System.out.print("Choose: ");
-            choice = keyboard.nextInt();
-            switch (choice){
-                case 1:
-                    System.out.println("see districts");
-                    break;
-                case 2:
-                    System.out.println("see wallet");
-                    break;
-                case 3:
-                    System.out.println("see analytics");
-                    break;
-                case 4:
-                    System.out.println("logout");
-                    break;
-            }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -112,9 +113,9 @@ public class Admin {
     }
 
     public boolean loggedIn(){
-        //checking if admin is loggedIn
-        try {
 
+        try {
+            //checking if file exists
             if(!file.exists()){
                 boolean createFile = file.createNewFile();
                 String data = "false";
@@ -127,7 +128,7 @@ public class Admin {
                 bufferedReader = new BufferedReader(streamReader);
                 String content = bufferedReader.readLine();
 
-                return !Objects.equals(content, "false");
+                return Objects.equals(content, "false");
             }
 
         }catch(IOException e){
