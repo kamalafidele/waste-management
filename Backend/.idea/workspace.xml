@@ -25,17 +25,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-<<<<<<< HEAD
-=======
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
->>>>>>> 92de38836066f6bfff5a4ed80d73e1a02df575b7
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
@@ -48,11 +37,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-<<<<<<< HEAD
   <component name="ProjectId" id="25uXN9a48AQM8TyQ4EBo6dq9T1w" />
-=======
-  <component name="ProjectId" id="25VSo5Z0A2owCmp78o6zq8e2noB" />
->>>>>>> 92de38836066f6bfff5a4ed80d73e1a02df575b7
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -135,57 +120,4 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-<<<<<<< HEAD
-=======
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="Jabes" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="Jabes" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="customerInvoice control" />
-    <option name="LAST_COMMIT_MESSAGE" value="customerInvoice control" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
-  </component>
->>>>>>> 92de38836066f6bfff5a4ed80d73e1a02df575b7
 </project>
