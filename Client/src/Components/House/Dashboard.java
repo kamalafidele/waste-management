@@ -70,7 +70,6 @@ public class Dashboard {
 
     public void viewProfile(HouseHandler handler) {
         System.out.println("######################### YOUR INFORMATION (CITIZEN)###################################### ");
-        ////    {"id":1,"name":"y2c","pin":12345,"email":"y2c@gmail.com","phone":"0722556677","role":1,"wallet":1,"location":0,"message":null}
         System.out.println( BLUE + " Name: " + RESET + handler.getName());
         System.out.println( BLUE + " Email: " + RESET + handler.getEmail());
         System.out.println( BLUE + " Phone: " + RESET + handler.getPhone());
