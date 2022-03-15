@@ -28,32 +28,27 @@ public class HouseRepo {
             if(resultSet.next()){
                 System.out.println("Pin already exists");
                 pin=house.genPin();
-                boolean query = database.insert("INSERT INTO users(name, email, Phone, pin, Role, Wallet, Location) VALUES ('"+house.getName()+"','"+house.getEmail()+"','"+house.getPhone()+"','"+pin+"','"+house.getRole()+"','"+house.getWallet()+"','"+house.getLocation()+"')");
-                if(query){
-                    house.setMessage("Citizen saved successfully");
-                    System.out.println(house.getMessage());
-                    System.out.println("Pin: "+pin);
-                }
-                else{
-                    house.setMessage("Unable to save citizen");
-                    System.out.println(house.getMessage());
-                }
+                insertquery(house, pin);
             }
             else{
                 //insert
-                boolean query = database.insert("INSERT INTO users(name, email, Phone, pin, Role, Wallet, Location) VALUES ('"+house.getName()+"','"+house.getEmail()+"','"+house.getPhone()+"','"+pin+"','"+house.getRole()+"','"+house.getWallet()+"','"+house.getLocation()+"')");
-                if(query){
-                    house.setMessage("Citizen saved successfully");
-                    System.out.println(house.getMessage());
-                    System.out.println("Pin: "+pin);
-                }
-                else{
-                    house.setMessage("Unable to save citizen");
-                    System.out.println(house.getMessage());
-                }
+                insertquery(house, pin);
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void insertquery(House house, String pin) {
+        boolean query = database.insert("INSERT INTO users(name, email, Phone, pin, Role, Location) VALUES ('"+house.getName()+"','"+house.getEmail()+"','"+house.getPhone()+"','"+pin+"','"+house.getRole()+"','"+house.getLocation()+"')");
+        if(query){
+            house.setMessage("Citizen saved successfully");
+            System.out.println(house.getMessage());
+            System.out.println("Pin: "+pin);
+        }
+        else{
+            house.setMessage("Unable to save citizen");
+            System.out.println(house.getMessage());
         }
     }
 }

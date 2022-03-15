@@ -11,7 +11,6 @@ public class Wallet {
     DataOutputStream outToServer;
     DataInputStream fromServer;
 
-    String userRole="admin";
     Integer companyId=1;
 
     public Wallet(DataOutputStream toServer, DataInputStream fromServer) {
@@ -21,7 +20,7 @@ public class Wallet {
 
 
     public void showWallet(){
-        String request="wallet/"+userRole+"/"+companyId;
+        String request="wallet/" + companyId;
         try {
             outToServer.writeUTF(request);
             System.out.println("SENT REQUEST");
