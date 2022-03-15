@@ -23,7 +23,7 @@ public class House{
     Scanner keyboard = new Scanner(System.in);
 
     ObjectMapper mapper;
-//    citizen/insert/{ "name" : "karera marvin", "email" : "karera@gmail.com", "phone" : "0781234567", "role" : 4, "location" : 1}
+//    citizen/insert/{ "name" : "karera marvin", "email" : "karera@gmail.com", "phone" : "0781234567", "role" : 5, "location" : 2}
 //    citizen/getSingle/12349
 
     public House(DataOutputStream toServer, DataInputStream fromServer) {

@@ -23,10 +23,9 @@ public class Wallet {
         String request="wallet/" + companyId;
         try {
             outToServer.writeUTF(request);
-            System.out.println("SENT REQUEST");
             String response=fromServer.readUTF();
             System.out.println(response);
-            //System.out.printf("Your wallet balance is: " + response +" Rwf");
+            System.out.printf("Your wallet balance is: " + response +" Rwf");
         }
         catch (IOException e){
             e.printStackTrace();
