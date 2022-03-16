@@ -56,7 +56,7 @@ public class Application {
                     admin.handleAdmin();
                     break;
                 case 2:
-                    System.out.println("You are a district!");
+//                    System.out.println("You are a district!");
                     DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
                     districtDashboard.handleDistrict();
                     break;

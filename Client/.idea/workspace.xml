@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6c0a7eec-7ea6-4b28-b3c9-6eefe622eff8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/DistrictController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/District.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/DistrictRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/DistrictRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,6 +79,7 @@
       <workItem from="1647322125813" duration="974000" />
       <workItem from="1647342499089" duration="2968000" />
       <workItem from="1647368747151" duration="3441000" />
+      <workItem from="1647402357584" duration="1855000" />
     </task>
     <servers />
   </component>

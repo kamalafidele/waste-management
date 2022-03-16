@@ -3,7 +3,6 @@ package Components.District;
 import Components.Company;
 import Components.Wallet;
 
-import DataHandlers.CompanyHandler;
 import DataHandlers.DistrictHandler;
 import DataHandlers.LoginData;
 
@@ -93,6 +92,26 @@ public class DistrictDashboard {
         }
 
         return false;
+    }
+    public void addDistrict() {
+
+        var districtHandler=new DistrictHandler();
+        System.out.println( "######## District Addition#########" );
+        System.out.print( "Enter district token: " );
+         districtHandler.setDistrictToken( keyboard.nextLine() );
+        System.out.print( "Enter district name: " );
+        districtHandler.setDistrictName( keyboard.nextLine() );
+        System.out.print( "Enter district password: " );
+        districtHandler.setPassword( keyboard.nextLine() );
+
+
+
+        try{
+            String districtAsJson=mapper.writeValueAsString( districtHandler );
+            sendRequest( "district/addDistrict/" + districtAsJson );
+            String response= fromServer.readUTF();
+            System.out.println( response );
+        }catch (IOException exception){}
     }
 
     public void sendRequest(String request){
