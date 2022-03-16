@@ -50,12 +50,12 @@ public class House{
     public void login(String token){
         //calling login api
         String request = "citizen/getSingle/" + token;
-        try{
-            toServer.writeUTF(request);
-            HouseHandler handler=mapper.readValue(fromServer.readUTF(),HouseHandler.class);
+      //  try{
+            //toServer.writeUTF(request);
+            HouseHandler handler= new HouseHandler();//mapper.readValue(fromServer.readUTF(),HouseHandler.class);
             System.out.println("HERE IS YOUR NAME" + handler.getName());
 
-            if(handler.getName() != null) {
+            if(handler.getName() == null) {
                 //dashboard
                 System.out.println("Successfully logged in!");
                 Dashboard dashboard = new Dashboard(toServer, fromServer);
@@ -64,10 +64,10 @@ public class House{
             }
             System.out.println("Invalid login, Try again!");
             return;
-        }catch (IOException exception){
-            System.out.println("Invalid login!");
-            exception.printStackTrace();
-            return;
-        }
+//        }catch (IOException exception){
+//            System.out.println("Invalid login!");
+//            exception.printStackTrace();
+//            return;
+//        }
     }
 }

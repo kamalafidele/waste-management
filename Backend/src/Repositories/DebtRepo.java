@@ -9,13 +9,13 @@ public class DebtRepo {
     public DatabaseConnection database;
     public DebtRepo(){database=new DatabaseConnection();}
     public ResultSet getBalance(String token){
-         ResultSet result=database.select("SELECT  * FROM clients where token="+token);
-         int userId=0;
+         ResultSet result=database.select("SELECT  * FROM users where pin="+token);
+         int walletId=0;
          try {
              while(result.next()){
-                 userId=result.getInt(3);
+                 walletId=result.getInt("Wallet");
              }
-             ResultSet balance=database.select("Select * From customer_wallets where user_id="+userId);
+             ResultSet balance=database.select("Select * From wallet where id="+walletId);
              return balance;
          }
          catch (SQLException sql){

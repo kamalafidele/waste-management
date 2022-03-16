@@ -24,10 +24,7 @@ public class PaymentController {
         System.out.println("The amount "+amount);
         System.out.println("The boolean result "+(amount > 1000));
 
-        if (amount > 1000){
-            sendResponse("The maximum amount is 1000");
-            return;
-        }
+
         // Sending response to the client
         ResultSet resultSet = paymentRepo.findMomoAccountByNumber(phoneNumber);
         String phoneNber = "0";
@@ -62,6 +59,7 @@ public class PaymentController {
             }
         }
         paymentRepo.transferMoney(phoneNber, amount, token);
+        paymentRepo.recordTransaction(1, amount);
 
         sendResponse("Your payment has been recorded!");
 
@@ -72,10 +70,10 @@ public class PaymentController {
         System.out.println("The amount "+amount);
         System.out.println("The boolean result "+(amount > 1000));
 
-        if (amount > 1000){
-            sendResponse("The maximum amount is 1000");
-            return;
-        }
+//        if (amount > 1000){
+//            sendResponse("The maximum amount is 1000");
+//            return;
+//        }
 
 
         // Sending response to the client
@@ -105,7 +103,10 @@ public class PaymentController {
             sendResponse("The entered bank account doesn't exist!! ");
             return;
         }
-        paymentRepo.transferFunds(accNber, amount, token);
+
+        paymentRepo.transferFunds(accNber, amount, "12345");
+
+        paymentRepo.recordTransaction(1, amount);
         sendResponse("Your payment has been recorded!");
 
 

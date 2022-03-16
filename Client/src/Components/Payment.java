@@ -68,7 +68,7 @@ public class Payment {
         try{
             this.toServer.writeUTF(request);
             String responseFromServer = fromServer.readUTF();
-            System.out.println("Hello world !");
+            System.out.println("The response went to the server !");
 
             System.out.println("Response from the server: " + responseFromServer);
 
@@ -111,7 +111,7 @@ public class Payment {
 
         switch(paymentMethod){
             case 1:
-                this.handleMomopayment();
+               this.handleMomopayment();
                 break;
             case 2:
                 this.handleBankpayment();

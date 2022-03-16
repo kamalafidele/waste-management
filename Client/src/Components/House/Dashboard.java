@@ -46,7 +46,7 @@ public class Dashboard {
         switch (choice) {
             case 1:
                 System.out.println("wastes payment");
-                myMethod();
+
                 break;
             case 2:
                 System.out.println("You are going to pay security ");
@@ -67,9 +67,6 @@ public class Dashboard {
         }
     }
 
-    public void myMethod() {
-        System.out.println("my method");
-    }
 
 //    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer){
     public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer, HouseHandler handler){
