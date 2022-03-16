@@ -58,7 +58,7 @@ public class Payment {
         }
     }
     public void handleMomopayment(){
-        System.out.print("Telephone: ");
+        System.out.print("Enter your phone number: ");
         String telephoneNumber = scanner.next();
         System.out.print("Amount: ");
         int amount = scanner.nextInt();
