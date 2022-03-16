@@ -1,9 +1,6 @@
-import Controllers.AdminController;
-import Controllers.CompanyController;
-import Controllers.NotificationController;
-import Controllers.HouseController;
-import Controllers.PaymentController;
-import Controllers.WalletController;
+import Controllers.*;
+import Models.Shifts;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -18,6 +15,7 @@ public class ThreadHandler extends Thread{
     private final HouseController houseController;
     private final WalletController walletContoller;
     private final PaymentController paymentController;
+    private final ShiftsController shiftsController;
     private AdminController adminController;
 
 
@@ -28,6 +26,7 @@ public class ThreadHandler extends Thread{
         houseController=new HouseController();
         paymentController=new PaymentController();
         walletContoller = new WalletController();
+        shiftsController = new ShiftsController();
     }
 
 

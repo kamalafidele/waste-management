@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7091923a-20d4-43ef-a5d4-3a175d31356e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/Components/ServiceConfirmation/Dashboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/Components/ServiceConfirmation/Shifts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/ShiftsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controllers/ShiftsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Shifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repositories/ServiceConfirmationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/ServiceConfirmationRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Confirmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/ServiceConfirmation/ServiceConfirmation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/ConfirmerProcess/ConfirmerProcess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/ConfirmerProcess/Dashboard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/ConfirmationProcessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/ServiceConfirmationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/ServiceConfirmation/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/ServiceConfirmation/Shifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/ShiftsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/ShiftsHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

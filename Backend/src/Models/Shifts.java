@@ -7,10 +7,15 @@ public class Shifts {
     private String date;
     private int confirmerId;
 
-    public Shifts(int id,int company_id,String date){
+    public Shifts(){
+
+    }
+
+    public Shifts(int id,int company_id,String date,int confirmerId){
         this.id=id;
         this.company_id=company_id;
         this.date=date;
+        this.confirmerId=confirmerId;
     }
     public int getId() {
         return id;
