@@ -149,7 +149,7 @@ public class Admin {
         System.out.println("--------Create another admin!----------");
         System.out.println("name: ");
         System.out.println("email: ");
-        System.out.println("Phone: ")
+        System.out.println("Phone: ");
     }
 
     public  void createDistrict(){
