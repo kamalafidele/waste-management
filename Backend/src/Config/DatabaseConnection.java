@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
-    String url="jdbc:mysql://localhost:3306/waste_management";
+    String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1&useConfigs=maxPerformance";
     String username="root";
     String password="Ineza%12345";
     Connection connection=null;

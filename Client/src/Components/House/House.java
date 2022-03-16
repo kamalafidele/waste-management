@@ -49,7 +49,7 @@ public class House{
 
     public void login(String token){
         //calling login api
-        String request = "citizen/getSingle/" + token;
+            String request = "citizen/getSingle/" + token;
         try{
             toServer.writeUTF(request);
             HouseHandler handler=mapper.readValue(fromServer.readUTF(),HouseHandler.class);

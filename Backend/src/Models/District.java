@@ -1,13 +1,23 @@
 package Models;
 
 public class District {
+    public int getDistrictId() {
+        return districtId;
+    }
+
+    public void setDistrictId(int districtId) {
+        this.districtId = districtId;
+    }
+
+    private int districtId;
     private String districtToken;
     private String districtName;
     private String password;
 
     public District(){}
 
-    public District(String districtToken, String districtName,String password){
+    public District(int districtId,String districtToken, String districtName,String password){
+        this.setDistrictId(districtId);
         this.setDistrictToken(districtToken);
         this.setDistrictName(districtName);
         this.setPassword(password);

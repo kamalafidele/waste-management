@@ -78,7 +78,9 @@ public class Admin {
             choice = keyboard.nextInt();
             switch (choice){
                 case 1:
-                    System.out.println("see districts");
+
+                    DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
+                    districtDashboard.displayDistricts();
                     break;
                 case 2:
                     new Wallet(toServer,fromServer).showWallet();
@@ -88,8 +90,8 @@ public class Admin {
                     break;
                 case 4:
                     System.out.println("Add District");
-                    DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
-                    districtDashboard.addDistrict();
+                    DistrictDashboard districtDashboard2=new DistrictDashboard(toServer,fromServer);
+                    districtDashboard2.districtAdd();
                     break;
                 case 5:
                     System.out.println("logout");
