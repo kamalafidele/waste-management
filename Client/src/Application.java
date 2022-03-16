@@ -57,10 +57,10 @@ public class Application {
                     break;
                 case 2:
                     System.out.println("You are a district!");
-                    Company company = new Company(toServer, fromServer);
-                    company.addCitizen();
+                     new Company(toServer, fromServer).addCitizen();
                     break;
                 case 3:
+                    new Company(toServer, fromServer).displayCompanies();
                     System.out.println("You are a company!");
                     break;
                 case 4:
