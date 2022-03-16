@@ -1,6 +1,7 @@
 package Components.District;
 
 import Components.Company;
+import Components.House.House;
 import Components.Wallet;
 
 import DataHandlers.CompanyHandler;
@@ -204,8 +205,10 @@ public class DistrictDashboard {
                     Company company=new Company(toServer,fromServer);
                     company.addCompany();
                     break;
-                    case 3:
+                case 3:
                     System.out.println("Citizen Registration");
+                    House house=new House(toServer,fromServer);
+                    house.addCitizen();
                     break;
             }
         }catch(Exception e){
