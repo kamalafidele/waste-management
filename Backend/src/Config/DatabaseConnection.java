@@ -2,6 +2,8 @@ package Config;
 
 import java.sql.*;
 
+import static java.lang.Class.forName;
+
 public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
     String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1";
