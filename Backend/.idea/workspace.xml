@@ -4,33 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Analytics.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="Download analytics modification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Analytics.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Analytics.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/AnalyticsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/AnalyticsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/CitizenController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/CompanyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/CompanyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/CustomerInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/CustomerInvoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/Citizen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/Wallet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/AnalyticsRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/AnalyticsRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/CitizenRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/WalletsRepoHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/WalletsRepoHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/customerInvoicesRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/customerInvoicesRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/AnalyticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AnalyticsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/AnalyticsRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/AnalyticsRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/loggedIn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/loggedIn.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Admin/loggedIn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Admin/loggedIn.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +85,14 @@
       <workItem from="1645726841446" duration="3897000" />
       <workItem from="1645766722446" duration="6605000" />
     </task>
+    <task id="LOCAL-00001" summary="Download analytics modification">
+      <created>1647422622597</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1647422622597</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +112,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Download analytics modification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Download analytics modification" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

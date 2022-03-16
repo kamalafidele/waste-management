@@ -5,8 +5,10 @@ import Repositories.AnalyticsRepo;
 import java.io.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class AnalyticsController {
     private DataOutputStream toClient;
@@ -77,7 +79,6 @@ public class AnalyticsController {
 
     public void downloadAnalytics(String sender, Integer senderId, String period) throws IOException {
         String analytics = getAnalytics(sender, senderId, period);
-//        System.out.println(analytics);
         saveIntoFIle(analytics);
         sendResponse("Downloaded Successfully.");
     }
@@ -91,7 +92,7 @@ public class AnalyticsController {
     public static void saveIntoFIle(String content){
 //        The logic to save a .txt file containing analytics
         try{
-            writeToFile(content, "Analytics.txt");
+            writeToFile(content, "C:/Users/Admin/Desktop/modules/Year2/JAVA course/Class project/waste-management/Backend/Analytics/Analytics of "+java.time.LocalDate.now()+".txt");
 
         }catch (Exception e){
             e.printStackTrace();
