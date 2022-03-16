@@ -19,6 +19,13 @@
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Wallet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Components/ServiceConfirmation/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Shifts.java" afterDir="false" />
+    <list default="true" id="be78f8c7-d870-4cb2-b1b6-94c3b9aa4cfc" name="Changes" comment="customerInvoice control">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +51,12 @@
     <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
@@ -106,7 +119,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7091923a-20d4-43ef-a5d4-3a175d31356e" name="Changes" comment="" />
+      <changelist id="be78f8c7-d870-4cb2-b1b6-94c3b9aa4cfc" name="Changes" comment="customerInvoice control" />
       <created>1645610933770</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -127,10 +140,12 @@
       <workItem from="1646066282995" duration="4976000" />
       <workItem from="1646204891625" duration="45000" />
       <workItem from="1646207126183" duration="76000" />
-      <workItem from="1647349194238" duration="1205000" />
-      <workItem from="1647350582335" duration="608000" />
-      <workItem from="1647372623478" duration="788000" />
-      <workItem from="1647375011584" duration="1230000" />
+      <workItem from="1647342491269" duration="49000" />
+      <workItem from="1647342590231" duration="2197000" />
+      <workItem from="1647354827242" duration="596000" />
+      <workItem from="1647368713820" duration="3252000" />
+      <workItem from="1647402270658" duration="1928000" />
+      <workItem from="1647408669285" duration="1438000" />
     </task>
     <task id="LOCAL-00001" summary="customerInvoice control">
       <created>1646022290178</created>
@@ -163,5 +178,29 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Jabes" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="customerInvoice control" />
+    <option name="LAST_COMMIT_MESSAGE" value="customerInvoice control" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
