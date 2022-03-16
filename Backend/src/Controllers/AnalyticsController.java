@@ -16,7 +16,7 @@ public class AnalyticsController {
         analyticsRepo = new AnalyticsRepo();
     }
 
-    public void filterRequest(String request, DataOutputStream toClient){
+    public void filterRequest(String request, DataOutputStream toClient) throws IOException {
         this.toClient=toClient;
         String sender = request.split("/")[0];
         Integer senderId;
@@ -34,7 +34,8 @@ public class AnalyticsController {
                 getAnalytics(sender, senderId, "year");
                 break;
             case "download":
-                downloadAnalytics(request.split("/")[3]);
+                senderId = Integer.parseInt(request.split("/")[3]);
+                downloadAnalytics(sender, senderId, request.split("/")[4]);
                 break;
             default:
                 sendResponse("Please specify your request....");
@@ -42,7 +43,7 @@ public class AnalyticsController {
         }
     }
 
-    public void getAnalytics(String sender, Integer senderId, String period){
+    public String getAnalytics(String sender, Integer senderId, String period){
         if(sender.equals("district")){
 //            Logic for district analytics in the given period
             sendResponse("District analytics");
@@ -69,12 +70,16 @@ public class AnalyticsController {
                     "of money so far : " + balance + "\n" + "Percentage at which service is provided: 80%\n";
 
             sendResponse(heading + body + "\n" + closing);
+            return heading + body + "\n" + closing;
         }
+        return "";
     }
 
-    public void downloadAnalytics(String period){
-        System.out.println("Analytics downloaded");
-        saveIntoFIle("What to be saved");
+    public void downloadAnalytics(String sender, Integer senderId, String period) throws IOException {
+        String analytics = getAnalytics(sender, senderId, period);
+//        System.out.println(analytics);
+        saveIntoFIle(analytics);
+        sendResponse("Downloaded Successfully.");
     }
     public void sendResponse( String response ) {
         try {
@@ -96,11 +101,10 @@ public class AnalyticsController {
 
         try{
             File file= new File(path);
-            BufferedWriter bw= new BufferedWriter(new FileWriter(path, true));
-            bw.append(content);
-
+            BufferedWriter bw= new BufferedWriter(new FileWriter(path, false));
+            bw.write(content);
             bw.close();
-            System.out.println("Written Successfully.");
+            System.out.println("Download Successfully.");
 
 
         }catch (Exception e){

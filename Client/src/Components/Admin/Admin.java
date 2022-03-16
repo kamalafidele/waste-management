@@ -57,7 +57,7 @@ public class Admin {
     public boolean loggedIn(){
         //checking if admin is loggedIn
         try {
-            Path filename =  Paths.get("/home/saad/Desktop/SAAD/SCHOOL/waste-management/Client/src/Components/Admin/loggedIn.txt");
+            Path filename =  Paths.get("C:/Users/Admin/Desktop/modules/Year2/JAVA course/Class project/waste-management/Client/src/Components/Admin/loggedIn.txt");
             String fileContent = Files.readString(filename);
 
             if(Objects.equals(fileContent, "true")){

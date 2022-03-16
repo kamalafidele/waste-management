@@ -24,7 +24,7 @@ public class CompanyController {
     }
 
     // THIS METHOD DETERMINES WHAT OPERATION REQUESTED BY CLIENT
-    public void filterRequest( String request, DataOutputStream toClient ) {
+    public void filterRequest( String request, DataOutputStream toClient ) throws IOException {
         this.toClient=toClient;
         switch (request.split("/")[1]) {
             case "getAll":

@@ -65,6 +65,11 @@ public class Application {
                     House house = new House(toServer, fromServer);
                     house.handleHouse(fromServer, toServer);
                     break;
+                case 6:
+                    toServer.writeUTF("company/analytics/download/2/week");
+                    String response = fromServer.readUTF();
+                    System.out.println(response);
+                    break;
                 default:
                     System.out.println("Please be serious!");
                     break;

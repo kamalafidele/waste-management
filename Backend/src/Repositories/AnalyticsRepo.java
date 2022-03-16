@@ -18,8 +18,8 @@ public class AnalyticsRepo {
     }
 
     public ResultSet companyAnalytics(String period, Integer senderId){
-        return database.select("select name, balance from company c join " +
-                "companies_wallets cw on c.id = cw.company_id where id = " + senderId);
+        return database.select("select name, amount from users u join " +
+                "wallet w on u.Wallet = w.id where u.id = " + senderId);
     }
 
 }
