@@ -16,7 +16,8 @@ public class DebtController {
     };
     public void filterRequest(String request, DataOutputStream toClient){
         this.toClient=toClient;
-        String pin=String.valueOf(request.split("/")[2]);
+        String pin=String.valueOf(request.split("/")[3]);
+        String service=String.valueOf(request.split("/")[2]);
         switch (request.split("/")[1]) {
             case "checkWasteDebt":
                 checkWasteDebt(pin);
@@ -43,19 +44,29 @@ public class DebtController {
     }
     public void checkSecurityDebt(String userId){
         try {
-            ResultSet result=debtRepo.getMyDebt(userId);
+//            ResultSet result=debtRepo.getBalance(userId);
+            ResultSet result=debtRepo.getMySecurityDebt(userId);
+            if(result==null){
+                sendResponse("You don't have a debt for security service");
+            }
             balance=result.getLong(1);
+            Date date=result.getDate(2);
             System.out.println(balance);
+            String months[]={"january","February","March","April","May","June","July","August","september","October","November","December"};
+            String month="January";
+            for (int i=0;i<months.length;i++){
+                month=months[Integer.valueOf(date.toString().split("-")[1])-1];
+            }
             if(balance>0){
-                sendResponse("ooh wow you don't have any debt \t you have: "+balance+"Frw in wallet");
+                sendResponse("OOPs you have a debt of"+balance+"Frw accumulated in "+month);
                 return;
             }
-            if(balance<-3000){
+            if(balance>3000){
                 sendResponse("you have a maximum debt of: "+balance+"Frw in wallet");
                 return;
             }
-            if(balance<0){
-                sendResponse("you have a debt of: "+balance+"Frw in wallet");
+            if(balance==0){
+                sendResponse("You don't have any debt");
                 return;
             }
         }
@@ -67,7 +78,10 @@ public class DebtController {
     public void checkWasteDebt(String userId){
         try {
 //            ResultSet result=debtRepo.getBalance(userId);
-            ResultSet result=debtRepo.getMyDebt(userId);
+            ResultSet result=debtRepo.getMyWasteDebt(userId);
+            if(result==null){
+                sendResponse("An error occured");
+            }
             balance=result.getLong(1);
             Date date=result.getDate(2);
             System.out.println(balance);
