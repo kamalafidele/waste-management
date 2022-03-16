@@ -77,7 +77,7 @@ public class DistrictController {
             // THIS LOOP IS FOR INSERTING FETCHED COMPANIES TO THE LIST
             while(resultSet.next()){
                 District district= new District(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3)
-                        ,resultSet.getString(4));
+                        ,resultSet.getString(4),resultSet.getLong(5),resultSet.getInt(6),resultSet.getInt(7),resultSet.getInt(8));
                 districts.add(district);
             }
 

@@ -49,11 +49,11 @@ public class DistrictDashboard {
 
             System.out.print("\n");
             System.out.println("-------- District Login!----------");
-            System.out.print("districtToken: ");
+            System.out.print("District email: ");
 
-            logindata.setDistrictToken(keyboard.next());
+            logindata.setEmail(keyboard.next());
             System.out.print("Password: ");
-            logindata.setPassword(keyboard.next());
+            logindata.setPin(Long.valueOf(keyboard.next()));
 
 
             toServer.flush();
@@ -100,16 +100,20 @@ public class DistrictDashboard {
         var districtHandler=new DistrictHandler();
          keyboard = new Scanner(System.in);
          System.out.println( "######## District Addition#########" );
-         System.out.print( "Enter district token: " );
-         String token= keyboard.nextLine();
-         districtHandler.setDistrictToken(token);
-         System.out.print( "Enter district name: " );
-        String name= keyboard.nextLine();
-        districtHandler.setDistrictName(name);
-        System.out.print( "Enter district password: " );
-        String password= keyboard.nextLine();
-        districtHandler.setPassword(password);
-
+         System.out.print( "Enter district Name: " );
+         String name= keyboard.nextLine();
+         districtHandler.setName(name);
+         System.out.print( "Enter district Email: " );
+        String email= keyboard.nextLine();
+        districtHandler.setEmail(email);
+        System.out.print( "Enter district Phone: " );
+        String phone= keyboard.nextLine();
+        districtHandler.setPhone(phone);
+        Random random = new Random();
+        long pin = random.nextLong( 500_000_000 );
+        districtHandler.setPin( pin );
+        districtHandler.setRole( 3 );
+        districtHandler.setWalletId( 0 );
 
 
         try{
@@ -131,7 +135,7 @@ public class DistrictDashboard {
 
             System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> All Districts <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ");
             System.out.println("|------------|----------------------------------|-----------------------------------|");
-            System.out.println("|    No       |        District Token           |       |   District Name           |");
+            System.out.println("|    No      |        District Email            |         District pin              |");
             System.out.println("|------------|----------------------------------|-----------------------------------|");
             while (districtIterator.hasNext()){
                 DistrictHandler handler=districtIterator.next();
@@ -141,11 +145,11 @@ public class DistrictDashboard {
                 for(int j=0; j<idSpaceCount-2; j++){
                     idSpace+=" ";
                 }
-                for(int i=0;i<18-handler.getDistrictToken().length(); i++){
+                for(int i=0;i<18-handler.getEmail().length(); i++){
                     space+=" ";
                 }
-                System.out.println("| "+handler.getDistrictId()+idSpace+"|"+(handler.getDistrictToken().length() <= 18 ? handler.getDistrictToken()+space : handler.getDistrictToken().substring(0,18))
-                        +"                |"+handler.getDistrictName()+"   ");
+                System.out.println("| "+handler.getEmail()+idSpace+"|"+(handler.getEmail().length() <= 18 ? handler.getEmail()+space : handler.getEmail().substring(0,18))
+                        +"                |"+handler.getName()+"   ");
                 System.out.println("|------------|----------------------------------|-----------------------------------|");
             }
 
