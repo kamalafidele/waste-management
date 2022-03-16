@@ -151,8 +151,8 @@ public class Admin {
 
     public  void createDistrict(){
         System.out.println("Add District");
-        DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
-        districtDashboard.addDistrict();
+        DistrictDashboard districtDashboard2=new DistrictDashboard(toServer,fromServer);
+        districtDashboard2.districtAdd();
     }
 
     public void showAnalytics(){
@@ -165,10 +165,9 @@ public class Admin {
     }
 
     public void showDistricts() throws IOException {
-        toServer.flush();
-        this.sendRequest("admin/districts/");
-
-        System.out.println(fromServer.readUTF());
+        DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
+        districtDashboard.displayDistricts();
+        break;
     }
 
     public void logout() throws IOException {
