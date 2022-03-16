@@ -2,8 +2,9 @@ package Controllers;
 
 import Models.Company;
 import Repositories.CompanyRepo;
+import Repositories.WalletsRepoHandler;
 import org.codehaus.jackson.map.ObjectMapper;
-import Repositories.customerInvoicesRepo;
+import Repositories.CustomerInvoicesRepo;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -17,12 +18,12 @@ public class CompanyController {
     private CompanyRepo companyRepo;
     private ObjectMapper mapper;
     AnalyticsController analyticsController;
-    customerInvoicesRepo customerInvoice;
+    CustomerInvoicesRepo customerInvoice;
 
     public CompanyController(){
         companyRepo=new CompanyRepo();
         analyticsController=new AnalyticsController();
-        customerInvoice = new customerInvoicesRepo();
+        customerInvoice = new CustomerInvoicesRepo();
         mapper=new ObjectMapper();
     }
 
@@ -40,6 +41,8 @@ public class CompanyController {
             case "addCompany":
                 addCompany(request.split("/")[2]);
               break;
+            case "createContract":
+                createContract(request.split("/")[2]);
             case "getInvoices":
                 customerInvoice.getInvoices(Integer.parseInt(request.split("/")[2]), toClient);
                 break;
@@ -59,11 +62,12 @@ public class CompanyController {
     public void addCompany(String data) {
         try{
             Company company=mapper.readValue(data,Company.class);
+
             if(companyRepo.save(company))
               sendResponse("Company added successfully");
             else
               sendResponse("Adding company failed! Try again");
-        }catch (IOException exception){
+        }catch (Exception exception){
             sendResponse("Adding company failed! Try again");
         }
     }
@@ -74,10 +78,14 @@ public class CompanyController {
 
        try{
            while(resultSet.next()){
-               company.setId(resultSet.getLong(1));
+               company.setId(resultSet.getInt(1));
                company.setName(resultSet.getString(2));
                company.setEmail(resultSet.getString(3));
-               company.setPaymentCode(resultSet.getLong(4));
+               company.setPhone(resultSet.getString(4));
+               company.setPin(resultSet.getLong(5));
+               company.setRole(resultSet.getInt(6));
+               company.setWalletId(resultSet.getInt(7));
+               company.setLocation(resultSet.getInt(8));
            }
 
            sendResponse(mapper.writeValueAsString(company));
@@ -91,14 +99,24 @@ public class CompanyController {
         try{
             // THIS LOOP IS FOR INSERTING FETCHED COMPANIES TO THE LIST
             while(resultSet.next()){
-                Company company=new Company(resultSet.getLong(1),resultSet.getString(2),resultSet.getString(3)
-                ,resultSet.getLong(4));
+                Company company= new Company(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3)
+                ,resultSet.getString(4),resultSet.getLong(5),resultSet.getInt(6),resultSet.getInt(7),resultSet.getInt(8));
                 companies.add(company);
             }
 
             sendResponse(mapper.writeValueAsString(companies));
 
         }catch( IOException | SQLException exception ){}
+    }
+
+    public void createContract (String request){
+        System.out.println(request.split("-")[0]+" "+request.split("-")[1]);
+        int districtId = Integer.parseInt(request.split("-")[0]);
+        int companyId = Integer.parseInt(request.split("-")[1]);
+        if(companyRepo.createContract(districtId,companyId))
+          sendResponse("Contract created successfully");
+        else
+          sendResponse("Creating contract failed! Try again");
     }
 
     // THIS A METHOD FOR SENDING RESPONSE TO THE CLIENT

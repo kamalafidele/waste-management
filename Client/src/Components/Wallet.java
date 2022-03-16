@@ -1,5 +1,6 @@
 package Components;
 
+import DataHandlers.HouseHandler;
 import DataHandlers.WalletHandler;
 
 import java.io.DataInputStream;
@@ -9,8 +10,8 @@ import java.io.IOException;
 public class Wallet {
     DataOutputStream outToServer;
     DataInputStream fromServer;
-    String userRole="company";
-    Integer userId=1;
+
+    Integer companyId=1;
 
     public Wallet(DataOutputStream toServer, DataInputStream fromServer) {
         this.outToServer=toServer;
@@ -19,10 +20,11 @@ public class Wallet {
 
 
     public void showWallet(){
-        String request="wallet/"+userRole+"/"+userId;
+        String request="wallet/" + companyId;
         try {
             outToServer.writeUTF(request);
             String response=fromServer.readUTF();
+            System.out.println(response);
             System.out.printf("Your wallet balance is: " + response +" Rwf");
         }
         catch (IOException e){

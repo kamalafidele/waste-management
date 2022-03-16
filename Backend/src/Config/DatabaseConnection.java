@@ -4,22 +4,26 @@ import java.sql.*;
 
 public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
-    String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1";
+    String url="jdbc:mysql://localhost:3306/waste_management";
     String username="root";
+<<<<<<< HEAD
     String password="kayitare@123";
+=======
+    String password="teta2005";
+>>>>>>> 9bf76e65478996b44cae5960b8618d780957a805
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
 
     public DatabaseConnection(){
         try{
-          Class.forName(driver);
           connection= DriverManager.getConnection(url,username,password);
 
           if(connection != null)
               statement=connection.createStatement();
 
         }catch(Exception exception){
+            System.out.println("Error: "+exception);
             System.out.println("CONNECTION TO DATABASE FAILED");
             exception.printStackTrace();
         }

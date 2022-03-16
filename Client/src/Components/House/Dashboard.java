@@ -1,7 +1,6 @@
 package Components.House;
 
 import Components.Company;
-import Components.Debt;
 import Components.Notification;
 import Components.Payment;
 import DataHandlers.HouseHandler;
@@ -21,6 +20,7 @@ public class Dashboard {
     Debt debt=new Debt(fromServer,toServer);
     ObjectMapper mapper;
     Scanner keyboard = new Scanner(System.in);
+
     public Dashboard() {
     }
 
@@ -30,7 +30,8 @@ public class Dashboard {
         ObjectMapper mapper;
     }
 
-    public void handleDashboard(HouseHandler handler) {
+    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer, HouseHandler handler){
+        Payment payment = new Payment(fromServer, toServer);
         int choice = 0;
         System.out.println("\n");
         System.out.println("--------Dashboard--------");
@@ -39,35 +40,36 @@ public class Dashboard {
         System.out.println("2.Pay security");
         System.out.println("3.Your invoices");
         System.out.println("4.Notifications&messages");
-        System.out.println("5.View your profile");
-        System.out.println("6. check debt");
+        System.out.println("5. check your debt");
+        System.out.println("6. view profile");
         System.out.print("Your choice: ");
         choice = keyboard.nextInt();
 
-        switch (choice) {
+        switch (choice){
             case 1:
-                System.out.println("wastes payment");
-                myMethod();
-                break;
             case 2:
-                System.out.println("You are going to pay security ");
+                payment.handlePaymentMethods();
                 break;
             case 3:
                 System.out.println("invoices");
                 break;
             case 4:
-                System.out.println("Notifications&messages");
+                System.out.println("Notifications & Messages");
+                new Notification().displayAllNotifications(toServer, fromServer);
                 break;
             case 5:
-                viewProfile(handler);
+                payment.checkWasteDebt();
                 break;
             case 6:
+                viewProfile(handler);
+                break;
             default:
                 System.out.println("Please be serious!");
                 break;
         }
     }
 
+<<<<<<< HEAD
     public void myMethod() {
         System.out.println("my method");
     }
@@ -117,10 +119,12 @@ public class Dashboard {
             }
     }
 
+=======
+>>>>>>> 9bf76e65478996b44cae5960b8618d780957a805
     public void viewProfile(HouseHandler handler) {
-        System.out.println("######################### HOUSE INFORMATION ###################################### ");
-        ////    id, name, pin, sectorId, walletId
-        System.out.println( BLUE + " Your full name: " + RESET + handler.getName());
-        System.out.println( BLUE + " Your login pin: " + RESET + handler.getPin());
+        System.out.println("######################### YOUR INFORMATION (CITIZEN)###################################### ");
+        System.out.println( BLUE + " Name: " + RESET + handler.getName());
+        System.out.println( BLUE + " Email: " + RESET + handler.getEmail());
+        System.out.println( BLUE + " Phone: " + RESET + handler.getPhone());
     }
 }

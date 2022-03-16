@@ -50,7 +50,7 @@ public class Debt {
         }
         catch (IOException ie){
             ie.printStackTrace();
-            System.out.println("An error occured");
+            System.out.println("An error occurred");
         }
     }
     public void checkWasteDebt(){
@@ -63,7 +63,7 @@ public class Debt {
         }
         catch (IOException ie){
             ie.printStackTrace();
-            System.out.println("An error occured");
+            System.out.println("An error occurred");
         }
     }
 }

@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Mon Mar 14 2022 10:01:51 GMT+0200 (Central Africa Time)
+------------------------------------------------------
+
+Modified files:
+* Backend/src/Config/DatabaseConnection.java
+
+
+Created files:
+* .autogit/autogit.json
+* Backend/src/Controllers/DistrictController.java
+* Backend/src/Models/District.java
+* Backend/src/Repositories/DistrictRepo.java
+
+
+Deleted files:
+
+
+Renamed files:
