@@ -2,6 +2,7 @@
 import Components.Admin.Admin;
 import Components.House.House;
 import Components.Wallet;
+import Components.Company;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -72,7 +73,7 @@ public class Application {
                     customerInvoice customer = new customerInvoice();
                     try {
                         customer.mainMethod();
-                    }catch (Exception e){
+                         }catch (Exception e){
                         e.printStackTrace();
                     }
 

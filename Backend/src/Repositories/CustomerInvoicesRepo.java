@@ -19,7 +19,7 @@ public class CustomerInvoicesRepo {
         database=new DatabaseConnection();
     }
     public ResultSet findById(int userId){
-        return database.select("SELECT * FROM CustomerInvoices WHERE userid = "+userId);
+        return database.select("SELECT * FROM invoices WHERE User = "+userId);
     }
 
     // THIS A METHOD FOR SENDING
@@ -30,10 +30,6 @@ public class CustomerInvoicesRepo {
             exception.printStackTrace();
         }
 
-//    public void save(CustomerInvoices newInvoice){
-//        database.insert("INSERT INTO CustomerInvoices(userId,invoice_date,generation_time,service_paid,amount) " +
-//                "VALUES ("+newInvoice.getUserId()+","+ newInvoice.getInvoice_date()+","+newInvoice.getGeneration_time()+","+
-//                newInvoice.getService_paid()+","+newInvoice.getAmount()+")");
     }
 
     public void downloadInvoice(int invoice_id, DataOutputStream client) throws Exception {
@@ -47,14 +43,14 @@ public class CustomerInvoicesRepo {
         File myFile = new File("C:/Users/rwanda coding/Downloads/"+invoice_id+".txt");
 
         if(myFile.createNewFile() || myFile.exists()) {
-            ResultSet set = con.getById("SELECT * from customerinvoices where invoice_id = "+invoice_id+";");
+            ResultSet set = con.getById("SELECT * from invoices where id = "+invoice_id+";");
                 while(set.next()){
                     String invoice = "| ---------------- Invoice ---------------- |\n\n";
-                    invoice += "|   No      :           " + set.getString("invoice_id") + "\n";
-                    invoice += "|   Service :           " + set.getString("service_paid") + "\n";
-                    invoice += "|   Amount  :           " + set.getInt("amount") + "\n";
-                    invoice += "|   Time    :           " + set.getTime("generation_time") + "\n\n";
-                    invoice += "| ----------- Done on " + set.getDate("invoice_date") + " ---------- |";
+                    invoice += "|   No      :           " + set.getString("id") + "\n";
+                    invoice += "|   Service :           " + set.getString("Service") + "\n";
+                    invoice += "|   Amount  :           " + set.getInt("Amount") + "\n";
+                    invoice += "|   Time    :           " + set.getTime("Date.now()") + "\n\n";
+                    invoice += "| ----------- Done on " + set.getDate("Date") + " ---------- |";
 
                     FileWriter myWriter = new FileWriter("C:/Users/rwanda coding/Downloads/"+invoice_id+".txt");
                     myWriter.write(invoice);
@@ -75,19 +71,19 @@ public class CustomerInvoicesRepo {
 
         String res = "";
         String response = null;
-        ResultSet set = con.getById("SELECT * from customerinvoices where userId = "+userId+";");
+        ResultSet set = con.getById("SELECT * from invoices where User = "+userId+";");
         try {
             if(!set.next()){
                 response = "There is no invoice for the user!";
                 sendResponse(response);
             }else{
                 CustomerInvoices invoiced = null;
-                res += "|     "+set.getInt("invoice_id")+"      |      "+set.getInt("userid")+"      | "+set.getString("service_paid")+"  |    "
-                        +set.getInt("amount")+ " |   "+set.getDate("invoice_date")+"   |  "+ set.getTime("generation_time")+"         |\n";
+                res += "|     "+set.getInt("id")+"      |      "+set.getInt("User")+"      | "+set.getString("service_paid")+"  |    "
+                        +set.getInt("Amount")+ " |   "+set.getDate("Date")+"   |  "+ set.getTime("generation_time")+"         |\n";
 
                 while(set.next()){
-                    res += "|     "+set.getInt("invoice_id")+"      |      "+set.getInt("userid")+"      | "+set.getString("service_paid")+"  |   "
-                            +set.getInt("amount")+ "  |   "+set.getDate("invoice_date")+"   |  "+ set.getTime("generation_time")+"         |\n";
+                    res += "|     "+set.getInt("id")+"      |      "+set.getInt("User")+"      | "+set.getString("service_paid")+"  |   "
+                            +set.getInt("Amount")+ "  |   "+set.getDate("invoice_date")+"   |  "+ set.getTime("generation_time")+"         |\n";
                 }
                 sendResponse(res);
             }
