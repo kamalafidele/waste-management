@@ -44,6 +44,7 @@ public class Admin {
                 if (Objects.equals(loginRes, "false")) {
                     System.out.println("--------Invalid credentials!----------");
                     System.out.println("\n");
+                    return;
                 } else {
                     try {
                         //record that admin is loggedIn
@@ -52,6 +53,7 @@ public class Admin {
                         fileOut.write(data.getBytes(), 0, data.length());
                     } catch (Exception e) {
                         e.printStackTrace();
+                        return;
                     }
                 }
             }
@@ -85,7 +87,7 @@ public class Admin {
                     case 4:
                         createAdmin();
                         break;
-                    case 4:
+                    case 5:
                         System.out.println("Add District");
                         DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
                         districtDashboard.addDistrict();
@@ -102,16 +104,15 @@ public class Admin {
         }
     }
 
-    public String login()  {
-        try {
+    public String login() throws IOException {
             //create login info object
             loginInfos = new LoginInfo();
 
             //get inputs from user
             System.out.print("\n");
             System.out.println("--------Login as an admin!----------");
-            System.out.print("Username: ");
-            loginInfos.setUsername(keyboard.next());
+            System.out.print("name: ");
+            loginInfos.setName(keyboard.next());
             System.out.print("Pin: ");
             loginInfos.setPassword(keyboard.next());
 
@@ -121,12 +122,6 @@ public class Admin {
 
             //return the response
             return fromServer.readUTF();
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        return "false";
 
     }
 
@@ -173,15 +168,12 @@ public class Admin {
     }
 
     public void showWallet() throws IOException {
-        toServer.flush();
-        this.sendRequest("admin/wallet/");
-      new Wallet(toServer,fromServer).showWallet();
-
-        System.out.println(fromServer.readUTF());
+        new Wallet(toServer,fromServer).showWallet();
     }
 
-    public void showDistricts(){
-
+    public void showDistricts() throws IOException {
+        toServer.flush();
+        this.sendRequest("admin/login/" + mapper.writeValueAsString(loginInfos));
     }
 
     public void logout() throws IOException {
