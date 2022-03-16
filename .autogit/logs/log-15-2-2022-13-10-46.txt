@@ -1,0 +1,49 @@
+-------------------- Auto-Git Log --------------------
+		Tue Mar 15 2022 13:10:46 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* Backend/.idea/workspace.xml
+* Client/.idea/workspace.xml
+
+
+Created files:
+* .autogit/logs/log-15-2-2022-12-40-23.txt
+
+
+Deleted files:
+* .idea/.gitignore
+* .idea/libraries/jackson_all_1_9_9.xml
+* .idea/libraries/libs.xml
+* .idea/misc.xml
+* .idea/modules.xml
+* .idea/vcs.xml
+* .idea/waste-management.iml
+* Backend/.idea/runConfigurations.xml
+* Client/.idea/runConfigurations.xml
+* out/production/Client/Application.class
+* out/production/Client/Components/Admin/Admin.class
+* out/production/Client/Components/Admin/loggedIn.txt
+* out/production/Client/Components/Company$1.class
+* out/production/Client/Components/Company.class
+* out/production/Client/Components/Confirmer.class
+* out/production/Client/Components/Debt.class
+* out/production/Client/Components/District/DistrictDashboard.class
+* out/production/Client/Components/House/Dashboard.class
+* out/production/Client/Components/House/House.class
+* out/production/Client/Components/Notification$1.class
+* out/production/Client/Components/Notification.class
+* out/production/Client/Components/Payment.class
+* out/production/Client/Components/Wallet.class
+* out/production/Client/Components/customerInvoice.class
+* out/production/Client/DataHandlers/Admin/LoginInfo.class
+* out/production/Client/DataHandlers/CompanyHandler.class
+* out/production/Client/DataHandlers/ConfirmationProcessHandler.class
+* out/production/Client/DataHandlers/CustomerInvoicesHandler.class
+* out/production/Client/DataHandlers/HouseHandler.class
+* out/production/Client/DataHandlers/LoginData.class
+* out/production/Client/DataHandlers/NotificationHandler.class
+* out/production/Client/DataHandlers/WalletHandler.class
+
+
+Renamed files:
