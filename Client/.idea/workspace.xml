@@ -4,12 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2be09dda-4a3d-46cd-b2da-e570db1b686e" name="Changes" comment="">
+    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/jackson_all_1_9_9__2_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/AdminRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/CustomerInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/CustomerInvoice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/AdminRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/AdminRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/CustomerInvoicesRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/CustomerInvoicesRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/AdminRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/AdminRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataHandlers/Admin/LoginInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/Admin/LoginInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/isLogged.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loggedIn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loggedIn.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Admin/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Admin/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Admin/loggedIn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/customerInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/customerInvoice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/loggedIn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Wallet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +116,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -115,6 +134,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Client$Application.ic" NAME="Application Coverage Results" MODIFIED="1646003079950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Client$Application.ic" NAME="Application Coverage Results" MODIFIED="1646386620776" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
