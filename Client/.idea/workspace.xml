@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,6 +81,7 @@
       <workItem from="1647342499089" duration="2968000" />
       <workItem from="1647368747151" duration="3441000" />
       <workItem from="1647402357584" duration="2763000" />
+      <workItem from="1647408669285" duration="1360000" />
     </task>
     <servers />
   </component>

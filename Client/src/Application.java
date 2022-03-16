@@ -62,7 +62,7 @@ public class Application {
                     break;
                 case 3:
                     System.out.println("You are a company!");
-                    new Company(toServer,fromServer).addCitizen();
+                    new Company(toServer,fromServer).addCompany();
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");

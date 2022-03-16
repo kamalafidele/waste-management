@@ -30,7 +30,9 @@ public class DistrictDashboard {
     BufferedReader bufferedReader;
     File file;
 
-    public DistrictDashboard(){}
+    public DistrictDashboard(){
+        mapper = new ObjectMapper();
+    }
 
     public DistrictDashboard(DataOutputStream toServer, DataInputStream fromServer) {
         this.toServer = toServer;

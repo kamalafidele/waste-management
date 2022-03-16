@@ -23,7 +23,9 @@ public class Admin {
     BufferedReader bufferedReader;
     File file;
 
-    public Admin(){}
+    public Admin(){
+        mapper = new ObjectMapper();
+    }
 
     public Admin(DataOutputStream toServer, DataInputStream fromServer) {
         this.toServer = toServer;
@@ -86,7 +88,7 @@ public class Admin {
                     break;
                 case 4:
                     System.out.println("Add District");
-                    DistrictDashboard districtDashboard=new DistrictDashboard();
+                    DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
                     districtDashboard.addDistrict();
                     break;
                 case 5:
