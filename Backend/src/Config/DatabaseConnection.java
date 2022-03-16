@@ -6,7 +6,7 @@ public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
     String url="jdbc:mysql://localhost:3306/wasmanagement?characterEncoding=latin1";
     String username="root";
-    String password="marv1nk@rs";
+    String password="ae789789";
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
