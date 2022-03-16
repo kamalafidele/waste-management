@@ -122,17 +122,12 @@ public class Admin {
         }catch (Exception e){
             e.printStackTrace();
         }
-
         return "false";
-
     }
 
     public boolean loggedIn(){
         //checking if admin is loggedIn
         try {
-            Path filename =  Paths.get("C:/Users/Admin/Desktop/modules/Year2/JAVA course/Class project/waste-management/Client/src/Components/Admin/loggedIn.txt");
-            String fileContent = Files.readString(filename);
-
             if(!file.exists()){
                 boolean createFile = file.createNewFile();
                 String data = "false";

@@ -112,7 +112,6 @@ public class AnalyticsController {
 
     public void downloadAnalytics(String sender, Integer senderId, String period) throws IOException {
         String analytics = getAnalytics(sender, senderId, period);
-//        System.out.println(analytics);
         saveIntoFIle(analytics);
         sendResponse("Downloaded Successfully.");
     }

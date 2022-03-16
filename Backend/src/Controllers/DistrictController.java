@@ -18,7 +18,7 @@ public class DistrictController {
         this.districtRepo = new DistrictRepo();
     };
 
-    public void handleRequest(String request, DataOutputStream toClient){
+    public void handleRequest(String request, DataOutputStream toClient) throws IOException {
         this.toClient = toClient;
 
         switch (request.split("/")[1]){
