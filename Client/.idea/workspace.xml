@@ -124,13 +124,8 @@
         </entry>
       </map>
     </option>
-<<<<<<< HEAD
+
     <option name="oldMeFiltersMigrated" value="true" />
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
->>>>>>> 9bf76e65478996b44cae5960b8618d780957a805
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -147,9 +142,6 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-=======
->>>>>>> 4a19d47751e24ca218ad273603ce5639bbbdfc27
->>>>>>> 4543007c1e01de095db34535adce905839c5451b
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Client$Application.ic" NAME="Application Coverage Results" MODIFIED="1646003079950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
