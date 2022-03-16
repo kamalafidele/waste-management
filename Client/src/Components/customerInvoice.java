@@ -17,7 +17,7 @@ public class customerInvoice  {
     ObjectMapper mapper;
 
     public void createTable (String response) throws Exception {
-        System.out.println("######################### REGISTERED COMPANIES ###################################### ");
+
         System.out.println("|------------|-------------|-----------|---------|----------------|-------------------|");
         System.out.println("| Invoice Id |   User Name |  Service  |  Amount |  Invoice date  |  Generation Time  |");
         System.out.println("|------------|-------------|-----------|---------|----------------|-------------------|\n");

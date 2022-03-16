@@ -5,6 +5,7 @@ package Repositories;
 import Config.DatabaseConnection;
 import Models.CustomerInvoices;
 
+import javax.xml.transform.Result;
 import java.io.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -36,23 +37,23 @@ public class CustomerInvoicesRepo {
         this.toClient = client;
         System.out.println("Downloading invoice "+invoice_id);
         DatabaseConnection con = new DatabaseConnection();
-        File downloads = new File("C:/Users/rwanda coding/Downloads/");
+        File downloads = new File("/home/bijoux/Desktop/DATA/projects/waste_management/waste-management/Backend/src/Invoices/");
         if(!downloads.exists()) {
             downloads.mkdir();
         }
-        File myFile = new File("C:/Users/rwanda coding/Downloads/"+invoice_id+".txt");
+        File myFile = new File("/home/bijoux/Desktop/DATA/projects/waste_management/waste-management/Backend/src/Invoices/"+invoice_id+".txt");
 
         if(myFile.createNewFile() || myFile.exists()) {
-            ResultSet set = con.getById("SELECT * from invoices where id = "+invoice_id+";");
+            ResultSet set = con.getById(" "+invoice_id+";");
                 while(set.next()){
                     String invoice = "| ---------------- Invoice ---------------- |\n\n";
                     invoice += "|   No      :           " + set.getString("id") + "\n";
                     invoice += "|   Service :           " + set.getString("Service") + "\n";
                     invoice += "|   Amount  :           " + set.getInt("Amount") + "\n";
-                    invoice += "|   Time    :           " + set.getTime("Date.now()") + "\n\n";
+                    invoice += "|   Time    :           " + set.getTime("currentTime") + "\n\n";
                     invoice += "| ----------- Done on " + set.getDate("Date") + " ---------- |";
 
-                    FileWriter myWriter = new FileWriter("C:/Users/rwanda coding/Downloads/"+invoice_id+".txt");
+                    FileWriter myWriter = new FileWriter("/home/bijoux/Desktop/DATA/projects/waste_management/waste-management/Backend/src/Invoices/"+invoice_id+".txt");
                     myWriter.write(invoice);
                     myWriter.close();
                     toClient.writeUTF("Finished downloading invoice " + invoice_id + " !!");
@@ -71,19 +72,21 @@ public class CustomerInvoicesRepo {
 
         String res = "";
         String response = null;
-        ResultSet set = con.getById("SELECT * from invoices where User = "+userId+";");
+        ResultSet set = con.getById("select i.id, u.name, s.Service_name, i.Amount, i.Date, i.currentTime from users u join invoices i ON i.User = u.id JOIN services " +
+                "s on i.Service = s.id WHERE i.User = " + userId+";");
+
         try {
             if(!set.next()){
                 response = "There is no invoice for the user!";
                 sendResponse(response);
             }else{
                 CustomerInvoices invoiced = null;
-                res += "|     "+set.getInt("id")+"      |      "+set.getInt("User")+"      | "+set.getString("service_paid")+"  |    "
-                        +set.getInt("Amount")+ " |   "+set.getDate("Date")+"   |  "+ set.getTime("generation_time")+"         |\n";
+                res += "|     "+set.getInt("id")+"      |      "+set.getString("name")+"      | "+set.getString("Service_name")+"  |    "
+                        +set.getInt("Amount")+ " |   "+set.getDate("Date")+"   |  "+ set.getTime("currentTime")+"         |\n";
 
                 while(set.next()){
-                    res += "|     "+set.getInt("id")+"      |      "+set.getInt("User")+"      | "+set.getString("service_paid")+"  |   "
-                            +set.getInt("Amount")+ "  |   "+set.getDate("invoice_date")+"   |  "+ set.getTime("generation_time")+"         |\n";
+                    res += "|     "+set.getInt("id")+"      |      "+set.getString("name")+"      | "+set.getString("Service_name")+"  |   "
+                            +set.getInt("Amount")+ "  |   "+set.getDate("Date")+"   |  "+ set.getTime("currentTime")+"         |\n";
                 }
                 sendResponse(res);
             }
