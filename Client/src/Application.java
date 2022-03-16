@@ -1,10 +1,10 @@
 
 import Components.Admin.Admin;
-import Components.Company;
 import Components.House.House;
 import Components.District.DistrictDashboard;
-import Components.ServiceConfirmation.Shifts;
+import Components.Shifts;
 import Components.Wallet;
+import Components.Company;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -12,8 +12,9 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import Components.Shifts;
 import Components.customerInvoice;
-import DataHandlers.CustomerInvoicesHandler;
 
 public class Application {
 
@@ -24,7 +25,7 @@ public class Application {
     public static void main(String[] args){
         Scanner keyboard=new Scanner(System.in);
         try{
-            Socket socket=new Socket("localhost",3000);
+            Socket socket=new Socket("localhost",2500);
             int choice = 0;
 
             DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
@@ -70,8 +71,8 @@ public class Application {
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
-                    Shifts shift = new Shifts(toServer,fromServer);
-                    shift.addShift();
+
+                    new Shifts(toServer,fromServer).addShift();
                     break;
                 case 5:
                     System.out.println("You are a citizen!");
@@ -82,7 +83,7 @@ public class Application {
                     customerInvoice customer = new customerInvoice();
                     try {
                         customer.mainMethod();
-                    }catch (Exception e){
+                         }catch (Exception e){
                         e.printStackTrace();
                     }
 
