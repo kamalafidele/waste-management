@@ -21,15 +21,42 @@ public class DebtRepo {
          }
          return null;
     }
-    public ResultSet getMyDebt(String token){
+    public ResultSet getMySecurityDebt(String token){
         try {
-            ResultSet result=database.select("select amount,month,userId,pin  from debt inner join citizen on citizen.id=debt.userId  WHERE pin="+token);
-            while(result.next()){
-                return  result;
+            ResultSet result=database.select("select amount,month,userId,pin,service  from debt inner join citizen on citizen.id=debt.userId  WHERE service='security' and pin="+token);
+
+            if(!result.next()){
+                return null;
             }
+            return  result;
         }
         catch (SQLException ie){
             ie.printStackTrace();
+        }
+        return null;
+    }
+    public ResultSet getMyWasteDebt(String token){
+        try {
+            ResultSet result=database.select("select amount,month,userId,pin,service  from debt inner join citizen on citizen.id=debt.userId  WHERE service='waste' and pin="+token);
+//            while(result.next()){
+//                return  result;
+//            }
+            if(!result.next()){
+                return null;
+            }
+            return  result;
+        }
+        catch (SQLException ie){
+            ie.printStackTrace();
+        }
+        return null;
+    }
+    public ResultSet getAllDebtors(String service){
+        try {
+            ResultSet result=database.select("select userId, from debt")
+        }
+        catch (SQLException sql){
+            sql.printStackTrace();
         }
         return null;
     }

@@ -5,50 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ad80eae-4f7e-40cc-926c-d59fa270e698" name="Changes" comment="customerInvoice control">
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Application.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/AdminController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/AnalyticsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/CompanyController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/ConfirmerProcessController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/DebtController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/NotificationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/PaymentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/WalletController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Models/Admin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Models/Company.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Models/ConfirmerProcess.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Models/CustomerInvoices.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Models/Notification.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Models/Wallet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/AdminRepo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/AnalyticsRepo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/CompanyRepo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/ConfirmerProcessRepo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/DebtRepo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/NotificationRepo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/PaymentRepo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/WalletsRepoHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/customerInvoicesRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/HouseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/HouseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/HouseRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/HouseRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/DebtController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/DebtController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/DebtRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/DebtRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/DebtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DebtController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/HouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/House.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repositories/DebtRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/DebtRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/HouseRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/HouseRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/WalletsRepoHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/WalletsRepoHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThreadHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Debt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Debt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Components/Debt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Debt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/House/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/House/House.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

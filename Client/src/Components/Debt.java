@@ -42,7 +42,7 @@ public class Debt {
      }
     public void checkSecurityDebt(){
         long userId=12345;
-        String request="debt/checkSecurityDebt/"+userId;
+        String request="debt/checkSecurityDebt/security/"+userId;
         try {
             toServer.writeUTF(request);
             String response=fromServer.readUTF();
@@ -55,7 +55,7 @@ public class Debt {
     }
     public void checkWasteDebt(){
         long userId=12345;
-        String request="debt/checkWasteDebt/"+userId;
+        String request="debt/checkWasteDebt/waste/"+userId;
         try {
             toServer.writeUTF(request);
             String response=fromServer.readUTF();
