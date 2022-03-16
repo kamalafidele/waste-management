@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector_java_8_0_26.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/ShiftsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/ShiftsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation/Shifts$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation/Shifts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ServiceConfirmation/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Shifts.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,5 +87,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
