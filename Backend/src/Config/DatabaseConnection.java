@@ -3,25 +3,23 @@ package Config;
 import java.sql.*;
 
 public class DatabaseConnection {
-
-    String driver="com.mysql.cj.jdbc.Driver";
-    String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1";
+    String driver="com.mysql.jdbc.Driver";
+    String url="jdbc:mysql://localhost:3306/waste_management";
     String username="root";
-    String password=" ";
+    String password="teta2005";
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
 
     public DatabaseConnection(){
         try{
-          Class.forName(driver);
           connection= DriverManager.getConnection(url,username,password);
 
-          if(connection != null) {
-              System.out.println("CONNECTION TO DATABASE SUCCESSFULL");
-              statement = connection.createStatement();
-          }
+          if(connection != null)
+              statement=connection.createStatement();
+
         }catch(Exception exception){
+            System.out.println("Error: "+exception);
             System.out.println("CONNECTION TO DATABASE FAILED");
             exception.printStackTrace();
         }

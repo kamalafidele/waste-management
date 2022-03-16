@@ -1,6 +1,8 @@
 
 import Components.Admin.Admin;
 import Components.House.House;
+import Components.District.DistrictDashboard;
+import Components.Shifts;
 import Components.Wallet;
 import Components.Company;
 
@@ -10,8 +12,9 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import Components.Shifts;
 import Components.customerInvoice;
-import DataHandlers.CustomerInvoicesHandler;
 
 public class Application {
 
@@ -55,15 +58,21 @@ public class Application {
                     admin.handleAdmin();
                     break;
                 case 2:
+//                    System.out.println("You are a district!");
+                    DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
+                    districtDashboard.handleDistrict();
                     System.out.println("You are a district!");
                      new Company(toServer, fromServer).addCitizen();
                     break;
                 case 3:
                     new Company(toServer, fromServer).displayCompanies();
                     System.out.println("You are a company!");
+                    new Company(toServer,fromServer).addCompany();
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
+
+                    new Shifts(toServer,fromServer).addShift();
                     break;
                 case 5:
                     System.out.println("You are a citizen!");

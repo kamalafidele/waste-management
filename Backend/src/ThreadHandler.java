@@ -14,6 +14,7 @@ public class ThreadHandler extends Thread{
     private final PaymentController paymentController;
     private final AdminController adminController;
     private final DebtController debtController;
+    private final ShiftsController shiftsController;
     public ThreadHandler(Socket socket){
         this.socket=socket;
         companyController=new CompanyController();
@@ -23,23 +24,33 @@ public class ThreadHandler extends Thread{
         walletController = new WalletController();
         adminController = new AdminController();
         debtController=new DebtController();
+        shiftsController= new ShiftsController();
     }
 
 
     @Override
     public void run(){
         try{
+            CompanyController company = new CompanyController();
             System.out.println("Client connected");
 
             DataInputStream fromClient=new DataInputStream(socket.getInputStream());
             DataOutputStream toClient=new DataOutputStream(socket.getOutputStream());
 
             //READING REQUESTS FROM THE CLIENT
-            String request = fromClient.readUTF();
+            String request=fromClient.readUTF();
             switch (request.split("/")[0]){
                 case "admin":
                     adminController.handleRequest(request, toClient);
                     break;
+//                case "company":
+//                    companyController.filterRequest(request,toClient);
+//                  break;
+//                case "citizen":
+//                    houseController.filterRequest(request,toClient);
+//                    break;
+                case "serviceconfirmation":
+                    shiftsController.filterRequest(request,toClient);
                 case "company":
                     companyController.filterRequest(request,toClient);
                   break;
