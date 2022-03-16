@@ -9,23 +9,20 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class PaymentController {
-    private PaymentRepo paymentRepo;
 
+    private PaymentRepo paymentRepo;
+    private ResultSet user;
     public PaymentController(){
         paymentRepo = new PaymentRepo();
     };
 
     private DataOutputStream toClient;
-
+    DebtController debtController=new DebtController();
+    long balance=debtController.balance;
     public void momoPayment(String phoneNumber, int amount, String token){
         //Checking if the amount > 1000
         System.out.println("The amount "+amount);
         System.out.println("The boolean result "+(amount > 1000));
-
-        if (amount > 1000){
-            sendResponse("The maximum amount is 1000");
-            return;
-        }
 
 
         // Sending response to the client
@@ -55,7 +52,61 @@ public class PaymentController {
             sendResponse("The number you entered doesn't have momo account.Please make sure you entered the right number ");
             return;
         }
+        if (debtController.isDebtLimit(token)){
+            if(amount<1000){
+                sendResponse("You can not have another debt please complete previous one");
+                return;
+            }
+        }
         paymentRepo.transferMoney(phoneNber, amount, token);
+        paymentRepo.recordTransaction(1, amount);
+
+        sendResponse("Your payment has been recorded!");
+
+
+    };
+    public void bankPayment(int accNumber, int amount, String token){
+        //Checking if the amount > 1000
+        System.out.println("The amount "+amount);
+        System.out.println("The boolean result "+(amount > 1000));
+
+//        if (amount > 1000){
+//            sendResponse("The maximum amount is 1000");
+//            return;
+//        }
+
+
+        // Sending response to the client
+        ResultSet resultSet = paymentRepo.findBankAccount(accNumber);
+        int accNber = 0;
+        int bankBalance = 0;
+        try{
+            while(resultSet.next()){
+                accNber = resultSet.getInt("accNber");
+                bankBalance = resultSet.getInt("balance");
+            }
+
+            // Checking if the amount provided by the user is not greater than the amount of money on momo acc.
+            if (amount > bankBalance){
+                sendResponse("You don't have sufficient money on your account !");
+                return;
+            }
+        }catch (SQLException exception){
+            exception.printStackTrace();
+        }
+
+        System.out.println(accNber);
+        System.out.println(accNumber);
+
+
+        if(accNber!= accNumber){
+            sendResponse("The entered bank account doesn't exist!! ");
+            return;
+        }
+
+        paymentRepo.transferFunds(accNber, amount, "12345");
+
+        paymentRepo.recordTransaction(1, amount);
         sendResponse("Your payment has been recorded!");
 
 
@@ -70,14 +121,89 @@ public class PaymentController {
                 String token = request.split("/")[4];
                 this.momoPayment(phoneNumber, amount, token);
                 break;
-            case "checkSecurityDebt":
-                checkSecurityDebt();
+            case "bankpayment":
+                int accNumber = Integer.parseInt(request.split("/")[2]);
+                int bamount =Integer.parseInt(request.split("/")[3]);
+                String btoken = request.split("/")[4];
+                this.bankPayment(accNumber, bamount, btoken);
+                break;
+            case "checkWasteDebt":
+                long userId=Long.valueOf(request.split("/")[2]);
+                checkWasteDebt(userId);
                 break;
         }
     }
 
-    public void checkSecurityDebt(){
-
+    public void checkWasteDebt(long userId) {
+        long balance=0;
+        try {
+            ResultSet result=paymentRepo.getBalance(userId);
+            while (result.next()){
+                balance=result.getLong(3);
+            }
+            System.out.println(balance);
+            if(balance>0){
+                System.out.println("you don't have a debt");
+                sendResponse("ooh wow you don't have any debt \t you have: "+balance+"Frw in wallet");
+                return;
+            }
+            if(balance>3000){
+                sendResponse("you have a maximum debt of: "+balance+"Frw in wallet");
+                return;
+            }
+            if(balance<0){
+                sendResponse("you have a debt of: "+balance+"Frw in wallet");
+                return;
+            }
+        }
+        catch (SQLException sql){
+            System.out.println(sql.getMessage());
+            sql.printStackTrace();
+        }
+    }
+    public void checkSecurityDebt(long userId) {
+        long balance=0;
+        try {
+            ResultSet result=paymentRepo.getBalance(userId);
+            while (result.next()){
+                balance=result.getLong(3);
+            }
+            System.out.println(balance);
+            if(balance>0){
+                System.out.println("you dont have a debt");
+                sendResponse("ooh wow you don't have any debt \t you have: "+balance+"Frw in wallet");
+                return;
+            }
+            if(balance>3000){
+                sendResponse("you have a maximum debt of: "+balance+"Frw in wallet");
+                return;
+            }
+            if(balance<0){
+                sendResponse("you have a debt of: "+balance+"Frw in wallet");
+                return;
+            }
+        }
+        catch (SQLException sql){
+            System.out.println(sql.getMessage());
+            sql.printStackTrace();
+        }
+    }
+    public boolean isDebtFree(int amount,long userId){
+        int balance=0;
+        try {
+            ResultSet result=paymentRepo.getBalance(userId);
+            while (result.next()){
+                 balance=result.getInt(3);
+            }
+            if(balance>0){
+                return true;
+            }
+            return false;
+        }
+        catch (SQLException sql){
+            sql.printStackTrace();
+            return false;
+        }
     }
     public void sendResponse( String response ) {
         try {

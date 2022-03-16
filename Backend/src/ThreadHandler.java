@@ -1,9 +1,4 @@
-import Controllers.CompanyController;
-import Controllers.NotificationController;
-import Controllers.HouseController;
-import Controllers.PaymentController;
-import Controllers.WalletContoller;
-
+import Controllers.*;
 import java.io.*;
 import java.net.Socket;
 
@@ -11,34 +6,41 @@ public class ThreadHandler extends Thread{
     Socket socket;
 
     //REGISTERING ALL CONTROLLERS
+
     private final CompanyController companyController;
     private final NotificationController notificationController;
     private final HouseController houseController;
-    private final WalletContoller walletContoller;
+    private final WalletController walletController;
     private final PaymentController paymentController;
-
+    private final AdminController adminController;
+    private final DebtController debtController;
     public ThreadHandler(Socket socket){
         this.socket=socket;
         companyController=new CompanyController();
         notificationController = new NotificationController();
         houseController=new HouseController();
         paymentController=new PaymentController();
-        walletContoller = new WalletContoller();
+        walletController = new WalletController();
+        adminController = new AdminController();
+        debtController=new DebtController();
     }
 
 
     @Override
     public void run(){
         try{
+            CompanyController company = new CompanyController();
             System.out.println("Client connected");
 
             DataInputStream fromClient=new DataInputStream(socket.getInputStream());
             DataOutputStream toClient=new DataOutputStream(socket.getOutputStream());
-
+            DebtController debt=new DebtController();
             //READING REQUESTS FROM THE CLIENT
             String request=fromClient.readUTF();
+            System.out.println(request);
             switch (request.split("/")[0]){
                 case "admin":
+                    adminController.handleRequest(request, toClient);
                     break;
                 case "company":
                     companyController.filterRequest(request,toClient);
@@ -55,16 +57,20 @@ public class ThreadHandler extends Thread{
                     * wallets endpoint
                     * /wallet/(admin|company|district|user)/id
                     * */
-                    walletContoller.whichWallet(request, toClient);
+                    walletController.whichWallet(request, toClient);
                     break;
                 case "notification":
                     notificationController.filterRequest(request,toClient);
+                case "debt":
+                    System.out.println("in debts");
+                    debtController.filterRequest(request,toClient);
                 default:
+                    System.out.println(request.split("/")[0]);
                     toClient.writeUTF("Undefined request");
                   break;
             }
             socket.close();
-        }catch(IOException e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

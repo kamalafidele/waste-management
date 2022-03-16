@@ -24,7 +24,7 @@ public class Payment {
                 checkSecurityDebt(toServer,fromServer);
                 break;
             case 2:
-                checkWasteDebt(toServer,fromServer);
+                checkWasteDebt();
                 break;
             default:
                 System.out.println("please be serious");
@@ -35,24 +35,25 @@ public class Payment {
         this.fromServer=fromServer;
         String request="payment/checkSecurityDebt";
         try {
-            toServer.writeUTF(request);
-            String response=fromServer.readUTF();
+            this.toServer.writeUTF(request);
+            String response=this.fromServer.readUTF();
             System.out.println(response);
         }
         catch (IOException ie){
             System.out.println("An error occured");
+            ie.printStackTrace();
         }
     }
-    public void checkWasteDebt(DataOutputStream toServer,DataInputStream fromServer){
-        this.toServer=toServer;
-        this.fromServer=fromServer;
-        String request="payment/checkWasteDebt";
+    public void checkWasteDebt(){
+        long userId=1;
+        String request="payment/checkWasteDebt/"+userId;
         try {
             toServer.writeUTF(request);
             String response=fromServer.readUTF();
             System.out.println(response);
         }
         catch (IOException ie){
+            ie.printStackTrace();
             System.out.println("An error occured");
         }
     }
@@ -67,7 +68,7 @@ public class Payment {
         try{
             this.toServer.writeUTF(request);
             String responseFromServer = fromServer.readUTF();
-            System.out.println("Hello world !");
+            System.out.println("The response went to the server !");
 
             System.out.println("Response from the server: " + responseFromServer);
 
@@ -78,7 +79,25 @@ public class Payment {
 
     };
     public void handleBankpayment(){
-        System.out.println("I am a handleMomopayment");
+
+//        System.out.println("I am a handleBankpayment");
+        System.out.print("Enter Your BankAccount Number: ");
+        String accNumber = scanner.next();
+        System.out.print("Enter Amount: ");
+        int amount = scanner.nextInt();
+
+        // Formulating a request and making a request
+        String request = "payment/bankpayment/" + accNumber +"/"+amount +"/"+ 1000;
+        try{
+            this.toServer.writeUTF(request);
+            String responseFromServer = fromServer.readUTF();
+            System.out.println("Hello world !");
+
+            System.out.println("Response from the server: " + responseFromServer);
+
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
     };
 
     public void handlePaymentMethods(){
@@ -92,7 +111,7 @@ public class Payment {
 
         switch(paymentMethod){
             case 1:
-                this.handleMomopayment();
+               this.handleMomopayment();
                 break;
             case 2:
                 this.handleBankpayment();

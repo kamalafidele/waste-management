@@ -1,5 +1,6 @@
 package Components;
 
+import DataHandlers.HouseHandler;
 import DataHandlers.WalletHandler;
 
 import java.io.DataInputStream;
@@ -10,18 +11,28 @@ public class Wallet {
     DataOutputStream outToServer;
     DataInputStream fromServer;
 
-   
-    public void showWallet(DataOutputStream outToServer, DataInputStream fromServer){
-        this.outToServer=outToServer;
+    Integer companyId=1;
+
+    public Wallet(DataOutputStream toServer, DataInputStream fromServer) {
+        this.outToServer=toServer;
         this.fromServer=fromServer;
-        String request="wallet/getBalance";
+    }
+
+
+    public void showWallet(){
+        String request="wallet/" + companyId;
         try {
             outToServer.writeUTF(request);
+            System.out.println("SENT REQUEST");
             String response=fromServer.readUTF();
-            System.out.printf("response: " + response);
+            System.out.println(response);
+            //System.out.printf("Your wallet balance is: " + response +" Rwf");
         }
         catch (IOException e){
             e.printStackTrace();
         }
+    }
+    public void checkTheUserRole() {
+        //This will be a method to check the role of the user that's logged in
     }
 }
