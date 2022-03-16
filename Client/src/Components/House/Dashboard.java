@@ -46,7 +46,6 @@ public class Dashboard {
         switch (choice) {
             case 1:
                 System.out.println("wastes payment");
-
                 break;
             case 2:
                 System.out.println("You are going to pay security ");
