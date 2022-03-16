@@ -6,11 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="be78f8c7-d870-4cb2-b1b6-94c3b9aa4cfc" name="Changes" comment="customerInvoice control">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Company.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/House/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/House/House.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,16 +35,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">

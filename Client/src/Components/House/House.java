@@ -1,6 +1,6 @@
 package Components.House;
 
-import DataHandlers.CompanyHandler;
+//import DataHandlers.CitizenHandler;
 import DataHandlers.HouseHandler;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
@@ -41,6 +41,33 @@ public class House{
         //call login function
         login(token);
     }
+
+    public void addCitizen(){
+//        var citizenHandler=new CitizenHandler();
+//        System.out.print( "Enter names: " );
+//        citizenHandler.setName( keyboard.nextLine() );
+//        System.out.print( "Enter email: " );
+//        citizenHandler.setEmail( keyboard.nextLine() );
+//        System.out.print( "Enter phone: " );
+//        citizenHandler.setPhone( keyboard.nextLine() );
+//        System.out.print( "Enter location: " );
+//        citizenHandler.setLocation( keyboard.nextLine() );
+//        citizenHandler.setRole(5);
+
+        System.out.println("request: ");
+        String request = keyboard.nextLine();
+        try{
+            toServer.writeUTF(request);
+            String response=fromServer.readUTF();
+            System.out.println(response);
+
+//            String citizenAsJson=mapper.writeValueAsString( citizenHandler );
+//            sendRequest( "citizen/insert/" + citizenAsJson );
+//            String response= fromServer.readUTF();
+//            System.out.println( response );
+        }catch (Exception ex){}
+    }
+
     public void sendRequest( String request ){
         try{
             toServer.writeUTF( request );
