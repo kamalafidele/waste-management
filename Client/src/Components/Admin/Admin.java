@@ -85,7 +85,7 @@ public class Admin {
                     case 4:
                         createAdmin();
                         break;
-                    case 4:
+                    case 5:
                         System.out.println("Add District");
                         DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
                         districtDashboard.addDistrict();
@@ -174,10 +174,7 @@ public class Admin {
 
     public void showWallet() throws IOException {
         toServer.flush();
-        this.sendRequest("admin/wallet/");
-      new Wallet(toServer,fromServer).showWallet();
-
-        System.out.println(fromServer.readUTF());
+        new Wallet(toServer,fromServer).showWallet(1);
     }
 
     public void showDistricts(){
