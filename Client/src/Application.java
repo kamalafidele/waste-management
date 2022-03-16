@@ -3,6 +3,7 @@ import Components.Admin.Admin;
 import Components.Company;
 import Components.House.House;
 import Components.District.DistrictDashboard;
+import Components.ServiceConfirmation.Shifts;
 import Components.Wallet;
 
 import java.io.DataInputStream;
@@ -59,13 +60,18 @@ public class Application {
 //                    System.out.println("You are a district!");
                     DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
                     districtDashboard.handleDistrict();
+                    System.out.println("You are a district!");
+                     new Company(toServer, fromServer).addCitizen();
                     break;
                 case 3:
+                    new Company(toServer, fromServer).displayCompanies();
                     System.out.println("You are a company!");
                     new Company(toServer,fromServer).addCompany();
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
+                    Shifts shift = new Shifts(toServer,fromServer);
+                    shift.addShift();
                     break;
                 case 5:
                     System.out.println("You are a citizen!");

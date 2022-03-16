@@ -67,8 +67,8 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6c0a7eec-7ea6-4b28-b3c9-6eefe622eff8" name="Changes" comment="" />
-      <created>1646336907614</created>
+      <changelist id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="" />
+      <created>1647347321755</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646336907614</updated>
@@ -98,6 +98,7 @@
         </entry>
       </map>
     </option>
+<<<<<<< HEAD
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -114,5 +115,7 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+=======
+>>>>>>> 4a19d47751e24ca218ad273603ce5639bbbdfc27
   </component>
 </project>
