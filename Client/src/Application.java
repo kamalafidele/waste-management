@@ -1,10 +1,10 @@
 
 import Components.Admin.Admin;
-import Components.Company;
 import Components.House.House;
 import Components.District.DistrictDashboard;
 import Components.Shifts;
 import Components.Wallet;
+import Components.Company;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -25,7 +25,7 @@ public class Application {
     public static void main(String[] args){
         Scanner keyboard=new Scanner(System.in);
         try{
-            Socket socket=new Socket("localhost",3000);
+            Socket socket=new Socket("localhost",2500);
             int choice = 0;
 
             DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
@@ -83,7 +83,7 @@ public class Application {
                     customerInvoice customer = new customerInvoice();
                     try {
                         customer.mainMethod();
-                    }catch (Exception e){
+                         }catch (Exception e){
                         e.printStackTrace();
                     }
 

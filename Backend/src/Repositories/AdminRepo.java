@@ -3,6 +3,7 @@ package Repositories;
 import Config.DatabaseConnection;
 import Models.Admin;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class AdminRepo {
@@ -15,16 +16,18 @@ public class AdminRepo {
     public boolean login(Admin admin){
         //login the admin
         try{
-            ResultSet result = database.select("SELECT * FROM user WHERE name = '"+admin.getName()+"' AND pin = '"+admin.getPassword()+"' AND Role = 1 ");
-            if(result.next()){
-                return true;
+            PreparedStatement statement = database.connection.prepareStatement("SELECT * FROM users WHERE name = ? AND pin = ? AND Role = 1");
+            statement.setString(1, admin.getName());
+            statement.setLong(2, admin.getPassword());
+            ResultSet result = statement.executeQuery();
+
+            if(!result.next()){
+                return  false;
             }
         }catch (Exception e) {
             e.printStackTrace();
         }
-
-        return false;
-
+        return true;
     }
 
     public boolean createAdmin(Admin admin){
