@@ -1,6 +1,7 @@
 package Components.House;
 
 //import DataHandlers.CitizenHandler;
+import DataHandlers.CitizenHandler;
 import DataHandlers.HouseHandler;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
@@ -51,7 +52,7 @@ public class House{
 //        System.out.print( "Enter phone: " );
 //        citizenHandler.setPhone( keyboard.nextLine() );
 //        System.out.print( "Enter location: " );
-//        citizenHandler.setLocation( keyboard.nextLine() );
+////        citizenHandler.setLocation( keyboard.nextLine() );
 //        citizenHandler.setRole(5);
 
         System.out.println("request: ");
