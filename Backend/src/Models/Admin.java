@@ -17,13 +17,13 @@ public class Admin {
 
     public Admin(){}
 
-    public Admin(String name, long password){
+    public Admin(String name, String password){
         this.setName(name);
         this.setPassword(password);
     }
 
-    public Admin(String username, String email, String phone, String location) throws SQLException {
-        this.setName(username);
+    public Admin(String name, String email, String phone, String location) throws SQLException {
+        this.setName(name);
         this.setEmail(email);
         this.setPhone(phone);
         this.setPin();
@@ -92,7 +92,7 @@ public class Admin {
         return password;
     }
 
-    public void setPassword(long password) {
-        this.password = password;
+    public void setPassword(String password) {
+        this.password = Long.parseLong(password);
     }
 }
