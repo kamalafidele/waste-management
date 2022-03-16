@@ -6,7 +6,7 @@ package Repositories;
  */
 
 import Config.DatabaseConnection;
-import Models.Notification;
+import Models.*;
 import java.sql.ResultSet;
 
 

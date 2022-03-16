@@ -1,5 +1,6 @@
 package Components.Admin;
 
+import Components.District.DistrictDashboard;
 import Components.Wallet;
 import DataHandlers.Admin.LoginInfo;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -22,7 +23,9 @@ public class Admin {
     BufferedReader bufferedReader;
     File file;
 
-    public Admin(){}
+    public Admin(){
+        mapper = new ObjectMapper();
+    }
 
     public Admin(DataOutputStream toServer, DataInputStream fromServer) {
         this.toServer = toServer;
@@ -66,7 +69,8 @@ public class Admin {
             System.out.println("1. Check districts");
             System.out.println("2. Your wallet");
             System.out.println("3. Your analytics");
-            System.out.println("4. logout");
+            System.out.println("4. Add district");
+            System.out.println("5. logout");
 
             //choose
             int choice;
@@ -83,6 +87,11 @@ public class Admin {
                     System.out.println("see analytics");
                     break;
                 case 4:
+                    System.out.println("Add District");
+                    DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
+                    districtDashboard.addDistrict();
+                    break;
+                case 5:
                     System.out.println("logout");
                     break;
             }
