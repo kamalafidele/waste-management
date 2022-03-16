@@ -39,19 +39,11 @@ public class ServiceConfirmation {
             Iterator<ServiceConfirmationHandler> confirmedServicesIterator = confirmedServices.iterator();
             System.out.println("---------Confirmed Services-------");
             System.out.println(" ConfirmedService ID | Service ID | Shift ID  | Confirmer ID |");
-            while(shiftsIterator.hasNext()){
-                ShiftsHandler handler = shiftsIterator.next();
+            while(confirmedServicesIterator.hasNext()){
+                ServiceConfirmationHandler handler = confirmedServicesIterator.next();
 
 
-                System.out.println(" | "+ handler.getId()+" | "+"      | "+handler.getCompany_id()+" | "+"     | "+handler.getDate()+" | "+"       | "+handler.getConfirmerId()+" | ");
-                //                   System.out.println("--------------Shift Id--------------");
-//                   System.out.println(handler.getId());
-//                   System.out.println("-----------------Company ID----------");
-//                   System.out.println(handler.getCompany_id());
-//                   System.out.println("---------------Date---------------");
-//                   System.out.println(handler.getDate());
-//                   System.out.println("-----------------Confirmer ID--------");
-//                   System.out.println(handler.getConfirmerId());
+                System.out.println(" | "+ handler.getId()+" | "+"      | "+handler.getServiceId()+" | "+"     | "+handler.getShiftId()+" | "+"       | "+handler.getConfirmerId()+" | ");
             }
         }catch (Exception e){
             e.getMessage();
@@ -59,20 +51,19 @@ public class ServiceConfirmation {
 
     }
 
-    public void addShift(){
+    public void addConfirmedService(){
         System.out.println("request:");
-//          String
-        var shiftsHandler = new ShiftsHandler();
+        var confirmedService = new ServiceConfirmationHandler();
         System.out.println("------------------ADDING NEW SHIFT--------------");
         System.out.println("---Enter the ID of the Company working in the area---");
-        shiftsHandler.setCompany_id(scanner.nextInt());
+        confirmedService.setServiceId(scanner.nextInt());
         System.out.println("--Enter the date ---- ");
-        shiftsHandler.setDate(scanner.next());
+        confirmedService.setShiftId(scanner.nextInt());
         System.out.println("--Enter your ID---");
-        shiftsHandler.setConfirmerId(scanner.nextInt());
+        confirmedService.setConfirmerId(scanner.nextInt());
         try{
-            String shiftasJSon= mapper.writeValueAsString(shiftsHandler);
-            sendRequest("serviceconfirmation/addShift/"+shiftasJSon);
+            String confirmedserviceasJSon= mapper.writeValueAsString(confirmedService);
+            sendRequest("serviceconfirmation/addConfirmedService/"+confirmedserviceasJSon);
             String response = fromServer.readUTF();
             System.out.println(response);
         }catch (Exception e){

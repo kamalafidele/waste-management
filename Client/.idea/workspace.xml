@@ -5,26 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c0a7eec-7ea6-4b28-b3c9-6eefe622eff8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/CustomerInvoicesRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/jackson_all_1_9_91.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/src/Controllers/ServiceConfirmationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector_java_8_0_26.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector_java_8_0_261.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ConfirmerProcessController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/CustomerInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/CustomerInvoice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/ConfirmerProcess.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/AdminRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/AdminRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ConfirmerProcessRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/CustomerInvoicesRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/CustomerInvoicesRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Admin/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Admin/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Shifts$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Shifts$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Shifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Shifts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ServiceConfirmation/Dashboard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ServiceConfirmation/ServiceConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Shifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ServiceConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +33,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
