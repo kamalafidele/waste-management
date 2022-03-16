@@ -1,6 +1,7 @@
 package Components.House;
 
-import DataHandlers.CompanyHandler;
+//import DataHandlers.CitizenHandler;
+import DataHandlers.CitizenHandler;
 import DataHandlers.HouseHandler;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
@@ -41,10 +42,46 @@ public class House{
         //call login function
         login(token);
     }
+
+    public void addCitizen(){
+        var citizenHandler=new CitizenHandler();
+        System.out.print( "Enter names: " );
+        citizenHandler.setName( keyboard.nextLine() );
+        System.out.print( "Enter email: " );
+        citizenHandler.setEmail( keyboard.nextLine() );
+        System.out.print( "Enter phone: " );
+        citizenHandler.setPhone( keyboard.nextLine() );
+        System.out.print( "Enter location: " );
+        String locationName = keyboard.nextLine();
+        citizenHandler.setRole(5);
+
+//        System.out.println("request: ");
+//        String request = keyboard.nextLine();
+        try{
+//            toServer.writeUTF(request);
+//            String Sresponse=fromServer.readUTF();
+//            System.out.println(Sresponse);
+
+            String request2 = "citizen/getLocationId/" + locationName;
+            toServer.writeUTF(request2);
+            String response2 = fromServer.readUTF();
+            //convert response2 to int
+            int locationId = Integer.parseInt(response2);
+            citizenHandler.setLocation( locationId );
+
+            String citizenAsJson=mapper.writeValueAsString( citizenHandler );
+            System.out.println(citizenAsJson);
+            sendRequest( "citizen/insert/"+citizenAsJson );
+            String response= fromServer.readUTF();
+            System.out.println( response );
+        }catch (Exception ex){}
+    }
+
     public void sendRequest( String request ){
         try{
             toServer.writeUTF( request );
-        }catch ( IOException exception ){}
+            System.out.println( "Request sent: " + request );
+        }catch ( IOException exception ){ }
     }
 
     public void login(String token){
