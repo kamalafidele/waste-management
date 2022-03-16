@@ -1,22 +1,30 @@
 package Models;
 
+import java.math.BigInteger;
+
 public class House {
     private int id;
-//    id, name, pin, sectorId, walletId
     private String name;
-    private int pin;
-    private int sectorId;
-    private int walletId;
+    private BigInteger pin;
+    private String email;
+    private String phone;
+    private int role;
+    private int wallet;
+    private int location;
+
     private String message;
 
     public House() {}
 
-    public House(int id, String name, int pin, int sectorId, int walletId, String message) {
+    public House(int id, String name, BigInteger pin, String email, String phone, int role, int wallet, int location, String message) {
         this.id = id;
         this.name = name;
         this.pin = pin;
-        this.sectorId = sectorId;
-        this.walletId = walletId;
+        this.email = email;
+        this.phone = phone;
+        this.role = role;
+        this.wallet = wallet;
+        this.location = location;
         this.message = message;
     }
 
@@ -36,28 +44,52 @@ public class House {
         this.name = name;
     }
 
-    public int getPin() {
+    public BigInteger getPin() {
         return pin;
     }
 
-    public void setPin(int pin) {
+    public void setPin(BigInteger pin) {
         this.pin = pin;
     }
 
-    public int getSectorId() {
-        return sectorId;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSectorId(int sectorId) {
-        this.sectorId = sectorId;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getWalletId() {
-        return walletId;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setWalletId(int walletId) {
-        this.walletId = walletId;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    public int getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(int wallet) {
+        this.wallet = wallet;
+    }
+
+    public int getLocation() {
+        return location;
+    }
+
+    public void setLocation(int location) {
+        this.location = location;
     }
 
     public String getMessage() {
