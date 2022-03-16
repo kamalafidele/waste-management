@@ -19,8 +19,8 @@ public class Wallet {
     }
 
 
-    public void showWallet(){
-        String request="wallet/" + companyId;
+    public void showWallet(int userId){
+        String request="wallet/" + userId;
         try {
             outToServer.writeUTF(request);
             String response=fromServer.readUTF();
