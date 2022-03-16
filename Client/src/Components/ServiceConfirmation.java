@@ -39,20 +39,20 @@ public class ServiceConfirmation {
             Iterator<ServiceConfirmationHandler> confirmedServicesIterator = confirmedServices.iterator();
             System.out.println("---------Confirmed Services-------");
             System.out.println(" ConfirmedService ID | Service ID | Shift ID  | Confirmer ID |");
-            while(shiftsIterator.hasNext()){
-                ShiftsHandler handler = shiftsIterator.next();
-
-
-                System.out.println(" | "+ handler.getId()+" | "+"      | "+handler.getCompany_id()+" | "+"     | "+handler.getDate()+" | "+"       | "+handler.getConfirmerId()+" | ");
-                //                   System.out.println("--------------Shift Id--------------");
-//                   System.out.println(handler.getId());
-//                   System.out.println("-----------------Company ID----------");
-//                   System.out.println(handler.getCompany_id());
-//                   System.out.println("---------------Date---------------");
-//                   System.out.println(handler.getDate());
-//                   System.out.println("-----------------Confirmer ID--------");
-//                   System.out.println(handler.getConfirmerId());
-            }
+//            while(shiftsIterator.hasNext()){
+//                ShiftsHandler handler = shiftsIterator.next();
+//
+//
+//                System.out.println(" | "+ handler.getId()+" | "+"      | "+handler.getCompany_id()+" | "+"     | "+handler.getDate()+" | "+"       | "+handler.getConfirmerId()+" | ");
+//                //                   System.out.println("--------------Shift Id--------------");
+////                   System.out.println(handler.getId());
+////                   System.out.println("-----------------Company ID----------");
+////                   System.out.println(handler.getCompany_id());
+////                   System.out.println("---------------Date---------------");
+////                   System.out.println(handler.getDate());
+////                   System.out.println("-----------------Confirmer ID--------");
+////                   System.out.println(handler.getConfirmerId());
+//            }
         }catch (Exception e){
             e.getMessage();
         }

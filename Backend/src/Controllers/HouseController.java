@@ -52,8 +52,11 @@ public class HouseController {
 
     public void addClient(String data) {
         try{
+            String locationName = data.split("-")[1];
+            int locationId = getLocationId(locationName);
             House house=mapper.readValue(data,House.class);
-            System.out.println(house);
+            house.setLocation(locationId);
+
             houseRepo.save(house);
             sendResponse(house.getMessage());
 
@@ -87,24 +90,27 @@ public class HouseController {
         }
     }
 
-    public void getLocationId(String locationName){
+    public int getLocationId(String locationName){
         ResultSet resultSet=houseRepo.findByLocation(locationName);
         House house=new House();
 
         try{
 
             if (resultSet == null){
+                sendResponse("No such location");
                 System.out.println("No such Place");
             }else {
             while(resultSet.next()) {
                 house.setLocation(resultSet.getInt(1));
             }
-                sendResponse(mapper.writeValueAsString(house.getLocation()));
+                  return house.getLocation();
+//                sendResponse(mapper.writeValueAsString(house.getLocation()));
             }
 
-        } catch (IOException | SQLException exception){
+        } catch (Exception exception){
             exception.printStackTrace();
         }
+        return 0;
     }
 
     // THIS A METHOD FOR SENDING

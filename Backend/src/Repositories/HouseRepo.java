@@ -21,7 +21,6 @@ public class HouseRepo {
     }
 
     public void save(House house){
-        System.out.println("Saving citizen"+house);
         String pin=house.genPin();
         //check if token exists
         ResultSet resultSet=database.select("SELECT * FROM users WHERE pin = "+pin);
