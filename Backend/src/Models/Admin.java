@@ -12,24 +12,23 @@ public class Admin {
     private long pin;
     private int role;
     private String location;
-    private String password;
+    private long password;
     private LocationRepo locationRepo;
 
     public Admin(){}
 
-    public Admin(String username, String password){
-        this.setName(username);
+    public Admin(String name, long password){
+        this.setName(name);
         this.setPassword(password);
     }
 
-    public Admin(String username, String email, String phone, String location, String password) throws SQLException {
+    public Admin(String username, String email, String phone, String location) throws SQLException {
         this.setName(username);
         this.setEmail(email);
         this.setPhone(phone);
         this.setPin();
         this.setRole();
         this.setLocation(location);
-        this.setPassword(password);
     }
 
     public String getName() {
@@ -89,11 +88,11 @@ public class Admin {
         this.location = location;
     }
 
-    public String getPassword() {
+    public long getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(long password) {
         this.password = password;
     }
 }

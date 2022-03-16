@@ -15,7 +15,7 @@ public class AdminRepo {
     public boolean login(Admin admin){
         //login the admin
         try{
-            ResultSet result = database.select("SELECT * FROM user WHERE name = '"+admin.getName()+"' AND password = '"+admin.getPassword()+"' ");
+            ResultSet result = database.select("SELECT * FROM user WHERE name = '"+admin.getName()+"' AND pin = '"+admin.getPassword()+"' AND Role = 1 ");
             if(result.next()){
                 return true;
             }

@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="130c3fa2-2380-4822-92d3-76d7df61f005" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Repositories/LocationRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repositories/AdminRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/AdminRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThreadHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/loggedIn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/loggedIn.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Admin/loggedIn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Admin/loggedIn.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +72,6 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JAVA/Threading" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -106,7 +101,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647371939606</updated>
-      <workItem from="1647371943593" duration="5598000" />
+      <workItem from="1647371943593" duration="5625000" />
+      <workItem from="1647407110754" duration="2969000" />
     </task>
     <servers />
   </component>

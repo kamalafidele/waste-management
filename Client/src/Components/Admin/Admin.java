@@ -49,35 +49,41 @@ public class Admin {
                         e.printStackTrace();
                     }
                 }
-            } else {
-                //admin dashboard
-                System.out.println("\n");
-                System.out.println("--------Welcome abroad!----------");
+            }
 
-                //admin dashboard
-                System.out.println("1. Check districts");
-                System.out.println("2. Your wallet");
-                System.out.println("3. Your analytics");
-                System.out.println("4. logout");
+            //admin dashboard
+            System.out.println("\n");
+            System.out.println("--------Welcome abroad!----------");
 
-                //choose
-                int choice;
-                System.out.print("Choose: ");
-                choice = keyboard.nextInt();
-                switch (choice) {
+            //admin dashboard
+            System.out.println("1. Check districts");
+            System.out.println("2. Your wallet");
+            System.out.println("3. Your analytics");
+            System.out.println("4. Create new admin");
+            System.out.println("5. logout");
+
+            //choose
+            int choice;
+            System.out.print("Choose: ");
+            choice = keyboard.nextInt();
+            switch (choice) {
                     case 1:
-                        System.out.println("see districts");
+                        showDistricts();
                         break;
                     case 2:
-                        System.out.println("see wallet");
+                        showWallet();
                         break;
                     case 3:
-                        System.out.println("see analytics");
+                        showAnalytics();
                         break;
                     case 4:
-                        System.out.println("logout");
+                        createAdmin();
                         break;
-                }
+                    case 5:
+                        logout();
+                        break;
+                    default:
+                        break;
             }
 
         } catch (Exception e) {
@@ -95,13 +101,14 @@ public class Admin {
             System.out.println("--------Login as an admin!----------");
             System.out.print("Username: ");
             loginInfos.setUsername(keyboard.next());
-            System.out.print("Password: ");
+            System.out.print("Pin: ");
             loginInfos.setPassword(keyboard.next());
 
             //call login function
             toServer.flush();
             this.sendRequest("admin/login/" + mapper.writeValueAsString(loginInfos));
 
+            //return the response
             return fromServer.readUTF();
 
         }catch (Exception e){
@@ -128,7 +135,7 @@ public class Admin {
                 bufferedReader = new BufferedReader(streamReader);
                 String content = bufferedReader.readLine();
 
-                return Objects.equals(content, "false");
+                return Objects.equals(content, "true");
             }
 
         }catch(IOException e){
@@ -144,6 +151,31 @@ public class Admin {
         }catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void createAdmin(){
+
+    }
+
+    public void showAnalytics(){
+
+    }
+
+    public void showWallet() throws IOException {
+        toServer.flush();
+        this.sendRequest("admin/wallet/");
+
+        System.out.println(fromServer.readUTF());
+    }
+
+    public void showDistricts(){
+
+    }
+
+    public void logout() throws IOException {
+        String data = "false";
+        fileOut = new FileOutputStream(file);
+        fileOut.write(data.getBytes(), 0, data.length());
     }
 
 }
