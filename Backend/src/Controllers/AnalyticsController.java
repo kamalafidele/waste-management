@@ -58,7 +58,8 @@ public class AnalyticsController {
                     companyName = companyAnalytics.getString(1);
                     balance = Integer.parseInt(companyAnalytics.getString(2));
                 }
-            } catch (SQLException e) {
+            } catch (Exception e) {
+//                sendResponse("No analytics available for such company");
                 e.printStackTrace();
             }
 
