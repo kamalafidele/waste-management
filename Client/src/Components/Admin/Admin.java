@@ -146,7 +146,10 @@ public class Admin {
     }
 
     public void createAdmin(){
-
+        System.out.println("--------Create another admin!----------");
+        System.out.println("name: ");
+        System.out.println("email: ");
+        System.out.println("Phone: ")
     }
 
     public  void createDistrict(){
@@ -167,7 +170,6 @@ public class Admin {
     public void showDistricts() throws IOException {
         DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
         districtDashboard.displayDistricts();
-        break;
     }
 
     public void logout() throws IOException {
