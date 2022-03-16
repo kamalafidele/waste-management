@@ -1,6 +1,7 @@
 package Components;
 
 import DataHandlers.ShiftsHandler;
+import jdk.swing.interop.SwingInterOpUtils;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 
@@ -30,22 +31,27 @@ public class Shifts {
           }
       }
       public void viewShifts(){
-          String request="serviceConfirmation/getShifts";
+          String request="serviceconfirmation/getShifts";
           try{
               sendRequest(request);
               String response = fromServer.readUTF();
               ArrayList<ShiftsHandler> shifts = mapper.readValue(response,new TypeReference<ArrayList<ShiftsHandler>>(){});
               Iterator<ShiftsHandler> shiftsIterator = shifts.iterator();
+              System.out.println("---------REGISTERED SHIFTS-------");
+              System.out.println(" Shift ID | Company ID | Date        | Confirmer ID |");
                while(shiftsIterator.hasNext()){
                    ShiftsHandler handler = shiftsIterator.next();
-                   System.out.print("--------------Shift Id--------------");
-                   System.out.println(handler.getId());
-                   System.out.println("-----------------Company ID----------");
-                   System.out.println(handler.getCompany_id());
-                   System.out.println("---------------Date---------------");
-                   System.out.println(handler.getDate());
-                   System.out.println("-----------------Confirmer ID--------");
-                   System.out.println(handler.getConfirmerId());
+
+
+                   System.out.println(" | "+ handler.getId()+" | "+"      | "+handler.getCompany_id()+" | "+"     | "+handler.getDate()+" | "+"       | "+handler.getConfirmerId()+" | ");
+                   //                   System.out.println("--------------Shift Id--------------");
+//                   System.out.println(handler.getId());
+//                   System.out.println("-----------------Company ID----------");
+//                   System.out.println(handler.getCompany_id());
+//                   System.out.println("---------------Date---------------");
+//                   System.out.println(handler.getDate());
+//                   System.out.println("-----------------Confirmer ID--------");
+//                   System.out.println(handler.getConfirmerId());
                }
           }catch (Exception e){
               e.getMessage();

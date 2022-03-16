@@ -85,7 +85,7 @@ public class Admin {
                     case 4:
                         createAdmin();
                         break;
-                    case 4:
+                    case 5:
                         System.out.println("Add District");
                         DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
                         districtDashboard.addDistrict();
