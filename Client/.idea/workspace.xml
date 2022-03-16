@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c0a7eec-7ea6-4b28-b3c9-6eefe622eff8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-14-11-30.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/DistrictController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/District.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/DistrictRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/DistrictRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" afterDir="false" />
     </list>
@@ -14,6 +16,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -70,7 +79,7 @@
       <workItem from="1647320617627" duration="560000" />
       <workItem from="1647322125813" duration="974000" />
       <workItem from="1647342499089" duration="2968000" />
-      <workItem from="1647368747151" duration="947000" />
+      <workItem from="1647368747151" duration="3441000" />
     </task>
     <servers />
   </component>

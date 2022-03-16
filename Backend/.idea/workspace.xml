@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be78f8c7-d870-4cb2-b1b6-94c3b9aa4cfc" name="Changes" comment="customerInvoice control">
-      <change afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-14-11-30.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/DistrictHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DistrictController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/District.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repositories/DistrictRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/DistrictRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" afterDir="false" />
     </list>
@@ -125,7 +128,7 @@
       <workItem from="1647342491269" duration="49000" />
       <workItem from="1647342590231" duration="2197000" />
       <workItem from="1647354827242" duration="596000" />
-      <workItem from="1647368713820" duration="683000" />
+      <workItem from="1647368713820" duration="3252000" />
     </task>
     <task id="LOCAL-00001" summary="customerInvoice control">
       <created>1646022290178</created>

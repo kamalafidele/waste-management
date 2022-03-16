@@ -3,6 +3,8 @@ package Components.District;
 import Components.Company;
 import Components.Wallet;
 
+import DataHandlers.CompanyHandler;
+import DataHandlers.DistrictHandler;
 import DataHandlers.LoginData;
 
 
@@ -12,6 +14,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import java.io.*;
 import java.net.Socket;
 import java.util.Objects;
+import java.util.Random;
 import java.util.Scanner;
 
 public class DistrictDashboard {
@@ -99,6 +102,9 @@ public class DistrictDashboard {
             e.printStackTrace();
         }
     }
+
+
+
     public void handleDistrict(){
    
         boolean isLogged = isLogged();
