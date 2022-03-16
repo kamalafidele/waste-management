@@ -43,7 +43,7 @@ public class AnalyticsController {
         }
     }
 
-    public void getAnalytics(String sender, Integer senderId, String period){
+    public String getAnalytics(String sender, Integer senderId, String period){
         if(sender.equals("district")){
             ResultSet nameBalance = analyticsRepo.getNameBalance(period, senderId);
             String districtName = null;
@@ -82,6 +82,7 @@ public class AnalyticsController {
                     "of money so far : " + balance + "\nMoney not paid yet: " + totalDebt + "\n" + "Number of employed" +
                     " companies: " + companiesNum + "\n";
             sendResponse(heading + body + "\n" + closing);
+            return (heading + body + "\n" + closing);
         }
 
         if(sender.equals("company")){
@@ -104,7 +105,9 @@ public class AnalyticsController {
             String body = "Company name: " + companyName + "\n" + "Number of service provided by us:  1\nTotal amount " +
                     "of money so far : " + balance + "\n" + "Percentage at which service is provided: 80%\n";
             sendResponse(heading + body + "\n" + closing);
+            return (heading + body + "\n" + closing);
         }
+        return "Something went wrong.";
     }
 
     public void downloadAnalytics(String period){

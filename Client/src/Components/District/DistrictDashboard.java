@@ -1,5 +1,6 @@
 package Components.District;
 
+import Components.Analytics;
 import Components.Company;
 import Components.Wallet;
 
@@ -159,6 +160,8 @@ public class DistrictDashboard {
             System.out.println("1.User registration");
             System.out.println("2. Creating Company");
             System.out.println("3. Citizen Registration");
+            System.out.println("4. Get Analytics");
+            System.out.println("5. Download Analytics");
 
             int choice;
             System.out.print("Choose: ");
@@ -172,15 +175,20 @@ public class DistrictDashboard {
                     Company company=new Company(toServer,fromServer);
                     company.addCompany();
                     break;
-                    case 3:
+                case 3:
                     System.out.println("Citizen Registration");
                     break;
+                case 4:
+                    new Analytics(toServer, fromServer, keyboard).getAnalytics();
+                    break;
+                case 5:
+                    new Analytics(toServer, fromServer, keyboard).downloadAnalytics();
+                default:
+                    System.out.println("Please be serious!");
             }
         }catch(Exception e){
             e.printStackTrace();
         }
     }
-
-    
 
 }

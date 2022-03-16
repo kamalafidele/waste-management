@@ -60,8 +60,7 @@ public class Application {
 //                    System.out.println("You are a district!");
                     DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
                     districtDashboard.handleDistrict();
-                    System.out.println("You are a district!");
-                    new Company(toServer, fromServer).addCitizen();
+//                    new Company(toServer, fromServer).addCitizen();
                     break;
                 case 3:
                     new Company(toServer, fromServer).displayCompanies();

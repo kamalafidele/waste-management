@@ -16,6 +16,7 @@ public class ThreadHandler extends Thread{
     private final WalletController walletContoller;
     private final PaymentController paymentController;
     private final ShiftsController shiftsController;
+    private final DistrictController districtController;
     private AdminController adminController;
 
 
@@ -27,6 +28,7 @@ public class ThreadHandler extends Thread{
         paymentController=new PaymentController();
         walletContoller = new WalletController();
         shiftsController = new ShiftsController();
+        districtController = new DistrictController();
     }
 
 
@@ -46,6 +48,9 @@ public class ThreadHandler extends Thread{
                     break;
                 case "company":
                     companyController.filterRequest(request,toClient);
+                    break;
+                case "district":
+                    districtController.handleRequest(request, toClient);
                     break;
                 case "citizen":
                     houseController.filterRequest(request,toClient);
