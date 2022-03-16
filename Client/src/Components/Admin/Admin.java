@@ -80,9 +80,7 @@ public class Admin {
                         createAdmin();
                         break;
                     case 5:
-                        System.out.println("Add District");
-                        DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
-                        districtDashboard.addDistrict();
+                        createDistrict();
                         break;
                     case 6:
                         logout();
@@ -149,6 +147,12 @@ public class Admin {
 
     public void createAdmin(){
 
+    }
+
+    public  void createDistrict(){
+        System.out.println("Add District");
+        DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
+        districtDashboard.addDistrict();
     }
 
     public void showAnalytics(){
