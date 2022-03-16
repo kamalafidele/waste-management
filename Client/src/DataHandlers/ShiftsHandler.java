@@ -1,13 +1,14 @@
-package Models;
+package DataHandlers;
 
+import java.util.logging.Handler;
 
-public class Shifts {
+public class ShiftsHandler {
     private int id;
     private int company_id;
     private String date;
     private int confirmerId;
 
-    public Shifts(int id,int company_id,String date){
+    public ShiftsHandler(int id,int company_id,String date){
         this.id=id;
         this.company_id=company_id;
         this.date=date;

@@ -1,7 +1,7 @@
-package Components;
+package Components.ServiceConfirmation;
 
 import java.util.Scanner;
-public class Confirmer {
+public class ServiceConfirmation {
      private String date;
      private String village;
      private String companyName;

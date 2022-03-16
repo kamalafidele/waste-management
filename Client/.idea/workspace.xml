@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f78d584-f855-4f25-9711-6a042b47d996" name="Changes" comment="" />
+    <list default="true" id="104480d6-8fd6-428e-9bd9-b55a5aa194a7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Backend/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmation/Dashboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmation/Shifts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataHandlers/ShiftsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/Shifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Confirmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmation/ServiceConfirmation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ConfirmerProcess/ConfirmerProcess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ConfirmerProcess/Dashboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/ConfirmationProcessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/ServiceConfirmationHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="26QKX68mQYmytSPDgAsWaxKuZJf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -28,12 +58,24 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f7d5b089-c4dd-4e94-88c3-bb8366270ee8" name="Changes" comment="" />
+      <changelist id="104480d6-8fd6-428e-9bd9-b55a5aa194a7" name="Changes" comment="" />
       <created>1647347321755</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647347321755</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
