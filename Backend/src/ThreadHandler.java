@@ -36,7 +36,7 @@ public class ThreadHandler extends Thread{
 
             DataInputStream fromClient=new DataInputStream(socket.getInputStream());
             DataOutputStream toClient=new DataOutputStream(socket.getOutputStream());
-
+            DebtController debt=new DebtController();
             //READING REQUESTS FROM THE CLIENT
             String request=fromClient.readUTF();
             switch (request.split("/")[0]){
@@ -57,7 +57,9 @@ public class ThreadHandler extends Thread{
                 case "citizen":
                     houseController.filterRequest(request,toClient);
                     break;
+
                 case "payment":
+                    System.out.println("HIT THE ENDPOINT");
                     paymentController.filterRequest(request,toClient);
                     break;
                 case "wallet":
@@ -72,12 +74,13 @@ public class ThreadHandler extends Thread{
                     notificationController.filterRequest(request,toClient);
                 case "debt":
                     debtController.filterRequest(request,toClient);
+                    break;
                 default:
                     System.out.println(request.split("/")[0]);
                     toClient.writeUTF("Undefined request");
                   break;
             }
-            socket.close();
+            //socket.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
