@@ -2,8 +2,7 @@ package Controllers;
 
 import Repositories.AnalyticsRepo;
 
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
@@ -17,7 +16,7 @@ public class AnalyticsController {
         analyticsRepo = new AnalyticsRepo();
     }
 
-    public void filterRequest(String request, DataOutputStream toClient){
+    public void filterRequest(String request, DataOutputStream toClient) throws IOException {
         this.toClient=toClient;
         String sender = request.split("/")[0];
         Integer senderId;
@@ -35,7 +34,8 @@ public class AnalyticsController {
                 getAnalytics(sender, senderId, "year");
                 break;
             case "download":
-                downloadAnalytics(request.split("/")[3]);
+                senderId = Integer.parseInt(request.split("/")[3]);
+                downloadAnalytics(sender, senderId, request.split("/")[4]);
                 break;
             default:
                 sendResponse("Please specify your request....");
@@ -110,9 +110,11 @@ public class AnalyticsController {
         return "Something went wrong.";
     }
 
-    public void downloadAnalytics(String period){
-        System.out.println("Analytics downloaded");
-        saveIntoFIle("What to be saved");
+    public void downloadAnalytics(String sender, Integer senderId, String period) throws IOException {
+        String analytics = getAnalytics(sender, senderId, period);
+//        System.out.println(analytics);
+        saveIntoFIle(analytics);
+        sendResponse("Downloaded Successfully.");
     }
     public void sendResponse( String response ) {
         try {
@@ -121,7 +123,28 @@ public class AnalyticsController {
             exception.printStackTrace();
         }
     }
-    public void saveIntoFIle(String content){
+    public static void saveIntoFIle(String content){
 //        The logic to save a .txt file containing analytics
+        try{
+            writeToFile(content, "Analytics.txt");
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    private static void writeToFile(String content, String path){
+
+        try{
+            File file= new File(path);
+            BufferedWriter bw= new BufferedWriter(new FileWriter(path, false));
+            bw.write(content);
+            bw.close();
+            System.out.println("Download Successfully.");
+
+
+        }catch (Exception e){
+            System.out.println("An error occurred");
+            e.printStackTrace();
+        }
     }
 }
