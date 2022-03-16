@@ -2,6 +2,7 @@
 import Components.Admin.Admin;
 import Components.Company;
 import Components.House.House;
+import Components.ServiceConfirmation.Shifts;
 import Components.Wallet;
 
 import java.io.DataInputStream;
@@ -64,6 +65,8 @@ public class Application {
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
+                    Shifts shift = new Shifts(toServer,fromServer);
+                    shift.addShift();
                     break;
                 case 5:
                     System.out.println("You are a citizen!");
