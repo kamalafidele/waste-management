@@ -39,8 +39,8 @@ public class Dashboard {
         System.out.println("2.Pay security");
         System.out.println("3.Your invoices");
         System.out.println("4.Notifications&messages");
-        System.out.println("5. check your debt");
-        System.out.println("6. view profile");
+        System.out.println("5.check your debt");
+        System.out.println("6.view profile");
         System.out.print("Your choice: ");
         choice = keyboard.nextInt();
 
