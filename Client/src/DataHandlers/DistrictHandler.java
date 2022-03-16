@@ -1,16 +1,17 @@
-package Models;
+package DataHandlers;
 
-public class District {
+public class DistrictHandler {
+    private int  districtId;
     private String districtToken;
     private String districtName;
     private String password;
 
-    public District(){}
+    public int getDistrictId() {
+        return districtId;
+    }
 
-    public District(String districtToken, String districtName,String password){
-        this.setDistrictToken(districtToken);
-        this.setDistrictName(districtName);
-        this.setPassword(password);
+    public void setDistrictId(int districtId) {
+        this.districtId = districtId;
     }
 
     public String getDistrictToken() {
@@ -36,4 +37,15 @@ public class District {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public DistrictHandler() {}
+
+    public DistrictHandler(int districtId, String districtToken, String districtName, String password) {
+        this.districtId = districtId;
+        this.districtToken = districtToken;
+        this.districtName = districtName;
+        this.password = password;
+
+    }
+
 }
