@@ -24,6 +24,9 @@ public class DistrictController {
             case "login":
                 login(request.split("/")[2]);
                 break;
+            case "analytics":
+                new AnalyticsController().filterRequest(request, toClient);
+                break;
             default:
                 break;
         }

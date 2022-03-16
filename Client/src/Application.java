@@ -56,7 +56,7 @@ public class Application {
                     break;
                 case 2:
                     System.out.println("You are a district!");
-                     new Company(toServer, fromServer).addCitizen();
+                    new Company(toServer, fromServer).addCitizen();
                     break;
                 case 3:
                     new Company(toServer, fromServer).displayCompanies();
@@ -79,7 +79,16 @@ public class Application {
                     }
 
                     break;
-                
+                case 7:
+                    toServer.writeUTF("company/analytics/getWeekly/5");
+                    String response = fromServer.readUTF();
+                    System.out.println(response);
+                    break;
+                case 8:
+                    toServer.writeUTF("district/analytics/getWeekly/2");
+                    String response2 = fromServer.readUTF();
+                    System.out.println(response2);
+                    break;
                 default:
                     System.out.println("Please be serious!");
                     break;

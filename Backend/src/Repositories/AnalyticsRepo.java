@@ -17,9 +17,15 @@ public class AnalyticsRepo {
         return "";
     }
 
-    public ResultSet companyAnalytics(String period, Integer senderId){
-        return database.select("select name, balance from company c join " +
-                "companies_wallets cw on c.id = cw.company_id where id = " + senderId);
+    public ResultSet getNameBalance(String period, Integer senderId){
+        return database.select("select name, amount from users u join " +
+                "wallet w on u.Wallet = w.id where u.id = " + senderId);
     }
-
+    public ResultSet companiesNumber(String period, Integer senderId){
+        return database.select(" select count(*) from district_company where DistrictId = " + senderId);
+    }
+    public ResultSet getTotalDebts(Integer senderId){
+        return database.select("select sum(amount) as total_debt from wallet w join " +
+                "users u on w.id = u.Wallet where u.role = 4");
+    }
 }

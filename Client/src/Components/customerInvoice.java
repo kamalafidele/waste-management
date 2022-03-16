@@ -45,14 +45,14 @@ public class customerInvoice  {
         System.out.println("Enter choice: ");
         int choice = scanner.nextInt();
        switch (choice){
-           case 1 -> {
+           case 1 : {
                System.out.println("Company > Invoices > View all invoices.");
                toServer.writeUTF("company/getInvoices/1");
                response = fromServer.readUTF();
                createTable(response);
                break;
            }
-           case 2 -> {
+           case 2 : {
                System.out.println("Company > Invoices > Download invoice.");
                System.out.print("Enter the invoice id: ");
                int invoice_id = scanner.nextInt();
@@ -61,7 +61,7 @@ public class customerInvoice  {
                System.out.println(response);
                break;
            }
-           default ->System.out.println(" \t\t\t\t Invalid input");
+           default : System.out.println(" \t\t\t\t Invalid input");
 
        }
     }

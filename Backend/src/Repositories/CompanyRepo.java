@@ -12,11 +12,11 @@ public class CompanyRepo {
       }
 
       public ResultSet findAll(){
-          return database.select("SELECT * FROM Users WHERE Role = 2");
+          return database.select("SELECT * FROM users WHERE Role = 3");
       }
 
       public ResultSet findById(long id){
-          return database.select("SELECT * FROM Company WHERE Role = 2 AND  id = "+id);
+          return database.select("SELECT * FROM Company WHERE Role = 3 AND  id = "+id);
       }
 
       public boolean save(Company company){

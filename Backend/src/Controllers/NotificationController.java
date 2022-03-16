@@ -29,9 +29,14 @@ public class NotificationController {
         String[] requestArray = request.split("/");
         int receiver = parseInt(requestArray[2]);
         switch (requestArray[1]) {
-            case "getAll" -> getAllNotifications(receiver);
-            case "getUnread" -> getByViewStatusNotifications("unread", receiver);
-            default -> sendResponse("Please specify your request (Be serious!)");
+            case "getAll":
+                getAllNotifications(receiver);
+                break;
+            case "getUnread":
+                getByViewStatusNotifications("unread", receiver);
+                break;
+            default:
+                sendResponse("Please specify your request (Be serious!)");
         }
     }
 
@@ -67,31 +72,37 @@ public class NotificationController {
         notification.setReceiver(receiver);
 
         switch (notification_type) {
-            case "ServiceNotification" -> {
+            case "ServiceNotification": {
                 notification.setContent("Hello! We are going to collect garbage after three days");
                 notification.setTitle("Providing Service Soon");
+                break;
             }
-            case "providedServiceNotification" -> {
+            case "providedServiceNotification": {
                 notification.setContent("Hello! Your garbage was collected today");
                 notification.setTitle("Service Provided");
+                break;
             }
-            case "paymentDueNotification" -> {
+            case "paymentDueNotification": {
                 notification.setContent("Hello! Three days remaining inorder to pay for garbage collection");
                 notification.setTitle("Due Payment");
+                break;
             }
-            case "paymentWarningNotification" -> {
+            case "paymentWarningNotification": {
                 notification.setContent("Hello! It's been a long time since you paid your garbage collection. If any further delay charges may apply");
                 notification.setTitle("Payment Warning");
+                break;
             }
-            case "paymentSuccessfulNotification" -> {
+            case "paymentSuccessfulNotification" : {
                 notification.setContent("Hello! Payment successful");
                 notification.setTitle("Successful Payment");
+                break;
             }
-            case "reportAvailableNotification" -> {
+            case "reportAvailableNotification": {
                 notification.setContent("Hello! View last months report(analytics)");
                 notification.setTitle("Report Available");
+                break;
             }
-            default -> System.out.println("Invalid notification type");
+            default : System.out.println("Invalid notification type");
         }
 
         notificationRepo.save(notification);

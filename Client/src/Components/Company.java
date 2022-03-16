@@ -42,6 +42,7 @@ public class Company {
         try{
             sendRequest(request);
             String response=fromServer.readUTF();
+            System.out.println(response);
             ArrayList<CompanyHandler> companies=mapper.readValue(response,new TypeReference<ArrayList<CompanyHandler>>(){});
             Iterator<CompanyHandler> companyIterator=companies.iterator();
 
@@ -80,7 +81,8 @@ public class Company {
         companyHandler.setPhone( keyboard.nextLine() );
         
         Random random = new Random();
-        long pin = random.nextLong( 500_000_000 );
+//        long pin = random.nextLong( 500_000_000 );
+        long pin = 1234567890;
         companyHandler.setPin( pin );
         companyHandler.setRole( 2 );
         companyHandler.setWalletId( 0 );
