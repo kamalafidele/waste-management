@@ -51,13 +51,13 @@ public class DebtRepo {
         }
         return null;
     }
-    public ResultSet getAllDebtors(String service){
-        try {
-            ResultSet result=database.select("select userId, from debt")
-        }
-        catch (SQLException sql){
-            sql.printStackTrace();
-        }
-        return null;
-    }
+//    public ResultSet getAllDebtors(String service){
+//        try {
+//            ResultSet result=database.select("select userId, from debt");
+//        }
+//        catch (SQLException sql){
+//            sql.printStackTrace();
+//        }
+//        return null;
+//    }
 }
