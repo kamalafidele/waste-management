@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="104480d6-8fd6-428e-9bd9-b55a5aa194a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Backend/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmation/Dashboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmation/Shifts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataHandlers/ShiftsHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/Shifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/ShiftsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/ShiftsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Confirmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmation/ServiceConfirmation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ConfirmerProcess/ConfirmerProcess.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ConfirmerProcess/Dashboard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataHandlers/ConfirmationProcessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/ServiceConfirmationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ServiceConfirmation/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmation/Shifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/ShiftsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/ShiftsHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

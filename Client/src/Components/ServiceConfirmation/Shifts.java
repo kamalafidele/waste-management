@@ -22,17 +22,6 @@ public class Shifts {
           mapper=new ObjectMapper();
       }
 
-      public void addShift(){
-          System.out.println("Request:");
-          String request=scanner.nextLine();
-          try{
-              toServer.writeUTF(request);
-              String response = fromServer.readUTF();
-              System.out.println(response);
-          }catch (Exception e){
-              e.getMessage();
-          }
-      }
       public void sendRequest(String request){
           try{
               toServer.writeUTF(request);
@@ -41,7 +30,7 @@ public class Shifts {
           }
       }
       public void viewShifts(){
-          String request="serviceConfirmation/shifts";
+          String request="serviceConfirmation/getShifts";
           try{
               sendRequest(request);
               String response = fromServer.readUTF();
@@ -62,6 +51,25 @@ public class Shifts {
               e.getMessage();
           }
 
+      }
+
+      public void addShift(){
+          var shiftsHandler = new ShiftsHandler();
+          System.out.println("------------------ADDING NEW SHIFT--------------");
+          System.out.println("---Enter the ID of the Company working in the area---");
+          shiftsHandler.setCompany_id(scanner.nextInt());
+          System.out.println("--Enter the date ---- ");
+          shiftsHandler.setDate(scanner.nextLine());
+          System.out.println("--Enter your ID---");
+          shiftsHandler.setConfirmerId(scanner.nextInt());
+          try{
+              String shiftasJSon= mapper.writeValueAsString(shiftsHandler);
+              sendRequest("serviceconfirmation/addShift"+shiftasJSon);
+              String response = fromServer.readUTF();
+              System.out.println(response);
+          }catch (Exception e){
+              e.getMessage();
+          }
       }
     }
 

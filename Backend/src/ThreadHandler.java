@@ -50,6 +50,8 @@ public class ThreadHandler extends Thread{
 //                case "citizen":
 //                    houseController.filterRequest(request,toClient);
 //                    break;
+                case "confirmer":
+                    shiftsController.filterRequest(request,toClient);
                 case "payment":
                     paymentController.filterRequest(request,toClient);
                     break;
@@ -68,7 +70,7 @@ public class ThreadHandler extends Thread{
                   break;
             }
             socket.close();
-        }catch(IOException e){
+        }catch(Exception e){
             e.printStackTrace();
         }
     }

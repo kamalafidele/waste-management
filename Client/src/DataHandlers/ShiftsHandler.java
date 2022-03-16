@@ -1,12 +1,14 @@
 package DataHandlers;
 
-import java.util.logging.Handler;
-
 public class ShiftsHandler {
     private int id;
     private int company_id;
     private String date;
     private int confirmerId;
+
+    public ShiftsHandler(){
+
+    }
 
     public ShiftsHandler(int id,int company_id,String date){
         this.id=id;

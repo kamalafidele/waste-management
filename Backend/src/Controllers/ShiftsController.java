@@ -28,7 +28,7 @@ public class ShiftsController {
                 createShifts(request.split("/")[2]);
             case "/getShifts":
                 getShifts();
-            case "getShift":
+            case "/getShift":
                 getShift(Integer.valueOf(request.split("/")[2]));
             default:
                 sendResponse("Specify your request");

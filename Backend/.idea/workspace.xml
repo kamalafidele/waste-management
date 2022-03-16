@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7091923a-20d4-43ef-a5d4-3a175d31356e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controllers/ShiftsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Shifts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/ServiceConfirmationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/ServiceConfirmationRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ShiftsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ShiftsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThreadHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Components/ServiceConfirmation/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/ServiceConfirmation/Shifts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/ShiftsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/ShiftsHandler.java" afterDir="false" />
