@@ -1,31 +1,32 @@
 package Models;
 
 public class District {
-    private String districtId;
-    private String username;
+    private String districtToken;
+    private String districtName;
     private String password;
 
     public District(){}
 
-    public District(String username, String password){
-        this.setUsername(username);
+    public District(String districtToken, String districtName,String password){
+        this.setDistrictToken(districtToken);
+        this.setDistrictName(districtName);
         this.setPassword(password);
     }
 
-    public String getdistrictToken() {
-        return username;
+    public String getDistrictToken() {
+        return districtToken;
     }
 
-    public void setdistrictToken(String username) {
-        this.username = username;
+    public void setDistrictToken(String districtToken) {
+        this.districtToken = districtToken;
     }
 
-    public String getUsername() {
-        return username;
+    public String getDistrictName() {
+        return districtName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setDistrictName(String districtName) {
+        this.districtName = districtName;
     }
 
     public String getPassword() {

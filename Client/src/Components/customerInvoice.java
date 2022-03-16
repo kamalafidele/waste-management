@@ -17,7 +17,7 @@ public class customerInvoice  {
     ObjectMapper mapper;
 
     public void createTable (String response) throws Exception {
-        System.out.println("######################### REGISTERED COMPANIES ###################################### ");
+
         System.out.println("|------------|-------------|-----------|---------|----------------|-------------------|");
         System.out.println("| Invoice Id |   User Name |  Service  |  Amount |  Invoice date  |  Generation Time  |");
         System.out.println("|------------|-------------|-----------|---------|----------------|-------------------|\n");
@@ -35,11 +35,11 @@ public class customerInvoice  {
         String response;
 
         System.out.println("\t\t\t --------------------------------------------");
-        System.out.println("\t\t\t+             INVOICE MANAGEMENT            + ");
-        System.out.println("\t\t\t --------------------------------------------");
-        System.out.println("\t\t\t|| 1.  VIEW INVOICES               ||");
-        System.out.println("\t\t\t|| 2.  DOWNLOAD INVOICE                 ||");
-        System.out.println("\t\t\t|| 0.  BACK                 ||");
+        System.out.println("\t\t\t+             INVOICE MANAGEMENT           + ");
+        System.out.println("\t\t\t---------------------------------------------");
+        System.out.println("\t\t\t|| 1.  VIEW INVOICES                       ||");
+        System.out.println("\t\t\t|| 2.  DOWNLOAD INVOICE                    ||");
+        System.out.println("\t\t\t|| 0.  BACK                                ||");
         System.out.println("\t\t\t---------------------------------------------");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter choice: ");
