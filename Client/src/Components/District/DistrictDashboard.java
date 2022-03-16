@@ -96,13 +96,17 @@ public class DistrictDashboard {
     public void addDistrict() {
 
         var districtHandler=new DistrictHandler();
-        System.out.println( "######## District Addition#########" );
-        System.out.print( "Enter district token: " );
-         districtHandler.setDistrictToken( keyboard.nextLine() );
-        System.out.print( "Enter district name: " );
-        districtHandler.setDistrictName( keyboard.nextLine() );
+         keyboard = new Scanner(System.in);
+         System.out.println( "######## District Addition#########" );
+         System.out.print( "Enter district token: " );
+         String token= keyboard.nextLine();
+         districtHandler.setDistrictToken(token);
+         System.out.print( "Enter district name: " );
+        String name= keyboard.nextLine();
+        districtHandler.setDistrictName(name);
         System.out.print( "Enter district password: " );
-        districtHandler.setPassword( keyboard.nextLine() );
+        String password= keyboard.nextLine();
+        districtHandler.setPassword(password);
 
 
 
