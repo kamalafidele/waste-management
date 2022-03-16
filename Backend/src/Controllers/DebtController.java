@@ -20,6 +20,7 @@ public class DebtController {
         String service=String.valueOf(request.split("/")[2]);
         switch (request.split("/")[1]) {
             case "checkWasteDebt":
+                System.out.println("waste debt");
                 checkWasteDebt(pin);
                 break;
             case "checkSecurityDebt":

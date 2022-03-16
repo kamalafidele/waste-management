@@ -10,7 +10,7 @@ public class DebtRepo {
     public DatabaseConnection database;
     public DebtRepo(){database=new DatabaseConnection();}
     public ResultSet getBalance(String token){
-         ResultSet result=database.select("select c.id,w.id as walletId,name,amount from citizen c inner join wallet w on c.walletId=w.id where pin="+token);
+         ResultSet result=database.select("select u.id,w.id as walletId,name,amount from users u inner join wallet w on u.wallet=w.id where pin="+token);
          try {
              while(result.next()){
                  return  result;
@@ -23,7 +23,7 @@ public class DebtRepo {
     }
     public ResultSet getMySecurityDebt(String token){
         try {
-            ResultSet result=database.select("select amount,month,userId,pin,service  from debt inner join citizen on citizen.id=debt.userId  WHERE service='security' and pin="+token);
+            ResultSet result=database.select("select d.amount,d.month,d.userId,u.pin,s.service_name  from debt d inner join users u on u.id=d.userId inner join services s on s.id=d.service  WHERE service_name='security' and pin="+token);
 
             if(!result.next()){
                 return null;
@@ -37,7 +37,7 @@ public class DebtRepo {
     }
     public ResultSet getMyWasteDebt(String token){
         try {
-            ResultSet result=database.select("select amount,month,userId,pin,service  from debt inner join citizen on citizen.id=debt.userId  WHERE service='waste' and pin="+token);
+            ResultSet result=database.select("select d.amount,d.month,d.userId,u.pin,s.service_name  from debt d inner join users u on u.id=d.userId inner join services s on s.id=d.service  WHERE service_name='waste' and pin="+token);
 //            while(result.next()){
 //                return  result;
 //            }

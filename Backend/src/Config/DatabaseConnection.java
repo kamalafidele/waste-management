@@ -6,17 +6,10 @@ public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
     String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1";
     String username="root";
-
     String password="kayitare@123";
-
-    String password="teta2005";
-    Connection connection=null;
-    String password="root";
     public Connection connection=null;
->>>>>>> 878dc0058717973901e8e175911173f407a40304
     Statement statement=null;
     ResultSet data=null;
-
     public DatabaseConnection(){
         try{
           Class.forName(driver);
