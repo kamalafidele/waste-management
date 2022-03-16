@@ -166,7 +166,9 @@ public class Admin {
 
     public void showDistricts() throws IOException {
         toServer.flush();
-        this.sendRequest("admin/login/" + mapper.writeValueAsString(loginInfos));
+        this.sendRequest("admin/districts/");
+
+        System.out.println(fromServer.readUTF());
     }
 
     public void logout() throws IOException {
