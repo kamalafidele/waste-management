@@ -1,0 +1,21 @@
+-------------------- Auto-Git Log --------------------
+		Wed Mar 16 2022 05:49:21 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* Backend/.idea/workspace.xml
+* Backend/src/Controllers/DistrictController.java
+* Backend/src/Models/District.java
+* Backend/src/Repositories/DistrictRepo.java
+* Client/.idea/workspace.xml
+* Client/src/Components/District/DistrictDashboard.java
+
+
+Created files:
+* Client/src/DataHandlers/DistrictHandler.java
+
+
+Deleted files:
+
+
+Renamed files:

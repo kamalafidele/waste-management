@@ -1,87 +1,103 @@
 package DataHandlers;
 
+import java.math.BigInteger;
+
 public class HouseHandler {
-    private String fullnames;
-    private String nid;
-    private String houseno;
-    private String telno;
-    private String sector;
-    private String cell;
-    private String village;
-    private String token;
+    private int id;
+    private String name;
+    private BigInteger pin;
+    private String email;
+    private String phone;
+    private int role;
+    private int wallet;
+    private int location;
+
+    private String message;
 
     public HouseHandler() {}
 
-    public HouseHandler( String fullnames, String nid, String houseno, String telno, String sector, String cell, String village, String token) {
-        this.fullnames = fullnames;
-        this.nid = nid;
-        this.houseno = houseno;
-        this.telno = telno;
-        this.sector = sector;
-        this.cell = cell;
-        this.village = village;
-        this.token = token;
+    public HouseHandler(int id, String name, BigInteger pin, String email, String phone, int role, int wallet, int location, String message) {
+        this.id = id;
+        this.name = name;
+        this.pin = pin;
+        this.email = email;
+        this.phone = phone;
+        this.role = role;
+        this.wallet = wallet;
+        this.location = location;
+        this.message = message;
     }
 
-
-    public String getFullnames() {
-        return fullnames;
+    public int getId() {
+        return id;
     }
 
-    public void setFullnames(String fullnames) {
-        this.fullnames = fullnames;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getNid() {
-        return nid;
+    public String getName() {
+        return name;
     }
 
-    public void setNid(String nid) {
-        this.nid = nid;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getHouseno() {
-        return houseno;
+    public BigInteger getPin() {
+        return pin;
     }
 
-    public void setHouseno(String houseno) {
-        this.houseno = houseno;
+    public void setPin(BigInteger pin) {
+        this.pin = pin;
     }
 
-    public String getTelno() {
-        return telno;
+    public String getEmail() {
+        return email;
     }
 
-    public void setTelno(String telno) {
-        this.telno = telno;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getSector() {
-        return sector;
-    }
-    public void setSector(String sector) {
-        this.sector = sector;
+    public String getPhone() {
+        return phone;
     }
 
-    public String getCell() {
-        return cell;
-    }
-    public void setCell(String cell) {
-        this.cell = cell;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getVillage() {
-        return village;
-    }
-    public void setVillage(String village) {
-        this.village = village;
+    public int getRole() {
+        return role;
     }
 
-    public String getToken() {
-        return token;
+    public void setRole(int role) {
+        this.role = role;
     }
-    public void setToken(String token){
-        this.token = token;
+
+    public int getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(int wallet) {
+        this.wallet = wallet;
+    }
+
+    public int getLocation() {
+        return location;
+    }
+
+    public void setLocation(int location) {
+        this.location = location;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public String genPin() {

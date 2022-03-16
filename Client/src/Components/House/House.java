@@ -16,13 +16,14 @@ import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
 
-public class House extends Dashboard {
+public class House{
 
     DataOutputStream toServer;
     DataInputStream fromServer;
     Scanner keyboard = new Scanner(System.in);
+
     ObjectMapper mapper;
-//    citizen/insert/{ "fullnames" : "karera marvin", "nid" : "12345678", "telno" : "indmts22", "telno" : "250788124399", "sector" : "niboye","cell" : "lorem", "village" : "indamutsa" }
+//    citizen/insert/{ "name" : "karera marvin", "email" : "karera@gmail.com", "phone" : "0781234567", "role" : 5, "location" : 2}
 //    citizen/getSingle/12349
 
     public House(DataOutputStream toServer, DataInputStream fromServer) {
@@ -38,7 +39,6 @@ public class House extends Dashboard {
         String token = keyboard.nextLine();
 
         //call login function
-
         login(token);
     }
     public void sendRequest( String request ){
@@ -53,17 +53,20 @@ public class House extends Dashboard {
         try{
             toServer.writeUTF(request);
             HouseHandler handler=mapper.readValue(fromServer.readUTF(),HouseHandler.class);
-            if(handler.getFullnames() != null) {
+            System.out.println("HERE IS YOUR NAME" + handler.getName());
+
+            if(handler.getName() != null) {
                 //dashboard
                 System.out.println("Successfully logged in!");
                 Dashboard dashboard = new Dashboard(toServer, fromServer);
-                dashboard.handleDashboard(handler);
+                dashboard.handleDashboard(fromServer, toServer, handler);
                 return;
             }
             System.out.println("Invalid login, Try again!");
             return;
         }catch (IOException exception){
-            System.out.println("Invalid login, Try again!");
+            System.out.println("Invalid login!");
+            exception.printStackTrace();
             return;
         }
     }

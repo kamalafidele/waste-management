@@ -47,12 +47,48 @@ public class AnalyticsController {
 
     public String getAnalytics(String sender, Integer senderId, String period){
         if(sender.equals("district")){
-//            Logic for district analytics in the given period
-            sendResponse("District analytics");
+            ResultSet nameBalance = analyticsRepo.getNameBalance(period, senderId);
+            String districtName = null;
+            Integer balance = 0;
+            Integer totalDebt = 0;
+            Integer companiesNum = 0;
+            try {
+                while (nameBalance.next()){
+                    districtName = nameBalance.getString(1);
+                    balance = Integer.parseInt(nameBalance.getString(2));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            ResultSet getDebt = analyticsRepo.getTotalDebts(senderId);
+            try{
+                while(getDebt.next()){
+                    totalDebt = Integer.parseInt(getDebt.getString(1)) * -1;
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            ResultSet getCompaniesNum = analyticsRepo.companiesNumber(period, senderId);
+            try{
+                while (getCompaniesNum.next()){
+                    companiesNum = Integer.parseInt(getCompaniesNum.getString(1));
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+            String heading = "\n========"+ period.toUpperCase() + "LY " +"ANALYTICS========\n\n";
+            String closing = "Done on: " + dtf.format(LocalDateTime.now()) + "\n" +  "========== END ==========\n";
+
+            String body = "District name: " + districtName + "\n" + "Services being provided:  1\nTotal amount " +
+                    "of money so far : " + balance + "\nMoney not paid yet: " + totalDebt + "\n" + "Number of employed" +
+                    " companies: " + companiesNum + "\n";
+            sendResponse(heading + body + "\n" + closing);
+            return (heading + body + "\n" + closing);
         }
 
         if(sender.equals("company")){
-            ResultSet companyAnalytics = analyticsRepo.companyAnalytics(period, senderId);
+            ResultSet companyAnalytics = analyticsRepo.getNameBalance(period, senderId);
             String companyName = null;
             Integer balance = 0;
             try {
@@ -60,7 +96,7 @@ public class AnalyticsController {
                     companyName = companyAnalytics.getString(1);
                     balance = Integer.parseInt(companyAnalytics.getString(2));
                 }
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -70,11 +106,10 @@ public class AnalyticsController {
 
             String body = "Company name: " + companyName + "\n" + "Number of service provided by us:  1\nTotal amount " +
                     "of money so far : " + balance + "\n" + "Percentage at which service is provided: 80%\n";
-
             sendResponse(heading + body + "\n" + closing);
-            return heading + body + "\n" + closing;
+            return (heading + body + "\n" + closing);
         }
-        return "";
+        return "Something went wrong.";
     }
 
     public void downloadAnalytics(String sender, Integer senderId, String period) throws IOException {

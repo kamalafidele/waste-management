@@ -1,7 +1,7 @@
 package Controllers;
-
-import Models.Notification;
+import Models.*;
 import Repositories.NotificationRepo;
+
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.DataOutputStream;
@@ -27,19 +27,24 @@ public class NotificationController {
     public void filterRequest(String request, DataOutputStream toClient) {
         this.toClient=toClient;
         String[] requestArray = request.split("/");
-        int token = parseInt(requestArray[2]);
+        int receiver = parseInt(requestArray[2]);
         switch (requestArray[1]) {
-            case "getAll" -> getAllNotifications(token);
-            case "getUnread" -> getByViewStatusNotifications("unread", token);
-            default -> sendResponse("Please specify your request (Be serious!)");
+            case "getAll":
+                getAllNotifications(receiver);
+                break;
+            case "getUnread":
+                getByViewStatusNotifications("unread", receiver);
+                break;
+            default:
+                sendResponse("Please specify your request (Be serious!)");
         }
     }
 
     private void insertNotificationsToList(List<Notification> notifications, ResultSet resultSet) {
         try{
             while(resultSet.next()){
-                Notification notification = new Notification(resultSet.getLong(1), resultSet.getInt(2), resultSet.getString(3),
-                        resultSet.getString(4), resultSet.getString(5), resultSet.getDate(6));
+                Notification notification = new Notification(resultSet.getLong(1), resultSet.getString(2), resultSet.getString(3),
+                        resultSet.getInt(4), resultSet.getString(5), resultSet.getString(6), resultSet.getDate(7));
                 notifications.add(notification);
             }
             sendResponse(mapper.writeValueAsString(notifications));
@@ -48,32 +53,56 @@ public class NotificationController {
         }
     }
 
-    public void getAllNotifications(int token){
+    public void getAllNotifications(int receiver){
         List<Notification> notifications = new ArrayList<>();
-        ResultSet resultSet = notificationRepo.findAll(token);
+        ResultSet resultSet = notificationRepo.findAll(receiver);
         insertNotificationsToList(notifications, resultSet);
     }
 
-    public void getByViewStatusNotifications(String viewStatus, int token){
+    public void getByViewStatusNotifications(String viewStatus, int receiver){
         List<Notification> unreadNotifications = new ArrayList<>();
-        ResultSet resultSet = notificationRepo.findByViewStatus(viewStatus, token);
+        ResultSet resultSet = notificationRepo.findByViewStatus(viewStatus, receiver);
         insertNotificationsToList(unreadNotifications, resultSet);
     }
 
-    public void createNotification(int token, String notificationType){
+    public void createNotification(int receiver, String notification_type){
         Notification notification = new Notification();
         Date date = new Date();
         notification.setSentDate(date);
-        notification.setToken(token);
+        notification.setReceiver(receiver);
 
-        switch (notificationType) {
-            case "ServiceNotification" -> notification.setMessage("Hello! We are going to collect garbage after three days");
-            case "providedServiceNotification" -> notification.setMessage("Hello! Your garbage was collected today");
-            case "paymentDueNotification" -> notification.setMessage("Hello! Three days remaining inorder to pay for garbage collection");
-            case "paymentWarningNotification" -> notification.setMessage("Hello! It's been a long time since you paid your garbage collection. If any further delay charges may apply");
-            case "paymentSuccessfulNotification" -> notification.setMessage("Hello! Payment successful");
-            case "reportAvailableNotification" -> notification.setMessage("Hello! View last months report(analytics)");
-            default -> System.out.println("Invalid notification type");
+        switch (notification_type) {
+            case "ServiceNotification": {
+                notification.setContent("Hello! We are going to collect garbage after three days");
+                notification.setTitle("Providing Service Soon");
+                break;
+            }
+            case "providedServiceNotification": {
+                notification.setContent("Hello! Your garbage was collected today");
+                notification.setTitle("Service Provided");
+                break;
+            }
+            case "paymentDueNotification": {
+                notification.setContent("Hello! Three days remaining inorder to pay for garbage collection");
+                notification.setTitle("Due Payment");
+                break;
+            }
+            case "paymentWarningNotification": {
+                notification.setContent("Hello! It's been a long time since you paid your garbage collection. If any further delay charges may apply");
+                notification.setTitle("Payment Warning");
+                break;
+            }
+            case "paymentSuccessfulNotification" : {
+                notification.setContent("Hello! Payment successful");
+                notification.setTitle("Successful Payment");
+                break;
+            }
+            case "reportAvailableNotification": {
+                notification.setContent("Hello! View last months report(analytics)");
+                notification.setTitle("Report Available");
+                break;
+            }
+            default : System.out.println("Invalid notification type");
         }
 
         notificationRepo.save(notification);

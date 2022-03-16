@@ -2,6 +2,9 @@
 import Components.Admin.Admin;
 import Components.Company;
 import Components.House.House;
+import Components.District.DistrictDashboard;
+import Components.ServiceConfirmation.Shifts;
+import Components.Wallet;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -9,6 +12,8 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import Components.customerInvoice;
+import DataHandlers.CustomerInvoicesHandler;
 
 public class Application {
 
@@ -19,7 +24,7 @@ public class Application {
     public static void main(String[] args){
         Scanner keyboard=new Scanner(System.in);
         try{
-            Socket socket=new Socket("localhost",2500);
+            Socket socket=new Socket("localhost",3000);
             int choice = 0;
 
             DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
@@ -42,6 +47,7 @@ public class Application {
             System.out.println("3.Company");
             System.out.println("4.Confirmer");
             System.out.println("5.House");
+            System.out.println("6.Invoices");
             System.out.print("Your choice: ");
             choice = keyboard.nextInt();
 
@@ -51,14 +57,20 @@ public class Application {
                     admin.handleAdmin();
                     break;
                 case 2:
-                    System.out.println("You are a district!");
+//                    System.out.println("You are a district!");
+                    DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
+                    districtDashboard.handleDistrict();
+//                    new Company(toServer, fromServer).addCitizen();
                     break;
                 case 3:
+                    new Company(toServer, fromServer).displayCompanies();
                     System.out.println("You are a company!");
-                    new Company(toServer,fromServer).displayCompanies();
+                    new Company(toServer,fromServer).addCompany();
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
+                    Shifts shift = new Shifts(toServer,fromServer);
+                    shift.addShift();
                     break;
                 case 5:
                     System.out.println("You are a citizen!");
@@ -66,10 +78,24 @@ public class Application {
                     house.handleHouse(fromServer, toServer);
                     break;
                 case 6:
-                    toServer.writeUTF("company/analytics/download/2/week");
-                    String response = fromServer.readUTF();
-                    System.out.println(response);
+                    customerInvoice customer = new customerInvoice();
+                    try {
+                        customer.mainMethod();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+
                     break;
+                // case 7:
+                //     toServer.writeUTF("company/analytics/getWeekly/5");
+                //     String response = fromServer.readUTF();
+                //     System.out.println(response);
+                //     break;
+                // case 8:
+                //     toServer.writeUTF("district/analytics/getWeekly/2");
+                //     String response2 = fromServer.readUTF();
+                //     System.out.println(response2);
+                //     break;
                 default:
                     System.out.println("Please be serious!");
                     break;

@@ -1,12 +1,9 @@
-import Controllers.AdminController;
-import Controllers.CompanyController;
-import Controllers.NotificationController;
-import Controllers.HouseController;
-import Controllers.PaymentController;
-import Controllers.WalletContoller;
+import Controllers.*;
+import Models.Shifts;
 
 import java.io.*;
 import java.net.Socket;
+
 
 public class ThreadHandler extends Thread{
     Socket socket;
@@ -16,18 +13,22 @@ public class ThreadHandler extends Thread{
     private final CompanyController companyController;
     private final NotificationController notificationController;
     private final HouseController houseController;
-    private final WalletContoller walletContoller;
+    private final WalletController walletContoller;
     private final PaymentController paymentController;
-    private final AdminController adminController;
+    private final ShiftsController shiftsController;
+    private final DistrictController districtController;
+    private AdminController adminController;
+
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
-        this.companyController=new CompanyController();
-        this.notificationController = new NotificationController();
-        this.houseController=new HouseController();
-        this.paymentController=new PaymentController();
-        this.walletContoller = new WalletContoller();
-        this.adminController = new AdminController();
+        companyController=new CompanyController();
+        notificationController = new NotificationController();
+        houseController=new HouseController();
+        paymentController=new PaymentController();
+        walletContoller = new WalletController();
+        shiftsController = new ShiftsController();
+        districtController = new DistrictController();
     }
 
 
@@ -40,17 +41,22 @@ public class ThreadHandler extends Thread{
             DataOutputStream toClient=new DataOutputStream(socket.getOutputStream());
 
             //READING REQUESTS FROM THE CLIENT
-            String request=fromClient.readUTF();
+            String request = fromClient.readUTF();
             switch (request.split("/")[0]){
                 case "admin":
                     adminController.handleRequest(request, toClient);
                     break;
                 case "company":
                     companyController.filterRequest(request,toClient);
-                  break;
+                    break;
+                case "district":
+                    districtController.handleRequest(request, toClient);
+                    break;
                 case "citizen":
                     houseController.filterRequest(request,toClient);
                     break;
+                case "confirmer":
+                    shiftsController.filterRequest(request,toClient);
                 case "payment":
                     paymentController.filterRequest(request,toClient);
                     break;
@@ -69,7 +75,7 @@ public class ThreadHandler extends Thread{
                   break;
             }
             socket.close();
-        }catch(IOException e){
+        }catch(Exception e){
             e.printStackTrace();
         }
     }

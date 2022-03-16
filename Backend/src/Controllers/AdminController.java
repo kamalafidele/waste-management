@@ -9,8 +9,8 @@ import java.io.IOException;
 public class AdminController {
 
     private DataOutputStream toClient;
-    private ObjectMapper mapper;
-    private AdminRepo adminRepo;
+    private final ObjectMapper mapper;
+    private final AdminRepo adminRepo;
 
     public AdminController(){
         this.mapper = new ObjectMapper();
@@ -24,6 +24,8 @@ public class AdminController {
             case "login":
                 login(request.split("/")[2]);
                 break;
+            default:
+                break;
         }
     }
 
@@ -31,8 +33,10 @@ public class AdminController {
         try {
             Admin admin = mapper.readValue(data, Admin.class);
 
-            if(adminRepo.login(admin.getUsername(), admin.getPassword())){
-                sendResponse("admin loggedIn");
+            if(adminRepo.login(admin)){
+                sendResponse("true");
+            }else{
+                sendResponse("false");
             }
 
         } catch (IOException e) {
