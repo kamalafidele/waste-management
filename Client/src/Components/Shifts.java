@@ -1,4 +1,4 @@
-package Components.ServiceConfirmation;
+package Components;
 
 import DataHandlers.ShiftsHandler;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -38,7 +38,7 @@ public class Shifts {
               Iterator<ShiftsHandler> shiftsIterator = shifts.iterator();
                while(shiftsIterator.hasNext()){
                    ShiftsHandler handler = shiftsIterator.next();
-                   System.out.println("--------------Shift Id--------------");
+                   System.out.print("--------------Shift Id--------------");
                    System.out.println(handler.getId());
                    System.out.println("-----------------Company ID----------");
                    System.out.println(handler.getCompany_id());
@@ -54,17 +54,19 @@ public class Shifts {
       }
 
       public void addShift(){
+          System.out.println("request:");
+//          String
           var shiftsHandler = new ShiftsHandler();
           System.out.println("------------------ADDING NEW SHIFT--------------");
           System.out.println("---Enter the ID of the Company working in the area---");
           shiftsHandler.setCompany_id(scanner.nextInt());
           System.out.println("--Enter the date ---- ");
-          shiftsHandler.setDate(scanner.nextLine());
+          shiftsHandler.setDate(scanner.next());
           System.out.println("--Enter your ID---");
           shiftsHandler.setConfirmerId(scanner.nextInt());
           try{
               String shiftasJSon= mapper.writeValueAsString(shiftsHandler);
-              sendRequest("serviceconfirmation/addShift"+shiftasJSon);
+              sendRequest("serviceconfirmation/addShift/"+shiftasJSon);
               String response = fromServer.readUTF();
               System.out.println(response);
           }catch (Exception e){

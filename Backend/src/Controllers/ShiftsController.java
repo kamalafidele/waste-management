@@ -24,17 +24,17 @@ public class ShiftsController {
     public void filterRequest(String request,DataOutputStream toClient) throws Exception {
         this.toClient = toClient;
         switch (request.split("/")[1]) {
-            case "/addShift":
-                createShifts(request.split("/")[2]);
-            case "/getShifts":
+            case "addShift":
+                addShift(request.split("/")[2]);
+            case "getShifts":
                 getShifts();
-            case "/getShift":
+            case "getShift":
                 getShift(Integer.valueOf(request.split("/")[2]));
             default:
                 sendResponse("Specify your request");
         }
     }
-    public void createShifts(String data){
+    public void addShift(String data){
         try{
            Shifts shift=mapper.readValue(data,Shifts.class);
 

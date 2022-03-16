@@ -3,7 +3,7 @@ import Components.Admin.Admin;
 import Components.Company;
 import Components.House.House;
 import Components.District.DistrictDashboard;
-import Components.ServiceConfirmation.Shifts;
+import Components.Shifts;
 import Components.Wallet;
 
 import java.io.DataInputStream;
@@ -12,8 +12,9 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import Components.Shifts;
 import Components.customerInvoice;
-import DataHandlers.CustomerInvoicesHandler;
 
 public class Application {
 
@@ -70,8 +71,8 @@ public class Application {
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
-                    Shifts shift = new Shifts(toServer,fromServer);
-                    shift.addShift();
+
+                    new Shifts(toServer,fromServer).addShift();
                     break;
                 case 5:
                     System.out.println("You are a citizen!");
