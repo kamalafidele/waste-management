@@ -23,7 +23,7 @@ public class House{
     Scanner keyboard = new Scanner(System.in);
 
     ObjectMapper mapper;
-//    citizen/insert/{ "name" : "karera marvin", "email" : "karera@gmail.com", "phone" : "0781234567", "role" : 3, "wallet" : 1, "location" : 1 }
+//    citizen/insert/{ "name" : "karera marvin", "email" : "karera@gmail.com", "phone" : "0781234567", "role" : 5, "location" : 2}
 //    citizen/getSingle/12349
 
     public House(DataOutputStream toServer, DataInputStream fromServer) {
@@ -53,7 +53,8 @@ public class House{
         try{
             toServer.writeUTF(request);
             HouseHandler handler=mapper.readValue(fromServer.readUTF(),HouseHandler.class);
-            System.out.println(handler.getName());
+            System.out.println("HERE IS YOUR NAME" + handler.getName());
+
             if(handler.getName() != null) {
                 //dashboard
                 System.out.println("Successfully logged in!");
@@ -64,7 +65,8 @@ public class House{
             System.out.println("Invalid login, Try again!");
             return;
         }catch (IOException exception){
-            System.out.println("Invalid login, Try again!");
+            System.out.println("Invalid login!");
+            exception.printStackTrace();
             return;
         }
     }

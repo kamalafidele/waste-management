@@ -18,7 +18,7 @@ public class Application {
              }
 
         }catch(IOException exception){
-            exception.printStackTrace();
+            //exception.printStackTrace();
         }
     }
 }

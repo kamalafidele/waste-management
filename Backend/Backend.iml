@@ -7,8 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jackson-all-1.9.9" level="project" />
     <orderEntry type="library" name="libs" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-8.0.28 (copy)" level="project" />
+    <orderEntry type="library" name="mysql-connector (3)" level="project" />
+    <orderEntry type="library" name="jackson-all-1.9.9 (2)" level="project" />
   </component>
 </module>
