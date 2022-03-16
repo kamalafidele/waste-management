@@ -18,6 +18,7 @@ public class Dashboard {
     public static final String RESET = "\033[0m";
     DataOutputStream toServer;
     DataInputStream fromServer;
+    Debt debt=new Debt(fromServer,toServer);
     ObjectMapper mapper;
     Scanner keyboard = new Scanner(System.in);
     public Dashboard() {
@@ -84,7 +85,8 @@ public class Dashboard {
             System.out.println("3.Your invoices");
             System.out.println("4.Notifications&messages");
             System.out.println("5. check your debt");
-            System.out.println("6. view profile");
+            System.out.println("6. My balance");
+            System.out.println("7. view profile");
             System.out.print("Your choice: ");
             choice = keyboard.nextInt();
 
@@ -104,6 +106,9 @@ public class Dashboard {
                     debt.checkDebt();
                     break;
                 case 6:
+                    debt.checkBalance();
+                    break;
+                case 7:
                     viewProfile(handler);
                 break;
                 default:
