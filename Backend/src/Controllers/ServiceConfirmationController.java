@@ -1,7 +1,9 @@
 package Controllers;
 
+import Models.Admin;
 import Models.ServiceConfirmation;
 import Models.Shifts;
+import Repositories.AdminRepo;
 import Repositories.ServiceConfirmationRepo;
 import Repositories.ShiftsRepo;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -33,6 +35,8 @@ public class ServiceConfirmationController {
     public void filterRequest(String request,DataOutputStream toClient) throws Exception {
         this.toClient = toClient;
         switch (request.split("/")[1]) {
+            case "login":
+
             case "addConfirmedService":
                 addConfirmedService(request.split("/")[2]);
             case "getConfirmedServices":
@@ -71,6 +75,19 @@ public class ServiceConfirmationController {
         }catch (IOException | SQLException e){
             e.getMessage();
         }
+    }
+    public boolean login(String data){
+        try{
+            Admin confirmer = mapper.readValue(data,Admin.class);
+             if(serviceConfirmationRepo.login(confirmer)) {
+//                 return true;
+                 sendResponse("true");
+             }
+
+        }catch (Exception e){
+            e.getMessage();
+        }
+        sendResponse("false");
     }
 
     public void addConfirmedService(String data){

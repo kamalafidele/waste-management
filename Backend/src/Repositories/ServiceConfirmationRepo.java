@@ -1,7 +1,9 @@
 package Repositories;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import Config.DatabaseConnection;
 
+import Models.Admin;
 import Models.ServiceConfirmation;
 
 import java.sql.ResultSet;
@@ -26,10 +28,26 @@ public class ServiceConfirmationRepo {
                 + confirmservice.getShiftId() + "','" + confirmservice.getConfirmerId() + "')");
     }
 
-    public ResultSet confirmerLogin(String email, Integer pin) {
-        String query = "select * from users where role='confirmer' AND email =" + email + "AND pin= " + pin;
-        return database.select(query);
+//    public ResultSet confirmerLogin(String email, Integer pin) {
+//        String query = "select * from users where role='confirmer' AND email =" + email + "AND pin= " + pin;
+//        return database.select(query);
+//    }
+public boolean login(Admin confirmer){
+    //login the admin
+    try{
+        PreparedStatement statement = database.connection.prepareStatement("SELECT * FROM users WHERE email = ? AND pin = ? AND Role = 4");
+        statement.setString(1, confirmer.getEmail());
+        statement.setLong(2, confirmer.getPin());
+        ResultSet result = statement.executeQuery();
+
+        if(!result.next()){
+            return  false;
+        }
+    }catch (Exception e) {
+        e.printStackTrace();
     }
+    return true;
+}
 
     public boolean validate(String company, int confirmerId) throws SQLException {
         try {
