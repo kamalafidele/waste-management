@@ -47,7 +47,18 @@ public class Company {
             }else {
                 CompanyHandler company = mapper.readValue(response,CompanyHandler.class);
                 int choice = 0;
+                System.out.println("YOU HAVE SUCCESSFULLY LOGGED IN");
+                System.out.println();
+                System.out.println("### YOUR PROFILE ###");
+                System.out.println("NAME: " + company.getName());
+                System.out.println("EMAIL: " + company.getEmail());
+                System.out.println("PHONE: " + company.getPhone());
+                System.out.println("PIN: " + company.getPin());
+                System.out.println("COMPANY ID: " + company.getId());
 
+                System.out.println();
+
+                System.out.println("---- CHOOSE WHAT TO DO ------------");
                 System.out.println("1. CREATE A SHIFT ");
                 System.out.println("0. EXIT ");
                 System.out.print("Enter your choice: ");

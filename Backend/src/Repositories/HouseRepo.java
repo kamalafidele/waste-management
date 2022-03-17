@@ -21,6 +21,7 @@ public class HouseRepo {
     }
 
     public void save(House house){
+        System.out.println("Saving citizen"+house);
         String pin=house.genPin();
         //check if token exists
         ResultSet resultSet=database.select("SELECT * FROM users WHERE pin = "+pin);
@@ -50,5 +51,9 @@ public class HouseRepo {
             house.setMessage("Unable to save citizen");
             System.out.println(house.getMessage());
         }
+    }
+
+    public ResultSet findByLocation(String location){
+        return database.select("SELECT * FROM locations WHERE location_name = '"+location+"'");
     }
 }

@@ -15,7 +15,8 @@ public class ThreadHandler extends Thread{
     private final AdminController adminController;
     private final DebtController debtController;
     private final ShiftsController shiftsController;
-
+    private final ServiceConfirmationController serviceConfirmationController;
+    
     public ThreadHandler(Socket socket){
         this.socket=socket;
         companyController=new CompanyController();
@@ -26,6 +27,7 @@ public class ThreadHandler extends Thread{
         adminController = new AdminController();
         debtController=new DebtController();
         shiftsController= new ShiftsController();
+        serviceConfirmationController= new ServiceConfirmationController();
     }
 
 
