@@ -18,22 +18,57 @@ public class Company {
     DataInputStream fromServer;
     Scanner keyboard;
     ObjectMapper mapper;
+    Shifts shifts;
 
     public Company(DataOutputStream toServer, DataInputStream fromServer) {
         this.toServer=toServer;
         this.fromServer=fromServer;
         keyboard=new Scanner(System.in);
         mapper=new ObjectMapper();
+        shifts= new Shifts(toServer,fromServer);
     }
 
-    public void addCitizen(){
-        System.out.println("request: ");
-        String request = keyboard.nextLine();
+    public void login(){
+        CompanyHandler handler = new CompanyHandler();
+        System.out.println("########### LOGIN AS A COMPANY #############");
+        System.out.print("Enter email: ");
+        handler.setEmail(keyboard.nextLine());
+        System.out.print("Enter pin: ");
+        handler.setPin(keyboard.nextLong());
         try{
-            toServer.writeUTF(request);
-            String response=fromServer.readUTF();
-            System.out.println(response);
-        }catch (Exception ex){}
+            String request="company/login/"+mapper.writeValueAsString(handler);
+            sendRequest(request);
+
+            String response = fromServer.readUTF();
+
+            if(response.equals("Invalid Pin or Email")) {
+                System.out.println(response);
+                System.exit(0);
+            }else {
+                CompanyHandler company = mapper.readValue(response,CompanyHandler.class);
+                int choice = 0;
+
+                System.out.println("1. CREATE A SHIFT ");
+                System.out.println("0. EXIT ");
+                System.out.print("Enter your choice: ");
+                choice = keyboard.nextInt();
+
+                switch (choice){
+                    case 1:
+                        shifts.addShift();
+                      break;
+                    case 0:
+                        System.exit(0);
+                      break;
+                    default:
+                        System.out.println("CHOOSE FROM AVAILABLE OPTIONS PLEASE");
+                      break;
+                }
+
+            }
+
+        } catch (IOException exception){}
+
     }
 
     public void displayCompanies(){
@@ -90,13 +125,9 @@ public class Company {
             sendRequest( "company/addCompany/" + companyAsJson );
             String response= fromServer.readUTF();
             System.out.println( response );
-        }catch (IOException exception){}
-    }
-
-    public void sendRequest( String request ){
-        try{
-            toServer.writeUTF( request );
-        }catch ( IOException exception ){}
+        }catch (IOException exception){
+            exception.printStackTrace();
+        }
     }
 
     public void createCompanyDistrictContract( int districtId, int companyId ) {
@@ -117,4 +148,11 @@ public class Company {
         else
             return 0;
     }
+
+    public void sendRequest( String request ){
+        try{
+            toServer.writeUTF( request );
+        }catch ( IOException exception ){}
+    }
+
 }

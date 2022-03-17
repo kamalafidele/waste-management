@@ -11,7 +11,7 @@ public class Wallet {
     DataOutputStream outToServer;
     DataInputStream fromServer;
 
-    Integer companyId=1;
+    Integer companyId=5;
 
     public Wallet(DataOutputStream toServer, DataInputStream fromServer) {
         this.outToServer=toServer;
@@ -23,10 +23,9 @@ public class Wallet {
         String request="wallet/" + companyId;
         try {
             outToServer.writeUTF(request);
-            System.out.println("SENT REQUEST");
             String response=fromServer.readUTF();
             System.out.println(response);
-            //System.out.printf("Your wallet balance is: " + response +" Rwf");
+            System.out.printf("Your wallet balance is: " + response +" Rwf");
         }
         catch (IOException e){
             e.printStackTrace();

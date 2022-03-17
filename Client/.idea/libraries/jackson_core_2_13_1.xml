@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="mysql-connector (3)">
+  <library name="jackson-core-2.13.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/mysql-connector.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jackson-core-2.13.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
