@@ -35,7 +35,8 @@ public class DistrictRepo {
                 +district.getEmail()+"','"+ district.getPhone()+"','"+district.getPin()+"','"+district.getRole()+"') ");
     }
     public ResultSet findAll(){
-        return database.select("SELECT * FROM Users WHERE Role = 2");
+        return database.select("SELECT * FROM Users WHERE Role = 3");
     }
+
 
 }

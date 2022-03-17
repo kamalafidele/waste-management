@@ -66,15 +66,15 @@ public class DistrictController {
             else
                 sendResponse("Failed to add.Try again");
         }catch (Exception exception){
-//            sendResponse("Failed to add.Try again");
-            exception.printStackTrace();
+            sendResponse("Failed to add.Try again");
+//            exception.printStackTrace();
         }
     }
     public void getDistricts() {
         List<District> districts= new ArrayList<>();
         ResultSet resultSet=districtRepo.findAll();
         try{
-            // THIS LOOP IS FOR INSERTING FETCHED COMPANIES TO THE LIST
+
             while(resultSet.next()){
                 District district= new District(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3)
                         ,resultSet.getString(4),resultSet.getLong(5),resultSet.getInt(6),resultSet.getInt(7),resultSet.getInt(8));

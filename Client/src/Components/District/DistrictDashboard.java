@@ -109,6 +109,7 @@ public class DistrictDashboard {
         System.out.print( "Enter district Phone: " );
         String phone= keyboard.nextLine();
         districtHandler.setPhone(phone);
+
         Random random = new Random();
         long pin = random.nextLong( 500_000_000 );
         districtHandler.setPin( pin );
@@ -124,37 +125,70 @@ public class DistrictDashboard {
         }catch (IOException exception){}
     }
 
-    public void displayDistricts(){
-        String request="district/getDistricts";
+//    public void displayDistricts(){
+//        String request="district/getDistricts";
+//
+//        try{
+//            sendRequest(request);
+//            String response=fromServer.readUTF();
+//            ArrayList<DistrictHandler> districts=mapper.readValue(response,new TypeReference<ArrayList<DistrictHandler>>(){});
+//            Iterator<DistrictHandler> districtIterator=districts.iterator();
+//
+//            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> All Districts <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ");
+//            System.out.println("|------------|----------------------------------|-----------------------------------|");
+//            System.out.println("|    No      |        District Email            |         District pin              |");
+//            System.out.println("|------------|----------------------------------|-----------------------------------|");
+//            while (districtIterator.hasNext()){
+//
+//                DistrictHandler handler=districtIterator.next();
+//                String space="";
+//                int idSpaceCount=12;
+//                String idSpace="";
+//                for(int j=0; j<idSpaceCount-2; j++){
+//                    idSpace+=" ";
+//                }
+//                for(int i=0;i<18-handler.getEmail().length(); i++){
+//                    space+=" ";
+//                }
+//                System.out.println("| "+handler.getEmail()+idSpace+"|"+(handler.getEmail().length() <= 18 ? handler.getEmail()+space : handler.getEmail().substring(0,18))
+//                        +"                |"+handler.getName()+"   ");
+//                System.out.println("|------------|----------------------------------|-----------------------------------|");
+//            }
+//
+//        }catch (IOException ex){}
+//    }
+public void displayDistricts(){
+    String request="district/getDistricts";
 
-        try{
-            sendRequest(request);
-            String response=fromServer.readUTF();
-            ArrayList<DistrictHandler> districts=mapper.readValue(response,new TypeReference<ArrayList<DistrictHandler>>(){});
-            Iterator<DistrictHandler> districtIterator=districts.iterator();
+    try{
+        sendRequest(request);
+        String response=fromServer.readUTF();
+        ArrayList<DistrictHandler> districts=mapper.readValue(response,new TypeReference<ArrayList<DistrictHandler>>(){});
+        Iterator<DistrictHandler> districtIterator=districts.iterator();
 
-            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> All Districts <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ");
-            System.out.println("|------------|----------------------------------|-----------------------------------|");
-            System.out.println("|    No      |        District Email            |         District pin              |");
-            System.out.println("|------------|----------------------------------|-----------------------------------|");
-            while (districtIterator.hasNext()){
-                DistrictHandler handler=districtIterator.next();
-                String space="";
-                int idSpaceCount=12;
-                String idSpace="";
-                for(int j=0; j<idSpaceCount-2; j++){
-                    idSpace+=" ";
-                }
-                for(int i=0;i<18-handler.getEmail().length(); i++){
-                    space+=" ";
-                }
-                System.out.println("| "+handler.getEmail()+idSpace+"|"+(handler.getEmail().length() <= 18 ? handler.getEmail()+space : handler.getEmail().substring(0,18))
-                        +"                |"+handler.getName()+"   ");
-                System.out.println("|------------|----------------------------------|-----------------------------------|");
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> All Districts <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ");
+        System.out.println("|------------|----------------------------------|-----------------------------------|");
+        System.out.println("|    No       |        District Token           |       |   District Name           |");
+        System.out.println("|------------|----------------------------------|-----------------------------------|");
+        while (districtIterator.hasNext()){
+            DistrictHandler handler=districtIterator.next();
+            String space="";
+            int idSpaceCount=12;
+            String idSpace="";
+            for(int j=0; j<idSpaceCount-2; j++){
+                idSpace+=" ";
             }
+            for(int i=0;i<18-handler.getEmail().length(); i++){
+                space+=" ";
+            }
+            System.out.println("| "+handler.getId()+idSpace+"|"+(handler.getEmail().length() <= 18 ? handler.getEmail()+space : handler.getEmail().substring(0,18))
+                    +"                |"+handler.getName()+"   ");
+            System.out.println("|------------|----------------------------------|-----------------------------------|");
+        }
 
-        }catch (IOException ex){}
-    }
+    }catch (IOException ex){}
+}
+
 
     public void sendRequest(String request){
         try {
@@ -196,6 +230,7 @@ public class DistrictDashboard {
             System.out.println("2. Creating Company");
             System.out.println("3. Citizen Registration");
 
+
             int choice;
             System.out.print("Choose: ");
             choice = keyboard.nextInt();
@@ -211,6 +246,7 @@ public class DistrictDashboard {
                     case 3:
                     System.out.println("Citizen Registration");
                     break;
+
             }
         }catch(Exception e){
             e.printStackTrace();
