@@ -2,22 +2,22 @@ package Models;
 
 
 public class Shifts {
-    private int id;
-    private int company_id;
+    private Integer id;
+    private Integer company_id;
     private String date;
-    private int confirmerId;
+    private Integer confirmerId;
 
     public Shifts(){
 
     }
 
-    public Shifts(int id,int company_id,String date,int confirmerId){
+    public Shifts(Integer id,Integer company_id,String date,Integer confirmerId){
         this.id=id;
         this.company_id=company_id;
         this.date=date;
         this.confirmerId=confirmerId;
     }
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -25,7 +25,7 @@ public class Shifts {
         this.id = id;
     }
 
-    public int getCompany_id() {
+    public Integer getCompany_id() {
         return company_id;
     }
 
@@ -41,7 +41,7 @@ public class Shifts {
         this.date = date;
     }
 
-    public int getConfirmerId() {
+    public Integer getConfirmerId() {
         return confirmerId;
     }
 

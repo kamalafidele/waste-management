@@ -1,5 +1,6 @@
 package Controllers;
 
+import Models.ServiceConfirmation;
 import Models.Shifts;
 import Repositories.ServiceConfirmationRepo;
 import Repositories.ShiftsRepo;
@@ -9,6 +10,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ServiceConfirmationController {
     private DataOutputStream toClient;
@@ -30,7 +33,7 @@ public class ServiceConfirmationController {
     public void filterRequest(String request,DataOutputStream toClient) throws Exception {
         this.toClient = toClient;
         switch (request.split("/")[1]) {
-            case "ConfirmService":
+            case "addConfirmedService":
                 addConfirmedService(request.split("/")[2]);
             case "getConfirmedServices":
                 getConfirmedServices();
@@ -39,21 +42,48 @@ public class ServiceConfirmationController {
             default:
                 sendResponse("Specify your request");
         }
-
+    }
         public void getConfirmedService(int confirmedId){
             ResultSet resultSet = serviceConfirmationRepo.findById(confirmedId);
-            Shifts shift = new Shifts();
+            ServiceConfirmation serviceConfirmation = new ServiceConfirmation();
+
             try{
                 while(resultSet.next()){
-                    shift.setId(resultSet.getInt(1));
-                    shift.setCompany_id(resultSet.getInt(2));
-                    shift.setDate(resultSet.getString(3));
-                    shift.setConfirmerId(resultSet.getInt(4));
+                    serviceConfirmation.setId(resultSet.getInt(1));
+                    serviceConfirmation.setServiceId(resultSet.getInt(2));
+                    serviceConfirmation.setShiftId(resultSet.getInt(3));
+                    serviceConfirmation.setConfirmerId(resultSet.getInt(4));
                 }
-                sendResponse(mapper.writeValueAsString(shift));
+                sendResponse(mapper.writeValueAsString(serviceConfirmation));
             }catch (IOException | SQLException e){
                 e.getMessage();
             }
         }
+    public void getConfirmedServices(){
+        List<ServiceConfirmation> confirmedList = new ArrayList<>();
+        ResultSet resultSet = serviceConfirmationRepo.findAll();
+        try{
+            while (resultSet.next()){
+              ServiceConfirmation serviceConfirmation = new ServiceConfirmation(resultSet.getInt(1), resultSet.getInt(2), resultSet.getInt(3),resultSet.getInt(4));
+               confirmedList.add(serviceConfirmation);
+            }
+            sendResponse(mapper.writeValueAsString(confirmedList));
+        }catch (IOException | SQLException e){
+            e.getMessage();
+        }
     }
+
+    public void addConfirmedService(String data){
+        try{
+            ServiceConfirmation serviceConfirmed = mapper.readValue(data,ServiceConfirmation.class);
+            if(serviceConfirmationRepo.save(serviceConfirmed))
+                sendResponse("Service confirmed successfully");
+            else
+                sendResponse("Service confirmation failed ! Try again");
+        }catch (Exception e){
+            e.getMessage();
+        }
+    }
+
 }
+

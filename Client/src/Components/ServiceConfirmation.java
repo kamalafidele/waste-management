@@ -31,7 +31,7 @@ public class ServiceConfirmation {
     }
 
     public void viewConfirmedService(){
-        String request="serviceconfirmation/viewconfirmedservice";
+        String request="serviceconfirmation/getConfirmedServices";
         try{
             sendRequest(request);
             String response = fromServer.readUTF();
@@ -54,12 +54,12 @@ public class ServiceConfirmation {
     public void addConfirmedService(){
         System.out.println("request:");
         var confirmedService = new ServiceConfirmationHandler();
-        System.out.println("------------------ADDING NEW SHIFT--------------");
-        System.out.println("---Enter the ID of the Company working in the area---");
+        System.out.println("------------------CONFIRMING SERVICE--------------");
+        System.out.println("---WHAT SERVICE ARE YOU CONFIRMING?---");
         confirmedService.setServiceId(scanner.nextInt());
-        System.out.println("--Enter the date ---- ");
+        System.out.println("--WHAT SHIFT ARE WE DEALING WITH? ---- ");
         confirmedService.setShiftId(scanner.nextInt());
-        System.out.println("--Enter your ID---");
+        System.out.println("--WHAT IS YOUR ID?---");
         confirmedService.setConfirmerId(scanner.nextInt());
         try{
             String confirmedserviceasJSon= mapper.writeValueAsString(confirmedService);

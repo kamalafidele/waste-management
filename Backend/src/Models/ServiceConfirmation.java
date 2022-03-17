@@ -3,23 +3,23 @@ package Models;
 import java.util.Date;
 
 public class ServiceConfirmation {
-    private int id;
-    private int serviceId;
-    private int shiftId;
-    private int ConfirmerId;
+    private  Integer id;
+    private Integer serviceId;
+    private Integer shiftId;
+    private Integer ConfirmerId;
 
 
     public ServiceConfirmation() {
     }
 
-    public ServiceConfirmation(int id,int serviceId,int shiftId,Date date,int Confirmer) {
+    public ServiceConfirmation(Integer id,Integer serviceId,Integer shiftId,Integer Confirmer) {
         this.id = id;
         this.serviceId=serviceId;
         this.shiftId=shiftId;
         this.ConfirmerId=Confirmer;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -27,7 +27,7 @@ public class ServiceConfirmation {
         this.id = id;
     }
 
-    public int getServiceId() {
+    public Integer getServiceId() {
         return serviceId;
     }
 
@@ -35,7 +35,7 @@ public class ServiceConfirmation {
         this.serviceId = serviceId;
     }
 
-    public int getShiftId() {
+    public Integer getShiftId() {
         return shiftId;
     }
 
@@ -43,7 +43,7 @@ public class ServiceConfirmation {
         this.shiftId = shiftId;
     }
 
-    public int getConfirmerId() {
+    public Integer getConfirmerId() {
         return ConfirmerId;
     }
 
