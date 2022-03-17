@@ -26,16 +26,6 @@ public class Company {
         mapper=new ObjectMapper();
     }
 
-    public void addCitizen(){
-        System.out.println("request: ");
-        String request = keyboard.nextLine();
-        try{
-            toServer.writeUTF(request);
-            String response=fromServer.readUTF();
-            System.out.println(response);
-        }catch (Exception ex){}
-    }
-
     public void displayCompanies(){
        String request="company/getAll/none";
 

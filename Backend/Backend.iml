@@ -10,7 +10,13 @@
     <orderEntry type="library" name="libs" level="project" />
     <orderEntry type="library" name="mysql-connector (3)" level="project" />
     <orderEntry type="library" name="jackson-all-1.9.9 (2)" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" name="mysql-connector-java-8.0.261" level="project" />
     <orderEntry type="library" name="jackson-all-1.9.91" level="project" />
+=======
+    <orderEntry type="library" name="mysql-connector-java-8.0.26" level="project" />
+    <orderEntry type="library" name="jackson-all-1.9.9 (2)" level="project" />
+    <orderEntry type="library" name="mysql-connector" level="project" />
+>>>>>>> 6a94bdd1505549e97c0e935b8c78f38ed7340679
   </component>
 </module>
