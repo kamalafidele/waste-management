@@ -76,7 +76,7 @@ public class NotificationController {
                 notification.setTitle("Service Provided");
             }
             case "paymentDueNotification" -> {
-                notification.setContent("Hello! Three days remaining inorder to pay for garbage collection");
+                notification.setContent("Hello! Three days remaining in order to pay for garbage collection");
                 notification.setTitle("Due Payment");
             }
             case "paymentWarningNotification" -> {

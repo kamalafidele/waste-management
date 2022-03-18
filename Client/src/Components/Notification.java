@@ -36,16 +36,15 @@ public class Notification {
             Iterator<NotificationHandler> notificationIterator= notifications.iterator();
 
             System.out.println("########################### ALL NOTIFICATIONS #######################################");
-            System.out.println("|------------|----------------------------------|-----------------------------------|");
-            System.out.println("|    #       |        TYPE                      |             MESSAGE               |");
-            System.out.println("|------------|----------------------------------|-----------------------------------|");
+            System.out.println("|------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------|");
+            System.out.println("|    #       |        TITLE                     |                               MESSAGE                                                                                 |");
+            System.out.println("|------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------|");
             while (notificationIterator.hasNext()){
                 NotificationHandler handler=notificationIterator.next();
-                System.out.println("|    "+handler.getNotificationId()+"       |    "+ handler.getType()
-                        +"              |    "+handler.getContent()+"   ");
-                System.out.println("|------------|----------------------------------|-----------------------------------|");
+                System.out.println("|    "+handler.getNotificationId()+"       |    "+ handler.getTitle()
+                        +"        |    "+handler.getContent()+"   ");
+                System.out.println("|------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------|");
             }
-
         }catch (IOException e){
             e.printStackTrace();
         }
