@@ -42,7 +42,7 @@ public class Notification {
             while (notificationIterator.hasNext()){
                 NotificationHandler handler=notificationIterator.next();
                 System.out.println("|    "+handler.getNotificationId()+"       |    "+ handler.getTitle()
-                        +"        |    "+handler.getContent()+"   ");
+                        +"               |    "+handler.getContent()+"   ");
                 System.out.println("|------------|----------------------------------|-----------------------------------------------------------------------------------------------------------------------|");
             }
         }catch (IOException e){
