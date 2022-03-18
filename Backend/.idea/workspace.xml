@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40098456-60c6-4aeb-8896-539afe23d8d7" name="Changes" comment="customerInvoice control">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/NotificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/NotificationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/Notification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/CustomerInvoicesRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/NotificationRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/NotificationRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/NotificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/NotificationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/NotificationRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Notification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/NotificationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/NotificationHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/NotificationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/NotificationHandler.java" afterDir="false" />
-    </list>
+    <list default="true" id="40098456-60c6-4aeb-8896-539afe23d8d7" name="Changes" comment="customerInvoice control" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
