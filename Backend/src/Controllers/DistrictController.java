@@ -1,4 +1,5 @@
 package Controllers;
+import Models.Company;
 import Models.District;
 import Repositories.DistrictRepo;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -41,6 +42,18 @@ public class DistrictController {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    public void addDistrict(String data) {
+        try{
+            District district=mapper.readValue(data,District.class);
+
+            if(districtRepo.save(district))
+                sendResponse("Successvelly  added");
+            else
+                sendResponse("Failed to add.Try again");
+        }catch (Exception exception){
+            sendResponse("Failed to add.Try again");
         }
     }
 

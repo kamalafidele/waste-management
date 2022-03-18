@@ -2,6 +2,8 @@ package Config;
 
 import java.sql.*;
 
+import static java.lang.Class.forName;
+
 public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
     String url="jdbc:mysql://localhost:3306/wasmanagement?characterEncoding=latin1";
@@ -10,7 +12,6 @@ public class DatabaseConnection {
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
-
     public DatabaseConnection(){
         try{
           Class.forName(driver);
@@ -20,6 +21,7 @@ public class DatabaseConnection {
               statement=connection.createStatement();
 
         }catch(Exception exception){
+            System.out.println("Error: "+exception);
             System.out.println("CONNECTION TO DATABASE FAILED");
             exception.printStackTrace();
         }

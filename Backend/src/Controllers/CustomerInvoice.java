@@ -41,14 +41,7 @@ public class CustomerInvoice {
         }catch(IOException | SQLException exception ){}
     }
 
-//    public void saveInvoice(String data){
-//   try{
-//            CustomerInvoices cInvoice = mapper.readValue(data,CustomerInvoices.class);
-//            customerInvoicesRepo.save(cInvoice);
-//
-//            sendResponse("Recorded invoice");
-//        }catch (IOException exception){}
-//    }
+
 
     public void filterRequest( String request, DataOutputStream reply ) {
         this.reply = reply;
