@@ -24,6 +24,7 @@ public class Application {
         Scanner keyboard=new Scanner(System.in);
         try{
             Socket socket=new Socket("localhost",2500);
+
             int choice = 0;
 
             DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
@@ -46,7 +47,6 @@ public class Application {
             System.out.println("3.Company");
             System.out.println("4.Confirmer");
             System.out.println("5.House");
-            System.out.println("6.Invoices");
             System.out.print("Your choice: ");
             choice = keyboard.nextInt();
 
@@ -56,13 +56,10 @@ public class Application {
                     admin.handleAdmin();
                     break;
                 case 2:
-                    DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
-                    districtDashboard.handleDistrict();
+                    new DistrictDashboard(toServer,fromServer).handleDistrict();
                     break;
                 case 3:
-                    new Company(toServer, fromServer).displayCompanies();
-                    System.out.println("You are a company!");
-                    new Company(toServer,fromServer).addCompany();
+                    new Company(toServer,fromServer).login();
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
@@ -90,21 +87,11 @@ public class Application {
                     House house = new House(toServer, fromServer);
                     house.handleHouse(fromServer, toServer);
                     break;
-                case 6:
-                    customerInvoice customer = new customerInvoice();
-                    try {
-                        customer.mainMethod();
-                         }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                    break;
-                
                 default:
                     System.out.println("Please be serious!");
                     break;
             }
-
-
+           //socket.close();
         }catch(IOException exception){
             System.out.println("here");
             exception.printStackTrace();
