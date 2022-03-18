@@ -24,6 +24,10 @@ public class CompanyRepo {
                   +company.getEmail()+"','"+ company.getPhone()+"','"+company.getPin()+"','"+company.getRole()+"')");
       }
 
+      public ResultSet findByPinAndEmail(long pin, String email){
+      return database.select("SELECT * FROM Users WHERE Role = 2 AND pin = " + pin+" AND email = '" + email +"'");
+      }
+
       public boolean createContract (int districtId, int companyId){
          return database.insert("INSERT INTO District_Company (DistrictId,Company) VALUES ("+districtId+","+companyId+")");
       }

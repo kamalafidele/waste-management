@@ -35,6 +35,9 @@ public class HouseController {
             case "insert":
                 addClient(request.split("/")[2]);
                 break;
+            case "getLocationId":
+                getLocationId(request.split("/")[2]);
+                break;
             case "downloadInvoice":
                 customerInvoice.downloadInvoice(Integer.parseInt(request.split("/")[2]), toClient);
                 break;
@@ -50,6 +53,7 @@ public class HouseController {
     public void addClient(String data) {
         try{
             House house=mapper.readValue(data,House.class);
+            System.out.println(house);
             houseRepo.save(house);
             sendResponse(house.getMessage());
 
@@ -82,6 +86,27 @@ public class HouseController {
             exception.printStackTrace();
         }
     }
+
+    public void getLocationId(String locationName){
+        ResultSet resultSet=houseRepo.findByLocation(locationName);
+        House house=new House();
+
+        try{
+
+            if (resultSet == null){
+                System.out.println("No such Place");
+            }else {
+            while(resultSet.next()) {
+                house.setLocation(resultSet.getInt(1));
+            }
+                sendResponse(mapper.writeValueAsString(house.getLocation()));
+            }
+
+        } catch (IOException | SQLException exception){
+            exception.printStackTrace();
+        }
+    }
+
     // THIS A METHOD FOR SENDING
     public void sendResponse( String response ) {
         try {
