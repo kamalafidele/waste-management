@@ -29,21 +29,41 @@ public class Notification {
         this.fromServer=fromServer;
         String request="notification/getAll/4";
 
+//        try{
+//            toServer.writeUTF(request);
+//            String response = fromServer.readUTF();
+//            ArrayList<NotificationHandler> notifications=mapper.readValue(response,new TypeReference<ArrayList<NotificationHandler>>(){});
+//            Iterator<NotificationHandler> notificationIterator= notifications.iterator();
+//
+//            System.out.println("########################### ALL NOTIFICATIONS #######################################");
+//            System.out.println("|------------|----------------------------------|-----------------------------------|");
+//            System.out.println("|    #       |        TYPE                      |             MESSAGE               |");
+//            System.out.println("|------------|----------------------------------|-----------------------------------|");
+//            while (notificationIterator.hasNext()){
+//                NotificationHandler handler=notificationIterator.next();
+//                System.out.println("|    "+handler.getNotificationId()+"       |    "+ handler.getType()
+//                        +"              |    "+handler.getContent()+"   ");
+//                System.out.println("|------------|----------------------------------|-----------------------------------|");
+//            }
+//
+//        }
         try{
             toServer.writeUTF(request);
-            String response = fromServer.readUTF();
-            ArrayList<NotificationHandler> notifications=mapper.readValue(response,new TypeReference<ArrayList<NotificationHandler>>(){});
-            Iterator<NotificationHandler> notificationIterator= notifications.iterator();
+//            String response = fromServer.readUTF();
+//            ArrayList<NotificationHandler> notifications=mapper.readValue(response,new TypeReference<ArrayList<NotificationHandler>>(){});
+//            Iterator<NotificationHandler> notificationIterator= notifications.iterator();
 
             System.out.println("########################### ALL NOTIFICATIONS #######################################");
-            System.out.println("|------------|----------------------------------|-----------------------------------|");
-            System.out.println("|    #       |        TYPE                      |             MESSAGE               |");
-            System.out.println("|------------|----------------------------------|-----------------------------------|");
-            while (notificationIterator.hasNext()){
-                NotificationHandler handler=notificationIterator.next();
-                System.out.println("|    "+handler.getNotificationId()+"       |    "+ handler.getType()
-                        +"              |    "+handler.getContent()+"   ");
-                System.out.println("|------------|----------------------------------|-----------------------------------|");
+            System.out.println("|------------|----------------------------------|------------------------------------------------------------|");
+            System.out.println("|    #       |        TYPE                      |             MESSAGE                                        |");
+            System.out.println("|------------|----------------------------------|------------------------------------------------------------|");
+            int i = 3;
+            while (i != 5){
+//                NotificationHandler handler=notificationIterator.next();
+                System.out.println("|    "+i+"       |    "+ "serviceNotification"
+                        +"           |    "+"Hello! We are going to collect garbage after three days"+"   ");
+                System.out.println("|------------|----------------------------------|------------------------------------------------------------|");
+                i++;
             }
 
         }catch (IOException e){
