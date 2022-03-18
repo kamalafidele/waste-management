@@ -47,13 +47,14 @@ public class House{
         }catch ( IOException exception ){}
     }
 
+
     public void login(String token){
         //calling login api
         String request = "citizen/getSingle/" + token;
         try{
             toServer.writeUTF(request);
             HouseHandler handler=mapper.readValue(fromServer.readUTF(),HouseHandler.class);
-            System.out.println("HERE IS YOUR NAME" + handler.getName());
+            System.out.println("HERE IS YOUR NAME: " + handler.getName());
 
             if(handler.getName() != null) {
                 //dashboard
@@ -68,6 +69,8 @@ public class House{
             System.out.println("Invalid login!");
             exception.printStackTrace();
             return;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

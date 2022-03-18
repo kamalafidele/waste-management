@@ -19,9 +19,13 @@ public class CustomerInvoicesRepo {
     public CustomerInvoicesRepo(){
         database=new DatabaseConnection();
     }
+
     public ResultSet findById(int userId){
-        return database.select("SELECT * FROM invoices WHERE User = "+userId);
+        return database.getById("select i.id, u.name, s.Service_name, i.Amount, i.Date, i.currentTime from users u join invoices i ON i.User = u.id JOIN services " +
+                "s on i.Service = s.id WHERE i.User = " + userId+";");
     }
+
+
 
     // THIS A METHOD FOR SENDING
     public void sendResponse( String response ) throws IOException, SQLException {

@@ -2,9 +2,9 @@ package Controllers;
 
 import Models.Company;
 import Repositories.CompanyRepo;
-import Repositories.WalletsRepoHandler;
 import org.codehaus.jackson.map.ObjectMapper;
-import Repositories.CustomerInvoicesRepo;
+import Repositories.WalletsRepoHandler;
+import Controllers.CustomerInvoice;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -18,12 +18,12 @@ public class CompanyController {
     private CompanyRepo companyRepo;
     private ObjectMapper mapper;
     AnalyticsController analyticsController;
-    CustomerInvoicesRepo customerInvoice;
+    CustomerInvoice customerInvoice;
 
     public CompanyController(){
         companyRepo=new CompanyRepo();
         analyticsController=new AnalyticsController();
-        customerInvoice = new CustomerInvoicesRepo();
+        customerInvoice = new CustomerInvoice();
         mapper=new ObjectMapper();
     }
 
@@ -43,11 +43,11 @@ public class CompanyController {
               break;
             case "createContract":
                 createContract(request.split("/")[2]);
-            case "getInvoices":
-                customerInvoice.getInvoices(Integer.parseInt(request.split("/")[2]), toClient);
+            case "getInvoice":
+                customerInvoice.getInvoice(Integer.parseInt(request.split("/")[2]));
                 break;
             case "downloadInvoice":
-                customerInvoice.downloadInvoice(Integer.parseInt(request.split("/")[2]), toClient);
+//                customerInvoice.downloadInvoice(Integer.parseInt(request.split("/")[2]), toClient);
                 break;
             case "analytics":
                 analyticsController.filterRequest(request, toClient);

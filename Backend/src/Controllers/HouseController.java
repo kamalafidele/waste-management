@@ -2,7 +2,7 @@ package Controllers;
 
 import Models.House;
 import Repositories.HouseRepo;
-import Repositories.CustomerInvoicesRepo;
+import Controllers.CustomerInvoice;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.DataOutputStream;
@@ -24,7 +24,7 @@ public class HouseController {
     // THIS METHOD DETERMINES WHAT OPERATION REQUESTED BY CLIENT
     public void filterRequest(String request, DataOutputStream toClient) throws Exception {
         this.toClient=toClient;
-        CustomerInvoicesRepo customerInvoice = new CustomerInvoicesRepo();
+        CustomerInvoice customerInvoice = new CustomerInvoice();
         switch (request.split("/")[1]) {
 //            case "getAll":
 //                getClients();
@@ -36,10 +36,10 @@ public class HouseController {
                 addClient(request.split("/")[2]);
                 break;
             case "downloadInvoice":
-                customerInvoice.downloadInvoice(Integer.parseInt(request.split("/")[2]), toClient);
+//                customerInvoice.downloadInvoice(Integer.parseInt(request.split("/")[2]), toClient);
                 break;
             case "getInvoices":
-                customerInvoice.getInvoices(Integer.parseInt(request.split("/")[2]), toClient);
+                customerInvoice.getInvoice(Integer.parseInt(request.split("/")[2]));
                 break;
             default:
                 sendResponse("Please specify your request");

@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Update_at_2022-03-16_09_19_[Changes]" date="1647415152708" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-03-16_09_19_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2022-03-16 09:19 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="../Backend/out/production/Backend/Controllers/CustomerInvoice.class" />
+    <option name="AFTER_PATH" value="../Backend/out/production/Backend/Controllers/CustomerInvoice.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-03-16_09_19_[Changes]/CustomerInvoice.class" />
+  </binary>
+</changelist>

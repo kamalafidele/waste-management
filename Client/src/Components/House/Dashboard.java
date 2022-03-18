@@ -1,6 +1,7 @@
 package Components.House;
 
-import Components.Company;
+
+import Components.CustomerInvoice;
 import Components.Notification;
 import Components.Payment;
 import DataHandlers.HouseHandler;
@@ -29,8 +30,9 @@ public class Dashboard {
         ObjectMapper mapper;
     }
 
-    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer, HouseHandler handler){
+    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer, HouseHandler handler) throws Exception {
         Payment payment = new Payment(fromServer, toServer);
+        CustomerInvoice custInvoice = new CustomerInvoice();
         int choice = 0;
         System.out.println("\n");
         System.out.println("--------Dashboard--------");
@@ -50,6 +52,7 @@ public class Dashboard {
                 payment.handlePaymentMethods();
                 break;
             case 3:
+                custInvoice.mainMethod();
                 System.out.println("invoices");
                 break;
             case 4:

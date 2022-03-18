@@ -19,42 +19,31 @@ public class CustomerInvoice {
     }
 
 
-
-  
     public void getInvoice(int userId){
-    CustomerInvoices  cInvoice = new CustomerInvoices();;
-        ResultSet resultSet= customerInvoicesRepo.findById(userId);
-        try{
-          
+        String res = "";
+        String response = null;
+        CustomerInvoices  cInvoice = new CustomerInvoices();;
+        ResultSet set= customerInvoicesRepo.findById(userId);
 
-            while(resultSet.next()){
-              cInvoice.setInvoice_id((long) resultSet.getInt(1));
-              cInvoice.setUserId(userId);
-              cInvoice.setInvoice_date(resultSet.getDate("invoice_date"));
-              cInvoice.setGeneration_time(resultSet.getTime(4));
-              cInvoice.setService_paid(resultSet.getString(5));
-              cInvoice.setAmount((long) resultSet.getInt(6));
+        try {
+            if(!set.next()){
+                response = "There is no invoice for the user!";
+                sendResponse(response);
+            }else{
+                res += "|     "+set.getInt("id")+"      |      "+set.getString("name")+"      | "+set.getString("Service_name")+"  |    "
+                        +set.getInt("Amount")+ " |   "+set.getDate("Date")+"   |  "+ set.getTime("currentTime")+"         |\n";
+
+                while(set.next()){
+                    res += "|     "+set.getInt("id")+"      |      "+set.getString("name")+"      | "+set.getString("Service_name")+"  |   "
+                            +set.getInt("Amount")+ "  |   "+set.getDate("Date")+"   |  "+ set.getTime("currentTime")+"         |\n";
+                }
+                sendResponse(res);
             }
-
-        sendResponse(mapper.writeValueAsString(cInvoice));
-
-        }catch(IOException | SQLException exception ){}
-    }
-
-
-
-    public void filterRequest( String request, DataOutputStream reply ) {
-        this.reply = reply;
-        
-        switch (request.split("/")[1]) {
-            case "getInvoice":
-                getInvoice(Integer.valueOf(request.split("/")[2]));
-              break;
-            default:
-                sendResponse("Please specify your request");
-              break;
+        }catch (NullPointerException | SQLException e){
+            e.printStackTrace();
         }
     }
+
 
     public void sendResponse( String response ) {
         try {

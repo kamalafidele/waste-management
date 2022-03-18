@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class customerInvoice  {
+public class CustomerInvoice  {
     ObjectMapper mapper;
 
     public void createTable (String response) throws Exception {
@@ -26,7 +26,7 @@ public class customerInvoice  {
 
     public void mainMethod() throws Exception {
 
-        Socket socket = new Socket("localhost",2500);
+        Socket socket = new Socket("localhost",3000);
         OutputStream req = socket.getOutputStream();
         DataOutputStream toServer = new DataOutputStream(req);
 
@@ -46,14 +46,12 @@ public class customerInvoice  {
         int choice = scanner.nextInt();
        switch (choice){
            case 1 -> {
-               System.out.println("Company > Invoices > View all invoices.");
-               toServer.writeUTF("company/getInvoices/1");
+               toServer.writeUTF("company/getInvoice/1");
                response = fromServer.readUTF();
                createTable(response);
                break;
            }
            case 2 -> {
-               System.out.println("Company > Invoices > Download invoice.");
                System.out.print("Enter the invoice id: ");
                int invoice_id = scanner.nextInt();
                toServer.writeUTF("company/downloadInvoice/"+invoice_id);
