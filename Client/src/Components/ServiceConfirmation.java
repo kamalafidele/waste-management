@@ -43,7 +43,8 @@ public class ServiceConfirmation {
                 ServiceConfirmationHandler handler = confirmedServicesIterator.next();
 
 
-                System.out.println(" | "+ handler.getId()+" | "+"      | "+handler.getServiceId()+" | "+"     | "+handler.getShiftId()+" | "+"       | "+handler.getConfirmerId()+" | ");
+                System.out.println(" | "+ handler.getId()+" | "+"                    | "+handler.getServiceId()+
+                        " | "+"      | "+handler.getShiftId()+" | "+"          | "+handler.getConfirmerId()+" | ");
             }
         }catch (Exception e){
             e.getMessage();
@@ -59,13 +60,7 @@ public class ServiceConfirmation {
         confirmedService.setServiceId(scanner.nextInt());
         System.out.println("--WHAT SHIFT ARE WE DEALING WITH? ---- ");
         confirmedService.setShiftId(scanner.nextInt());
-        System.out.println("--WHAT IS YOUR ID?---");
-        System.out.println("------------------ADDING NEW SHIFT--------------");
-        System.out.println("---Enter the ID of the Company working in the area---");
-        confirmedService.setServiceId(scanner.nextInt());
-        System.out.println("--Enter the date ---- ");
-        confirmedService.setShiftId(scanner.nextInt());
-        System.out.println("--Enter your ID---");
+        System.out.println("--WHAT IS THE ID?---");
         confirmedService.setConfirmerId(scanner.nextInt());
         try{
             String confirmedserviceasJSon= mapper.writeValueAsString(confirmedService);

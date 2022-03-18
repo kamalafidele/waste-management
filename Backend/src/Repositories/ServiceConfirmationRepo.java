@@ -49,6 +49,7 @@ public boolean login(Admin confirmer){
     return true;
 }
 
+public ResultSet findCompanyId(String name){return database.select("SELECT id from users where Role =2 and name="+name);}
     public boolean validate(String company, int confirmerId) throws SQLException {
         try {
             String query = "select id,name,Location from users where name =" + company + "And Location =" +

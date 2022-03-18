@@ -72,10 +72,12 @@ public class Application {
                         System.out.println("2.CONFIRM SERVICE");
                         int response = keyboard.nextInt();
                         if (response == 1) {
-                            new Shifts(toServer, fromServer).addShift();
+//                            new Shifts(toServer, fromServer).addShift();
+                            new Shifts(toServer,fromServer).viewShifts();
                         }
                         if (response == 2) {
-                            new ServiceConfirmation(toServer, fromServer).addConfirmedService();
+//                            new ServiceConfirmation(toServer, fromServer).addConfirmedService();
+                            new ServiceConfirmation(toServer,fromServer).viewConfirmedService();
                         }
                     }else {
                         System.out.println("Invalid credentials");

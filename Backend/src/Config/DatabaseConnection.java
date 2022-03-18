@@ -14,7 +14,6 @@ public class DatabaseConnection {
     ResultSet data=null;
     public DatabaseConnection(){
         try{
-          Class.forName(driver);
           connection= DriverManager.getConnection(url,username,password);
 
           if(connection != null)
