@@ -16,7 +16,7 @@ public class CompanyRepo {
       }
 
       public ResultSet findById(long id){
-          return database.select("SELECT * FROM Company WHERE Role = 2 AND  id = "+id);
+              return database.select("SELECT * FROM Company WHERE Role = 2 AND  id = "+id);
       }
 
       public boolean save(Company company){

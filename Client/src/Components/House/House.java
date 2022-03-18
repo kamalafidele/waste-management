@@ -99,9 +99,7 @@ public class House{
             dashboard.handleDashboard(fromServer, toServer, handler);
             return;
         }
-        System.out.println("Invalid login, Try again!");
-        return;
-//        }catch (IOException exception){
+        //        }catch (IOException exception){
 //            System.out.println("Invalid login, Try again!");
 //            return;
 //        }
