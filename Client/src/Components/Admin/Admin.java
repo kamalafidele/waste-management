@@ -15,10 +15,8 @@ public class Admin {
     DataInputStream fromServer;
     ObjectMapper mapper;
     Scanner keyboard;
-    FileInputStream fileIn;
-    FileOutputStream fileOut;
-    InputStreamReader streamReader;
-    BufferedReader bufferedReader;
+    FileWriter writer;
+    FileReader reader;
     File file;
 
     public Admin(){
@@ -46,15 +44,9 @@ public class Admin {
                     System.out.println("\n");
                     return;
                 } else {
-                    try {
-                        //record that admin is loggedIn
-                        String data = "true";
-                        fileOut = new FileOutputStream(file);
-                        fileOut.write(data.getBytes(), 0, data.length());
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        return;
-                    }
+                    writer = new FileWriter(file);
+                    writer.write(loginRes);
+                    writer.flush();
                 }
             }
 
@@ -88,9 +80,7 @@ public class Admin {
                         createAdmin();
                         break;
                     case 5:
-                        System.out.println("Add District");
-                        DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
-                        districtDashboard.addDistrict();
+                        createDistrict();
                         break;
                     case 6:
                         logout();
@@ -130,18 +120,14 @@ public class Admin {
         try {
             //checking if file exists
             if(!file.exists()){
-                boolean createFile = file.createNewFile();
-                String data = "false";
-                fileOut = new FileOutputStream(file);
-                fileOut.write(data.getBytes(), 0, data.length());
+                file.createNewFile();
                 return false;
             }else{
-                fileIn = new FileInputStream(file);
-                streamReader = new InputStreamReader(fileIn);
-                bufferedReader = new BufferedReader(streamReader);
-                String content = bufferedReader.readLine();
-
-                return Objects.equals(content, "true");
+                if(file.length() > 0){
+                    return true;
+                }else{
+                    return false;
+                }
             }
 
         }catch(IOException e){
@@ -160,7 +146,16 @@ public class Admin {
     }
 
     public void createAdmin(){
+        System.out.println("--------Create another admin!----------");
+        System.out.println("name: ");
+        System.out.println("email: ");
+        System.out.println("Phone: ");
+    }
 
+    public  void createDistrict(){
+        System.out.println("Add District");
+        DistrictDashboard districtDashboard2=new DistrictDashboard(toServer,fromServer);
+        districtDashboard2.districtAdd();
     }
 
     public void showAnalytics(){
@@ -168,18 +163,17 @@ public class Admin {
     }
 
     public void showWallet() throws IOException {
-        new Wallet(toServer,fromServer).showWallet();
+        String id = new BufferedReader(new FileReader(file)).readLine();
+        new Wallet(toServer,fromServer).showWallet(Integer.parseInt(id));
     }
 
     public void showDistricts() throws IOException {
-        toServer.flush();
-        this.sendRequest("admin/login/" + mapper.writeValueAsString(loginInfos));
+        DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
+        districtDashboard.displayDistricts();
     }
 
     public void logout() throws IOException {
-        String data = "false";
-        fileOut = new FileOutputStream(file);
-        fileOut.write(data.getBytes(), 0, data.length());
+        new FileWriter("loggedIn.txt", false).close();
     }
 
 }

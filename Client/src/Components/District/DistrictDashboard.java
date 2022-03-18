@@ -4,18 +4,18 @@ import Components.Company;
 import Components.House.House;
 import Components.Wallet;
 
+import DataHandlers.CompanyHandler;
 import DataHandlers.DistrictHandler;
 import DataHandlers.LoginData;
 
 
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.type.TypeReference;
 
 
 import java.io.*;
 import java.net.Socket;
-import java.util.Objects;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class DistrictDashboard {
 
@@ -58,7 +58,7 @@ public class DistrictDashboard {
 
 
             toServer.flush();
-            this.sendRequest("District/login/" + mapper.writeValueAsString(logindata));
+            this.sendRequest("district/login/" + mapper.writeValueAsString(logindata));
 
 
             return fromServer.readUTF();
@@ -96,7 +96,7 @@ public class DistrictDashboard {
 
         return false;
     }
-    public void addDistrict() {
+    public void districtAdd() {
 
         var districtHandler=new DistrictHandler();
          keyboard = new Scanner(System.in);
@@ -119,6 +119,38 @@ public class DistrictDashboard {
             String response= fromServer.readUTF();
             System.out.println( response );
         }catch (IOException exception){}
+    }
+
+    public void displayDistricts(){
+        String request="district/getDistricts";
+
+        try{
+            sendRequest(request);
+            String response=fromServer.readUTF();
+            ArrayList<DistrictHandler> districts=mapper.readValue(response,new TypeReference<ArrayList<DistrictHandler>>(){});
+            Iterator<DistrictHandler> districtIterator=districts.iterator();
+
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>> All Districts <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ");
+            System.out.println("|------------|----------------------------------|-----------------------------------|");
+            System.out.println("|    No       |        District Token           |       |   District Name           |");
+            System.out.println("|------------|----------------------------------|-----------------------------------|");
+            while (districtIterator.hasNext()){
+                DistrictHandler handler=districtIterator.next();
+                String space="";
+                int idSpaceCount=12;
+                String idSpace="";
+                for(int j=0; j<idSpaceCount-2; j++){
+                    idSpace+=" ";
+                }
+                for(int i=0;i<18-handler.getDistrictToken().length(); i++){
+                    space+=" ";
+                }
+                System.out.println("| "+handler.getDistrictId()+idSpace+"|"+(handler.getDistrictToken().length() <= 18 ? handler.getDistrictToken()+space : handler.getDistrictToken().substring(0,18))
+                        +"                |"+handler.getDistrictName()+"   ");
+                System.out.println("|------------|----------------------------------|-----------------------------------|");
+            }
+
+        }catch (IOException ex){}
     }
 
     public void sendRequest(String request){

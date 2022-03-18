@@ -31,8 +31,10 @@ public class DistrictRepo {
 
     }
     public boolean save(District district){
-        return database.insert("INSERT INTO districts(districtToken,districtName,password) VALUES ('"+district.getDistrictToken()+"','"
-                +district.getDistrictName()+"','"+ district.getPassword()+"");
+        return database.insert("INSERT INTO districts(districtToken,districtName,password) VALUES ('"+district.getDistrictToken()+"','" +district.getDistrictName()+"','"+ district.getPassword()+"') ");
+    }
+    public ResultSet findAll(){
+        return database.select("SELECT * FROM districts");
     }
 
 }

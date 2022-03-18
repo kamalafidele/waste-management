@@ -6,6 +6,10 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DistrictController {
 
@@ -22,10 +26,19 @@ public class DistrictController {
         this.toClient = toClient;
 
         switch (request.split("/")[1]){
+            case "getDistricts":
+                getDistricts();
+                break;
+            case "addDistrict":
+
+                addDistrict(request.split("/")[2]);
+                break;
             case "login":
+
                 login(request.split("/")[2]);
                 break;
             default:
+                sendResponse("request not specified");
                 break;
         }
     }
@@ -53,8 +66,25 @@ public class DistrictController {
             else
                 sendResponse("Failed to add.Try again");
         }catch (Exception exception){
-            sendResponse("Failed to add.Try again");
+//            sendResponse("Failed to add.Try again");
+            exception.printStackTrace();
         }
+    }
+    public void getDistricts() {
+        List<District> districts= new ArrayList<>();
+        ResultSet resultSet=districtRepo.findAll();
+        try{
+            // THIS LOOP IS FOR INSERTING FETCHED COMPANIES TO THE LIST
+            while(resultSet.next()){
+                District district= new District(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3)
+                        ,resultSet.getString(4));
+                districts.add(district);
+            }
+
+            sendResponse(mapper.writeValueAsString(districts));
+            System.out.println(districts);
+
+        }catch( IOException | SQLException exception ){}
     }
 
     public void sendResponse(String response){
