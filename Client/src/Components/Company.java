@@ -126,7 +126,7 @@ public class Company {
         companyHandler.setPhone( keyboard.nextLine() );
         
         Random random = new Random();
-        long pin = random.nextLong( 500_000_000 );
+        long pin = random.nextLong(  );
         companyHandler.setPin( pin );
         companyHandler.setRole( 2 );
         companyHandler.setWalletId( 0 );
