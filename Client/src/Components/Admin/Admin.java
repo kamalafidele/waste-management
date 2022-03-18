@@ -3,6 +3,7 @@ package Components.Admin;
 
 import Components.District.DistrictDashboard;
 import Components.Wallet;
+import DataHandlers.Admin.AdminInfo;
 import DataHandlers.Admin.LoginInfo;
 import org.codehaus.jackson.map.ObjectMapper;
 import java.io.*;
@@ -11,6 +12,7 @@ import java.util.Scanner;
 
 public class Admin {
     LoginInfo loginInfos;
+    AdminInfo adminInfo;
     DataOutputStream toServer;
     DataInputStream fromServer;
     ObjectMapper mapper;
@@ -144,12 +146,26 @@ public class Admin {
         }
     }
 
-    public void createAdmin(){
-        System.out.println("--------Create another admin!----------");
-        System.out.println("name: ");
+    public void createAdmin() throws IOException {
+        //create adminInfo instance
+        adminInfo = new AdminInfo();
 
-        System.out.println("email: ");
-        System.out.println("Phone: ");
+        System.out.println("--------Create another admin!----------");
+        System.out.print("Name: ");
+        adminInfo.setName(keyboard.next());
+        System.out.print("Email: ");
+        adminInfo.setEmail(keyboard.next());
+        System.out.print("Phone: ");
+        adminInfo.setPhone(keyboard.next());
+        System.out.print("Location: ");
+        adminInfo.setLocation(keyboard.next());
+
+//        call create admin api
+//        toServer.flush();
+//        this.sendRequest("admin/createadmin/" + mapper.writeValueAsString(adminInfo));
+
+//        print the response
+//        System.out.println(fromServer.readUTF());
     }
 
     public  void createDistrict(){

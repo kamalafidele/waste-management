@@ -10,7 +10,7 @@ public class Admin {
     private String email;
     private String phone;
     private long pin;
-    private int role;
+    private int role = 1;
     private String location;
     private long password;
     private LocationRepo locationRepo;
@@ -22,13 +22,13 @@ public class Admin {
         this.setPassword(password);
     }
 
-    public Admin(String name, String email, String phone, String location) throws SQLException {
+    public Admin(String name, String email, String Phone, String Location) throws SQLException {
         this.setName(name);
         this.setEmail(email);
-        this.setPhone(phone);
+        this.setPhone(Phone);
         this.setPin();
         this.setRole();
-        this.setLocation(location);
+        this.setLocation(Location);
     }
 
     public String getName() {
@@ -79,7 +79,7 @@ public class Admin {
 
     public void setLocation(String location) throws SQLException {
         locationRepo = new LocationRepo();
-        int result  = locationRepo.location(location);
+        int result  = locationRepo.getLocationId(location);
 
         if(result == -1){
             return;

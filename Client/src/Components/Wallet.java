@@ -22,7 +22,7 @@ public class Wallet {
         try {
             outToServer.writeUTF(request);
             String response=fromServer.readUTF();
-            System.out.println(response);
+//            System.out.println(response);
             System.out.printf("Your wallet balance is: " + response +" Rwf");
         }
         catch (IOException e){

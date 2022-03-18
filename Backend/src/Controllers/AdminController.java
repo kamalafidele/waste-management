@@ -25,15 +25,9 @@ public class AdminController {
             case "login":
                 login(request.split("/")[2]);
                 break;
-
             case "createadmin":
                 createAdmin(request.split("/")[2]);
                 break;
-
-            case "districts":
-                showDistricts();
-                break;
-
             default:
                 break;
         }
@@ -70,10 +64,6 @@ public class AdminController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void showDistricts(){
-
     }
 
 
