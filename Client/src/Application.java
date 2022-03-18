@@ -9,6 +9,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.InputMismatchException;
+import java.util.Objects;
 import java.util.Scanner;
 
 import Components.Shifts;
@@ -65,8 +66,9 @@ public class Application {
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
-                    boolean login = new ServiceConfirmationProcess(toServer,fromServer).loginConfirmer();
-                    if(login) {
+                    ServiceConfirmationProcess loginProcess = new ServiceConfirmationProcess(toServer,fromServer);
+                    String loginRes = loginProcess.loginConfirmer();
+                    if(Objects.equals(loginRes, "true")){
 //                    new Shifts(toServer,fromServer).addShift();'
                         System.out.println("WHAT DO U WANNA DO");
                         System.out.println("1.CREATE SHIFT");
@@ -81,6 +83,7 @@ public class Application {
                     }else {
                         System.out.println("Invalid credentials");
                     }
+
                     break;
                 case 5:
                     System.out.println("You are a citizen!");
@@ -94,7 +97,6 @@ public class Application {
                          }catch (Exception e){
                         e.printStackTrace();
                     }
-
                     break;
                 
                 default:

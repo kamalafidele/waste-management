@@ -52,15 +52,14 @@ public class ThreadHandler extends Thread{
 //                    houseController.filterRequest(request,toClient);
 //                    break;
                 case "serviceconfirmation":
-                    shiftsController.filterRequest(request,toClient);
                     serviceConfirmationController.filterRequest(request,toClient);
+                    break;
                 case "company":
                     companyController.filterRequest(request,toClient);
                   break;
                 case "citizen":
                     houseController.filterRequest(request,toClient);
                     break;
-
                 case "payment":
                     System.out.println("HIT THE ENDPOINT");
                     paymentController.filterRequest(request,toClient);

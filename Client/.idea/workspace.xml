@@ -5,26 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c0a7eec-7ea6-4b28-b3c9-6eefe622eff8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmationProcess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataHandlers/ConfirmerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ServiceConfirmationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ServiceConfirmationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ShiftsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ShiftsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/ServiceConfirmation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/ServiceConfirmation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Shifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Shifts.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ServiceConfirmationRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ServiceConfirmationRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ShiftsRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ShiftsRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/CompanyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/ServiceConfirmationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/ServiceConfirmationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/ServiceConfirmationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/ServiceConfirmationRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/ShiftsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/ShiftsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/House/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ServiceConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ServiceConfirmationProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmationProcess.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +34,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="26QLmdrvvJKosqHOIBhSGV4peTK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

@@ -36,15 +36,20 @@ public class ServiceConfirmationController {
         this.toClient = toClient;
         switch (request.split("/")[1]) {
             case "login":
-
+             login(request.split("/")[2]);
+             break;
             case "addConfirmedService":
                 addConfirmedService(request.split("/")[2]);
+                break;
             case "getConfirmedServices":
                 getConfirmedServices();
+                break;
             case "getConfirmedService":
                 getConfirmedService(Integer.valueOf(request.split("/")[2]));
+                break;
             default:
-                sendResponse("Specify your request");
+                sendResponse("Specify your request__");
+                break;
         }
     }
         public void getConfirmedService(int confirmedId){
@@ -76,18 +81,21 @@ public class ServiceConfirmationController {
             e.getMessage();
         }
     }
-    public boolean login(String data){
+    public void login(String data){
         try{
             Admin confirmer = mapper.readValue(data,Admin.class);
+            System.out.println("method login called");
              if(serviceConfirmationRepo.login(confirmer)) {
-//                 return true;
+//
+                 System.out.println("serviceConfirmationRepo seen");
                  sendResponse("true");
+             }else {
+                 sendResponse("false");
              }
 
         }catch (Exception e){
             e.getMessage();
         }
-        sendResponse("false");
     }
 
     public void addConfirmedService(String data){

@@ -43,7 +43,6 @@ public class AdminController {
                 }else{
                     sendResponse("false");
                 }
-
             } catch (IOException e) {
                 e.printStackTrace();
         }
