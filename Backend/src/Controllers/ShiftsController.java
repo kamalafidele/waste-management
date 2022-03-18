@@ -31,7 +31,7 @@ public class ShiftsController {
             case "getShift":
                 getShift(Integer.valueOf(request.split("/")[2]));
             default:
-                sendResponse("Specify your request");
+                sendResponse("Specify your request...............");
         }
     }
     public void addShift(String data){

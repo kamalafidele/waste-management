@@ -1,7 +1,9 @@
 package Controllers;
 
+import Models.Admin;
 import Models.ServiceConfirmation;
 import Models.Shifts;
+import Repositories.AdminRepo;
 import Repositories.ServiceConfirmationRepo;
 import Repositories.ShiftsRepo;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -33,14 +35,21 @@ public class ServiceConfirmationController {
     public void filterRequest(String request,DataOutputStream toClient) throws Exception {
         this.toClient = toClient;
         switch (request.split("/")[1]) {
+            case "login":
+             login(request.split("/")[2]);
+             break;
             case "addConfirmedService":
                 addConfirmedService(request.split("/")[2]);
+                break;
             case "getConfirmedServices":
                 getConfirmedServices();
+                break;
             case "getConfirmedService":
                 getConfirmedService(Integer.valueOf(request.split("/")[2]));
+                break;
             default:
-                sendResponse("Specify your request");
+                sendResponse("Specify your request__");
+                break;
         }
     }
         public void getConfirmedService(int confirmedId){
@@ -69,6 +78,22 @@ public class ServiceConfirmationController {
             }
             sendResponse(mapper.writeValueAsString(confirmedList));
         }catch (IOException | SQLException e){
+            e.getMessage();
+        }
+    }
+    public void login(String data){
+        try{
+            Admin confirmer = mapper.readValue(data,Admin.class);
+            System.out.println("method login called");
+             if(serviceConfirmationRepo.login(confirmer)) {
+//
+                 System.out.println("serviceConfirmationRepo seen");
+                 sendResponse("true");
+             }else {
+                 sendResponse("false");
+             }
+
+        }catch (Exception e){
             e.getMessage();
         }
     }
