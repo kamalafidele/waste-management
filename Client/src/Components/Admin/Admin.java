@@ -16,7 +16,6 @@ public class Admin {
     ObjectMapper mapper;
     Scanner keyboard;
     FileWriter writer;
-    FileReader reader;
     File file;
 
     public Admin(){
@@ -148,6 +147,7 @@ public class Admin {
     public void createAdmin(){
         System.out.println("--------Create another admin!----------");
         System.out.println("name: ");
+
         System.out.println("email: ");
         System.out.println("Phone: ");
     }

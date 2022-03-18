@@ -16,6 +16,7 @@ public class ThreadHandler extends Thread{
     private final DebtController debtController;
     private final ShiftsController shiftsController;
     private final ServiceConfirmationController serviceConfirmationController;
+    private final DistrictController districtController;
     
     public ThreadHandler(Socket socket){
         this.socket=socket;
@@ -28,6 +29,7 @@ public class ThreadHandler extends Thread{
         debtController=new DebtController();
         shiftsController= new ShiftsController();
         serviceConfirmationController= new ServiceConfirmationController();
+        districtController = new DistrictController();
     }
 
 
@@ -51,6 +53,9 @@ public class ThreadHandler extends Thread{
                         shiftsController.filterRequest(request,toClient);
                     case "company":
                         companyController.filterRequest(request,toClient);
+                        break;
+                    case "district":
+                        districtController.handleRequest(request, toClient);
                         break;
                     case "citizen":
                         houseController.filterRequest(request,toClient);
