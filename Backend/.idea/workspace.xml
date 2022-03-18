@@ -6,19 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="40098456-60c6-4aeb-8896-539afe23d8d7" name="Changes" comment="customerInvoice control">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/LocationRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/LocationRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/LocationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/LocationRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/loggedIn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/loggedIn.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Admin/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Wallet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Wallet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/Admin/AdminInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/Admin/AdminInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
