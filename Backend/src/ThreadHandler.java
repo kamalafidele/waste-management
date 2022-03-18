@@ -15,6 +15,8 @@ public class ThreadHandler extends Thread{
     private final AdminController adminController;
     private final DebtController debtController;
     private final ShiftsController shiftsController;
+    private final ServiceConfirmationController serviceConfirmationController;
+    
     public ThreadHandler(Socket socket){
         this.socket=socket;
         companyController=new CompanyController();
@@ -25,62 +27,53 @@ public class ThreadHandler extends Thread{
         adminController = new AdminController();
         debtController=new DebtController();
         shiftsController= new ShiftsController();
+        serviceConfirmationController= new ServiceConfirmationController();
     }
 
 
     @Override
     public void run(){
-        try{
-            CompanyController company = new CompanyController();
-            System.out.println("Client connected");
+        while (true){
+            try{
 
-            DataInputStream fromClient=new DataInputStream(socket.getInputStream());
-            DataOutputStream toClient=new DataOutputStream(socket.getOutputStream());
+                System.out.println("Client connected");
 
-            //READING REQUESTS FROM THE CLIENT
-            String request=fromClient.readUTF();
-            switch (request.split("/")[0]){
-                case "admin":
-                    adminController.handleRequest(request, toClient);
-                    break;
-//                case "company":
-//                    companyController.filterRequest(request,toClient);
-//                  break;
-//                case "citizen":
-//                    houseController.filterRequest(request,toClient);
-//                    break;
-                case "serviceconfirmation":
-                    shiftsController.filterRequest(request,toClient);
-                case "company":
-                    companyController.filterRequest(request,toClient);
-                  break;
-                case "citizen":
-                    houseController.filterRequest(request,toClient);
-                    break;
-                case "payment":
-                    paymentController.filterRequest(request,toClient);
-                    break;
-                case "wallet":
-                    // a call to wallet controller
-                    /*
-                    * wallets endpoint
-                    * /wallet/(admin|company|district|user)/id
-                    * */
-                    walletController.whichWallet(request, toClient);
-                    break;
-                case "notification":
-                    notificationController.filterRequest(request,toClient);
-                case "debt":
-                    debtController.filterRequest(request,toClient);
-                default:
-                    System.out.println(request.split("/")[0]);
-                    toClient.writeUTF("Undefined request");
-                  break;
+                DataInputStream fromClient=new DataInputStream(socket.getInputStream());
+                DataOutputStream toClient=new DataOutputStream(socket.getOutputStream());
+
+                //READING REQUESTS FROM THE CLIENT
+                String request=fromClient.readUTF();
+                switch (request.split("/")[0]){
+                    case "admin":
+                        adminController.handleRequest(request, toClient);
+                        break;
+                    case "serviceconfirmation":
+                        shiftsController.filterRequest(request,toClient);
+                    case "company":
+                        companyController.filterRequest(request,toClient);
+                        break;
+                    case "citizen":
+                        houseController.filterRequest(request,toClient);
+                        break;
+                    case "payment":
+                        paymentController.filterRequest(request,toClient);
+                        break;
+                    case "wallet":
+                        walletController.whichWallet(request, toClient);
+                        break;
+                    case "notification":
+                        notificationController.filterRequest(request,toClient);
+                    case "debt":
+                        debtController.filterRequest(request,toClient);
+                    default:
+                        toClient.writeUTF("Undefined request");
+                        break;
+                }
+            } catch (Exception e) {
+                 break;
             }
-            socket.close();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+
     }
 
 }
