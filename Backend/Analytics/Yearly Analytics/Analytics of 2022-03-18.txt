@@ -1,10 +1,10 @@
 
-========WEEKLY ANALYTICS========
+========YEARLY ANALYTICS========
 
 Company name: Gasabo
 Number of service provided by us:  1
 Total amount of money so far : 20000
 Percentage at which service is provided: 80%
 
-Done on: 2022/03/16 11:45:07
+Done on: 2022/03/18 08:48:01
 ========== END ==========

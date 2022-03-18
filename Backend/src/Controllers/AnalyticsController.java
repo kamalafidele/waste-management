@@ -114,7 +114,7 @@ public class AnalyticsController {
 
     public void downloadAnalytics(String sender, Integer senderId, String period) throws IOException {
         String analytics = getAnalytics(sender, senderId, period);
-        saveIntoFIle(analytics);
+        saveIntoFIle(analytics, period);
         sendResponse("Downloaded Successfully.");
     }
     public void sendResponse( String response ) {
@@ -124,11 +124,19 @@ public class AnalyticsController {
             exception.printStackTrace();
         }
     }
-    public static void saveIntoFIle(String content){
+    public static void saveIntoFIle(String content, String period){
 //        The logic to save a .txt file containing analytics
         try{
-            writeToFile(content, "C:/Users/Admin/Desktop/modules/Year2/JAVA course/Class project/waste-management/Backend/Analytics/Analytics of "+java.time.LocalDate.now()+".txt");
-
+            if(period.equals("week")) {
+                writeToFile(content, "C:/Users/Admin/Desktop/modules/Year2/JAVA course/Class project/waste-management/Backend/Analytics/Weekly Analytics/Analytics of " + java.time.LocalDate.now() + ".txt");
+            }else if(period.equals("month")) {
+                writeToFile(content, "C:/Users/Admin/Desktop/modules/Year2/JAVA course/Class project/waste-management/Backend/Analytics/Monthly Analytics/Analytics of " + java.time.LocalDate.now() + ".txt");
+            }else if(period.equals("year")){
+                writeToFile(content, "C:/Users/Admin/Desktop/modules/Year2/JAVA course/Class project/waste-management/Backend/Analytics/Yearly Analytics/Analytics of " + java.time.LocalDate.now() + ".txt");
+            }else{
+                System.out.println("Invalid period");
+                return ;
+            }
         }catch (Exception e){
             e.printStackTrace();
         }

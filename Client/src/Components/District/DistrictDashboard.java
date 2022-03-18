@@ -183,6 +183,7 @@ public class DistrictDashboard {
                     break;
                 case 5:
                     new Analytics(toServer, fromServer, keyboard).downloadAnalytics();
+                    break;
                 default:
                     System.out.println("Please be serious!");
             }

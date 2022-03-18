@@ -24,16 +24,16 @@ public class Analytics {
         choice = keyboard.nextInt();
         switch (choice){
             case 1:
-                toServer.writeUTF("company/analytics/getWeekly/2");
+                toServer.writeUTF("district/analytics/getWeekly/2");
                 String response = fromServer.readUTF();
                 System.out.println(response);
                 break;
             case 2:
-                toServer.writeUTF("company/analytics/getMonthly/2");
+                toServer.writeUTF("district/analytics/getMonthly/2");
                 System.out.println(fromServer.readUTF());
                 break;
             case 3:
-                toServer.writeUTF("company/analytics/getAnnual/2");
+                toServer.writeUTF("district/analytics/getAnnual/2");
                 System.out.println(fromServer.readUTF());
                 break;
             default:
