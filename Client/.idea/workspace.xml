@@ -6,8 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/DebtController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/DebtController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/DebtRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/DebtRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/DebtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/DebtController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/NotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/DebtRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/DebtRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/NotificationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/NotificationRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Debt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Debt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Debt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Debt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Notification.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +72,7 @@
       <workItem from="1647375011517" duration="2490000" />
       <workItem from="1647416266168" duration="1498000" />
       <workItem from="1647579799981" duration="1457000" />
-      <workItem from="1647581908059" duration="2814000" />
+      <workItem from="1647581908059" duration="7396000" />
     </task>
     <servers />
   </component>

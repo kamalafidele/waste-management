@@ -22,8 +22,8 @@ public class NotificationRepo{
     }
 
     public void save(Notification notification){
-        database.insert("INSERT INTO notifications(Title, Content, Receiver, Type, sentDate) VALUES("
-                + notification.getTitle() + "," + notification.getContent() + "," + notification.getReceiver()
-                + "," + notification.getType() + "," + notification.getSentDate() + ")");
+        database.insert("INSERT INTO notifications(Title, Content, Receiver, Type, sentDate) VALUES(\""
+                + notification.getTitle() + "\",\"" + notification.getContent() + "\"," + notification.getReceiver()
+                + "," + notification.getType() + ",\"" + notification.getSentDate() + "\")");
     }
 }
