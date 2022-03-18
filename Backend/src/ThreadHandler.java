@@ -1,9 +1,4 @@
-import Controllers.AdminController;
-import Controllers.CompanyController;
-import Controllers.NotificationController;
-import Controllers.HouseController;
-import Controllers.PaymentController;
-import Controllers.WalletContoller;
+import Controllers.*;
 
 import java.io.*;
 import java.net.Socket;
@@ -19,6 +14,7 @@ public class ThreadHandler extends Thread{
     private final WalletContoller walletContoller;
     private final PaymentController paymentController;
     private final AdminController adminController;
+    private final ConfirmerController confirmerController;
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
@@ -28,6 +24,7 @@ public class ThreadHandler extends Thread{
         paymentController=new PaymentController();
         walletContoller = new WalletContoller();
         adminController = new AdminController();
+        confirmerController = new ConfirmerController();
     }
 
 
@@ -52,6 +49,8 @@ public class ThreadHandler extends Thread{
                 case "citizen":
                     houseController.filterRequest(request,toClient);
                     break;
+                case "confirmer":
+                    confirmerController.filterRequest(request, toClient)git;
                 case "payment":
                     paymentController.filterRequest(request,toClient);
                     break;

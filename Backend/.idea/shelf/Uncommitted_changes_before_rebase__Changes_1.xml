@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_rebase_[Changes]1" date="1647584927457" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Backend/ThreadHandler.class" />
+    <option name="AFTER_PATH" value="out/production/Backend/ThreadHandler.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/ThreadHandler.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../Client/out/production/Client/Application.class" />
+    <option name="AFTER_PATH" value="../Client/out/production/Client/Application.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/Application.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../Client/out/production/Client/Components/Confirmer.class" />
+    <option name="AFTER_PATH" value="../Client/out/production/Client/Components/Confirmer.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/Confirmer.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Backend/Config/DatabaseConnection.class" />
+    <option name="AFTER_PATH" value="out/production/Backend/Config/DatabaseConnection.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/DatabaseConnection.class" />
+  </binary>
+</changelist>

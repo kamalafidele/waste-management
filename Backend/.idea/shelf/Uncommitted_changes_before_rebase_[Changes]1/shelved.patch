@@ -1,0 +1,547 @@
+Index: src/ThreadHandler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Controllers.*;\r\nimport java.io.*;\r\nimport java.net.Socket;\r\n\r\npublic class ThreadHandler extends Thread{\r\n    Socket socket;\r\n\r\n    //REGISTERING ALL CONTROLLERS\r\n\r\n    private final CompanyController companyController;\r\n    private final NotificationController notificationController;\r\n    private final HouseController houseController;\r\n    private final WalletController walletController;\r\n    private final PaymentController paymentController;\r\n    private final AdminController adminController;\r\n    private final DebtController debtController;\r\n    public ThreadHandler(Socket socket){\r\n        this.socket=socket;\r\n        companyController=new CompanyController();\r\n        notificationController = new NotificationController();\r\n        houseController=new HouseController();\r\n        paymentController=new PaymentController();\r\n        walletController = new WalletController();\r\n        adminController = new AdminController();\r\n        debtController=new DebtController();\r\n    }\r\n\r\n\r\n    @Override\r\n    public void run(){\r\n        try{\r\n            System.out.println(\"Client connected\");\r\n\r\n            DataInputStream fromClient=new DataInputStream(socket.getInputStream());\r\n            DataOutputStream toClient=new DataOutputStream(socket.getOutputStream());\r\n\r\n            //READING REQUESTS FROM THE CLIENT\r\n            String request = fromClient.readUTF();\r\n            switch (request.split(\"/\")[0]){\r\n                case \"admin\":\r\n                    adminController.handleRequest(request, toClient);\r\n                    break;\r\n                case \"company\":\r\n                    companyController.filterRequest(request,toClient);\r\n                  break;\r\n                case \"citizen\":\r\n                    houseController.filterRequest(request,toClient);\r\n                    break;\r\n                case \"payment\":\r\n                    paymentController.filterRequest(request,toClient);\r\n                    break;\r\n                case \"wallet\":\r\n                    // a call to wallet controller\r\n                    /*\r\n                    * wallets endpoint\r\n                    * /wallet/(admin|company|district|user)/id\r\n                    * */\r\n                    walletController.whichWallet(request, toClient);\r\n                    break;\r\n                case \"notification\":\r\n                    notificationController.filterRequest(request,toClient);\r\n                case \"debt\":\r\n                    debtController.filterRequest(request,toClient);\r\n                default:\r\n                    System.out.println(request.split(\"/\")[0]);\r\n                    toClient.writeUTF(\"Undefined request\");\r\n                  break;\r\n            }\r\n            socket.close();\r\n        } catch (Exception e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ThreadHandler.java b/src/ThreadHandler.java
+--- a/src/ThreadHandler.java	
++++ b/src/ThreadHandler.java	
+@@ -14,6 +14,7 @@
+     private final PaymentController paymentController;
+     private final AdminController adminController;
+     private final DebtController debtController;
++    private  final ConfirmerController confirmerController;
+     public ThreadHandler(Socket socket){
+         this.socket=socket;
+         companyController=new CompanyController();
+@@ -23,6 +24,7 @@
+         walletController = new WalletController();
+         adminController = new AdminController();
+         debtController=new DebtController();
++        confirmerController = new ConfirmerController();
+     }
+ 
+ 
+@@ -45,6 +47,9 @@
+                   break;
+                 case "citizen":
+                     houseController.filterRequest(request,toClient);
++                    break;
++                case "confirmer":
++                    confirmerController.filterRequest(request, toClient);
+                     break;
+                 case "payment":
+                     paymentController.filterRequest(request,toClient);
+Index: src/Config/DatabaseConnection.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Config;\r\n\r\nimport java.sql.*;\r\n\r\npublic class DatabaseConnection {\r\n    String driver=\"com.mysql.jdbc.Driver\";\r\n    String url=\"jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1\";\r\n    String username=\"root\";\r\n    String password=\"\";\r\n    Connection connection=null;\r\n    Statement statement=null;\r\n    ResultSet data=null;\r\n\r\n    public DatabaseConnection(){\r\n        try{\r\n          Class.forName(driver);\r\n          connection= DriverManager.getConnection(url,username,password);\r\n\r\n          if(connection != null)\r\n              statement=connection.createStatement();\r\n\r\n        }catch(Exception exception){\r\n            System.out.println(\"CONNECTION TO DATABASE FAILED\");\r\n            exception.printStackTrace();\r\n        }\r\n    }\r\n\r\n    public boolean createTable( String createStatement ) {\r\n        try{\r\n            statement.execute(createStatement);\r\n            return true;\r\n        }catch(SQLException exception){\r\n            return false;\r\n        }\r\n    }\r\n\r\n    public boolean insert( String insertStatement ) {\r\n        try{\r\n            statement.execute( insertStatement );\r\n            return true;\r\n        }catch(SQLException exception){\r\n            exception.printStackTrace();\r\n            return false;\r\n        }\r\n    }\r\n\r\n    public ResultSet select( String selectStatement ) {\r\n       try{\r\n           data=statement.executeQuery( selectStatement );\r\n           return data;\r\n       }catch (SQLException exception){\r\n            return data;\r\n       }\r\n    }\r\n\r\n    public boolean update( String updateStatement ) {\r\n        try{\r\n            statement.execute( updateStatement );\r\n            return true;\r\n        }catch (SQLException exception){\r\n            return false;\r\n        }\r\n    }\r\n\r\n   public boolean delete( String deleteStatement){\r\n       try{\r\n         statement.execute( deleteStatement );\r\n         return true; \r\n       }catch ( SQLException exception){\r\n           return false;\r\n       }\r\n   }\r\n\r\n    public ResultSet getById( String updateStatement ) {\r\n        try{\r\n            data = statement.executeQuery( updateStatement );\r\n            return data;\r\n        }catch (SQLException exception){\r\n            return data;\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Config/DatabaseConnection.java b/src/Config/DatabaseConnection.java
+--- a/src/Config/DatabaseConnection.java	
++++ b/src/Config/DatabaseConnection.java	
+@@ -4,9 +4,9 @@
+ 
+ public class DatabaseConnection {
+     String driver="com.mysql.jdbc.Driver";
+-    String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1";
++    String url="jdbc:mysql://localhost:3306/waste_ms?characterEncoding=latin1";
+     String username="root";
+-    String password="";
++    String password="pikama23";
+     Connection connection=null;
+     Statement statement=null;
+     ResultSet data=null;
+Index: .idea/runConfigurations.xml
+===================================================================
+diff --git a/.idea/runConfigurations.xml b/.idea/runConfigurations.xml
+deleted file mode 100644
+--- a/.idea/runConfigurations.xml	
++++ /dev/null	
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="RunConfigurationProducerService">
+-    <option name="ignoredProducers">
+-      <set>
+-        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
+-      </set>
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: ../Client/.idea/runConfigurations.xml
+===================================================================
+diff --git a/../Client/.idea/runConfigurations.xml b/../Client/.idea/runConfigurations.xml
+deleted file mode 100644
+--- a/../Client/.idea/runConfigurations.xml	
++++ /dev/null	
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="RunConfigurationProducerService">
+-    <option name="ignoredProducers">
+-      <set>
+-        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
+-      </set>
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: ../Client/src/Components/Confirmer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Components;\r\n\r\nimport java.util.Scanner;\r\npublic class Confirmer {\r\n     private String date;\r\n     private String village;\r\n     private String companyName;\r\n     private String houseCode;\r\n    Scanner scanner =new Scanner(System.in);\r\n\r\n    public boolean login(){\r\n        //Getting login information\r\n        System.out.print(\"\\n\");\r\n        System.out.println(\"--------Confirmer login----------\");\r\n        System.out.print(\"Username: \");\r\n        String username = scanner.next();\r\n        System.out.print(\"Password: \");\r\n        String password = scanner.next();\r\n\r\n        //calling login api\r\n        return true;\r\n    }\r\n\r\n    public void confirmerUI(){\r\n        System.out.println(\"\\t\\t\\t --------------------------------------------\");\r\n        System.out.println(\"\\t\\t\\t+           Confirm Garbage Collection          + \");\r\n        System.out.println(\"\\t\\t\\t --------------------------------------------\");\r\n        System.out.println(\"\\t\\t\\t---------------------------------------------\");\r\n\r\n        System.out.println(\"Enter Date of garbage collection\");\r\n        date =scanner.nextLine();\r\n        System.out.println(\"Enter Area of collection\");\r\n        village =scanner.nextLine();\r\n        System.out.println(\"Enter House code\");\r\n        houseCode =scanner.nextLine();\r\n        System.out.println(\"Enter Company working in \" + village + \" village\");\r\n        companyName =scanner.nextLine();\r\n\r\n    /* Send data For validation and return response*/\r\n        System.out.println(\"Confirmed that garbage from \" + houseCode + \" has been successfully collected\");\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../Client/src/Components/Confirmer.java b/../Client/src/Components/Confirmer.java
+--- a/../Client/src/Components/Confirmer.java	
++++ b/../Client/src/Components/Confirmer.java	
+@@ -1,43 +1,50 @@
+ package Components;
++import DataHandlers.ConfirmerHandler;
++import org.codehaus.jackson.map.ObjectMapper;
+ 
++import java.io.DataInputStream;
++import java.io.DataOutputStream;
++import java.io.IOException;
+ import java.util.Scanner;
+ public class Confirmer {
+-     private String date;
+-     private String village;
+-     private String companyName;
+-     private String houseCode;
+-    Scanner scanner =new Scanner(System.in);
++    DataOutputStream toServer;
++    DataInputStream fromServer;
++    Scanner keyboard;
++    ObjectMapper mapper;
++    public Confirmer(DataOutputStream toServer, DataInputStream fromServer) {
++        this.toServer=toServer;
++        this.fromServer=fromServer;
++        keyboard=new Scanner(System.in);
++        mapper=new ObjectMapper();
++    }
+ 
+-    public boolean login(){
+-        //Getting login information
+-        System.out.print("\n");
+-        System.out.println("--------Confirmer login----------");
+-        System.out.print("Username: ");
+-        String username = scanner.next();
+-        System.out.print("Password: ");
+-        String password = scanner.next();
++    public void addConfirmer() {
+ 
+-        //calling login api
+-        return true;
++        var confirmerHandler=new ConfirmerHandler();
++        System.out.println( "######## ADDING NEW CONFIRMER #########" );
++        System.out.print( "Enter  username: " );
++        confirmerHandler.setuserName( keyboard.nextLine() );
++        System.out.print( "Enter confirmer email: " );
++        confirmerHandler.setEmail( keyboard.nextLine() );
++        System.out.print( "Enter confirmer phone: " );
++        confirmerHandler.setPhone( keyboard.nextLine() );
++        System.out.print( "Enter password: " );
++        confirmerHandler.setPassword(Integer.parseInt(keyboard.nextLine()));
++        confirmerHandler.setRole( 5 );
++
++        try{
++            String confirmerAsJson=mapper.writeValueAsString( confirmerHandler );
++            sendRequest( "confirmer/addConfirmer/" + confirmerAsJson );
++            String response= fromServer.readUTF();
++            System.out.println( response );
++        }catch (IOException exception){}
+     }
+ 
+-    public void confirmerUI(){
+-        System.out.println("\t\t\t --------------------------------------------");
+-        System.out.println("\t\t\t+           Confirm Garbage Collection          + ");
+-        System.out.println("\t\t\t --------------------------------------------");
+-        System.out.println("\t\t\t---------------------------------------------");
++    public void sendRequest( String request ){
++        try{
++            toServer.writeUTF( request );
++        }catch ( IOException exception ){}
++    }
+ 
+-        System.out.println("Enter Date of garbage collection");
+-        date =scanner.nextLine();
+-        System.out.println("Enter Area of collection");
+-        village =scanner.nextLine();
+-        System.out.println("Enter House code");
+-        houseCode =scanner.nextLine();
+-        System.out.println("Enter Company working in " + village + " village");
+-        companyName =scanner.nextLine();
+-
+-    /* Send data For validation and return response*/
+-        System.out.println("Confirmed that garbage from " + houseCode + " has been successfully collected");
+-    }
+ 
+ }
+Index: src/Controllers/ConfirmerController.java
+===================================================================
+diff --git a/src/Controllers/ConfirmerController.java b/src/Controllers/ConfirmerController.java
+new file mode 100644
+--- /dev/null	
++++ b/src/Controllers/ConfirmerController.java	
+@@ -0,0 +1,52 @@
++package Controllers;
++
++import Models.Confirmer;
++import Repositories.ConfirmerRepo;
++import org.codehaus.jackson.map.ObjectMapper;
++
++import java.io.DataOutputStream;
++import java.io.IOException;
++
++public class ConfirmerController {
++    private ConfirmerRepo confimerRepo;
++    private DataOutputStream toClient;
++    private ObjectMapper mapper;
++    AnalyticsController analyticsController;
++
++    public ConfirmerController(){
++         confimerRepo = new ConfirmerRepo();
++        analyticsController=new AnalyticsController();
++        mapper=new ObjectMapper();
++    }
++    public void filterRequest( String request, DataOutputStream toClient ) throws Exception {
++        this.toClient=toClient;
++//        System.out.println("REQUEST RECEIVED: "+request.split("/")[1]);
++    if (request.split("/")[1].equals("addConfirmer")){
++        addConfirmer(request.split("/")[2]);
++    }
++    else{
++        System.out.println("You thought u had no errors..... sikeeeeee!!!");
++    }
++    }
++
++    public void addConfirmer(String data) {
++        try{
++            Confirmer confirmer=mapper.readValue(data,Confirmer.class);
++
++
++            if(confimerRepo.save(confirmer))
++                sendResponse("Confirmer added successfully");
++            else
++                sendResponse("Adding confirmer failed! Try again");
++        }catch (Exception exception){
++            sendResponse("Adding confirmer failed! Try again");
++        }
++    }
++    public void sendResponse( String response ) {
++        try {
++            toClient.writeUTF(response);
++        } catch ( IOException exception ) {
++            exception.printStackTrace();
++        }
++    }
++}
+Index: src/Models/Confirmer.java
+===================================================================
+diff --git a/src/Models/Confirmer.java b/src/Models/Confirmer.java
+new file mode 100644
+--- /dev/null	
++++ b/src/Models/Confirmer.java	
+@@ -0,0 +1,69 @@
++package Models;
++
++public class Confirmer {
++    private int id;
++    private String username;
++    private int password;
++    private  String email;
++    private String phone;
++    private int role;
++
++    public Confirmer(){}
++
++    public Confirmer(int id, String username, String email,String phone,int password,int role){
++        this.id = id;
++        this.username = username;
++        this.email = email;
++        this.phone = phone;
++        this.password = password;
++        this.role = role;
++    }
++    public int getId() {
++        return id;
++    }
++
++    public void setId(int id) {
++        this.id = id;
++    }
++
++    public String getuserName() {
++        return username;
++    }
++
++    public void setuserName(String username) {
++        this.username = username;
++    }
++
++    public String getEmail() {
++        return email;
++    }
++
++    public void setEmail(String email) {
++        this.email = email;
++    }
++
++    public void setPhone(String phone ){
++        this.phone = phone;
++    }
++
++    public String getPhone(){
++        return phone;
++    }
++
++    public int getPassword() {
++        return password;
++    }
++
++    public void setPassword(int password) {
++        this.password = password;
++    }
++    public void setRole(int role){
++        this.role = role;
++    }
++
++    public int getRole(){
++        return role;
++    }
++
++
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"40098456-60c6-4aeb-8896-539afe23d8d7\" name=\"Changes\" comment=\"customerInvoice control\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/runConfigurations.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Config/DatabaseConnection.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Config/DatabaseConnection.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../Client/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Client/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../Client/out/production/Client/Application.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Client/out/production/Client/Application.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/HouseHandler.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/HouseHandler.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../Client/src/Application.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Client/src/Application.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../Client/src/Components/House/House.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Client/src/Components/House/House.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../Client/src/DataHandlers/HouseHandler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../Client/src/DataHandlers/HouseHandler.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$/..\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/Controllers/CompanyController.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/Models/Company.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/.idea/workspace.xml\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/Config/DatabaseConnection.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/ThreadHandler.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/Application.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"25uXN9a48AQM8TyQ4EBo6dq9T1w\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"autoscrollToSource\" value=\"true\" />\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"Downloaded.Files.Path.Enabled\" value=\"false\" />\r\n    <property name=\"Git.Branch.Popup.ShowAllRemotes\" value=\"true\" />\r\n    <property name=\"Repository.Attach.Annotations\" value=\"false\" />\r\n    <property name=\"Repository.Attach.JavaDocs\" value=\"false\" />\r\n    <property name=\"Repository.Attach.Sources\" value=\"false\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../Client\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"terminal\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"utils\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Application\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"17\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Application\" />\r\n      <module name=\"Backend\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Application\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"40098456-60c6-4aeb-8896-539afe23d8d7\" name=\"Changes\" comment=\"customerInvoice control\" />\r\n      <created>1645610933770</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1645610933770</updated>\r\n      <workItem from=\"1645610935190\" duration=\"91000\" />\r\n      <workItem from=\"1645611371030\" duration=\"2694000\" />\r\n      <workItem from=\"1645726841446\" duration=\"3897000\" />\r\n      <workItem from=\"1645766722446\" duration=\"6731000\" />\r\n      <workItem from=\"1645781584980\" duration=\"4331000\" />\r\n      <workItem from=\"1645867779701\" duration=\"2470000\" />\r\n      <workItem from=\"1645966774971\" duration=\"5946000\" />\r\n      <workItem from=\"1645980965451\" duration=\"1942000\" />\r\n      <workItem from=\"1645984569166\" duration=\"938000\" />\r\n      <workItem from=\"1646026916494\" duration=\"2768000\" />\r\n      <workItem from=\"1646029922023\" duration=\"1686000\" />\r\n      <workItem from=\"1646076763456\" duration=\"2408000\" />\r\n      <workItem from=\"1645766722446\" duration=\"6605000\" />\r\n      <workItem from=\"1646066282995\" duration=\"4976000\" />\r\n      <workItem from=\"1646204891625\" duration=\"45000\" />\r\n      <workItem from=\"1646207126183\" duration=\"76000\" />\r\n      <workItem from=\"1647349194238\" duration=\"1205000\" />\r\n      <workItem from=\"1647350582335\" duration=\"608000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"customerInvoice control\">\r\n      <created>1646022290178</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1646022290178</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,18 +5,25 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="40098456-60c6-4aeb-8896-539afe23d8d7" name="Changes" comment="customerInvoice control">
++      <change afterPath="$PROJECT_DIR$/src/Controllers/ConfirmerController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/Models/Confirmer.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/Repositories/ConfirmerRepo.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/ConfirmerHandler.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Backend/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Application.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThreadHandler.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Client/.idea/runConfigurations.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/HouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/HouseHandler.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Confirmer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Confirmer.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/../Client/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Application.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/House/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/House/House.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/HouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/HouseHandler.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Confirmer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Confirmer.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -40,12 +47,12 @@
+   </component>
+   <component name="HighlightingSettingsPerFile">
+     <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+Index: src/Application.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.io.IOException;\r\nimport java.net.BindException;\r\nimport java.net.ServerSocket;\r\n\r\npublic class Application {\r\n    public static void main(String[] args){\r\n    // THIS THE ENTRY FOR OUR SERVER APPLICATION\r\n        try{\r\n            ServerSocket serverSocket=new ServerSocket(3000);\r\n            System.out.println(\"########## SERVER RUNNING ON PORT 2500 ##############\");\r\n\r\n             while(3>2){\r\n                 var socket=serverSocket.accept();\r\n                 ThreadHandler threadHandler=new ThreadHandler(socket);\r\n\r\n                 // THIS IS TO CREATE A THREAD FOR EACH NEW CONNECTION TO OUR SERVER\r\n                 threadHandler.start();\r\n             }\r\n\r\n        }catch(IOException exception){\r\n            //exception.printStackTrace();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Application.java b/src/Application.java
+--- a/src/Application.java	
++++ b/src/Application.java	
+@@ -7,7 +7,7 @@
+     // THIS THE ENTRY FOR OUR SERVER APPLICATION
+         try{
+             ServerSocket serverSocket=new ServerSocket(3000);
+-            System.out.println("########## SERVER RUNNING ON PORT 2500 ##############");
++            System.out.println("########## SERVER RUNNING ON PORT 3000 ##############");
+ 
+              while(3>2){
+                  var socket=serverSocket.accept();
+Index: ../Client/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"openjdk-17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../Client/.idea/misc.xml b/../Client/.idea/misc.xml
+--- a/../Client/.idea/misc.xml	
++++ b/../Client/.idea/misc.xml	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: ../Client/src/Application.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nimport Components.Admin.Admin;\r\nimport Components.Company;\r\nimport Components.House.House;\r\nimport Components.Wallet;\r\n\r\nimport java.io.DataInputStream;\r\nimport java.io.DataOutputStream;\r\nimport java.io.IOException;\r\nimport java.net.Socket;\r\nimport java.util.InputMismatchException;\r\nimport java.util.Scanner;\r\nimport Components.customerInvoice;\r\nimport DataHandlers.CustomerInvoicesHandler;\r\n\r\npublic class Application {\r\n\r\n    // just some colors\r\n    public static final String BLUE = \"\\033[0;34m\";\r\n    public static final String RESET = \"\\033[0m\";\r\n\r\n    public static void main(String[] args){\r\n        Scanner keyboard=new Scanner(System.in);\r\n        try{\r\n            Socket socket=new Socket(\"localhost\",3000);\r\n            int choice = 0;\r\n\r\n            DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());\r\n            DataInputStream fromServer=new DataInputStream(socket.getInputStream());\r\n\r\n\r\n            System.out.println(\"--------------------------------------------------WELCOME TO----------------------------------------------          \" + RESET);\r\n            System.out.println(BLUE + \"\\\\\\\\              //\\\\\\\\             //   ==================   ||\\\\\\\\             //||   ==================  \" + RESET);\r\n            System.out.println(BLUE + \" \\\\\\\\            //  \\\\\\\\           //    ||                   || \\\\\\\\           // ||   ||                  \" + RESET);\r\n            System.out.println(BLUE + \"  \\\\\\\\          //    \\\\\\\\         //     ||                   ||  \\\\\\\\         //  ||   ||                  \" + RESET);\r\n            System.out.println(BLUE + \"   \\\\\\\\        //      \\\\\\\\       //      ==================   ||   \\\\\\\\       //   ||   ==================  \" + RESET);\r\n            System.out.println(BLUE + \"    \\\\\\\\      //        \\\\\\\\     //                       ||   ||    \\\\\\\\     //    ||                   ||  \" + RESET);\r\n            System.out.println(BLUE + \"     \\\\\\\\    //          \\\\\\\\   //                        ||   ||     \\\\\\\\   //     ||                   ||  \" + RESET);\r\n            System.out.println(BLUE + \"      \\\\\\\\  //            \\\\\\\\ //         ==================   ||      \\\\\\\\ //      ||   ==================  \" + RESET);\r\n            System.out.println(\"\\n\\n\");\r\n\r\n            System.out.println(\"--------Please choose your role----------\");\r\n            System.out.println(\"1.Admin\");\r\n            System.out.println(\"2.District\");\r\n            System.out.println(\"3.Company\");\r\n            System.out.println(\"4.Confirmer\");\r\n            System.out.println(\"5.House\");\r\n            System.out.println(\"6.Invoices\");\r\n            System.out.print(\"Your choice: \");\r\n            choice = keyboard.nextInt();\r\n\r\n            switch (choice){\r\n                case 1:\r\n                    Admin admin = new Admin(toServer,fromServer);\r\n                    admin.handleAdmin();\r\n                    break;\r\n                case 2:\r\n                    System.out.println(\"You are a district!\");\r\n                     new Company(toServer, fromServer).addCitizen();\r\n                    break;\r\n                case 3:\r\n                    System.out.println(\"You are a company!\");\r\n                    break;\r\n                case 4:\r\n                    System.out.println(\"You are a confirmer!\");\r\n                    break;\r\n                case 5:\r\n                    System.out.println(\"You are a citizen!\");\r\n                    House house = new House(toServer, fromServer);\r\n                    house.handleHouse(fromServer, toServer);\r\n                    break;\r\n                case 6:\r\n                    customerInvoice customer = new customerInvoice();\r\n                    try {\r\n                        customer.mainMethod();\r\n                    }catch (Exception e){\r\n                        e.printStackTrace();\r\n                    }\r\n\r\n                    break;\r\n                \r\n                default:\r\n                    System.out.println(\"Please be serious!\");\r\n                    break;\r\n            }\r\n\r\n\r\n        }catch(IOException exception){\r\n            System.out.println(\"here\");\r\n            exception.printStackTrace();\r\n        }catch (InputMismatchException exception){\r\n            System.out.println(\"Please be serious!\");\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../Client/src/Application.java b/../Client/src/Application.java
+--- a/../Client/src/Application.java	
++++ b/../Client/src/Application.java	
+@@ -1,6 +1,7 @@
+ 
+ import Components.Admin.Admin;
+ import Components.Company;
++import Components.Confirmer;
+ import Components.House.House;
+ import Components.Wallet;
+ 
+@@ -62,7 +63,8 @@
+                     System.out.println("You are a company!");
+                     break;
+                 case 4:
+-                    System.out.println("You are a confirmer!");
++                    System.out.println("Welcome to the confirmer side!!");
++                    new Confirmer(toServer, fromServer).addConfirmer();
+                     break;
+                 case 5:
+                     System.out.println("You are a citizen!");
+Index: ../Client/src/DataHandlers/ConfirmerHandler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../Client/src/DataHandlers/ConfirmerHandler.java b/../Client/src/DataHandlers/ConfirmerHandler.java
+new file mode 100644
+--- /dev/null	
++++ b/../Client/src/DataHandlers/ConfirmerHandler.java	
+@@ -0,0 +1,68 @@
++package DataHandlers;
++
++public class ConfirmerHandler {
++    private  String email;
++    private String phone;
++    private int role;
++    private int id;
++    private String username;
++    private int password;
++
++    public ConfirmerHandler(){}
++
++    public ConfirmerHandler(int id, String username, String email,String phone,int password,int role){
++        this.id = id;
++        this.username = username;
++        this.email = email;
++        this.phone = phone;
++        this.password = password;
++        this.role = role;
++    }
++    public int getId() {
++        return id;
++    }
++
++    public void setId(int id) {
++        this.id = id;
++    }
++
++    public String getuserName() {
++        return username;
++    }
++
++    public void setuserName(String username) {
++        this.username = username;
++    }
++
++    public String getEmail() {
++        return email;
++    }
++
++    public void setEmail(String email) {
++        this.email = email;
++    }
++
++    public void setPhone(String phone ){
++        this.phone = phone;
++    }
++
++    public String getPhone(){
++        return phone;
++    }
++
++    public int getPassword() {
++        return password;
++    }
++
++    public void setPassword(int password) {
++        this.password = password;
++    }
++    public void setRole(int role){
++        this.role = role;
++    }
++
++    public int getRole(){
++        return role;
++    }
++
++}
+Index: src/Repositories/ConfirmerRepo.java
+===================================================================
+diff --git a/src/Repositories/ConfirmerRepo.java b/src/Repositories/ConfirmerRepo.java
+new file mode 100644
+--- /dev/null	
++++ b/src/Repositories/ConfirmerRepo.java	
+@@ -0,0 +1,16 @@
++package Repositories;
++
++import Config.DatabaseConnection;
++import Models.Confirmer;
++
++
++public class ConfirmerRepo {
++
++    DatabaseConnection database;
++    public ConfirmerRepo(){
++        database=new DatabaseConnection();
++    }
++
++    public boolean save(Confirmer confirmer){
++        return database.insert("INSERT INTO Users(name,email,phone,pin,Role) VALUES ('"+confirmer.getuserName()+"','"+confirmer.getEmail()+"','"+confirmer.getPhone()+"','" +confirmer.getPassword()+"','"+confirmer.getRole()+"')");
++    }}

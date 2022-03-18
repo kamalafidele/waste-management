@@ -1,0 +1,69 @@
+package Models;
+
+public class Confirmer {
+    private int id;
+    private String username;
+    private int password;
+    private  String email;
+    private String phone;
+    private int role;
+
+    public Confirmer(){}
+
+    public Confirmer(int id, String username, String email,String phone,int password,int role){
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.phone = phone;
+        this.password = password;
+        this.role = role;
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getuserName() {
+        return username;
+    }
+
+    public void setuserName(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPhone(String phone ){
+        this.phone = phone;
+    }
+
+    public String getPhone(){
+        return phone;
+    }
+
+    public int getPassword() {
+        return password;
+    }
+
+    public void setPassword(int password) {
+        this.password = password;
+    }
+    public void setRole(int role){
+        this.role = role;
+    }
+
+    public int getRole(){
+        return role;
+    }
+
+
+}

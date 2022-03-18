@@ -1,6 +1,7 @@
 
 import Components.Admin.Admin;
 import Components.Company;
+import Components.Confirmer;
 import Components.House.House;
 import Components.Wallet;
 
@@ -63,7 +64,8 @@ public class Application {
                     new Wallet(toServer,fromServer).showWallet();
                     break;
                 case 4:
-                    System.out.println("You are a confirmer!");
+                    System.out.println("Welcome to the confirmer side!!");
+                    new Confirmer(toServer, fromServer).addConfirmer();
                     break;
                 case 5:
                     System.out.println("You are a citizen!");

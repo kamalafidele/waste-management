@@ -7,7 +7,7 @@ public class Application {
     // THIS THE ENTRY FOR OUR SERVER APPLICATION
         try{
             ServerSocket serverSocket=new ServerSocket(3000);
-            System.out.println("########## SERVER RUNNING ON PORT 2500 ##############");
+            System.out.println("########## SERVER RUNNING ON PORT 3000 ##############");
 
              while(3>2){
                  var socket=serverSocket.accept();
@@ -18,7 +18,7 @@ public class Application {
              }
 
         }catch(IOException exception){
-            exception.printStackTrace();
+            //exception.printStackTrace();
         }
     }
 }

@@ -1,43 +1,50 @@
 package Components;
+import DataHandlers.ConfirmerHandler;
+import org.codehaus.jackson.map.ObjectMapper;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.Scanner;
 public class Confirmer {
-     private String date;
-     private String village;
-     private String companyName;
-     private String houseCode;
-    Scanner scanner =new Scanner(System.in);
-
-    public boolean login(){
-        //Getting login information
-        System.out.print("\n");
-        System.out.println("--------Confirmer login----------");
-        System.out.print("Username: ");
-        String username = scanner.next();
-        System.out.print("Password: ");
-        String password = scanner.next();
-
-        //calling login api
-        return true;
+    DataOutputStream toServer;
+    DataInputStream fromServer;
+    Scanner keyboard;
+    ObjectMapper mapper;
+    public Confirmer(DataOutputStream toServer, DataInputStream fromServer) {
+        this.toServer=toServer;
+        this.fromServer=fromServer;
+        keyboard=new Scanner(System.in);
+        mapper=new ObjectMapper();
     }
 
-    public void confirmerUI(){
-        System.out.println("\t\t\t --------------------------------------------");
-        System.out.println("\t\t\t+           Confirm Garbage Collection          + ");
-        System.out.println("\t\t\t --------------------------------------------");
-        System.out.println("\t\t\t---------------------------------------------");
+    public void addConfirmer() {
 
-        System.out.println("Enter Date of garbage collection");
-        date =scanner.nextLine();
-        System.out.println("Enter Area of collection");
-        village =scanner.nextLine();
-        System.out.println("Enter House code");
-        houseCode =scanner.nextLine();
-        System.out.println("Enter Company working in " + village + " village");
-        companyName =scanner.nextLine();
+        var confirmerHandler=new ConfirmerHandler();
+        System.out.println( "######## ADDING NEW CONFIRMER #########" );
+        System.out.print( "Enter  username: " );
+        confirmerHandler.setuserName( keyboard.nextLine() );
+        System.out.print( "Enter confirmer email: " );
+        confirmerHandler.setEmail( keyboard.nextLine() );
+        System.out.print( "Enter confirmer phone: " );
+        confirmerHandler.setPhone( keyboard.nextLine() );
+        System.out.print( "Enter password: " );
+        confirmerHandler.setPassword(Integer.parseInt(keyboard.nextLine()));
+        confirmerHandler.setRole( 5 );
 
-    /* Send data For validation and return response*/
-        System.out.println("Confirmed that garbage from " + houseCode + " has been successfully collected");
+        try{
+            String confirmerAsJson=mapper.writeValueAsString( confirmerHandler );
+            sendRequest( "confirmer/addConfirmer/" + confirmerAsJson );
+            String response= fromServer.readUTF();
+            System.out.println( response );
+        }catch (IOException exception){}
     }
+
+    public void sendRequest( String request ){
+        try{
+            toServer.writeUTF( request );
+        }catch ( IOException exception ){}
+    }
+
 
 }
