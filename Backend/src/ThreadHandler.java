@@ -75,7 +75,7 @@ public class ThreadHandler extends Thread{
                         break;
                 }
             } catch (Exception e) {
-                break;
+                 break;
             }
         }
 
