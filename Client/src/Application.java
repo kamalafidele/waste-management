@@ -1,10 +1,8 @@
 
+import Components.*;
 import Components.Admin.Admin;
-import Components.Company;
 import Components.House.House;
 import Components.District.DistrictDashboard;
-import Components.ServiceConfirmation.Shifts;
-import Components.Wallet;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -12,8 +10,8 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import Components.customerInvoice;
-import DataHandlers.CustomerInvoicesHandler;
+
+import Components.Shifts;
 
 public class Application {
 
@@ -24,7 +22,8 @@ public class Application {
     public static void main(String[] args){
         Scanner keyboard=new Scanner(System.in);
         try{
-            Socket socket=new Socket("localhost",3000);
+            Socket socket=new Socket("localhost",2500);
+
             int choice = 0;
 
             DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
@@ -47,7 +46,6 @@ public class Application {
             System.out.println("3.Company");
             System.out.println("4.Confirmer");
             System.out.println("5.House");
-            System.out.println("6.Invoices");
             System.out.print("Your choice: ");
             choice = keyboard.nextInt();
 
@@ -63,36 +61,32 @@ public class Application {
 
                     break;
                 case 3:
-                    new Company(toServer, fromServer).displayCompanies();
-                    System.out.println("You are a company!");
-                    new Company(toServer,fromServer).addCompany();
+                    new Company(toServer,fromServer).login();
                     break;
                 case 4:
                     System.out.println("You are a confirmer!");
-                    Shifts shift = new Shifts(toServer,fromServer);
-                    shift.addShift();
+//                    new Shifts(toServer,fromServer).addShift();'
+                    System.out.println("WHAT DO U WANNA DO");
+                    System.out.println("1.CREATE SHIFT");
+                    System.out.println("2.CONFIRM SERVICE");
+                    int response = keyboard.nextInt();
+                    if(response==1){
+                        new Shifts(toServer,fromServer).addShift();
+                    }
+                    if(response==2){
+                        new ServiceConfirmation(toServer,fromServer).addConfirmedService();
+                    }
                     break;
                 case 5:
                     System.out.println("You are a citizen!");
                     House house = new House(toServer, fromServer);
                     house.handleHouse(fromServer, toServer);
                     break;
-                case 6:
-                    customerInvoice customer = new customerInvoice();
-                    try {
-                        customer.mainMethod();
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-
-                    break;
-                
                 default:
                     System.out.println("Please be serious!");
                     break;
             }
-
-
+           //socket.close();
         }catch(IOException exception){
             System.out.println("here");
             exception.printStackTrace();

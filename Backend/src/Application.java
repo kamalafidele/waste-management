@@ -1,12 +1,11 @@
 import java.io.IOException;
-import java.net.BindException;
 import java.net.ServerSocket;
 
 public class Application {
     public static void main(String[] args){
     // THIS THE ENTRY FOR OUR SERVER APPLICATION
         try{
-            ServerSocket serverSocket=new ServerSocket(3000);
+            ServerSocket serverSocket=new ServerSocket(2500);
             System.out.println("########## SERVER RUNNING ON PORT 2500 ##############");
 
              while(3>2){

@@ -17,7 +17,7 @@ public class DistrictRepo {
    
         try{
 
-            ResultSet answer = database.select("SELECT * FROM admin WHERE username = '"+district.getEmail()+"' AND password = '"+district.getPin()+"' ");
+            ResultSet answer = database.select("SELECT * FROM users WHERE email = '"+district.getEmail()+"' AND pin = '"+district.getPin()+"' ");
 
             if(answer.next()){
                 return true;

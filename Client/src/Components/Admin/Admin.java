@@ -1,13 +1,11 @@
 package Components.Admin;
 
+
 import Components.District.DistrictDashboard;
 import Components.Wallet;
 import DataHandlers.Admin.LoginInfo;
 import org.codehaus.jackson.map.ObjectMapper;
-
-
 import java.io.*;
-import java.net.Socket;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -35,32 +33,31 @@ public class Admin {
         file = new File("loggedIn.txt");
     }
 
-    public void handleAdmin(){
+    public void handleAdmin() {
         //check if user is logged in
         boolean loggedIn = loggedIn();
 
-        if(!loggedIn){
-            String loginRes = login();
+        try {
+            if (!loggedIn) {
+                String loginRes = login();
 
-            if(Objects.equals(loginRes, "false")){
-                System.out.println("--------Invalid credentials!----------");
-                System.out.println("\n");
-            }else{
-                try {
-                    //record that admin is loggedIn
-                    String data = "true";
-                    fileOut = new FileOutputStream(file);
-                    fileOut.write(data.getBytes(), 0, data.length());
-                }catch(Exception e) {
-                    e.printStackTrace();
+                if (Objects.equals(loginRes, "false")) {
+                    System.out.println("--------Invalid credentials!----------");
+                    System.out.println("\n");
+                    return;
+                } else {
+                    try {
+                        //record that admin is loggedIn
+                        String data = "true";
+                        fileOut = new FileOutputStream(file);
+                        fileOut.write(data.getBytes(), 0, data.length());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        return;
+                    }
                 }
             }
-        }
 
-        try {
-//            Socket socket=new Socket("localhost",3000);
-//            DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
-//            DataInputStream fromServer=new DataInputStream(socket.getInputStream());
             //admin dashboard
             System.out.println("\n");
             System.out.println("--------Welcome abroad!----------");
@@ -69,8 +66,9 @@ public class Admin {
             System.out.println("1. Check districts");
             System.out.println("2. Your wallet");
             System.out.println("3. Your analytics");
-            System.out.println("4. Add district");
-            System.out.println("5. logout");
+            System.out.println("4. Create new admin");
+            System.out.println("5. Add district");
+            System.out.println("6. logout");
 
             //choose
             int choice;
@@ -89,50 +87,49 @@ public class Admin {
                     System.out.println("see analytics");
                     break;
                 case 4:
+                    System.out.println("Add admin");
+
+                    break;
+                case 5:
                     System.out.println("Add District");
                     DistrictDashboard districtDashboard2=new DistrictDashboard(toServer,fromServer);
                     districtDashboard2.districtAdd();
                     break;
-                case 5:
+                case 6:
                     System.out.println("logout");
                     break;
             }
-        }catch(Exception e){
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public String login()  {
-        try {
+    public String login() throws IOException {
             //create login info object
             loginInfos = new LoginInfo();
 
             //get inputs from user
             System.out.print("\n");
             System.out.println("--------Login as an admin!----------");
-            System.out.print("Username: ");
-            loginInfos.setUsername(keyboard.next());
-            System.out.print("Password: ");
+            System.out.print("name: ");
+            loginInfos.setName(keyboard.next());
+            System.out.print("Pin: ");
             loginInfos.setPassword(keyboard.next());
 
             //call login function
             toServer.flush();
             this.sendRequest("admin/login/" + mapper.writeValueAsString(loginInfos));
 
+            //return the response
             return fromServer.readUTF();
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        return "false";
 
     }
 
     public boolean loggedIn(){
-        //checking if admin is loggedIn
-        try {
 
+        try {
+            //checking if file exists
             if(!file.exists()){
                 boolean createFile = file.createNewFile();
                 String data = "false";
@@ -145,7 +142,7 @@ public class Admin {
                 bufferedReader = new BufferedReader(streamReader);
                 String content = bufferedReader.readLine();
 
-                return !Objects.equals(content, "false");
+                return Objects.equals(content, "true");
             }
 
         }catch(IOException e){
@@ -161,6 +158,29 @@ public class Admin {
         }catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void createAdmin(){
+
+    }
+
+    public void showAnalytics(){
+
+    }
+
+    public void showWallet() throws IOException {
+        new Wallet(toServer,fromServer).showWallet();
+    }
+
+    public void showDistricts() throws IOException {
+        toServer.flush();
+        this.sendRequest("admin/login/" + mapper.writeValueAsString(loginInfos));
+    }
+
+    public void logout() throws IOException {
+        String data = "false";
+        fileOut = new FileOutputStream(file);
+        fileOut.write(data.getBytes(), 0, data.length());
     }
 
 }

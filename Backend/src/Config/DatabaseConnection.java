@@ -2,15 +2,16 @@ package Config;
 
 import java.sql.*;
 
+import static java.lang.Class.forName;
+
 public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
     String url="jdbc:mysql://localhost:3306/waste_management?characterEncoding=latin1&useConfigs=maxPerformance";
     String username="root";
     String password="Ineza%12345";
-    Connection connection=null;
+    public Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
-
     public DatabaseConnection(){
         try{
           Class.forName(driver);
