@@ -48,7 +48,11 @@ public class ThreadHandler extends Thread{
                         adminController.handleRequest(request, toClient);
                         break;
                     case "serviceconfirmation":
-                        serviceConfirmationController.filterRequest(request,toClient);
+                      serviceConfirmationController.filterRequest(request,toClient);
+                     break;
+                    case "shifts":
+                        shiftsController.filterRequest(request,toClient);
+                        break;
                     case "company":
                         companyController.filterRequest(request,toClient);
                         break;

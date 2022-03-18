@@ -39,6 +39,7 @@ public class ServiceConfirmationController {
              login(request.split("/")[2]);
              break;
             case "addConfirmedService":
+                System.out.println("here backend");
                 addConfirmedService(request.split("/")[2]);
                 break;
             case "getConfirmedServices":

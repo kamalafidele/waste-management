@@ -26,12 +26,16 @@ public class ShiftsController {
         switch (request.split("/")[1]) {
             case "addShift":
                 addShift(request.split("/")[2]);
+                break;
             case "getShifts":
                 getShifts();
+                break;
             case "getShift":
                 getShift(Integer.valueOf(request.split("/")[2]));
+                break;
             default:
                 sendResponse("Specify your request...............");
+                break;
         }
     }
     public void addShift(String data){

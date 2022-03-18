@@ -31,7 +31,7 @@ public class Shifts {
           }
       }
       public void viewShifts(){
-          String request="serviceconfirmation/getShifts";
+          String request="shifts/getShifts";
           try{
               sendRequest(request);
               String response = fromServer.readUTF();
@@ -72,7 +72,7 @@ public class Shifts {
           shiftsHandler.setConfirmerId(scanner.nextInt());
           try{
               String shiftasJSon= mapper.writeValueAsString(shiftsHandler);
-              sendRequest("serviceconfirmation/addShift/"+shiftasJSon);
+              sendRequest("shifts/addShift/"+shiftasJSon);
               String response = fromServer.readUTF();
               System.out.println(response);
           }catch (Exception e){
