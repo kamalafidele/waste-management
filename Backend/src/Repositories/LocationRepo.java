@@ -12,11 +12,10 @@ public class LocationRepo {
         this.database = new DatabaseConnection();
     }
 
-    public int getLocationId(String location) throws SQLException {
+    public int location(String location) throws SQLException {
         ResultSet result = database.select("SELECT id FROM locations WHERE Location_name = '"+location+"'");
 
         if(result.next()){
-            System.out.println(result.getInt(1));
             return result.getInt(1);
         }
 
