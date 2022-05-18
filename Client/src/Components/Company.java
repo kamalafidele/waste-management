@@ -21,11 +21,11 @@ public class Company {
     Shifts shifts;
 
     public Company(DataOutputStream toServer, DataInputStream fromServer) {
-        this.toServer=toServer;
-        this.fromServer=fromServer;
-        keyboard=new Scanner(System.in);
-        mapper=new ObjectMapper();
-        shifts= new Shifts(toServer,fromServer);
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+        keyboard = new Scanner(System.in);
+        mapper = new ObjectMapper();
+        shifts = new Shifts(toServer,fromServer);
     }
 
     public void login(){
@@ -36,7 +36,7 @@ public class Company {
         System.out.print("Enter pin: ");
         handler.setPin(keyboard.nextLong());
         try{
-            String request="company/login/"+mapper.writeValueAsString(handler);
+            String request = "company/login/"+mapper.writeValueAsString(handler);
             sendRequest(request);
 
             String response = fromServer.readUTF();
@@ -87,9 +87,9 @@ public class Company {
 
         try{
             sendRequest(request);
-            String response=fromServer.readUTF();
-            ArrayList<CompanyHandler> companies=mapper.readValue(response,new TypeReference<ArrayList<CompanyHandler>>(){});
-            Iterator<CompanyHandler> companyIterator=companies.iterator();
+            String response = fromServer.readUTF();
+            ArrayList<CompanyHandler> companies = mapper.readValue(response,new TypeReference<ArrayList<CompanyHandler>>(){});
+            Iterator<CompanyHandler> companyIterator = companies.iterator();
 
             System.out.println("######################### REGISTERED COMPANIES ###################################### ");
             System.out.println("|------------|----------------------------------|-----------------------------------|");
@@ -132,7 +132,7 @@ public class Company {
         companyHandler.setWalletId( 0 );
 
         try{
-            String companyAsJson=mapper.writeValueAsString( companyHandler );
+            String companyAsJson = mapper.writeValueAsString( companyHandler );
             sendRequest( "company/addCompany/" + companyAsJson );
             String response= fromServer.readUTF();
             System.out.println( response );
