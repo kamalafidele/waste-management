@@ -51,7 +51,6 @@ public class DistrictDashboard {
             System.out.print("\n");
             System.out.println("-------- District Login!----------");
             System.out.print("District email: ");
-
             logindata.setEmail(keyboard.next());
             System.out.print("Password: ");
             logindata.setPin(Long.valueOf(keyboard.next()));
@@ -226,8 +225,6 @@ public void displayDistricts(){
             System.out.println("\n");
             System.out.println("--------Welcome abroad!----------");
 
-
-            System.out.println("1.User registration");
             System.out.println("2. Creating Company");
             System.out.println("3. Citizen Registration");
 
@@ -237,14 +234,11 @@ public void displayDistricts(){
             choice = keyboard.nextInt();
             switch (choice){
                 case 1:
-                    System.out.println("User registration");
-                    break;
-                case 2:
                     System.out.println(" Creating Company");
                     Company company=new Company(toServer,fromServer);
                     company.addCompany();
                     break;
-                case 3:
+                case 2:
                     System.out.println("Citizen Registration");
                     House house=new House(toServer,fromServer);
                     house.addCitizen();
