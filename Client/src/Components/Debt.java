@@ -13,15 +13,24 @@ public class Debt {
          this.toServer=toServer;
          this.fromServer=fromServer;
      }
+     public void checkBalance(){
+         long pin=999;
+         String request="debt/checkBalance/"+pin;
+         try {
+             toServer.writeUTF(request);
+             System.out.println(fromServer.readUTF());
+         }
+         catch (IOException ie){
+             ie.printStackTrace();
+         }
+     }
      public void checkDebt(){
-         System.out.println("Check your debt");
-         System.out.println("want to check which debt");
+         System.out.println("want to check which type of debt");
          System.out.println("1. Security Debt \t \t 2. waste debt");
          int option=scanner.nextInt();
          switch (option){
              case 1:
                  checkSecurityDebt();
-                 System.out.println("waste debt");
                  break;
              case 2:
                  System.out.println("waste debt");
@@ -32,13 +41,12 @@ public class Debt {
          }
      }
     public void checkSecurityDebt(){
-        long userId=1;
-        String request="debt/checkSecurityDebt/"+userId;
+        long userId=999;
+        String request="debt/checkSecurityDebt/security/"+userId;
         try {
             toServer.writeUTF(request);
-//            String response=fromServer.readUTF();
-//            System.out.println(response);
-//            toServer.writeUTF("HEY SERVER");
+            String response=fromServer.readUTF();
+            System.out.println(response);
         }
         catch (IOException ie){
             ie.printStackTrace();
@@ -46,12 +54,12 @@ public class Debt {
         }
     }
     public void checkWasteDebt(){
-        long userId=1;
-        String request="debt/checkWasteDebt/"+userId;
+        long userId=999;
+        String request="debt/checkWasteDebt/waste/"+userId;
         try {
             toServer.writeUTF(request);
-//            String response=fromServer.readUTF();
-//            System.out.println(response);
+            String response=fromServer.readUTF();
+            System.out.println(response);
         }
         catch (IOException ie){
             ie.printStackTrace();

@@ -11,22 +11,19 @@ public class Wallet {
     DataOutputStream outToServer;
     DataInputStream fromServer;
 
-    Integer companyId=1;
-
     public Wallet(DataOutputStream toServer, DataInputStream fromServer) {
         this.outToServer=toServer;
         this.fromServer=fromServer;
     }
 
 
-    public void showWallet(){
-        String request="wallet/" + companyId;
+    public void showWallet(int userId){
+        String request="wallet/" + userId;
         try {
             outToServer.writeUTF(request);
-            System.out.println("SENT REQUEST");
             String response=fromServer.readUTF();
             System.out.println(response);
-            //System.out.printf("Your wallet balance is: " + response +" Rwf");
+            System.out.printf("Your wallet balance is: " + response +" Rwf");
         }
         catch (IOException e){
             e.printStackTrace();
