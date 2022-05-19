@@ -1,7 +1,7 @@
 package Models;
 
 import java.util.Date;
- /*
+/*
  * @author: Fiat Bruno
  *
  */
@@ -12,14 +12,14 @@ public class Notification {
     private String title;
     private String content;
     private Integer receiver;
-    private String type;
+    private Integer type;
     private String viewStatus;
-    private Date sentDate;
+    private String sentDate;
 
     public Notification(){
 
     }
-    public Notification(Long notificationId, String title, String content, Integer receiver, String type, String viewStatus, Date sentDate){
+    public Notification(Long notificationId, String title, String content, Integer receiver, Integer type, String viewStatus, String sentDate){
         this.notificationId = notificationId;
         this.title = title;
         this.receiver = receiver;
@@ -44,11 +44,11 @@ public class Notification {
         this.receiver = receiver;
     }
 
-    public String getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 
@@ -68,11 +68,11 @@ public class Notification {
         this.viewStatus = viewStatus;
     }
 
-    public Date getSentDate() {
+    public String getSentDate() {
         return sentDate;
     }
 
-    public void setSentDate(Date sentDate) {
+    public void setSentDate(String sentDate) {
         this.sentDate = sentDate;
     }
 
@@ -84,3 +84,12 @@ public class Notification {
         this.title = title;
     }
 }
+
+
+
+
+
+
+
+
+

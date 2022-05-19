@@ -87,10 +87,11 @@ public class House{
     public void login(String token){
         //calling login api
         String request = "citizen/getSingle/" + token;
-           try{
-        toServer.writeUTF(request);
-            HouseHandler handler=mapper.readValue(fromServer.readUTF(),HouseHandler.class);
-            System.out.println(handler.getName());
+        //   try{
+        //toServer.writeUTF(request);
+//            HouseHandler handler=mapper.readValue(fromServer.readUTF(),HouseHandler.class);
+        HouseHandler handler = new HouseHandler();
+        System.out.println(handler.getName());
         if(handler.getName() == null) {
             //dashboard
             System.out.println("Successfully logged in!");
@@ -98,11 +99,9 @@ public class House{
             dashboard.handleDashboard(fromServer, toServer, handler);
             return;
         }
-        System.out.println("Invalid login, Try again!");
-        return;
-        }catch (IOException exception){
-            System.out.println("Invalid login, Try again!");
-            return;
-        }
+        //        }catch (IOException exception){
+//            System.out.println("Invalid login, Try again!");
+//            return;
+//        }
     }
 }

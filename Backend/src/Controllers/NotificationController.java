@@ -8,7 +8,10 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Date;
 import static java.lang.Integer.parseInt;
@@ -39,7 +42,7 @@ public class NotificationController {
         try{
             while(resultSet.next()){
                 Notification notification = new Notification(resultSet.getLong(1), resultSet.getString(2), resultSet.getString(3),
-                        resultSet.getInt(4), resultSet.getString(5), resultSet.getString(6), resultSet.getDate(7));
+                        resultSet.getInt(4), resultSet.getInt(5), resultSet.getString(6), resultSet.getString(7));
                 notifications.add(notification);
             }
             sendResponse(mapper.writeValueAsString(notifications));
@@ -62,32 +65,41 @@ public class NotificationController {
 
     public void createNotification(int receiver, String notification_type){
         Notification notification = new Notification();
-        Date date = new Date();
-        notification.setSentDate(date);
+        Date date = Calendar.getInstance().getTime();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String strDate = dateFormat.format(date);
+        notification.setSentDate(strDate);
         notification.setReceiver(receiver);
+
 
         switch (notification_type) {
             case "ServiceNotification" -> {
+                notification.setType(1);
                 notification.setContent("Hello! We are going to collect garbage after three days");
                 notification.setTitle("Providing Service Soon");
             }
             case "providedServiceNotification" -> {
+                notification.setType(4);
                 notification.setContent("Hello! Your garbage was collected today");
                 notification.setTitle("Service Provided");
             }
             case "paymentDueNotification" -> {
+                notification.setType(5);
                 notification.setContent("Hello! Three days remaining inorder to pay for garbage collection");
                 notification.setTitle("Due Payment");
             }
             case "paymentWarningNotification" -> {
+                notification.setType(3);
                 notification.setContent("Hello! It's been a long time since you paid your garbage collection. If any further delay charges may apply");
                 notification.setTitle("Payment Warning");
             }
             case "paymentSuccessfulNotification" -> {
+                notification.setType(2);
                 notification.setContent("Hello! Payment successful");
                 notification.setTitle("Successful Payment");
             }
             case "reportAvailableNotification" -> {
+                notification.setType(6);
                 notification.setContent("Hello! View last months report(analytics)");
                 notification.setTitle("Report Available");
             }

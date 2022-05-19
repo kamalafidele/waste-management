@@ -20,6 +20,7 @@ public class Dashboard {
     DataInputStream fromServer;
     ObjectMapper mapper;
     Scanner keyboard = new Scanner(System.in);
+
     public Dashboard() {
     }
 
@@ -40,31 +41,29 @@ public class Dashboard {
         System.out.println("2.Pay security");
         System.out.println("3.Your invoices");
         System.out.println("4.Notifications&messages");
-        System.out.println("5.View your profile");
-        System.out.println("6. check debt");
+        System.out.println("5. check your debt");
+        System.out.println("6. view profile");
         System.out.print("Your choice: ");
         choice = keyboard.nextInt();
 
-        switch (choice) {
+        switch (choice){
             case 1:
-                payment.handlePaymentMethods();
-                break;
             case 2:
-                System.out.println("You are going to pay security ");
+                payment.handlePaymentMethods();
                 break;
             case 3:
                 System.out.println("invoices");
                 break;
             case 4:
-                System.out.println("Notifications&messages");
+                System.out.println("Notifications & Messages");
+                new Notification().displayAllNotifications(toServer, fromServer);
                 break;
             case 5:
-                viewProfile(handler);
-                break;
-            case 6:
                 debt.checkDebt();
                 break;
-
+            case 6:
+                viewProfile(handler);
+                break;
             default:
                 System.out.println("Please be serious!");
                 break;

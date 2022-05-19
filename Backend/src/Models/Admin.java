@@ -61,7 +61,7 @@ public class Admin {
 
     public void setPin() {
         Random random=new Random();
-        long paymentCode = random.nextLong();
+        long paymentCode = random.nextLong(500_000_000);
         this.pin = paymentCode;
     }
 
