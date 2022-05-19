@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Mon Mar 14 2022 12:29:08 GMT+0200 (Central Africa Time)
+------------------------------------------------------
+
+Modified files:
+* Backend/src/Repositories/DistrictRepo.java
+
+
+Created files:
+* .autogit/logs/log-14-2-2022-10-32-9.txt
+* Client/src/Components/District/DistrictDashboard.java
+
+
+Deleted files:
+
+
+Renamed files:

@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Tue Mar 15 2022 14:11:30 GMT+0200 (South Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* Backend/.idea/workspace.xml
+* Client/.idea/workspace.xml
+
+
+Created files:
+* .autogit/logs/log-15-2-2022-13-41-5.txt
+
+
+Deleted files:
+
+
+Renamed files:
