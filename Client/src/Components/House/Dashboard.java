@@ -46,6 +46,7 @@ public class Dashboard {
         switch (choice) {
             case 1:
                 System.out.println("wastes payment");
+
                 break;
             case 2:
                 System.out.println("You are going to pay security ");
@@ -67,45 +68,45 @@ public class Dashboard {
     }
 
 
-//    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer){
+    //    public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer){
     public void handleDashboard(DataInputStream fromServer, DataOutputStream toServer, HouseHandler handler){
-            Payment payment = new Payment(fromServer, toServer);
-            Debt debt=new Debt(fromServer,toServer);
-            int choice = 0;
-            System.out.println("\n");
-            System.out.println("--------Dashboard--------");
-            System.out.println("--------Please choose an option----------");
-            System.out.println("1.Pay wastes");
-            System.out.println("2.Pay security");
-            System.out.println("3.Your invoices");
-            System.out.println("4.Notifications&messages");
-            System.out.println("5. check your debt");
-            System.out.println("6. view profile");
-            System.out.print("Your choice: ");
-            choice = keyboard.nextInt();
+        Payment payment = new Payment(fromServer, toServer);
+        Debt debt=new Debt(fromServer,toServer);
+        int choice = 0;
+        System.out.println("\n");
+        System.out.println("--------Dashboard--------");
+        System.out.println("--------Please choose an option----------");
+        System.out.println("1.Pay wastes");
+        System.out.println("2.Pay security");
+        System.out.println("3.Your invoices");
+        System.out.println("4.Notifications&messages");
+        System.out.println("5. check your debt");
+        System.out.println("6. view profile");
+        System.out.print("Your choice: ");
+        choice = keyboard.nextInt();
 
-            switch (choice){
-                case 1:
-                case 2:
-                    payment.handlePaymentMethods();
-                    break;
-                case 3:
-                    System.out.println("invoices");
-                    break;
-                case 4:
-                    System.out.println("Notifications & Messages");
-                    new Notification().displayAllNotifications(toServer, fromServer);
-                    break;
-                case 5:
-                    debt.checkDebt();
-                    break;
-                case 6:
-                    viewProfile(handler);
+        switch (choice){
+            case 1:
+            case 2:
+                payment.handlePaymentMethods();
                 break;
-                default:
-                    System.out.println("Please be serious!");
-                    break;
-            }
+            case 3:
+                System.out.println("invoices");
+                break;
+            case 4:
+                System.out.println("Notifications & Messages");
+                new Notification().displayAllNotifications(toServer, fromServer);
+                break;
+            case 5:
+                debt.checkDebt();
+                break;
+            case 6:
+                viewProfile(handler);
+                break;
+            default:
+                System.out.println("Please be serious!");
+                break;
+        }
     }
 
     public void viewProfile(HouseHandler handler) {
