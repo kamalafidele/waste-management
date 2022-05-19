@@ -79,8 +79,6 @@ public class Payment {
 
     };
     public void handleBankpayment(){
-
-//        System.out.println("I am a handleBankpayment");
         System.out.print("Enter Your BankAccount Number: ");
         String accNumber = scanner.next();
         System.out.print("Enter Amount: ");

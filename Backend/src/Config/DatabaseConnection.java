@@ -9,7 +9,7 @@ public class DatabaseConnection {
     String url="jdbc:mysql://localhost:3306/wasmanagement?characterEncoding=latin1";
     String username="root";
     String password="marv1nk@rs";
-    Connection connection=null;
+    public Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
     public DatabaseConnection(){

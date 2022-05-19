@@ -47,8 +47,7 @@ public class Dashboard {
 
         switch (choice) {
             case 1:
-                System.out.println("wastes payment");
-
+                payment.handlePaymentMethods();
                 break;
             case 2:
                 System.out.println("You are going to pay security ");
@@ -60,12 +59,12 @@ public class Dashboard {
                 System.out.println("Notifications&messages");
                 break;
             case 5:
-                debt.checkDebt();
-                break;
-            case 6:
                 viewProfile(handler);
                 break;
             case 6:
+                debt.checkDebt();
+                break;
+
             default:
                 System.out.println("Please be serious!");
                 break;
