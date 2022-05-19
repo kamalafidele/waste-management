@@ -1,7 +1,10 @@
 package Components.District;
 
+import Components.Company;
+import Components.House.House;
 import Components.Wallet;
 
+import DataHandlers.DistrictHandler;
 import DataHandlers.LoginData;
 
 
@@ -11,12 +14,13 @@ import org.codehaus.jackson.map.ObjectMapper;
 import java.io.*;
 import java.net.Socket;
 import java.util.Objects;
+import java.util.Random;
 import java.util.Scanner;
 
 public class DistrictDashboard {
 
     LoginData logindata;
-
+    Company company;
     DataOutputStream toServer;
     DataInputStream fromServer;
     ObjectMapper mapper;
@@ -27,7 +31,9 @@ public class DistrictDashboard {
     BufferedReader bufferedReader;
     File file;
 
-    public DistrictDashboard(){}
+    public DistrictDashboard(){
+        mapper = new ObjectMapper();
+    }
 
     public DistrictDashboard(DataOutputStream toServer, DataInputStream fromServer) {
         this.toServer = toServer;
@@ -90,6 +96,30 @@ public class DistrictDashboard {
 
         return false;
     }
+    public void addDistrict() {
+
+        var districtHandler=new DistrictHandler();
+         keyboard = new Scanner(System.in);
+         System.out.println( "######## District Addition#########" );
+         System.out.print( "Enter district token: " );
+         String token= keyboard.nextLine();
+         districtHandler.setDistrictToken(token);
+         System.out.print( "Enter district name: " );
+        String name= keyboard.nextLine();
+        districtHandler.setDistrictName(name);
+        System.out.print( "Enter district password: " );
+        String password= keyboard.nextLine();
+        districtHandler.setPassword(password);
+
+
+
+        try{
+            String districtAsJson=mapper.writeValueAsString( districtHandler );
+            sendRequest( "district/addDistrict/" + districtAsJson );
+            String response= fromServer.readUTF();
+            System.out.println( response );
+        }catch (IOException exception){}
+    }
 
     public void sendRequest(String request){
         try {
@@ -98,6 +128,9 @@ public class DistrictDashboard {
             e.printStackTrace();
         }
     }
+
+
+
     public void handleDistrict(){
    
         boolean isLogged = isLogged();
@@ -106,7 +139,7 @@ public class DistrictDashboard {
             String loginRes = login();
 
             if(Objects.equals(loginRes, "false")){
-                System.out.println("--------Invalid credentials!----------");
+                System.out.println("--------Invalid Inputs----------");
                 System.out.println("\n");
             }else{
                 try {
@@ -126,7 +159,6 @@ public class DistrictDashboard {
 
             System.out.println("1.User registration");
             System.out.println("2. Creating Company");
-            System.out.println("3. Confirmer");
             System.out.println("3. Citizen Registration");
 
             int choice;
@@ -138,12 +170,13 @@ public class DistrictDashboard {
                     break;
                 case 2:
                     System.out.println(" Creating Company");
+                    Company company=new Company(toServer,fromServer);
+                    company.addCompany();
                     break;
                 case 3:
-                    System.out.println("Confirmer");
-                    break;
-                    case 4:
                     System.out.println("Citizen Registration");
+                    House house=new House(toServer,fromServer);
+                    house.addCitizen();
                     break;
             }
         }catch(Exception e){

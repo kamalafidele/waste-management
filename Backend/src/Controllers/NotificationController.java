@@ -1,11 +1,9 @@
 package Controllers;
-
-
-//          @author ===================== Jabes =====================
-
-
-import Models.Notification;
+import Models.*;
 import Repositories.NotificationRepo;
+
+//    ======================== JABES =================
+
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.DataOutputStream;
@@ -69,6 +67,8 @@ public class NotificationController {
         Date date = new Date();
         notification.setSentDate(date);
         notification.setReceiver(receiver);
+        // ================================ added ======================
+        notification.setType(notification_type);
 
         switch (notification_type) {
             case "ServiceNotification" -> {

@@ -11,7 +11,7 @@ public class Wallet {
     DataOutputStream outToServer;
     DataInputStream fromServer;
 
-    Integer companyId=1;
+    Integer companyId=5;
 
     public Wallet(DataOutputStream toServer, DataInputStream fromServer) {
         this.outToServer=toServer;

@@ -6,7 +6,7 @@ package Repositories;
  */
 
 import Config.DatabaseConnection;
-import Models.Notification;
+import Models.*;
 import java.sql.ResultSet;
 
 
@@ -15,7 +15,7 @@ public class NotificationRepo{
     public NotificationRepo(){database = new DatabaseConnection(); }
 
     public ResultSet findAll(int receiver){
-        return database.select("SELECT * FROM notifications WHERE receiver =" + receiver);
+        return database.select("SELECT * FROM notifications WHERE receiver = " + receiver);
     }
     public ResultSet findByViewStatus(String viewStatus, int receiver){
         return database.select("SELECT * FROM notifications WHERE viewStatus =" + viewStatus + "AND receiver =" + receiver);
@@ -23,7 +23,7 @@ public class NotificationRepo{
 
     public void save(Notification notification){
         database.insert("INSERT INTO notifications(Title, Content, Receiver, Type, sentDate) VALUES("
-                + notification.getReceiver() + "," + notification.getType() + "," + notification.getContent()
-                + "," + notification.getViewStatus() + "," + notification.getSentDate() + ")");
+                + notification.getViewStatus() + "," + notification.getContent() + "," + notification.getReceiver()
+                + "," + notification.getType() + "," + notification.getSentDate() + ")");
     }
 }
