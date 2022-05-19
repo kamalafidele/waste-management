@@ -6,15 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6c0a7eec-7ea6-4b28-b3c9-6eefe622eff8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Confirmer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Confirmer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Notification$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Notification$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Notification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Payment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/ConfirmationProcessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/ConfirmationProcessHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/NotificationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/NotificationHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/WalletHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/WalletHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/House/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/House/Dashboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

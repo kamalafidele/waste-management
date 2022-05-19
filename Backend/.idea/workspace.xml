@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27297373-a468-4fe3-975b-c744004bf2f4" name="Changes" comment="customerInvoice control">
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Confirmer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Confirmer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Notification$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Notification$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Payment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/ConfirmationProcessHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/ConfirmationProcessHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/NotificationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/NotificationHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/WalletHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/WalletHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +37,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
