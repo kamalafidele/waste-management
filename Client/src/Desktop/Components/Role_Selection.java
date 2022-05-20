@@ -24,6 +24,8 @@ public class Role_Selection extends JPanel {
     //CUSTOM COLORS
     Color dodgerBlue = new Color(52,143,235);
     Color lightGray = new Color(225, 227, 225);
+    public static final String BLUE = "\033[0;34m";
+    public static final String RESET = "\033[0m";
 
     //STANDALONE COMPONENTS
     private Company companyComponent = new Company();
@@ -68,7 +70,6 @@ public class Role_Selection extends JPanel {
         label3.setBorder(new EmptyBorder(new Insets(30,20,30,20)));
         label3.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 22));
         label3.setForeground(dodgerBlue);
-
 
         leftPanel.add(label);
         leftPanel.add(label1);
