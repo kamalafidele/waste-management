@@ -4,6 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+
+import Desktop.Components.AdminLogin;
+import Desktop.Components.DistrictLogin;
 
 public class Role_Selection extends JPanel {
     private  JPanel leftPanel = new JPanel();
@@ -78,13 +82,23 @@ public class Role_Selection extends JPanel {
                     //Here you will initialize citizen component;
                     break;
                 case "Admin":
-                    //Here you will initialize Admin component
-                    break;
+                  try {
+                    AdminLogin login=new AdminLogin();
+                     login.adminLogin();
+                  } catch (ParseException ex) {
+                    ex.printStackTrace();
+                  }
+                  break;
                 case "Company":
                     company.initialize();
                     break;
                 case "District Manager":
-                    //Here you will initialize District component
+                  try {
+                    DistrictLogin login=new DistrictLogin();
+                    login.districtLogin();
+                  } catch (ParseException ex) {
+                    ex.printStackTrace();
+                  }
                     break;
                 case "Confirmer":
                     //Here you will initialize Confirmer component
