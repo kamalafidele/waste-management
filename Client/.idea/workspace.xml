@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/House/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/Admin/LoginInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/Admin/LoginInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Shifts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="ad">
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/SideMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/SideMenuPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +36,7 @@
     "last_opened_file_path": "/home/turinumugisha/Documents/waste-management/Client"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.SideMenuPanel">
+  <component name="RunManager" selected="Application.Application (1)">
     <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Application" />
       <module name="Client" />
@@ -87,9 +72,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SideMenuPanel" />
         <item itemvalue="Application.Application (1)" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="Application.SideMenuPanel" />
       </list>
     </recent_temporary>
   </component>
@@ -123,6 +108,14 @@
       <workItem from="1652852280578" duration="6013000" />
       <workItem from="1652977262540" duration="6581000" />
     </task>
+    <task id="LOCAL-00001" summary="ad">
+      <created>1653024414724</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653024414724</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +131,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ad" />
+    <option name="LAST_COMMIT_MESSAGE" value="ad" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

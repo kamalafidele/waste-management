@@ -7,24 +7,11 @@ public class SideMenuPanel extends JPanel{
     private  JPanel SideBar = new JPanel();
     private  JPanel OtherContent = new JPanel();
     public  SideMenuPanel(){
-        JFrame window = new JFrame("Sidebar");
-        window.setSize(1370,730);
-        window.setLayout(null);
-        window.setBackground(Color.WHITE);
-
         SideBar.setVisible(true);
         SideBar.setSize(200,730);
         SideBar.setBackground(Color.decode("#EAEDF3"));
-
-//        OtherContent.setVisible(true);
-//        OtherContent.setSize(1370,730);
-//        OtherContent.setBackground(Color.decode("#FFFFFF"));
-
-        window.add(SideBar);
-//        window.add(OtherContent);
+        add(SideBar)
         SidebarDesign();
-        setRightPanelContent();
-        window.setVisible(true);
     }
     public void SidebarDesign(){
         JMenuBar menuBar = new JMenuBar();
@@ -58,7 +45,5 @@ public class SideMenuPanel extends JPanel{
         JLabel label=new JLabel("This will be place for the content");
         OtherContent.add(label);
     }
-    public static void main(final String args[]) {
-       new SideMenuPanel();
-    }
+    
 }
