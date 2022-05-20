@@ -23,7 +23,7 @@ public class DebtRepo {
     }
     public ResultSet getMySecurityDebt(String token){
         try {
-            ResultSet result=database.select("select d.amount,d.month,d.userId,u.pin,s.service_name  from debt d inner join users u on u.id=d.userId inner join services s on s.id=d.service  WHERE service_name='security' and pin="+token);
+            ResultSet result=database.select("select d.amount,d.month,d.userId,u.pin,s.service_name  from debt d inner join users u on u.id=d.userId inner join services s on s.id=d.service  WHERE Service_name='Security' and pin="+token);
 
             if(!result.next()){
                 return null;

@@ -5,6 +5,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class AdminController {
 
@@ -29,6 +30,10 @@ public class AdminController {
                 createAdmin(request.split("/")[2]);
                 break;
 
+            case "districts":
+                showDistricts();
+                break;
+
             default:
                 break;
         }
@@ -37,15 +42,18 @@ public class AdminController {
     public void login(String data){
         try {
                 Admin admin = mapper.readValue(data, Admin.class);
+                int id = adminRepo.login(admin);
 
-                if(adminRepo.login(admin)){
-                    sendResponse("true");
+                if(id > 0){
+                    sendResponse(String.valueOf(id));
                 }else{
-                    sendResponse("false");
+                    sendResponse(String.valueOf(0));
                 }
 
             } catch (IOException e) {
                 e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
@@ -62,6 +70,10 @@ public class AdminController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void showDistricts(){
+
     }
 
 
