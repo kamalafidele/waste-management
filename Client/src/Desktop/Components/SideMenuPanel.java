@@ -10,7 +10,7 @@ public class SideMenuPanel extends JPanel{
         SideBar.setVisible(true);
         SideBar.setSize(200,730);
         SideBar.setBackground(Color.decode("#EAEDF3"));
-        add(SideBar)
+        add(SideBar);
         SidebarDesign();
     }
     public void SidebarDesign(){
