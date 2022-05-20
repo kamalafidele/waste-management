@@ -15,7 +15,7 @@ public class DistrictLogin extends JFrame{
   DistrictLogin() throws ParseException {
 
 
-    setTitle("WSMS Admin Login");
+    setTitle("WSMS District Login");
 
     setVisible(true);
 
@@ -29,13 +29,13 @@ public class DistrictLogin extends JFrame{
   }
   public void districtLogin(){
 
-    l1 = new JLabel("WSMS Admin Login:");
+    l1 = new JLabel("WSMS District Login:");
 
     l1.setForeground(Color.blue);
 
     l1.setFont(new Font("Serif", Font.BOLD, 20));
 
-    l2 = new JLabel("Enter Email:");
+    l2 = new JLabel("Enter District Name:");
 
     l3 = new JLabel("Enter Password:");
 
