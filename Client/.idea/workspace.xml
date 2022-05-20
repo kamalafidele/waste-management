@@ -49,7 +49,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.Application (1)">
+  <component name="RunManager" selected="Application.SideMenuPanel">
     <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Application" />
       <module name="Client" />
@@ -70,8 +70,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SideMenuPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.SideMenuPanel" />
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Desktop.Components.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SideMenuPanel" />
         <item itemvalue="Application.Application (1)" />
         <item itemvalue="Application.Application" />
       </list>
