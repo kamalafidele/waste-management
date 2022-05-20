@@ -47,9 +47,9 @@ public class SideMenuPanel extends JPanel{
         Transactions.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Transactions);
 
-        JMenu notications = new JMenu("Notifications");
-        notications.setFont(new Font("Inter", Font.PLAIN, 16));
-        menuBar.add(notications);
+        JMenu notification = new JMenu("Notifications");
+        notification.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(notification);
         menuBar.revalidate();
         menuBar.setSize(500,100);
         SideBar.add(menuBar);
