@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="added viewCompanyWork functionality" />
+    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,19 +33,12 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="26QLmdrvvJKosqHOIBhSGV4peTK" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "C:/Users/Bijoux/Desktop/DATA/Lessons/YR2/JAVA/third_term/waste_and_security_management/Client"
-  }
-}]]></component>
-  <component name="RunManager" selected="Application.Company">
+  <component name="RunManager" selected="Application.Application (1)">
     <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Application" />
       <module name="Client" />
@@ -57,8 +59,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Company" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Desktop.Components.Company" />
+    <configuration name="SideMenuPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.SideMenuPanel" />
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -72,9 +74,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Company" />
         <item itemvalue="Application.Application (1)" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="Application.SideMenuPanel" />
       </list>
     </recent_temporary>
   </component>
@@ -106,14 +108,16 @@
       <workItem from="1647579799981" duration="1457000" />
       <workItem from="1647581908059" duration="7396000" />
       <workItem from="1652852280578" duration="6013000" />
-      <workItem from="1652977262540" duration="6581000" />
+      <workItem from="1652977262540" duration="11655000" />
+      <workItem from="1652992525815" duration="729000" />
+      <workItem from="1653021692335" duration="2901000" />
     </task>
-    <task id="LOCAL-00001" summary="added viewCompanyWork functionality">
-      <created>1653034831936</created>
+    <task id="LOCAL-00001" summary="ad">
+      <created>1653024414724</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1653034831936</updated>
+      <updated>1653024414724</updated>
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -131,11 +135,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initialised Company GUI" />
-    <MESSAGE value="added viewCompanyWork functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="added viewCompanyWork functionality" />
+    <MESSAGE value="ad" />
+    <option name="LAST_COMMIT_MESSAGE" value="ad" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -161,8 +165,8 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Desktop/Components/Company.java</url>
-          <line>73</line>
+          <url>file://$PROJECT_DIR$/src/Desktop/Shared/RoundBtn.java</url>
+          <line>14</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
