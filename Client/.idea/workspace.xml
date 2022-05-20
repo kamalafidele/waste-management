@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Admin/DashBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/SideMenuPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/SideMenuPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/SideMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/SideMenuPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +36,9 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunManager" selected="Application.Application (1)">
     <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -111,6 +113,7 @@
       <workItem from="1652977262540" duration="11655000" />
       <workItem from="1652992525815" duration="729000" />
       <workItem from="1653021692335" duration="2901000" />
+      <workItem from="1653034910134" duration="5649000" />
     </task>
     <task id="LOCAL-00001" summary="ad">
       <created>1653024414724</created>
@@ -135,7 +138,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ad" />

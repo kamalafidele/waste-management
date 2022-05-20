@@ -6,6 +6,7 @@ import javax.swing.*;
 public class SideMenuPanel extends JPanel{
     private  JPanel SideBar = new JPanel();
     private  JPanel OtherContent = new JPanel();
+
     public  SideMenuPanel(){
         SideBar.setVisible(true);
         SideBar.setSize(200,730);

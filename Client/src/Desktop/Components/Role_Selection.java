@@ -1,5 +1,7 @@
 package Desktop.Components;
 
+import Components.House.Dashboard;
+import Desktop.Components.Admin.DashBoard;
 import Desktop.Shared.RoundBtn;
 
 import javax.swing.*;
@@ -27,6 +29,7 @@ public class Role_Selection extends JPanel {
 
     //STANDALONE COMPONENTS
     private Company companyComponent = new Company();
+    private DashBoard dashboard = new DashBoard();
 
     public Role_Selection() {
 
@@ -122,7 +125,7 @@ public class Role_Selection extends JPanel {
                     break;
                 case "Admin":
                     admin.setBackground(dodgerBlue);
-                    //Here you will initialize Admin component
+                    dashboard.initialize();
                     break;
                 case "Company":
                     company.setBackground(dodgerBlue);
