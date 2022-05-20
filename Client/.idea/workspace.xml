@@ -137,6 +137,12 @@
       <change beforePath="$PROJECT_DIR$/src/DataHandlers/ShiftsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/ShiftsHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataHandlers/WalletHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/WalletHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,6 +181,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="Application.View_Districts">
+  <component name="RunManager" selected="Application.Application (1)">
     <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Application" />
       <module name="Client" />
@@ -197,6 +204,8 @@
     </configuration>
     <configuration name="View_Districts" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Components.View_Districts" />
+    <configuration name="SideMenuPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.SideMenuPanel" />
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -213,6 +222,7 @@
         <item itemvalue="Application.View_Districts" />
         <item itemvalue="Application.Application (1)" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="Application.SideMenuPanel" />
       </list>
     </recent_temporary>
   </component>
@@ -244,8 +254,18 @@
       <workItem from="1647579799981" duration="1457000" />
       <workItem from="1647581908059" duration="7396000" />
       <workItem from="1652852280578" duration="6013000" />
-      <workItem from="1652977262540" duration="6581000" />
+      <workItem from="1652977262540" duration="11655000" />
+      <workItem from="1652992525815" duration="729000" />
+      <workItem from="1653021692335" duration="2901000" />
     </task>
+    <task id="LOCAL-00001" summary="ad">
+      <created>1653024414724</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653024414724</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +281,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ad" />
+    <option name="LAST_COMMIT_MESSAGE" value="ad" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -284,6 +308,11 @@
           <url>file://$PROJECT_DIR$/src/DataHandlers/Admin/LoginInfo.java</url>
           <line>19</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Desktop/Shared/RoundBtn.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
