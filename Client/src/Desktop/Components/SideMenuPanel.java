@@ -7,7 +7,7 @@ public class SideMenuPanel extends JPanel{
     private  JPanel SideBar = new JPanel();
     private  JPanel OtherContent = new JPanel();
     public  SideMenuPanel(){
-        JFrame window = new JFrame("Signup Form");
+        JFrame window = new JFrame("Sidebar");
         window.setSize(1370,730);
         window.setLayout(null);
         window.setBackground(Color.WHITE);
@@ -16,12 +16,12 @@ public class SideMenuPanel extends JPanel{
         SideBar.setSize(200,730);
         SideBar.setBackground(Color.decode("#EAEDF3"));
 
-        OtherContent.setVisible(true);
-        OtherContent.setSize(1370,730);
-        OtherContent.setBackground(Color.decode("#FFFFFF"));
+//        OtherContent.setVisible(true);
+//        OtherContent.setSize(1370,730);
+//        OtherContent.setBackground(Color.decode("#FFFFFF"));
 
         window.add(SideBar);
-        window.add(OtherContent);
+//        window.add(OtherContent);
         SidebarDesign();
         setRightPanelContent();
         window.setVisible(true);
