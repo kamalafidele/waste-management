@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Admin/DashBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/SideMenuPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/SideMenuPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/SideMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/SideMenuPanel.java" afterDir="false" />
-    </list>
+    <list default="true" id="a1f816c9-f53a-4899-819a-344b349ddf2d" name="Changes" comment="ad" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,7 +30,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager" selected="Application.Application (1)">
     <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -77,8 +75,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application (1)" />
-        <item itemvalue="Application.Application" />
         <item itemvalue="Application.SideMenuPanel" />
+        <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -113,7 +111,8 @@
       <workItem from="1652977262540" duration="11655000" />
       <workItem from="1652992525815" duration="729000" />
       <workItem from="1653021692335" duration="2901000" />
-      <workItem from="1653034910134" duration="5649000" />
+      <workItem from="1653028693663" duration="881000" />
+      <workItem from="1653037103610" duration="1009000" />
     </task>
     <task id="LOCAL-00001" summary="ad">
       <created>1653024414724</created>
@@ -138,6 +137,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ad" />
