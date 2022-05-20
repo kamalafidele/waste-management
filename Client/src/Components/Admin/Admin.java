@@ -80,9 +80,7 @@ public class Admin {
                         createAdmin();
                         break;
                     case 5:
-                        System.out.println("Add District");
-                        DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
-                        districtDashboard.addDistrict();
+                        createDistrict();
                         break;
                     case 6:
                         logout();
@@ -148,7 +146,16 @@ public class Admin {
     }
 
     public void createAdmin(){
+        System.out.println("--------Create another admin!----------");
+        System.out.println("name: ");
+        System.out.println("email: ");
+        System.out.println("Phone: ");
+    }
 
+    public  void createDistrict(){
+        System.out.println("Add District");
+        DistrictDashboard districtDashboard2=new DistrictDashboard(toServer,fromServer);
+        districtDashboard2.districtAdd();
     }
 
     public void showAnalytics(){
@@ -161,8 +168,8 @@ public class Admin {
     }
 
     public void showDistricts() throws IOException {
-        toServer.flush();
-        this.sendRequest("admin/login/" + mapper.writeValueAsString(loginInfos));
+        DistrictDashboard districtDashboard=new DistrictDashboard(toServer,fromServer);
+        districtDashboard.displayDistricts();
     }
 
     public void logout() throws IOException {

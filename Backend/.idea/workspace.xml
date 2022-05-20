@@ -5,58 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40098456-60c6-4aeb-8896-539afe23d8d7" name="Changes" comment="customerInvoice control">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_all_1_9_91.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/test. des3 -ou" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/ServiceConfirmationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/ServiceConfirmationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/ServiceConfirmation$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/ServiceConfirmation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/CitizenHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/Components/ServiceConfirmation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/CitizenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_26.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_261.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/DebtController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/DebtController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/HouseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/ShiftsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/ShiftsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/ServiceConfirmation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/ServiceConfirmation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/Shifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/Shifts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/DebtRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/DebtRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/HouseRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/ServiceConfirmationRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/ServiceConfirmationRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/ShiftsRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/ShiftsRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/DebtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DebtController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/HouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/ServiceConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ServiceConfirmation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Shifts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/DebtRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/DebtRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/HouseRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/HouseRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ThreadHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Debt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Debt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/House/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/ServiceConfirmation/Dashboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/ServiceConfirmation/ServiceConfirmation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Shifts$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Shifts$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Shifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Shifts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Debt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Debt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/House/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/House/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/House/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/ServiceConfirmation/Dashboard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/ServiceConfirmation/ServiceConfirmation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Shifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Role_Selection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Role_Selection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Role_Selection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Role_Selection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,12 +34,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+<<<<<<< HEAD
     <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
+=======
     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
+>>>>>>> 783936dac194c9b2e69937d07191156cd0ffb4ab
+    <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -115,6 +74,9 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
@@ -122,7 +84,7 @@
       <recent name="utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -132,6 +94,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="mysql-connector.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/libs/mysql-connector.jar" />
       <method v="2" />
@@ -140,6 +103,11 @@
       <list>
         <item itemvalue="Application.Application" />
         <item itemvalue="JAR Application.mysql-connector.jar" />
+=======
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+>>>>>>> 783936dac194c9b2e69937d07191156cd0ffb4ab
       </list>
     </recent_temporary>
   </component>
@@ -167,8 +135,26 @@
       <workItem from="1646066282995" duration="4976000" />
       <workItem from="1646204891625" duration="45000" />
       <workItem from="1646207126183" duration="76000" />
+      <workItem from="1647342491269" duration="49000" />
+      <workItem from="1647342590231" duration="2197000" />
+      <workItem from="1647354827242" duration="596000" />
+      <workItem from="1647368713820" duration="3252000" />
+      <workItem from="1647402270658" duration="1928000" />
+      <workItem from="1647408669285" duration="1438000" />
+      <workItem from="1647412208376" duration="14634000" />
+      <workItem from="1647431829967" duration="670000" />
+      <workItem from="1647433406514" duration="336000" />
       <workItem from="1647349194238" duration="1205000" />
       <workItem from="1647350582335" duration="608000" />
+      <workItem from="1647349194238" duration="1205000" />
+      <workItem from="1647350582335" duration="608000" />
+      <workItem from="1647372623478" duration="788000" />
+      <workItem from="1647375011584" duration="1756000" />
+      <workItem from="1647416227084" duration="1386000" />
+      <workItem from="1647579799981" duration="1073000" />
+      <workItem from="1647581871840" duration="7095000" />
+      <workItem from="1652851714611" duration="538000" />
+      <workItem from="1652977727722" duration="2178000" />
     </task>
     <task id="LOCAL-00001" summary="customerInvoice control">
       <created>1646022290178</created>

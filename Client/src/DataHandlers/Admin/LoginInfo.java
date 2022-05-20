@@ -19,7 +19,4 @@ public class LoginInfo {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public void setUsername(String next) {
-    }
 }

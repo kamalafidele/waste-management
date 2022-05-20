@@ -25,7 +25,7 @@ public class CompanyRepo {
       }
 
       public ResultSet findByPinAndEmail(long pin, String email){
-      return database.select("SELECT * FROM Users WHERE Role = 2 AND pin = " + pin+" AND email = '" + email +"'");
+      return database.select("SELECT * FROM Users WHERE Role = 3 AND pin = " + pin+" AND email = '" + email +"'");
       }
 
       public boolean createContract (int districtId, int companyId){

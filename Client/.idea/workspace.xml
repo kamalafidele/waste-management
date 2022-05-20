@@ -5,66 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/jackson_all_1_9_91.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Backend/.idea/test. des3 -ou" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ServiceConfirmationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Backend/src/Controllers/ServiceConfirmationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/CitizenHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/ServiceConfirmation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataHandlers/CitizenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector_java_8_0_26.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector_java_8_0_261.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/DebtController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/DebtController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/HouseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ShiftsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ShiftsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/ServiceConfirmation.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/ServiceConfirmation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Shifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Shifts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/DebtRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/DebtRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/HouseRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ServiceConfirmationRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ServiceConfirmationRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ShiftsRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ShiftsRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/DebtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/DebtController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/HouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/HouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/ServiceConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/ServiceConfirmation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/Shifts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/DebtRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/DebtRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/HouseRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/HouseRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Company$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Company$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Debt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Debt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/House/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/House/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation/Dashboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation/ServiceConfirmation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Shifts$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Shifts$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Shifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Shifts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Debt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Debt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/House/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/House/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/House/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/House/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ServiceConfirmation/Dashboard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ServiceConfirmation/ServiceConfirmation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Shifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Company.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="26QLmdrvvJKosqHOIBhSGV4peTK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -76,10 +41,28 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../JAVA/GUI/Demo_1" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Application (1)">
+    <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Application" />
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Desktop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="Client" />
@@ -89,6 +72,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application (1)" />
         <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
@@ -96,12 +80,32 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6c0a7eec-7ea6-4b28-b3c9-6eefe622eff8" name="Changes" comment="" />
+      <changelist id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="" />
       <created>1647347321755</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647347321755</updated>
+      <workItem from="1646336909169" duration="5413000" />
+      <workItem from="1646370575252" duration="1208000" />
+      <workItem from="1647190343625" duration="6498000" />
+      <workItem from="1647265667116" duration="18000" />
+      <workItem from="1647320617627" duration="560000" />
+      <workItem from="1647322125813" duration="974000" />
+      <workItem from="1647342499089" duration="2968000" />
+      <workItem from="1647368747151" duration="3441000" />
+      <workItem from="1647402357584" duration="2763000" />
+      <workItem from="1647408669285" duration="1360000" />
+      <workItem from="1647431829967" duration="1008000" />
+      <workItem from="1647433406514" duration="314000" />
       <workItem from="1647351028681" duration="158000" />
+      <workItem from="1647369508084" duration="2861000" />
+      <workItem from="1647372623456" duration="1754000" />
+      <workItem from="1647375011517" duration="2490000" />
+      <workItem from="1647416266168" duration="1498000" />
+      <workItem from="1647579799981" duration="1457000" />
+      <workItem from="1647581908059" duration="7396000" />
+      <workItem from="1652852280578" duration="6013000" />
+      <workItem from="1652977262540" duration="6581000" />
     </task>
     <servers />
   </component>
@@ -119,5 +123,31 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DataHandlers/CompanyHandler.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DataHandlers/CompanyHandler.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DataHandlers/Admin/LoginInfo.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DataHandlers/Admin/LoginInfo.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
