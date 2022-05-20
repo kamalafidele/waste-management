@@ -1,10 +1,10 @@
 package Desktop.Components;
+
 import javax.swing.*;
 import java.awt.*;
 import java.text.ParseException;
 
-
-public class DistrictLogin extends JFrame{
+public class UserLogin extends JFrame {
   JLabel l1, l2, l3;
   JTextField tf1;
   Color dodgerBlue = new Color(52,143,235);
@@ -12,10 +12,10 @@ public class DistrictLogin extends JFrame{
 
   JPasswordField p1;
 
-  DistrictLogin() throws ParseException {
+  UserLogin() throws ParseException {
 
 
-    setTitle("WSMS District Login");
+    setTitle("WSMS User Login");
 
     setVisible(true);
 
@@ -24,23 +24,23 @@ public class DistrictLogin extends JFrame{
     setLayout(null);
 
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    districtLogin();
+    userLogin();
 
   }
-  public void districtLogin(){
+  public void userLogin(){
 
-    l1 = new JLabel("WSMS District Login:");
+    l1 = new JLabel("WSMS User Login:");
 
 //    l1.setForeground(Color.blue);
     l1.setForeground(dodgerBlue);
     l1.setFont(new Font("Serif", Font.BOLD, 20));
 
-    l2 = new JLabel("Enter District Name:");
+    l2 = new JLabel("Enter Email:");
 
     l3 = new JLabel("Enter Password:");
 
     tf1 = new JTextField();
-
+    Color dodgerBlue = new Color(52,143,235);
     p1 = new JPasswordField();
 
     btn1 = new JButton("Submit");
@@ -57,6 +57,7 @@ public class DistrictLogin extends JFrame{
 
     btn1.setBounds(500, 350, 400, 40);
     btn1.setForeground(Color.WHITE);
+
 //    btn1.setBackground(Color.blue);
     btn1.setBackground(dodgerBlue);
     add(l1);
@@ -73,6 +74,8 @@ public class DistrictLogin extends JFrame{
 
   }
 }
+
+
 
 
 

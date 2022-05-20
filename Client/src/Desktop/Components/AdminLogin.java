@@ -9,7 +9,7 @@ public class AdminLogin extends JFrame {
 
   JLabel l1, l2, l3;
   JTextField tf1;
-
+  Color dodgerBlue = new Color(52,143,235);
   JButton btn1;
 
   JPasswordField p1;
@@ -33,7 +33,8 @@ public class AdminLogin extends JFrame {
 
     l1 = new JLabel("WSMS District Login:");
 
-    l1.setForeground(Color.blue);
+//    l1.setForeground(Color.blue);
+    l1.setForeground(dodgerBlue);
 
     l1.setFont(new Font("Serif", Font.BOLD, 20));
 
@@ -59,7 +60,8 @@ public class AdminLogin extends JFrame {
 
     btn1.setBounds(500, 350, 400, 40);
     btn1.setForeground(Color.WHITE);
-    btn1.setBackground(Color.blue);
+//    btn1.setBackground(Color.blue);
+    btn1.setBackground(dodgerBlue);
 
     add(l1);
 

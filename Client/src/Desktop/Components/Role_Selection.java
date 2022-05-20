@@ -124,8 +124,15 @@ public class Role_Selection extends JPanel {
 
             switch (actionCommand) {
                 case "Citizen":
+                  try {
+                    UserLogin login=new UserLogin();
+                    login.userLogin();
+                    admin.setBackground(dodgerBlue);
+                  } catch (ParseException ex) {
+                    ex.printStackTrace();
+                  }
                     citizen.setBackground(dodgerBlue);
-                    //Here you will initialize citizen component;
+
                     break;
                 case "Admin":
                   try {
