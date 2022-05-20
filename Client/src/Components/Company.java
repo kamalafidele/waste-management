@@ -18,12 +18,68 @@ public class Company {
     DataInputStream fromServer;
     Scanner keyboard;
     ObjectMapper mapper;
+    Shifts shifts;
 
     public Company(DataOutputStream toServer, DataInputStream fromServer) {
-        this.toServer=toServer;
-        this.fromServer=fromServer;
-        keyboard=new Scanner(System.in);
-        mapper=new ObjectMapper();
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+        keyboard = new Scanner(System.in);
+        mapper = new ObjectMapper();
+        shifts = new Shifts(toServer,fromServer);
+    }
+
+    public void login(){
+        CompanyHandler handler = new CompanyHandler();
+        System.out.println("########### LOGIN AS A COMPANY #############");
+        System.out.print("Enter email: ");
+        handler.setEmail(keyboard.nextLine());
+        System.out.print("Enter pin: ");
+        handler.setPin(keyboard.nextLong());
+        try{
+            String request = "company/login/"+mapper.writeValueAsString(handler);
+            sendRequest(request);
+
+            String response = fromServer.readUTF();
+
+            if(response.equals("Invalid Pin or Email")) {
+                System.out.println(response);
+                System.exit(0);
+            }else {
+                CompanyHandler company = mapper.readValue(response,CompanyHandler.class);
+                int choice = 0;
+                System.out.println("YOU HAVE SUCCESSFULLY LOGGED IN");
+                System.out.println();
+                System.out.println("### YOUR PROFILE ###");
+                System.out.println("NAME: " + company.getName());
+                System.out.println("EMAIL: " + company.getEmail());
+                System.out.println("PHONE: " + company.getPhone());
+                System.out.println("PIN: " + company.getPin());
+                System.out.println("COMPANY ID: " + company.getId());
+
+                System.out.println();
+
+                System.out.println("---- CHOOSE WHAT TO DO ------------");
+                System.out.println("1. CREATE A SHIFT ");
+                System.out.println("0. EXIT ");
+                System.out.print("Enter your choice: ");
+                choice = keyboard.nextInt();
+
+                switch (choice){
+                    case 1:
+                        shifts.addShift();
+                      break;
+                    case 0:
+                        System.exit(0);
+                      break;
+                    default:
+                        System.out.println("CHOOSE FROM AVAILABLE OPTIONS PLEASE");
+                      break;
+                }
+
+            }
+
+        } catch (IOException exception){}
+
     }
 
     public void displayCompanies(){
@@ -31,9 +87,9 @@ public class Company {
 
         try{
             sendRequest(request);
-            String response=fromServer.readUTF();
-            ArrayList<CompanyHandler> companies=mapper.readValue(response,new TypeReference<ArrayList<CompanyHandler>>(){});
-            Iterator<CompanyHandler> companyIterator=companies.iterator();
+            String response = fromServer.readUTF();
+            ArrayList<CompanyHandler> companies = mapper.readValue(response,new TypeReference<ArrayList<CompanyHandler>>(){});
+            Iterator<CompanyHandler> companyIterator = companies.iterator();
 
             System.out.println("######################### REGISTERED COMPANIES ###################################### ");
             System.out.println("|------------|----------------------------------|-----------------------------------|");
@@ -76,17 +132,13 @@ public class Company {
         companyHandler.setWalletId( 0 );
 
         try{
-            String companyAsJson=mapper.writeValueAsString( companyHandler );
+            String companyAsJson = mapper.writeValueAsString( companyHandler );
             sendRequest( "company/addCompany/" + companyAsJson );
             String response= fromServer.readUTF();
             System.out.println( response );
-        }catch (IOException exception){}
-    }
-
-    public void sendRequest( String request ){
-        try{
-            toServer.writeUTF( request );
-        }catch ( IOException exception ){}
+        }catch (IOException exception){
+            exception.printStackTrace();
+        }
     }
 
     public void createCompanyDistrictContract( int districtId, int companyId ) {
@@ -107,4 +159,11 @@ public class Company {
         else
             return 0;
     }
+
+    public void sendRequest( String request ){
+        try{
+            toServer.writeUTF( request );
+        }catch ( IOException exception ){}
+    }
+
 }

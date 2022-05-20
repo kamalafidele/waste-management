@@ -44,12 +44,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/ThreadHandler.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Config/DatabaseConnection.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Models/Company.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Controllers/CompanyController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Repositories/CompanyRepo.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Application.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -79,6 +79,9 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
@@ -86,7 +89,7 @@
       <recent name="utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -96,14 +99,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="mysql-connector.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/libs/mysql-connector.jar" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
-        <item itemvalue="JAR Application.mysql-connector.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -131,8 +129,26 @@
       <workItem from="1646066282995" duration="4976000" />
       <workItem from="1646204891625" duration="45000" />
       <workItem from="1646207126183" duration="76000" />
+      <workItem from="1647342491269" duration="49000" />
+      <workItem from="1647342590231" duration="2197000" />
+      <workItem from="1647354827242" duration="596000" />
+      <workItem from="1647368713820" duration="3252000" />
+      <workItem from="1647402270658" duration="1928000" />
+      <workItem from="1647408669285" duration="1438000" />
+      <workItem from="1647412208376" duration="14634000" />
+      <workItem from="1647431829967" duration="670000" />
+      <workItem from="1647433406514" duration="336000" />
       <workItem from="1647349194238" duration="1205000" />
       <workItem from="1647350582335" duration="608000" />
+      <workItem from="1647349194238" duration="1205000" />
+      <workItem from="1647350582335" duration="608000" />
+      <workItem from="1647372623478" duration="788000" />
+      <workItem from="1647375011584" duration="1756000" />
+      <workItem from="1647416227084" duration="1386000" />
+      <workItem from="1647579799981" duration="1073000" />
+      <workItem from="1647581871840" duration="7095000" />
+      <workItem from="1652851714611" duration="538000" />
+      <workItem from="1652977727722" duration="2178000" />
     </task>
     <task id="LOCAL-00001" summary="customerInvoice control">
       <created>1646022290178</created>
@@ -157,5 +173,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

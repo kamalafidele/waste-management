@@ -32,6 +32,9 @@ public class CompanyController {
         this.toClient=toClient;
 
         switch (request.split("/")[1]) {
+            case "login":
+                login(request.split("/")[2]);
+              break;
             case "getAll":
                 getCompanies();
               break;
@@ -59,6 +62,23 @@ public class CompanyController {
         }
     }
 
+    public void login(String data){
+
+     try{
+         Company company = mapper.readValue(data, Company.class);
+         ResultSet resultSet = companyRepo.findByPinAndEmail(company.getPin(), company.getEmail());
+         Company company2 = extractCompany(resultSet);
+
+         if (company2.getId() == 0 || company2.getEmail() == null)
+             sendResponse("Invalid Pin or Email");
+         else
+             sendResponse(mapper.writeValueAsString(company2));
+
+     } catch (Exception exception){
+         exception.printStackTrace();
+     }
+    }
+
     public void addCompany(String data) {
         try{
             Company company=mapper.readValue(data,Company.class);
@@ -74,23 +94,10 @@ public class CompanyController {
 
     public void getCompany(long companyId){
        ResultSet resultSet=companyRepo.findById(companyId);
-       Company company=new Company();
-
-       try{
-           while(resultSet.next()){
-               company.setId(resultSet.getInt(1));
-               company.setName(resultSet.getString(2));
-               company.setEmail(resultSet.getString(3));
-               company.setPhone(resultSet.getString(4));
-               company.setPin(resultSet.getLong(5));
-               company.setRole(resultSet.getInt(6));
-               company.setWalletId(resultSet.getInt(7));
-               company.setLocation(resultSet.getInt(8));
-           }
-
+       Company company= extractCompany(resultSet);
+       try {
            sendResponse(mapper.writeValueAsString(company));
-
-       } catch (IOException | SQLException exception){}
+       } catch (Exception exception){}
     }
 
     public void getCompanies() {
@@ -126,5 +133,23 @@ public class CompanyController {
         } catch ( IOException exception ) {
             exception.printStackTrace();
         }
+    }
+
+    public Company extractCompany(ResultSet resultSet){
+        Company company = new Company();
+        try{
+            while(resultSet.next()){
+                company.setId(resultSet.getInt(1));
+                company.setName(resultSet.getString(2));
+                company.setEmail(resultSet.getString(3));
+                company.setPhone(resultSet.getString(4));
+                company.setPin(resultSet.getLong(5));
+                company.setRole(resultSet.getInt(6));
+                company.setWalletId(resultSet.getInt(7));
+                company.setLocation(resultSet.getInt(8));
+            }
+        } catch (Exception exception){}
+
+        return company;
     }
 }
