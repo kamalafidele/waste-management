@@ -1,15 +1,14 @@
 package Desktop.Components;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PaymentFrame extends JFrame implements ActionListener{
+public class MomoPay extends JFrame implements ActionListener {
     private JFrame window;
-    private JLabel bankAccount;
+    private JLabel phoneNumber;
     private JLabel amount;
     private JLabel spiral;
     private JLabel title;
@@ -22,8 +21,8 @@ public class PaymentFrame extends JFrame implements ActionListener{
     private JButton btn;
 //    Socket socket;
 
-    PaymentFrame() {
-        window = new JFrame("Payment");
+    MomoPay() {
+        window = new JFrame("Mobile Money Deposition");
         window.setSize(1370,730);
         window.setLayout(null);
         window.setBackground(Color.WHITE);
@@ -40,15 +39,15 @@ public class PaymentFrame extends JFrame implements ActionListener{
         formPanel.setBackground(Color.white);
 
 
-        title = new JLabel("Deposit to Your Wallet");
-        title.setBounds(610,40,350,40);
+        title = new JLabel("Deposit By Momo Account");
+        title.setBounds(610,40,450,40);
         title.setFont(new Font("verdana", Font.PLAIN, 30));
         title.setForeground(Color.decode("#3674D0"));
 
-        bankAccount = new JLabel("Enter Bank Account");
-        bankAccount.setBounds(610,100,150,40);
-        bankAccount.setForeground(Color.decode("#202020"));
-        bankAccount.setFont(new Font("verdana", Font.PLAIN, 14));
+        phoneNumber = new JLabel("Enter Phone Number");
+        phoneNumber.setBounds(610,100,150,40);
+        phoneNumber.setForeground(Color.decode("#202020"));
+        phoneNumber.setFont(new Font("verdana", Font.PLAIN, 14));
         number = new JTextField();
         number.setBounds(610,150,400,40);
         number.setBorder(new LineBorder(Color.BLACK,1,true));
@@ -76,7 +75,7 @@ public class PaymentFrame extends JFrame implements ActionListener{
 
         window.add(spiral);
         window.add(title);
-        window.add(bankAccount);
+        window.add(phoneNumber);
         window.add(number);
         window.add(amount);
         window.add(amt);
@@ -89,20 +88,17 @@ public class PaymentFrame extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == btn) {
             String nbr;
-            nbr = bankAccount.getText();
-            if (nbr.equalsIgnoreCase("12345")) {
+            nbr = phoneNumber.getText();
+            if (nbr.equalsIgnoreCase("0790880013")) {
                 JOptionPane.showMessageDialog(this, "Deposit Recorded ");
             } else {
-                JOptionPane.showMessageDialog(this, "Please Enter A Valid Account");
+                JOptionPane.showMessageDialog(this, "There seems to be no momo account registered with that number");
             }
         }
     }
-            public static void main(String[] args) {
-            PaymentFrame frame = new PaymentFrame();
-            frame.setTitle("Payment Form");
-            frame.setVisible(false);
-            frame.setSize(1370,730);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setResizable(false);
-        }
+    public static void main(String[] args) {
+        MomoPay m = new MomoPay();
+    }
 }
+
+
