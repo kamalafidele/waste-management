@@ -13,8 +13,10 @@ public class Transactions extends JFrame {
     private JPanel leftPanel = new JPanel();
     private JPanel rightPanel = new JPanel();
 
+
     public Transactions(){
-        JFrame frame = new JFrame("WSMS_Y2_C");
+        SideMenuPanel sideMenuPanel = new SideMenuPanel();
+        JFrame frame = new JFrame("Transactions");
         frame.setSize(1000,600);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -23,16 +25,16 @@ public class Transactions extends JFrame {
         leftPanel.setSize(300,600);
 //        Color rightPanelBg = new Color()
         leftPanel.setBackground(new Color(234, 237, 243));
-
-
         rightPanel.setVisible(true);
         rightPanel.setSize(700,600);
         rightPanel.setBackground(Color.WHITE);
 
+        leftPanel.add(sideMenuPanel);
+
+
         frame.add(leftPanel);
         frame.add(rightPanel);
 
-        setLeftPanelTexts();
         String[][] tableData = {{"01", "Rusizi District", "Me", "10000", "2021-12-30"},
                 {"02", "Me", "Confirmer", "5000", "2022-01-30"},
                 {"03", "Rusizi District", "Me", "10000", "2022-01-30"},
