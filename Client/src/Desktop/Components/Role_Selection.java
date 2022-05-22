@@ -125,6 +125,7 @@ public class Role_Selection extends JPanel {
                     //Here you will initialize Admin component
                     break;
                 case "Company":
+
                     company.setBackground(dodgerBlue);
                     companyComponent.initialize();
                     break;
