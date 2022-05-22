@@ -8,8 +8,8 @@ public class testPanel extends JPanel {
 
     public testPanel(){
         setVisible(false);
-        setBounds(206,10,1350,770);
-        setBackground(Color.orange);
+        setBounds(200,0,1366,820);
+        setBackground(Color.WHITE);
         setBorder(new EmptyBorder(new Insets(20,30,20,30)));
     }
 }
