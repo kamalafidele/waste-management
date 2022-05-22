@@ -136,7 +136,7 @@ public class CitizenRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
-//        new CitizenRouting();
+        new CitizenRouting();
     }
 
     public  void filter(String chosen){
