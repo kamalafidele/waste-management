@@ -1,12 +1,12 @@
 package Desktop.Components.Routing;
+import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -22,9 +22,16 @@ public class DistrictRouting extends JFrame{
     BufferedImage dashboard,analytics,notifications,Companies,addAdmin,transactions,logo,userAvatarImg,Confirmers;
     private  JPanel SideBar = new JPanel();
 
+    private DataOutputStream toServer;
+    private DataInputStream fromServer;
+
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+    Registration companyRegister = new Registration(false,true,false);
+    Registration userRegister = new Registration(false,false,true);
+
+
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
     public  DistrictRouting() throws IOException {
@@ -34,11 +41,14 @@ public class DistrictRouting extends JFrame{
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
         SideBar.setBackground(Color.decode("#EAEDF3"));
-
+        //ADDING COMPONENTS NEEDED BY DISTRICT EMPLOYEES
         add(SideBar);
         panel.setVisible(true);
         add(panel);
         add(panel2);
+        add(companyRegister);
+        add(userRegister);
+
         SidebarDesign();
         setVisible(true);
     }
@@ -71,16 +81,10 @@ public class DistrictRouting extends JFrame{
         Dashboard.addMenuListener(listenerHandler);
         menuBar.add(Dashboard);
         JMenu Companies = new JMenu("Companies");
-        Companies.setIcon(CompaniesImg);
+        //Companies.setIcon(districtsImg);
         Companies.addMenuListener(listenerHandler);
         Companies.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Companies);
-        JMenu Confirmers = new JMenu("Confirmers");
-        Confirmers.setIcon(ConfirmersImg);
-        Confirmers.addMenuListener(listenerHandler);
-        Confirmers.setFont(new Font("Inter", Font.PLAIN, 16));
-        menuBar.add(Confirmers);
-
         JMenu Analytics = new JMenu("Analytics");
         Analytics.addMenuListener(listenerHandler);
         Analytics.setIcon((analyticsImg));
@@ -134,26 +138,35 @@ public class DistrictRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
-        new DistrictRouting();
     }
 
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
                 panel2.setVisible(false);
+                companyRegister.setVisible(false);
+                userRegister.setVisible(false);
                 panel.setVisible(true);
                 break;
             case "Transactions":
                 break;
-            case "RegisterManager":
-                System.out.println("RegisterManager clicked");
+            case "Add User":
+                panel.setVisible(false);
+                panel2.setVisible(false);
+                companyRegister.setVisible(false);
+                userRegister.setVisible(true);
                 break;
             case "Dashboard":
                 panel.setVisible(false);
+                companyRegister.setVisible(false);
+                userRegister.setVisible(false);
                 panel2.setVisible(true);
                 break;
             case "Companies":
-                System.out.println("Companies clicked");
+                panel.setVisible(false);
+                panel2.setVisible(false);
+                userRegister.setVisible(false);
+                companyRegister.setVisible(true);
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");

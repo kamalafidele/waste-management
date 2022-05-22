@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -21,6 +23,9 @@ public class ConfirmerRouting extends JFrame{
     ImageIcon analyticsImg,dashboardImg,TransactionsImg,NotificationsImg,ShiftsImg,addAdminImg;
     BufferedImage dashboard,analytics,notifications,Shifts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
+
+    private DataOutputStream toServer;
+    private DataInputStream fromServer;
 
     //PANELS
     testPanel panel = new testPanel();
@@ -121,7 +126,6 @@ public class ConfirmerRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
-        new ConfirmerRouting();
     }
 
     public  void filter(String chosen){
