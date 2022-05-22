@@ -1,6 +1,6 @@
 package Desktop.Screens.RegisterClient;
 
-import Desktop.Components.SideMenuPanel;
+//import Desktop.Components.SideMenuPanel;
 
 import javax.swing.*;
 import java.awt.*;

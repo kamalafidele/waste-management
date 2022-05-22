@@ -1,6 +1,6 @@
 package Desktop.Screens.RegisterClient;
 
-import Desktop.Components.SideMenuPanel;
+//import Desktop.Components.SideMenuPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +13,7 @@ public class MajaorPanel extends JPanel{
         leftPanel.setVisible(true);
         leftPanel.setBounds(0, 0,200,760);
         leftPanel.setBackground(Color.decode("#EAEDF3"));
-        leftPanel.add(new SideMenuPanel());
+//        leftPanel.add(new SideMenuPanel());
 
         rightPanel.setVisible(true);
         rightPanel.setBounds(200,0,1136,760);
