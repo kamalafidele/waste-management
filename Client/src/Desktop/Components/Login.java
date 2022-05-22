@@ -39,7 +39,7 @@ public class Login extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    new SystemAdminsRouting(toServer, fromServer);
+                    new SystemAdminsRouting();
                     dispose();
                 } catch (Exception exception) {}
             }

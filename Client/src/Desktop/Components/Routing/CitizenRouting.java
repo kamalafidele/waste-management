@@ -14,16 +14,16 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
 public class CitizenRouting extends JFrame{
-    ImageIcon analyticsImg,dashboardImg,TransactionsImg,NotificationsImg,districtsImg,addAdminImg;
-    BufferedImage dashboard,analytics,notifications,districts,addAdmin,transactions;
+    ImageIcon analyticsImg,dashboardImg,TransactionsImg,NotificationsImg,DebtsImg,addAdminImg;
+    BufferedImage dashboard,analytics,notifications,Debts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
-    private  JPanel OtherContent = new JPanel();
 
     private DataOutputStream toServer;
     private DataInputStream fromServer;
@@ -34,30 +34,20 @@ public class CitizenRouting extends JFrame{
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
-        this.fromServer = fromServer;
-        this.toServer = toServer;
-
-        setTitle("Sidebar Panel");
-        setSize(1366,768);
+    public  CitizenRouting() throws IOException {
+        setTitle("Company Board");
+        setSize(1566,820);
         setLayout(null);
-        setBackground(Color.WHITE);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Button logout=new Button("Logout");
-        logout.setBounds(180,180,300,300);
-        logout.setSize(400,300);
-        logout.setBackground(Color.decode("#557DF8"));
         SideBar.setVisible(true);
-        SideBar.setSize(200,730);
+        SideBar.setSize(200,820);
         SideBar.setBackground(Color.decode("#EAEDF3"));
-        //ADDING COMPONENTS NEEDED BY CITIZEN
         add(SideBar);
+        panel.setVisible(true);
         add(panel);
         add(panel2);
 
         SidebarDesign();
         setVisible(true);
-        SideBar.add(logout);
     }
 
     public void SidebarDesign() throws IOException {
@@ -67,37 +57,34 @@ public class CitizenRouting extends JFrame{
         transactions=ImageIO.read(new File("src/Desktop/Images/exchange-funds-line.png"));
         notifications=ImageIO.read(new File("src/Desktop/Images/notification-2-line.png"));
         addAdmin=ImageIO.read(new File("src/Desktop/Images/user-add-line.png"));
-        districts=ImageIO.read(new File("src/Desktop/Images/team-fill.png"));
+        Debts=ImageIO.read(new File("src/Desktop/Images/money-dollar-circle-line.png"));
+
+
         dashboardImg = new ImageIcon(dashboard.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         NotificationsImg = new ImageIcon(notifications.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         addAdminImg = new ImageIcon(addAdmin.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
-        districtsImg = new ImageIcon(districts.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
+        DebtsImg = new ImageIcon(Debts.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         analyticsImg = new ImageIcon(analytics.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         TransactionsImg = new ImageIcon(transactions.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         menuBar.setLayout(new GridLayout(0,1));
-        menuBar.setPreferredSize(new Dimension(180,400));
+        menuBar.setPreferredSize(new Dimension(180,350));
         menuBar.setBackground(Color.decode("#EAEDF3"));
         JMenu Dashboard = new JMenu("Dashboard");
         Dashboard.setIcon(dashboardImg);
         Dashboard.setBackground(Color.orange);
-        Dashboard.setFont(new Font("Inter", Font.BOLD, 16));
+        Dashboard.setFont(new Font("Inter", Font.PLAIN, 16));
         Dashboard.addMenuListener(listenerHandler);
         menuBar.add(Dashboard);
-        JMenu Districts = new JMenu("Districts");
-        Districts.setIcon(districtsImg);
-        Districts.addMenuListener(listenerHandler);
-        Districts.setFont(new Font("Inter", Font.PLAIN, 16));
-        menuBar.add(Districts);
+        JMenu Debts = new JMenu("Debts");
+        Debts.setIcon(DebtsImg);
+        Debts.addMenuListener(listenerHandler);
+        Debts.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(Debts);
         JMenu Analytics = new JMenu("Analytics");
         Analytics.addMenuListener(listenerHandler);
         Analytics.setIcon((analyticsImg));
         Analytics.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Analytics);
-        JMenu RegisterAdmin = new JMenu("RegisterAdmin");
-        RegisterAdmin.addMenuListener(listenerHandler);
-        RegisterAdmin.setIcon(addAdminImg);
-        RegisterAdmin.setFont(new Font("Inter", Font.PLAIN, 16));
-        menuBar.add(RegisterAdmin);
         JMenu Transactions = new JMenu("Transactions");
         Transactions.addMenuListener(listenerHandler);
         Transactions.setIcon(TransactionsImg);
@@ -110,7 +97,33 @@ public class CitizenRouting extends JFrame{
         notification.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(notification);
         menuBar.revalidate();
+        logo=ImageIO.read(new File("src/Desktop/Images/logo.png"));
+        userAvatarImg=ImageIO.read(new File("src/Desktop/Images/user-avatar.png"));
+        JLabel logoImg=new JLabel(new ImageIcon(logo.getScaledInstance(100,70,BufferedImage.SCALE_DEFAULT)));
+        logoImg.setLayout(new GridLayout(1,1));
+        JLabel userAvatar=new JLabel(new ImageIcon(userAvatarImg.getScaledInstance(90,90,BufferedImage.SCALE_DEFAULT)));
+        JPanel credentials=new JPanel();
+        credentials.setLayout(new GridLayout(2,1));
+        JLabel userName=new JLabel("NTAKIRUTIMANA");
+        userName.setFont(new Font("Inter", Font.BOLD, 18));
+        JLabel userRole=new JLabel("           Company Admin");
+
+        JPanel logoutBtn=new JPanel();
+        JButton logout = new JButton("<html><b><button>LOGOUT</button><b></html>");
+        logout.setBackground(Color.decode("#557DF8"));
+        logoutBtn.add(logout);
+        credentials.add(logoImg);
+        credentials.add(userAvatar);
+        JPanel credential2=new JPanel();
+        credential2.setBackground(Color.decode("#EAEDF3"));
+        credentials.setBackground(Color.decode("#EAEDF3"));
+        credential2.setLayout(new GridLayout(2,1));
+        credential2.add(userName);
+        credential2.add(userRole);
+        SideBar.add(credentials);
+        SideBar.add(credential2);
         SideBar.add(menuBar);
+        SideBar.add(logoutBtn);
     }
 
 
@@ -126,16 +139,12 @@ public class CitizenRouting extends JFrame{
                 break;
             case "Transactions":
                 break;
-            case "RegisterAdmin":
-                panel.setVisible(false);
-                panel2.setVisible(false);
-                break;
             case "Dashboard":
                 panel.setVisible(false);
                 panel2.setVisible(true);
                 break;
-            case "Districts":
-                System.out.println("Districts clicked");
+            case "Debts":
+                System.out.println("Debts clicked");
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
