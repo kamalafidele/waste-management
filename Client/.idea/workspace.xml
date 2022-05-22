@@ -5,29 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1f816c9-f53a-4899-819a-344b349ddf2d" name="Changes" comment="ad">
-      <change afterPath="$PROJECT_DIR$/src/Desktop/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/DistrictController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/HouseController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/District.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/House.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/AdminRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/CompanyRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/CompanyRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/DistrictRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/DistrictRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/HouseRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/waste-management.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/github_kancyframework_springx_boot_gui_miglayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/CreateNotification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/NotificationPopUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataHandlers/CompanyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/CompanyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataHandlers/DistrictHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/DistrictHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Role_Selection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,16 +39,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path": "C:\\Users\\fiatb\\IdeaProjects\\waste-management\\Client\\libs",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/fiatb/IdeaProjects/waste-management/Client",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fiatb\IdeaProjects\waste-management\Client\src\Desktop\Components" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Application.CreateNotification">
     <configuration name="App" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.App" />
       <module name="Client" />
@@ -78,34 +75,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CitizenRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.CitizenRouting" />
-      <module name="Client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Desktop.Components.Routing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CompanyRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.CompanyRouting" />
-      <module name="Client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Desktop.Components.Routing.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CompanySideBar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Desktop.Components.CompanySideBar" />
+    <configuration name="CardLayoutExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.CardLayoutExample" />
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -117,7 +88,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SideMenuPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateNotification" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.CreateNotification" />
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Desktop.Components.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Desktop.Components.SideMenuPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Components.SideMenuPanel" />
       <module name="Client" />
       <extension name="coverage">
@@ -130,15 +114,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.Test" />
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Desktop.Components.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.CardLayoutExample" />
+      <item itemvalue="Application.CreateNotification" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.Desktop.Components.SideMenuPanel" />
       <item itemvalue="Application.App" />
-      <item itemvalue="Application.SideMenuPanel" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CreateNotification" />
+        <item itemvalue="Application.CardLayoutExample" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.SideMenuPanel" />
-        <item itemvalue="Application.Application" />
+        <item itemvalue="Application.Desktop.Components.SideMenuPanel" />
       </list>
     </recent_temporary>
   </component>
@@ -178,6 +180,8 @@
       <workItem from="1653117447321" duration="809000" />
       <workItem from="1653154289073" duration="4464000" />
       <workItem from="1653195339397" duration="1403000" />
+      <workItem from="1653206699708" duration="1332000" />
+      <workItem from="1653208555637" duration="5494000" />
     </task>
     <task id="LOCAL-00001" summary="ad">
       <created>1653024414724</created>
