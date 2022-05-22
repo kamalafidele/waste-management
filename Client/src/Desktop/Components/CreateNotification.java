@@ -13,9 +13,11 @@ public class CreateNotification extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(800, 500);
 
-        JPanel mainPanel = new JPanel(new MigLayout("wrap, debug, fill", "[]", "[][][]"));
+        JPanel mainPanel = new JPanel(new MigLayout("center, wrap, debug, fill, insets 20", "[]", "[]10[]10[]"));
         JLabel notification = new JLabel("Notification");
-        JPanel insidePanel = new JPanel(new MigLayout("wrap", "[][][][]", "[][]"));
+        notification.setFont(new Font(null, Font.BOLD, 20));
+        notification.setForeground(new Color(0,101,51));
+        JPanel insidePanel = new JPanel(new MigLayout("wrap", "[]10[]10[]10[]", "[]10[]"));
         JPanel formPanel = new JPanel();
 
         JLabel description = new JLabel("Description");
@@ -66,17 +68,17 @@ public class CreateNotification extends JFrame {
 
         insidePanel.add(description, "span");
         insidePanel.add(notificationName);
-        insidePanel.add(notificationTextField);
+        insidePanel.add(notificationTextField, "width 200");
         insidePanel.add(assignedGroup);
-        insidePanel.add(groupChoice);
+        insidePanel.add(groupChoice, "width 200");
         insidePanel.add(processName);
-        insidePanel.add(processTextField);
+        insidePanel.add(processTextField, "width 200");
         insidePanel.add(date);
-        insidePanel.add(dateChoice);
+        insidePanel.add(dateChoice, "width 200");
         insidePanel.add(status);
-        insidePanel.add(statusChoice);
+        insidePanel.add(statusChoice, "width 200");
         insidePanel.add(renotify);
-        insidePanel.add(periodChoice);
+        insidePanel.add(periodChoice, "width 200");
         insidePanel.add(content, "span");
         insidePanel.add(message);
         insidePanel.add(textArea, "span, grow");
