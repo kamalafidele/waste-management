@@ -29,7 +29,7 @@ public class CompanyRouting extends JFrame{
 
     public  CompanyRouting() throws IOException {
         setTitle("Sidebar Panel");
-        setSize(1366,768);
+        setSize(1566,820);
         setLayout(null);
         setBackground(Color.WHITE);
         Button logout=new Button("Logout");
@@ -37,8 +37,9 @@ public class CompanyRouting extends JFrame{
         logout.setSize(400,300);
         logout.setBackground(Color.decode("#557DF8"));
         SideBar.setVisible(true);
-        SideBar.setSize(200,730);
-        SideBar.setBackground(Color.decode("#EAEDF3"));
+        SideBar.setSize(200,820);
+        // SideBar.setBackground(Color.decode("#EAEDF3"));
+        SideBar.setBackground(Color.GREEN);
         add(SideBar);
         add(panel);
         add(panel2);
