@@ -1,5 +1,6 @@
 package Desktop.Components.Routing;
 import Desktop.Components.Registration;
+import Desktop.Components.CreateNotification;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
@@ -173,6 +174,7 @@ public class CompanyRouting extends JFrame{
                 break;
             case "Notifications":
                 registerUser.setVisible(false);
+                new CreateNotification();
                 break;
             default:
                 System.out.println();
