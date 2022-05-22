@@ -11,16 +11,16 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
 public class DistrictRouting extends JFrame{
-     ImageIcon analyticsImg,dashboardImg,TransactionsImg,NotificationsImg,districtsImg,addAdminImg;
-     BufferedImage dashboard,analytics,notifications,districts,addAdmin,transactions;
+    ImageIcon analyticsImg,dashboardImg,TransactionsImg,NotificationsImg,CompaniesImg,addAdminImg,ConfirmersImg;
+    BufferedImage dashboard,analytics,notifications,Companies,addAdmin,transactions,logo,userAvatarImg,Confirmers;
     private  JPanel SideBar = new JPanel();
-    private  JPanel OtherContent = new JPanel();
 
     //PANELS
     testPanel panel = new testPanel();
@@ -28,23 +28,19 @@ public class DistrictRouting extends JFrame{
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
     public  DistrictRouting() throws IOException {
-        setTitle("Sidebar Panel");
-        setSize(1366,768);
+        setTitle("Company Board");
+        setSize(1566,820);
         setLayout(null);
-        setBackground(Color.WHITE);
-        Button logout=new Button("Logout");
-        logout.setBounds(180,180,300,300);
-        logout.setSize(400,300);
-        logout.setBackground(Color.decode("#557DF8"));
         SideBar.setVisible(true);
-        SideBar.setSize(200,730);
+        SideBar.setSize(200,820);
         SideBar.setBackground(Color.decode("#EAEDF3"));
+
         add(SideBar);
+        panel.setVisible(true);
         add(panel);
         add(panel2);
         SidebarDesign();
         setVisible(true);
-        SideBar.add(logout);
     }
 
     public void SidebarDesign() throws IOException {
@@ -54,37 +50,47 @@ public class DistrictRouting extends JFrame{
         transactions=ImageIO.read(new File("src/Desktop/Images/exchange-funds-line.png"));
         notifications=ImageIO.read(new File("src/Desktop/Images/notification-2-line.png"));
         addAdmin=ImageIO.read(new File("src/Desktop/Images/user-add-line.png"));
-        districts=ImageIO.read(new File("src/Desktop/Images/team-fill.png"));
+        Companies=ImageIO.read(new File("src/Desktop/Images/stack-line.png"));
+        Confirmers=ImageIO.read(new File("src/Desktop/Images/team-fill.png"));
+        
+
         dashboardImg = new ImageIcon(dashboard.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         NotificationsImg = new ImageIcon(notifications.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         addAdminImg = new ImageIcon(addAdmin.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
-        districtsImg = new ImageIcon(districts.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
+        CompaniesImg = new ImageIcon(Companies.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         analyticsImg = new ImageIcon(analytics.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         TransactionsImg = new ImageIcon(transactions.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
+        ConfirmersImg = new ImageIcon(Confirmers.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         menuBar.setLayout(new GridLayout(0,1));
-        menuBar.setPreferredSize(new Dimension(180,400));
+        menuBar.setPreferredSize(new Dimension(180,350));
         menuBar.setBackground(Color.decode("#EAEDF3"));
         JMenu Dashboard = new JMenu("Dashboard");
         Dashboard.setIcon(dashboardImg);
         Dashboard.setBackground(Color.orange);
-        Dashboard.setFont(new Font("Inter", Font.BOLD, 16));
+        Dashboard.setFont(new Font("Inter", Font.PLAIN, 16));
         Dashboard.addMenuListener(listenerHandler);
         menuBar.add(Dashboard);
-        JMenu Districts = new JMenu("Districts");
-        Districts.setIcon(districtsImg);
-        Districts.addMenuListener(listenerHandler);
-        Districts.setFont(new Font("Inter", Font.PLAIN, 16));
-        menuBar.add(Districts);
+        JMenu Companies = new JMenu("Companies");
+        Companies.setIcon(CompaniesImg);
+        Companies.addMenuListener(listenerHandler);
+        Companies.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(Companies);
+        JMenu Confirmers = new JMenu("Confirmers");
+        Confirmers.setIcon(ConfirmersImg);
+        Confirmers.addMenuListener(listenerHandler);
+        Confirmers.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(Confirmers);
+
         JMenu Analytics = new JMenu("Analytics");
         Analytics.addMenuListener(listenerHandler);
         Analytics.setIcon((analyticsImg));
         Analytics.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Analytics);
-        JMenu RegisterAdmin = new JMenu("RegisterAdmin");
-        RegisterAdmin.addMenuListener(listenerHandler);
-        RegisterAdmin.setIcon(addAdminImg);
-        RegisterAdmin.setFont(new Font("Inter", Font.PLAIN, 16));
-        menuBar.add(RegisterAdmin);
+        JMenu RegisterManager = new JMenu("Register Manager");
+        RegisterManager.addMenuListener(listenerHandler);
+        RegisterManager.setIcon(addAdminImg);
+        RegisterManager.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(RegisterManager);
         JMenu Transactions = new JMenu("Transactions");
         Transactions.addMenuListener(listenerHandler);
         Transactions.setIcon(TransactionsImg);
@@ -97,12 +103,38 @@ public class DistrictRouting extends JFrame{
         notification.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(notification);
         menuBar.revalidate();
+        logo=ImageIO.read(new File("src/Desktop/Images/logo.png"));
+        userAvatarImg=ImageIO.read(new File("src/Desktop/Images/user-avatar.png"));
+        JLabel logoImg=new JLabel(new ImageIcon(logo.getScaledInstance(100,70,BufferedImage.SCALE_DEFAULT)));
+        logoImg.setLayout(new GridLayout(1,1));
+        JLabel userAvatar=new JLabel(new ImageIcon(userAvatarImg.getScaledInstance(90,90,BufferedImage.SCALE_DEFAULT)));
+        JPanel credentials=new JPanel();
+        credentials.setLayout(new GridLayout(2,1));
+        JLabel userName=new JLabel("NTAKIRUTIMANA");
+        userName.setFont(new Font("Inter", Font.BOLD, 18));
+        JLabel userRole=new JLabel("           District Manager");
+
+        JPanel logoutBtn=new JPanel();
+        JButton logout = new JButton("<html><b><button>LOGOUT</button><b></html>");
+        logout.setBackground(Color.decode("#557DF8"));
+        logoutBtn.add(logout);
+        credentials.add(logoImg);
+        credentials.add(userAvatar);
+        JPanel credential2=new JPanel();
+        credential2.setBackground(Color.decode("#EAEDF3"));
+        credentials.setBackground(Color.decode("#EAEDF3"));
+        credential2.setLayout(new GridLayout(2,1));
+        credential2.add(userName);
+        credential2.add(userRole);
+        SideBar.add(credentials);
+        SideBar.add(credential2);
         SideBar.add(menuBar);
+        SideBar.add(logoutBtn);
     }
-    
+
 
     public static void main(final String args[]) throws IOException {
-       new DistrictRouting();
+        new DistrictRouting();
     }
 
     public  void filter(String chosen){
@@ -113,15 +145,15 @@ public class DistrictRouting extends JFrame{
                 break;
             case "Transactions":
                 break;
-            case "RegisterAdmin":
-                System.out.println("RegisterAdmin clicked");
+            case "RegisterManager":
+                System.out.println("RegisterManager clicked");
                 break;
             case "Dashboard":
                 panel.setVisible(false);
                 panel2.setVisible(true);
                 break;
-            case "Districts":
-                System.out.println("Districts clicked");
+            case "Companies":
+                System.out.println("Companies clicked");
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
