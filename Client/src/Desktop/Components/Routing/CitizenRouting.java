@@ -1,4 +1,5 @@
 package Desktop.Components.Routing;
+import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
@@ -7,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -22,16 +25,24 @@ public class CitizenRouting extends JFrame{
     private  JPanel SideBar = new JPanel();
     private  JPanel OtherContent = new JPanel();
 
+    private DataOutputStream toServer;
+    private DataInputStream fromServer;
+
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  CitizenRouting() throws IOException {
+    public  CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        this.fromServer = fromServer;
+        this.toServer = toServer;
+
         setTitle("Sidebar Panel");
         setSize(1366,768);
         setLayout(null);
         setBackground(Color.WHITE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Button logout=new Button("Logout");
         logout.setBounds(180,180,300,300);
         logout.setSize(400,300);
@@ -39,9 +50,11 @@ public class CitizenRouting extends JFrame{
         SideBar.setVisible(true);
         SideBar.setSize(200,730);
         SideBar.setBackground(Color.decode("#EAEDF3"));
+        //ADDING COMPONENTS NEEDED BY CITIZEN
         add(SideBar);
         add(panel);
         add(panel2);
+
         SidebarDesign();
         setVisible(true);
         SideBar.add(logout);
@@ -102,7 +115,7 @@ public class CitizenRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
-        new CitizenRouting();
+//        new CitizenRouting();
     }
 
     public  void filter(String chosen){
@@ -114,7 +127,8 @@ public class CitizenRouting extends JFrame{
             case "Transactions":
                 break;
             case "RegisterAdmin":
-                System.out.println("RegisterAdmin clicked");
+                panel.setVisible(false);
+                panel2.setVisible(false);
                 break;
             case "Dashboard":
                 panel.setVisible(false);

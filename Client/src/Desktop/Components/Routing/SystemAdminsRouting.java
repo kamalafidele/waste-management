@@ -1,18 +1,16 @@
 package Desktop.Components.Routing;
+import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
@@ -22,16 +20,26 @@ public class SystemAdminsRouting extends JFrame{
     private  JPanel SideBar = new JPanel();
     private  JPanel OtherContent = new JPanel();
 
+    private DataOutputStream toServer;
+    private DataInputStream fromServer;
+
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+    Registration districtRegister = new Registration(true,false,false);
+    Registration userRegister = new Registration(false,false,true);
+
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  SystemAdminsRouting() throws IOException {
+    public  SystemAdminsRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
         setTitle("Sidebar Panel");
         setSize(1366,768);
         setLayout(null);
         setBackground(Color.WHITE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Button logout=new Button("Logout");
         logout.setBounds(180,180,300,300);
         logout.setSize(400,300);
@@ -39,9 +47,13 @@ public class SystemAdminsRouting extends JFrame{
         SideBar.setVisible(true);
         SideBar.setSize(200,730);
         SideBar.setBackground(Color.decode("#EAEDF3"));
+        //ADDING COMPONENTS NEEDED BY SYSTEM ADMIN
         add(SideBar);
         add(panel);
         add(panel2);
+        add(districtRegister);
+        add(userRegister);
+
         SidebarDesign();
         setVisible(true);
         SideBar.add(logout);
@@ -102,26 +114,36 @@ public class SystemAdminsRouting extends JFrame{
     
 
     public static void main(final String args[]) throws IOException {
-       new SystemAdminsRouting();
+
     }
 
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
                 panel2.setVisible(false);
+                districtRegister.setVisible(false);
+                userRegister.setVisible(false);
                 panel.setVisible(true);
                 break;
             case "Transactions":
                 break;
             case "RegisterAdmin":
-                System.out.println("RegisterAdmin clicked");
+                panel.setVisible(false);
+                panel2.setVisible(false);
+                districtRegister.setVisible(false);
+                userRegister.setVisible(true);
                 break;
             case "Dashboard":
                 panel.setVisible(false);
+                districtRegister.setVisible(false);
+                userRegister.setVisible(false);
                 panel2.setVisible(true);
                 break;
             case "Districts":
-                System.out.println("Districts clicked");
+                panel.setVisible(false);
+                userRegister.setVisible(false);
+                panel2.setVisible(false);
+                districtRegister.setVisible(true);
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");

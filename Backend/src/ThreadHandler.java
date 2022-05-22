@@ -8,7 +8,6 @@ public class ThreadHandler extends Thread{
     //REGISTERING ALL CONTROLLERS
     private final CompanyController companyController = new CompanyController();
     private final NotificationController notificationController = new NotificationController();
-    private final HouseController houseController = new HouseController();
     private final WalletController walletController = new WalletController();
     private final PaymentController paymentController = new PaymentController();
     private final DebtController debtController = new DebtController();
@@ -42,9 +41,6 @@ public class ThreadHandler extends Thread{
                         break;
                     case "district":
                         districtController.handleRequest(request,toClient);
-                        break;
-                    case "citizen":
-                        houseController.filterRequest(request,toClient);
                         break;
                     case "payment":
                         paymentController.filterRequest(request,toClient);
