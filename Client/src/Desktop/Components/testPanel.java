@@ -11,5 +11,8 @@ public class testPanel extends JPanel {
         setBounds(200,0,1166,768);
         setBackground(Color.WHITE);
         setBorder(new EmptyBorder(new Insets(20,30,20,30)));
+
+
+        
     }
 }
