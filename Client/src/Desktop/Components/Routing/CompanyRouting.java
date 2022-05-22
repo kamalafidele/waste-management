@@ -1,4 +1,5 @@
 package Desktop.Components.Routing;
+import Desktop.Components.CreateNotification;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
@@ -154,7 +155,7 @@ public class CompanyRouting extends JFrame{
                 System.out.println("Shifts clicked");
                 break;
             case "Notifications":
-                System.out.println("Notifications clicked");
+                new CreateNotification();
                 break;
             default:
                 System.out.println();
