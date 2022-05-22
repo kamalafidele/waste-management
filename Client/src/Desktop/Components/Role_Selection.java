@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.font.TextAttribute;
 
-public class Role_Selection extends JPanel {
+public class Role_Selection extends JFrame {
     //SIDEBARS
     private  JPanel leftPanel = new JPanel();
     private  JPanel rightPanel = new JPanel();

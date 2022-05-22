@@ -8,15 +8,15 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.io.Serial;
 
-import Desktop.Application;
+// import Desktop.Application;
 
 public class District extends JFrame {
-    private Application application = new Application();
-    SideMenuPanel sideMenuPanel = new SideMenuPanel();
+    // private Application application = new Application();
+    // SideMenuPanel sideMenuPanel = new SideMenuPanel();
 //    private ViewCitizens viewCitizens = new ViewCitizens();
 
     public void initialize() {
-        application.close();
+        // application.close();
 
         setVisible(true);
         setTitle("District Dashboard");
@@ -33,7 +33,7 @@ public class District extends JFrame {
         add(leftPanel);
 //        add(rightPanel);
 
-        leftPanel.add(sideMenuPanel);
+        // leftPanel.add(sideMenuPanel);
 //        rightPanel.add()
 
         Object [][] data = {{"Karera Marvin","Karera@gmail.com","0781234568","Mukamira"},{"Kayitare Audax","audax@gmail.com","0786783420","Nyamabuye"},{"Nick Singizwa","nick@gmail.com","0784893734","Niboye"}};
