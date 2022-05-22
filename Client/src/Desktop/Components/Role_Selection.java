@@ -29,6 +29,7 @@ public class Role_Selection extends JFrame {
 
     //STANDALONE COMPONENTS
     private Company companyComponent = new Company();
+    private District districtComponent = new District();
 
     public Role_Selection() {
 
@@ -131,7 +132,10 @@ public class Role_Selection extends JFrame {
                     break;
                 case "District Manager":
                     district.setBackground(dodgerBlue);
+                    districtComponent.initialize();
+                   
                     //Here you will initialize District component
+
                     break;
                 case "Confirmer":
                     confirmer.setBackground(dodgerBlue);
