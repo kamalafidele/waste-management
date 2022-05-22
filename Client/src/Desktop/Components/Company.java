@@ -8,7 +8,6 @@ public class Company extends JFrame {
     private App application = new App();
 
     public void initialize() {
-        application.close();
 
         setVisible(true);
         setTitle("LOG IN AS COMPANY");
