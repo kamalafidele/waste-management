@@ -41,5 +41,9 @@ public class SideMenuPanel extends JPanel{
         menuBar.setSize(500,100);
         SideBar.add(menuBar);
     }
+    public void setRightPanelContent(){
+        JLabel label=new JLabel("This will be place for the content");
+        OtherContent.add(label);
+    }
 
 }

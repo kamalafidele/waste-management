@@ -24,7 +24,7 @@ public class District extends JFrame {
         setBackground(Color.YELLOW);
 
         JPanel leftPanel = new JPanel();
-        JPanel rightPanel = new JPanel();
+//        JPanel rightPanel = new JPanel();
         leftPanel.setVisible(true);
         leftPanel.setSize(200,730);
 //        rightPanel.setVisible(true);
@@ -51,9 +51,10 @@ public class District extends JFrame {
 
         JPanel container = new JPanel();
         container.setOpaque(false);
-//        container.setBackground(Color.RED);
+//        container.setBounds(500, 20, 500, 100);
         container.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
         container.add(label);
+        container.setBackground(Color.RED);
 //        container.setLayout(new FlowLayout());
         DefaultTableModel model = new DefaultTableModel(data,columns);
         model.setColumnIdentifiers(columns);
@@ -67,6 +68,7 @@ public class District extends JFrame {
             };
         };
         table.setRowHeight(40);
+        table.setBounds(0, 0, 700, 730);
         table.getTableHeader().setOpaque(false);
         table.setShowGrid(false);
         table.getTableHeader().setReorderingAllowed(false);
@@ -100,6 +102,16 @@ public class District extends JFrame {
 
         container.add(jScrollPane);
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
-        this.add(container);
+
+//        JButton addButton = new JButton("Add Citizen");
+//        addButton.setBounds(10, 300, 400, 30);
+//        addButton.setBackground(color);
+//        addButton.setForeground(Color.WHITE);
+
+        JPanel rightPanel = new JPanel();
+        rightPanel.setVisible(true);
+        rightPanel.setSize(1000,730);
+        rightPanel.add(container);
+        add(rightPanel);
     }
 }

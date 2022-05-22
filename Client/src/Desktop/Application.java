@@ -3,8 +3,6 @@ package Desktop;
 import Desktop.Components.Role_Selection;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.WindowEvent;
 
 public class Application extends JFrame {
 
