@@ -11,13 +11,14 @@ public class CreateNotification extends JFrame {
     }
     public CreateNotification(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(800, 500);
+        this.setSize(800, 800);
+        this.setResizable(false);
 
-        JPanel mainPanel = new JPanel(new MigLayout("center, wrap, debug, fill, insets 20", "[]", "[]10[]10[]"));
+        JPanel mainPanel = new JPanel(new MigLayout("center, wrap, fill, insets 20", "20:push[]20:push", "20:push[]20[]20[]20:push"));
         JLabel notification = new JLabel("Notification");
         notification.setFont(new Font(null, Font.BOLD, 20));
         notification.setForeground(new Color(0,101,51));
-        JPanel insidePanel = new JPanel(new MigLayout("wrap", "[]10[]10[]10[]", "[]10[]"));
+        JPanel insidePanel = new JPanel(new MigLayout("wrap", "[]10:push[]10:push[]10:push[]", "[]10[]"));
         JPanel formPanel = new JPanel();
 
         JLabel description = new JLabel("Description");
@@ -81,7 +82,7 @@ public class CreateNotification extends JFrame {
         insidePanel.add(periodChoice, "width 200");
         insidePanel.add(content, "span");
         insidePanel.add(message);
-        insidePanel.add(textArea, "span, grow");
+        insidePanel.add(textArea, "span, grow, height 200");
 
         JPanel buttonPanel = new JPanel();
         JButton saveButton = new JButton("Save");
@@ -95,6 +96,7 @@ public class CreateNotification extends JFrame {
         mainPanel.add(buttonPanel);
         this.add(mainPanel);
         this.pack();
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
 }
