@@ -1,17 +1,18 @@
 package Desktop.Components.Routing;
-import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuEvent;
@@ -22,32 +23,23 @@ public class SystemAdminsRouting extends JFrame{
     BufferedImage dashboard,analytics,notifications,Districts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
 
-    private DataOutputStream toServer;
-    private DataInputStream fromServer;
-
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
-    Registration districtRegister = new Registration(true,false,false);
-    Registration userRegister = new Registration(false,false,true);
-
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
     public  SystemAdminsRouting() throws IOException {
         setTitle("Company Board");
-        setSize(1566,820);
+        setSize(1366,768);
         setLayout(null);
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
         SideBar.setBackground(Color.decode("#EAEDF3"));
-        //ADDING COMPONENTS NEEDED BY SYSTEM ADMIN
+
         add(SideBar);
         panel.setVisible(true);
         add(panel);
         add(panel2);
-        add(districtRegister);
-        add(userRegister);
-
         SidebarDesign();
         setVisible(true);
     }
@@ -116,8 +108,13 @@ public class SystemAdminsRouting extends JFrame{
         JLabel userRole=new JLabel("           System Admin");
 
         JPanel logoutBtn=new JPanel();
-        JButton logout = new JButton("<html><b><button>LOGOUT</button><b></html>");
+        JButton logout = new JButton("Logout");
         logout.setBackground(Color.decode("#557DF8"));
+        logout.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
+        logout.setFont(new Font("Inter", Font.PLAIN, 16));
+        logout.setForeground(Color.WHITE);
+        logout.setFocusPainted(false);
+        logoutBtn.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
         logoutBtn.add(logout);
         credentials.add(logoImg);
         credentials.add(userAvatar);
@@ -135,35 +132,26 @@ public class SystemAdminsRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
+        new SystemAdminsRouting();
     }
 
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
                 panel2.setVisible(false);
-                districtRegister.setVisible(false);
-                userRegister.setVisible(false);
                 panel.setVisible(true);
                 break;
             case "Transactions":
                 break;
-            case "Register Admin":
-                panel.setVisible(false);
-                panel2.setVisible(false);
-                districtRegister.setVisible(false);
-                userRegister.setVisible(true);
+            case "RegisterAdmin":
+                System.out.println("RegisterAdmin clicked");
                 break;
             case "Dashboard":
                 panel.setVisible(false);
-                districtRegister.setVisible(false);
-                userRegister.setVisible(false);
                 panel2.setVisible(true);
                 break;
             case "Districts":
-                panel.setVisible(false);
-                userRegister.setVisible(false);
-                panel2.setVisible(false);
-                districtRegister.setVisible(true);
+                System.out.println("Districts clicked");
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");

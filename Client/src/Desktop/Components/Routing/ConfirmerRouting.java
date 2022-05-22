@@ -7,13 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuEvent;
@@ -24,9 +23,6 @@ public class ConfirmerRouting extends JFrame{
     BufferedImage dashboard,analytics,notifications,Shifts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
 
-    private DataOutputStream toServer;
-    private DataInputStream fromServer;
-
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
@@ -34,7 +30,7 @@ public class ConfirmerRouting extends JFrame{
 
     public  ConfirmerRouting() throws IOException {
         setTitle("Company Board");
-        setSize(1566,820);
+        setSize(1366,768);
         setLayout(null);
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
@@ -107,8 +103,13 @@ public class ConfirmerRouting extends JFrame{
         JLabel userRole=new JLabel("           Service Confirmer");
 
         JPanel logoutBtn=new JPanel();
-        JButton logout = new JButton("<html><b><button>LOGOUT</button><b></html>");
+        JButton logout = new JButton("Logout");
         logout.setBackground(Color.decode("#557DF8"));
+        logout.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
+        logout.setFont(new Font("Inter", Font.PLAIN, 16));
+        logout.setForeground(Color.WHITE);
+        logout.setFocusPainted(false);
+        logoutBtn.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
         logoutBtn.add(logout);
         credentials.add(logoImg);
         credentials.add(userAvatar);
@@ -126,6 +127,7 @@ public class ConfirmerRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
+        new ConfirmerRouting();
     }
 
     public  void filter(String chosen){

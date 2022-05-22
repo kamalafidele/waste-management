@@ -1,5 +1,4 @@
 package Desktop.Components.Routing;
-import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
@@ -8,13 +7,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuEvent;
@@ -25,19 +23,14 @@ public class CompanyRouting extends JFrame{
      BufferedImage dashboard,analytics,notifications,Shifts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
 
-    private DataOutputStream toServer;
-    private DataInputStream fromServer;
-
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
-    Registration registration = new Registration(false,false,true);
-
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
     public  CompanyRouting() throws IOException {
         setTitle("Company Board");
-        setSize(1566,820);
+        setSize(1366,768);
         setLayout(null);
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
@@ -47,7 +40,6 @@ public class CompanyRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
-        add(registration);
         SidebarDesign();
         setVisible(true);
     }
@@ -60,7 +52,6 @@ public class CompanyRouting extends JFrame{
         notifications=ImageIO.read(new File("src/Desktop/Images/notification-2-line.png"));
         addAdmin=ImageIO.read(new File("src/Desktop/Images/user-add-line.png"));
         Shifts=ImageIO.read(new File("src/Desktop/Images/stack-line.png"));
-
 
 
         dashboardImg = new ImageIcon(dashboard.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
@@ -78,21 +69,21 @@ public class CompanyRouting extends JFrame{
         Dashboard.setFont(new Font("Inter", Font.PLAIN, 16));
         Dashboard.addMenuListener(listenerHandler);
         menuBar.add(Dashboard);
-        JMenu Employees = new JMenu("Employees");
-        //Employees.setIcon(districtsImg);
-        Employees.addMenuListener(listenerHandler);
-        Employees.setFont(new Font("Inter", Font.PLAIN, 16));
-        menuBar.add(Employees);
+        JMenu Shifts = new JMenu("Shifts");
+        Shifts.setIcon(ShiftsImg);
+        Shifts.addMenuListener(listenerHandler);
+        Shifts.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(Shifts);
         JMenu Analytics = new JMenu("Analytics");
         Analytics.addMenuListener(listenerHandler);
         Analytics.setIcon((analyticsImg));
         Analytics.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Analytics);
-        JMenu AddUser = new JMenu("Add User");
-        AddUser.addMenuListener(listenerHandler);
-        AddUser.setIcon(addAdminImg);
-        AddUser.setFont(new Font("Inter", Font.PLAIN, 16));
-        menuBar.add(AddUser);
+        JMenu RegisterEmployee = new JMenu("Register Employee");
+        RegisterEmployee.addMenuListener(listenerHandler);
+        RegisterEmployee.setIcon(addAdminImg);
+        RegisterEmployee.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(RegisterEmployee);
         JMenu Transactions = new JMenu("Transactions");
         Transactions.addMenuListener(listenerHandler);
         Transactions.setIcon(TransactionsImg);
@@ -117,8 +108,13 @@ public class CompanyRouting extends JFrame{
         JLabel userRole=new JLabel("           Company Admin");
 
         JPanel logoutBtn=new JPanel();
-        JButton logout = new JButton("<html><b><button>LOGOUT</button><b></html>");
+        JButton logout = new JButton("Logout");
         logout.setBackground(Color.decode("#557DF8"));
+        logout.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
+        logout.setFont(new Font("Inter", Font.PLAIN, 16));
+        logout.setForeground(Color.WHITE);
+        logout.setFocusPainted(false);
+        logoutBtn.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
         logoutBtn.add(logout);
         credentials.add(logoImg);
         credentials.add(userAvatar);
@@ -136,30 +132,26 @@ public class CompanyRouting extends JFrame{
     
 
     public static void main(final String args[]) throws IOException {
-
+       new CompanyRouting();
     }
 
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
                 panel2.setVisible(false);
-                registration.setVisible(false);
                 panel.setVisible(true);
                 break;
             case "Transactions":
                 break;
-            case "Add User":
-                panel.setVisible(false);
-                panel2.setVisible(false);
-                registration.setVisible(true);
+            case "RegisterEmployee":
+                System.out.println("RegisterEmployee clicked");
                 break;
             case "Dashboard":
                 panel.setVisible(false);
-                registration.setVisible(false);
                 panel2.setVisible(true);
                 break;
-            case "Employees":
-                System.out.println("Employees clicked");
+            case "Shifts":
+                System.out.println("Shifts clicked");
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");

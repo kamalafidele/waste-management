@@ -1,17 +1,18 @@
 package Desktop.Components.Routing;
-import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuEvent;
@@ -22,33 +23,23 @@ public class DistrictRouting extends JFrame{
     BufferedImage dashboard,analytics,notifications,Companies,addAdmin,transactions,logo,userAvatarImg,Confirmers;
     private  JPanel SideBar = new JPanel();
 
-    private DataOutputStream toServer;
-    private DataInputStream fromServer;
-
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
-    Registration companyRegister = new Registration(false,true,false);
-    Registration userRegister = new Registration(false,false,true);
-
-
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
     public  DistrictRouting() throws IOException {
         setTitle("Company Board");
-        setSize(1566,820);
+        setSize(1366,768);
         setLayout(null);
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
         SideBar.setBackground(Color.decode("#EAEDF3"));
-        //ADDING COMPONENTS NEEDED BY DISTRICT EMPLOYEES
+
         add(SideBar);
         panel.setVisible(true);
         add(panel);
         add(panel2);
-        add(companyRegister);
-        add(userRegister);
-
         SidebarDesign();
         setVisible(true);
     }
@@ -81,10 +72,16 @@ public class DistrictRouting extends JFrame{
         Dashboard.addMenuListener(listenerHandler);
         menuBar.add(Dashboard);
         JMenu Companies = new JMenu("Companies");
-        //Companies.setIcon(districtsImg);
+        Companies.setIcon(CompaniesImg);
         Companies.addMenuListener(listenerHandler);
         Companies.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Companies);
+        JMenu Confirmers = new JMenu("Confirmers");
+        Confirmers.setIcon(ConfirmersImg);
+        Confirmers.addMenuListener(listenerHandler);
+        Confirmers.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(Confirmers);
+
         JMenu Analytics = new JMenu("Analytics");
         Analytics.addMenuListener(listenerHandler);
         Analytics.setIcon((analyticsImg));
@@ -119,8 +116,13 @@ public class DistrictRouting extends JFrame{
         JLabel userRole=new JLabel("           District Manager");
 
         JPanel logoutBtn=new JPanel();
-        JButton logout = new JButton("<html><b><button>LOGOUT</button><b></html>");
+        JButton logout = new JButton("Logout");
         logout.setBackground(Color.decode("#557DF8"));
+        logout.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
+        logout.setFont(new Font("Inter", Font.PLAIN, 16));
+        logout.setForeground(Color.WHITE);
+        logout.setFocusPainted(false);
+        logoutBtn.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
         logoutBtn.add(logout);
         credentials.add(logoImg);
         credentials.add(userAvatar);
@@ -135,38 +137,27 @@ public class DistrictRouting extends JFrame{
         SideBar.add(menuBar);
         SideBar.add(logoutBtn);
     }
-
-
     public static void main(final String args[]) throws IOException {
+        new DistrictRouting();
     }
 
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
                 panel2.setVisible(false);
-                companyRegister.setVisible(false);
-                userRegister.setVisible(false);
                 panel.setVisible(true);
                 break;
             case "Transactions":
                 break;
-            case "Add User":
-                panel.setVisible(false);
-                panel2.setVisible(false);
-                companyRegister.setVisible(false);
-                userRegister.setVisible(true);
+            case "RegisterManager":
+                System.out.println("RegisterManager clicked");
                 break;
             case "Dashboard":
                 panel.setVisible(false);
-                companyRegister.setVisible(false);
-                userRegister.setVisible(false);
                 panel2.setVisible(true);
                 break;
             case "Companies":
-                panel.setVisible(false);
-                panel2.setVisible(false);
-                userRegister.setVisible(false);
-                companyRegister.setVisible(true);
+                System.out.println("Companies clicked");
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
