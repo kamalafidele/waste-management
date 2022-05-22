@@ -41,6 +41,9 @@ public class DistrictRouting extends JFrame{
         this.toServer = toServer;
         this.fromServer = fromServer;
 
+        registerCompany.setStreams(toServer,fromServer);
+        registerUser.setStreams(toServer,fromServer);
+
         setTitle("Company Board");
         setSize(1366,768);
         setLayout(null);

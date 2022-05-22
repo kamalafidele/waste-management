@@ -40,6 +40,7 @@ public class CompanyRouting extends JFrame{
     public  CompanyRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
         this.fromServer = fromServer;
         this.toServer = toServer;
+        registerUser.setStreams(toServer,fromServer);
 
         setTitle("Company Board");
         setSize(1366,768);

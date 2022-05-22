@@ -40,6 +40,8 @@ public class SystemAdminsRouting extends JFrame{
     public  SystemAdminsRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
         this.toServer = toServer;
         this.fromServer = fromServer;
+        registerUser.setStreams(toServer,fromServer);
+        registerDistrict.setStreams(toServer,fromServer);
 
         setTitle("Company Board");
         setSize(1366,768);
