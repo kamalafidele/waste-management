@@ -30,7 +30,7 @@ public class CitizenRouting extends JFrame{
 
     public  CitizenRouting() throws IOException {
         setTitle("Company Board");
-        setSize(1566,820);
+        setSize(1366,768);
         setLayout(null);
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
@@ -46,6 +46,8 @@ public class CitizenRouting extends JFrame{
 
     public void SidebarDesign() throws IOException {
         JMenuBar menuBar = new JMenuBar();
+        menuBar.setPreferredSize(new Dimension(180,350));
+
         analytics = ImageIO.read(new File("src/Desktop/Images/bar-chart-line.png"));
         dashboard = ImageIO.read(new File("src/Desktop/Images/dashboard-line.png"));
         transactions=ImageIO.read(new File("src/Desktop/Images/exchange-funds-line.png"));
@@ -61,7 +63,7 @@ public class CitizenRouting extends JFrame{
         analyticsImg = new ImageIcon(analytics.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         TransactionsImg = new ImageIcon(transactions.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         menuBar.setLayout(new GridLayout(0,1));
-        menuBar.setPreferredSize(new Dimension(180,350));
+
         menuBar.setBackground(Color.decode("#EAEDF3"));
         JMenu Dashboard = new JMenu("Dashboard");
         Dashboard.setIcon(dashboardImg);
@@ -104,13 +106,13 @@ public class CitizenRouting extends JFrame{
 
         JPanel logoutBtn=new JPanel();
         JButton logout = new JButton("Logout");
-        
         logout.setBackground(Color.decode("#557DF8"));
-        
-        logoutBtn.add(logout);
-        logout.setBorder(new EmptyBorder(new Insets(20,50,20,50)));
+        logout.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
         logout.setFont(new Font("Inter", Font.PLAIN, 16));
         logout.setForeground(Color.WHITE);
+        logout.setFocusPainted(false);
+        logoutBtn.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
+        logoutBtn.add(logout);
         credentials.add(logoImg);
         credentials.add(userAvatar);
         JPanel credential2=new JPanel();
