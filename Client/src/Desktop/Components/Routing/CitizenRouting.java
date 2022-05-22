@@ -15,6 +15,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuEvent;
@@ -106,12 +107,17 @@ public class CitizenRouting extends JFrame{
         credentials.setLayout(new GridLayout(2,1));
         JLabel userName=new JLabel("NTAKIRUTIMANA");
         userName.setFont(new Font("Inter", Font.BOLD, 18));
-        JLabel userRole=new JLabel("           Company Admin");
+        JLabel userRole=new JLabel("           System Client");
 
         JPanel logoutBtn=new JPanel();
-        JButton logout = new JButton("<html><b><button>LOGOUT</button><b></html>");
+        JButton logout = new JButton("Logout");
+        
         logout.setBackground(Color.decode("#557DF8"));
+        
         logoutBtn.add(logout);
+        logout.setBorder(new EmptyBorder(new Insets(20,50,20,50)));
+        logout.setFont(new Font("Inter", Font.PLAIN, 16));
+        logout.setForeground(Color.WHITE);
         credentials.add(logoImg);
         credentials.add(userAvatar);
         JPanel credential2=new JPanel();
