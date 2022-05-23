@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Models.Company;
 import Models.District;
 import Models.User;
@@ -14,11 +15,20 @@ import java.sql.ResultSet;
 
 public class Registration {
     private DataOutputStream toClient;
-    private CompanyRepo companyRepo = new CompanyRepo();
-    private DistrictRepo districtRepo = new DistrictRepo();
+    private DatabaseConnection connection;
+    private CompanyRepo companyRepo;
+    private DistrictRepo districtRepo;
     private ObjectMapper mapper = new ObjectMapper();
-    private WalletsRepoHandler walletRepo = new WalletsRepoHandler();
-    private UserRepo userRepo = new UserRepo();
+    private WalletsRepoHandler walletRepo;
+    private UserRepo userRepo;
+
+    public Registration(DatabaseConnection connection) {
+        this.connection = connection;
+        this.districtRepo = new DistrictRepo(connection);
+        this.companyRepo = new CompanyRepo(connection);
+        this.walletRepo = new WalletsRepoHandler(connection);
+        this.userRepo = new UserRepo(connection);
+    }
 
     public void filterRequest( String request, DataOutputStream toClient ) throws Exception {
         this.toClient = toClient;

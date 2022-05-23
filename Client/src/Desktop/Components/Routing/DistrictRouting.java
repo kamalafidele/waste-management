@@ -26,8 +26,8 @@ public class DistrictRouting extends JFrame{
     BufferedImage dashboard,analytics,notifications,Companies,addAdmin,transactions,logo,userAvatarImg,Confirmers;
     private  JPanel SideBar = new JPanel();
 
-    private static DataOutputStream toServer;
-    private static  DataInputStream fromServer;
+    private DataOutputStream toServer;
+    private DataInputStream fromServer;
 
     //PANELS
     testPanel panel = new testPanel();
@@ -155,12 +155,6 @@ public class DistrictRouting extends JFrame{
         SideBar.add(credential2);
         SideBar.add(menuBar);
         SideBar.add(logoutBtn);
-    }
-
-
-
-    public static void main(final String args[]) throws IOException {
-        new DistrictRouting(toServer,fromServer);
     }
 
 

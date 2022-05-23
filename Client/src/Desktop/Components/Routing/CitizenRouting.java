@@ -26,13 +26,12 @@ public class CitizenRouting extends JFrame{
     BufferedImage dashboard,analytics,notifications,Debts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
 
-    private static DataOutputStream toServer;
-    private static DataInputStream fromServer;
+    private DataOutputStream toServer;
+    private DataInputStream fromServer;
 
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
-
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
@@ -141,9 +140,7 @@ public class CitizenRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
-
-        new CitizenRouting(toServer,fromServer);
-
+//        new CitizenRouting();
     }
 
     public  void filter(String chosen){
@@ -153,10 +150,6 @@ public class CitizenRouting extends JFrame{
                 panel.setVisible(true);
                 break;
             case "Transactions":
-                panel.setVisible(false);
-                panel2.setVisible(false);
-
-
                 break;
             case "Dashboard":
                 panel.setVisible(false);

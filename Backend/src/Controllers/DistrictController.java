@@ -1,4 +1,5 @@
 package Controllers;
+import Config.DatabaseConnection;
 import Models.Company;
 import Models.District;
 import Repositories.DistrictRepo;
@@ -16,10 +17,12 @@ public class DistrictController {
     private DataOutputStream toClient;
     private final ObjectMapper mapper;
     private final DistrictRepo districtRepo;
+    private DatabaseConnection connection;
 
-    public DistrictController() {
+    public DistrictController(DatabaseConnection connection) {
+        this.connection = connection;
         this.mapper = new ObjectMapper();
-        this.districtRepo = new DistrictRepo();
+        this.districtRepo = new DistrictRepo(connection);
     };
 
     public void handleRequest(String request, DataOutputStream toClient){

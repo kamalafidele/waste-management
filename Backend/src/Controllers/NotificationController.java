@@ -1,6 +1,9 @@
 package Controllers;
+import Config.DatabaseConnection;
 import Models.*;
 import Repositories.NotificationRepo;
+
+//    ======================== JABES =================
 
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -20,9 +23,11 @@ public class NotificationController {
     private DataOutputStream toClient;
     private final NotificationRepo notificationRepo;
     private final ObjectMapper mapper;
+    private DatabaseConnection  connection;
 
-    public NotificationController(){
-        notificationRepo = new NotificationRepo();
+    public NotificationController(DatabaseConnection connection){
+        this.connection = connection;
+        notificationRepo = new NotificationRepo(connection);
         mapper=new ObjectMapper();
     }
 
@@ -70,6 +75,8 @@ public class NotificationController {
         String strDate = dateFormat.format(date);
         notification.setSentDate(strDate);
         notification.setReceiver(receiver);
+        // ================================ added ======================
+        //notification.setType(notification_type);
 
 
         switch (notification_type) {
