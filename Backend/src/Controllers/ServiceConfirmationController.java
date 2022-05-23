@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Models.ServiceConfirmation;
 import Models.Shifts;
 import Repositories.ServiceConfirmationRepo;
@@ -15,11 +16,13 @@ import java.util.List;
 
 public class ServiceConfirmationController {
     private DataOutputStream toClient;
+    private DatabaseConnection connection;
     private ServiceConfirmationRepo serviceConfirmationRepo;
     private ObjectMapper mapper;
 
-    public ServiceConfirmationController(){
-        serviceConfirmationRepo = new ServiceConfirmationRepo();
+    public ServiceConfirmationController(DatabaseConnection connection){
+        this.connection = connection;
+        serviceConfirmationRepo = new ServiceConfirmationRepo(connection);
         mapper= new ObjectMapper();
     }
 

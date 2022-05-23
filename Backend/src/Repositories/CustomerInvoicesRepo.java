@@ -16,8 +16,8 @@ public class CustomerInvoicesRepo {
     private DataOutputStream toClient;
 
     DatabaseConnection database;
-    public CustomerInvoicesRepo(){
-        database=new DatabaseConnection();
+    public CustomerInvoicesRepo(DatabaseConnection database){
+        this.database = database;
     }
     public ResultSet findById(int userId){
         return database.select("SELECT * FROM invoices WHERE User = "+userId);

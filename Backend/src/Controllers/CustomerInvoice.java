@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Models.CustomerInvoices;
 import Repositories.CustomerInvoicesRepo;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -13,8 +14,11 @@ public class CustomerInvoice {
     private CustomerInvoicesRepo customerInvoicesRepo;
     private ObjectMapper mapper;
     private DataOutputStream reply;
-      public CustomerInvoice(){
-       customerInvoicesRepo=new CustomerInvoicesRepo();
+    private DatabaseConnection  connection;
+
+      public CustomerInvoice(DatabaseConnection connection){
+       this.connection =  connection;
+       customerInvoicesRepo=new CustomerInvoicesRepo(connection);
         mapper = new ObjectMapper();
     }
 

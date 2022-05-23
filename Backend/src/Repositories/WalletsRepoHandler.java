@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 
 public class WalletsRepoHandler {
     DatabaseConnection database;
-    public WalletsRepoHandler(){
-        database=new DatabaseConnection();
+    public WalletsRepoHandler(DatabaseConnection database){
+        this.database = database;
     }
     public ResultSet findWalletByCompanyId(int companyId){
 
