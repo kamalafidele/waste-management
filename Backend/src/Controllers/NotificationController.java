@@ -2,6 +2,8 @@ package Controllers;
 import Models.*;
 import Repositories.NotificationRepo;
 
+//    ======================== JABES =================
+
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.DataOutputStream;
@@ -70,6 +72,8 @@ public class NotificationController {
         String strDate = dateFormat.format(date);
         notification.setSentDate(strDate);
         notification.setReceiver(receiver);
+        // ================================ added ======================
+        notification.setType(notification_type);
 
 
         switch (notification_type) {
