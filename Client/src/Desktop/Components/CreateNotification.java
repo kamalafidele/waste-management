@@ -10,9 +10,6 @@ import java.awt.*;
 import java.time.DayOfWeek;
 
 public class CreateNotification extends JFrame {
-    public static void main(String[] args) {
-        new CreateNotification();
-    }
     public CreateNotification(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Create Notifications");
