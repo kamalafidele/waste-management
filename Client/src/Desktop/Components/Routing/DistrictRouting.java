@@ -158,6 +158,13 @@ public class DistrictRouting extends JFrame{
     }
 
 
+<<<<<<< HEAD
+    public static void main(final String args[]) throws IOException {
+        new DistrictRouting();
+    }
+
+=======
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":

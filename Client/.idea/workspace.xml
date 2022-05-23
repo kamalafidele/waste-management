@@ -4,6 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="e65e4820-7e53-416d-b7cc-63db9af2327e" name="Changes" comment="ad" />
+=======
     <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -18,6 +21,7 @@
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/DistrictRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/DistrictRouting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/SystemAdminsRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/SystemAdminsRouting.java" afterDir="false" />
     </list>
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +51,11 @@
   <component name="PropertiesComponent">
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
+<<<<<<< HEAD
+  <component name="RunManager" selected="Application.CompanyRouting">
+=======
   <component name="RunManager" selected="Application.App">
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
     <configuration name="App" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.App" />
       <module name="Client" />
@@ -100,8 +108,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
+    <configuration name="DistrictRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.DistrictRouting" />
+=======
     <configuration name="SystemAdminsRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.SystemAdminsRouting" />
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -114,17 +127,29 @@
       </method>
     </configuration>
     <list>
+<<<<<<< HEAD
+      <item itemvalue="Application.App" />
+      <item itemvalue="Application.CreateNotification" />
+      <item itemvalue="Application.DistrictRouting" />
+=======
       <item itemvalue="Application.ConfirmerRouting" />
       <item itemvalue="Application.CreateNotification" />
       <item itemvalue="Application.SystemAdminsRouting" />
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
       <item itemvalue="Application.CitizenRouting" />
       <item itemvalue="Application.CompanyRouting" />
-      <item itemvalue="Application.App" />
     </list>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
+        <item itemvalue="Application.CompanyRouting" />
+        <item itemvalue="Application.DistrictRouting" />
+        <item itemvalue="Application.CitizenRouting" />
+        <item itemvalue="Application.App" />
+=======
         <item itemvalue="Application.App" />
         <item itemvalue="Application.SystemAdminsRouting" />
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
         <item itemvalue="Application.CreateNotification" />
       </list>
     </recent_temporary>
@@ -132,7 +157,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="e65e4820-7e53-416d-b7cc-63db9af2327e" name="Changes" comment="ad" />
+=======
       <changelist id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="" />
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
       <created>1647347321755</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -183,6 +212,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ad" />
+    <option name="LAST_COMMIT_MESSAGE" value="ad" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
