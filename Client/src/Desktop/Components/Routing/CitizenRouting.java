@@ -140,7 +140,6 @@ public class CitizenRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
-
     }
 
     public  void filter(String chosen){
