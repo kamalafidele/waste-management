@@ -17,7 +17,7 @@ public class NotificationRepo{
     }
 
     public ResultSet findAll(int receiver){
-        return database.select("SELECT * FROM notifications WHERE receiver =" + receiver);
+        return database.select("SELECT * FROM notifications WHERE receiver = " + receiver);
     }
     public ResultSet findByViewStatus(String viewStatus, int receiver){
         return database.select("SELECT * FROM notifications WHERE viewStatus =" + viewStatus + "AND receiver =" + receiver);

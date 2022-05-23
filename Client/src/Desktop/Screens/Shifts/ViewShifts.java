@@ -1,4 +1,4 @@
-package Desktop.Components;
+package Desktop.Screens.Shifts;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -6,73 +6,67 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.Serial;
 
-// import Desktop.Application;
+public class ViewShifts extends JPanel {
 
-public class District extends JFrame {
-    // private Application application = new Application();
-    // SideMenuPanel sideMenuPanel = new SideMenuPanel();
-//    private ViewCitizens viewCitizens = new ViewCitizens();
-
-    public void initialize() {
-        // application.close();
-
-        setVisible(true);
-        setTitle("District Dashboard");
-        setSize(1366,760);
-        setBackground(Color.YELLOW);
-
-        JPanel leftPanel = new JPanel();
-//        JPanel rightPanel = new JPanel();
-        leftPanel.setVisible(true);
-        leftPanel.setSize(200,730);
-//        rightPanel.setVisible(true);
-//        rightPanel.setSize(800,730);
-
-        add(leftPanel);
-//        add(rightPanel);
-
-        // leftPanel.add(sideMenuPanel);
-//        rightPanel.add()
-
+    public ViewShifts(){
+        setVisible(false);
+        setBounds(200,0,1166,768);
+        setBackground(Color.WHITE);
+        setBorder(new EmptyBorder(new Insets(20,30,20,30)));
         Object [][] data = {{"Karera Marvin","Karera@gmail.com","0781234568","Mukamira"},{"Kayitare Audax","audax@gmail.com","0786783420","Nyamabuye"},{"Nick Singizwa","nick@gmail.com","0784893734","Niboye"}};
-        Object [] columns = {"Names", "Email", "Phone no", "Location"};
-        viewCitizens("All citizens in your district", data, columns);
-
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Object [] columns = {"Company", "Date", "Confirmed people", "No of shifts"};
+        shiftsTable("All created shifts", data, columns);
     }
-
-    public void viewCitizens(String title, Object[][] data, Object[] columns){
-        JLabel label = new JLabel(title, JLabel.CENTER);
-        label.setAlignmentX(Component.CENTER_ALIGNMENT);
+    public void shiftsTable(String title, Object[][] data, Object[] columns){
+        JLabel label = new JLabel(title);
         label.setFont(new Font("Arial", Font.BOLD, 15));
+//        label.setAlignmentX(Component.CENTER_ALIGNMENT);
         label.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
 
         JPanel container = new JPanel();
-        container.setOpaque(false);
-//        container.setBounds(500, 20, 500, 100);
         container.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
+        container.setPreferredSize(new Dimension(1025,670));
+        container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+
+        Color color = new Color(37, 149, 234);
+        JButton addButton = new JButton("Create shift");
+        addButton.setBounds(1000, 30, 400, 30);
+        addButton.setBackground(color);
+        addButton.setForeground(Color.WHITE);
+//        addButton.setAlignmentX(Component.LEFT_ALIGNMENT);
+        addButton.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
+
+        addButton.setActionCommand("CreateShift");
+        addButton.addActionListener(new ButtonClickEventHandler());
+
+        container.add(addButton);
         container.add(label);
-        container.setBackground(Color.RED);
-//        container.setLayout(new FlowLayout());
+
         DefaultTableModel model = new DefaultTableModel(data,columns);
         model.setColumnIdentifiers(columns);
-
         JTable table = new JTable(model) {
-            @Serial
-            private static final long serialVersionUID = 1L;
-
+            //            @Serial
+//            private static final long serialVersionUID = 1L;
             public boolean isCellEditable(int row, int column) {
                 return false;
             };
         };
         table.setRowHeight(40);
-        table.setBounds(0, 0, 700, 730);
+        //increase table size
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        table.getColumnModel().getColumn(0).setPreferredWidth(250);
+        table.getColumnModel().getColumn(1).setPreferredWidth(250);
+        table.getColumnModel().getColumn(2).setPreferredWidth(250);
+        table.getColumnModel().getColumn(3).setPreferredWidth(250);
+
         table.getTableHeader().setOpaque(false);
         table.setShowGrid(false);
         table.getTableHeader().setReorderingAllowed(false);
-        Color color = new Color(37, 149, 234);
+//        Color color = new Color(37, 149, 234);
         table.getTableHeader().setBackground(color);
         table.getTableHeader().setForeground(Color.white);
 
@@ -89,7 +83,6 @@ public class District extends JFrame {
                 }
                 return c;
             }
-
         });
 
         ((DefaultTableCellRenderer)table.getTableHeader().getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
@@ -102,16 +95,21 @@ public class District extends JFrame {
 
         container.add(jScrollPane);
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
-
-//        JButton addButton = new JButton("Add Citizen");
-//        addButton.setBounds(10, 300, 400, 30);
-//        addButton.setBackground(color);
-//        addButton.setForeground(Color.WHITE);
-
-        JPanel rightPanel = new JPanel();
-        rightPanel.setVisible(true);
-        rightPanel.setSize(1000,730);
-        rightPanel.add(container);
-        add(rightPanel);
+        add(container);
     }
+
+    public class ButtonClickEventHandler implements ActionListener {
+        public void actionPerformed(ActionEvent ae){
+            if(ae.getActionCommand().equals("CreateShift")){
+                //open a new JFrame
+                JFrame frame = new JFrame("Shift activated");
+                frame.setSize(700,700);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+                frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
+            }
+        }
+    }
+
 }
