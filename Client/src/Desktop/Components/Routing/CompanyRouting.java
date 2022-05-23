@@ -1,6 +1,7 @@
 package Desktop.Components.Routing;
 import Desktop.Components.Employees;
 import Desktop.Components.Registration;
+import Desktop.Components.CreateNotification;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
@@ -32,15 +33,24 @@ public class CompanyRouting extends JFrame{
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+<<<<<<< HEAD
     Employees employees=new Employees();
     Registration registration = new Registration(false,false,true);
+=======
+    Registration registerUser = new Registration(false,false,true);
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  CompanyRouting() throws IOException {
+    public  CompanyRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        this.fromServer = fromServer;
+        this.toServer = toServer;
+        registerUser.setStreams(toServer,fromServer);
+
         setTitle("Company Board");
         setSize(1366,768);
         setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
         SideBar.setBackground(Color.decode("#EAEDF3"));
@@ -49,8 +59,13 @@ public class CompanyRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+<<<<<<< HEAD
         add(registration);
         add(employees);
+=======
+        add(registerUser);
+
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
         SidebarDesign();
         setVisible(true);
     }
@@ -63,7 +78,6 @@ public class CompanyRouting extends JFrame{
         notifications=ImageIO.read(new File("src/Desktop/Images/notification-2-line.png"));
         addAdmin=ImageIO.read(new File("src/Desktop/Images/user-add-line.png"));
         Shifts=ImageIO.read(new File("src/Desktop/Images/stack-line.png"));
-
 
 
         dashboardImg = new ImageIcon(dashboard.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
@@ -81,21 +95,21 @@ public class CompanyRouting extends JFrame{
         Dashboard.setFont(new Font("Inter", Font.PLAIN, 16));
         Dashboard.addMenuListener(listenerHandler);
         menuBar.add(Dashboard);
-        JMenu Employees = new JMenu("Employees");
-        //Employees.setIcon(districtsImg);
-        Employees.addMenuListener(listenerHandler);
-        Employees.setFont(new Font("Inter", Font.PLAIN, 16));
-        menuBar.add(Employees);
+        JMenu Shifts = new JMenu("Shifts");
+        Shifts.setIcon(ShiftsImg);
+        Shifts.addMenuListener(listenerHandler);
+        Shifts.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(Shifts);
         JMenu Analytics = new JMenu("Analytics");
         Analytics.addMenuListener(listenerHandler);
         Analytics.setIcon((analyticsImg));
         Analytics.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Analytics);
-        JMenu AddUser = new JMenu("Add User");
-        AddUser.addMenuListener(listenerHandler);
-        AddUser.setIcon(addAdminImg);
-        AddUser.setFont(new Font("Inter", Font.PLAIN, 16));
-        menuBar.add(AddUser);
+        JMenu RegisterEmployee = new JMenu("Register Employee");
+        RegisterEmployee.addMenuListener(listenerHandler);
+        RegisterEmployee.setIcon(addAdminImg);
+        RegisterEmployee.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(RegisterEmployee);
         JMenu Transactions = new JMenu("Transactions");
         Transactions.addMenuListener(listenerHandler);
         Transactions.setIcon(TransactionsImg);
@@ -151,30 +165,36 @@ public class CompanyRouting extends JFrame{
         switch (chosen) {
             case "Analytics":
                 panel2.setVisible(false);
-                registration.setVisible(false);
+                registerUser.setVisible(false);
                 panel.setVisible(true);
                 break;
             case "Transactions":
                 break;
-            case "Add User":
-                panel.setVisible(false);
+            case "Register Employee":
                 panel2.setVisible(false);
-                registration.setVisible(true);
+                panel.setVisible(false);
+                registerUser.setVisible(true);
                 break;
             case "Dashboard":
+                registerUser.setVisible(false);
                 panel.setVisible(false);
-                registration.setVisible(false);
                 panel2.setVisible(true);
                 break;
+<<<<<<< HEAD
             case "Employees":
                 panel.setVisible(false);
                 panel2.setVisible(false);
                 registration.setVisible(false);
                 employees.setVisible(true);
                 System.out.println("employees");
+=======
+            case "Shifts":
+                registerUser.setVisible(false);
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
                 break;
             case "Notifications":
-                System.out.println("Notifications clicked");
+                registerUser.setVisible(false);
+                new CreateNotification();
                 break;
             default:
                 System.out.println();

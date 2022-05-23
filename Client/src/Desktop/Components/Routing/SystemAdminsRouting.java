@@ -4,6 +4,9 @@ import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -29,25 +32,32 @@ public class SystemAdminsRouting extends JFrame{
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
-    Registration districtRegister = new Registration(true,false,false);
-    Registration userRegister = new Registration(false,false,true);
+    Registration registerDistrict = new Registration(true,false, false);
+    Registration registerUser = new Registration(false,false,true);
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  SystemAdminsRouting() throws IOException {
+    public  SystemAdminsRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+        registerUser.setStreams(toServer,fromServer);
+        registerDistrict.setStreams(toServer,fromServer);
+
         setTitle("Company Board");
         setSize(1366,768);
         setLayout(null);
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
         SideBar.setBackground(Color.decode("#EAEDF3"));
-        //ADDING COMPONENTS NEEDED BY SYSTEM ADMIN
-        add(SideBar);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         panel.setVisible(true);
+
+        add(SideBar);
         add(panel);
         add(panel2);
-        add(districtRegister);
-        add(userRegister);
+        add(registerDistrict);
+        add(registerUser);
 
         SidebarDesign();
         setVisible(true);
@@ -139,40 +149,37 @@ public class SystemAdminsRouting extends JFrame{
         SideBar.add(logoutBtn);
     }
 
-
-    public static void main(final String args[]) throws IOException {
-    }
-
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
                 panel2.setVisible(false);
-                districtRegister.setVisible(false);
-                userRegister.setVisible(false);
+                registerUser.setVisible(false);
+                registerDistrict.setVisible(false);
                 panel.setVisible(true);
                 break;
             case "Transactions":
+                registerUser.setVisible(false);
+                registerDistrict.setVisible(false);
                 break;
             case "Register Admin":
                 panel.setVisible(false);
                 panel2.setVisible(false);
-                districtRegister.setVisible(false);
-                userRegister.setVisible(true);
+                registerDistrict.setVisible(false);
+                registerUser.setVisible(true);
                 break;
             case "Dashboard":
-                panel.setVisible(false);
-                districtRegister.setVisible(false);
-                userRegister.setVisible(false);
-                panel2.setVisible(true);
+                registerUser.setVisible(false);
+                registerDistrict.setVisible(false);
                 break;
             case "Districts":
                 panel.setVisible(false);
-                userRegister.setVisible(false);
                 panel2.setVisible(false);
-                districtRegister.setVisible(true);
+                registerUser.setVisible(false);
+                registerDistrict.setVisible(true);
                 break;
             case "Notifications":
-                System.out.println("Notifications clicked");
+                registerUser.setVisible(false);
+                registerDistrict.setVisible(false);
                 break;
             default:
                 System.out.println();

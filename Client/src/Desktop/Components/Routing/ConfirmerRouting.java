@@ -1,6 +1,7 @@
 package Desktop.Components.Routing;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
+import Desktop.Screens.Shifts.ViewShifts;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -31,12 +32,18 @@ public class ConfirmerRouting extends JFrame{
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+
+    ViewShifts viewShifts=new ViewShifts();
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  ConfirmerRouting() throws IOException {
+    public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
         setTitle("Company Board");
         setSize(1366,768);
         setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
         SideBar.setBackground(Color.decode("#EAEDF3"));
@@ -45,6 +52,7 @@ public class ConfirmerRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+        add(viewShifts);
         SidebarDesign();
         setVisible(true);
     }
@@ -131,23 +139,24 @@ public class ConfirmerRouting extends JFrame{
     }
 
 
-    public static void main(final String args[]) throws IOException {
-    }
-
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
                 panel2.setVisible(false);
                 panel.setVisible(true);
+                viewShifts.setVisible(false);
                 break;
             case "Transactions":
                 break;
             case "Dashboard":
                 panel.setVisible(false);
                 panel2.setVisible(true);
+                viewShifts.setVisible(false);
                 break;
             case "Shifts":
-                System.out.println("Shifts clicked");
+                panel.setVisible(false);
+                panel2.setVisible(false);
+                viewShifts.setVisible(true);
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");

@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="e65e4820-7e53-416d-b7cc-63db9af2327e" name="Changes" comment="ad" />
+=======
+    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting$MenuListenerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting$MenuListenerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/CompanyRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/CompanyRouting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/DistrictRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/DistrictRouting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/SystemAdminsRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/SystemAdminsRouting.java" afterDir="false" />
+    </list>
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,20 +49,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Backend" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.CompanyRouting">
+=======
+  <component name="RunManager" selected="Application.App">
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
     <configuration name="App" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.App" />
       <module name="Client" />
@@ -90,7 +100,7 @@
       <module name="Client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Desktop.Components.*" />
+          <option name="PATTERN" value="Desktop.Components.Routing.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,8 +108,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="DistrictRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.DistrictRouting" />
+=======
+    <configuration name="SystemAdminsRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.SystemAdminsRouting" />
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -112,18 +127,29 @@
       </method>
     </configuration>
     <list>
+<<<<<<< HEAD
       <item itemvalue="Application.App" />
       <item itemvalue="Application.CreateNotification" />
       <item itemvalue="Application.DistrictRouting" />
+=======
+      <item itemvalue="Application.ConfirmerRouting" />
+      <item itemvalue="Application.CreateNotification" />
+      <item itemvalue="Application.SystemAdminsRouting" />
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
       <item itemvalue="Application.CitizenRouting" />
       <item itemvalue="Application.CompanyRouting" />
     </list>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Application.CompanyRouting" />
         <item itemvalue="Application.DistrictRouting" />
         <item itemvalue="Application.CitizenRouting" />
         <item itemvalue="Application.App" />
+=======
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.SystemAdminsRouting" />
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
         <item itemvalue="Application.CreateNotification" />
       </list>
     </recent_temporary>
@@ -131,7 +157,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="e65e4820-7e53-416d-b7cc-63db9af2327e" name="Changes" comment="ad" />
+=======
+      <changelist id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="" />
+>>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
       <created>1647347321755</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -164,6 +194,7 @@
       <workItem from="1653117447321" duration="809000" />
       <workItem from="1653154289073" duration="4464000" />
       <workItem from="1653195339397" duration="4264000" />
+      <workItem from="1653234159300" duration="588000" />
     </task>
     <servers />
   </component>
@@ -180,6 +211,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ad" />
@@ -202,14 +234,6 @@
           <url>file://$PROJECT_DIR$/src/Desktop/Shared/RoundBtn.java</url>
           <line>14</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Desktop/Components/Routing/CitizenRouting.java</url>
-          <line>169</line>
-          <properties class="Desktop.Components.Routing.CitizenRouting.MenuListenerHandler">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

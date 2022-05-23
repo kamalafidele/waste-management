@@ -1,29 +1,30 @@
 package Desktop.Components;
 
+import com.github.lgooddatepicker.components.DatePicker;
+import com.github.lgooddatepicker.components.DatePickerSettings;
 import net.miginfocom.swing.MigLayout;
+
 
 import javax.swing.*;
 import java.awt.*;
+import java.time.DayOfWeek;
 
 public class CreateNotification extends JFrame {
-    public static void main(String[] args) {
-        new CreateNotification();
-    }
     public CreateNotification(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Create Notifications");
         this.setSize(800, 800);
         this.setResizable(false);
 
         JPanel mainPanel = new JPanel(new MigLayout("center, wrap, fill, insets 20", "20:push[]20:push", "20:push[]20[]20[]20:push"));
-        JLabel notification = new JLabel("Notification");
+        JLabel notification = new JLabel("Create Notifications");
         notification.setFont(new Font(null, Font.BOLD, 20));
-        notification.setForeground(new Color(0,101,51));
+        notification.setForeground(new Color(0, 66, 101));
         JPanel insidePanel = new JPanel(new MigLayout("wrap", "[]10:push[]10:push[]10:push[]", "[]10[]"));
-        JPanel formPanel = new JPanel();
 
         JLabel description = new JLabel("Description");
         description.setFont(new Font(null, Font.BOLD, 15));
-        description.setForeground(new Color(0,101,51));
+        description.setForeground(new Color(0, 66, 101));
         JLabel notificationName = new JLabel("Notification Name");
         JTextField notificationTextField = new JTextField();
         JLabel processName = new JLabel("Process Name");
@@ -42,17 +43,11 @@ public class CreateNotification extends JFrame {
         };
         JComboBox groupChoice = new JComboBox(groupChoices);
         JLabel date = new JLabel("Notify On");
-        String[] dateChoices = {
-                "12/05/2022",
-                "13/05/2022",
-                "14/05/2022",
-                "15/05/2022",
-                "16/05/2022",
-                "17/05/2022",
-                "18/05/2022",
-                "19/05/2022"
-        };
-        JComboBox dateChoice = new JComboBox(dateChoices);
+
+        DatePickerSettings dateSettings = new DatePickerSettings();
+        dateSettings.setFirstDayOfWeek(DayOfWeek.MONDAY);
+        DatePicker datePicker = new DatePicker(dateSettings);
+
         JLabel renotify = new JLabel("Renotify");
         String[] periodChoices = {
                 "Every Week",
@@ -63,7 +58,7 @@ public class CreateNotification extends JFrame {
         JComboBox periodChoice = new JComboBox(periodChoices);
         JLabel content = new JLabel("Content");
         content.setFont(new Font(null, Font.BOLD, 15));
-        content.setForeground(new Color(0,101,51));
+        content.setForeground(new Color(0, 66, 101));
         JLabel message = new JLabel("Message");
         JTextArea textArea = new JTextArea("Write your message here");
 
@@ -75,7 +70,7 @@ public class CreateNotification extends JFrame {
         insidePanel.add(processName);
         insidePanel.add(processTextField, "width 200");
         insidePanel.add(date);
-        insidePanel.add(dateChoice, "width 200");
+        insidePanel.add(datePicker);
         insidePanel.add(status);
         insidePanel.add(statusChoice, "width 200");
         insidePanel.add(renotify);
