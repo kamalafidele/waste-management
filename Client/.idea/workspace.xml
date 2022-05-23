@@ -4,22 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Backend/.idea/runConfigurations.xml" beforeDir="false" />
+    <list default="true" id="8115dc13-e845-4817-8acb-b817f40969b4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/SideMenuPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/SideMenuPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/SideMenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/SideMenuPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Transactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Transactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Admin/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Company$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Company.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Debt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/Dashboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/House.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Notification$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Notification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Payment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Shifts$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Shifts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/customerInvoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/CompanyHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/DistrictHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Company.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/SideMenuPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/District.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Screens/ViewCitizens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Screens/ViewCitizens.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +77,20 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.Transactions">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.App" />
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Desktop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Application" />
       <module name="Client" />
@@ -109,6 +139,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="Application.Transactions" />
         <item itemvalue="Application.Application (1)" />
         <item itemvalue="Application.Table" />
