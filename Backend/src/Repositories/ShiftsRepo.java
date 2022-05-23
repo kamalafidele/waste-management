@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 
 public class ShiftsRepo {
     DatabaseConnection database;
-    public ShiftsRepo(){
-        database=new DatabaseConnection();
+    public ShiftsRepo(DatabaseConnection database){
+        this.database = database;
     }
 
     public ResultSet findAll(){
