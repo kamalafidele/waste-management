@@ -33,6 +33,7 @@ public class CitizenRouting extends JFrame{
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
 
+
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
     public  CitizenRouting() throws IOException {
@@ -146,6 +147,10 @@ public class CitizenRouting extends JFrame{
                 panel.setVisible(true);
                 break;
             case "Transactions":
+                panel.setVisible(false);
+                panel2.setVisible(false);
+
+
                 break;
             case "Dashboard":
                 panel.setVisible(false);
