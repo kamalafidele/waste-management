@@ -11,10 +11,13 @@ import java.sql.SQLException;
 public class PaymentRepo {
     DatabaseConnection database;
     Company company;
-    public PaymentRepo(){
-        database=new DatabaseConnection();
+    DebtController debtController;
+
+    public PaymentRepo(DatabaseConnection database){
+        this.database = database;
+        this.debtController = new DebtController(database);
     }
-    DebtController debtController=new DebtController();
+
     public ResultSet findMomoAccountByNumber(String phoneNumber){
         return database.select("SELECT * FROM momoAccount where phoneNber = "+phoneNumber);
     }
