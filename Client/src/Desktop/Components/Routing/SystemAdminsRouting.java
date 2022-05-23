@@ -1,4 +1,5 @@
 package Desktop.Components.Routing;
+import Desktop.Components.CreateNotification;
 import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
@@ -180,6 +181,8 @@ public class SystemAdminsRouting extends JFrame{
             case "Notifications":
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
+                CreateNotification createNotification = new CreateNotification();
+                createNotification.setStreams(toServer, fromServer);
                 break;
             default:
                 System.out.println();

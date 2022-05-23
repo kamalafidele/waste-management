@@ -73,7 +73,7 @@ public class NotificationController {
         notification.setSentDate(strDate);
         notification.setReceiver(receiver);
         // ================================ added ======================
-        notification.setType(notification_type);
+//        notification.setType(notification_type);
 
 
         switch (notification_type) {

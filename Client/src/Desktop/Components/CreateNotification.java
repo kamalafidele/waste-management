@@ -130,6 +130,7 @@ public class CreateNotification extends JFrame {
 
         buttonPanel = new JPanel();
         saveButton = new JButton("Save");
+        saveButton.addActionListener(new saveNotification());
         closeButton = new JButton("Close");
 
         buttonPanel.add(saveButton);

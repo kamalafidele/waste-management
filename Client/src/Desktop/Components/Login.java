@@ -22,6 +22,8 @@ public class Login extends JFrame {
     JButton loginBtn = new JButton("Login");
 
     public Login(DataOutputStream toServer, DataInputStream fromServer){
+        this.toServer = toServer;
+        this.fromServer = fromServer;
         setTitle("LOGIN");
         setVisible(true);
         setLayout(null);
