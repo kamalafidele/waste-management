@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Models.Company;
 import Repositories.CompanyRepo;
 import Repositories.WalletsRepoHandler;
@@ -19,11 +20,13 @@ public class CompanyController {
     private ObjectMapper mapper;
     AnalyticsController analyticsController;
     CustomerInvoicesRepo customerInvoice;
+    private DatabaseConnection connection;
 
-    public CompanyController(){
-        companyRepo=new CompanyRepo();
-        analyticsController=new AnalyticsController();
-        customerInvoice = new CustomerInvoicesRepo();
+    public CompanyController(DatabaseConnection connection){
+        this.connection = connection;
+        companyRepo=new CompanyRepo(connection);
+        analyticsController=new AnalyticsController(connection);
+        customerInvoice = new CustomerInvoicesRepo(connection);
         mapper=new ObjectMapper();
     }
 

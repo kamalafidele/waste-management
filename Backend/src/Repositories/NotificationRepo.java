@@ -12,7 +12,9 @@ import java.sql.ResultSet;
 
 public class NotificationRepo{
     DatabaseConnection database;
-    public NotificationRepo(){database = new DatabaseConnection(); }
+    public NotificationRepo(DatabaseConnection database){
+        this.database = database;
+    }
 
     public ResultSet findAll(int receiver){
         return database.select("SELECT * FROM notifications WHERE receiver = " + receiver);
