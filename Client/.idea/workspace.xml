@@ -34,6 +34,7 @@
       <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/UserRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification$saveNotification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification$saveNotification.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/District$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/District$2.class" beforeDir="false" />
@@ -111,13 +112,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Application" />
-      <module name="Client" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CompanyRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.CompanyRouting" />
       <module name="Client" />
@@ -136,7 +130,7 @@
       <module name="Client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Desktop.Components.Routing.*" />
+          <option name="PATTERN" value="Desktop.Components.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,8 +138,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DistrictRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.DistrictRouting" />
+    <configuration name="NotificationPopUp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.NotificationPopUp" />
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Desktop.Components.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SystemAdminsRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.SystemAdminsRouting" />
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -231,10 +238,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="ad" />
-    <option name="LAST_COMMIT_MESSAGE" value="ad" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
