@@ -33,12 +33,7 @@ public class CompanyRouting extends JFrame{
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
-<<<<<<< HEAD
-    Employees employees=new Employees();
-    Registration registration = new Registration(false,false,true);
-=======
-    Registration registerUser = new Registration(false,false,true);
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
+     Registration registerUser = new Registration(false,false,true);
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
@@ -59,13 +54,8 @@ public class CompanyRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
-<<<<<<< HEAD
-        add(registration);
-        add(employees);
-=======
         add(registerUser);
 
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
         SidebarDesign();
         setVisible(true);
     }
@@ -155,7 +145,7 @@ public class CompanyRouting extends JFrame{
         SideBar.add(menuBar);
         SideBar.add(logoutBtn);
     }
-    
+
 
     public static void main(final String args[]) throws IOException {
         new CompanyRouting();
@@ -180,17 +170,8 @@ public class CompanyRouting extends JFrame{
                 panel.setVisible(false);
                 panel2.setVisible(true);
                 break;
-<<<<<<< HEAD
-            case "Employees":
-                panel.setVisible(false);
-                panel2.setVisible(false);
-                registration.setVisible(false);
-                employees.setVisible(true);
-                System.out.println("employees");
-=======
             case "Shifts":
                 registerUser.setVisible(false);
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
                 break;
             case "Notifications":
                 registerUser.setVisible(false);

@@ -140,10 +140,6 @@ public class CitizenRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
-<<<<<<< HEAD
-        new CitizenRouting();
-=======
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
     }
 
     public  void filter(String chosen){
