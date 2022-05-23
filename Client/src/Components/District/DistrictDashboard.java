@@ -108,13 +108,10 @@ public class DistrictDashboard {
         districtHandler.setEmail(email);
         System.out.print( "Enter district Phone: " );
         String phone= keyboard.nextLine();
-        districtHandler.setPhone(phone);
 
         Random random = new Random();
-        long pin = random.nextLong( );
-        districtHandler.setPin( pin );
-        districtHandler.setRole( 3 );
-        districtHandler.setWalletId( 0 );
+        long pin = random.nextLong( 500_000_000 );
+        districtHandler.setWalletId( 0L );
 
 
         try{

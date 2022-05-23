@@ -17,7 +17,7 @@ public class DistrictController {
     private final ObjectMapper mapper;
     private final DistrictRepo districtRepo;
 
-    public DistrictController(){
+    public DistrictController() {
         this.mapper = new ObjectMapper();
         this.districtRepo = new DistrictRepo();
     };
@@ -29,55 +29,20 @@ public class DistrictController {
             case "getDistricts":
                 getDistricts();
                 break;
-            case "addDistrict":
-
-                addDistrict(request.split("/")[2]);
-                break;
-            case "login":
-
-                login(request.split("/")[2]);
-                break;
             default:
                 sendResponse("request not specified");
                 break;
         }
     }
 
-    public void login(String data){
-        try {
-            District district = mapper.readValue(data, District.class);
-
-            if(districtRepo.login(district)){
-                sendResponse("true");
-            }else{
-                sendResponse("false");
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public void addDistrict(String data) {
-        try{
-            District district=mapper.readValue(data,District.class);
-
-            if(districtRepo.save(district))
-                sendResponse("Successvelly  added");
-            else
-                sendResponse("Failed to add.Try again");
-        }catch (Exception exception){
-            sendResponse("Failed to add.Try again");
-//            exception.printStackTrace();
-        }
-    }
     public void getDistricts() {
-        List<District> districts= new ArrayList<>();
-        ResultSet resultSet=districtRepo.findAll();
+        List<District> districts = new ArrayList<>();
+        ResultSet resultSet = districtRepo.findAll();
         try{
 
             while(resultSet.next()){
-                District district= new District(resultSet.getInt(1),resultSet.getString(2),resultSet.getString(3)
-                        ,resultSet.getString(4),resultSet.getLong(5),resultSet.getInt(6),resultSet.getInt(7),resultSet.getInt(8));
+                District district= new District(resultSet.getLong(1),resultSet.getString(2),resultSet.getString(3)
+                        ,resultSet.getLong(4));
                 districts.add(district);
             }
 
