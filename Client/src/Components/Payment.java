@@ -77,10 +77,10 @@ public class Payment {
         }
 
 
-    };
+    }
     public void handleBankpayment(){
         System.out.println("I am a handleMomopayment");
-    };
+    }
 
     public void handlePaymentMethods(){
         System.out.println("--------Please choose payment method----------");

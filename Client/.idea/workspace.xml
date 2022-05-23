@@ -5,39 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1f816c9-f53a-4899-819a-344b349ddf2d" name="Changes" comment="ad">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Admin/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Admin/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Company$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Company$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Debt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Debt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/House/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/House/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Notification$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Notification$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Notification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Payment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Shifts$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Shifts$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Shifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Shifts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/customerInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/customerInvoice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/Admin/LoginInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/Admin/LoginInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/CitizenHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/CitizenHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/CompanyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/CompanyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/CustomerInvoicesHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/CustomerInvoicesHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/DistrictHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/DistrictHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/HouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/HouseHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/LoginData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/LoginData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/NotificationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/NotificationHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/ServiceConfirmationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/ServiceConfirmationHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/ShiftsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/ShiftsHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/WalletHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/WalletHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/PaymentFrame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/PaymentFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/BankPay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Payment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
