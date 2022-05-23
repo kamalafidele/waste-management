@@ -33,7 +33,9 @@ public class CompanyRouting extends JFrame{
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
-     Registration registerUser = new Registration(false,false,true);
+    Employees employees=new Employees();
+    Registration registration = new Registration(false,false,true);
+    Registration registerUser = new Registration(false,false,true);
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
@@ -54,6 +56,8 @@ public class CompanyRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+        add(registration);
+        add(employees);
         add(registerUser);
 
         SidebarDesign();
@@ -147,9 +151,9 @@ public class CompanyRouting extends JFrame{
     }
 
 
-    public static void main(final String args[]) throws IOException {
-        new CompanyRouting();
-    }
+//    public static void main(final String args[]) throws IOException {
+//        new CompanyRouting();
+//    }
 
     public  void filter(String chosen){
         switch (chosen) {
@@ -170,6 +174,12 @@ public class CompanyRouting extends JFrame{
                 panel.setVisible(false);
                 panel2.setVisible(true);
                 break;
+            case "Employees":
+                panel.setVisible(false);
+                panel2.setVisible(false);
+                registration.setVisible(false);
+                employees.setVisible(true);
+                System.out.println("employees");
             case "Shifts":
                 registerUser.setVisible(false);
                 break;
