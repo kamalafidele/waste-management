@@ -5,38 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8115dc13-e845-4817-8acb-b817f40969b4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Admin/Admin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Company$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Company.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Debt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/Dashboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/House.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Notification$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Notification.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Payment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Shifts$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Shifts.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/customerInvoice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/CompanyHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/DistrictHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Company.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection$ButtonEventHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Role_Selection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/SideMenuPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Transactions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/District.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Screens/ViewCitizens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Screens/ViewCitizens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/waste-management.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +124,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="" />
+      <changelist id="8115dc13-e845-4817-8acb-b817f40969b4" name="Changes" comment="" />
       <created>1647347321755</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
