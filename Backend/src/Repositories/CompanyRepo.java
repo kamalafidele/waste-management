@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 
 public class CompanyRepo {
       DatabaseConnection database;
-      public CompanyRepo() {
-          database = new DatabaseConnection();
+      public CompanyRepo(DatabaseConnection database) {
+          this.database = database;
       }
 
       public ResultSet findAll() {

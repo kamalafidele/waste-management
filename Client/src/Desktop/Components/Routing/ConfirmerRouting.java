@@ -31,6 +31,8 @@ public class ConfirmerRouting extends JFrame{
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+
+
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
     public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
@@ -49,6 +51,7 @@ public class ConfirmerRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+
         SidebarDesign();
         setVisible(true);
     }

@@ -11,8 +11,8 @@ import java.sql.SQLException;
 public class PaymentRepo {
     DatabaseConnection database;
     Company company;
-    public PaymentRepo(){
-        database=new DatabaseConnection();
+    public PaymentRepo(DatabaseConnection database){
+        this.database = database;
     }
     DebtController debtController=new DebtController();
     public ResultSet findMomoAccountByNumber(String phoneNumber){

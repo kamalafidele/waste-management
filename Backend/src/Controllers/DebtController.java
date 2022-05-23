@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Repositories.DebtRepo;
 
 import java.io.*;
@@ -12,8 +13,11 @@ public class DebtController {
     private DataOutputStream toClient;
     private NotificationController notificationController=new NotificationController();
     public long balance;
-    public DebtController(){
-        debtRepo=new DebtRepo();
+    private DatabaseConnection connection;
+
+    public DebtController(DatabaseConnection connection){
+        this.connection = connection;
+        debtRepo=new DebtRepo(connection);
     };
     public void filterRequest(String request, DataOutputStream toClient){
         this.toClient=toClient;

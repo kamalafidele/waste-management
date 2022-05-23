@@ -6,9 +6,11 @@ import Models.User;
 import java.sql.ResultSet;
 
 public class UserRepo {
-    private DatabaseConnection connection = new DatabaseConnection();
+    private DatabaseConnection connection;
 
-    public UserRepo() {}
+    public UserRepo(DatabaseConnection connection) {
+        this.connection = connection;
+    }
 
     public boolean save(User user) {
         return connection.insert(

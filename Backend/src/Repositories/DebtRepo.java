@@ -8,7 +8,9 @@ import java.sql.SQLException;
 
 public class DebtRepo {
     public DatabaseConnection database;
-    public DebtRepo(){database=new DatabaseConnection();}
+    public DebtRepo(DatabaseConnection database){
+        this.database = database;
+    }
     public ResultSet getBalance(String token){
          ResultSet result=database.select("select u.id,w.id as walletId,name,amount from users u inner join wallet w on u.wallet=w.id where pin="+token);
          try {

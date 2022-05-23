@@ -1,9 +1,6 @@
 package Desktop.Components;
 
-import Desktop.Components.Routing.CitizenRouting;
-import Desktop.Components.Routing.CompanyRouting;
-import Desktop.Components.Routing.DistrictRouting;
-import Desktop.Components.Routing.SystemAdminsRouting;
+import Desktop.Components.Routing.*;
 import Desktop.Shared.RoundBtn;
 
 import javax.swing.*;
