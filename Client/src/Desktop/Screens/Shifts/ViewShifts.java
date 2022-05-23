@@ -1,4 +1,4 @@
-package Desktop.Screens;
+package Desktop.Screens.Shifts;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -8,41 +8,41 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.io.Serial;
 
-public class ViewCitizens extends JFrame {
+public class ViewShifts extends JPanel {
 
-    private String title;
-    private Object[][] data;
-    private Object[] columns;
-
-    public void citizens(String title, Object[][] data, Object[] columns) throws HeadlessException {
-        this.title = title;
-        this.data = data;
-        this.columns = columns;
-        this.setVisible(true);
-
-        JLabel label = new JLabel(this.title, JLabel.LEFT);
-        label.setAlignmentX(Component.LEFT_ALIGNMENT);
+    public ViewShifts(){
+        setVisible(false);
+        setBounds(200,0,1166,768);
+        setBackground(Color.WHITE);
+        setBorder(new EmptyBorder(new Insets(20,30,20,30)));
+        Object [][] data = {{"Karera Marvin","Karera@gmail.com","0781234568","Mukamira"},{"Kayitare Audax","audax@gmail.com","0786783420","Nyamabuye"},{"Nick Singizwa","nick@gmail.com","0784893734","Niboye"}};
+        Object [] columns = {"Names", "Email", "Phone no", "Location"};
+        shiftsTable("All created shifts", data, columns);
+    }
+    public void shiftsTable(String title, Object[][] data, Object[] columns){
+        JLabel label = new JLabel(title);
         label.setFont(new Font("Arial", Font.BOLD, 15));
+//        label.setAlignmentX(Component.CENTER_ALIGNMENT);
         label.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
 
         JPanel container = new JPanel();
-        container.setOpaque(false);
-//        container.setBackground(Color.RED);
-        container.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
+//        container.setBounds(20, 20, 1000, 200);
+//        container.setSize(1000,700);
+//        container.setBackground(Color.BLUE);
+//        container.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
         container.add(label);
-//        container.setLayout(new FlowLayout());
-        DefaultTableModel model = new DefaultTableModel(this.data, this.columns);
+
+        DefaultTableModel model = new DefaultTableModel(data,columns);
         model.setColumnIdentifiers(columns);
-
         JTable table = new JTable(model) {
-            @Serial
-            private static final long serialVersionUID = 1L;
-
+            //            @Serial
+//            private static final long serialVersionUID = 1L;
             public boolean isCellEditable(int row, int column) {
                 return false;
             };
         };
         table.setRowHeight(40);
+//        table.setSize(700,700);
         table.getTableHeader().setOpaque(false);
         table.setShowGrid(false);
         table.getTableHeader().setReorderingAllowed(false);
@@ -63,7 +63,6 @@ public class ViewCitizens extends JFrame {
                 }
                 return c;
             }
-
         });
 
         ((DefaultTableCellRenderer)table.getTableHeader().getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
@@ -76,6 +75,12 @@ public class ViewCitizens extends JFrame {
 
         container.add(jScrollPane);
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
-        this.add(container);
+        add(container);
+
+//        JButton addButton = new JButton("Add Citizen");
+//        addButton.setBounds(10, 300, 400, 30);
+//        addButton.setBackground(color);
+//        addButton.setForeground(Color.WHITE);
     }
+
 }
