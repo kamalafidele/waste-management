@@ -27,18 +27,15 @@ public class CompanyRouting extends JFrame{
      ImageIcon analyticsImg,dashboardImg,TransactionsImg,NotificationsImg,ShiftsImg,addAdminImg;
      BufferedImage dashboard,analytics,notifications,Shifts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
-    private DataOutputStream toServer;
-    private DataInputStream fromServer;
+    private static DataOutputStream toServer;
+    private static DataInputStream fromServer;
 
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
-<<<<<<< HEAD
-    Employees employees=new Employees();
-    Registration registration = new Registration(false,false,true);
-=======
+   Employees employees=new Employees();
     Registration registerUser = new Registration(false,false,true);
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
+
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
@@ -59,13 +56,10 @@ public class CompanyRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
-<<<<<<< HEAD
-        add(registration);
-        add(employees);
-=======
-        add(registerUser);
 
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
+        add(registerUser);
+        add(employees);
+
         SidebarDesign();
         setVisible(true);
     }
@@ -158,7 +152,7 @@ public class CompanyRouting extends JFrame{
     
 
     public static void main(final String args[]) throws IOException {
-        new CompanyRouting();
+        new CompanyRouting(toServer,fromServer);
     }
 
     public  void filter(String chosen){
@@ -180,17 +174,17 @@ public class CompanyRouting extends JFrame{
                 panel.setVisible(false);
                 panel2.setVisible(true);
                 break;
-<<<<<<< HEAD
+
             case "Employees":
                 panel.setVisible(false);
                 panel2.setVisible(false);
-                registration.setVisible(false);
+                registerUser.setVisible(false);
                 employees.setVisible(true);
                 System.out.println("employees");
-=======
+
             case "Shifts":
                 registerUser.setVisible(false);
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
+
                 break;
             case "Notifications":
                 registerUser.setVisible(false);

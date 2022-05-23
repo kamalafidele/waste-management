@@ -66,8 +66,7 @@ public class App extends JFrame {
         setLayout(new GridLayout(1,2));
         setVisible(true);
 
-        setLeftPanelTexts();
-        setRightPanelContent();
+
     }
 
     public void setStreams(Socket socket) {
@@ -77,34 +76,8 @@ public class App extends JFrame {
          } catch (Exception exception){}
     }
 
-    public void setLeftPanelTexts() {
-        JLabel label = new JLabel("Welcome to WSMS");
-        JLabel label1 = new JLabel("The best online waste and security");
-        JLabel label2 = new JLabel("management system in Rwanda");
 
-        label.setBorder(new EmptyBorder(new Insets(30,0,30,0)));
-        label.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
 
-        leftPanel.add(label);
-        leftPanel.add(label1);
-        leftPanel.add(label2);
-    }
 
-    public void setRightPanelContent() {
-        login.setSize(60,40);
-        login.setBorder(new RoundBtn(15));
-        login.setBackground(dodgerBlue);
-
-        //Add action listeners to buttons
-        login.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new Login(toServer,fromServer);
-                dispose();
-            }
-        });
-
-        rightPanel.add(login);
-    }
 
 }

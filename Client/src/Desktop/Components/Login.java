@@ -9,9 +9,12 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
+import java.sql.*;
 
 public class Login extends JFrame {
    private static DataOutputStream toServer;
@@ -19,8 +22,8 @@ public class Login extends JFrame {
 
     private  JPanel leftPanel = new JPanel();
     private  JPanel rightPanel = new JPanel();
-   JTextField email = new JTextField("Email");
-   JTextField password = new JTextField("Password");
+   private  static  JTextField myemail = new JTextField("Email");
+   private  static  JTextField mypassword = new JTextField("Password");
 
     JButton login = new JButton("Login");
 
@@ -73,21 +76,80 @@ public class Login extends JFrame {
     }
 
     public void setRightPanelContent() {
-        email.setSize(40,20);
-        login.setSize(40,20);
+        JLabel createText = new JLabel("Create account instead");
+        createText.setForeground(dodgerBlue);
+        createText.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        createText.addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new Registration(false,false,true);
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                createText.setForeground(Color.black);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+               createText.setForeground(dodgerBlue);
+            }
+        });
+        myemail.setSize(40,20);
+        login.setSize(20,10);
         login.setBorder(new RoundBtn(15));
         login.setBackground(dodgerBlue);
+        login.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                login.setBackground(Color.white);
+            }
+            @Override
+            public void mouseExited(MouseEvent e) {
+                login.setBackground(dodgerBlue);
+            }
+        });
 
         //Add action listeners to buttons
         login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Login(toServer,fromServer);
-                dispose();
+                String email = myemail.getText();
+                String password = mypassword.getText();
+                String driverName = "com.mysql.cj.jdbc.Driver";
+
+                try {
+                    Class.forName(driverName);
+
+                    Connection connection =  DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/LGMxUJ3u44",
+                            "LGMxUJ3u44", "gAzBLwXOq8");
+
+                    PreparedStatement st = connection.prepareStatement("Select email, password from users where email=" + email+"and password=" + password );
+                    System.out.println("connected");
+                    st.setString(1, email);
+                    st.setString(2, password);
+                    ResultSet rs = st.executeQuery();
+
+                    if (rs.next()) {
+                        dispose();
+                         System.out.println("connected");
+//                        JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
+                    } else {
+
+//                        JOptionPane.showMessageDialog(btnNewButton, "Wrong Username & Password");
+                    }
+                } catch (SQLException sqlException) {
+                    System.out.println("failed to connect");
+                    sqlException.printStackTrace();
+                } catch (ClassNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
-        rightPanel.add(email);
-        rightPanel.add(password);
+        rightPanel.add(myemail);
+        rightPanel.add(mypassword);
+        rightPanel.add(createText);
         rightPanel.add(login);
     }
 

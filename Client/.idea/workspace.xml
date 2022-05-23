@@ -4,24 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="e65e4820-7e53-416d-b7cc-63db9af2327e" name="Changes" comment="ad" />
-=======
-    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="added Login functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/App$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/App$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Citizens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Citizens.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Employees.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Employees.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Login$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Registration$SubmitHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Registration$SubmitHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Registration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Registration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting$MenuListenerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting$MenuListenerHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting$MenuListenerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting$MenuListenerHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Registration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$viewDistricts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$viewDistricts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/CitizenRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/CitizenRouting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/CompanyRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/CompanyRouting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/DistrictRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/DistrictRouting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/SystemAdminsRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/SystemAdminsRouting.java" afterDir="false" />
     </list>
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,14 +66,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
-<<<<<<< HEAD
-  <component name="RunManager" selected="Application.CompanyRouting">
-=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/Users/Bijoux/Desktop/DATA/Lessons/YR2/JAVA/third_term/waste_and_security_management/Client/libs/mysql-connector-java-8.0.27.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
   <component name="RunManager" selected="Application.App">
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
     <configuration name="App" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.App" />
       <module name="Client" />
@@ -108,13 +127,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
-    <configuration name="DistrictRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.DistrictRouting" />
-=======
     <configuration name="SystemAdminsRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.SystemAdminsRouting" />
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -127,29 +141,16 @@
       </method>
     </configuration>
     <list>
-<<<<<<< HEAD
       <item itemvalue="Application.App" />
       <item itemvalue="Application.CreateNotification" />
-      <item itemvalue="Application.DistrictRouting" />
-=======
-      <item itemvalue="Application.ConfirmerRouting" />
-      <item itemvalue="Application.CreateNotification" />
       <item itemvalue="Application.SystemAdminsRouting" />
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
       <item itemvalue="Application.CitizenRouting" />
       <item itemvalue="Application.CompanyRouting" />
     </list>
     <recent_temporary>
       <list>
-<<<<<<< HEAD
-        <item itemvalue="Application.CompanyRouting" />
-        <item itemvalue="Application.DistrictRouting" />
-        <item itemvalue="Application.CitizenRouting" />
-        <item itemvalue="Application.App" />
-=======
         <item itemvalue="Application.App" />
         <item itemvalue="Application.SystemAdminsRouting" />
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
         <item itemvalue="Application.CreateNotification" />
       </list>
     </recent_temporary>
@@ -157,11 +158,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
-      <changelist id="e65e4820-7e53-416d-b7cc-63db9af2327e" name="Changes" comment="ad" />
-=======
       <changelist id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="" />
->>>>>>> ada34dd0096a9fcbf056d09c3f6f0d2e89884d95
       <created>1647347321755</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -211,7 +208,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ad" />
