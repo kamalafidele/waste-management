@@ -6,30 +6,18 @@ public class ThreadHandler extends Thread{
     Socket socket;
 
     //REGISTERING ALL CONTROLLERS
-
-    private final CompanyController companyController;
-    private final NotificationController notificationController;
-    private final HouseController houseController;
-    private final WalletController walletController;
-    private final PaymentController paymentController;
-    private final AdminController adminController;
-    private final DebtController debtController;
-    private final ShiftsController shiftsController;
-    private final DistrictController districtController;
-    private final ServiceConfirmationController serviceConfirmationController;
+    private final CompanyController companyController = new CompanyController();
+    private final NotificationController notificationController = new NotificationController();
+    private final WalletController walletController = new WalletController();
+    private final PaymentController paymentController = new PaymentController();
+    private final DebtController debtController = new DebtController();
+    private final ShiftsController shiftsController = new ShiftsController();
+    private final DistrictController districtController = new DistrictController();
+    private final ServiceConfirmationController serviceConfirmationController = new ServiceConfirmationController();
+    private final  Registration registration = new Registration();
 
     public ThreadHandler(Socket socket){
-         this.socket=socket;
-        companyController=new CompanyController();
-        notificationController = new NotificationController();
-        houseController=new HouseController();
-        paymentController=new PaymentController();
-        walletController = new WalletController();
-        districtController=new DistrictController();
-        adminController = new AdminController();
-        debtController=new DebtController();
-        shiftsController= new ShiftsController();
-        serviceConfirmationController= new ServiceConfirmationController();
+        this.socket=socket;
     }
 
 
@@ -46,9 +34,6 @@ public class ThreadHandler extends Thread{
                 //READING REQUESTS FROM THE CLIENT
                 String request=fromClient.readUTF();
                 switch (request.split("/")[0]){
-                    case "admin":
-                        adminController.handleRequest(request, toClient);
-                        break;
                     case "serviceconfirmation":
                         shiftsController.filterRequest(request,toClient);
                     case "company":
@@ -56,9 +41,6 @@ public class ThreadHandler extends Thread{
                         break;
                     case "district":
                         districtController.handleRequest(request,toClient);
-                        break;
-                    case "citizen":
-                        houseController.filterRequest(request,toClient);
                         break;
                     case "payment":
                         paymentController.filterRequest(request,toClient);
@@ -70,6 +52,9 @@ public class ThreadHandler extends Thread{
                         notificationController.filterRequest(request,toClient);
                     case "debt":
                         debtController.filterRequest(request,toClient);
+                    case "registration":
+                        registration.filterRequest(request,toClient);
+                        break;
                     default:
                         toClient.writeUTF("Undefined request");
                         break;
