@@ -1,4 +1,5 @@
 package Desktop.Components.Routing;
+import Desktop.Components.Registration;
 import Desktop.Components.CreateNotification;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
@@ -8,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -24,15 +27,25 @@ public class CompanyRouting extends JFrame{
      BufferedImage dashboard,analytics,notifications,Shifts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
 
+    private DataOutputStream toServer;
+    private DataInputStream fromServer;
+
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+    Registration registerUser = new Registration(false,false,true);
+
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  CompanyRouting() throws IOException {
+    public  CompanyRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        this.fromServer = fromServer;
+        this.toServer = toServer;
+        registerUser.setStreams(toServer,fromServer);
+
         setTitle("Company Board");
         setSize(1366,768);
         setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
         SideBar.setBackground(Color.decode("#EAEDF3"));
@@ -41,6 +54,8 @@ public class CompanyRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+        add(registerUser);
+
         SidebarDesign();
         setVisible(true);
     }
@@ -133,28 +148,33 @@ public class CompanyRouting extends JFrame{
     
 
     public static void main(final String args[]) throws IOException {
-       new CompanyRouting();
+
     }
 
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
                 panel2.setVisible(false);
+                registerUser.setVisible(false);
                 panel.setVisible(true);
                 break;
             case "Transactions":
                 break;
-            case "RegisterEmployee":
-                System.out.println("RegisterEmployee clicked");
+            case "Register Employee":
+                panel2.setVisible(false);
+                panel.setVisible(false);
+                registerUser.setVisible(true);
                 break;
             case "Dashboard":
+                registerUser.setVisible(false);
                 panel.setVisible(false);
                 panel2.setVisible(true);
                 break;
             case "Shifts":
-                System.out.println("Shifts clicked");
+                registerUser.setVisible(false);
                 break;
             case "Notifications":
+                registerUser.setVisible(false);
                 new CreateNotification();
                 break;
             default:

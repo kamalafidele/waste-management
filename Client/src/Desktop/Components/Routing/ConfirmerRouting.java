@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -23,15 +25,22 @@ public class ConfirmerRouting extends JFrame{
     BufferedImage dashboard,analytics,notifications,Shifts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
 
+    private DataOutputStream toServer;
+    private DataInputStream fromServer;
+
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  ConfirmerRouting() throws IOException {
+    public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
         setTitle("Company Board");
         setSize(1366,768);
         setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
         SideBar.setBackground(Color.decode("#EAEDF3"));
@@ -125,10 +134,6 @@ public class ConfirmerRouting extends JFrame{
         SideBar.add(logoutBtn);
     }
 
-
-    public static void main(final String args[]) throws IOException {
-        new ConfirmerRouting();
-    }
 
     public  void filter(String chosen){
         switch (chosen) {
