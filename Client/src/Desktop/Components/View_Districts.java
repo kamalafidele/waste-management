@@ -1,10 +1,14 @@
 package Desktop.Components;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class View_Districts extends JFrame {
     public static void main(String[] args) {
@@ -14,27 +18,41 @@ public class View_Districts extends JFrame {
     private JPanel rightPanel = new JPanel();
 
     public View_Districts(){
+        SideMenuPanel sideMenuPanel = new SideMenuPanel();
         JFrame frame = new JFrame("WSMS_Y2_C");
-        frame.setSize(1300,750);
+        frame.setSize(1000,750);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new GridLayout(1,2));
-
 
         leftPanel.setVisible(true);
-        leftPanel.setSize(300,700);
-        leftPanel.setBackground(new Color(234, 237, 243));
-
+        leftPanel.setSize(200,730);
+        leftPanel.setBounds(0,0,200,730);
 
         rightPanel.setVisible(true);
         rightPanel.setSize(700,600);
         rightPanel.setBackground(Color.WHITE);
+        rightPanel.setBorder(new EmptyBorder(new Insets(30,30,30,30)));
 
 
-        frame.add(leftPanel);
-        frame.add(rightPanel);
+        frame.add(leftPanel, BorderLayout.WEST);
+        frame.add(rightPanel, BorderLayout.CENTER);
 
-        Button newShift = new Button("+ new Shift");
+        Button addNewCompany = new Button("+ New");
+        addNewCompany.setBackground(Color.GREEN);
+        addNewCompany.setBounds(100,100,50,20);
+        addNewCompany.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame addDistrict = new JFrame();
+                addDistrict.setBackground(Color.black);
+                addDistrict.setBounds(450,125, 400, 400);
+                addDistrict.add(new Label("Form to add a new district"));
+                addDistrict.setForeground(Color.white);
+                addDistrict.setVisible(true);
+            }
+        });
+
+        Button newShift = new Button("Import");
         newShift.setBackground(Color.GREEN);
         newShift.setBounds(200,100,50,20);
 
@@ -46,18 +64,25 @@ public class View_Districts extends JFrame {
         exportDataLabel.setText(String.valueOf(exportDataLabel));
         exportData.setBounds(250,200,50,20);
 
-        setLeftPanelTexts();
-        String[][] tableData = {{"", "", "", "", ""},
-                {"", "", "", "", ""},
-                {"", " ", "", "", ""},
-                {"", "", "", "", ""},
-                {"", "", "", "", ""}};
-        String[] tableColumn = {"#","service","Company-in-charge","Citizen","Date"};
+
+        leftPanel.add(sideMenuPanel);
+        String[][] tableData = {
+                {"1","Gasabo","ABC Ltd","H453","202-05-01"},
+                {"2","Nyarugenge","ABC Ltd","H453","202-05-01"},
+                {"3","Kicukiro","ABC Ltd","H453","202-05-01"},
+                {"4","Nyarugenge","ABC Ltd","H453","202-05-01"},
+                {"5","Gasabo","ABC Ltd","H453","202-05-01"},
+                {"6","Musanze","ABC Ltd","H453","202-05-01"},
+                {"7","Kicukiro","ABC Ltd","H453","202-05-01"}
+        };
+        String[] tableColumn = {"#","district","Company-in-charge","Citizen","Date"};
         addTable("Manage Districts",tableData, tableColumn);
+
 
         JTextField search =new JTextField();
         search.setBounds(50, 50, 150, 20);
-        search.setText("search");
+        search.setText("search district");
+        search.setVisible(true);
 
         Button btn1 = new Button("1");
         btn1.setBackground(Color.GREEN);
@@ -70,29 +95,28 @@ public class View_Districts extends JFrame {
         btn3.setBounds(200,100,50,20);
 
         JPanel mb =new JPanel();
+        JPanel middle = new JPanel();
         JPanel pagination =new JPanel();
 
-        rightPanel.setLayout(new GridLayout(3,1));
+        rightPanel.setLayout(new GridLayout(4,1));
+        mb.add(addNewCompany);
         mb.add(exportData);
         mb.add(newShift);
-        mb.setBounds(0,20, 200, 100);
+        mb.setBackground(Color.white);
         pagination.add(btn1);
         pagination.add(btn2);
         pagination.add(btn3);
         pagination.setBounds(0,20, 200, 100);
+        pagination.setBackground(Color.white);
 
         rightPanel.add(pagination);
-        rightPanel.setLayout(new BorderLayout());
+        rightPanel.setLayout(new BorderLayout(5,5));
         rightPanel.add(mb, BorderLayout.NORTH);
         rightPanel.add(pagination, BorderLayout.SOUTH);
         rightPanel.add(addTable("Manage Districts",tableData, tableColumn), BorderLayout.CENTER);
 
     }
 
-    public void setLeftPanelTexts(){
-        JLabel label = new JLabel("Sidebar");
-        leftPanel.add(label);
-    }
 
     public Component addTable(String title, String[][] data, String[] columns) throws HeadlessException {
 
