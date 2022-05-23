@@ -1,6 +1,7 @@
 package Desktop.Components.Routing;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
+import Desktop.Screens.Shifts.ViewShifts;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,6 +27,8 @@ public class ConfirmerRouting extends JFrame{
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+
+    ViewShifts viewShifts=new ViewShifts();
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
     public  ConfirmerRouting() throws IOException {
@@ -40,6 +43,7 @@ public class ConfirmerRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+        add(viewShifts);
         SidebarDesign();
         setVisible(true);
     }
@@ -135,15 +139,19 @@ public class ConfirmerRouting extends JFrame{
             case "Analytics":
                 panel2.setVisible(false);
                 panel.setVisible(true);
+                viewShifts.setVisible(false);
                 break;
             case "Transactions":
                 break;
             case "Dashboard":
                 panel.setVisible(false);
                 panel2.setVisible(true);
+                viewShifts.setVisible(false);
                 break;
             case "Shifts":
-                System.out.println("Shifts clicked");
+                panel.setVisible(false);
+                panel2.setVisible(false);
+                viewShifts.setVisible(true);
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
