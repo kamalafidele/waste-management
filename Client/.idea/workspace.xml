@@ -4,37 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9fc21fc-66a9-4a22-8cb8-857377a27387" name="Changes" comment="ad">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Employees.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Employees.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting$MenuListenerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting$MenuListenerHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting$MenuListenerHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting$MenuListenerHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$viewDistricts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$viewDistricts.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/EventHandlers/ActionEventHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/EventHandlers/PlaceHolderHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/RegisterClient/MajaorPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/RegisterClient/RegisterClientIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Employees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Employees.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/CitizenRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/CitizenRouting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/CompanyRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/CompanyRouting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/DistrictRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/DistrictRouting.java" afterDir="false" />
-    </list>
+    <list default="true" id="e65e4820-7e53-416d-b7cc-63db9af2327e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +20,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -62,6 +40,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager" selected="Application.App">
@@ -201,6 +180,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ad" />
