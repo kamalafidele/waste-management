@@ -1,34 +1,28 @@
 package Models;
 
 public class Company {
-    private int id;
+    private Long id;
     private String name;
     private String email;
-    private String phone;
-    private Long pin;
-    private int role;
-    private int walletId;
-    private int location;
+    private Long tin;
+    private Long walletId;
 
     public Company() {
     }
 
-    public Company(int id, String name, String email,String phone,Long pin, int role, int walletId, int location) {
+    public Company(Long id, String name, String email,Long tin, Long walletId) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.phone = phone; 
-        this.pin = pin;
-        this.role = role;
+        this.tin = tin;
         this.walletId = walletId;
-        this.location = location;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -48,43 +42,19 @@ public class Company {
         this.email = email;
     }
 
-    public void setPhone(String phone ){
-        this.phone = phone;
+    public Long getTin() {
+        return tin;
     }
 
-    public String getPhone(){
-        return phone;
-    } 
-
-    public Long getPin() {
-        return pin;
+    public void setTin(Long tin) {
+        this.tin = tin;
     }
 
-    public void setPin(Long pin) {
-        this.pin = pin;
-    } 
-    
-    public void setRole(int role){
-        this.role = role;
-    }
-
-    public int getRole(){
-        return role;
-    }
-
-    public void setWalletId(int walletId){
+    public void setWalletId(Long walletId){
         this.walletId = walletId;
     }
 
-    public int getWalletId(){
+    public Long getWalletId(){
         return walletId;
-    }
-
-    public void setLocation(int location){
-        this.location = location;
-    }
-
-    public int getLocation(){
-        return location;
     }
 }

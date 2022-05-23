@@ -2,13 +2,12 @@ package Desktop.Components;
 
 import javax.swing.*;
 import java.awt.*;
-import Desktop.Application;
+import Desktop.App;
 
 public class Company extends JFrame {
-    private Application application = new Application();
+    private App application = new App();
 
     public void initialize() {
-        application.close();
 
         setVisible(true);
         setTitle("LOG IN AS COMPANY");
