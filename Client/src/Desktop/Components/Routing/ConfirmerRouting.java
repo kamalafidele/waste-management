@@ -36,9 +36,10 @@ public class ConfirmerRouting extends JFrame{
     ViewShifts viewShifts=new ViewShifts();
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
-        this.toServer = toServer;
-        this.fromServer = fromServer;
+    public  ConfirmerRouting() throws IOException {
+//        public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+//        this.toServer = toServer;
+//        this.fromServer = fromServer;
 
         setTitle("Company Board");
         setSize(1366,768);
@@ -87,11 +88,11 @@ public class ConfirmerRouting extends JFrame{
         Shifts.addMenuListener(listenerHandler);
         Shifts.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Shifts);
-        JMenu Analytics = new JMenu("Analytics");
-        Analytics.addMenuListener(listenerHandler);
-        Analytics.setIcon((analyticsImg));
-        Analytics.setFont(new Font("Inter", Font.PLAIN, 16));
-        menuBar.add(Analytics);
+        // JMenu Analytics = new JMenu("Analytics");
+        // Analytics.addMenuListener(listenerHandler);
+        // Analytics.setIcon((analyticsImg));
+        // Analytics.setFont(new Font("Inter", Font.PLAIN, 16));
+        // menuBar.add(Analytics);
         JMenu Transactions = new JMenu("Transactions");
         Transactions.addMenuListener(listenerHandler);
         Transactions.setIcon(TransactionsImg);
@@ -138,6 +139,9 @@ public class ConfirmerRouting extends JFrame{
         SideBar.add(logoutBtn);
     }
 
+    public static void main(final String args[]) throws IOException {
+        new ConfirmerRouting();
+    }
 
     public  void filter(String chosen){
         switch (chosen) {
