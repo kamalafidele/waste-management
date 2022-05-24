@@ -29,8 +29,7 @@ public class CitizenRouting extends JFrame{
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
     StepOneDeposit step1ToDeposit =  new StepOneDeposit();
     StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
-
-
+    public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
         setTitle("Citizen Board");
         setSize(1366,768);
         setLayout(null);
@@ -167,7 +166,7 @@ public class CitizenRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
-        new CitizenRouting();
+//        new CitizenRouting();
     }
 
     public  void filter(String chosen){
@@ -191,16 +190,11 @@ public class CitizenRouting extends JFrame{
             case "choose service":
                 panel2.setVisible(false);
                 panel.setVisible(false);
-                step1ToDeposit.setVisible(true);
-                break;
-            case "choose deposit method":
-                System.out.println("Choose deposit method called !");
-                panel2.setVisible(false);
-                panel.setVisible(false);
                 step2ToDeposit.setVisible(true);
                 break;
             case "Invoices":
                 System.out.println("Invoices clicled");
+                break;
             default:
                 System.out.println();
                 break;

@@ -10,10 +10,11 @@ import java.awt.event.ActionListener;
 
 public class StepTwoDeposit extends JPanel {
     public StepTwoDeposit() {
-        setVisible(false);
+        System.out.println("StepTwoDeposit constructor called !");
+//        setVisible(false);
         setBounds(200, 0, 1166, 768);
         setBackground(Color.white);
-        setBorder(new EmptyBorder(new Insets(20, 30, 20, 30)));
+        setBorder(new EmptyBorder(new Insets(200, 30, 20, 30)));
 
         JLabel heading1  = new JLabel("Choose Deposit Method");
         heading1.setFont(new Font("Inter", Font.BOLD, 20));
@@ -29,36 +30,38 @@ public class StepTwoDeposit extends JPanel {
 //        wasteCollection.setPreferredSize(new Dimension(40, 40));
 //        add(wasteCollection);
 
-        JPanel  wasteCollectionButton = new JPanel();
-        JButton wasteCollection = new JButton("1. Momo");
-        wasteCollection.setBackground(Color.decode("#557DF8"));
-        wasteCollection.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
-        wasteCollection.setFont(new Font("Inter", Font.PLAIN, 16));
-        wasteCollection.setForeground(Color.WHITE);
-        wasteCollection.setFocusPainted(false);
-        wasteCollectionButton.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
-        wasteCollectionButton.add(wasteCollection);
-        add(wasteCollection);
+        JPanel  momoButton = new JPanel();
+        JButton momo = new JButton("1. Momo");
+        momo.setBackground(Color.decode("#557DF8"));
+        momo.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
+        momo.setFont(new Font("Inter", Font.PLAIN, 16));
+        momo.setForeground(Color.WHITE);
+        momo.setFocusPainted(false);
+        momoButton.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
+        momoButton.add(momo);
+        add(momo);
 
 
 
-        JPanel  securityButton = new JPanel();
-        JButton security = new JButton("2. Bank");
-        security.setBackground(Color.decode("#557DF8"));
-        security.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
-        security.setFont(new Font("Inter", Font.PLAIN, 16));
-        security.setForeground(Color.WHITE);
-        security.setFocusPainted(false);
-        securityButton.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
-        securityButton.add(security);
-        add(security);
+        JPanel  bankButton = new JPanel();
+        JButton bank = new JButton("2. Bank");
+        bank.setBackground(Color.decode("#557DF8"));
+        bank.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
+        bank.setFont(new Font("Inter", Font.PLAIN, 16));
+        bank.setForeground(Color.WHITE);
+        bank.setFocusPainted(false);
+        bankButton.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
+        bankButton.add(bank);
+        bankButton.setBorder(new EmptyBorder(new Insets(100, 100, 100, 100)));
+        add(bank);
 
 
-        security.addActionListener(new ActionListener() {
+        bank.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    System.out.println("Security button clicked !");
+                    System.out.println("bank button clicked !");
+
                 } catch (Exception exception) {
                     System.out.println("Something went wrong !");
                     exception.printStackTrace();

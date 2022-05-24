@@ -13,9 +13,9 @@ public class StepOneDeposit extends JPanel {
         setVisible(false);
         setBounds(200, 0, 1166, 768);
         setBackground(Color.white);
-        setBorder(new EmptyBorder(new Insets(20, 30, 20, 30)));
+        setBorder(new EmptyBorder(new Insets(200, 30, 20, 30)));
 
-        JLabel heading1  = new JLabel("Choose service to deposit money");
+        JLabel heading1  = new JLabel("Choose Method of Deposit");
         heading1.setFont(new Font("Inter", Font.BOLD, 20));
         add(heading1);
 
@@ -36,9 +36,13 @@ public class StepOneDeposit extends JPanel {
         wasteCollection.setFont(new Font("Inter", Font.PLAIN, 16));
         wasteCollection.setForeground(Color.WHITE);
         wasteCollection.setFocusPainted(false);
-        wasteCollectionButton.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
+        //wasteCollectionButton.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
         wasteCollectionButton.add(wasteCollection);
+        wasteCollectionButton.setBounds(200, 400, 100, 200);
+
         add(wasteCollection);
+        //wasteCollection.setBorder(new EmptyBorder(new Insets(150,20,30,20)));
+
 
 
 
@@ -59,7 +63,25 @@ public class StepOneDeposit extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 try {
                     System.out.println("Security button clicked !");
+                    setVisible(false);
+                    testPanel tp =new testPanel();
+                    StepTwoDeposit stepTwo = new StepTwoDeposit();
+                    stepTwo.setVisible(true);
+                } catch (Exception exception) {}
+            }
+        });
 
+
+
+        wasteCollection.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    System.out.println("wasteCollection button clicked !");
+                    setVisible(false);
+                    testPanel tp =new testPanel();
+                    StepTwoDeposit stepTwo = new StepTwoDeposit();
+                    stepTwo.setVisible(true);
                 } catch (Exception exception) {}
             }
         });
