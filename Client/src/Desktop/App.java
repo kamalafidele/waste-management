@@ -65,7 +65,6 @@ public class App extends JFrame {
 
         setLayout(new GridLayout(1,2));
         setVisible(true);
-        setSize(1000,700);
 
         setLeftPanelTexts();
         setRightPanelContent();

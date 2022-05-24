@@ -35,10 +35,14 @@ public class CitizenRouting extends JFrame{
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  CitizenRouting() throws IOException {
+    public  CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
         setTitle("Company Board");
         setSize(1366,768);
         setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         SideBar.setVisible(true);
         SideBar.setSize(200,820);
         SideBar.setBackground(Color.decode("#EAEDF3"));

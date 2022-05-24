@@ -8,8 +8,8 @@ import java.sql.SQLException;
 public class LocationRepo {
     private DatabaseConnection database;
 
-    public LocationRepo(){
-        this.database = new DatabaseConnection();
+    public LocationRepo(DatabaseConnection database){
+        this.database = database;
     }
 
     public int location(String location) throws SQLException {

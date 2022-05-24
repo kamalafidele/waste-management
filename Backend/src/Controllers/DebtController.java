@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Repositories.DebtRepo;
 
 import java.io.*;
@@ -10,10 +11,14 @@ import java.sql.SQLException;
 public class DebtController {
     private DebtRepo debtRepo;
     private DataOutputStream toClient;
-    private NotificationController notificationController=new NotificationController();
+    private NotificationController notificationController;
     public long balance;
-    public DebtController(){
-        debtRepo=new DebtRepo();
+    private DatabaseConnection connection;
+
+    public DebtController(DatabaseConnection connection){
+        this.connection = connection;
+        debtRepo = new DebtRepo(connection);
+        this.notificationController = new NotificationController(connection) ;
     };
     public void filterRequest(String request, DataOutputStream toClient){
         this.toClient=toClient;

@@ -4,13 +4,14 @@ import Config.DatabaseConnection;
 import Models.Company;
 import Models.District;
 
+import javax.xml.crypto.Data;
 import java.sql.ResultSet;
 
 public class DistrictRepo {
     private DatabaseConnection database;
 
-    public DistrictRepo(){
-        this.database = new DatabaseConnection();
+    public DistrictRepo(DatabaseConnection database){
+        this.database = database;
     }
 
     public boolean save(District district){

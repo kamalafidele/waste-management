@@ -10,5 +10,6 @@
     <orderEntry type="library" name="libs" level="project" />
     <orderEntry type="library" name="jackson-all-1.9.9" level="project" />
     <orderEntry type="library" name="github.kancyframework.springx.boot.gui.miglayout" level="project" />
+    <orderEntry type="library" name="github.lgooddatepicker.LGoodDatePicker" level="project" />
   </component>
 </module>
