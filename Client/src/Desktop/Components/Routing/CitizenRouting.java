@@ -1,7 +1,5 @@
 package Desktop.Components.Routing;
-import Desktop.Components.Registration;
-import Desktop.Components.testPanel;
-import Desktop.Components.testPanel2;
+import Desktop.Components.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -34,6 +32,9 @@ public class CitizenRouting extends JFrame{
     testPanel2 panel2=new testPanel2();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
+    StepOneDeposit step1ToDeposit =  new StepOneDeposit();
+    StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
+
 
     public  CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
         this.toServer = toServer;
@@ -50,6 +51,8 @@ public class CitizenRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+        add(step1ToDeposit);
+        add(step2ToDeposit);
 
         SidebarDesign();
         setVisible(true);
@@ -92,11 +95,32 @@ public class CitizenRouting extends JFrame{
         Analytics.setIcon((analyticsImg));
         Analytics.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Analytics);
+
+
         JMenu Transactions = new JMenu("Transactions");
         Transactions.addMenuListener(listenerHandler);
         Transactions.setIcon(TransactionsImg);
         Transactions.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Transactions);
+
+
+        JMenu Choose_service_to_deposit = new JMenu("choose service");
+        Choose_service_to_deposit.addMenuListener(listenerHandler);
+        Choose_service_to_deposit.setIcon(TransactionsImg);
+        Choose_service_to_deposit.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(Choose_service_to_deposit);
+
+
+
+
+
+//        JMenu Choose_deposit_method = new JMenu("");
+//        Choose_deposit_method.addMenuListener(listenerHandler);
+//        Choose_deposit_method.setIcon(TransactionsImg);
+//        Choose_deposit_method.setFont(new Font("Inter", Font.PLAIN, 16));
+//        menuBar.add(Choose_deposit_method);
+
+
 
         JMenu notification = new JMenu("Notifications");
         notification.addMenuListener(listenerHandler);
@@ -160,6 +184,17 @@ public class CitizenRouting extends JFrame{
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
+                break;
+            case "choose service":
+                panel2.setVisible(false);
+                panel.setVisible(false);
+                step1ToDeposit.setVisible(true);
+                break;
+            case "choose deposit method":
+                System.out.println("Choose deposit method called !");
+                panel2.setVisible(false);
+                panel.setVisible(false);
+                step2ToDeposit.setVisible(true);
                 break;
             default:
                 System.out.println();
