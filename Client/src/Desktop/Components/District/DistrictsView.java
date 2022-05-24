@@ -30,16 +30,19 @@ public class DistrictsView extends JPanel {
 
     public void DistrictsTable(String title, Object[][] data, Object[] columns){
         JLabel label = new JLabel(title);
+        Color color = new Color(37, 149, 234);
+        JButton addButton = new JButton("Create District");
+        DefaultTableModel model = new DefaultTableModel(data,columns);
+        JTable table = new JTable(model) { public boolean isCellEditable(int row, int column) { return false;};};
+        JScrollPane jScrollPane = new JScrollPane();
+
         label.setFont(new Font("Arial", Font.BOLD, 15));
-//        label.setAlignmentX(Component.CENTER_ALIGNMENT);
         label.setBorder(new EmptyBorder(new Insets(10, 0, 10, 10)));
 
         container.setBorder(new EmptyBorder(new Insets(0, 0, 0, 0)));
         container.setPreferredSize(new Dimension(1166,700));
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 
-        Color color = new Color(37, 149, 234);
-        JButton addButton = new JButton("Create District");
         addButton.setBounds(0, 0, 400, 30);
         addButton.setBackground(color);
         addButton.setForeground(Color.WHITE);
@@ -52,30 +55,23 @@ public class DistrictsView extends JPanel {
         container.add(addButton);
         container.add(label);
 
-        DefaultTableModel model = new DefaultTableModel(data,columns);
         model.setColumnIdentifiers(columns);
-        JTable table = new JTable(model) {
-            //            @Serial
-//            private static final long serialVersionUID = 1L;
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            };
-        };
+
         table.setRowHeight(40);
 
         //increase table size
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         table.getColumnModel().getColumn(0).setPreferredWidth(250);
         table.getColumnModel().getColumn(1).setPreferredWidth(250);
-        table.getColumnModel().getColumn(2).setPreferredWidth(150);
-        table.getColumnModel().getColumn(3).setPreferredWidth(150);
-        table.getColumnModel().getColumn(4).setPreferredWidth(150);
-        table.getColumnModel().getColumn(5).setPreferredWidth(200);
+        table.getColumnModel().getColumn(2).setPreferredWidth(200);
+        table.getColumnModel().getColumn(3).setPreferredWidth(170);
+        table.getColumnModel().getColumn(4).setPreferredWidth(200);
+        table.getColumnModel().getColumn(5).setCellRenderer(new ButtonRenderer());
+        table.getColumnModel().getColumn(5).setCellEditor( new ButtonEditor(new JCheckBox()));
 
         table.getTableHeader().setOpaque(false);
         table.setShowGrid(false);
         table.getTableHeader().setReorderingAllowed(false);
-//        Color color = new Color(37, 149, 234);
         table.getTableHeader().setBackground(color);
         table.getTableHeader().setForeground(Color.white);
 
@@ -96,7 +92,6 @@ public class DistrictsView extends JPanel {
 
         ((DefaultTableCellRenderer)table.getTableHeader().getDefaultRenderer()).setHorizontalAlignment(JLabel.CENTER);
 
-        JScrollPane jScrollPane = new JScrollPane();
         jScrollPane.setViewportView(table);
         table.getTableHeader().setPreferredSize(new Dimension(jScrollPane.getWidth(),40));
         jScrollPane.getViewport().setBackground(Color.WHITE);
@@ -113,6 +108,38 @@ public class DistrictsView extends JPanel {
                 container.setVisible(false);
                 registerDistrict.setVisible(true);
             }
+        }
+    }
+
+    public class ButtonRenderer extends JButton implements TableCellRenderer{
+        public ButtonRenderer() {
+            setOpaque(true);
+        }
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            setText("View");
+            return this;
+        }
+    }
+
+    public  class ButtonEditor extends DefaultCellEditor{
+
+        private String label;
+        public JButton button = new JButton();
+
+        public ButtonEditor(JCheckBox checkBox) {
+            super(checkBox);
+        }
+
+        public Component getTableCellEditorComponent(JTable table, Object value, Boolean isSelected, int row, int column){
+            label = "View";
+            button.setText(label);
+            return button;
+        }
+
+        public Object getCellEditorValue() {
+            return new String(label);
         }
     }
 
