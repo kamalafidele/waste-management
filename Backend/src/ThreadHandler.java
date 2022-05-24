@@ -15,6 +15,7 @@ public class ThreadHandler extends Thread{
     private final DistrictController districtController = new DistrictController();
     private final ServiceConfirmationController serviceConfirmationController = new ServiceConfirmationController();
     private final  Registration registration = new Registration();
+    private final EmployeesController employeesController=new EmployeesController();
 
     public ThreadHandler(Socket socket){
         this.socket=socket;
@@ -55,6 +56,8 @@ public class ThreadHandler extends Thread{
                     case "registration":
                         registration.filterRequest(request,toClient);
                         break;
+                    case "employees":
+                        employeesController.filterRequest(request,toClient);
                     default:
                         toClient.writeUTF("Undefined request");
                         break;
