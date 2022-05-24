@@ -206,6 +206,7 @@ public class Registration extends JPanel {
                        } catch (Exception exception){}
                     }
                }
+
           }
      }
 

@@ -5,9 +5,10 @@ import java.net.ServerSocket;
 public class Application {
     public static void main(String[] args){
     // THIS THE ENTRY FOR OUR SERVER APPLICATION
+        System.out.println("Started backend");
         try{
-            ServerSocket serverSocket=new ServerSocket(2500);
-            System.out.println("########## SERVER RUNNING ON PORT 2500 ##############");
+            ServerSocket serverSocket=new ServerSocket(3000);
+            System.out.println("########## SERVER RUNNING ON PORT 3000 ##############");
 
              while(3>2){
                  var socket=serverSocket.accept();

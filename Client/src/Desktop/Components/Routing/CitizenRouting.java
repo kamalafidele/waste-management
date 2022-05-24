@@ -23,6 +23,7 @@ public class CitizenRouting extends JFrame{
     private DataInputStream fromServer;
 
     //PANELS
+
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
 
@@ -137,7 +138,7 @@ public class CitizenRouting extends JFrame{
         JLabel userAvatar=new JLabel(new ImageIcon(userAvatarImg.getScaledInstance(90,90,BufferedImage.SCALE_DEFAULT)));
         JPanel credentials=new JPanel();
         credentials.setLayout(new GridLayout(2,1));
-        JLabel userName=new JLabel("NTAKIRUTIMANA");
+        JLabel userName=new JLabel("Ntakirutimana");
         userName.setFont(new Font("Inter", Font.BOLD, 18));
         JLabel userRole=new JLabel("           System Client");
 
