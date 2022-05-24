@@ -32,6 +32,26 @@ public class DebtController {
         }
     }
 
+    public void checkDebt(Integer userId){
+        try{
+            String response = "";
+            ResultSet resultSet = debtRepo.getDebt(userId);
+            if(resultSet == null){
+                response = "You have no debt";
+                sendResponse(response);
+                return;
+            }
+            while(resultSet.next()){
+                String serviceName = resultSet.getString("service_name");
+                Integer amount = resultSet.getInt("amount");
+                response += serviceName + ":  " + amount + "\n";
+            }
+            sendResponse(response);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     public void checkBalance(String pin){
         try {
             String response;

@@ -51,13 +51,17 @@ public class DebtRepo {
         }
         return null;
     }
-//    public ResultSet getAllDebtors(String service){
-//        try {
-//            ResultSet result=database.select("select userId, from debt");
-//        }
-//        catch (SQLException sql){
-//            sql.printStackTrace();
-//        }
-//        return null;
-//    }
+    public ResultSet getDebt(Integer userId){
+        try{
+            ResultSet result = database.select("select service_name, amount, month from debt d " +
+                    "join services s on d.service = s.id where d.user_id = " + userId);
+            if(!result.next()){
+                return null;
+            }
+            return  result;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
