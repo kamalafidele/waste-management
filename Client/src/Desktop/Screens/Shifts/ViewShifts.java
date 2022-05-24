@@ -17,7 +17,7 @@ public class ViewShifts extends JPanel {
 private DataOutputStream outToServer;
 private DataInputStream fromServer;
     public ViewShifts() throws IOException {
-        sendRequest("viewShifts");
+        sendRequest("serviceconfirmation/getShifts");
         setVisible(false);
         setBounds(200,0,1166,768);
         setBackground(Color.WHITE);
@@ -34,7 +34,7 @@ private DataInputStream fromServer;
 
         JPanel container = new JPanel();
         container.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
-        container.setPreferredSize(new Dimension(1025,670));
+        container.setPreferredSize(new Dimension(1105,610));
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 
         Color color = new Color(37, 149, 234);
@@ -48,7 +48,14 @@ private DataInputStream fromServer;
         addButton.setActionCommand("CreateShift");
         addButton.addActionListener(new ButtonClickEventHandler());
 
-        container.add(addButton);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+        buttonPanel.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
+        buttonPanel.add(addButton);
+        buttonPanel.setBackground(Color.WHITE);
+        add(buttonPanel);
+
+//        container.add(addButton);
         container.add(label);
 
         DefaultTableModel model = new DefaultTableModel(data,columns);
@@ -63,10 +70,10 @@ private DataInputStream fromServer;
         table.setRowHeight(40);
         //increase table size
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        table.getColumnModel().getColumn(0).setPreferredWidth(250);
-        table.getColumnModel().getColumn(1).setPreferredWidth(250);
-        table.getColumnModel().getColumn(2).setPreferredWidth(250);
-        table.getColumnModel().getColumn(3).setPreferredWidth(250);
+        table.getColumnModel().getColumn(0).setPreferredWidth(270);
+        table.getColumnModel().getColumn(1).setPreferredWidth(270);
+        table.getColumnModel().getColumn(2).setPreferredWidth(270);
+        table.getColumnModel().getColumn(3).setPreferredWidth(270);
 
         table.getTableHeader().setOpaque(false);
         table.setShowGrid(false);

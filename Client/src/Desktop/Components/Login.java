@@ -1,10 +1,7 @@
 package Desktop.Components;
 
-import Desktop.Components.Routing.CitizenRouting;
-import Desktop.Components.Routing.CompanyRouting;
-import Desktop.Components.Routing.DistrictRouting;
-import Desktop.Components.Routing.SystemAdminsRouting;
-import Desktop.Shared.RoundBtn;
+import Desktop.Components.Routing.*;
+import Desktop.Screens.RoundBtn;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,14 +11,16 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
 public class Login extends JFrame {
-    private DataOutputStream toServer;
-    private DataInputStream fromServer;
+     DataOutputStream toServer;
+     DataInputStream fromServer;
 
     Color dodgerBlue = new Color(52,143,235);
 
     JButton loginBtn = new JButton("Login");
 
     public Login(DataOutputStream toServer, DataInputStream fromServer){
+        this.toServer = toServer;
+        this.fromServer = fromServer;
         setTitle("LOGIN");
         setVisible(true);
         setLayout(null);
@@ -40,7 +39,8 @@ public class Login extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    new SystemAdminsRouting(toServer,fromServer);
+                    new ConfirmerRouting(toServer,fromServer);
+//                    new SystemAdminsRouting(toServer,fromServer);
                     dispose();
                 } catch (Exception exception) {}
             }

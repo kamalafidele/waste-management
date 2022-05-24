@@ -26,8 +26,8 @@ public class ConfirmerRouting extends JFrame{
     BufferedImage dashboard,analytics,notifications,Shifts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
 
-    private DataOutputStream toServer;
-    private DataInputStream fromServer;
+     DataOutputStream toServer;
+     DataInputStream fromServer;
      ViewShifts viewShifts=new ViewShifts();
 
 
@@ -54,7 +54,7 @@ public class ConfirmerRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
-           viewShifts.setStreams(toServer,fromServer);
+        viewShifts.setStreams(toServer,fromServer);
         add(viewShifts);
         SidebarDesign();
         setVisible(true);

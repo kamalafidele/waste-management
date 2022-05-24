@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Repositories.PaymentRepo;
 
 import java.io.DataOutputStream;
@@ -12,12 +13,15 @@ public class PaymentController {
 
     private PaymentRepo paymentRepo;
     private ResultSet user;
-    public PaymentController(){
-        paymentRepo = new PaymentRepo();
+    private DatabaseConnection connection;
+
+    public PaymentController(DatabaseConnection connection){
+        this.connection = connection;
+        paymentRepo = new PaymentRepo(connection);
     };
 
     private DataOutputStream toClient;
-    DebtController debtController=new DebtController();
+    DebtController debtController=new DebtController(connection);
     long balance=debtController.balance;
     public void momoPayment(String phoneNumber, int amount, String token){
         //Checking if the amount > 1000
