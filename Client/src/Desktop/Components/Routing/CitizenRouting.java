@@ -1,25 +1,18 @@
 package Desktop.Components.Routing;
-import Desktop.Components.Registration;
-import Desktop.Components.testPanel;
-import Desktop.Components.testPanel2;
 
+import Desktop.Components.*;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.event.MenuEvent;
-import javax.swing.event.MenuListener;
 
 public class CitizenRouting extends JFrame{
     ImageIcon analyticsImg,dashboardImg,TransactionsImg,NotificationsImg,DebtsImg,addAdminImg;
@@ -34,12 +27,12 @@ public class CitizenRouting extends JFrame{
     testPanel2 panel2=new testPanel2();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
+    public CitizenRouting() throws IOException{
+//    public  CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+//        this.toServer = toServer;
+//        this.fromServer = fromServer;
 
-    public  CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
-        this.toServer = toServer;
-        this.fromServer = fromServer;
-
-        setTitle("Company Board");
+        setTitle("Citizen Board");
         setSize(1366,768);
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,9 +41,21 @@ public class CitizenRouting extends JFrame{
         SideBar.setBackground(Color.decode("#EAEDF3"));
         add(SideBar);
         panel.setVisible(true);
+
+        // analytics
+        // invoices
+        JPanel invoicesPanel = new InvoicesPanel();
+        // wallet
+        JPanel wallet = new Wallet(5000);
+        panel2.add(wallet);
+        // analytics panel
+        JPanel analyticsPanel = new Analytics(invoicesPanel);
+        panel2.add(analyticsPanel);
+        // invoices panel
+        panel2.add(invoicesPanel);
+
         add(panel);
         add(panel2);
-
         SidebarDesign();
         setVisible(true);
     }
@@ -65,7 +70,6 @@ public class CitizenRouting extends JFrame{
         notifications=ImageIO.read(new File("src/Desktop/Images/notification-2-line.png"));
         addAdmin=ImageIO.read(new File("src/Desktop/Images/user-add-line.png"));
         Debts=ImageIO.read(new File("src/Desktop/Images/money-dollar-circle-line.png"));
-
 
         dashboardImg = new ImageIcon(dashboard.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
         NotificationsImg = new ImageIcon(notifications.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));
@@ -140,14 +144,14 @@ public class CitizenRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
-//        new CitizenRouting();
+        new CitizenRouting();
     }
 
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
-                panel2.setVisible(false);
-                panel.setVisible(true);
+                panel.setVisible(false);
+                panel2.setVisible(true);
                 break;
             case "Transactions":
                 break;
@@ -161,6 +165,8 @@ public class CitizenRouting extends JFrame{
             case "Notifications":
                 System.out.println("Notifications clicked");
                 break;
+            case "Invoices":
+                System.out.println("Invoices clicled");
             default:
                 System.out.println();
                 break;
