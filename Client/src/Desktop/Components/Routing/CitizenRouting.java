@@ -2,6 +2,7 @@ package Desktop.Components.Routing;
 import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
+import Desktop.Screens.Citizen.Debts;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -32,6 +33,7 @@ public class CitizenRouting extends JFrame{
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+    Debts debtsPanel = new Debts();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
@@ -39,7 +41,7 @@ public class CitizenRouting extends JFrame{
         this.toServer = toServer;
         this.fromServer = fromServer;
 
-        setTitle("Company Board");
+        setTitle("Citizen - Dashboard");
         setSize(1366,768);
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,6 +52,7 @@ public class CitizenRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+        add(debtsPanel);
 
         SidebarDesign();
         setVisible(true);
@@ -86,6 +89,7 @@ public class CitizenRouting extends JFrame{
         Debts.setIcon(DebtsImg);
         Debts.addMenuListener(listenerHandler);
         Debts.setFont(new Font("Inter", Font.PLAIN, 16));
+        Debts.setBackground(Color.GREEN);
         menuBar.add(Debts);
         JMenu Analytics = new JMenu("Analytics");
         Analytics.addMenuListener(listenerHandler);
@@ -147,18 +151,25 @@ public class CitizenRouting extends JFrame{
         switch (chosen) {
             case "Analytics":
                 panel2.setVisible(false);
+                debtsPanel.setVisible(false);
                 panel.setVisible(true);
+
                 break;
             case "Transactions":
+                debtsPanel.setVisible(false);
                 break;
             case "Dashboard":
                 panel.setVisible(false);
+                debtsPanel.setVisible(false);
                 panel2.setVisible(true);
                 break;
             case "Debts":
-                System.out.println("Debts clicked");
+                panel.setVisible(false);
+                panel2.setVisible(false);
+                debtsPanel.setVisible(true);
                 break;
             case "Notifications":
+                debtsPanel.setVisible(false);
                 System.out.println("Notifications clicked");
                 break;
             default:

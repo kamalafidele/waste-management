@@ -110,7 +110,7 @@ public class DistrictDashboard {
         String phone= keyboard.nextLine();
 
         Random random = new Random();
-        long pin = random.nextLong( 500_000_000 );
+        long pin = random.nextInt( 500_000_000 );
         districtHandler.setWalletId( 0L );
 
 
