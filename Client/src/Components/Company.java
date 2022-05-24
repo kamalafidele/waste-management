@@ -34,6 +34,7 @@ public class Company {
         System.out.print("Enter email: ");
         handler.setEmail(keyboard.nextLine());
         System.out.print("Enter pin: ");
+//        handler.setPin(keyboard.nextLong());
         try{
             String request = "company/login/"+mapper.writeValueAsString(handler);
             sendRequest(request);
@@ -51,6 +52,8 @@ public class Company {
                 System.out.println("### YOUR PROFILE ###");
                 System.out.println("NAME: " + company.getName());
                 System.out.println("EMAIL: " + company.getEmail());
+//                System.out.println("PHONE: " + company.getPhone());
+//                System.out.println("PIN: " + company.getPin());
                 System.out.println("COMPANY ID: " + company.getId());
 
                 System.out.println();
@@ -95,14 +98,14 @@ public class Company {
             while (companyIterator.hasNext()){
                 CompanyHandler handler=companyIterator.next();
             String space="";
-            int idSpaceCount=12;
+//            int idSpaceCount=12-calculateSpace(handler.getId());
             String idSpace="";
-            for(int j=0; j<idSpaceCount-2; j++){
-                idSpace+=" ";
-            }
-            for(int i=0;i<18-handler.getEmail().length(); i++){
-                space+=" ";
-            }
+//            for(int j=0; j<idSpaceCount-2; j++){
+//                idSpace+=" ";
+//            }
+//            for(int i=0;i<18-handler.getEmail().length(); i++){
+//                space+=" ";
+//            }
             System.out.println("| "+handler.getId()+idSpace+"|"+(handler.getEmail().length() <= 18 ? handler.getEmail()+space : handler.getEmail().substring(0,18))
                     +"                |"+handler.getName()+"   ");
             System.out.println("|------------|----------------------------------|-----------------------------------|");
@@ -120,10 +123,13 @@ public class Company {
         System.out.print( "Enter company email: " );
         companyHandler.setEmail( keyboard.nextLine() );
         System.out.print( "Enter company phone: " );
+//        companyHandler.setPhone( keyboard.nextLine() );
         
         Random random = new Random();
-        long pin = random.nextLong( 500_000_000 );
-        companyHandler.setWalletId( 0L );
+//        long pin = random.nextInt( 50000 );
+//        companyHandler.setPin( pin );
+//        companyHandler.setRole( 2 );
+//        companyHandler.setWalletId( 0 );
 
         try{
             String companyAsJson = mapper.writeValueAsString( companyHandler );
