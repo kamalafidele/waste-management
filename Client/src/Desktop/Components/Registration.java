@@ -4,7 +4,7 @@ import DataHandlers.CompanyHandler;
 import DataHandlers.DistrictHandler;
 import DataHandlers.UserHandler;
 import Desktop.EventHandlers.PlaceHolderHandler;
-import Desktop.Shared.RoundBtn;
+import Desktop.Screens.RoundBtn;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import javax.swing.*;
@@ -29,6 +29,7 @@ public class Registration extends JPanel {
      JTextField email = new JTextField("Email");
      JTextField phone = new JTextField("Phone");
      JTextField tin = new JTextField("TIN");
+     JLabel responseLabel = new JLabel("");
      JLabel titleLabel = new JLabel();
 
      JPanel inputsPanel = new JPanel();
@@ -72,6 +73,7 @@ public class Registration extends JPanel {
           phone.setBorder(new RoundBtn(10));
           tin.setBorder(new RoundBtn(10));
           addBtn.setBorder(new RoundBtn(10));
+          responseLabel.setForeground(Color.GREEN);
 
           addBtn.setBackground(dodgerBlue);
           addBtn.setSize(200,100);
@@ -81,6 +83,7 @@ public class Registration extends JPanel {
           inputsPanel.setBackground(Color.WHITE);
           titlePanel.setBackground(Color.WHITE);
           buttonsPanel.setBackground(Color.WHITE);
+          titlePanel.setLayout(new BorderLayout());
 
           inputsPanel.setBorder(new EmptyBorder(new Insets(10,10,10,50)));
           buttonsPanel.setBorder(new EmptyBorder(new Insets(40,10,40,0)));
@@ -88,7 +91,8 @@ public class Registration extends JPanel {
 
      public void setTitlePanelContent () {
           titleLabel.setFont(new Font("Inter", Font.PLAIN, 20));
-          titlePanel.add(titleLabel);
+          titlePanel.add(titleLabel, BorderLayout.NORTH);
+          titlePanel.add(responseLabel, BorderLayout.CENTER);
      }
 
      public void setButtonsPanelContent() {
@@ -149,9 +153,12 @@ public class Registration extends JPanel {
                     if(!email.getText().equals("Email") && !name.getText().equals("Name") && !tin.getText().equals("TIN")){
                          companyHandler.setEmail(email.getText());
                          companyHandler.setName(name.getText());
+                         companyHandler.setTin(Long.valueOf(tin.getText()));
                          try {
-                              sendRequest("registration/register_company/"+mapper.writeValueAsString(companyHandler));
+                              sendRequest("registration/register_company/"+mapper.writeValueAsString(companyHandler) + "/" + districtHandler.getId());
                               String response = fromServer.readUTF();
+                              setInputsToDefault();
+                              responseLabel.setText(response);
                               System.out.println(response);
 
                          }catch (Exception exception) {}
@@ -166,6 +173,8 @@ public class Registration extends JPanel {
                          try {
                               sendRequest("registration/register_district/"+mapper.writeValueAsString(districtHandler));
                               String response = fromServer.readUTF();
+                              setInputsToDefault();
+                              responseLabel.setText(response);
                               System.out.println(response);
                          } catch (Exception exception) {}
                     }
@@ -191,6 +200,8 @@ public class Registration extends JPanel {
                        try {
                             sendRequest("registration/register_user/"+mapper.writeValueAsString(userHandler));
                             String response = fromServer.readUTF();
+                            setInputsToDefault();
+                            responseLabel.setText(response);
                             System.out.println(response);
                        } catch (Exception exception){}
                     }
@@ -205,4 +216,10 @@ public class Registration extends JPanel {
           }catch ( IOException exception ){}
      }
 
+     public void setInputsToDefault(){
+          name.setText("Name");
+          email.setText("Email");
+          tin.setText("TIN");
+          phone.setText("Phone");
+     }
 }

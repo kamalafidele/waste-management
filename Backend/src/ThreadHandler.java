@@ -47,6 +47,8 @@ public class ThreadHandler extends Thread{
                     case "registration":
                         new Registration(databaseConnection).filterRequest(request,toClient);
                         break;
+                    case "employees":
+                        new EmployeesController().filterRequest(request,toClient);
                     default:
                         toClient.writeUTF("Undefined request");
                         break;

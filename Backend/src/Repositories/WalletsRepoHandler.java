@@ -9,8 +9,11 @@ public class WalletsRepoHandler {
     public WalletsRepoHandler(DatabaseConnection database){
         this.database = database;
     }
+    public ResultSet  createWallet(Long user_id) {
+        database.insert("INSERT INTO WALLET (user_id) VALUES("+ user_id +")");
+        return database.select("select id from wallet ORDER BY id DESC LIMIT 1;");
+    }
     public ResultSet findWalletByCompanyId(int companyId){
-
         return database.select("select amount from wallet w inner join users c on c.walletId=w.id where c.id= "+companyId);
     }
     public ResultSet findWalletByDistrictId(int district_id){
@@ -27,10 +30,10 @@ public class WalletsRepoHandler {
     }
 
     public ResultSet findWalletsCount(){
-        return database.select("SELECT COUNT(*) AS totalWallets FROM Wallet;");
+        return database.select("SELECT COUNT(*) AS totalWallets FROM wallet;");
     }
 
     public boolean addWallet(){
-        return database.insert("INSERT INTO Wallet (amount) VALUES (0) ");
+        return database.insert("INSERT INTO wallet (amount,status) VALUES (0,1) ");
     }
 }
