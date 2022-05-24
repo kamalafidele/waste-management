@@ -1,9 +1,8 @@
 package Desktop.Components;
 
-import Desktop.Shared.RoundBtn;
+import Desktop.Screens.RoundBtn;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class Wallet extends JPanel {
