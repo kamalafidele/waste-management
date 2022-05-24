@@ -141,9 +141,9 @@ public class ConfirmerRouting extends JFrame{
         SideBar.add(logoutBtn);
     }
 
-    public static void main(final String args[]) throws IOException {
-//        new ConfirmerRouting(this.toServer,this.fromServer);
-    }
+//    public static void main(final String args[]) throws IOException {
+//        new ConfirmerRouting(toServer,fromServer);
+//    }
 
     public  void filter(String chosen){
         switch (chosen) {

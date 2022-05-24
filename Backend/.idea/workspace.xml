@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40098456-60c6-4aeb-8896-539afe23d8d7" name="Changes" comment="customerInvoice control">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/Application.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/AnalyticsController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/CompanyController.class" beforeDir="false" />
@@ -41,8 +43,10 @@
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/UserRepo.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/WalletsRepoHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/utils/TokenGenerator.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/ConfirmerRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/ConfirmerRouting$MenuListenerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/ConfirmerRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/ConfirmerRouting.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Screens/Shifts/ViewShifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Screens/Shifts/ViewShifts.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/ConfirmerRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/ConfirmerRouting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Screens/Shifts/ViewShifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Screens/Shifts/ViewShifts.java" afterDir="false" />
