@@ -28,18 +28,19 @@ public class ConfirmerRouting extends JFrame{
 
     private DataOutputStream toServer;
     private DataInputStream fromServer;
+     ViewShifts viewShifts=new ViewShifts();
+
 
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
 
-    ViewShifts viewShifts=new ViewShifts();
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  ConfirmerRouting() throws IOException {
-//        public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
-//        this.toServer = toServer;
-//        this.fromServer = fromServer;
+//    public  ConfirmerRouting() throws IOException {
+        public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
 
         setTitle("Company Board");
         setSize(1366,768);
@@ -53,6 +54,7 @@ public class ConfirmerRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+           viewShifts.setStreams(toServer,fromServer);
         add(viewShifts);
         SidebarDesign();
         setVisible(true);
@@ -140,7 +142,7 @@ public class ConfirmerRouting extends JFrame{
     }
 
     public static void main(final String args[]) throws IOException {
-        new ConfirmerRouting();
+//        new ConfirmerRouting(this.toServer,this.fromServer);
     }
 
     public  void filter(String chosen){

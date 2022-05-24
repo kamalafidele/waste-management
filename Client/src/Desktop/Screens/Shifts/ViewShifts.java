@@ -8,17 +8,22 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.io.Serial;
 
 public class ViewShifts extends JPanel {
-
-    public ViewShifts(){
+private DataOutputStream outToServer;
+private DataInputStream fromServer;
+    public ViewShifts() throws IOException {
+        sendRequest("viewShifts");
         setVisible(false);
         setBounds(200,0,1166,768);
         setBackground(Color.WHITE);
         setBorder(new EmptyBorder(new Insets(20,30,20,30)));
-        Object [][] data = {{"Karera Marvin","Karera@gmail.com","0781234568","Mukamira"},{"Kayitare Audax","audax@gmail.com","0786783420","Nyamabuye"},{"Nick Singizwa","nick@gmail.com","0784893734","Niboye"}};
-        Object [] columns = {"Company", "Date", "Confirmed people", "No of shifts"};
+        Object [][] data = {{"Karera Marvin","Karera@gmail.com","0781234568","Waste collection"},{"Kayitare Audax","audax@gmail.com","0786783420","Waste collection"},{"Nick Singizwa","nick@gmail.com","0784893734","Waste collection"}};
+        Object [] columns = {"Company", "Date", "Confirmed people", "Service"};
         shiftsTable("All created shifts", data, columns);
     }
     public void shiftsTable(String title, Object[][] data, Object[] columns){
@@ -111,5 +116,11 @@ public class ViewShifts extends JPanel {
             }
         }
     }
-
+    public void sendRequest(String request) throws IOException {
+        outToServer.writeUTF(request);
+    }
+    public void setStreams(DataOutputStream outToServer,DataInputStream fromServer){
+        this.fromServer=fromServer;
+        this.outToServer=outToServer;
+    }
 }

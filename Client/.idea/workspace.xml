@@ -5,11 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9fc21fc-66a9-4a22-8cb8-857377a27387" name="Changes" comment="ad">
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/AnalyticsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/CompanyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/CustomerInvoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/DebtController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/DistrictController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/NotificationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/PaymentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/Registration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ServiceConfirmationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ShiftsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/WalletController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Company.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/CustomerInvoices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/District.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Notification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/ServiceConfirmation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Shifts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Wallet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/AnalyticsRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/CompanyRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/CustomerInvoicesRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/DebtRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/DistrictRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/LocationRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/NotificationRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/PaymentRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ServiceConfirmationRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ShiftsRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/UserRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/WalletsRepoHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/UserRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting$MenuListenerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/ConfirmerRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/ConfirmerRouting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Screens/Shifts/ViewShifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Screens/Shifts/ViewShifts.java" afterDir="false" />
@@ -43,9 +76,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Backend" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Application.ConfirmerRouting">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.App" />
       <module name="Client" />
@@ -106,19 +140,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Application" />
       <item itemvalue="Application.App" />
       <item itemvalue="Application.DistrictRouting" />
-      <item itemvalue="Application.CitizenRouting" />
       <item itemvalue="Application.CompanyRouting" />
       <item itemvalue="Application.ConfirmerRouting" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ConfirmerRouting" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.Application" />
+        <item itemvalue="Application.ConfirmerRouting" />
         <item itemvalue="Application.CompanyRouting" />
         <item itemvalue="Application.DistrictRouting" />
-        <item itemvalue="Application.CitizenRouting" />
       </list>
     </recent_temporary>
   </component>
