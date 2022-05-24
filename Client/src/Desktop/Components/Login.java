@@ -117,35 +117,32 @@ public class Login extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String email = myemail.getText();
                 String password = mypassword.getText();
-                String driverName = "com.mysql.cj.jdbc.Driver";
-
+                PreparedStatement ps;
+                ResultSet rs;
+                Connection connection =  null;
+                String query = "SELECT * FROM `users` WHERE `email` =? AND `password` =?";
                 try {
-                    Class.forName(driverName);
-
-                    Connection connection =  DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/LGMxUJ3u44",
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/LGMxUJ3u44",
                             "LGMxUJ3u44", "gAzBLwXOq8");
+                    ps = connection.prepareStatement(query);
+                    ps.setString(1, email);
+                    ps.setString(2,password);
+                    rs = ps.executeQuery();
 
-                    PreparedStatement st = connection.prepareStatement("Select email, password from users where email=" + email+"and password=" + password );
-                    System.out.println("connected");
-                    st.setString(1, email);
-                    st.setString(2, password);
-                    ResultSet rs = st.executeQuery();
-
-                    if (rs.next()) {
-                        dispose();
-                         System.out.println("connected");
-//                        JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
-                    } else {
-
-//                        JOptionPane.showMessageDialog(btnNewButton, "Wrong Username & Password");
+                    if(rs.next()){
+                      System.out.println("Logged in successfully");
+                    }else{
+                        System.out.println("User not available");
                     }
-                } catch (SQLException sqlException) {
-                    System.out.println("failed to connect");
-                    sqlException.printStackTrace();
-                } catch (ClassNotFoundException ex) {
-                    throw new RuntimeException(ex);
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
                 }
+
+
             }
+
+
         });
         rightPanel.add(myemail);
         rightPanel.add(mypassword);
