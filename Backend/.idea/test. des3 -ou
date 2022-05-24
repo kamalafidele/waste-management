@@ -1,1 +1,0 @@
-openssl des3 -d -salt -in file. des3 -ou t file.t xt -k su persecre tpasswor d123 
