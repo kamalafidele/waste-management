@@ -25,9 +25,9 @@ public class Login extends JFrame {
     private  static  JTextField myemail = new JTextField("Email");
     private  static  JPasswordField mypassword = new JPasswordField("Password");
 
-    JLabel emailLabel = new JLabel("email");
+    JLabel emailLabel = new JLabel("Email");
 
-    JLabel passwordLabel = new JLabel("password");
+    JLabel passwordLabel = new JLabel("Password");
     JButton login = new JButton("Login");
 
 
@@ -60,6 +60,7 @@ public class Login extends JFrame {
       myemail.setText("");
         setLayout(new GridLayout(1,2));
         setVisible(true);
+        this.setFont(new Font("Inter", Font.PLAIN, 18));
         setSize(1000,700);
 
         setLeftPanelTexts();
