@@ -30,10 +30,10 @@ public class WalletsRepoHandler {
     }
 
     public ResultSet findWalletsCount(){
-        return database.select("SELECT COUNT(*) AS totalWallets FROM Wallet;");
+        return database.select("SELECT COUNT(*) AS totalWallets FROM wallet;");
     }
 
     public boolean addWallet(){
-        return database.insert("INSERT INTO Wallet (amount) VALUES (0) ");
+        return database.insert("INSERT INTO wallet (amount,status) VALUES (0,1) ");
     }
 }
