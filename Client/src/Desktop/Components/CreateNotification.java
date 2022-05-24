@@ -167,6 +167,7 @@ public class CreateNotification extends JFrame {
                     notificationHandler.setReceiver(1);
                     try {
                         sendRequest(mapper.writeValueAsString(notificationHandler));
+                        System.out.println(mapper.writeValueAsString(notificationHandler));
                         String response = fromServer.readUTF();
                         System.out.println(response);
 
