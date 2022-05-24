@@ -5,101 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40098456-60c6-4aeb-8896-539afe23d8d7" name="Changes" comment="customerInvoice control">
-      <change afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/customerInvoicesRepo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/ChooseServiceToPay.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/ChooseServiceToPayComp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/StepOneDeposit$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/StepOneDeposit$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/StepOneDeposit.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/StepTwoDeposit$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/StepTwoDeposit.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/ChooseServiceToPay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/ChooseServiceToPayComp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/StepOneDeposit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/StepTwoDeposit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/autogit.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/autogit.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-10-1-51.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-10-1-51.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-10-32-9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-10-32-9.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-12-29-8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-12-29-8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-13-39-23.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-13-39-23.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-13-8-57.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-13-8-57.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-14-39-56.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-14-39-56.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-14-9-41.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-14-9-41.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-15-10-15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-15-10-15.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-12-10-6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-12-10-6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-12-40-23.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-12-40-23.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-13-10-46.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-13-10-46.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-13-41-5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-13-41-5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-14-11-30.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-14-11-30.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-5-49-21.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-5-49-21.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-6-19-41.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-6-19-41.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-6-50-2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-6-50-2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jackson_all_1_9_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jackson_all_1_9_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jackson_all_1_9_91.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jackson_all_1_9_91.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jackson_all_1_9_9__2_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jackson_all_1_9_9__2_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_261.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_261.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_28.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/EmployeesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/EmployeesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/NotificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/NotificationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/Models/EmployeesRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Models/EmployeesRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/ThreadHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AnalyticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AnalyticsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CompanyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CustomerInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CustomerInvoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/NotificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ServiceConfirmationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ServiceConfirmationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ShiftsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ShiftsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/WalletController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/CustomerInvoices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/CustomerInvoices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/ServiceConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ServiceConfirmation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Shifts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Wallet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/AnalyticsRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/AnalyticsRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/CustomerInvoicesRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/CustomerInvoicesRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/LocationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/LocationRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/ServiceConfirmationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/ServiceConfirmationRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/ShiftsRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/ShiftsRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/WalletsRepoHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/WalletsRepoHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/TokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/TokenGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/libraries/jackson_all_1_9_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/libraries/jackson_all_1_9_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/Client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/CreateNotification$saveNotification.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/CreateNotification$saveNotification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Registration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Registration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/CitizenRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/CitizenRouting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Admin/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Shifts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/CitizenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/CitizenHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/CompanyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/CompanyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/CustomerInvoicesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/CustomerInvoicesHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/HouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/HouseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/NotificationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/NotificationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/ServiceConfirmationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/ServiceConfirmationHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/ShiftsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/ShiftsHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/DataHandlers/WalletHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/DataHandlers/WalletHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/CreateNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/CreateNotification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/CitizenRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/CitizenRouting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Backend/Repositories/CustomerInvoicesRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Repositories/CustomerInvoicesRepo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +126,7 @@
       <workItem from="1653309175135" duration="1239000" />
       <workItem from="1653330566717" duration="5737000" />
       <workItem from="1653381115663" duration="4809000" />
-      <workItem from="1653414251929" duration="3895000" />
+      <workItem from="1653414251929" duration="4404000" />
     </task>
     <task id="LOCAL-00001" summary="customerInvoice control">
       <created>1646022290178</created>
