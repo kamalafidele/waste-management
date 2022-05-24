@@ -5,46 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40098456-60c6-4aeb-8896-539afe23d8d7" name="Changes" comment="customerInvoice control">
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Analytics$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Analytics.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/InvoicesPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Wallet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Analytics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/InvoicesPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Table.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Wallet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Config/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/NotificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Wallet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repositories/WalletsRepoHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repositories/WalletsRepoHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/CreateNotification$saveNotification.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/CreateNotification$saveNotification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/CreateNotification.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/CreateNotification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Login$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/CitizenRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/CitizenRouting$MenuListenerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/CompanyRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/CompanyRouting$MenuListenerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/CompanyRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/CompanyRouting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Components/customerInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/customerInvoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Citizens.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/CreateNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/CreateNotification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/CitizenRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/CitizenRouting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/CompanyRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/CompanyRouting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/SystemAdminsRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/SystemAdminsRouting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/testPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/testPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/testPanel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/testPanel2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Registration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Registration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +49,15 @@
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Client" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -155,7 +127,8 @@
       <workItem from="1653214348682" duration="746000" />
       <workItem from="1653309175135" duration="1239000" />
       <workItem from="1653330566717" duration="5737000" />
-      <workItem from="1653381115663" duration="3578000" />
+      <workItem from="1653381115663" duration="4809000" />
+      <workItem from="1653414251929" duration="2191000" />
     </task>
     <task id="LOCAL-00001" summary="customerInvoice control">
       <created>1646022290178</created>

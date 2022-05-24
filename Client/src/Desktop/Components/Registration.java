@@ -83,7 +83,8 @@ public class Registration extends JPanel {
           inputsPanel.setBackground(Color.WHITE);
           titlePanel.setBackground(Color.WHITE);
           buttonsPanel.setBackground(Color.WHITE);
-          titlePanel.setLayout(new BorderLayout());
+          titlePanel.setLayout(new GridLayout(2,1));
+          titlePanel.setBorder(new EmptyBorder(new Insets(0,50,0,10)));
 
           inputsPanel.setBorder(new EmptyBorder(new Insets(10,10,10,50)));
           buttonsPanel.setBorder(new EmptyBorder(new Insets(40,10,40,0)));
@@ -91,8 +92,9 @@ public class Registration extends JPanel {
 
      public void setTitlePanelContent () {
           titleLabel.setFont(new Font("Inter", Font.PLAIN, 20));
-          titlePanel.add(titleLabel, BorderLayout.NORTH);
-          titlePanel.add(responseLabel, BorderLayout.CENTER);
+          titleLabel.setForeground(dodgerBlue);
+          titlePanel.add(titleLabel);
+          titlePanel.add(responseLabel);
      }
 
      public void setButtonsPanelContent() {
@@ -106,19 +108,19 @@ public class Registration extends JPanel {
           if(isDistrict) {
                inputsPanel.add(name);
                inputsPanel.add(email);
-               titleLabel.setText("Add District");
+               titleLabel.setText("ADD DISTRICT");
           }
           else if (isCompany) {
                inputsPanel.add(name);
                inputsPanel.add(email);
                inputsPanel.add(tin);
-               titleLabel.setText("Add Company");
+               titleLabel.setText("ADD COMPANY");
 
           }else if (isUser) {
                inputsPanel.add(name);
                inputsPanel.add(email);
                inputsPanel.add(phone);
-               titleLabel.setText("Add User");
+               titleLabel.setText("ADD USER");
           }
 
           GridLayout layout = new GridLayout(2,2);
@@ -173,9 +175,9 @@ public class Registration extends JPanel {
                          try {
                               sendRequest("registration/register_district/"+mapper.writeValueAsString(districtHandler));
                               String response = fromServer.readUTF();
+                              System.out.println(response);
                               setInputsToDefault();
                               responseLabel.setText(response);
-                              System.out.println(response);
                          } catch (Exception exception) {}
                     }
 
@@ -191,7 +193,7 @@ public class Registration extends JPanel {
                             userHandler.setWork_at(companyHandler.getId());
                             userHandler.setPassword(companyHandler.getName() + userHandler.getName());
                        }
-                       if(districtHandler != null) {
+                       else if(districtHandler != null) {
                             userHandler.setRole(Long.valueOf(5));
                             userHandler.setWork_at(districtHandler.getId());
                             userHandler.setPassword(districtHandler.getName()+userHandler.getName());
