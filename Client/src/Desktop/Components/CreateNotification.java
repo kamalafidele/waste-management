@@ -166,7 +166,7 @@ public class CreateNotification extends JFrame {
                     notificationHandler.setSentDate(date);
                     notificationHandler.setReceiver(1);
                     try {
-                        sendRequest("notification/create/" + notificationHandler.getReceiver() + "" +
+                        sendRequest("notification/create/" + notificationHandler.getReceiver() + "/" +
                                 notificationHandler.getType());
 //                        System.out.println("notification/create/" + notificationHandler.getReceiver() + "/" +
 //                                notificationHandler.getType());
