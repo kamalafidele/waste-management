@@ -1,9 +1,6 @@
 package Desktop.Components;
 
-import Desktop.Components.Routing.CitizenRouting;
-import Desktop.Components.Routing.CompanyRouting;
-import Desktop.Components.Routing.DistrictRouting;
-import Desktop.Components.Routing.SystemAdminsRouting;
+import Desktop.Components.Routing.*;
 import Desktop.Shared.RoundBtn;
 
 import javax.swing.*;
@@ -22,6 +19,8 @@ public class Login extends JFrame {
     JButton loginBtn = new JButton("Login");
 
     public Login(DataOutputStream toServer, DataInputStream fromServer){
+        this.toServer = toServer;
+        this.fromServer = fromServer;
         setTitle("LOGIN");
         setVisible(true);
         setLayout(null);

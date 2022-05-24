@@ -184,7 +184,6 @@ public class CompanyRouting extends JFrame{
                 break;
             case "Notifications":
                 registerUser.setVisible(false);
-                new CreateNotification();
                 break;
             default:
                 System.out.println();

@@ -150,7 +150,7 @@ public class Registration extends JPanel {
                          companyHandler.setEmail(email.getText());
                          companyHandler.setName(name.getText());
                          try {
-                              sendRequest(mapper.writeValueAsString(companyHandler));
+                              sendRequest("registration/register_company/"+mapper.writeValueAsString(companyHandler));
                               String response = fromServer.readUTF();
                               System.out.println(response);
 
@@ -164,7 +164,7 @@ public class Registration extends JPanel {
                          districtHandler.setName(name.getText());
 
                          try {
-                              sendRequest(mapper.writeValueAsString(districtHandler));
+                              sendRequest("registration/register_district/"+mapper.writeValueAsString(districtHandler));
                               String response = fromServer.readUTF();
                               System.out.println(response);
                          } catch (Exception exception) {}
@@ -189,7 +189,7 @@ public class Registration extends JPanel {
                        }
 
                        try {
-                            sendRequest(mapper.writeValueAsString(userHandler));
+                            sendRequest("registration/register_user/"+mapper.writeValueAsString(userHandler));
                             String response = fromServer.readUTF();
                             System.out.println(response);
                        } catch (Exception exception){}
