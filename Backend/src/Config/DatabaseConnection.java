@@ -6,9 +6,9 @@ import static java.lang.Class.forName;
 
 public class DatabaseConnection {
     String driver = "com.mysql.jdbc.Driver";
-    String url = "jdbc:mysql://remotemysql.com:3306/LGMxUJ3u44?characterEncoding=latin1";
-    String username = "LGMxUJ3u44";
-    String password = "gAzBLwXOq8";
+    String url = "jdbc:mysql://localhost:3306/LGMxUJ3u44?characterEncoding=latin1";
+    String username = "root";
+    String password = "2352003";
     public Connection connection = null;
     Statement statement = null;
     ResultSet data = null;
