@@ -1,39 +1,52 @@
 package Models;
 
 public class District {
-    private String districtToken;
-    private String districtName;
-    private String password;
+    private Long id;
+    private String name;
+    private String email;
+    private Long walletId;
 
-    public District(){}
-
-    public District(String districtToken, String districtName,String password){
-        this.setDistrictToken(districtToken);
-        this.setDistrictName(districtName);
-        this.setPassword(password);
+    public District() {
     }
 
-    public String getDistrictToken() {
-        return districtToken;
+    public District(Long id, String name, String email,Long walletId) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.walletId = walletId;
     }
 
-    public void setDistrictToken(String districtToken) {
-        this.districtToken = districtToken;
+    public Long getId() {
+        return id;
     }
 
-    public String getDistrictName() {
-        return districtName;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setDistrictName(String districtName) {
-        this.districtName = districtName;
+    public String getName() {
+        return name;
     }
 
-    public String getPassword() {
-        return password;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getEmail() {
+        return email;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    public void setWalletId(Long walletId){
+        this.walletId = walletId;
+    }
+
+    public Long getWalletId(){
+        return walletId;
+    }
+
 }

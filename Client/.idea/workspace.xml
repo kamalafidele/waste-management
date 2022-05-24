@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/src/Controllers/EmployeesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/src/Controllers/Registration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/src/Controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/src/Models/EmployeesRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/src/Models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Backend/src/Repositories/UserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/github_kancyframework_springx_boot_gui_miglayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/github_lgooddatepicker_LGoodDatePicker.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_27.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_28.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/mysql-connector-java-8.0.27.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/mysql-connector-java-8.0.28.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/UserHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/App$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/App$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/App.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Analytics$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Analytics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/ChooseServiceToPay.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/ChooseServiceToPayComp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Company.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification$saveNotification.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Employees$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Employees$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Employees$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Employees.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/InvoicesPanel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Login$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Login.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/NotificationPopUp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Registration$SubmitHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Registration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting$MenuListenerHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting$MenuListenerHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CompanyRouting.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting$MenuListenerHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/ConfirmerRouting.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting$MenuListenerHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/DistrictRouting.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepOneDeposit$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepOneDeposit$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepOneDeposit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepTwoDeposit$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepTwoDeposit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Table$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Table$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Table.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Wallet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens$viewDistricts.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel$ViewCitizens.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/testPanel2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/EventHandlers/ActionEventHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/EventHandlers/PlaceHolderHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Images/bar-chart-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Images/dashboard-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Images/exchange-funds-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Images/money-dollar-circle-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Images/notification-2-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Images/stack-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Images/team-fill.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Images/user-add-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Images/user-avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/RegisterClient/MajaorPanel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/RegisterClient/RegisterClientIndex.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/RoundBtn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts$ButtonClickEventHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Screens/Shifts/ViewShifts.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataHandlers/UserHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Analytics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/ChooseServiceToPay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/ChooseServiceToPayComp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/CreateNotification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Employees.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/InvoicesPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/NotificationPopUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Registration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/CitizenRouting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/CompanyRouting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/ConfirmerRouting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/DistrictRouting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/SystemAdminsRouting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/StepOneDeposit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/StepTwoDeposit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Table.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/Wallet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/testPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/testPanel2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/EventHandlers/ActionEventHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/EventHandlers/PlaceHolderHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Images/bar-chart-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Images/dashboard-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Images/exchange-funds-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Images/money-dollar-circle-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Images/notification-2-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Images/stack-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Images/team-fill.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Images/user-add-line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Images/user-avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Screens/RegisterClient/MajaorPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Screens/RegisterClient/RegisterClientIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Screens/RoundBtn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Screens/Shifts/Services.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Screens/Shifts/ViewShifts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/waste_and_security_management/invoice/Invoice.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/invoice/Invoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../waste_and_security_management.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Config/DatabaseConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/AdminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/AnalyticsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/CompanyController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/CustomerInvoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/DebtController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/DistrictController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/HouseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/NotificationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/PaymentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ServiceConfirmationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/ShiftsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/WalletController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Company.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/CustomerInvoices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/District.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/House.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Notification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/ServiceConfirmation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Shifts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/Wallet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/AdminRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/AnalyticsRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/CompanyRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/CustomerInvoicesRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/DebtRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/DistrictRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/HouseRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/LocationRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/NotificationRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/PaymentRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ServiceConfirmationRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/ShiftsRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/WalletsRepoHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/utils/TokenGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/AnalyticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/AnalyticsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/CustomerInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/CustomerInvoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/DebtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/DebtController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/DistrictController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/HouseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/NotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/ServiceConfirmationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/ServiceConfirmationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/ShiftsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/ShiftsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/WalletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/District.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/House.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/AdminRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/AnalyticsRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/AnalyticsRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/CompanyRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/CompanyRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/CustomerInvoicesRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/CustomerInvoicesRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/DebtRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/DebtRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/DistrictRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/DistrictRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/HouseRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/LocationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/LocationRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/NotificationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/NotificationRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/PaymentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/PaymentRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/ServiceConfirmationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/ServiceConfirmationRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/ShiftsRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/ShiftsRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/WalletsRepoHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/WalletsRepoHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/ThreadHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loggedIn.txt" beforeDir="false" afterPath="$PROJECT_DIR$/loggedIn.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Admin/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Admin/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Admin/loggedIn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Company$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Company$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Debt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Debt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/District/DistrictDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/House/Dashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/House/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/House/House.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Notification$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Notification$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Payment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/ServiceConfirmation$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Shifts$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Shifts$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/Wallet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Components/customerInvoice.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Components/customerInvoice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/Admin/LoginInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/Admin/LoginInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/CitizenHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/CitizenHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/CompanyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/CompanyHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/CustomerInvoicesHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/CustomerInvoicesHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/DistrictHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/DistrictHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/HouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/HouseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/LoginData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/LoginData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/NotificationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/NotificationHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/ServiceConfirmationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/ServiceConfirmationHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/ShiftsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/ShiftsHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/DataHandlers/WalletHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/DataHandlers/WalletHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/loggedIn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Debt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Debt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/District/DistrictDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/House/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/House/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Shifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/customerInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/CustomerInvoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/CompanyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/CompanyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/DistrictHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/DistrictHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/LoginData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/LoginData.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="26QLmdrvvJKosqHOIBhSGV4peTK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Backend" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Application" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="" />
+      <created>1647347321755</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647347321755</updated>
+      <workItem from="1647351028681" duration="158000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

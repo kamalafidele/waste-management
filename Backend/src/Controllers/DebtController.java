@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Repositories.DebtRepo;
 
 import java.io.*;
@@ -10,9 +11,14 @@ import java.sql.SQLException;
 public class DebtController {
     private DebtRepo debtRepo;
     private DataOutputStream toClient;
+    private NotificationController notificationController;
     public long balance;
-    public DebtController(){
-        debtRepo=new DebtRepo();
+    private DatabaseConnection connection;
+
+    public DebtController(DatabaseConnection connection){
+        this.connection = connection;
+        debtRepo = new DebtRepo(connection);
+        this.notificationController = new NotificationController(connection) ;
     };
     public void filterRequest(String request, DataOutputStream toClient){
         this.toClient=toClient;
@@ -24,8 +30,8 @@ public class DebtController {
                 checkWasteDebt(pin);
                 break;
             case "checkSecurityDebt":
-                    checkSecurityDebt(pin);
-                    break;
+                checkSecurityDebt(pin);
+                break;
             case "checkBalance":
                 checkBalance(pin);
         }
@@ -53,12 +59,13 @@ public class DebtController {
             balance=result.getLong(1);
             Date date=result.getDate(2);
             System.out.println(balance);
-            String months[]={"january","February","March","April","May","June","July","August","september","October","November","December"};
+            String[] months ={"january","February","March","April","May","June","July","August","september","October","November","December"};
             String month="January";
             for (int i=0;i<months.length;i++){
-                month=months[Integer.valueOf(date.toString().split("-")[1])-1];
+                month=months[Integer.parseInt(date.toString().split("-")[1])-1];
             }
             if(balance>0){
+                notificationController.createNotification(1,"paymentWarningNotification");
                 sendResponse("OOPs you have a debt of"+balance+"Frw accumulated in "+month);
                 return;
             }
@@ -81,17 +88,17 @@ public class DebtController {
 //            ResultSet result=debtRepo.getBalance(userId);
             ResultSet result=debtRepo.getMyWasteDebt(userId);
             if(result==null){
-                sendResponse("An error occured");
+                sendResponse("An error occurred");
             }
             balance=result.getLong(1);
             Date date=result.getDate(2);
-            System.out.println(balance);
-            String months[]={"january","February","March","April","May","June","July","August","september","October","November","December"};
+            String[] months ={"january","February","March","April","May","June","July","August","september","October","November","December"};
             String month="January";
             for (int i=0;i<months.length;i++){
-                month=months[Integer.valueOf(date.toString().split("-")[1])-1];
+                month=months[Integer.parseInt(date.toString().split("-")[1])-1];
             }
             if(balance>0){
+                notificationController.createNotification(1,"paymentWarningNotification");
                 sendResponse("OOPs you have a debt of"+balance+"Frw accumulated in "+month);
                 return;
             }

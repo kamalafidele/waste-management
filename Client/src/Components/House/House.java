@@ -62,16 +62,15 @@ public class House{
 //            String Sresponse=fromServer.readUTF();
 //            System.out.println(Sresponse);
 
-            String request2 = "citizen/getLocationId/" + locationName;
-            toServer.writeUTF(request2);
-            String response2 = fromServer.readUTF();
-            //convert response2 to int
-            int locationId = Integer.parseInt(response2);
-            citizenHandler.setLocation( locationId );
+//            String request2 = "citizen/getLocationId/" + locationName;
+//            toServer.writeUTF(request2);
+//            String response2 = fromServer.readUTF();
+//            //convert response2 to int
+//            int locationId = Integer.parseInt(response2);
+            citizenHandler.setLocation( 0 );
 
             String citizenAsJson=mapper.writeValueAsString( citizenHandler );
-            System.out.println(citizenAsJson);
-            sendRequest( "citizen/insert/"+citizenAsJson );
+            sendRequest("citizen/insert/"+citizenAsJson+"-"+locationName );
             String response= fromServer.readUTF();
             System.out.println( response );
         }catch (Exception ex){}
@@ -80,7 +79,6 @@ public class House{
     public void sendRequest( String request ){
         try{
             toServer.writeUTF( request );
-            System.out.println( "Request sent: " + request );
         }catch ( IOException exception ){ }
     }
 
@@ -99,9 +97,7 @@ public class House{
             dashboard.handleDashboard(fromServer, toServer, handler);
             return;
         }
-        System.out.println("Invalid login, Try again!");
-        return;
-//        }catch (IOException exception){
+        //        }catch (IOException exception){
 //            System.out.println("Invalid login, Try again!");
 //            return;
 //        }

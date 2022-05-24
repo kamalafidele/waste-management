@@ -2,16 +2,16 @@ package Config;
 
 import java.sql.*;
 
-import static java.lang.Class.forName;
-
 public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
-    String url="jdbc:mysql://localhost:3306/waste_management";
+
+    String url="jdbc:mysql://localhost:3306/wasteManagUpdated?characterEncoding=latin1";
     String username="root";
-    String password="teta2005";
-    public Connection connection=null;
+    String password="ae789789";
+    Connection connection=null;
     Statement statement=null;
     ResultSet data=null;
+
     public DatabaseConnection(){
         try{
           connection= DriverManager.getConnection(url,username,password);
@@ -20,7 +20,6 @@ public class DatabaseConnection {
               statement=connection.createStatement();
 
         }catch(Exception exception){
-            System.out.println("Error: "+exception);
             System.out.println("CONNECTION TO DATABASE FAILED");
             exception.printStackTrace();
         }

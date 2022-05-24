@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Repositories.AnalyticsRepo;
 
 import java.io.DataOutputStream;
@@ -12,9 +13,11 @@ import java.time.format.DateTimeFormatter;
 public class AnalyticsController {
     private DataOutputStream toClient;
     private AnalyticsRepo analyticsRepo;
+    private DatabaseConnection databaseConnection;
 
-    public AnalyticsController(){
-        analyticsRepo = new AnalyticsRepo();
+    public AnalyticsController(DatabaseConnection databaseConnection){
+        this.databaseConnection = databaseConnection;
+        analyticsRepo = new AnalyticsRepo(databaseConnection);
     }
 
     public void filterRequest(String request, DataOutputStream toClient){

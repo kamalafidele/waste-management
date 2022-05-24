@@ -1,51 +1,51 @@
 package DataHandlers;
 
 public class DistrictHandler {
-    private int  districtId;
-    private String districtToken;
-    private String districtName;
-    private String password;
+    private Long id;
+    private String name;
+    private String email;
+    private Long walletId;
 
-    public int getDistrictId() {
-        return districtId;
+    public DistrictHandler() {
     }
 
-    public void setDistrictId(int districtId) {
-        this.districtId = districtId;
+    public DistrictHandler(Long id, String name, String email,Long walletId) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.walletId = walletId;
     }
 
-    public String getDistrictToken() {
-        return districtToken;
+    public Long getId() {
+        return id;
     }
 
-    public void setDistrictToken(String districtToken) {
-        this.districtToken = districtToken;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getDistrictName() {
-        return districtName;
+    public String getName() {
+        return name;
     }
 
-    public void setDistrictName(String districtName) {
-        this.districtName = districtName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public DistrictHandler() {}
 
-    public DistrictHandler(int districtId, String districtToken, String districtName, String password) {
-        this.districtId = districtId;
-        this.districtToken = districtToken;
-        this.districtName = districtName;
-        this.password = password;
-
+    public void setWalletId(Long walletId){
+        this.walletId = walletId;
     }
 
+    public Long getWalletId(){
+        return walletId;
+    }
 }

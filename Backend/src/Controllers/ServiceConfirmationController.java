@@ -1,9 +1,11 @@
 package Controllers;
 
-import Models.Admin;
+
+
+import Config.DatabaseConnection;
+
 import Models.ServiceConfirmation;
 import Models.Shifts;
-import Repositories.AdminRepo;
 import Repositories.ServiceConfirmationRepo;
 import Repositories.ShiftsRepo;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -17,11 +19,13 @@ import java.util.List;
 
 public class ServiceConfirmationController {
     private DataOutputStream toClient;
+    private DatabaseConnection connection;
     private ServiceConfirmationRepo serviceConfirmationRepo;
     private ObjectMapper mapper;
 
-    public ServiceConfirmationController(){
-        serviceConfirmationRepo = new ServiceConfirmationRepo();
+    public ServiceConfirmationController(DatabaseConnection connection){
+        this.connection = connection;
+        serviceConfirmationRepo = new ServiceConfirmationRepo(connection);
         mapper= new ObjectMapper();
     }
 
@@ -84,15 +88,15 @@ public class ServiceConfirmationController {
     }
     public void login(String data){
         try{
-            Admin confirmer = mapper.readValue(data,Admin.class);
-            System.out.println("method login called");
-             if(serviceConfirmationRepo.login(confirmer)) {
-//
-                 System.out.println("serviceConfirmationRepo seen");
-                 sendResponse("true");
-             }else {
-                 sendResponse("false");
-             }
+//            Admin confirmer = mapper.readValue(data,Admin.class);
+//            System.out.println("method login called");
+//             if(serviceConfirmationRepo.login(confirmer)) {
+////
+//                 System.out.println("serviceConfirmationRepo seen");
+//                 sendResponse("true");
+//             }else {
+//                 sendResponse("false");
+//             }
 
         }catch (Exception e){
             e.getMessage();

@@ -30,7 +30,6 @@ public class Application {
             DataOutputStream toServer=new DataOutputStream(socket.getOutputStream());
             DataInputStream fromServer=new DataInputStream(socket.getInputStream());
 
-
             System.out.println("--------------------------------------------------WELCOME TO----------------------------------------------          " + RESET);
             System.out.println(BLUE + "\\\\              //\\\\             //   ==================   ||\\\\             //||   ==================  " + RESET);
             System.out.println(BLUE + " \\\\            //  \\\\           //    ||                   || \\\\           // ||   ||                  " + RESET);

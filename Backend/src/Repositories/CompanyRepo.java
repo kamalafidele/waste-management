@@ -7,28 +7,35 @@ import java.sql.ResultSet;
 
 public class CompanyRepo {
       DatabaseConnection database;
-      public CompanyRepo(){
-          database=new DatabaseConnection();
+      public CompanyRepo(DatabaseConnection database) {
+          this.database = database;
       }
 
-      public ResultSet findAll(){
-          return database.select("SELECT * FROM Users WHERE Role = 2");
+      public ResultSet findAll() {
+          return database.select("SELECT * FROM company");
       }
 
-      public ResultSet findById(long id){
-          return database.select("SELECT * FROM Company WHERE Role = 2 AND  id = "+id);
+      public ResultSet findById(long id) {
+          return database.select("SELECT * FROM company WHERE id = "+id);
       }
 
-      public boolean save(Company company){
-          return database.insert("INSERT INTO Users(name,email,phone,pin,Role) VALUES ('"+company.getName()+"','"
-                  +company.getEmail()+"','"+ company.getPhone()+"','"+company.getPin()+"','"+company.getRole()+"')");
+      public boolean save(Company company) {
+          return database.insert("INSERT INTO company(name,TIN,email,wallet) VALUES ('"+company.getName()+"','"
+                  +company.getTin() + "','" + company.getEmail()+"'," + company.getWalletId() +")");
       }
 
-      public ResultSet findByPinAndEmail(long pin, String email){
-      return database.select("SELECT * FROM Users WHERE Role = 2 AND pin = " + pin+" AND email = '" + email +"'");
+
+      public boolean createContract (Long districtId, Long companyId) {
+         return database.insert("INSERT INTO district_company (district_id,company_id) VALUES ("+districtId+","+companyId+")");
       }
 
-      public boolean createContract (int districtId, int companyId){
-         return database.insert("INSERT INTO District_Company (DistrictId,Company) VALUES ("+districtId+","+companyId+")");
+      public ResultSet findCompanyByDistrict(Long districtId) {
+          return database.select("SELECT * FROM district_company dc INNER JOIN company com ON com.id = dc.company_id INNER JOIN "
+             + " district dst ON dst.id = " + districtId + "" );
       }
+
+      public ResultSet findCompaniesCount() {
+          return  database.select("SELECT COUNT(*) AS companiesCount FROM company");
+      }
+
 }

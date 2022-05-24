@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Models.Company;
 import Models.Shifts;
 import Repositories.ShiftsRepo;
@@ -16,9 +17,11 @@ public class ShiftsController {
     private DataOutputStream toClient;
     private ShiftsRepo shiftsRepo;
     private ObjectMapper mapper;
+    private DatabaseConnection connection;
 
-    public ShiftsController(){
-        shiftsRepo = new ShiftsRepo();
+    public ShiftsController(DatabaseConnection connection){
+        this.connection = connection;
+        shiftsRepo = new ShiftsRepo(connection);
         mapper=new ObjectMapper();
     }
     public void filterRequest(String request,DataOutputStream toClient) throws Exception {

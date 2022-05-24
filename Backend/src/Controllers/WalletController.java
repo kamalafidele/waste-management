@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Models.Wallet;
 import Repositories.WalletsRepoHandler;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -14,9 +15,11 @@ public class WalletController {
     private static WalletsRepoHandler walletRepo;
     private ObjectMapper mapper;
     private Wallet wallet;
+    private DatabaseConnection connection;
 
-    public WalletController(){
-        walletRepo = new WalletsRepoHandler();
+    public WalletController(DatabaseConnection connection){
+        this.connection = connection;
+        walletRepo = new WalletsRepoHandler(connection);
         mapper = new ObjectMapper();
     }
 

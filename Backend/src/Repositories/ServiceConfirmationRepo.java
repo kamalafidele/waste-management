@@ -11,8 +11,8 @@ import java.sql.ResultSet;
 public class ServiceConfirmationRepo {
     DatabaseConnection database;
 
-    public ServiceConfirmationRepo() {
-        database = new DatabaseConnection();
+    public ServiceConfirmationRepo(DatabaseConnection database) {
+        this.database = database;
     }
 
     public ResultSet findAll() {

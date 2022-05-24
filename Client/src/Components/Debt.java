@@ -14,7 +14,7 @@ public class Debt {
          this.fromServer=fromServer;
      }
      public void checkBalance(){
-         long pin=12345;
+         long pin=999;
          String request="debt/checkBalance/"+pin;
          try {
              toServer.writeUTF(request);
@@ -41,7 +41,7 @@ public class Debt {
          }
      }
     public void checkSecurityDebt(){
-        long userId=12345;
+        long userId=999;
         String request="debt/checkSecurityDebt/security/"+userId;
         try {
             toServer.writeUTF(request);
@@ -54,7 +54,7 @@ public class Debt {
         }
     }
     public void checkWasteDebt(){
-        long userId=12345;
+        long userId=999;
         String request="debt/checkWasteDebt/waste/"+userId;
         try {
             toServer.writeUTF(request);
