@@ -2,6 +2,7 @@ package Desktop.Components.Routing;
 import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
+import Desktop.Components.viewNotifications;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -32,6 +33,7 @@ public class CitizenRouting extends JFrame{
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+    viewNotifications viewNoti =new viewNotifications();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
@@ -50,6 +52,7 @@ public class CitizenRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+        add(viewNoti);
 
         SidebarDesign();
         setVisible(true);
@@ -148,18 +151,25 @@ public class CitizenRouting extends JFrame{
             case "Analytics":
                 panel2.setVisible(false);
                 panel.setVisible(true);
+                viewNoti.setVisible(false);
                 break;
             case "Transactions":
+                viewNoti.setVisible(false);
                 break;
             case "Dashboard":
                 panel.setVisible(false);
                 panel2.setVisible(true);
+                viewNoti.setVisible(false);
                 break;
             case "Debts":
                 System.out.println("Debts clicked");
+                viewNoti.setVisible(false);
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
+                viewNoti.setVisible(true);
+                panel.setVisible(false);
+                panel2.setVisible(false);
                 break;
             default:
                 System.out.println();
