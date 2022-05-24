@@ -109,7 +109,7 @@ public class ViewShifts extends JPanel {
                 frame.setVisible(true);
                 frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
             }
-            return null;
+
         }
     }
 

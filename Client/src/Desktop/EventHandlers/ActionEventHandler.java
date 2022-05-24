@@ -8,6 +8,6 @@ public class ActionEventHandler implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         actionCommand = e.getActionCommand();
-        return null;
+
     }
 }
