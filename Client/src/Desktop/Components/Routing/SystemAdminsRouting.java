@@ -1,5 +1,6 @@
 package Desktop.Components.Routing;
 import Desktop.Components.Registration;
+import Desktop.Components.TransactionsList;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
@@ -32,6 +33,8 @@ public class SystemAdminsRouting extends JFrame{
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+//    testPanel2 transactionPanel = new testPanel2();
+    TransactionsList transactionsList = new TransactionsList();
     Registration registerDistrict = new Registration(true,false, false);
     Registration registerUser = new Registration(false,false,true);
 
@@ -58,6 +61,7 @@ public class SystemAdminsRouting extends JFrame{
         add(panel2);
         add(registerDistrict);
         add(registerUser);
+        add(transactionsList);
 
         SidebarDesign();
         setVisible(true);
@@ -155,31 +159,37 @@ public class SystemAdminsRouting extends JFrame{
                 panel2.setVisible(false);
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
+                transactionsList.setVisible(false);
                 panel.setVisible(true);
                 break;
             case "Transactions":
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
+                transactionsList.setVisible(true);
                 break;
             case "Register Admin":
                 panel.setVisible(false);
                 panel2.setVisible(false);
                 registerDistrict.setVisible(false);
+                transactionsList.setVisible(false);
                 registerUser.setVisible(true);
                 break;
             case "Dashboard":
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
+                transactionsList.setVisible(false);
                 break;
             case "Districts":
                 panel.setVisible(false);
                 panel2.setVisible(false);
                 registerUser.setVisible(false);
+                transactionsList.setVisible(false);
                 registerDistrict.setVisible(true);
                 break;
             case "Notifications":
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
+                transactionsList.setVisible(false);
                 break;
             default:
                 System.out.println();
