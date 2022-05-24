@@ -25,8 +25,17 @@ public class CompanyRepo {
       }
 
 
-      public boolean createContract (int districtId, int companyId) {
+      public boolean createContract (Long districtId, Long companyId) {
          return database.insert("INSERT INTO district_company (district_id,company_id) VALUES ("+districtId+","+companyId+")");
+      }
+
+      public ResultSet findCompanyByDistrict(Long districtId) {
+          return database.select("SELECT * FROM district_company dc INNER JOIN company com ON com.id = dc.company_id INNER JOIN "
+             + " district dst ON dst.id = " + districtId + "" );
+      }
+
+      public ResultSet findCompaniesCount() {
+          return  database.select("SELECT COUNT(*) AS companiesCount FROM company");
       }
 
 }
