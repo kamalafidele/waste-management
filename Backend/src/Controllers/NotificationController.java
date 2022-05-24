@@ -1,6 +1,9 @@
 package Controllers;
+import Config.DatabaseConnection;
 import Models.*;
 import Repositories.NotificationRepo;
+
+//    ======================== JABES =================
 
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -20,9 +23,11 @@ public class NotificationController {
     private DataOutputStream toClient;
     private final NotificationRepo notificationRepo;
     private final ObjectMapper mapper;
+    private DatabaseConnection  connection;
 
-    public NotificationController(){
-        notificationRepo = new NotificationRepo();
+    public NotificationController(DatabaseConnection connection){
+        this.connection = connection;
+        notificationRepo = new NotificationRepo(connection);
         mapper=new ObjectMapper();
     }
 
@@ -31,11 +36,16 @@ public class NotificationController {
         this.toClient=toClient;
         String[] requestArray = request.split("/");
         int receiver = parseInt(requestArray[2]);
+        String notificationType = requestArray[3];
+        System.out.println("Nageze aho switch itangira");
         switch (requestArray[1]) {
+
+            case "create" -> System.out.println("Let's create");
             case "getAll" -> getAllNotifications(receiver);
             case "getUnread" -> getByViewStatusNotifications("unread", receiver);
             default -> sendResponse("Please specify your request (Be serious!)");
         }
+        System.out.println("Narenze Switch");
     }
 
     private void insertNotificationsToList(List<Notification> notifications, ResultSet resultSet) {
@@ -64,12 +74,15 @@ public class NotificationController {
     }
 
     public void createNotification(int receiver, String notification_type){
+        System.out.println("Nageze muri filterRequest");
         Notification notification = new Notification();
         Date date = Calendar.getInstance().getTime();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String strDate = dateFormat.format(date);
         notification.setSentDate(strDate);
         notification.setReceiver(receiver);
+        // ================================ added ======================
+//        notification.setType(notification_type);
 
 
         switch (notification_type) {

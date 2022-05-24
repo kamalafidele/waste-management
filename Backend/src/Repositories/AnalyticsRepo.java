@@ -8,8 +8,8 @@ import java.time.format.DateTimeFormatter;
 
 public class AnalyticsRepo {
     DatabaseConnection database;
-    public AnalyticsRepo(){
-        database = new DatabaseConnection();
+    public AnalyticsRepo(DatabaseConnection database){
+        this.database = database;
     }
 
     public String districtAnalytics(String period){

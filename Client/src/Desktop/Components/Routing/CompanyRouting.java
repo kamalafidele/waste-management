@@ -4,7 +4,6 @@ import Desktop.Components.Registration;
 import Desktop.Components.CreateNotification;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -39,10 +38,10 @@ public class CompanyRouting extends JFrame{
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  CompanyRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
-        this.fromServer = fromServer;
-        this.toServer = toServer;
-        registerUser.setStreams(toServer,fromServer);
+    public  CompanyRouting() throws IOException {
+//        this.fromServer = fromServer;
+//        this.toServer = toServer;
+//        registerUser.setStreams(toServer,fromServer);
 
         setTitle("Company Board");
         setSize(1366,768);
@@ -99,7 +98,7 @@ public class CompanyRouting extends JFrame{
         Analytics.setIcon((analyticsImg));
         Analytics.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Analytics);
-        JMenu RegisterEmployee = new JMenu("Register Employee");
+        JMenu RegisterEmployee = new JMenu("Employees");
         RegisterEmployee.addMenuListener(listenerHandler);
         RegisterEmployee.setIcon(addAdminImg);
         RegisterEmployee.setFont(new Font("Inter", Font.PLAIN, 16));
@@ -151,9 +150,9 @@ public class CompanyRouting extends JFrame{
     }
     
 
-//    public static void main(final String args[]) throws IOException {
-//        new CompanyRouting();
-//    }
+    public static void main(final String args[]) throws IOException {
+        new CompanyRouting();
+    }
 
     public  void filter(String chosen){
         switch (chosen) {
@@ -185,7 +184,6 @@ public class CompanyRouting extends JFrame{
                 break;
             case "Notifications":
                 registerUser.setVisible(false);
-                new CreateNotification();
                 break;
             default:
                 System.out.println();

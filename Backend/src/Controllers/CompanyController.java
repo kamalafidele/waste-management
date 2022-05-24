@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Models.Company;
 import Repositories.CompanyRepo;
 import Repositories.WalletsRepoHandler;
@@ -19,12 +20,14 @@ public class CompanyController {
     private ObjectMapper mapper;
     AnalyticsController analyticsController;
     CustomerInvoicesRepo customerInvoice;
+    private DatabaseConnection connection;
 
-    public CompanyController(){
-        companyRepo=new CompanyRepo();
-        analyticsController=new AnalyticsController();
-        customerInvoice = new CustomerInvoicesRepo();
-        mapper=new ObjectMapper();
+    public CompanyController(DatabaseConnection connection){
+        this.connection = connection;
+        companyRepo=new CompanyRepo(connection);
+        analyticsController=new AnalyticsController(connection);
+        customerInvoice = new CustomerInvoicesRepo(connection);
+        mapper = new ObjectMapper();
     }
 
     // THIS METHOD DETERMINES WHAT OPERATION REQUESTED BY CLIENT
@@ -49,28 +52,29 @@ public class CompanyController {
             case "analytics":
                 analyticsController.filterRequest(request, toClient);
                 break;
-
+            case "getCompaniesByDistrict":
+                getCompaniesByDistrict(Long.valueOf(request.split("/")[2]));
             default:
                 sendResponse("Please specify your request");
               break;
         }
     }
 
-    public void getCompany(long companyId){
-       ResultSet resultSet=companyRepo.findById(companyId);
-       Company company= extractCompany(resultSet);
+    public void getCompany(long companyId) {
+       ResultSet resultSet = companyRepo.findById(companyId);
+       Company company = extractCompany(resultSet);
        try {
            sendResponse(mapper.writeValueAsString(company));
        } catch (Exception exception){}
     }
 
     public void getCompanies() {
-        List<Company> companies= new ArrayList<>();
+        List<Company> companies = new ArrayList<>();
         ResultSet resultSet = companyRepo.findAll();
         try{
 
             while(resultSet.next()) {
-                Company company= new Company(resultSet.getLong(1),resultSet.getString(2),resultSet.getString(3),
+                Company company = new Company(resultSet.getLong(1),resultSet.getString(2),resultSet.getString(3),
                 resultSet.getLong(4),resultSet.getLong(5));
                 companies.add(company);
             }
@@ -82,12 +86,29 @@ public class CompanyController {
 
     public void createContract (String request) {
         System.out.println(request.split("-")[0]+" "+request.split("-")[1]);
-        int districtId = Integer.parseInt(request.split("-")[0]);
-        int companyId = Integer.parseInt(request.split("-")[1]);
+        Long districtId = Long.valueOf(request.split("-")[0]);
+        Long companyId = Long.valueOf(request.split("-")[1]);
         if(companyRepo.createContract(districtId,companyId))
           sendResponse("Contract created successfully");
         else
           sendResponse("Creating contract failed! Try again");
+    }
+
+    public void getCompaniesByDistrict(Long districtId) {
+        ResultSet resultSet = companyRepo.findCompanyByDistrict(districtId);
+        List<Company> companies = new ArrayList<>();
+
+        try{
+            while(resultSet.next()) {
+                Company company = new Company(resultSet.getLong(4),resultSet.getString(5),resultSet.getString(7),
+                        resultSet.getLong(6),resultSet.getLong(8));
+                companies.add(company);
+            }
+
+            sendResponse(mapper.writeValueAsString(companies));
+
+        }catch( IOException | SQLException exception ) {}
+
     }
 
     public void sendResponse( String response ) {
@@ -98,10 +119,10 @@ public class CompanyController {
         }
     }
 
-    public Company extractCompany(ResultSet resultSet){
+    public Company extractCompany(ResultSet resultSet) {
         Company company = new Company();
         try{
-            while(resultSet.next()){
+            while(resultSet.next()) {
                 company.setId(resultSet.getLong(1));
                 company.setName(resultSet.getString(2));
                 company.setEmail(resultSet.getString(3));

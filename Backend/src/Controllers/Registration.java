@@ -1,5 +1,6 @@
 package Controllers;
 
+import Config.DatabaseConnection;
 import Models.Company;
 import Models.District;
 import Models.User;
@@ -14,18 +15,27 @@ import java.sql.ResultSet;
 
 public class Registration {
     private DataOutputStream toClient;
-    private CompanyRepo companyRepo = new CompanyRepo();
-    private DistrictRepo districtRepo = new DistrictRepo();
+    private DatabaseConnection connection;
+    private CompanyRepo companyRepo;
+    private DistrictRepo districtRepo;
     private ObjectMapper mapper = new ObjectMapper();
-    private WalletsRepoHandler walletRepo = new WalletsRepoHandler();
-    private UserRepo userRepo = new UserRepo();
+    private WalletsRepoHandler walletRepo;
+    private UserRepo userRepo;
+
+    public Registration(DatabaseConnection connection) {
+        this.connection = connection;
+        this.districtRepo = new DistrictRepo(connection);
+        this.companyRepo = new CompanyRepo(connection);
+        this.walletRepo = new WalletsRepoHandler(connection);
+        this.userRepo = new UserRepo(connection);
+    }
 
     public void filterRequest( String request, DataOutputStream toClient ) throws Exception {
         this.toClient = toClient;
 
         switch (request.split("/")[1]) {
             case "register_company":
-                registerCompany(request.split("/")[2]);
+                registerCompany(request.split("/")[2], Long.valueOf(request.split("/")[3]));
                 break;
             case "register_district":
                 registerDistrict(request.split("/")[2]);
@@ -39,13 +49,18 @@ public class Registration {
         }
     }
 
-    public void registerCompany(String data){
+    public void registerCompany(String data, Long districtId) {
         try {
-            Company company = mapper.readValue(data, Company.class);
-            company.setWalletId(handleWalletIssues());
 
-            if(companyRepo.save(company))
+            Company company = mapper.readValue(data, Company.class);
+            Long walletId = handleWalletIssues();
+            company.setWalletId(walletId);
+
+            if(companyRepo.save(company)) {
+                Long companiesCount = handleCompanyIssues();
+                companyRepo.createContract(districtId,companiesCount);
                 sendResponse("Company registered successfully");
+            }
 
             sendResponse("Registering company failed! Try again");
         } catch (Exception exception) {
@@ -89,9 +104,26 @@ public class Registration {
         try {
             walletRepo.addWallet();
             ResultSet resultSet = walletRepo.findWalletsCount();
-             walletCount = resultSet.getLong("totalWallets");
-        }catch (Exception exception) {}
+            while(resultSet.next()){
+                walletCount = resultSet.getLong("totalWallets");
+            }
+
+        }catch (Exception exception) {
+            exception.printStackTrace();
+        }
 
         return walletCount;
+    }
+
+    public Long handleCompanyIssues(){
+        Long companyCount = 0L;
+        try {
+            ResultSet resultSet = companyRepo.findCompaniesCount();
+            while(resultSet.next()){
+                companyCount = resultSet.getLong("totalWallets");
+            }
+        } catch (Exception exception) {}
+
+        return companyCount;
     }
 }
