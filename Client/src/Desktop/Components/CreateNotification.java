@@ -130,6 +130,7 @@ public class CreateNotification extends JFrame {
 
         buttonPanel = new JPanel();
         saveButton = new JButton("Save");
+        saveButton.addActionListener(new saveNotification());
         closeButton = new JButton("Close");
 
         buttonPanel.add(saveButton);
@@ -166,6 +167,7 @@ public class CreateNotification extends JFrame {
                     notificationHandler.setReceiver(1);
                     try {
                         sendRequest(mapper.writeValueAsString(notificationHandler));
+                        System.out.println(mapper.writeValueAsString(notificationHandler));
                         String response = fromServer.readUTF();
                         System.out.println(response);
 
