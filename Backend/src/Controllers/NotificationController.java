@@ -3,7 +3,6 @@ import Config.DatabaseConnection;
 import Models.*;
 import Repositories.NotificationRepo;
 
-//    ======================== JABES =================
 
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -35,8 +34,11 @@ public class NotificationController {
     public void filterRequest(String request, DataOutputStream toClient) {
         this.toClient=toClient;
         String[] requestArray = request.split("/");
-        int receiver = parseInt(requestArray[2]);
+        int receiver = Integer.parseInt(requestArray[2]);
+        String notificationType = requestArray[3];
         switch (requestArray[1]) {
+
+            case "create" -> createNotification(receiver, notificationType);
             case "getAll" -> getAllNotifications(receiver);
             case "getUnread" -> getByViewStatusNotifications("unread", receiver);
             default -> sendResponse("Please specify your request (Be serious!)");
@@ -85,27 +87,27 @@ public class NotificationController {
                 notification.setContent("Hello! We are going to collect garbage after three days");
                 notification.setTitle("Providing Service Soon");
             }
-            case "providedServiceNotification" -> {
+            case "Provided Service Notification" -> {
                 notification.setType(4);
                 notification.setContent("Hello! Your garbage was collected today");
                 notification.setTitle("Service Provided");
             }
-            case "paymentDueNotification" -> {
+            case "Payment Due Notification" -> {
                 notification.setType(5);
                 notification.setContent("Hello! Three days remaining inorder to pay for garbage collection");
                 notification.setTitle("Due Payment");
             }
-            case "paymentWarningNotification" -> {
+            case "Payment Warning Notification" -> {
                 notification.setType(3);
                 notification.setContent("Hello! It's been a long time since you paid your garbage collection. If any further delay charges may apply");
                 notification.setTitle("Payment Warning");
             }
-            case "paymentSuccessfulNotification" -> {
+            case "Payment Successful Notification" -> {
                 notification.setType(2);
                 notification.setContent("Hello! Payment successful");
                 notification.setTitle("Successful Payment");
             }
-            case "reportAvailableNotification" -> {
+            case "Report Available Notification" -> {
                 notification.setType(6);
                 notification.setContent("Hello! View last months report(analytics)");
                 notification.setTitle("Report Available");
