@@ -35,9 +35,11 @@ public class CitizenRouting extends JFrame{
     StepOneDeposit step1ToDeposit =  new StepOneDeposit();
     StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
     viewNotifications viewNoti;
+
     public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
         this.toServer = toServer;
         this.fromServer = fromServer;
+
         setTitle("Citizen Board");
         setSize(1366,768);
         setLayout(null);
@@ -176,9 +178,9 @@ public class CitizenRouting extends JFrame{
     }
 
 
-    public static void main(final String args[]) throws IOException {
-//        new CitizenRouting();
-    }
+//    public static void main(final String args[]) throws IOException {
+////        new CitizenRouting();
+//    }
 
     public  void filter(String chosen){
         switch (chosen) {
