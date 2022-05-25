@@ -4,19 +4,103 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/TransactionHandler.java" afterDir="false" />
+    <list default="true" id="82fbe7d3-2f8f-4474-92b6-eb4981dd6286" name="Changes" comment="ad">
+      <change afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Repositories/customerInvoicesRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/ChooseServiceToPay.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/ChooseServiceToPayComp.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepOneDeposit$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepOneDeposit$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepOneDeposit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepTwoDeposit$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepTwoDeposit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/ChooseServiceToPay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/ChooseServiceToPayComp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/StepOneDeposit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/StepTwoDeposit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/autogit.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/autogit.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-10-1-51.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-10-1-51.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-10-32-9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-10-32-9.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-12-29-8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-12-29-8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-13-39-23.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-13-39-23.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-13-8-57.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-13-8-57.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-14-39-56.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-14-39-56.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-14-9-41.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-14-9-41.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-15-10-15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-14-2-2022-15-10-15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-12-10-6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-12-10-6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-12-40-23.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-12-40-23.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-13-10-46.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-13-10-46.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-13-41-5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-13-41-5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-14-11-30.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-15-2-2022-14-11-30.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-5-49-21.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-5-49-21.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-6-19-41.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-6-19-41.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-6-50-2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.autogit/logs/log-16-2-2022-6-50-2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/libraries/jackson_all_1_9_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/jackson_all_1_9_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/libraries/jackson_all_1_9_91.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/jackson_all_1_9_91.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/libraries/jackson_all_1_9_9__2_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/jackson_all_1_9_9__2_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector_java_8_0_261.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector_java_8_0_261.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector_java_8_0_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/libraries/mysql_connector_java_8_0_28.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/EmployeesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/EmployeesController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/NotificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Controllers/NotificationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/EmployeesRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/Models/EmployeesRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/out/production/Backend/ThreadHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/AnalyticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/AnalyticsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/CustomerInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/CustomerInvoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/NotificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/NotificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/ServiceConfirmationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/ServiceConfirmationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/ShiftsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/ShiftsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/WalletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/CustomerInvoices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/CustomerInvoices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/ServiceConfirmation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/ServiceConfirmation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/Shifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Models/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Models/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/AnalyticsRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/AnalyticsRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/CustomerInvoicesRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/CustomerInvoicesRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/LocationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/LocationRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/ServiceConfirmationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/ServiceConfirmationRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/ShiftsRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/ShiftsRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/WalletsRepoHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/WalletsRepoHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/utils/TokenGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/utils/TokenGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jackson_all_1_9_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jackson_all_1_9_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Login$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification$saveNotification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/CreateNotification$saveNotification.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Login.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting$MenuListenerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Registration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Registration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Shifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Shifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/CitizenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/CitizenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/CompanyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/CompanyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/CustomerInvoicesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/CustomerInvoicesHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/HouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/HouseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/NotificationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/NotificationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/ServiceConfirmationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/ServiceConfirmationHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/ShiftsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/ShiftsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataHandlers/WalletHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataHandlers/WalletHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/CreateNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/CreateNotification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/CitizenRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/CitizenRouting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/SystemAdminsRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/SystemAdminsRouting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +121,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -72,9 +157,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Application" />
+    <configuration name="CitizenRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.CitizenRouting" />
       <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Desktop.Components.Routing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,6 +196,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CreateNotification" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DistrictRouting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Desktop.Components.Routing.DistrictRouting" />
       <module name="Client" />
@@ -118,26 +214,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="viewNotifications" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Desktop.Components.viewNotifications" />
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Desktop.Components.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Application" />
+      <item itemvalue="Application.CitizenRouting" />
+      <item itemvalue="Application.CreateNotification" />
+      <item itemvalue="Application.ConfirmerRouting" />
       <item itemvalue="Application.App" />
       <item itemvalue="Application.DistrictRouting" />
       <item itemvalue="Application.CompanyRouting" />
-      <item itemvalue="Application.ConfirmerRouting" />
+      <item itemvalue="Application.viewNotifications" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.ConfirmerRouting" />
         <item itemvalue="Application.CompanyRouting" />
-        <item itemvalue="Application.DistrictRouting" />
+        <item itemvalue="Application.CitizenRouting" />
+        <item itemvalue="Application.CompanyRouting" />
+        <item itemvalue="Application.CitizenRouting" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2db0e48f-54dd-4896-9c8e-f8452711b1c3" name="Changes" comment="" />
+      <changelist id="82fbe7d3-2f8f-4474-92b6-eb4981dd6286" name="Changes" comment="ad" />
       <created>1647347321755</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -188,7 +300,19 @@
       <workItem from="1653418067593" duration="1043000" />
       <workItem from="1653419143809" duration="733000" />
       <workItem from="1653419953238" duration="1781000" />
+      <workItem from="1653329966899" duration="5574000" />
+      <workItem from="1653384325154" duration="795000" />
+      <workItem from="1653386090325" duration="3879000" />
+      <workItem from="1653415498179" duration="2167000" />
     </task>
+    <task id="LOCAL-00001" summary="Integrated Login">
+      <created>1653412465849</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653412465849</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +332,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ad" />
-    <option name="LAST_COMMIT_MESSAGE" value="ad" />
+    <MESSAGE value="Integrated Login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Integrated Login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -224,7 +349,7 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Desktop/Shared/RoundBtn.java</url>
+          <url>file://$PROJECT_DIR$/src/Desktop/Screens/RoundBtn.java</url>
           <line>14</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>

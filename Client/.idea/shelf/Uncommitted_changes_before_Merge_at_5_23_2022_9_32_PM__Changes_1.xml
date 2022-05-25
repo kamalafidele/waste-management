@@ -1,0 +1,29 @@
+<changelist name="Uncommitted_changes_before_Merge_at_5_23_2022_9_32_PM_[Changes]1" date="1653334420603" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_23_2022_9_32_PM_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Merge at 5/23/2022 9:32 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Client/Desktop/Components/CreateNotification.class" />
+    <option name="AFTER_PATH" value="out/production/Client/Desktop/Components/CreateNotification.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_23_2022_9_32_PM_[Changes]1/CreateNotification.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" />
+    <option name="AFTER_PATH" value="out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_23_2022_9_32_PM_[Changes]1/SystemAdminsRouting.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Client/Desktop/Components/Login$1.class" />
+    <option name="AFTER_PATH" value="out/production/Client/Desktop/Components/Login$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_23_2022_9_32_PM_[Changes]1/Login$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" />
+    <option name="AFTER_PATH" value="out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_23_2022_9_32_PM_[Changes]1/SystemAdminsRouting$MenuListenerHandler.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Client/Desktop/Components/Login.class" />
+    <option name="AFTER_PATH" value="out/production/Client/Desktop/Components/Login.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_23_2022_9_32_PM_[Changes]1/Login.class" />
+  </binary>
+</changelist>

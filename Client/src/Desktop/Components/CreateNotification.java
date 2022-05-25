@@ -130,6 +130,7 @@ public class CreateNotification extends JFrame {
 
         buttonPanel = new JPanel();
         saveButton = new JButton("Save");
+        saveButton.addActionListener(new saveNotification());
         closeButton = new JButton("Close");
 
         buttonPanel.add(saveButton);
@@ -165,7 +166,10 @@ public class CreateNotification extends JFrame {
                     notificationHandler.setSentDate(date);
                     notificationHandler.setReceiver(1);
                     try {
-                        sendRequest(mapper.writeValueAsString(notificationHandler));
+                        sendRequest("notification/create/" + notificationHandler.getReceiver() + "/" +
+                                notificationHandler.getType());
+//                        System.out.println("notification/create/" + notificationHandler.getReceiver() + "/" +
+//                                notificationHandler.getType());
                         String response = fromServer.readUTF();
                         System.out.println(response);
 
@@ -174,6 +178,7 @@ public class CreateNotification extends JFrame {
                     }
                 }
             }
+
         }
     }
     public void sendRequest( String request ){

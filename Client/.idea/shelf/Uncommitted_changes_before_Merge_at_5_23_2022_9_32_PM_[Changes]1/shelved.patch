@@ -1,0 +1,90 @@
+Index: src/Desktop/Components/Routing/SystemAdminsRouting.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Desktop.Components.Routing;\r\nimport Desktop.Components.Registration;\r\nimport Desktop.Components.testPanel;\r\nimport Desktop.Components.testPanel2;\r\n\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.awt.event.KeyEvent;\r\nimport java.awt.image.BufferedImage;\r\nimport java.io.DataInputStream;\r\nimport java.io.DataOutputStream;\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport javax.imageio.ImageIO;\r\nimport javax.swing.*;\r\nimport javax.swing.border.Border;\r\nimport javax.swing.border.EmptyBorder;\r\nimport javax.swing.event.ChangeEvent;\r\nimport javax.swing.event.ChangeListener;\r\nimport javax.swing.event.MenuEvent;\r\nimport javax.swing.event.MenuListener;\r\n\r\npublic class SystemAdminsRouting extends JFrame{\r\n    ImageIcon analyticsImg,dashboardImg,TransactionsImg,NotificationsImg,DistrictsImg,addAdminImg;\r\n    BufferedImage dashboard,analytics,notifications,Districts,addAdmin,transactions,logo,userAvatarImg;\r\n    private  JPanel SideBar = new JPanel();\r\n\r\n    private DataOutputStream toServer;\r\n    private DataInputStream fromServer;\r\n\r\n    //PANELS\r\n    testPanel panel = new testPanel();\r\n    testPanel2 panel2=new testPanel2();\r\n    Registration registerDistrict = new Registration(true,false, false);\r\n    Registration registerUser = new Registration(false,false,true);\r\n\r\n    MenuListenerHandler listenerHandler = new MenuListenerHandler();\r\n\r\n    public  SystemAdminsRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {\r\n        this.toServer = toServer;\r\n        this.fromServer = fromServer;\r\n        registerUser.setStreams(toServer,fromServer);\r\n        registerDistrict.setStreams(toServer,fromServer);\r\n\r\n        setTitle(\"Company Board\");\r\n        setSize(1366,768);\r\n        setLayout(null);\r\n        SideBar.setVisible(true);\r\n        SideBar.setSize(200,820);\r\n        SideBar.setBackground(Color.decode(\"#EAEDF3\"));\r\n        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n\r\n        panel.setVisible(true);\r\n\r\n        add(SideBar);\r\n        add(panel);\r\n        add(panel2);\r\n        add(registerDistrict);\r\n        add(registerUser);\r\n\r\n        SidebarDesign();\r\n        setVisible(true);\r\n    }\r\n\r\n    public void SidebarDesign() throws IOException {\r\n        JMenuBar menuBar = new JMenuBar();\r\n        analytics = ImageIO.read(new File(\"src/Desktop/Images/bar-chart-line.png\"));\r\n        dashboard = ImageIO.read(new File(\"src/Desktop/Images/dashboard-line.png\"));\r\n        transactions=ImageIO.read(new File(\"src/Desktop/Images/exchange-funds-line.png\"));\r\n        notifications=ImageIO.read(new File(\"src/Desktop/Images/notification-2-line.png\"));\r\n        addAdmin=ImageIO.read(new File(\"src/Desktop/Images/user-add-line.png\"));\r\n        Districts=ImageIO.read(new File(\"src/Desktop/Images/team-fill.png\"));\r\n\r\n\r\n        dashboardImg = new ImageIcon(dashboard.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));\r\n        NotificationsImg = new ImageIcon(notifications.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));\r\n        addAdminImg = new ImageIcon(addAdmin.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));\r\n        DistrictsImg = new ImageIcon(Districts.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));\r\n        analyticsImg = new ImageIcon(analytics.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));\r\n        TransactionsImg = new ImageIcon(transactions.getScaledInstance(22,22,BufferedImage.SCALE_DEFAULT));\r\n        menuBar.setLayout(new GridLayout(0,1));\r\n        menuBar.setPreferredSize(new Dimension(180,350));\r\n        menuBar.setBackground(Color.decode(\"#EAEDF3\"));\r\n        JMenu Dashboard = new JMenu(\"Dashboard\");\r\n        Dashboard.setIcon(dashboardImg);\r\n        Dashboard.setBackground(Color.orange);\r\n        Dashboard.setFont(new Font(\"Inter\", Font.PLAIN, 16));\r\n        Dashboard.addMenuListener(listenerHandler);\r\n        menuBar.add(Dashboard);\r\n        JMenu Districts = new JMenu(\"Districts\");\r\n        Districts.setIcon(DistrictsImg);\r\n        Districts.addMenuListener(listenerHandler);\r\n        Districts.setFont(new Font(\"Inter\", Font.PLAIN, 16));\r\n        menuBar.add(Districts);\r\n        JMenu Analytics = new JMenu(\"Analytics\");\r\n        Analytics.addMenuListener(listenerHandler);\r\n        Analytics.setIcon((analyticsImg));\r\n        Analytics.setFont(new Font(\"Inter\", Font.PLAIN, 16));\r\n        menuBar.add(Analytics);\r\n        JMenu RegisterAdmin = new JMenu(\"Register Admin\");\r\n        RegisterAdmin.addMenuListener(listenerHandler);\r\n        RegisterAdmin.setIcon(addAdminImg);\r\n        RegisterAdmin.setFont(new Font(\"Inter\", Font.PLAIN, 16));\r\n        menuBar.add(RegisterAdmin);\r\n        JMenu Transactions = new JMenu(\"Transactions\");\r\n        Transactions.addMenuListener(listenerHandler);\r\n        Transactions.setIcon(TransactionsImg);\r\n        Transactions.setFont(new Font(\"Inter\", Font.PLAIN, 16));\r\n        menuBar.add(Transactions);\r\n\r\n        JMenu notification = new JMenu(\"Notifications\");\r\n        notification.addMenuListener(listenerHandler);\r\n        notification.setIcon(NotificationsImg);\r\n        notification.setFont(new Font(\"Inter\", Font.PLAIN, 16));\r\n        menuBar.add(notification);\r\n        menuBar.revalidate();\r\n        logo=ImageIO.read(new File(\"src/Desktop/Images/logo.png\"));\r\n        userAvatarImg=ImageIO.read(new File(\"src/Desktop/Images/user-avatar.png\"));\r\n        JLabel logoImg=new JLabel(new ImageIcon(logo.getScaledInstance(100,70,BufferedImage.SCALE_DEFAULT)));\r\n        logoImg.setLayout(new GridLayout(1,1));\r\n        JLabel userAvatar=new JLabel(new ImageIcon(userAvatarImg.getScaledInstance(90,90,BufferedImage.SCALE_DEFAULT)));\r\n        JPanel credentials=new JPanel();\r\n        credentials.setLayout(new GridLayout(2,1));\r\n        JLabel userName=new JLabel(\"NTAKIRUTIMANA\");\r\n        userName.setFont(new Font(\"Inter\", Font.BOLD, 18));\r\n        JLabel userRole=new JLabel(\"           System Admin\");\r\n\r\n        JPanel logoutBtn=new JPanel();\r\n        JButton logout = new JButton(\"Logout\");\r\n        logout.setBackground(Color.decode(\"#557DF8\"));\r\n        logout.setBorder(new EmptyBorder(new Insets(12,40,12,40)));\r\n        logout.setFont(new Font(\"Inter\", Font.PLAIN, 16));\r\n        logout.setForeground(Color.WHITE);\r\n        logout.setFocusPainted(false);\r\n        logoutBtn.setBorder(new EmptyBorder(new Insets(60,0,0,0)));\r\n        logoutBtn.add(logout);\r\n        credentials.add(logoImg);\r\n        credentials.add(userAvatar);\r\n        JPanel credential2=new JPanel();\r\n        credential2.setBackground(Color.decode(\"#EAEDF3\"));\r\n        credentials.setBackground(Color.decode(\"#EAEDF3\"));\r\n        credential2.setLayout(new GridLayout(2,1));\r\n        credential2.add(userName);\r\n        credential2.add(userRole);\r\n        SideBar.add(credentials);\r\n        SideBar.add(credential2);\r\n        SideBar.add(menuBar);\r\n        SideBar.add(logoutBtn);\r\n    }\r\n\r\n    public  void filter(String chosen){\r\n        switch (chosen) {\r\n            case \"Analytics\":\r\n                panel2.setVisible(false);\r\n                registerUser.setVisible(false);\r\n                registerDistrict.setVisible(false);\r\n                panel.setVisible(true);\r\n                break;\r\n            case \"Transactions\":\r\n                registerUser.setVisible(false);\r\n                registerDistrict.setVisible(false);\r\n                break;\r\n            case \"Register Admin\":\r\n                panel.setVisible(false);\r\n                panel2.setVisible(false);\r\n                registerDistrict.setVisible(false);\r\n                registerUser.setVisible(true);\r\n                break;\r\n            case \"Dashboard\":\r\n                registerUser.setVisible(false);\r\n                registerDistrict.setVisible(false);\r\n                break;\r\n            case \"Districts\":\r\n                panel.setVisible(false);\r\n                panel2.setVisible(false);\r\n                registerUser.setVisible(false);\r\n                registerDistrict.setVisible(true);\r\n                break;\r\n            case \"Notifications\":\r\n                registerUser.setVisible(false);\r\n                registerDistrict.setVisible(false);\r\n                break;\r\n            default:\r\n                System.out.println();\r\n                break;\r\n        }\r\n    }\r\n\r\n    class MenuListenerHandler implements MenuListener {\r\n        @Override\r\n        public void menuSelected(MenuEvent e) {\r\n\r\n            JMenu clickedMenu = (JMenu) e.getSource();\r\n            String menuText = clickedMenu.getText();\r\n            filter(menuText);\r\n        }\r\n\r\n        @Override\r\n        public void menuDeselected(MenuEvent e) {\r\n\r\n        }\r\n\r\n        @Override\r\n        public void menuCanceled(MenuEvent e) {\r\n\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Desktop/Components/Routing/SystemAdminsRouting.java b/src/Desktop/Components/Routing/SystemAdminsRouting.java
+--- a/src/Desktop/Components/Routing/SystemAdminsRouting.java	
++++ b/src/Desktop/Components/Routing/SystemAdminsRouting.java	
+@@ -1,5 +1,6 @@
+ package Desktop.Components.Routing;
+ import Desktop.Components.Registration;
++import Desktop.Components.TransactionsList;
+ import Desktop.Components.testPanel;
+ import Desktop.Components.testPanel2;
+ 
+@@ -32,6 +33,8 @@
+     //PANELS
+     testPanel panel = new testPanel();
+     testPanel2 panel2=new testPanel2();
++//    testPanel2 transactionPanel = new testPanel2();
++    TransactionsList transactionsList = new TransactionsList();
+     Registration registerDistrict = new Registration(true,false, false);
+     Registration registerUser = new Registration(false,false,true);
+ 
+@@ -58,6 +61,7 @@
+         add(panel2);
+         add(registerDistrict);
+         add(registerUser);
++        add(transactionsList);
+ 
+         SidebarDesign();
+         setVisible(true);
+@@ -155,31 +159,37 @@
+                 panel2.setVisible(false);
+                 registerUser.setVisible(false);
+                 registerDistrict.setVisible(false);
++                transactionsList.setVisible(false);
+                 panel.setVisible(true);
+                 break;
+             case "Transactions":
+                 registerUser.setVisible(false);
+                 registerDistrict.setVisible(false);
++                transactionsList.setVisible(true);
+                 break;
+             case "Register Admin":
+                 panel.setVisible(false);
+                 panel2.setVisible(false);
+                 registerDistrict.setVisible(false);
++                transactionsList.setVisible(false);
+                 registerUser.setVisible(true);
+                 break;
+             case "Dashboard":
+                 registerUser.setVisible(false);
+                 registerDistrict.setVisible(false);
++                transactionsList.setVisible(false);
+                 break;
+             case "Districts":
+                 panel.setVisible(false);
+                 panel2.setVisible(false);
+                 registerUser.setVisible(false);
++                transactionsList.setVisible(false);
+                 registerDistrict.setVisible(true);
+                 break;
+             case "Notifications":
+                 registerUser.setVisible(false);
+                 registerDistrict.setVisible(false);
++                transactionsList.setVisible(false);
+                 break;
+             default:
+                 System.out.println();
+Index: src/Desktop/Components/Login.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Desktop.Components;\r\n\r\nimport Desktop.Components.Routing.CitizenRouting;\r\nimport Desktop.Components.Routing.CompanyRouting;\r\nimport Desktop.Components.Routing.DistrictRouting;\r\nimport Desktop.Components.Routing.SystemAdminsRouting;\r\nimport Desktop.Shared.RoundBtn;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.io.DataInputStream;\r\nimport java.io.DataOutputStream;\r\n\r\npublic class Login extends JFrame {\r\n    private DataOutputStream toServer;\r\n    private DataInputStream fromServer;\r\n\r\n    Color dodgerBlue = new Color(52,143,235);\r\n\r\n    JButton loginBtn = new JButton(\"Login\");\r\n\r\n    public Login(DataOutputStream toServer, DataInputStream fromServer){\r\n        setTitle(\"LOGIN\");\r\n        setVisible(true);\r\n        setLayout(null);\r\n        setBackground(dodgerBlue);\r\n        setSize(1366,760);\r\n        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n        addComponents();\r\n    }\r\n\r\n    public void addComponents(){\r\n        loginBtn.setBackground(dodgerBlue);\r\n        loginBtn.setSize(100,80);\r\n        loginBtn.setBorder(new RoundBtn(10));\r\n\r\n        loginBtn.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                try {\r\n                    new SystemAdminsRouting(toServer,fromServer);\r\n                    dispose();\r\n                } catch (Exception exception) {}\r\n            }\r\n        });\r\n        add(loginBtn);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Desktop/Components/Login.java b/src/Desktop/Components/Login.java
+--- a/src/Desktop/Components/Login.java	
++++ b/src/Desktop/Components/Login.java	
+@@ -41,6 +41,7 @@
+             public void actionPerformed(ActionEvent e) {
+                 try {
+                     new SystemAdminsRouting(toServer,fromServer);
++//                    new CitizenRouting(toServer, fromServer);
+                     dispose();
+                 } catch (Exception exception) {}
+             }
