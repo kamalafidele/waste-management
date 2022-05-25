@@ -3,7 +3,7 @@ package Desktop.Components;
 
 import Desktop.Components.Routing.*;
 import Desktop.EventHandlers.ActionEventHandler;
-import Desktop.Screens.RoundBtn;
+
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -27,14 +27,16 @@ public class Login extends JFrame {
     private  JPanel rightPanel = new JPanel();
     private  static  JTextField myemail = new JTextField("Email");
     private  static  JPasswordField mypassword = new JPasswordField("Password");
-
+    Connection connection = null;
+    ResultSet rs;
     JLabel welcomeMsg = new JLabel("Welcome to WSMS");
     JLabel emailLabel = new JLabel("Email");
 
     JLabel passwordLabel = new JLabel("Password");
     JLabel errorMsg = new JLabel("Invalid email or password");
     JButton login = new JButton("Login");
-
+    int userId;
+    int userRole;
 
     Color dodgerBlue = new Color(52,143,235);
     Color lightGray = new Color(225, 227, 225);
@@ -64,10 +66,10 @@ public class Login extends JFrame {
 
         welcomeMsg.setForeground(dodgerBlue);
         welcomeMsg.setFont(new Font("Inter", Font.BOLD, 30));
-      mypassword.setText("");
-      myemail.setText("");
-      errorMsg.setForeground(Color.RED);
-      errorMsg.setVisible(false);
+       mypassword.setText("");
+       myemail.setText("");
+       errorMsg.setForeground(Color.RED);
+       errorMsg.setVisible(false);
         setLayout(new GridLayout(1,2));
         setVisible(true);
         this.setFont(new Font("Inter", Font.PLAIN, 18));
@@ -84,63 +86,67 @@ public class Login extends JFrame {
 
         leftPanel.add(picLabel);
     }
+    public void loginUser(){
+        String email = myemail.getText();
+        String password = mypassword.getText();
+        String username;
+
+        try {
+             connection =  DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/LGMxUJ3u44",
+                    "LGMxUJ3u44", "gAzBLwXOq8");
+
+            PreparedStatement st = connection
+                    .prepareStatement("SELECT * FROM `users` WHERE `email` =? AND `password` =?");
+            st.setString(1, email);
+            st.setString(2, password);
+             rs = st.executeQuery();
+
+            if (rs.next()) {
+                userId = rs.getInt("id");
+                username = rs.getString("name");
+                userRole = rs.getInt("role");
+                checkPanel(userRole);
+            } else {
+                errorMsg.setVisible(true);
+                myemail.setText("");
+                mypassword.setText("");
+            }
+        } catch (SQLException | IOException sqlException) {
+
+            sqlException.printStackTrace();
+        }
+    }
+ public void checkPanel(int userRole) throws IOException, SQLException {
+
+         if(userRole == 1){
+             setVisible(false);
+             new SystemAdminsRouting(toServer, fromServer);
+         }else if(userRole == 2) {
+             setVisible(false);
+             new ConfirmerRouting(toServer,fromServer);
+         }else if(userRole == 3){
+             setVisible(false);
+             new CitizenRouting(toServer,fromServer);
+         } else if(userRole == 4){
+             setVisible(false);
+             new CompanyRouting();
+         }else if(userRole == 5){
+             setVisible(false);
+             new DistrictRouting(toServer,fromServer);
+         }
+     }
+
 
     public void setRightPanelContent() {
         myemail.setSize(40,20);
         login.setSize(40,20);
-        login.setBorder(new RoundBtn(15));
         login.setBackground(dodgerBlue);
 
         //Add action listeners to buttons
         login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String email = myemail.getText();
-                String password = mypassword.getText();
-                int userId;
-                int userRole;
-                String username;
-                try {
-                    Connection connection =  DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/LGMxUJ3u44",
-                            "LGMxUJ3u44", "gAzBLwXOq8");
-
-                    PreparedStatement st = connection
-                            .prepareStatement("SELECT * FROM `users` WHERE `email` =? AND `password` =?");
-                    st.setString(1, email);
-                    st.setString(2, password);
-                    ResultSet rs = st.executeQuery();
-
-                    if (rs.next()) {
-                        userId = rs.getInt("id");
-                        username = rs.getString("name");
-                        userRole = rs.getInt("role");
-                        if(userRole == 1){
-                            setVisible(false);
-                            new SystemAdminsRouting(toServer, fromServer);
-                        }else if(userRole == 2) {
-                            setVisible(false);
-                            new ConfirmerRouting();
-                        }else if(userRole == 3){
-                            setVisible(false);
-                            new CitizenRouting();
-                        } else if(userRole == 4){
-                            setVisible(false);
-                            new CompanyRouting();
-                        }else if(userRole == 5){
-                            setVisible(false);
-                            new DistrictRouting(toServer,fromServer);
-                        }
-                    } else {
-                 errorMsg.setVisible(true);
-                 myemail.setText("");
-                 mypassword.setText("");
-                    }
-                } catch (SQLException sqlException) {
-
-                    sqlException.printStackTrace();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
+            loginUser();
             }
         });
         rightPanel.add(welcomeMsg);

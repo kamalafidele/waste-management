@@ -1,8 +1,10 @@
 package Desktop;
 import Desktop.Components.Login;
+
 import Desktop.Components.Registration;
 import Desktop.Screens.RegisterClient.RegisterClientIndex;
-import Desktop.Screens.RoundBtn;
+import Desktop.Shared.RoundBtn;
+
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -70,9 +72,9 @@ public class App extends JFrame {
 
         JLabel label = new JLabel("Welcome to WSMS");
         JLabel label1 = new JLabel("The best online waste and security management system in Rwanda");
-     JButton getStarted = new JButton("Get Started");
+      JButton getStarted = new JButton("Get Started");
 
-getStarted.addMouseListener(new MouseListener() {
+      getStarted.addMouseListener(new MouseListener() {
 
 
     @Override
@@ -103,6 +105,37 @@ getStarted.addMouseListener(new MouseListener() {
       getStarted.setBackground(dodgerBlue);
     }
 });
+      login.addMouseListener(new MouseListener() {
+
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                login.setCursor(new Cursor(Cursor.HAND_CURSOR));
+               login.setBackground(Color.LIGHT_GRAY);
+               login.setForeground(Color.BLACK);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                login.setForeground(Color.WHITE);
+               login.setBackground(dodgerBlue);
+            }
+        });
         getStarted.addActionListener(new ActionListener() {
                                                  @Override
                                                  public void actionPerformed (ActionEvent e){
@@ -125,7 +158,6 @@ getStarted.addMouseListener(new MouseListener() {
         label.setForeground(dodgerBlue);
 
         label.setFont(new Font(label.getFont().getName(),label.getFont().getStyle(), 60));
-        login.setBorder(new RoundBtn(15));
         login.setBackground(dodgerBlue);
 
         //Add action listeners to buttons
