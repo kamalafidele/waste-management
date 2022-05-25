@@ -191,7 +191,7 @@ public class CitizenRouting extends JFrame{
             case "choose service":
                 panel2.setVisible(false);
                 panel.setVisible(false);
-                step2ToDeposit.setVisible(true);
+                step1ToDeposit.setVisible(true);
                 break;
             case "Invoices":
                 System.out.println("Invoices clicled");
