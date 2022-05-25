@@ -34,7 +34,7 @@ public class CitizenRouting extends JFrame{
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
     StepOneDeposit step1ToDeposit =  new StepOneDeposit();
     StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
-    viewNotifications viewNoti;
+    viewNotifications viewNotifications;
 
     public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
         this.toServer = toServer;
@@ -61,12 +61,12 @@ public class CitizenRouting extends JFrame{
         panel2.add(analyticsPanel);
         // invoices panel
         panel2.add(invoicesPanel);
-        viewNoti =new viewNotifications(toServer, fromServer);
+        viewNotifications =new viewNotifications(toServer, fromServer);
 
 
         add(panel);
         add(panel2);
-        add(viewNoti);
+        add(viewNotifications);
         add(step1ToDeposit);
         add(step2ToDeposit);
 
@@ -187,23 +187,23 @@ public class CitizenRouting extends JFrame{
             case "Analytics":
                 panel2.setVisible(false);
                 panel.setVisible(true);
-                viewNoti.setVisible(false);
+                viewNotifications.setVisible(false);
                 break;
             case "Transactions":
-                viewNoti.setVisible(false);
+                viewNotifications.setVisible(false);
                 break;
             case "Dashboard":
                 panel.setVisible(false);
                 panel2.setVisible(true);
-                viewNoti.setVisible(false);
+                viewNotifications.setVisible(false);
                 break;
             case "Debts":
                 System.out.println("Debts clicked");
-                viewNoti.setVisible(false);
+                viewNotifications.setVisible(false);
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
-                viewNoti.setVisible(true);
+                viewNotifications.setVisible(true);
                 panel.setVisible(false);
                 panel2.setVisible(false);
                 break;

@@ -1,11 +1,17 @@
 package Desktop.Components;
 
+import DataHandlers.NotificationHandler;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.type.TypeReference;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
@@ -13,11 +19,13 @@ public class viewNotifications extends JPanel{
 
 
     DataOutputStream toServer;
-    DataInputStream fromServer;
+    static DataInputStream fromServer;
+    static ObjectMapper mapper;
 
-    public viewNotifications(DataOutputStream toServer, DataInputStream fromServer) {
+    public viewNotifications(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
         this.toServer = toServer;
         this.fromServer = fromServer;
+        mapper=new ObjectMapper();
         setVisible(false);
         setBounds(200,0,1166,768);
         setBackground(Color.white);
@@ -26,9 +34,7 @@ public class viewNotifications extends JPanel{
         // create a main panel
         JPanel mainPanel = new JPanel();
         displayNotifications();
-        wasteCollectionNotification(mainPanel);
-        createPaymentNotification(mainPanel);
-        createAlertNotification(mainPanel);
+        createNotification(mainPanel);
 
         Color main_bgc = new Color(247, 252, 255);
         mainPanel.setBackground(main_bgc);
@@ -113,6 +119,7 @@ public class viewNotifications extends JPanel{
                 exception.printStackTrace();
             }
     }
+
     public void sendRequest( String request ){
         try{
             toServer.writeUTF( request );
@@ -121,350 +128,442 @@ public class viewNotifications extends JPanel{
         }
     }
 
-    private static void createAlertNotification(JPanel panel) {
+    private static void createNotification(JPanel panel) throws IOException {
+        String response = fromServer.readUTF();
+        ArrayList<NotificationHandler> notifications=mapper.readValue(response,new TypeReference<ArrayList<NotificationHandler>>(){});
+        Iterator<NotificationHandler> notificationIterator= notifications.iterator();
 
-        Font  f3  = new Font(Font.DIALOG,  Font.BOLD, 18);
-        Font  f1  = new Font(Font.DIALOG, Font.PLAIN,  15);
-        Color bgc = new Color(224, 121, 146);
+        while (notificationIterator.hasNext()){
 
+            NotificationHandler handler=notificationIterator.next();
+            System.out.println(handler.getNotificationId()+ "~" + handler.getContent());
+            String notificationTitle = handler.getTitle();
+            String Content = handler.getContent();
+            String notificationType = handler.getType();
+            String notificationDate = handler.getSentDate().toString();
 
-        JLabel notificationHeading = new JLabel("Notification title");
-        notificationHeading.setFont(f3);
-        JLabel notificationContent = new JLabel("Hello! You haven't paid for the waste collection for three months. Any delay can lead to charges. ");
-        notificationContent.setFont(f1);
-        Box msg = Box.createVerticalBox();
-        msg.add(notificationHeading);
-        msg.add(notificationContent);
+            Font  f3  = new Font(Font.DIALOG,  Font.BOLD, 18);
+            Font  f1  = new Font(Font.DIALOG, Font.PLAIN,  15);
+            Color yellow = new Color(255,248,203);
+            Color green = new Color(205,248,203);
+            Color red = new Color(224, 121, 146);
 
-        JLabel iconImage = new JLabel();
-        iconImage.setIcon(new ImageIcon("src/Desktop/Images/danger.png"));// your image here
-        JPanel iconPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 2));
-        iconPanel.add(iconImage);
-        iconPanel.setBackground(bgc);
-        iconPanel.setOpaque(true);
+            JButton deleteBtn = new JButton("delete");
+            deleteBtn.setBackground(new Color(214, 35, 78));
+            deleteBtn.setIcon(new ImageIcon("src/Desktop/Images/trash.png"));
+            deleteBtn.setForeground(Color.white);
 
-        JPanel contentPanel = new JPanel();
-        contentPanel.add(msg);
-        contentPanel.setBackground(bgc);
-        contentPanel.setOpaque(true);
+            if(notificationType == "ServiceNotification"){
+                JLabel notificationHeading = new JLabel(notificationTitle);
+                notificationHeading.setFont(f3);
+                JLabel notificationContent = new JLabel(Content);
+                notificationContent.setFont(f1);
+                Box msg = Box.createVerticalBox();
+                msg.add(notificationHeading);
+                msg.add(notificationContent);
 
+                JLabel iconImage = new JLabel();
+                iconImage.setIcon(new ImageIcon("src/Desktop/Images/danger.png"));// your image here
+                JPanel iconPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 2));
+                iconPanel.add(iconImage);
+                iconPanel.setBackground(yellow);
+                iconPanel.setOpaque(true);
 
-//        JButton checkBtn = new JButton("check");
-//        checkBtn.setBackground(new Color(41, 88, 153));
-//        checkBtn.setIcon(new ImageIcon("assets\\eye1.png"));// your image here
-//        checkBtn.setForeground(Color.white);
-
-        JButton deleteBtn = new JButton("delete");
-        deleteBtn.setBackground(new Color(214, 35, 78));
-        deleteBtn.setIcon(new ImageIcon("src/Desktop/Images/trash.png"));
-        deleteBtn.setForeground(Color.white);
-
-        JPanel btns = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        btns.setSize(300, 150);
-//        btns.add(checkBtn);
-        btns.add(deleteBtn);
-
-        JLabel date = new JLabel("25 May 2022");
-        Box actionsPanel = Box.createVerticalBox();
-        actionsPanel.setAlignmentX(Component.RIGHT_ALIGNMENT);
-        actionsPanel.add(btns);
-        actionsPanel.add(date);
-        btns.setBackground(bgc);
-        btns.setOpaque(true);
-
-//        JLayeredPane fullNotification = new JLayeredPane();
-        JPanel fullNotification = new JPanel();
-        fullNotification.add(new JLabel("Hello this is a full notification. Hello this is a full notification Hello this is a full notification. Hello this is a full notification. Hello this is a full notification"));
-        fullNotification.setBounds(100, 100, 400, 400);
-        fullNotification.setBackground(new Color(230, 232, 232));
-        fullNotification.setVisible(false);
-        JButton backbtn = new JButton("Back");
-        backbtn.setBackground(new Color(41, 88, 153));
-        backbtn.setIcon(new ImageIcon("src/Desktop/Images/back.png"));
-        backbtn.setForeground(Color.white);
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        buttonPanel.add(backbtn);
-        fullNotification.add(buttonPanel, BorderLayout.SOUTH);
+                JPanel contentPanel = new JPanel();
+                contentPanel.add(msg);
+                contentPanel.setBackground(yellow);
+                contentPanel.setOpaque(true);
 
 
-        //Create a border
-//        Border blackline = BorderFactory.createLineBorder(Color.black);
-        JPanel notificationsPanel = new JPanel();
-//        notificationsPanel.setBorder(blackline);
-        notificationsPanel.setBackground(bgc);
-        notificationsPanel.setForeground(Color.white);
-        notificationsPanel.setLayout(new BorderLayout());
-        notificationsPanel.setBorder(new EmptyBorder(new Insets(10,20,10,20)));
-        notificationsPanel.add(iconPanel, BorderLayout.WEST);
-        notificationsPanel.add(contentPanel, BorderLayout.CENTER);
-        notificationsPanel.add(actionsPanel, BorderLayout.EAST);
-        panel.add(notificationsPanel);
+                JPanel btns = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
+                btns.setSize(300, 150);
+                btns.add(deleteBtn);
+
+                JLabel date = new JLabel(notificationDate);
+                Box actionsPanel = Box.createVerticalBox();
+                actionsPanel.setAlignmentX(Component.RIGHT_ALIGNMENT);
+                actionsPanel.add(btns);
+                actionsPanel.add(date);
+                btns.setBackground(yellow);
+                btns.setOpaque(true);
 
 
-        deleteBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (deleteBtn.getText().equals("delete")){
-                    notificationsPanel.setVisible(false);
-                    panel.remove(notificationsPanel);
 
-                }
+                JPanel notificationsPanel = new JPanel();
+                notificationsPanel.setBackground(yellow);
+                notificationsPanel.setForeground(Color.white);
+                notificationsPanel.setLayout(new BorderLayout());
+                notificationsPanel.setBorder(new EmptyBorder(new Insets(10,20,10,20)));
+                notificationsPanel.add(iconPanel, BorderLayout.WEST);
+                notificationsPanel.add(contentPanel, BorderLayout.CENTER);
+                notificationsPanel.add(actionsPanel, BorderLayout.EAST);
+                panel.add(notificationsPanel);
+
+
+                deleteBtn.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (deleteBtn.getText().equals("delete")){
+                            notificationsPanel.setVisible(false);
+                            panel.remove(notificationsPanel);
+
+                        }
+                    }
+                });
+
+            }else if(notificationType == "Provided Service Notification"){
+                JLabel notificationHeading = new JLabel(notificationTitle);
+                notificationHeading.setFont(f3);
+                JLabel notificationContent = new JLabel(Content);
+                notificationContent.setFont(f1);
+                Box msg = Box.createVerticalBox();
+                msg.add(notificationHeading);
+                msg.add(notificationContent);
+
+                JLabel iconImage = new JLabel();
+                iconImage.setIcon(new ImageIcon("src/Desktop/Images/danger.png"));// your image here
+                JPanel iconPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 2));
+                iconPanel.add(iconImage);
+                iconPanel.setBackground(green);
+                iconPanel.setOpaque(true);
+
+                JPanel contentPanel = new JPanel();
+                contentPanel.add(msg);
+                contentPanel.setBackground(green);
+                contentPanel.setOpaque(true);
+
+                JPanel btns = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
+                btns.setSize(300, 150);
+                btns.add(deleteBtn);
+
+                JLabel date = new JLabel(notificationDate);
+                Box actionsPanel = Box.createVerticalBox();
+                actionsPanel.setAlignmentX(Component.RIGHT_ALIGNMENT);
+                actionsPanel.add(btns);
+                actionsPanel.add(date);
+                btns.setBackground(green);
+                btns.setOpaque(true);
+
+
+
+                JPanel notificationsPanel = new JPanel();
+                notificationsPanel.setBackground(green);
+                notificationsPanel.setForeground(Color.white);
+                notificationsPanel.setLayout(new BorderLayout());
+                notificationsPanel.setBorder(new EmptyBorder(new Insets(10,20,10,20)));
+                notificationsPanel.add(iconPanel, BorderLayout.WEST);
+                notificationsPanel.add(contentPanel, BorderLayout.CENTER);
+                notificationsPanel.add(actionsPanel, BorderLayout.EAST);
+                panel.add(notificationsPanel);
+
+
+                deleteBtn.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (deleteBtn.getText().equals("delete")){
+                            notificationsPanel.setVisible(false);
+                            panel.remove(notificationsPanel);
+
+                        }
+                    }
+                });
+
+            }else if(notificationType == "Payment Warning Notification"){
+
+                JLabel notificationHeading = new JLabel(notificationTitle);
+                notificationHeading.setFont(f3);
+                JLabel notificationContent = new JLabel(Content);
+                notificationContent.setFont(f1);
+                Box msg = Box.createVerticalBox();
+                msg.add(notificationHeading);
+                msg.add(notificationContent);
+
+                JLabel iconImage = new JLabel();
+                iconImage.setIcon(new ImageIcon("src/Desktop/Images/danger.png"));// your image here
+                JPanel iconPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 2));
+                iconPanel.add(iconImage);
+                iconPanel.setBackground(red);
+                iconPanel.setOpaque(true);
+
+                JPanel contentPanel = new JPanel();
+                contentPanel.add(msg);
+                contentPanel.setBackground(red);
+                contentPanel.setOpaque(true);
+
+                JPanel btns = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
+                btns.setSize(300, 150);
+                btns.add(deleteBtn);
+
+                JLabel date = new JLabel(notificationDate);
+                Box actionsPanel = Box.createVerticalBox();
+                actionsPanel.setAlignmentX(Component.RIGHT_ALIGNMENT);
+                actionsPanel.add(btns);
+                actionsPanel.add(date);
+                btns.setBackground(red);
+                btns.setOpaque(true);
+
+
+
+                JPanel notificationsPanel = new JPanel();
+                notificationsPanel.setBackground(red);
+                notificationsPanel.setForeground(Color.white);
+                notificationsPanel.setLayout(new BorderLayout());
+                notificationsPanel.setBorder(new EmptyBorder(new Insets(10,20,10,20)));
+                notificationsPanel.add(iconPanel, BorderLayout.WEST);
+                notificationsPanel.add(contentPanel, BorderLayout.CENTER);
+                notificationsPanel.add(actionsPanel, BorderLayout.EAST);
+                panel.add(notificationsPanel);
+
+
+                deleteBtn.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        if (deleteBtn.getText().equals("delete")){
+                            notificationsPanel.setVisible(false);
+                            panel.remove(notificationsPanel);
+
+                        }
+                    }
+                });
+
             }
-        });
 
 
-        //++++++++++++++++++ CHECK BUTTON +++++++++++++
+        }
 
-//        checkBtn.addActionListener(new ActionListener() {
+
+    }
+
+//    private static void createPaymentNotification(JPanel panel) {
+//
+//        Font  f3  = new Font(Font.DIALOG,  Font.BOLD, 18);
+//        Font  f1  = new Font(Font.DIALOG, Font.PLAIN,  15);
+//        Color bgc = new Color(255,248,203);
+//
+//
+//        JLabel notificationHeading = new JLabel("Notification title");
+//        notificationHeading.setFont(f3);
+//        JLabel notificationContent = new JLabel("Hello! You haven't paid for the waste collection for three months. Any delay can lead to charges.");
+//        notificationContent.setFont(f1);
+//        Box msg = Box.createVerticalBox();
+//        msg.add(notificationHeading);
+//        msg.add(notificationContent);
+//
+//        JLabel iconImage = new JLabel();
+//        iconImage.setIcon(new ImageIcon("src/Desktop/Images/warning.png"));// your image here
+//        JPanel iconPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 2));
+//        iconPanel.add(iconImage);
+//        iconPanel.setBackground(bgc);
+//        iconPanel.setOpaque(true);
+//
+//        JPanel contentPanel = new JPanel();
+//        contentPanel.add(msg);
+//        contentPanel.setBackground(bgc);
+//        contentPanel.setOpaque(true);
+//
+//
+////        JButton checkBtn = new JButton("check");
+////        checkBtn.setBackground(new Color(41, 88, 153));
+////        checkBtn.setIcon(new ImageIcon("assets\\eye1.png"));// your image here
+////        checkBtn.setForeground(Color.white);
+//
+//        JButton deleteBtn = new JButton("delete");
+//        deleteBtn.setBackground(new Color(214, 35, 78));
+//        deleteBtn.setIcon(new ImageIcon("src/Desktop/Images/trash.png"));
+//        deleteBtn.setForeground(Color.white);
+//
+//        JPanel btns = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
+//        btns.setSize(300, 150);
+////        btns.add(checkBtn);
+//        btns.add(deleteBtn);
+//
+//        JLabel date = new JLabel("25 May 2022");
+//        Box actionsPanel = Box.createVerticalBox();
+//        actionsPanel.setAlignmentX(Component.RIGHT_ALIGNMENT);
+//        actionsPanel.add(btns);
+//        actionsPanel.add(date);
+//        btns.setBackground(bgc);
+//        btns.setOpaque(true);
+//
+////        JLayeredPane fullNotification = new JLayeredPane();
+//        JPanel fullNotification = new JPanel();
+//        fullNotification.add(new JLabel("Hello this is a full notification. Hello this is a full notification Hello this is a full notification. Hello this is a full notification. Hello this is a full notification"));
+//        fullNotification.setBounds(100, 100, 400, 400);
+//        fullNotification.setBackground(new Color(230, 232, 232));
+//        fullNotification.setVisible(false);
+//        JButton backbtn = new JButton("Back");
+//        backbtn.setBackground(new Color(41, 88, 153));
+//        backbtn.setIcon(new ImageIcon("src/Desktop/Images/back.png"));
+//        backbtn.setForeground(Color.white);
+//        JPanel buttonPanel = new JPanel();
+//        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+//        buttonPanel.add(backbtn);
+//        fullNotification.add(buttonPanel, BorderLayout.SOUTH);
+//
+//
+//        //Create a border
+////        Border blackline = BorderFactory.createLineBorder(Color.black);
+//        JPanel notificationsPanel = new JPanel();
+////        notificationsPanel.setBorder(blackline);
+//        notificationsPanel.setBackground(bgc);
+//        notificationsPanel.setForeground(Color.white);
+//        notificationsPanel.setLayout(new BorderLayout());
+//        notificationsPanel.setBorder(new EmptyBorder(new Insets(10,20,10,20)));
+//        notificationsPanel.add(iconPanel, BorderLayout.WEST);
+//        notificationsPanel.add(contentPanel, BorderLayout.CENTER);
+//        notificationsPanel.add(actionsPanel, BorderLayout.EAST);
+//        panel.add(notificationsPanel);
+//
+//
+//        deleteBtn.addActionListener(new ActionListener() {
 //            @Override
 //            public void actionPerformed(ActionEvent e) {
-//                if (checkBtn.getText().equals("check"))
-//                    panel.add(fullNotification);
-//                    fullNotification1.setVisible(true);
+//                if (deleteBtn.getText().equals("delete")){
+//                    notificationsPanel.setVisible(false);
+//                    panel.remove(notificationsPanel);
 //
-//
-//                //logic for the back btn
-//                    backbtn.addActionListener(new ActionListener() {
-//                        @Override
-//                        public void actionPerformed(ActionEvent e) {
-//                            if (backbtn.getText().equals("Back"))
-//                                //logic to go back to the original page
-//                                fullNotification.setVisible(false);
-//                        }
-//                    });
+//                }
 //            }
 //        });
-    }
-    private static void createPaymentNotification(JPanel panel) {
+//
+//
+//        //++++++++++++++++++ CHECK BUTTON +++++++++++++
+//
+////        checkBtn.addActionListener(new ActionListener() {
+////            @Override
+////            public void actionPerformed(ActionEvent e) {
+////                if (checkBtn.getText().equals("check"))
+////                    panel.add(fullNotification);
+////                    fullNotification1.setVisible(true);
+////
+////
+////                //logic for the back btn
+////                    backbtn.addActionListener(new ActionListener() {
+////                        @Override
+////                        public void actionPerformed(ActionEvent e) {
+////                            if (backbtn.getText().equals("Back"))
+////                                //logic to go back to the original page
+////                                fullNotification.setVisible(false);
+////                        }
+////                    });
+////            }
+////        });
+//    }
 
-        Font  f3  = new Font(Font.DIALOG,  Font.BOLD, 18);
-        Font  f1  = new Font(Font.DIALOG, Font.PLAIN,  15);
-        Color bgc = new Color(255,248,203);
-
-
-        JLabel notificationHeading = new JLabel("Notification title");
-        notificationHeading.setFont(f3);
-        JLabel notificationContent = new JLabel("Hello! You haven't paid for the waste collection for three months. Any delay can lead to charges.");
-        notificationContent.setFont(f1);
-        Box msg = Box.createVerticalBox();
-        msg.add(notificationHeading);
-        msg.add(notificationContent);
-
-        JLabel iconImage = new JLabel();
-        iconImage.setIcon(new ImageIcon("src/Desktop/Images/warning.png"));// your image here
-        JPanel iconPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 2));
-        iconPanel.add(iconImage);
-        iconPanel.setBackground(bgc);
-        iconPanel.setOpaque(true);
-
-        JPanel contentPanel = new JPanel();
-        contentPanel.add(msg);
-        contentPanel.setBackground(bgc);
-        contentPanel.setOpaque(true);
-
-
-//        JButton checkBtn = new JButton("check");
-//        checkBtn.setBackground(new Color(41, 88, 153));
-//        checkBtn.setIcon(new ImageIcon("assets\\eye1.png"));// your image here
-//        checkBtn.setForeground(Color.white);
-
-        JButton deleteBtn = new JButton("delete");
-        deleteBtn.setBackground(new Color(214, 35, 78));
-        deleteBtn.setIcon(new ImageIcon("src/Desktop/Images/trash.png"));
-        deleteBtn.setForeground(Color.white);
-
-        JPanel btns = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        btns.setSize(300, 150);
-//        btns.add(checkBtn);
-        btns.add(deleteBtn);
-
-        JLabel date = new JLabel("25 May 2022");
-        Box actionsPanel = Box.createVerticalBox();
-        actionsPanel.setAlignmentX(Component.RIGHT_ALIGNMENT);
-        actionsPanel.add(btns);
-        actionsPanel.add(date);
-        btns.setBackground(bgc);
-        btns.setOpaque(true);
-
-//        JLayeredPane fullNotification = new JLayeredPane();
-        JPanel fullNotification = new JPanel();
-        fullNotification.add(new JLabel("Hello this is a full notification. Hello this is a full notification Hello this is a full notification. Hello this is a full notification. Hello this is a full notification"));
-        fullNotification.setBounds(100, 100, 400, 400);
-        fullNotification.setBackground(new Color(230, 232, 232));
-        fullNotification.setVisible(false);
-        JButton backbtn = new JButton("Back");
-        backbtn.setBackground(new Color(41, 88, 153));
-        backbtn.setIcon(new ImageIcon("src/Desktop/Images/back.png"));
-        backbtn.setForeground(Color.white);
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        buttonPanel.add(backbtn);
-        fullNotification.add(buttonPanel, BorderLayout.SOUTH);
-
-
-        //Create a border
-//        Border blackline = BorderFactory.createLineBorder(Color.black);
-        JPanel notificationsPanel = new JPanel();
-//        notificationsPanel.setBorder(blackline);
-        notificationsPanel.setBackground(bgc);
-        notificationsPanel.setForeground(Color.white);
-        notificationsPanel.setLayout(new BorderLayout());
-        notificationsPanel.setBorder(new EmptyBorder(new Insets(10,20,10,20)));
-        notificationsPanel.add(iconPanel, BorderLayout.WEST);
-        notificationsPanel.add(contentPanel, BorderLayout.CENTER);
-        notificationsPanel.add(actionsPanel, BorderLayout.EAST);
-        panel.add(notificationsPanel);
-
-
-        deleteBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (deleteBtn.getText().equals("delete")){
-                    notificationsPanel.setVisible(false);
-                    panel.remove(notificationsPanel);
-
-                }
-            }
-        });
-
-
-        //++++++++++++++++++ CHECK BUTTON +++++++++++++
-
-//        checkBtn.addActionListener(new ActionListener() {
+//    private static void wasteCollectionNotification(JPanel panel) {
+//
+//        Font  f3  = new Font(Font.DIALOG,  Font.BOLD, 18);
+//        Font  f1  = new Font(Font.DIALOG, Font.PLAIN,  15);
+//        Color bgc = new Color(125, 181, 144);
+//
+//
+//        JLabel notificationHeading = new JLabel("Notification title");
+//        notificationHeading.setFont(f3);
+//        JLabel notificationContent = new JLabel("Hello! You haven't paid for the waste collection for three months. Any delay can lead to charges.");
+//        notificationContent.setFont(f1);
+//        Box msg = Box.createVerticalBox();
+//        msg.add(notificationHeading);
+//        msg.add(notificationContent);
+//
+//        JLabel iconImage = new JLabel();
+//        iconImage.setIcon(new ImageIcon("src/Desktop/Images/dollar.png"));// your image here
+//        JPanel iconPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 2));
+//        iconPanel.add(iconImage);
+//        iconPanel.setBackground(bgc);
+//        iconPanel.setOpaque(true);
+//
+//        JPanel contentPanel = new JPanel();
+//        contentPanel.add(msg);
+//        contentPanel.setBackground(bgc);
+//        contentPanel.setOpaque(true);
+//
+//
+////        JButton checkBtn = new JButton("check");
+////        checkBtn.setBackground(new Color(41, 88, 153));
+////        checkBtn.setIcon(new ImageIcon("assets\\eye1.png"));// your image here
+////        checkBtn.setForeground(Color.white);
+//
+//        JButton deleteBtn = new JButton("delete");
+//        deleteBtn.setBackground(new Color(214, 35, 78));
+//        deleteBtn.setIcon(new ImageIcon("src/Desktop/Images/trash.png"));
+//        deleteBtn.setForeground(Color.white);
+//
+//        JPanel btns = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
+//        btns.setSize(300, 150);
+////        btns.add(checkBtn);
+//        btns.add(deleteBtn);
+//
+//        JLabel date = new JLabel("25 May 2022");
+//        Box actionsPanel = Box.createVerticalBox();
+//        actionsPanel.setAlignmentX(Component.RIGHT_ALIGNMENT);
+//        actionsPanel.add(btns);
+//        actionsPanel.add(date);
+//        btns.setBackground(bgc);
+//        btns.setOpaque(true);
+//
+////        JLayeredPane fullNotification = new JLayeredPane();
+//        JPanel fullNotification = new JPanel();
+//        fullNotification.add(new JLabel("Hello this is a full notification. Hello this is a full notification Hello this is a full notification. Hello this is a full notification. Hello this is a full notification"));
+//        fullNotification.setBounds(100, 100, 400, 400);
+//        fullNotification.setBackground(new Color(230, 232, 232));
+//        fullNotification.setVisible(false);
+//        JButton backbtn = new JButton("Back");
+//        backbtn.setBackground(new Color(41, 88, 153));
+//        backbtn.setIcon(new ImageIcon("src/Desktop/Images/back.png"));
+//        backbtn.setForeground(Color.white);
+//        JPanel buttonPanel = new JPanel();
+//        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+//        buttonPanel.add(backbtn);
+//        fullNotification.add(buttonPanel, BorderLayout.SOUTH);
+//
+//
+//        //Create a border
+////        Border blackline = BorderFactory.createLineBorder(Color.black);
+//        JPanel notificationsPanel = new JPanel();
+////        notificationsPanel.setBorder(blackline);
+//        notificationsPanel.setBackground(bgc);
+//        notificationsPanel.setForeground(Color.white);
+//        notificationsPanel.setLayout(new BorderLayout());
+//        notificationsPanel.setBorder(new EmptyBorder(new Insets(10,20,10,20)));
+//        notificationsPanel.add(iconPanel, BorderLayout.WEST);
+//        notificationsPanel.add(contentPanel, BorderLayout.CENTER);
+//        notificationsPanel.add(actionsPanel, BorderLayout.EAST);
+//        panel.add(notificationsPanel);
+//
+//
+//        deleteBtn.addActionListener(new ActionListener() {
 //            @Override
 //            public void actionPerformed(ActionEvent e) {
-//                if (checkBtn.getText().equals("check"))
-//                    panel.add(fullNotification);
-//                    fullNotification1.setVisible(true);
-//
-//
-//                //logic for the back btn
-//                    backbtn.addActionListener(new ActionListener() {
-//                        @Override
-//                        public void actionPerformed(ActionEvent e) {
-//                            if (backbtn.getText().equals("Back"))
-//                                //logic to go back to the original page
-//                                fullNotification.setVisible(false);
-//                        }
-//                    });
+//                if (deleteBtn.getText().equals("delete")){
+//                    notificationsPanel.setVisible(false);
+//                    panel.remove(notificationsPanel);
+//                }
 //            }
 //        });
-    }
-    private static void wasteCollectionNotification(JPanel panel) {
-
-        Font  f3  = new Font(Font.DIALOG,  Font.BOLD, 18);
-        Font  f1  = new Font(Font.DIALOG, Font.PLAIN,  15);
-        Color bgc = new Color(125, 181, 144);
-
-
-        JLabel notificationHeading = new JLabel("Notification title");
-        notificationHeading.setFont(f3);
-        JLabel notificationContent = new JLabel("Hello! You haven't paid for the waste collection for three months. Any delay can lead to charges.");
-        notificationContent.setFont(f1);
-        Box msg = Box.createVerticalBox();
-        msg.add(notificationHeading);
-        msg.add(notificationContent);
-
-        JLabel iconImage = new JLabel();
-        iconImage.setIcon(new ImageIcon("src/Desktop/Images/dollar.png"));// your image here
-        JPanel iconPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 2));
-        iconPanel.add(iconImage);
-        iconPanel.setBackground(bgc);
-        iconPanel.setOpaque(true);
-
-        JPanel contentPanel = new JPanel();
-        contentPanel.add(msg);
-        contentPanel.setBackground(bgc);
-        contentPanel.setOpaque(true);
-
-
-//        JButton checkBtn = new JButton("check");
-//        checkBtn.setBackground(new Color(41, 88, 153));
-//        checkBtn.setIcon(new ImageIcon("assets\\eye1.png"));// your image here
-//        checkBtn.setForeground(Color.white);
-
-        JButton deleteBtn = new JButton("delete");
-        deleteBtn.setBackground(new Color(214, 35, 78));
-        deleteBtn.setIcon(new ImageIcon("src/Desktop/Images/trash.png"));
-        deleteBtn.setForeground(Color.white);
-
-        JPanel btns = new JPanel(new FlowLayout(FlowLayout.CENTER, 5, 5));
-        btns.setSize(300, 150);
-//        btns.add(checkBtn);
-        btns.add(deleteBtn);
-
-        JLabel date = new JLabel("25 May 2022");
-        Box actionsPanel = Box.createVerticalBox();
-        actionsPanel.setAlignmentX(Component.RIGHT_ALIGNMENT);
-        actionsPanel.add(btns);
-        actionsPanel.add(date);
-        btns.setBackground(bgc);
-        btns.setOpaque(true);
-
-//        JLayeredPane fullNotification = new JLayeredPane();
-        JPanel fullNotification = new JPanel();
-        fullNotification.add(new JLabel("Hello this is a full notification. Hello this is a full notification Hello this is a full notification. Hello this is a full notification. Hello this is a full notification"));
-        fullNotification.setBounds(100, 100, 400, 400);
-        fullNotification.setBackground(new Color(230, 232, 232));
-        fullNotification.setVisible(false);
-        JButton backbtn = new JButton("Back");
-        backbtn.setBackground(new Color(41, 88, 153));
-        backbtn.setIcon(new ImageIcon("src/Desktop/Images/back.png"));
-        backbtn.setForeground(Color.white);
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
-        buttonPanel.add(backbtn);
-        fullNotification.add(buttonPanel, BorderLayout.SOUTH);
-
-
-        //Create a border
-//        Border blackline = BorderFactory.createLineBorder(Color.black);
-        JPanel notificationsPanel = new JPanel();
-//        notificationsPanel.setBorder(blackline);
-        notificationsPanel.setBackground(bgc);
-        notificationsPanel.setForeground(Color.white);
-        notificationsPanel.setLayout(new BorderLayout());
-        notificationsPanel.setBorder(new EmptyBorder(new Insets(10,20,10,20)));
-        notificationsPanel.add(iconPanel, BorderLayout.WEST);
-        notificationsPanel.add(contentPanel, BorderLayout.CENTER);
-        notificationsPanel.add(actionsPanel, BorderLayout.EAST);
-        panel.add(notificationsPanel);
-
-
-        deleteBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (deleteBtn.getText().equals("delete")){
-                    notificationsPanel.setVisible(false);
-                    panel.remove(notificationsPanel);
-                }
-            }
-        });
-
-
-        //++++++++++++++++++ CHECK BUTTON +++++++++++++
-
-//        checkBtn.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                if (checkBtn.getText().equals("check"))
-//                    panel.add(fullNotification);
-//                    fullNotification1.setVisible(true);
 //
 //
-//                //logic for the back btn
-//                    backbtn.addActionListener(new ActionListener() {
-//                        @Override
-//                        public void actionPerformed(ActionEvent e) {
-//                            if (backbtn.getText().equals("Back"))
-//                                //logic to go back to the original page
-//                                fullNotification.setVisible(false);
-//                        }
-//                    });
-//            }
-//        });
-    }
+//        //++++++++++++++++++ CHECK BUTTON +++++++++++++
+//
+////        checkBtn.addActionListener(new ActionListener() {
+////            @Override
+////            public void actionPerformed(ActionEvent e) {
+////                if (checkBtn.getText().equals("check"))
+////                    panel.add(fullNotification);
+////                    fullNotification1.setVisible(true);
+////
+////
+////                //logic for the back btn
+////                    backbtn.addActionListener(new ActionListener() {
+////                        @Override
+////                        public void actionPerformed(ActionEvent e) {
+////                            if (backbtn.getText().equals("Back"))
+////                                //logic to go back to the original page
+////                                fullNotification.setVisible(false);
+////                        }
+////                    });
+////            }
+////        });
+//    }
 
 //    private static void wasteCollectionNotification(JPanel panel) {
 //        Font  f3  = new Font(Font.DIALOG,  Font.BOLD, 18);
