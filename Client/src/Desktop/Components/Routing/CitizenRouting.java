@@ -26,11 +26,13 @@ public class CitizenRouting extends JFrame{
 
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+    AnalyticsPanel mainAnalyticsPanel = new AnalyticsPanel();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
     StepOneDeposit step1ToDeposit =  new StepOneDeposit();
     StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
-    public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
+    public CitizenRouting() throws IOException{
+//    public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
         setTitle("Citizen Board");
         setSize(1366,768);
         setLayout(null);
@@ -46,15 +48,16 @@ public class CitizenRouting extends JFrame{
         JPanel invoicesPanel = new InvoicesPanel();
         // wallet
         JPanel wallet = new Wallet(5000);
-        panel2.add(wallet);
+        mainAnalyticsPanel.add(wallet);
         // analytics panel
-        JPanel analyticsPanel = new Analytics(invoicesPanel);
-        panel2.add(analyticsPanel);
+        JPanel analyticsPanel = new Analytics(invoicesPanel, mainAnalyticsPanel);
+        mainAnalyticsPanel.add(analyticsPanel);
         // invoices panel
-        panel2.add(invoicesPanel);
+        mainAnalyticsPanel.add(invoicesPanel);
 
         add(panel);
         add(panel2);
+        add(mainAnalyticsPanel);
         add(step1ToDeposit);
         add(step2ToDeposit);
 
@@ -167,14 +170,15 @@ public class CitizenRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
-//        new CitizenRouting();
+        new CitizenRouting();
     }
 
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
                 panel.setVisible(false);
-                panel2.setVisible(true);
+                panel2.setVisible(false);
+                mainAnalyticsPanel.setVisible(true);
                 break;
             case "Transactions":
                 break;

@@ -1,9 +1,6 @@
 package Desktop.Components.Routing;
-import Desktop.Components.Employees;
-import Desktop.Components.Registration;
-import Desktop.Components.CreateNotification;
-import Desktop.Components.testPanel;
-import Desktop.Components.testPanel2;
+import Desktop.Components.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,12 +26,14 @@ public class CompanyRouting extends JFrame{
     private DataOutputStream toServer;
     private DataInputStream fromServer;
 
+
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
     Employees employees=new Employees();
     Registration registration = new Registration(false,false,true);
     Registration registerUser = new Registration(false,false,true);
+    AnalyticsPanel mainAnalyticsPanel = new AnalyticsPanel();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
@@ -55,6 +54,18 @@ public class CompanyRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+        // analytics
+        // invoices
+        JPanel invoicesPanel = new InvoicesPanel();
+        // wallet
+        JPanel wallet = new Wallet(5000);
+        mainAnalyticsPanel.add(wallet);
+        // analytics panel
+        JPanel analyticsPanel = new Analytics(invoicesPanel, mainAnalyticsPanel);
+        mainAnalyticsPanel.add(analyticsPanel);
+        // invoices panel
+        mainAnalyticsPanel.add(invoicesPanel);
+        add(mainAnalyticsPanel);
         add(registration);
         add(employees);
         add(registerUser);
@@ -159,7 +170,8 @@ public class CompanyRouting extends JFrame{
             case "Analytics":
                 panel2.setVisible(false);
                 registerUser.setVisible(false);
-                panel.setVisible(true);
+                panel.setVisible(false);
+                mainAnalyticsPanel.setVisible(true);
                 break;
             case "Transactions":
                 break;

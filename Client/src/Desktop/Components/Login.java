@@ -118,7 +118,7 @@ public class Login extends JFrame {
                             new ConfirmerRouting();
                         }else if(userRole == 3){
                             setVisible(false);
-                            new CitizenRouting();
+//                            new CitizenRouting(toServer, fromServer);
                         } else if(userRole == 4){
                             setVisible(false);
                             new CompanyRouting();
