@@ -30,8 +30,9 @@ public class App extends JFrame {
         try {
             Socket socket = new Socket("localhost",2500);
             application.setStreams(socket);
-
-        } catch (Exception exception) {}
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {

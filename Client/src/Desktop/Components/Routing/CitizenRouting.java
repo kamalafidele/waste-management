@@ -33,13 +33,15 @@ public class CitizenRouting extends JFrame{
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
-    Debts debtsPanel = new Debts();
+    Debts debtsPanel;
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
     public  CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
         this.toServer = toServer;
         this.fromServer = fromServer;
+
+        debtsPanel = new Debts(toServer, fromServer);
 
         setTitle("Citizen - Dashboard");
         setSize(1366,768);

@@ -22,6 +22,8 @@ public class Login extends JFrame {
     JButton loginBtn = new JButton("Login");
 
     public Login(DataOutputStream toServer, DataInputStream fromServer){
+        this.toServer = toServer;
+        this.fromServer = fromServer;
         setTitle("LOGIN");
         setVisible(true);
         setLayout(null);
@@ -40,10 +42,11 @@ public class Login extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-//                    new SystemAdminsRouting(toServer,fromServer);
                     new CitizenRouting(toServer,fromServer);
                     dispose();
-                } catch (Exception exception) {}
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
         });
         add(loginBtn);
