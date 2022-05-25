@@ -1,20 +1,16 @@
 
 package Desktop.Screens.Shifts;
 
-import DataHandlers.CompanyHandler;
 import DataHandlers.ServiceConfirmationHandler;
-import Desktop.App;
-import Desktop.Screens.RoundBtn;
+import Desktop.Shared.RoundBtn;
 import org.codehaus.jackson.map.ObjectMapper;
 
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.EventHandler;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 
