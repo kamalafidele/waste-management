@@ -1,4 +1,4 @@
-package Desktop.Screens;
+package Desktop.Shared;
 
 import javax.swing.border.Border;
 import java.awt.*;
