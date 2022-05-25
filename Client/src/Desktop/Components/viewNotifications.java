@@ -1,26 +1,23 @@
 package Desktop.Components;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 public class viewNotifications extends JPanel{
 
 
-//    private static void createWindow(){
-//        JFrame frame = new JFrame("Swing Tester");
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//
-//        createUI(frame);
-//        frame.setBounds(25, 25, 1000, 700);
-//        frame.setVisible(true);
-//    }
+    DataOutputStream toServer;
+    DataInputStream fromServer;
 
-    public viewNotifications() {
-
+    public viewNotifications(DataOutputStream toServer, DataInputStream fromServer) {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
         setVisible(false);
         setBounds(200,0,1166,768);
         setBackground(Color.white);
@@ -28,7 +25,7 @@ public class viewNotifications extends JPanel{
 
         // create a main panel
         JPanel mainPanel = new JPanel();
-
+        displayNotifications();
         wasteCollectionNotification(mainPanel);
         createPaymentNotification(mainPanel);
         createAlertNotification(mainPanel);
@@ -103,6 +100,26 @@ public class viewNotifications extends JPanel{
 //
 //        panel.add(notificationsPanel);
 //    }
+
+
+
+    public void displayNotifications() {
+            try {
+                sendRequest("notification/getAll/" + 1);
+                String response = fromServer.readUTF();
+                System.out.println(response);
+
+            }catch (Exception exception) {
+                exception.printStackTrace();
+            }
+    }
+    public void sendRequest( String request ){
+        try{
+            toServer.writeUTF( request );
+        }catch ( IOException exception ){
+            exception.printStackTrace();
+        }
+    }
 
     private static void createAlertNotification(JPanel panel) {
 

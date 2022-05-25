@@ -30,12 +30,14 @@ public class CitizenRouting extends JFrame{
 
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
-    viewNotifications viewNoti =new viewNotifications();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
     StepOneDeposit step1ToDeposit =  new StepOneDeposit();
     StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
+    viewNotifications viewNoti;
     public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
+        this.toServer = toServer;
+        this.fromServer = fromServer;
         setTitle("Citizen Board");
         setSize(1366,768);
         setLayout(null);
@@ -57,6 +59,8 @@ public class CitizenRouting extends JFrame{
         panel2.add(analyticsPanel);
         // invoices panel
         panel2.add(invoicesPanel);
+        viewNoti =new viewNotifications(toServer, fromServer);
+
 
         add(panel);
         add(panel2);

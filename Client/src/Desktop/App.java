@@ -72,6 +72,7 @@ public class App extends JFrame {
          try {
              toServer = new DataOutputStream(socket.getOutputStream());
              fromServer = new  DataInputStream(socket.getInputStream());
+
          } catch (Exception exception){}
     }
 
@@ -97,6 +98,7 @@ public class App extends JFrame {
         login.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                System.out.println(toServer);
                 new Login(toServer,fromServer);
                 dispose();
             }
