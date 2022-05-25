@@ -72,6 +72,7 @@ public class ShiftsController {
                 Shifts shift = new Shifts(resultSet.getInt(1),resultSet.getInt(2),resultSet.getString(3),resultSet.getInt(4));
                 shiftsList.add(shift);
             }
+            System.out.println("clicked");
             sendResponse(mapper.writeValueAsString(shiftsList));
         }catch (IOException | SQLException e){
             e.getMessage();

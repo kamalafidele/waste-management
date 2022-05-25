@@ -178,6 +178,7 @@ public class CreateNotification extends JFrame {
                     }
                 }
             }
+
         }
     }
     public void sendRequest( String request ){

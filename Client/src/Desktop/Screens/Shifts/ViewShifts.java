@@ -14,15 +14,17 @@ import java.io.IOException;
 import java.io.Serial;
 
 public class ViewShifts extends JPanel {
-private DataOutputStream outToServer;
-private DataInputStream fromServer;
+
+    private DataOutputStream toServer;
+    private DataInputStream fromServer;
+
     public ViewShifts() throws IOException {
-        sendRequest("serviceconfirmation/getShifts");
         setVisible(false);
         setBounds(200,0,1166,768);
         setBackground(Color.WHITE);
         setBorder(new EmptyBorder(new Insets(20,30,20,30)));
-        Object [][] data = {{"Karera Marvin","Karera@gmail.com","0781234568","Waste collection"},{"Kayitare Audax","audax@gmail.com","0786783420","Waste collection"},{"Nick Singizwa","nick@gmail.com","0784893734","Waste collection"}};
+        sendRequest("serviceconfirmation/getShifts");
+        Object [][] data = {{"copesu","19-05-2022","40","Waste collection"},{"copesu","19-04-2022","28","Waste collection"},{"copesu","14-03-2022","31","Waste collection"}};
         Object [] columns = {"Company", "Date", "Confirmed people", "Service"};
         shiftsTable("All created shifts", data, columns);
     }
@@ -121,13 +123,20 @@ private DataInputStream fromServer;
                 frame.setVisible(true);
                 frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
             }
+
         }
     }
+
     public void sendRequest(String request) throws IOException {
-        outToServer.writeUTF(request);
+        try{
+            toServer.writeUTF(request);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
+
     public void setStreams(DataOutputStream outToServer,DataInputStream fromServer){
         this.fromServer=fromServer;
-        this.outToServer=outToServer;
+        this.toServer=outToServer;
     }
 }
