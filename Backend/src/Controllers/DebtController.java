@@ -1,52 +1,68 @@
 package Controllers;
 
+import Models.Company;
+import Models.Debt;
 import Repositories.DebtRepo;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.*;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DebtController {
     private DebtRepo debtRepo;
     private DataOutputStream toClient;
     private NotificationController notificationController=new NotificationController();
     public long balance;
+    private ObjectMapper mapper;
     public DebtController(){
+        mapper=new ObjectMapper();
         debtRepo=new DebtRepo();
     };
+
     public void filterRequest(String request, DataOutputStream toClient){
         this.toClient=toClient;
-        String pin=String.valueOf(request.split("/")[3]);
-        String service=String.valueOf(request.split("/")[2]);
+        String pin;
         switch (request.split("/")[1]) {
             case "checkWasteDebt":
-                System.out.println("waste debt");
+                pin=String.valueOf(request.split("/")[3]);
                 checkWasteDebt(pin);
                 break;
             case "checkSecurityDebt":
+                pin=String.valueOf(request.split("/")[3]);
                 checkSecurityDebt(pin);
                 break;
             case "checkBalance":
+                pin=String.valueOf(request.split("/")[3]);
                 checkBalance(pin);
+                break;
+            case "getAll":
+                Integer userId = Integer.parseInt(request.split("/")[2]);
+                checkDebt(userId);
+                break;
+            default:
+                sendResponse("Invalid operations");
         }
     }
 
     public void checkDebt(Integer userId){
         try{
-            String response = "";
+            List<Debt> debts= new ArrayList<>();
             ResultSet resultSet = debtRepo.getDebt(userId);
             if(resultSet == null){
-                response = "You have no debt";
-                sendResponse(response);
+                sendResponse("You have no debt");
                 return;
             }
-            while(resultSet.next()){
-                String serviceName = resultSet.getString("service_name");
-                Integer amount = resultSet.getInt("amount");
-                response += serviceName + ":  " + amount + "\n";
-            }
-            sendResponse(response);
+            do{
+                Debt debt = new Debt(resultSet.getInt("id"), resultSet.getString("service_name"),
+                        resultSet.getInt("amount"), resultSet.getString("month"));
+                debts.add(debt);
+            }while(resultSet.next());
+
+            sendResponse(mapper.writeValueAsString(debts));
         }catch (Exception e){
             e.printStackTrace();
         }

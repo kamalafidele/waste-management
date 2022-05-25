@@ -53,7 +53,7 @@ public class DebtRepo {
     }
     public ResultSet getDebt(Integer userId){
         try{
-            ResultSet result = database.select("select service_name, amount, month from debt d " +
+            ResultSet result = database.select("select d.id as id, service_name, amount, month from debt d " +
                     "join services s on d.service = s.id where d.user_id = " + userId);
             if(!result.next()){
                 return null;
