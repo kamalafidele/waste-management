@@ -36,6 +36,9 @@ public class CitizenRouting extends JFrame{
     StepOneDeposit step1ToDeposit =  new StepOneDeposit();
     StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
     public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
         setTitle("Citizen Board");
         setSize(1366,768);
         setLayout(null);

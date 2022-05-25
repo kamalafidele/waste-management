@@ -36,10 +36,10 @@ public class ConfirmerRouting extends JFrame{
     ViewShifts viewShifts=new ViewShifts();
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  ConfirmerRouting() throws IOException {
-//        public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
-//        this.toServer = toServer;
-//        this.fromServer = fromServer;
+
+        public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
 
         setTitle("Company Board");
         setSize(1366,768);
@@ -140,7 +140,7 @@ public class ConfirmerRouting extends JFrame{
     }
 
     public static void main(final String args[]) throws IOException {
-        new ConfirmerRouting();
+
     }
 
     public  void filter(String chosen){
