@@ -1,4 +1,4 @@
-package Desktop.Components.Confirmer;
+package Desktop.Components;
 
 import Desktop.Shared.RoundBtn;
 import javax.swing.*;
