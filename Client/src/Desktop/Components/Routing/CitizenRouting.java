@@ -62,7 +62,7 @@ public class CitizenRouting extends JFrame{
         add(panel2);
         add(viewNoti);
         add(step1ToDeposit);
-        add(step2ToDeposit);
+//        add(step2ToDeposit);
 
         SidebarDesign();
         setVisible(true);
@@ -182,28 +182,34 @@ public class CitizenRouting extends JFrame{
                 panel2.setVisible(false);
                 panel.setVisible(true);
                 viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Transactions":
                 viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Dashboard":
                 panel.setVisible(false);
                 panel2.setVisible(true);
                 viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Debts":
                 System.out.println("Debts clicked");
                 viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
                 viewNoti.setVisible(true);
                 panel.setVisible(false);
                 panel2.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "choose service":
                 panel2.setVisible(false);
                 panel.setVisible(false);
+                viewNoti.setVisible(false);
                 step1ToDeposit.setVisible(true);
                 break;
             case "Invoices":
