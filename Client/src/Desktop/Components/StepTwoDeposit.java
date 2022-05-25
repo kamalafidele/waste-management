@@ -16,7 +16,7 @@ public class StepTwoDeposit extends JPanel {
         setBackground(Color.white);
         setBorder(new EmptyBorder(new Insets(200, 30, 20, 30)));
 
-        JLabel heading1  = new JLabel("Choose Deposit Method");
+        JLabel heading1  = new JLabel("Choose Deposit Method (I am step two)");
         heading1.setFont(new Font("Inter", Font.BOLD, 20));
         add(heading1);
 
