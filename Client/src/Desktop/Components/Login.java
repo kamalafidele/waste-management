@@ -2,8 +2,7 @@ package Desktop.Components;
 
 
 import Desktop.Components.Routing.*;
-import Desktop.EventHandlers.ActionEventHandler;
-import Desktop.Screens.RoundBtn;
+import Desktop.Shared.RoundBtn;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -13,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.Socket;
 import java.sql.*;
 
 public class Login extends JFrame {
@@ -115,10 +113,10 @@ public class Login extends JFrame {
                             new SystemAdminsRouting(toServer, fromServer);
                         }else if(userRole == 2) {
                             setVisible(false);
-                            new ConfirmerRouting();
+                            new ConfirmerRouting(toServer,fromServer);
                         }else if(userRole == 3){
                             setVisible(false);
-                            new CitizenRouting();
+                            new CitizenRouting(toServer,fromServer);
                         } else if(userRole == 4){
                             setVisible(false);
                             new CompanyRouting();
