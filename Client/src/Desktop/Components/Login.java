@@ -5,16 +5,13 @@ import Desktop.Components.Routing.*;
 import Desktop.EventHandlers.ActionEventHandler;
 import Desktop.Screens.RoundBtn;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
 import java.sql.*;
@@ -28,18 +25,16 @@ public class Login extends JFrame {
     private  static  JTextField myemail = new JTextField("Email");
     private  static  JPasswordField mypassword = new JPasswordField("Password");
 
-    JLabel welcomeMsg = new JLabel("Welcome to WSMS");
     JLabel emailLabel = new JLabel("Email");
 
     JLabel passwordLabel = new JLabel("Password");
-    JLabel errorMsg = new JLabel("Invalid email or password");
     JButton login = new JButton("Login");
 
 
     Color dodgerBlue = new Color(52,143,235);
     Color lightGray = new Color(225, 227, 225);
 
-    public Login(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+    public Login(DataOutputStream toServer, DataInputStream fromServer) {
         setTitle("WSMS_Y2_C");
         setSize(1366,760);
         setVisible(true);
@@ -54,20 +49,15 @@ public class Login extends JFrame {
         rightPanel.setVisible(true);
         rightPanel.setSize(500,600);
         rightPanel.setBackground(Color.WHITE);
-        GridLayout layout = new GridLayout(7,1);
+        GridLayout layout = new GridLayout(5,1);
         layout.setVgap(10);
         rightPanel.setLayout(layout);
-        rightPanel.setBorder(new EmptyBorder(200, 80, 200, 80));
+        rightPanel.setBorder(new EmptyBorder(200, 100, 200, 100));
 
         add(leftPanel);
         add(rightPanel);
-
-        welcomeMsg.setForeground(dodgerBlue);
-        welcomeMsg.setFont(new Font("Inter", Font.BOLD, 30));
       mypassword.setText("");
       myemail.setText("");
-      errorMsg.setForeground(Color.RED);
-      errorMsg.setVisible(false);
         setLayout(new GridLayout(1,2));
         setVisible(true);
         this.setFont(new Font("Inter", Font.PLAIN, 18));
@@ -77,12 +67,18 @@ public class Login extends JFrame {
         setRightPanelContent();
     }
 
-    public void setLeftPanelTexts() throws IOException {
-        leftPanel.setBorder(new EmptyBorder(250, 80, 200, 80));
-        BufferedImage myPicture = ImageIO.read(new File("src/Desktop/Images/logo.png"));
-        JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+    public void setLeftPanelTexts() {
+        JLabel label = new JLabel("Welcome to WSMS");
+        JLabel label1 = new JLabel("The best online waste and security");
+        JLabel label2 = new JLabel("management system in Rwanda");
 
-        leftPanel.add(picLabel);
+        label.setBorder(new EmptyBorder(new Insets(30,0,30,0)));
+        label.setFont(new Font("Inter", label.getFont().getStyle(), 30));
+        label.setForeground(dodgerBlue);
+
+        leftPanel.add(label);
+        leftPanel.add(label1);
+        leftPanel.add(label2);
     }
 
     public void setRightPanelContent() {
@@ -114,26 +110,26 @@ public class Login extends JFrame {
                         userId = rs.getInt("id");
                         username = rs.getString("name");
                         userRole = rs.getInt("role");
+                        String userUppercase=username.toUpperCase();
                         if(userRole == 1){
                             setVisible(false);
-                            new SystemAdminsRouting(toServer, fromServer);
+                            new SystemAdminsRouting(toServer, fromServer,userUppercase);
                         }else if(userRole == 2) {
                             setVisible(false);
-                            new ConfirmerRouting();
+                            new ConfirmerRouting(userUppercase);
                         }else if(userRole == 3){
                             setVisible(false);
-                            new CitizenRouting();
+                            new CitizenRouting(toServer,fromServer,userUppercase);
                         } else if(userRole == 4){
                             setVisible(false);
-                            new CompanyRouting();
+                            new CompanyRouting(userUppercase);
                         }else if(userRole == 5){
                             setVisible(false);
-                            new DistrictRouting(toServer,fromServer);
+                            new DistrictRouting(toServer,fromServer,userUppercase);
                         }
                     } else {
-                 errorMsg.setVisible(true);
-                 myemail.setText("");
-                 mypassword.setText("");
+                  System.out.println("user doesn't exist");
+//                        JOptionPane.showMessageDialog(btnNewButton, "Wrong Username & Password");
                     }
                 } catch (SQLException sqlException) {
 
@@ -143,8 +139,6 @@ public class Login extends JFrame {
                 }
             }
         });
-        rightPanel.add(welcomeMsg);
-        rightPanel.add(errorMsg);
         rightPanel.add(emailLabel);
         rightPanel.add(myemail);
         rightPanel.add(passwordLabel);

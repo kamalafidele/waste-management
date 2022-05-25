@@ -1,7 +1,7 @@
-// package Desktop.Components.Conirmer;
+package Desktop.Components;
 
-package  Desktop.Components;
 import Desktop.Screens.RoundBtn;
+//import Desktop.Shared.RoundBtn;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
