@@ -2,26 +2,24 @@ package Config;
 
 import java.sql.*;
 
-import static java.lang.Class.forName;
-
 public class DatabaseConnection {
     String driver = "com.mysql.jdbc.Driver";
     String url = "jdbc:mysql://remotemysql.com:3306/LGMxUJ3u44?characterEncoding=latin1";
     String username = "LGMxUJ3u44";
     String password = "gAzBLwXOq8";
-    public Connection connection = null;
+    Connection connection = null;
     Statement statement = null;
     ResultSet data = null;
-    public DatabaseConnection(){
+
+    public DatabaseConnection() {
         try{
           Class.forName(driver);
           connection = DriverManager.getConnection(url,username,password);
 
           if(connection != null)
-              statement = connection.createStatement();
+              statement=connection.createStatement();
 
         }catch(Exception exception){
-            System.out.println("Error: "+exception);
             System.out.println("CONNECTION TO DATABASE FAILED");
             exception.printStackTrace();
         }
@@ -31,7 +29,7 @@ public class DatabaseConnection {
         try{
             statement.execute(createStatement);
             return true;
-        }catch(SQLException exception){
+        }catch(SQLException exception) {
             return false;
         }
     }
@@ -48,7 +46,7 @@ public class DatabaseConnection {
 
     public ResultSet select( String selectStatement ) {
        try{
-           data = statement.executeQuery( selectStatement );
+           data=statement.executeQuery( selectStatement );
            return data;
        }catch (SQLException exception){
             return data;
@@ -77,7 +75,7 @@ public class DatabaseConnection {
         try{
             data = statement.executeQuery( updateStatement );
             return data;
-        }catch (SQLException exception) {
+        }catch (SQLException exception){
             return data;
         }
     }

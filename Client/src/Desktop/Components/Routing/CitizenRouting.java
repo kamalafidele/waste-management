@@ -1,4 +1,8 @@
 package Desktop.Components.Routing;
+import Desktop.Components.Registration;
+import Desktop.Components.testPanel;
+import Desktop.Components.testPanel2;
+import Desktop.Components.viewNotifications;
 
 import Desktop.Components.*;
 
@@ -26,12 +30,14 @@ public class CitizenRouting extends JFrame{
 
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+    viewNotifications viewNoti =new viewNotifications();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
-    public CitizenRouting() throws IOException{
-//    public  CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
-//        this.toServer = toServer;
-//        this.fromServer = fromServer;
+    StepOneDeposit step1ToDeposit =  new StepOneDeposit();
+    StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
+    public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
+        this.toServer = toServer;
+        this.fromServer = fromServer;
 
         setTitle("Citizen Board");
         setSize(1366,768);
@@ -57,6 +63,10 @@ public class CitizenRouting extends JFrame{
 
         add(panel);
         add(panel2);
+        add(viewNoti);
+        add(step1ToDeposit);
+//        add(step2ToDeposit);
+
         SidebarDesign();
         setVisible(true);
     }
@@ -97,11 +107,32 @@ public class CitizenRouting extends JFrame{
         Analytics.setIcon((analyticsImg));
         Analytics.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Analytics);
+
+
         JMenu Transactions = new JMenu("Transactions");
         Transactions.addMenuListener(listenerHandler);
         Transactions.setIcon(TransactionsImg);
         Transactions.setFont(new Font("Inter", Font.PLAIN, 16));
         menuBar.add(Transactions);
+
+
+        JMenu Choose_service_to_deposit = new JMenu("choose service");
+        Choose_service_to_deposit.addMenuListener(listenerHandler);
+        Choose_service_to_deposit.setIcon(TransactionsImg);
+        Choose_service_to_deposit.setFont(new Font("Inter", Font.PLAIN, 16));
+        menuBar.add(Choose_service_to_deposit);
+
+
+
+
+
+//        JMenu Choose_deposit_method = new JMenu("");
+//        Choose_deposit_method.addMenuListener(listenerHandler);
+//        Choose_deposit_method.setIcon(TransactionsImg);
+//        Choose_deposit_method.setFont(new Font("Inter", Font.PLAIN, 16));
+//        menuBar.add(Choose_deposit_method);
+
+
 
         JMenu notification = new JMenu("Notifications");
         notification.addMenuListener(listenerHandler);
@@ -145,29 +176,48 @@ public class CitizenRouting extends JFrame{
 
 
     public static void main(final String args[]) throws IOException {
-        new CitizenRouting();
+//        new CitizenRouting();
     }
 
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
-                panel.setVisible(false);
-                panel2.setVisible(true);
+                panel2.setVisible(false);
+                panel.setVisible(true);
+                viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Transactions":
+                viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Dashboard":
                 panel.setVisible(false);
                 panel2.setVisible(true);
+                viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Debts":
                 System.out.println("Debts clicked");
+                viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
+                viewNoti.setVisible(true);
+                panel.setVisible(false);
+                panel2.setVisible(false);
+                step1ToDeposit.setVisible(false);
+                break;
+            case "choose service":
+                panel2.setVisible(false);
+                panel.setVisible(false);
+                viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(true);
                 break;
             case "Invoices":
                 System.out.println("Invoices clicled");
+                break;
             default:
                 System.out.println();
                 break;
