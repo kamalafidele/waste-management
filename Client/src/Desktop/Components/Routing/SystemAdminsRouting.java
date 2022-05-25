@@ -41,6 +41,9 @@ public class SystemAdminsRouting extends JFrame{
     public  SystemAdminsRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
         this.toServer = toServer;
         this.fromServer = fromServer;
+        System.out.println("Constructor in SystemAdminsRouting " + toServer);
+        System.out.println("Constructor in SystemAdminsRouting " + fromServer);
+
         registerUser.setStreams(toServer,fromServer);
         registerDistrict.setStreams(toServer,fromServer);
 
@@ -183,6 +186,9 @@ public class SystemAdminsRouting extends JFrame{
                 registerDistrict.setVisible(false);
                 CreateNotification createNotification = new CreateNotification();
                 createNotification.setStreams(toServer, fromServer);
+                System.out.println("Switch case in SystemAdminsRouting " + toServer);
+                System.out.println("Switch case in SystemAdminsRouting " + fromServer);
+
                 break;
             default:
                 System.out.println();

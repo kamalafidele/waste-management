@@ -1,4 +1,8 @@
 package Desktop.Components.Routing;
+import Desktop.Components.Registration;
+import Desktop.Components.testPanel;
+import Desktop.Components.testPanel2;
+import Desktop.Components.viewNotifications;
 
 import Desktop.Components.*;
 
@@ -26,11 +30,15 @@ public class CitizenRouting extends JFrame{
 
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+    viewNotifications viewNoti =new viewNotifications();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
     StepOneDeposit step1ToDeposit =  new StepOneDeposit();
     StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
     public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
         setTitle("Citizen Board");
         setSize(1366,768);
         setLayout(null);
@@ -55,8 +63,9 @@ public class CitizenRouting extends JFrame{
 
         add(panel);
         add(panel2);
+        add(viewNoti);
         add(step1ToDeposit);
-        add(step2ToDeposit);
+//        add(step2ToDeposit);
 
         SidebarDesign();
         setVisible(true);
@@ -173,25 +182,33 @@ public class CitizenRouting extends JFrame{
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
-                panel.setVisible(false);
-                panel2.setVisible(true);
+                panel2.setVisible(false);
+                panel.setVisible(true);
+                viewNoti.setVisible(false);
                 break;
             case "Transactions":
+                viewNoti.setVisible(false);
                 break;
             case "Dashboard":
                 panel.setVisible(false);
                 panel2.setVisible(true);
+                viewNoti.setVisible(false);
                 break;
             case "Debts":
                 System.out.println("Debts clicked");
+                viewNoti.setVisible(false);
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
+                viewNoti.setVisible(true);
+                panel.setVisible(false);
+                panel2.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "choose service":
                 panel2.setVisible(false);
                 panel.setVisible(false);
-                step2ToDeposit.setVisible(true);
+                step1ToDeposit.setVisible(true);
                 break;
             case "Invoices":
                 System.out.println("Invoices clicled");

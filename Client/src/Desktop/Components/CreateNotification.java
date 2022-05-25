@@ -228,6 +228,8 @@ public class CreateNotification extends JFrame {
     public void setStreams(DataOutputStream toServer, DataInputStream fromServer) {
         this.toServer = toServer;
         this.fromServer = fromServer;
+        System.out.println("SetStreams in CreateNotification " + toServer);
+        System.out.println("SetStreams in CreateNotification " + fromServer);
     }
     class saveNotification implements ActionListener {
         @Override
@@ -270,6 +272,9 @@ public class CreateNotification extends JFrame {
     public void sendRequest( String request ){
         try{
             toServer.writeUTF( request );
+            System.out.println("SendRequestFun " + toServer);
+            System.out.println("SendRequestFun " + fromServer);
+
         }catch ( IOException exception ){
             exception.printStackTrace();
         }

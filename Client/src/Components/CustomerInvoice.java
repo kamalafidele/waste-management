@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class CustomerInvoice  {
+public class CustomerInvoice {
     ObjectMapper mapper;
 
     public void createTable (String response) throws Exception {
