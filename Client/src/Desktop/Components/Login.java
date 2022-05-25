@@ -110,21 +110,22 @@ public class Login extends JFrame {
                         userId = rs.getInt("id");
                         username = rs.getString("name");
                         userRole = rs.getInt("role");
+                        String userUppercase=username.toUpperCase();
                         if(userRole == 1){
                             setVisible(false);
-                            new SystemAdminsRouting(toServer, fromServer);
+                            new SystemAdminsRouting(toServer, fromServer,userUppercase);
                         }else if(userRole == 2) {
                             setVisible(false);
-                            new ConfirmerRouting();
+                            new ConfirmerRouting(userUppercase);
                         }else if(userRole == 3){
                             setVisible(false);
-                            new CitizenRouting(toServer,fromServer);
+                            new CitizenRouting(toServer,fromServer,userUppercase);
                         } else if(userRole == 4){
                             setVisible(false);
-                            new CompanyRouting();
+                            new CompanyRouting(userUppercase);
                         }else if(userRole == 5){
                             setVisible(false);
-                            new DistrictRouting(toServer,fromServer);
+                            new DistrictRouting(toServer,fromServer,userUppercase);
                         }
                     } else {
                   System.out.println("user doesn't exist");
