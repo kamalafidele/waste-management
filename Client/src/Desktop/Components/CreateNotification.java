@@ -37,24 +37,48 @@ public class CreateNotification extends JFrame {
     Color dodgerBlue = new Color(52,143,235);
     JPanel mainPanel;
     JPanel insidePanel;
+    JPanel emailPanel;
     JLabel notification;
     JLabel description;
     JLabel notificationName;
+    JLabel mailUserName;
+    JLabel from;
+    JLabel replyTo;
+    JLabel cc;
+    JLabel bcc;
+    JLabel organization;
+    JLabel header;
+
     JLabel processName;
     JLabel status;
+    JLabel signature;
     JLabel assignedGroup;
     JLabel renotify;
     JLabel date;
     JLabel content;
     JLabel message;
+    JLabel footer;
+    JLabel body;
     JTextField notificationTextField;
+    JTextField mailTextField;
+    JTextField fromTextField;
+    JTextField replyToTextField;
+    JTextField ccTextField;
+    JTextField bccTextField;
+    JTextField orgTextField;
+    JTextField headerTextField;
+
     JTextField processTextField;
     JComboBox statusChoice;
+    JComboBox signatureChoice;
     JComboBox groupChoice;
     JComboBox periodChoice;
     JTextArea textArea;
+    JTextArea footerTextArea;
+    JTextArea bodyTextArea;
     JPanel buttonPanel;
     JButton saveButton;
+    JButton sendButton;
     JButton closeButton;
     DatePicker datePicker;
     public CreateNotification(){
@@ -129,15 +153,72 @@ public class CreateNotification extends JFrame {
         insidePanel.add(textArea, "span, grow, height 200");
 
         buttonPanel = new JPanel();
+
         saveButton = new JButton("Save");
         saveButton.addActionListener(new saveNotification());
         closeButton = new JButton("Close");
 
+
+        emailPanel = new JPanel(new MigLayout("wrap", "[]10:push[]10:push[]10:push[]", "[]10[]"));
+        mailUserName = new JLabel("Email User Name");
+        mailTextField = new JTextField();
+        mailTextField.addFocusListener(new PlaceHolderHandler(notificationTextField, "Notification Name"));
+        from = new JLabel("From");
+        fromTextField = new JTextField();
+        replyTo = new JLabel("Reply To");
+        replyToTextField = new JTextField();
+        cc = new JLabel("CC");
+        ccTextField = new JTextField();
+        bcc = new JLabel("BCC");
+        bccTextField = new JTextField();
+        organization = new JLabel("Organization");
+        orgTextField = new JTextField();
+        header = new JLabel("Header");
+        headerTextField = new JTextField();
+        signature = new JLabel("Use Digital Signature");
+        String[] signatureChoices = {
+                "YES",
+                "NO"
+        };
+        signatureChoice = new JComboBox(signatureChoices);
+        body = new JLabel("Body");
+        bodyTextArea = new JTextArea("Write Your Message");
+        footer = new JLabel("Footer");
+        footerTextArea = new JTextArea("Write Your Footer");
+
+        sendButton = new JButton("Send");
+        sendButton.addActionListener(new sendEmail());
+
+        emailPanel.add(mailUserName);
+        emailPanel.add(mailTextField);
+        emailPanel.add(signature);
+        emailPanel.add(signatureChoice);
+        emailPanel.add(from);
+        emailPanel.add(fromTextField);
+        emailPanel.add(organization);
+        emailPanel.add(orgTextField);
+        emailPanel.add(replyTo);
+        emailPanel.add(replyToTextField);
+        emailPanel.add(cc);
+        emailPanel.add(ccTextField);
+        emailPanel.add(bcc);
+        emailPanel.add(body);
+        emailPanel.add(bodyTextArea);
+        emailPanel.add(bccTextField);
+
+
+
+        emailPanel.add(footer);
+        emailPanel.add(footerTextArea);
+
+
         buttonPanel.add(saveButton);
+//        buttonPanel.add(sendButton);
         buttonPanel.add(closeButton);
 
         mainPanel.add(notification);
         mainPanel.add(insidePanel);
+//        mainPanel.add(emailPanel);
         mainPanel.add(buttonPanel);
         this.add(mainPanel);
         this.pack();
@@ -147,9 +228,6 @@ public class CreateNotification extends JFrame {
     public void setStreams(DataOutputStream toServer, DataInputStream fromServer) {
         this.toServer = toServer;
         this.fromServer = fromServer;
-    }
-    public void setNotificationHandler(NotificationHandler notificationHandler) {
-        this.notificationHandler = notificationHandler;
     }
     class saveNotification implements ActionListener {
         @Override
@@ -179,6 +257,14 @@ public class CreateNotification extends JFrame {
                 }
             }
 
+        }
+    }
+    class sendEmail implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == sendButton){
+
+            }
         }
     }
     public void sendRequest( String request ){
