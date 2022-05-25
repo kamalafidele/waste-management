@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Date;
-import static java.lang.Integer.parseInt;
 
 public class NotificationController {
     private DataOutputStream toClient;
@@ -39,6 +38,7 @@ public class NotificationController {
         switch (requestArray[1]) {
 
             case "create" -> createNotification(receiver, notificationType);
+            case "email" -> sendEmailNotification();
             case "getAll" -> getAllNotifications(receiver);
             case "getUnread" -> getByViewStatusNotifications("unread", receiver);
             default -> sendResponse("Please specify your request (Be serious!)");
@@ -69,7 +69,9 @@ public class NotificationController {
         ResultSet resultSet = notificationRepo.findByViewStatus(viewStatus, receiver);
         insertNotificationsToList(unreadNotifications, resultSet);
     }
+    public void sendEmailNotification(){
 
+    }
     public void createNotification(int receiver, String notification_type){
         Notification notification = new Notification();
         Date date = Calendar.getInstance().getTime();

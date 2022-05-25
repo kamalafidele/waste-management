@@ -1,13 +1,9 @@
 package Desktop.Components;
-
 import DataHandlers.NotificationHandler;
 import Desktop.EventHandlers.PlaceHolderHandler;
 import com.github.lgooddatepicker.components.DatePicker;
 import com.github.lgooddatepicker.components.DatePickerSettings;
 import net.miginfocom.swing.MigLayout;
-import org.codehaus.jackson.map.ObjectMapper;
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -29,16 +25,14 @@ public class CreateNotification extends JFrame {
     public static void main(String[] args) {
         new CreateNotification();
     }
-    ObjectMapper mapper = new ObjectMapper();
-
     DataOutputStream toServer;
     DataInputStream fromServer;
-    NotificationHandler notificationHandler = null;
     Color dodgerBlue = new Color(52,143,235);
     JPanel mainPanel;
     JPanel insidePanel;
     JPanel emailPanel;
     JLabel notification;
+    JLabel mail;
     JLabel description;
     JLabel notificationName;
     JLabel mailUserName;
@@ -160,6 +154,9 @@ public class CreateNotification extends JFrame {
 
 
         emailPanel = new JPanel(new MigLayout("wrap", "[]10:push[]10:push[]10:push[]", "[]10[]"));
+        mail = new JLabel("Create Email Notifications");
+        mail.setFont(new Font("Inter", Font.BOLD, 20));
+        mail.setForeground(dodgerBlue);
         mailUserName = new JLabel("Email User Name");
         mailTextField = new JTextField();
         mailTextField.addFocusListener(new PlaceHolderHandler(notificationTextField, "Notification Name"));
@@ -187,38 +184,42 @@ public class CreateNotification extends JFrame {
         footerTextArea = new JTextArea("Write Your Footer");
 
         sendButton = new JButton("Send");
-        sendButton.addActionListener(new sendEmail());
+        sendButton.addActionListener(new saveNotification());
 
+        emailPanel.add(mail);
         emailPanel.add(mailUserName);
-        emailPanel.add(mailTextField);
+        emailPanel.add(mailTextField, "width 200");
         emailPanel.add(signature);
-        emailPanel.add(signatureChoice);
+        emailPanel.add(signatureChoice, "width 200");
         emailPanel.add(from);
-        emailPanel.add(fromTextField);
+        emailPanel.add(fromTextField, "width 200");
         emailPanel.add(organization);
-        emailPanel.add(orgTextField);
+        emailPanel.add(orgTextField, "width 200");
         emailPanel.add(replyTo);
-        emailPanel.add(replyToTextField);
+        emailPanel.add(replyToTextField, "width 200");
+        emailPanel.add(header);
+        emailPanel.add(headerTextField, "width 200");
         emailPanel.add(cc);
-        emailPanel.add(ccTextField);
+        emailPanel.add(ccTextField, "width 200");
         emailPanel.add(bcc);
+        emailPanel.add(bccTextField, "width 200");
         emailPanel.add(body);
-        emailPanel.add(bodyTextArea);
-        emailPanel.add(bccTextField);
+        emailPanel.add(bodyTextArea, "span, grow, height 200");
 
 
 
         emailPanel.add(footer);
-        emailPanel.add(footerTextArea);
+        emailPanel.add(footerTextArea, "span, grow, height 100");
 
 
-        buttonPanel.add(saveButton);
-//        buttonPanel.add(sendButton);
+//        buttonPanel.add(saveButton);
+        buttonPanel.add(sendButton);
         buttonPanel.add(closeButton);
 
-        mainPanel.add(notification);
-        mainPanel.add(insidePanel);
-//        mainPanel.add(emailPanel);
+//        mainPanel.add(notification);
+//        mainPanel.add(insidePanel);
+        mainPanel.add(mail);
+        mainPanel.add(emailPanel);
         mainPanel.add(buttonPanel);
         this.add(mainPanel);
         this.pack();
@@ -248,8 +249,6 @@ public class CreateNotification extends JFrame {
                     try {
                         sendRequest("notification/create/" + notificationHandler.getReceiver() + "/" +
                                 notificationHandler.getType());
-//                        System.out.println("notification/create/" + notificationHandler.getReceiver() + "/" +
-//                                notificationHandler.getType());
                         String response = fromServer.readUTF();
                         System.out.println(response);
 
@@ -258,15 +257,19 @@ public class CreateNotification extends JFrame {
                     }
                 }
             }
+            else if (e.getSource() == sendButton){
+                if(true) {
+                    try {
+                        sendRequest("notification/email/");
+                        String response = fromServer.readUTF();
+                        System.out.println(response);
 
-        }
-    }
-    class sendEmail implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (e.getSource() == sendButton){
-
+                    } catch (Exception exception) {
+                        exception.printStackTrace();
+                    }
+                }
             }
+
         }
     }
     public void sendRequest( String request ){

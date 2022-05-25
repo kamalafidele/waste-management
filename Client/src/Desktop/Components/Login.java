@@ -33,6 +33,8 @@ public class Login extends JFrame {
     Color lightGray = new Color(225, 227, 225);
 
     public Login(DataOutputStream toServer, DataInputStream fromServer) {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
         setTitle("WSMS_Y2_C");
         setSize(1366,760);
         setVisible(true);
