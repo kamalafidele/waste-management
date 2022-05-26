@@ -188,7 +188,7 @@ public class SystemAdminsRouting extends JFrame{
             case "Notifications":
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
-                CreateNotification createNotification = new CreateNotification();
+                CreateNotification createNotification = new CreateNotification(1);
                 createNotification.setStreams(toServer, fromServer);
                 System.out.println("Switch case in SystemAdminsRouting " + toServer);
                 System.out.println("Switch case in SystemAdminsRouting " + fromServer);

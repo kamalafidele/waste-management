@@ -4,6 +4,10 @@ import Desktop.EventHandlers.PlaceHolderHandler;
 import com.github.lgooddatepicker.components.DatePicker;
 import com.github.lgooddatepicker.components.DatePickerSettings;
 import net.miginfocom.swing.MigLayout;
+
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,6 +19,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Properties;
 
 /*
  * @authors: Fiat Bruno, Ineza Naillah
@@ -22,13 +27,11 @@ import java.util.Date;
  */
 
 public class CreateNotification extends JFrame {
-    public static void main(String[] args) {
-        new CreateNotification();
-    }
     DataOutputStream toServer;
     DataInputStream fromServer;
     Color dodgerBlue = new Color(52,143,235);
     JPanel mainPanel;
+    JPanel mainPanel2;
     JPanel insidePanel;
     JPanel emailPanel;
     JLabel notification;
@@ -37,11 +40,11 @@ public class CreateNotification extends JFrame {
     JLabel notificationName;
     JLabel mailUserName;
     JLabel from;
-    JLabel replyTo;
+    JLabel password;
     JLabel cc;
     JLabel bcc;
     JLabel organization;
-    JLabel header;
+    JLabel subject;
 
     JLabel processName;
     JLabel status;
@@ -56,11 +59,11 @@ public class CreateNotification extends JFrame {
     JTextField notificationTextField;
     JTextField mailTextField;
     JTextField fromTextField;
-    JTextField replyToTextField;
+    JPasswordField passwordTextField;
     JTextField ccTextField;
     JTextField bccTextField;
     JTextField orgTextField;
-    JTextField headerTextField;
+    JTextField subjectTextField;
 
     JTextField processTextField;
     JComboBox statusChoice;
@@ -71,17 +74,20 @@ public class CreateNotification extends JFrame {
     JTextArea footerTextArea;
     JTextArea bodyTextArea;
     JPanel buttonPanel;
+    JPanel buttonPanel2;
     JButton saveButton;
     JButton sendButton;
     JButton closeButton;
+    JButton switchButton;
     DatePicker datePicker;
-    public CreateNotification(){
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public CreateNotification(int version){
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setTitle("Create Notifications");
         this.setSize(800, 800);
         this.setResizable(false);
 
         mainPanel = new JPanel(new MigLayout("center, wrap, fill, insets 20", "20:push[]20:push", "20:push[]20[]20[]20:push"));
+        mainPanel2 = new JPanel(new MigLayout("center, wrap, fill, insets 20", "20:push[]20:push", "20:push[]20[]20[]20:push"));
         notification = new JLabel("Create Notifications");
         notification.setFont(new Font("Inter", Font.BOLD, 20));
         notification.setForeground(dodgerBlue);
@@ -150,7 +156,8 @@ public class CreateNotification extends JFrame {
 
         saveButton = new JButton("Save");
         saveButton.addActionListener(new saveNotification());
-        closeButton = new JButton("Close");
+        closeButton = new JButton("Switch Back");
+        closeButton.addActionListener(new switchListener());
 
 
         emailPanel = new JPanel(new MigLayout("wrap", "[]10:push[]10:push[]10:push[]", "[]10[]"));
@@ -162,16 +169,16 @@ public class CreateNotification extends JFrame {
         mailTextField.addFocusListener(new PlaceHolderHandler(notificationTextField, "Notification Name"));
         from = new JLabel("From");
         fromTextField = new JTextField();
-        replyTo = new JLabel("Reply To");
-        replyToTextField = new JTextField();
+        password = new JLabel("Password");
+        passwordTextField = new JPasswordField();
         cc = new JLabel("CC");
         ccTextField = new JTextField();
         bcc = new JLabel("BCC");
         bccTextField = new JTextField();
         organization = new JLabel("Organization");
         orgTextField = new JTextField();
-        header = new JLabel("Header");
-        headerTextField = new JTextField();
+        subject = new JLabel("Subject");
+        subjectTextField = new JTextField();
         signature = new JLabel("Use Digital Signature");
         String[] signatureChoices = {
                 "YES",
@@ -182,6 +189,8 @@ public class CreateNotification extends JFrame {
         bodyTextArea = new JTextArea("Write Your Message");
         footer = new JLabel("Footer");
         footerTextArea = new JTextArea("Write Your Footer");
+
+        buttonPanel2 = new JPanel();
 
         sendButton = new JButton("Send");
         sendButton.addActionListener(new saveNotification());
@@ -195,33 +204,49 @@ public class CreateNotification extends JFrame {
         emailPanel.add(fromTextField, "width 200");
         emailPanel.add(organization);
         emailPanel.add(orgTextField, "width 200");
-        emailPanel.add(replyTo);
-        emailPanel.add(replyToTextField, "width 200");
-        emailPanel.add(header);
-        emailPanel.add(headerTextField, "width 200");
+        emailPanel.add(password);
+        emailPanel.add(passwordTextField, "width 200");
+        emailPanel.add(subject);
+        emailPanel.add(subjectTextField, "width 200");
         emailPanel.add(cc);
         emailPanel.add(ccTextField, "width 200");
         emailPanel.add(bcc);
         emailPanel.add(bccTextField, "width 200");
         emailPanel.add(body);
         emailPanel.add(bodyTextArea, "span, grow, height 200");
-
-
-
         emailPanel.add(footer);
         emailPanel.add(footerTextArea, "span, grow, height 100");
 
 
-//        buttonPanel.add(saveButton);
-        buttonPanel.add(sendButton);
-        buttonPanel.add(closeButton);
 
-//        mainPanel.add(notification);
-//        mainPanel.add(insidePanel);
-        mainPanel.add(mail);
-        mainPanel.add(emailPanel);
+        buttonPanel.add(saveButton);
+
+        buttonPanel2.add(sendButton);
+
+        buttonPanel.add(closeButton);
+        buttonPanel2.add(closeButton);
+
+        switchButton = new JButton("Switch");
+        switchButton.setFocusable(false);
+        switchButton.addActionListener(new switchListener());
+
+        mainPanel2.add(switchButton);
+        mainPanel.add(switchButton);
+
+        mainPanel.add(notification);
+        mainPanel.add(insidePanel);
+
+        mainPanel2.add(mail);
+        mainPanel2.add(emailPanel);
+
         mainPanel.add(buttonPanel);
-        this.add(mainPanel);
+        mainPanel2.add(buttonPanel2);
+        if (version == 1){
+            this.add(mainPanel);
+        }
+        else {
+            this.add(mainPanel2);
+        }
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -251,22 +276,37 @@ public class CreateNotification extends JFrame {
                                 notificationHandler.getType());
                         String response = fromServer.readUTF();
                         System.out.println(response);
-
                     }catch (Exception exception) {
                         exception.printStackTrace();
                     }
                 }
             }
             else if (e.getSource() == sendButton){
-                if(true) {
-                    try {
-                        sendRequest("notification/email/");
-                        String response = fromServer.readUTF();
-                        System.out.println(response);
+                try {
+                    sendEmailNotification();
 
-                    } catch (Exception exception) {
-                        exception.printStackTrace();
-                    }
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+
+        }
+    }
+    class switchListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == switchButton){
+                try {
+                    new CreateNotification(2);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+            else if(e.getSource() == closeButton){
+                try {
+                    new CreateNotification(1);
+                } catch (Exception exception) {
+                    exception.printStackTrace();
                 }
             }
 
@@ -277,10 +317,51 @@ public class CreateNotification extends JFrame {
             toServer.writeUTF( request );
             System.out.println("SendRequestFun " + toServer);
             System.out.println("SendRequestFun " + fromServer);
-
         }catch ( IOException exception ){
             exception.printStackTrace();
         }
     }
+    public void sendEmailNotification(){
+        String recipient = mailTextField.getText();
+        String sender = fromTextField.getText();
+        Properties properties = new Properties();
+        properties.setProperty("mail.transport.protocol", "smtp");
+        properties.setProperty("mail.host", "smtp.gmail.com");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.port", "465");
+        properties.put("mail.debug", "true");
+        properties.put("mail.smtp.socketFactory.port", "465");
+        properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+        properties.put("mail.smtp.socketFactory.fallback", "false");
+        Authenticator authenticator = new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromTextField.getText(), new String(passwordTextField.getPassword()));
+            }
+        };
+        Session session = Session.getDefaultInstance(properties, authenticator);
+        try
+        {
+            Transport transport = session.getTransport();
+            MimeMessage message = new MimeMessage(session);
+
+            message.setFrom(new InternetAddress(sender));
+
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+
+            message.setSubject(subjectTextField.getText());
+
+            message.setText(bodyTextArea.getText() + footerTextArea.getText());
+
+            transport.connect();
+            Transport.send(message);
+            transport.close();
+            System.out.println("Mail successfully sent");
+        }
+        catch (MessagingException mex)
+        {
+            mex.printStackTrace();
+        }
+    }
+
 }
 

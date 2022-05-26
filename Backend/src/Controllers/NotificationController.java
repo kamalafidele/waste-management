@@ -1,9 +1,7 @@
 package Controllers;
 import Config.DatabaseConnection;
-import Models.*;
+import Models.Notification;
 import Repositories.NotificationRepo;
-
-
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.DataOutputStream;
@@ -12,10 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Date;
+import java.util.*;
 
 public class NotificationController {
     private DataOutputStream toClient;
@@ -30,7 +25,7 @@ public class NotificationController {
     }
 
     // THIS METHOD DETERMINES WHAT OPERATION REQUESTED BY CLIENT
-    public void filterRequest(String request, DataOutputStream toClient) {
+    public void filterRequest(String request, DataOutputStream toClient) throws IOException {
         this.toClient=toClient;
         String[] requestArray = request.split("/");
         int receiver = Integer.parseInt(requestArray[2]);
@@ -38,7 +33,6 @@ public class NotificationController {
         switch (requestArray[1]) {
 
             case "create" -> createNotification(receiver, notificationType);
-            case "email" -> sendEmailNotification();
             case "getAll" -> getAllNotifications(receiver);
             case "getUnread" -> getByViewStatusNotifications("unread", receiver);
             default -> sendResponse("Please specify your request (Be serious!)");
@@ -68,9 +62,6 @@ public class NotificationController {
         List<Notification> unreadNotifications = new ArrayList<>();
         ResultSet resultSet = notificationRepo.findByViewStatus(viewStatus, receiver);
         insertNotificationsToList(unreadNotifications, resultSet);
-    }
-    public void sendEmailNotification(){
-
     }
     public void createNotification(int receiver, String notification_type){
         Notification notification = new Notification();
