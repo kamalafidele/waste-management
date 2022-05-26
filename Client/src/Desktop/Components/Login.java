@@ -15,8 +15,8 @@ import java.io.IOException;
 import java.sql.*;
 
 public class Login extends JFrame {
-    private static DataOutputStream toServer;
-    private static DataInputStream fromServer;
+    DataOutputStream toServer;
+    DataInputStream fromServer;
 
     private  JPanel leftPanel = new JPanel();
     private  JPanel rightPanel = new JPanel();
@@ -33,6 +33,10 @@ public class Login extends JFrame {
     Color lightGray = new Color(225, 227, 225);
 
     public Login(DataOutputStream toServer, DataInputStream fromServer) {
+        //setting params
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
         setTitle("WSMS_Y2_C");
         setSize(1366,760);
         setVisible(true);

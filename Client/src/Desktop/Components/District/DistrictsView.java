@@ -1,6 +1,7 @@
 package Desktop.Components.District;
 
 import Desktop.Components.Registration;
+import org.codehaus.jackson.map.ObjectMapper;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -10,22 +11,38 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 public class DistrictsView extends JPanel {
     Registration registerDistrict = new Registration(true, false, false);
+    DataInputStream fromServer;
+    DataOutputStream toServer;
     JPanel container = new JPanel();
+    ObjectMapper mapper = new ObjectMapper();
 
-    public DistrictsView(){
+    public DistrictsView(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
+//      getting districts
+        sendRequest("district/getDistricts");
+        String response = fromServer.readUTF();
+        Object[][] districts = mapper.readValue(response, Object[][].class);
+
         setVisible(false);
         setBounds(200,0,1166,768);
         setBorder(new EmptyBorder(new Insets(20,30,20,30)));
-        Object [][] data = {{"Kicukiro","kicukiro@gmail.com","500000", "5", "4000"},{"Nyarugenge","nyarugenge@gmail.com","800000", "10", "3000"},{"Gasabo","gasabo@gmail.com","200000", "3", "7000"}};
-        Object [] columns = {"Name", "Email", "Wallet (RWF)", "Companies", "Citizens", "Actions"};
-        DistrictsTable("All Districts", data, columns);
+        Object [] columns = {"id", "name", "email"};
+        DistrictsTable("All Districts", districts, columns);
+
+        System.out.println(districts);
 
         //panels
         add(registerDistrict);
         registerDistrict.setVisible(false);
+
     }
 
     public void DistrictsTable(String title, Object[][] data, Object[] columns){
@@ -61,13 +78,13 @@ public class DistrictsView extends JPanel {
 
         //increase table size
         table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        table.getColumnModel().getColumn(0).setPreferredWidth(250);
-        table.getColumnModel().getColumn(1).setPreferredWidth(250);
-        table.getColumnModel().getColumn(2).setPreferredWidth(200);
-        table.getColumnModel().getColumn(3).setPreferredWidth(170);
-        table.getColumnModel().getColumn(4).setPreferredWidth(200);
-        table.getColumnModel().getColumn(5).setCellRenderer(new ButtonRenderer());
-        table.getColumnModel().getColumn(5).setCellEditor( new ButtonEditor(new JCheckBox()));
+        table.getColumnModel().getColumn(0).setPreferredWidth(350);
+        table.getColumnModel().getColumn(1).setPreferredWidth(350);
+        table.getColumnModel().getColumn(2).setPreferredWidth(350);
+//        table.getColumnModel().getColumn(3).setPreferredWidth(250);
+//        table.getColumnModel().getColumn(4).setPreferredWidth(200);
+//        table.getColumnModel().getColumn(5).setCellRenderer(new ButtonRenderer());
+//        table.getColumnModel().getColumn(5).setCellEditor( new ButtonEditor(new JCheckBox()));
 
         table.getTableHeader().setOpaque(false);
         table.setShowGrid(false);
@@ -105,7 +122,7 @@ public class DistrictsView extends JPanel {
     public class ButtonClickEventHandler implements ActionListener {
         public void actionPerformed(ActionEvent ae){
             if(ae.getActionCommand().equals("createdistrict")){
-                container.setVisible(false);
+                setVisible(false);
                 registerDistrict.setVisible(true);
             }
         }
@@ -140,6 +157,14 @@ public class DistrictsView extends JPanel {
 
         public Object getCellEditorValue() {
             return new String(label);
+        }
+    }
+
+    public void sendRequest(String request){
+        try {
+            this.toServer.writeUTF(request);
+        }catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

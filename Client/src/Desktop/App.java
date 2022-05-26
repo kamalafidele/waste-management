@@ -26,7 +26,7 @@ public class App extends JFrame {
     public static void main(String[] args) {
         App application = new App();
         try {
-            Socket socket = new Socket("localhost",2500);
+            Socket socket = new Socket("localhost",3000);
             application.setStreams(socket);
 
         } catch (Exception exception) {}
@@ -101,7 +101,6 @@ public class App extends JFrame {
                 dispose();
             }
         });
-
         rightPanel.add(login);
     }
 
