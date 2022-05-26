@@ -61,7 +61,7 @@ public class CitizenRouting extends JFrame{
         panel2.add(analyticsPanel);
         // invoices panel
         panel2.add(invoicesPanel);
-        viewNotifications =new viewNotifications(toServer, fromServer);
+        viewNotifications = new viewNotifications(toServer, fromServer);
 
 
         add(panel);
