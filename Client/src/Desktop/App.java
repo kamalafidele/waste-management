@@ -166,11 +166,7 @@ public class App extends JFrame {
                                         ActionListener() {
                                             @Override
                                             public void actionPerformed (ActionEvent e){
-                                                try {
-                                                    new Login(toServer, fromServer);
-                                                } catch (IOException ex) {
-                                                    throw new RuntimeException(ex);
-                                                }
+                                                new Login(toServer, fromServer);
                                                 dispose();
                                             }
                                         });
