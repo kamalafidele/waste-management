@@ -17,8 +17,8 @@ import java.net.Socket;
 import java.sql.*;
 
 public class Login extends JFrame {
-    private static DataOutputStream toServer;
-    private static DataInputStream fromServer;
+      DataOutputStream toServer;
+      DataInputStream fromServer;
 
     private  JPanel leftPanel = new JPanel();
     private  JPanel rightPanel = new JPanel();
@@ -35,6 +35,10 @@ public class Login extends JFrame {
     Color lightGray = new Color(225, 227, 225);
 
     public Login(DataOutputStream toServer, DataInputStream fromServer) {
+        this.toServer = toServer;
+        System.out.println(toServer);
+        this.fromServer = fromServer;
+
         setTitle("WSMS_Y2_C");
         setSize(1366,760);
         setVisible(true);
@@ -88,28 +92,28 @@ public class Login extends JFrame {
         login.setBackground(dodgerBlue);
 
         //Add action listeners to buttons
-        login.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String email = myemail.getText();
-                String password = mypassword.getText();
-                int userId;
-                int userRole;
-                String username;
-                try {
-                    Connection connection =  DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/LGMxUJ3u44",
-                            "LGMxUJ3u44", "gAzBLwXOq8");
+            login.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    String email = myemail.getText();
+                    String password = mypassword.getText();
+                    int userId;
+                    int userRole;
+                    String username;
+                    try {
+                        Connection connection =  DriverManager.getConnection("jdbc:mysql://localhost:3306/LGMxUJ3u44",
+                                "root", "marv1nk@rs");
 
-                    PreparedStatement st = connection
-                            .prepareStatement("SELECT * FROM `users` WHERE `email` =? AND `password` =?");
-                    st.setString(1, email);
-                    st.setString(2, password);
-                    ResultSet rs = st.executeQuery();
+                        PreparedStatement st = connection
+                                .prepareStatement("SELECT * FROM `users` WHERE `email` =? AND `password` =?");
+                        st.setString(1, email);
+                        st.setString(2, password);
+                        ResultSet rs = st.executeQuery();
 
-                    if (rs.next()) {
-                        userId = rs.getInt("id");
-                        username = rs.getString("name");
-                        userRole = rs.getInt("role");
+                        if (rs.next()) {
+                            userId = rs.getInt("id");
+                            username = rs.getString("name");
+                            userRole = rs.getInt("role");
                         if(userRole == 1){
                             setVisible(false);
                             new SystemAdminsRouting(toServer, fromServer);
@@ -118,13 +122,13 @@ public class Login extends JFrame {
                             new ConfirmerRouting();
                         }else if(userRole == 3){
                             setVisible(false);
-                            new CitizenRouting();
+                            new CitizenRouting(toServer,fromServer);
                         } else if(userRole == 4){
                             setVisible(false);
                             new CompanyRouting();
                         }else if(userRole == 5){
                             setVisible(false);
-                            new DistrictRouting(toServer,fromServer);
+                            new SystemAdminsRouting(toServer,fromServer);
                         }
                     } else {
                   System.out.println("user doesn't exist");

@@ -28,9 +28,16 @@ public class CitizenRouting extends JFrame{
     testPanel2 panel2=new testPanel2();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
-    StepOneDeposit step1ToDeposit =  new StepOneDeposit();
+    Deposit depo2;
+    StepOneDeposit step1ToDeposit = new StepOneDeposit();
     StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
+
     public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
+        this.depo2 = new Deposit(false,true, toServer,fromServer);
+
         setTitle("Citizen Board");
         setSize(1366,768);
         setLayout(null);
@@ -44,7 +51,7 @@ public class CitizenRouting extends JFrame{
         // analytics
         // invoices
         JPanel invoicesPanel = new InvoicesPanel();
-        // wallet
+        // walletm
         JPanel wallet = new Wallet(5000);
         panel2.add(wallet);
         // analytics panel
@@ -55,8 +62,10 @@ public class CitizenRouting extends JFrame{
 
         add(panel);
         add(panel2);
-        add(step1ToDeposit);
+//        add(depo2);
         add(step2ToDeposit);
+
+       depo2.setStreams(toServer,fromServer);
 
         SidebarDesign();
         setVisible(true);
@@ -192,6 +201,8 @@ public class CitizenRouting extends JFrame{
                 panel2.setVisible(false);
                 panel.setVisible(false);
                 step2ToDeposit.setVisible(true);
+                depo2.setVisible(false);
+
                 break;
             case "Invoices":
                 System.out.println("Invoices clicled");

@@ -3,10 +3,10 @@ package Config;
 import java.sql.*;
 
 public class DatabaseConnection {
-    String driver="com.mysql.jdbc.Driver";
-    String url="jdbc:mysql://localhost:3306/wasteManagUpdated?characterEncoding=latin1";
+    String driver="com.mysql.cj.jdbc.Driver";
+    String url="jdbc:mysql://localhost:3306/lgmxuj3u44?characterEncoding=latin1";
     String username="root";
-    String password="ae789789";
+    String password="marv1nk@rs";
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;

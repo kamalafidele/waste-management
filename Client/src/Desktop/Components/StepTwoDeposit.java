@@ -7,11 +7,16 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 
 public class StepTwoDeposit extends JPanel {
+    DataOutputStream toServer;
+    DataInputStream fromServer;
     public StepTwoDeposit() {
+
         System.out.println("StepTwoDeposit constructor called !");
-//        setVisible(false);
+       setVisible(false);
         setBounds(200, 0, 1166, 768);
         setBackground(Color.white);
         setBorder(new EmptyBorder(new Insets(200, 30, 20, 30)));
@@ -55,12 +60,21 @@ public class StepTwoDeposit extends JPanel {
         bankButton.setBorder(new EmptyBorder(new Insets(100, 100, 100, 100)));
         add(bank);
 
+//        Deposit depo = new Deposit(true,false);
+//
+//
+//        add(depo);
+//        add(depo2);
+
 
         bank.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
                     System.out.println("bank button clicked !");
+                    Deposit depo2= new Deposit(false,true,toServer,fromServer);
+                    depo2.setVisible(true);
+
 
                 } catch (Exception exception) {
                     System.out.println("Something went wrong !");
@@ -69,6 +83,21 @@ public class StepTwoDeposit extends JPanel {
             }
         });
 
+        momo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    System.out.println("Momo button clicked !");
+                    Deposit depo2= new Deposit(true,false,toServer,fromServer);
+                    depo2.setVisible(true);
+
+
+                } catch (Exception exception) {
+                    System.out.println("Something went wrong !");
+                    exception.printStackTrace();
+                }
+            }
+        });
 
 
     }
