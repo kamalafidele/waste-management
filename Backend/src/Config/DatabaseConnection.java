@@ -4,9 +4,9 @@ import java.sql.*;
 
 public class DatabaseConnection {
     String driver="com.mysql.jdbc.Driver";
-    String url="jdbc:mysql://remotemysql.com:3306/wasteManagUpdated?characterEncoding=latin1";
-    String username="LGMxUJ3u44";
-    String password="gAzBLwXOq8";
+    String url = "jdbc:mysql://localhost:3306/LGMxUJ3u44?characterEncoding=latin1";
+    String username = "root";
+    String password = "teta2005";
     Connection connection=null;
     Statement statement=null;
     ResultSet data=null;

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="github.lgooddatepicker.LGoodDatePicker1" type="repository">
+    <properties maven-id="com.github.lgooddatepicker:LGoodDatePicker:11.2.1" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/LGoodDatePicker-11.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

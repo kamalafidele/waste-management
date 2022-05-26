@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="github.kancyframework.springx.boot.gui.miglayout1" type="repository">
+    <properties maven-id="com.github.kancyframework:springx-boot-gui-miglayout:0.0.4-RELEASE" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/springx-boot-gui-miglayout-0.0.4-RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -25,6 +25,7 @@ public class ThreadHandler extends Thread{
 
                 //READING REQUESTS FROM THE CLIENT
                 String request=fromClient.readUTF();
+                System.out.println(request);
                 switch (request.split("/")[0]){
                     case "serviceconfirmation":
                         new ShiftsController(databaseConnection).filterRequest(request,toClient);

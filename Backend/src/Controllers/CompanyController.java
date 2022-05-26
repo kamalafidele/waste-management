@@ -4,7 +4,7 @@ import Config.DatabaseConnection;
 import Models.Company;
 import Repositories.CompanyRepo;
 import Repositories.WalletsRepoHandler;
-import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map .ObjectMapper;
 import Repositories.CustomerInvoicesRepo;
 
 import java.io.DataOutputStream;
