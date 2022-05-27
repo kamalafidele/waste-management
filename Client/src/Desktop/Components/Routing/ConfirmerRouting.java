@@ -4,9 +4,6 @@ import Desktop.Components.testPanel2;
 import Desktop.Screens.Shifts.ViewShifts;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -14,10 +11,6 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
@@ -28,7 +21,7 @@ public class ConfirmerRouting extends JFrame{
 
     private DataOutputStream toServer;
     private DataInputStream fromServer;
-
+    Logout logout=new Logout(this);
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
@@ -36,12 +29,12 @@ public class ConfirmerRouting extends JFrame{
     ViewShifts viewShifts=new ViewShifts();
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
+    public  ConfirmerRouting(String username) throws IOException {
+//        public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+//        this.toServer = toServer;
+//        this.fromServer = fromServer;
 
-        public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
-        this.toServer = toServer;
-        this.fromServer = fromServer;
-
-        setTitle("Company Board");
+        setTitle("Confirmer Board");
         setSize(1366,768);
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,11 +47,11 @@ public class ConfirmerRouting extends JFrame{
         add(panel);
         add(panel2);
         add(viewShifts);
-        SidebarDesign();
+        SidebarDesign(username);
         setVisible(true);
     }
 
-    public void SidebarDesign() throws IOException {
+    public void SidebarDesign(String username) throws IOException {
         JMenuBar menuBar = new JMenuBar();
         analytics = ImageIO.read(new File("src/Desktop/Images/bar-chart-line.png"));
         dashboard = ImageIO.read(new File("src/Desktop/Images/dashboard-line.png"));
@@ -112,19 +105,9 @@ public class ConfirmerRouting extends JFrame{
         JLabel userAvatar=new JLabel(new ImageIcon(userAvatarImg.getScaledInstance(90,90,BufferedImage.SCALE_DEFAULT)));
         JPanel credentials=new JPanel();
         credentials.setLayout(new GridLayout(2,1));
-        JLabel userName=new JLabel("NTAKIRUTIMANA");
+        JLabel userName=new JLabel(username);
         userName.setFont(new Font("Inter", Font.BOLD, 18));
         JLabel userRole=new JLabel("           Service Confirmer");
-
-        JPanel logoutBtn=new JPanel();
-        JButton logout = new JButton("Logout");
-        logout.setBackground(Color.decode("#557DF8"));
-        logout.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
-        logout.setFont(new Font("Inter", Font.PLAIN, 16));
-        logout.setForeground(Color.WHITE);
-        logout.setFocusPainted(false);
-        logoutBtn.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
-        logoutBtn.add(logout);
         credentials.add(logoImg);
         credentials.add(userAvatar);
         JPanel credential2=new JPanel();
@@ -136,12 +119,9 @@ public class ConfirmerRouting extends JFrame{
         SideBar.add(credentials);
         SideBar.add(credential2);
         SideBar.add(menuBar);
-        SideBar.add(logoutBtn);
+        SideBar.add(logout);
     }
 
-    public static void main(final String args[]) throws IOException {
-
-    }
 
     public  void filter(String chosen){
         switch (chosen) {

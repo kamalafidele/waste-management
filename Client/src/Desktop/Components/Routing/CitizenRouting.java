@@ -1,5 +1,4 @@
 package Desktop.Components.Routing;
-import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 import Desktop.Components.viewNotifications;
@@ -8,7 +7,6 @@ import Desktop.Components.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 import java.awt.*;
@@ -23,6 +21,8 @@ public class CitizenRouting extends JFrame{
     BufferedImage dashboard,analytics,notifications,Debts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
 
+    Logout logout=new Logout(this);
+
     private DataOutputStream toServer;
     private DataInputStream fromServer;
 
@@ -35,10 +35,7 @@ public class CitizenRouting extends JFrame{
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
     StepOneDeposit step1ToDeposit =  new StepOneDeposit();
     StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
-    public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
-        this.toServer = toServer;
-        this.fromServer = fromServer;
-
+    public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer,String username) throws IOException{
         setTitle("Citizen Board");
         setSize(1366,768);
         setLayout(null);
@@ -65,13 +62,13 @@ public class CitizenRouting extends JFrame{
         add(panel2);
         add(viewNoti);
         add(step1ToDeposit);
-        add(step2ToDeposit);
+//        add(step2ToDeposit);
 
-        SidebarDesign();
+        SidebarDesign(username);
         setVisible(true);
     }
 
-    public void SidebarDesign() throws IOException {
+    public void SidebarDesign(String username) throws IOException {
         JMenuBar menuBar = new JMenuBar();
         menuBar.setPreferredSize(new Dimension(180,350));
 
@@ -147,19 +144,9 @@ public class CitizenRouting extends JFrame{
         JLabel userAvatar=new JLabel(new ImageIcon(userAvatarImg.getScaledInstance(90,90,BufferedImage.SCALE_DEFAULT)));
         JPanel credentials=new JPanel();
         credentials.setLayout(new GridLayout(2,1));
-        JLabel userName=new JLabel("Ntakirutimana");
+        JLabel userName=new JLabel(username);
         userName.setFont(new Font("Inter", Font.BOLD, 18));
         JLabel userRole=new JLabel("           System Client");
-
-        JPanel logoutBtn=new JPanel();
-        JButton logout = new JButton("Logout");
-        logout.setBackground(Color.decode("#557DF8"));
-        logout.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
-        logout.setFont(new Font("Inter", Font.PLAIN, 16));
-        logout.setForeground(Color.WHITE);
-        logout.setFocusPainted(false);
-        logoutBtn.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
-        logoutBtn.add(logout);
         credentials.add(logoImg);
         credentials.add(userAvatar);
         JPanel credential2=new JPanel();
@@ -171,12 +158,7 @@ public class CitizenRouting extends JFrame{
         SideBar.add(credentials);
         SideBar.add(credential2);
         SideBar.add(menuBar);
-        SideBar.add(logoutBtn);
-    }
-
-
-    public static void main(final String args[]) throws IOException {
-//        new CitizenRouting();
+        SideBar.add(logout);
     }
 
     public  void filter(String chosen){
@@ -185,28 +167,34 @@ public class CitizenRouting extends JFrame{
                 panel2.setVisible(false);
                 panel.setVisible(true);
                 viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Transactions":
                 viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Dashboard":
                 panel.setVisible(false);
                 panel2.setVisible(true);
                 viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Debts":
                 System.out.println("Debts clicked");
                 viewNoti.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
                 viewNoti.setVisible(true);
                 panel.setVisible(false);
                 panel2.setVisible(false);
+                step1ToDeposit.setVisible(false);
                 break;
             case "choose service":
                 panel2.setVisible(false);
                 panel.setVisible(false);
+                viewNoti.setVisible(false);
                 step1ToDeposit.setVisible(true);
                 break;
             case "Invoices":
