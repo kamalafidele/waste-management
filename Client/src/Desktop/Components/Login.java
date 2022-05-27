@@ -36,6 +36,8 @@ public class Login extends JFrame {
         this.toServer = toServer;
         this.fromServer = fromServer;
 
+        System.out.println("Admin" + toServer);
+
         setTitle("WSMS_Y2_C");
         setSize(1366,760);
         setVisible(true);
@@ -122,16 +124,16 @@ public class Login extends JFrame {
                             new SystemAdminsRouting(toServer, fromServer,userUppercase);
                         }else if(userRole == 2) {
                             setVisible(false);
-//                            new ConfirmerRouting(userUppercase);
+                            new ConfirmerRouting(userUppercase);
                         }else if(userRole == 3){
                             setVisible(false);
-//                            new CitizenRouting(toServer,fromServer,userUppercase);
+                            new CitizenRouting(toServer,fromServer,userUppercase);
                         } else if(userRole == 4){
                             setVisible(false);
                             new CompanyRouting(userUppercase);
                         }else if(userRole == 5){
                             setVisible(false);
-//                            new DistrictRouting(toServer,fromServer,userUppercase);
+                            new DistrictRouting(toServer,fromServer,userUppercase);
                         }
                     } else {
                   System.out.println("user doesn't exist");

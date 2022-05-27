@@ -58,6 +58,9 @@ public class ConfirmerRouting extends JFrame{
         setVisible(true);
     }
 
+    public ConfirmerRouting(String userUppercase) {
+    }
+
     public void SidebarDesign() throws IOException {
         JMenuBar menuBar = new JMenuBar();
         analytics = ImageIO.read(new File("src/Desktop/Images/bar-chart-line.png"));

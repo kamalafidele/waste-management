@@ -15,26 +15,26 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-public class DistrictsView extends JPanel {
+public class CompanyView extends JPanel {
     Registration registerDistrict = new Registration(true, false, false);
     DataInputStream fromServer;
     DataOutputStream toServer;
     JPanel container = new JPanel();
     ObjectMapper mapper = new ObjectMapper();
 
-    public DistrictsView(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+    public CompanyView(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
         this.toServer = toServer;
         this.fromServer = fromServer;
 
         // getting districts
-        sendRequest("district/getDistricts");
+        sendRequest("company/getAll");
         String response = fromServer.readUTF();
         Object[][] districts = mapper.readValue(response, Object[][].class);
 
         setVisible(false);
         setBounds(200, 0, 1166, 768);
         setBorder(new EmptyBorder(new Insets(20, 30, 20, 30)));
-        Object[] columns = { "id", "name", "email" };
+        Object[] columns = { "id", "name", "tin", "email" };
 
         DistrictsTable("All Districts", districts, columns);
 
@@ -46,7 +46,7 @@ public class DistrictsView extends JPanel {
 
     }
 
-    public void DistrictsTable(String title, Object[][] data, Object[] columns) {
+    public void DistrictsTable(String title, Object[][] data, Object[] columns) throws IOException {
         JLabel label = new JLabel(title);
         Color color = new Color(37, 149, 234);
         JButton addButton = new JButton("Create District");
@@ -72,7 +72,7 @@ public class DistrictsView extends JPanel {
         addButton.setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
 
         addButton.setActionCommand("createdistrict");
-        addButton.addActionListener(new DistrictsView.ButtonClickEventHandler());
+        addButton.addActionListener(new CompanyView.ButtonClickEventHandler());
 
         container.add(addButton);
         container.add(label);
@@ -103,7 +103,7 @@ public class DistrictsView extends JPanel {
 
             @Override
             public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
-                    boolean hasFocus, int row, int column) {
+                                                           boolean hasFocus, int row, int column) {
                 Component c = DEFAULT_RENDERER.getTableCellRendererComponent(table, value, isSelected, hasFocus, row,
                         column);
                 if (row % 2 == 0) {
@@ -143,7 +143,7 @@ public class DistrictsView extends JPanel {
 
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
-                int row, int column) {
+                                                       int row, int column) {
             setText("View");
             return this;
         }
@@ -159,7 +159,7 @@ public class DistrictsView extends JPanel {
         }
 
         public Component getTableCellEditorComponent(JTable table, Object value, Boolean isSelected, int row,
-                int column) {
+                                                     int column) {
             label = "View";
             button.setText(label);
             return button;

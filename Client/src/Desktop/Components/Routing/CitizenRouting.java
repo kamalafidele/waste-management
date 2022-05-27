@@ -1,5 +1,4 @@
 package Desktop.Components.Routing;
-import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 import Desktop.Components.viewNotifications;
@@ -36,7 +35,7 @@ public class CitizenRouting extends JFrame{
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
     StepOneDeposit step1ToDeposit =  new StepOneDeposit();
     StepTwoDeposit step2ToDeposit = new StepTwoDeposit();
-    public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
+    public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer, String userUppercase) throws IOException{
         this.toServer = toServer;
         this.fromServer = fromServer;
 
