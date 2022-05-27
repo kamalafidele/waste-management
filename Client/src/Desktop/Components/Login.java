@@ -2,8 +2,7 @@ package Desktop.Components;
 
 
 import Desktop.Components.Routing.*;
-import Desktop.EventHandlers.ActionEventHandler;
-import Desktop.Screens.RoundBtn;
+import Desktop.Shared.RoundBtn;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -13,12 +12,11 @@ import java.awt.event.ActionListener;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.Socket;
 import java.sql.*;
 
 public class Login extends JFrame {
-    private static DataOutputStream toServer;
-    private static DataInputStream fromServer;
+    private DataOutputStream toServer;
+    private DataInputStream fromServer;
 
     private  JPanel leftPanel = new JPanel();
     private  JPanel rightPanel = new JPanel();
@@ -35,6 +33,9 @@ public class Login extends JFrame {
     Color lightGray = new Color(225, 227, 225);
 
     public Login(DataOutputStream toServer, DataInputStream fromServer) {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
         setTitle("WSMS_Y2_C");
         setSize(1366,760);
         setVisible(true);
@@ -112,7 +113,7 @@ public class Login extends JFrame {
                             new SystemAdminsRouting(toServer, fromServer);
                         }else if(userRole == 2) {
                             setVisible(false);
-                            new ConfirmerRouting(toServer, fromServer);
+                            new ConfirmerRouting(toServer,fromServer);
                         }else if(userRole == 3){
                             setVisible(false);
                             new CitizenRouting(toServer,fromServer);
@@ -131,7 +132,8 @@ public class Login extends JFrame {
 
                     sqlException.printStackTrace();
                 } catch (IOException ex) {
-                    throw new RuntimeException(ex);
+                    System.out.println(ex.getMessage());
+//                    throw new RuntimeException(ex);
                 }
             }
         });

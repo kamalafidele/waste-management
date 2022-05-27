@@ -39,9 +39,9 @@ public class CompanyRouting extends JFrame{
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
     public  CompanyRouting() throws IOException {
-//        this.fromServer = fromServer;
-//        this.toServer = toServer;
-//        registerUser.setStreams(toServer,fromServer);
+        this.fromServer = fromServer;
+        this.toServer = toServer;
+        registerUser.setStreams(toServer,fromServer);
 
         setTitle("Company Board");
         setSize(1366,768);

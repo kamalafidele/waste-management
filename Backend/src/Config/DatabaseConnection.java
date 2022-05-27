@@ -3,21 +3,21 @@ package Config;
 import java.sql.*;
 
 public class DatabaseConnection {
-    String driver="com.mysql.jdbc.Driver";
-    String url="jdbc:mysql://localhost:3306/LGMxUJ3u44?characterEncoding=latin1";
-    String username="root";
-    String password="nyabugogo";
-    Connection connection=null;
-    Statement statement=null;
-    ResultSet data=null;
+    String driver = "com.mysql.jdbc.Driver";
+    String url = "jdbc:mysql://remotemysql.com:3306/LGMxUJ3u44?characterEncoding=latin1";
+    String username = "LGMxUJ3u44";
+    String password = "gAzBLwXOq8";
+    Connection connection = null;
+    Statement statement = null;
+    ResultSet data = null;
 
-    public DatabaseConnection(){
+    public DatabaseConnection() {
         try{
-          Class.forName(driver);
-          connection= DriverManager.getConnection(url,username,password);
+            Class.forName(driver);
+            connection = DriverManager.getConnection(url,username,password);
 
-          if(connection != null)
-              statement=connection.createStatement();
+            if(connection != null)
+                statement=connection.createStatement();
 
         }catch(Exception exception){
             System.out.println("CONNECTION TO DATABASE FAILED");
@@ -29,7 +29,7 @@ public class DatabaseConnection {
         try{
             statement.execute(createStatement);
             return true;
-        }catch(SQLException exception){
+        }catch(SQLException exception) {
             return false;
         }
     }
@@ -45,12 +45,12 @@ public class DatabaseConnection {
     }
 
     public ResultSet select( String selectStatement ) {
-       try{
-           data=statement.executeQuery( selectStatement );
-           return data;
-       }catch (SQLException exception){
+        try{
+            data=statement.executeQuery( selectStatement );
             return data;
-       }
+        }catch (SQLException exception){
+            return data;
+        }
     }
 
     public boolean update( String updateStatement ) {
@@ -62,14 +62,14 @@ public class DatabaseConnection {
         }
     }
 
-   public boolean delete( String deleteStatement){
-       try{
-         statement.execute( deleteStatement );
-         return true; 
-       }catch ( SQLException exception){
-           return false;
-       }
-   }
+    public boolean delete( String deleteStatement){
+        try{
+            statement.execute( deleteStatement );
+            return true;
+        }catch ( SQLException exception){
+            return false;
+        }
+    }
 
     public ResultSet getById( String updateStatement ) {
         try{

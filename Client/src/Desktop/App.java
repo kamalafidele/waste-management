@@ -1,6 +1,6 @@
 package Desktop;
 import Desktop.Components.Login;
-import Desktop.Screens.RoundBtn;
+import Desktop.Shared.RoundBtn;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -26,7 +26,7 @@ public class App extends JFrame {
     public static void main(String[] args) {
         App application = new App();
         try {
-            Socket socket = new Socket("localhost",2500);
+            Socket socket = new Socket("localhost",3000);
             application.setStreams(socket);
 
         } catch (Exception exception) {}

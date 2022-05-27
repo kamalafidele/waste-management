@@ -26,22 +26,21 @@ public class ConfirmerRouting extends JFrame{
     BufferedImage dashboard,analytics,notifications,Shifts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
 
-     private DataOutputStream toServer;
-     private DataInputStream fromServer;
-     ViewShifts viewShifts=new ViewShifts();
-
+    private DataOutputStream toServer;
+    private DataInputStream fromServer;
 
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
 
+    ViewShifts viewShifts;
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-//    public  ConfirmerRouting() throws IOException {
-        public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+
+    public  ConfirmerRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
         this.toServer = toServer;
         this.fromServer = fromServer;
-
+        this.viewShifts = new ViewShifts(toServer,fromServer);
         setTitle("Company Board");
         setSize(1366,768);
         setLayout(null);
@@ -54,8 +53,8 @@ public class ConfirmerRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
-        viewShifts.setStreams(this.toServer,this.fromServer);
         add(viewShifts);
+        viewShifts.setStreams(this.toServer,this.fromServer);
         SidebarDesign();
         setVisible(true);
     }
@@ -141,9 +140,9 @@ public class ConfirmerRouting extends JFrame{
         SideBar.add(logoutBtn);
     }
 
-//    public static void main(final String args[]) throws IOException {
-//        new ConfirmerRouting(toServer,fromServer);
-//    }
+    public static void main(final String args[]) throws IOException {
+
+    }
 
     public  void filter(String chosen){
         switch (chosen) {

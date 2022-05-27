@@ -5,15 +5,17 @@ public class ShiftsHandler {
     private int company_id;
     private String date;
     private int confirmerId;
+    private String company_name;
 
     public ShiftsHandler(){
 
     }
 
-    public ShiftsHandler(int id,int company_id,String date){
+    public ShiftsHandler(int id,int company_id,String date,String company_name){
         this.id=id;
         this.company_id=company_id;
         this.date=date;
+        this.company_name=company_name;
     }
     public int getId() {
         return id;
@@ -47,4 +49,11 @@ public class ShiftsHandler {
         this.confirmerId = confirmerId;
     }
 
+    public String getCompany_name() {
+        return company_name;
+    }
+
+    public void setCompany_name(String company_name) {
+        this.company_name = company_name;
+    }
 }

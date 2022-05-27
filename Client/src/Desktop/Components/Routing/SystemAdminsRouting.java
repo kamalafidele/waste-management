@@ -1,5 +1,6 @@
 package Desktop.Components.Routing;
 import Desktop.Components.CreateNotification;
+import Desktop.Components.District.DistrictsView;
 import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
@@ -35,6 +36,7 @@ public class SystemAdminsRouting extends JFrame{
     testPanel2 panel2=new testPanel2();
     Registration registerDistrict = new Registration(true,false, false);
     Registration registerUser = new Registration(false,false,true);
+    DistrictsView districtsView = new DistrictsView();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
@@ -59,6 +61,7 @@ public class SystemAdminsRouting extends JFrame{
         add(panel2);
         add(registerDistrict);
         add(registerUser);
+        add(districtsView);
 
         SidebarDesign();
         setVisible(true);
@@ -176,7 +179,8 @@ public class SystemAdminsRouting extends JFrame{
                 panel.setVisible(false);
                 panel2.setVisible(false);
                 registerUser.setVisible(false);
-                registerDistrict.setVisible(true);
+//                registerDistrict.setVisible(true);
+                districtsView.setVisible(true);
                 break;
             case "Notifications":
                 registerUser.setVisible(false);
