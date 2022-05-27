@@ -6,23 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="40098456-60c6-4aeb-8896-539afe23d8d7" name="Changes" comment="customerInvoice control">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/Backend/Controllers/DistrictController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Backend/Controllers/DistrictController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DistrictController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/Admin/AdminInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/DataHandlers/Admin/AdminInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/DashbChart$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/DashbChart$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/DashbChart.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/DashbChart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Components/District/DistrictDashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView$ButtonClickEventHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView$ButtonClickEventHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView$ButtonEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView$ButtonEditor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView$ButtonRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView$ButtonRenderer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/District/DistrictsView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Login$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting$MenuListenerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/out/production/Client/Desktop/Components/Routing/SystemAdminsRouting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Components/District/DistrictDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/District/DistrictsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/District/DistrictsView.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/Controllers/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/DistrictController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/.idea/workspace.xml" afterDir="false" />
->>>>>>> parent of 7cf1c171 (Merge remote-tracking branch 'origin/master' into saad)
+      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/SystemAdminsRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Client/src/Desktop/Components/Routing/SystemAdminsRouting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,12 +148,6 @@
       <workItem from="1653381115663" duration="4809000" />
       <workItem from="1653414251929" duration="5525000" />
       <workItem from="1653454526465" duration="1418000" />
-      <workItem from="1653459034993" duration="3709000" />
-      <workItem from="1653564005880" duration="648000" />
-      <workItem from="1653581792551" duration="636000" />
-      <workItem from="1653584912796" duration="718000" />
-      <workItem from="1653589884520" duration="3428000" />
-      <workItem from="1653629582294" duration="845000" />
     </task>
     <task id="LOCAL-00001" summary="customerInvoice control">
       <created>1646022290178</created>

@@ -36,19 +36,15 @@ public class SystemAdminsRouting extends JFrame{
     testPanel2 panel2=new testPanel2();
     Registration registerDistrict = new Registration(true,false, false);
     Registration registerUser = new Registration(false,false,true);
-    DistrictsView districtsView;
+    DistrictsView districtsView = new DistrictsView();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
     public  SystemAdminsRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
-        System.out.println("in ADNMIN"+toServer);
-
         this.toServer = toServer;
         this.fromServer = fromServer;
-
         registerUser.setStreams(toServer,fromServer);
         registerDistrict.setStreams(toServer,fromServer);
-        districtsView = new DistrictsView(toServer,fromServer);
 
         setTitle("Company Board");
         setSize(1366,768);

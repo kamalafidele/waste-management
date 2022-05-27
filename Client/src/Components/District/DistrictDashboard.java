@@ -55,8 +55,10 @@ public class DistrictDashboard {
             System.out.print("Password: ");
             logindata.setPin(Long.valueOf(keyboard.next()));
 
+
             toServer.flush();
             this.sendRequest("district/login/" + mapper.writeValueAsString(logindata));
+
 
             return fromServer.readUTF();
 
@@ -113,6 +115,7 @@ public class DistrictDashboard {
 //        districtHandler.setPin( pin );
 //        districtHandler.setRole( 3 );
         districtHandler.setWalletId(0L);
+
 
         try{
             String districtAsJson=mapper.writeValueAsString( districtHandler );
