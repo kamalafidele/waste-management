@@ -3,7 +3,6 @@ package Controllers;
 import Config.DatabaseConnection;
 import Models.Company;
 import Repositories.CompanyRepo;
-import Repositories.WalletsRepoHandler;
 import org.codehaus.jackson.map.ObjectMapper;
 import Repositories.CustomerInvoicesRepo;
 
@@ -68,6 +67,42 @@ public class CompanyController {
        } catch (Exception exception){}
     }
 
+    private int getRowCount(ResultSet rs) {
+
+        try {
+
+            if(rs != null) {
+
+                rs.last();
+
+                return rs.getRow();
+            }
+
+        } catch (SQLException e) {
+
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+
+        return 0;
+    }
+
+    private int getColumnCount(ResultSet rs) {
+
+        try {
+
+            if(rs != null)
+                return rs.getMetaData().getColumnCount();
+
+        } catch (SQLException e) {
+
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+
+        return 0;
+    }
+
     public void getCompanies() {
         List<Company> companies = new ArrayList<>();
         ResultSet resultSet = companyRepo.findAll();
@@ -79,7 +114,26 @@ public class CompanyController {
                 companies.add(company);
             }
 
-            sendResponse(mapper.writeValueAsString(companies));
+            int rowCount = getRowCount(resultSet);
+            int columnCount = getColumnCount(resultSet);
+
+            Object data[][] = new Object[rowCount][columnCount];
+
+            resultSet.beforeFirst();
+
+            int i = 0;
+            while(resultSet.next()){
+                int j = 0;
+                data[i][j++] = resultSet.getLong(1);
+                data[i][j++] = resultSet.getString(2);
+                data[i][j++] = resultSet.getString(3);
+                data[i][j++] = resultSet.getLong(4);
+                data[i][j++] = resultSet.getLong(5);
+
+                i++;
+            }
+
+            sendResponse(mapper.writeValueAsString(data));
 
         }catch( IOException | SQLException exception ){}
     }

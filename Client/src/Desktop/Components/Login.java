@@ -130,7 +130,7 @@ public class Login extends JFrame {
                             new CitizenRouting(toServer,fromServer,userUppercase);
                         } else if(userRole == 4){
                             setVisible(false);
-                            new CompanyRouting(userUppercase);
+                            new CompanyRouting(toServer, fromServer, userUppercase);
                         }else if(userRole == 5){
                             setVisible(false);
                             new DistrictRouting(toServer,fromServer,userUppercase);

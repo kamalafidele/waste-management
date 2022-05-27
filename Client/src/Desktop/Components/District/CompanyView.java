@@ -31,6 +31,8 @@ public class CompanyView extends JPanel {
         String response = fromServer.readUTF();
         Object[][] districts = mapper.readValue(response, Object[][].class);
 
+        System.out.println(districts);
+
         setVisible(false);
         setBounds(200, 0, 1166, 768);
         setBorder(new EmptyBorder(new Insets(20, 30, 20, 30)));
@@ -86,7 +88,7 @@ public class CompanyView extends JPanel {
         table.getColumnModel().getColumn(0).setPreferredWidth(350);
         table.getColumnModel().getColumn(1).setPreferredWidth(350);
         table.getColumnModel().getColumn(2).setPreferredWidth(350);
-        // table.getColumnModel().getColumn(3).setPreferredWidth(250);
+        table.getColumnModel().getColumn(3).setPreferredWidth(350);
         // table.getColumnModel().getColumn(4).setPreferredWidth(200);
         // table.getColumnModel().getColumn(5).setCellRenderer(new ButtonRenderer());
         // table.getColumnModel().getColumn(5).setCellEditor( new ButtonEditor(new

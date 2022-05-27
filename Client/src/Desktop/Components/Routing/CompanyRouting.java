@@ -1,5 +1,6 @@
 package Desktop.Components.Routing;
 import Desktop.Components.*;
+import Desktop.Components.District.CompanyView;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -38,9 +39,9 @@ public class CompanyRouting extends JFrame{
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  CompanyRouting(String username) throws IOException {
-//        this.fromServer = fromServer;
-//        this.toServer = toServer;
+    public  CompanyRouting(DataOutputStream toServer, DataInputStream fromServer, String username) throws IOException {
+        this.fromServer = fromServer;
+        this.toServer = toServer;
 //        registerUser.setStreams(toServer,fromServer);
 
         setTitle("Company Board");
@@ -136,7 +137,7 @@ public class CompanyRouting extends JFrame{
         credentials.setLayout(new GridLayout(2,1));
         JLabel userName=new JLabel(username);
         userName.setFont(new Font("Inter", Font.BOLD, 18));
-        JLabel userRole=new JLabel("           Company Admin");
+        JLabel userRole=new JLabel("Company Admin");
         credentials.add(logoImg);
         credentials.add(userAvatar);
         JPanel credential2=new JPanel();

@@ -1,5 +1,6 @@
 package Desktop.Components.Routing;
 import Desktop.Components.*;
+import Desktop.Components.District.CompanyView;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -27,6 +28,7 @@ public class DistrictRouting extends JFrame{
     Registration registerCompany = new Registration(false,true, false);
     Registration registerUser = new Registration(false,false,true);
     AnalyticsPanel mainAnalyticsPanel = new AnalyticsPanel();
+    CompanyView companyView;
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
@@ -36,6 +38,7 @@ public class DistrictRouting extends JFrame{
 
         registerCompany.setStreams(toServer,fromServer);
         registerUser.setStreams(toServer,fromServer);
+        companyView = new CompanyView(toServer, fromServer);
 
         setTitle("Company Board");
         setSize(1366,768);
@@ -193,8 +196,9 @@ public class DistrictRouting extends JFrame{
             case "Companies":
                 panel2.setVisible(false);
                 panel.setVisible(false);
-                registerUser.setVisible(false);
-                registerCompany.setVisible(true);
+//                registerUser.setVisible(false);
+//                registerCompany.setVisible(false);
+                companyView.setVisible(true);
                 break;
             case "Notifications":
                 registerUser.setVisible(false);
