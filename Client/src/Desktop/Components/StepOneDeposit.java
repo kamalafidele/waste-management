@@ -76,8 +76,7 @@ public class StepOneDeposit extends JPanel {
         wasteCollection.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    System.out.println("wasteCollection button clicked !");
+                try {                    System.out.println("wasteCollection button clicked !");
                     setVisible(false);
                     testPanel tp =new testPanel();
                     StepTwoDeposit stepTwo = new StepTwoDeposit();

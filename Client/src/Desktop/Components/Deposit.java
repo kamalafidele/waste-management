@@ -16,6 +16,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 
 public class Deposit extends JFrame {
+
     private boolean isMomo;
     private boolean isBank;
     ObjectMapper mapper = new ObjectMapper();
@@ -30,7 +31,7 @@ public class Deposit extends JFrame {
     JLabel phoneLabel = new JLabel("Phone Number");
     JLabel heading = new JLabel();
     JLabel amountLabel = new JLabel("Amount");
-    JLabel responseLabel = new JLabel("");
+
 
     JButton Finish = new JButton("Finish");
 
@@ -44,14 +45,14 @@ public class Deposit extends JFrame {
     DistrictHandler districtHandler = null;
 
     public Deposit(boolean isMomo, boolean isBank, DataOutputStream toServer, DataInputStream fromServer) {
-
+        System.out.println(toServer + "IN DEPOSITI");
         this.toServer = toServer;
         this.fromServer = fromServer;
         this.isMomo = isMomo;
         this.isBank = isBank;
 
         setVisible(false);
-        setSize(500,600);
+        setSize(300,600);
         GridLayout layout = new GridLayout(3, 1);
         layout.setVgap(0);
         layout.setHgap(0);
@@ -71,10 +72,8 @@ public class Deposit extends JFrame {
     }
 
     public void styleComponents() {
-        phoneLabel.setBounds(210,60,40,20);
-        bankLabel.setBounds(210,60,40,20);
-        amountLabel.setBounds(110,60,40,20);
-        heading.setBounds(310,40,350,20);
+
+        heading.setBounds(310,60,350,40);
         heading.setFont(new Font("verdana", Font.PLAIN, 30));
         heading.setForeground(Color.decode("#3674D0"));
         bankacc.setBorder(new RoundBtn(8));
@@ -82,8 +81,9 @@ public class Deposit extends JFrame {
         amount.setBorder(new RoundBtn(8));
         Finish.setBorder(new RoundBtn(10));
         Finish.setBackground(dodgerBlue);
-        responseLabel.setForeground(Color.GREEN);
-        Finish.setActionCommand("sumbit");
+
+
+        Finish.setActionCommand("submit");
 
         inputsPanel.setBackground(Color.WHITE);
         titlePanel.setBackground(Color.WHITE);
@@ -96,7 +96,7 @@ public class Deposit extends JFrame {
 
     public void setTitlePanelContent() {
         titlePanel.add(heading);
-        titlePanel.add(responseLabel, BorderLayout.CENTER);
+
 
     }
 
@@ -108,9 +108,10 @@ public class Deposit extends JFrame {
 
     public void setInputsPanelContent() {
         if (isBank) {
-
+            inputsPanel.add(bankLabel);
             inputsPanel.add(bankacc);
 
+            inputsPanel.add(amountLabel);
             inputsPanel.add(amount);
             heading.setText("Deposit By Bank");
             Finish.addActionListener(new ActionListener() {
@@ -119,13 +120,13 @@ public class Deposit extends JFrame {
                     String bankAccount = bankacc.getText();
                     String amt = amount.getText();
                     System.out.println(toServer);
-//                    String Request = "payment/bankpayment/" + bankAccount +"/"+amt +"/"+5678;
-//                    sendRequest(Request);
+                    String Request = "payment/bankpayment/" + bankAccount +"/"+amt +"/"+5678;
+                    sendRequest(Request);
                     if (bankAccount.equalsIgnoreCase("1234567")) {
                         JOptionPane.showMessageDialog(Finish, "Deposit Recorded ");
                         dispose();
                     } else {
-                        JOptionPane.showMessageDialog(Finish, "There seems to be no momo account registered with that number");
+                        JOptionPane.showMessageDialog(Finish, "Invalid Bank Account");
                     }
                 }
             });
@@ -149,7 +150,7 @@ public class Deposit extends JFrame {
                         JOptionPane.showMessageDialog(Finish, "Deposit Recorded ");
                         dispose();
                     } else {
-                        JOptionPane.showMessageDialog(Finish, "There seems to be no momo account registered with that number");
+                        JOptionPane.showMessageDialog(Finish, "Invalid Number");
                     }
                 }
 

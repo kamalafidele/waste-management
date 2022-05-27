@@ -13,7 +13,9 @@ import java.io.DataOutputStream;
 public class StepTwoDeposit extends JPanel {
     DataOutputStream toServer;
     DataInputStream fromServer;
-    public StepTwoDeposit() {
+    public StepTwoDeposit(DataOutputStream toServer, DataInputStream fromServer) {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
 
         System.out.println("StepTwoDeposit constructor called !");
        setVisible(false);
@@ -72,7 +74,7 @@ public class StepTwoDeposit extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 try {
                     System.out.println("bank button clicked !");
-                    Deposit depo2= new Deposit(false,true,toServer,fromServer);
+                    Deposit depo2 = new Deposit(false,true,toServer,fromServer);
                     depo2.setVisible(true);
 
 
