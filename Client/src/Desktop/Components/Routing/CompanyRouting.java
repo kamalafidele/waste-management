@@ -28,7 +28,7 @@ public class CompanyRouting extends JFrame{
     private  JPanel SideBar = new JPanel();
     private DataOutputStream toServer;
     private DataInputStream fromServer;
-    Logout logout=new Logout();
+    Logout logout=new Logout(this);
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
@@ -137,6 +137,7 @@ public class CompanyRouting extends JFrame{
         SideBar.add(credential2);
         SideBar.add(menuBar);
         SideBar.add(logout);
+
     }
 
     public  void filter(String chosen){

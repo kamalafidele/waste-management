@@ -131,17 +131,13 @@ getStarted.addMouseListener(new MouseListener() {
         //Add action listeners to buttons
         login.addActionListener(new
 
-                                        ActionListener() {
-                                            @Override
-                                            public void actionPerformed (ActionEvent e){
-                                                try {
-                                                    new Login(toServer, fromServer);
-                                                } catch (Exception ex) {
-                                                    throw new RuntimeException(ex);
-                                                }
-                                                dispose();
-                                            }
-                                        });
+                ActionListener() {
+                    @Override
+                    public void actionPerformed (ActionEvent e){
+                        new Login(toServer, fromServer);
+                        dispose();
+                    }
+                });
 
         add(picLabel);
         add(signUp);
@@ -162,7 +158,5 @@ getStarted.addMouseListener(new MouseListener() {
             exception.printStackTrace();
         }
     }
-
-
 
 }
