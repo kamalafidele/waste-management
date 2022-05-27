@@ -7,7 +7,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 
 import java.io.DataInput;
-import Components.House.Dashboard;
+//import Components.House.Dashboard;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -93,8 +93,8 @@ public class House{
         if(handler.getName() == null) {
             //dashboard
             System.out.println("Successfully logged in!");
-            Dashboard dashboard = new Dashboard(toServer, fromServer);
-            dashboard.handleDashboard(fromServer, toServer, handler);
+//            Dashboard dashboard = new Dashboard(toServer, fromServer);
+//            dashboard.handleDashboard(fromServer, toServer, handler);
             return;
         }
         //        }catch (IOException exception){
