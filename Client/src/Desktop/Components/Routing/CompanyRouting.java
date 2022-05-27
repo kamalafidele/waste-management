@@ -1,9 +1,6 @@
 package Desktop.Components.Routing;
-import Desktop.Components.Employees;
-import Desktop.Components.Registration;
-import Desktop.Components.CreateNotification;
-import Desktop.Components.testPanel;
-import Desktop.Components.testPanel2;
+import Desktop.Components.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,19 +26,22 @@ public class CompanyRouting extends JFrame{
     private DataOutputStream toServer;
     private DataInputStream fromServer;
 
+
+    Logout logout=new Logout(this);
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
     Employees employees=new Employees();
     Registration registration = new Registration(false,false,true);
     Registration registerUser = new Registration(false,false,true);
+    AnalyticsPanel mainAnalyticsPanel = new AnalyticsPanel();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  CompanyRouting() throws IOException {
-        this.fromServer = fromServer;
-        this.toServer = toServer;
-        registerUser.setStreams(toServer,fromServer);
+    public  CompanyRouting(String username) throws IOException {
+//        this.fromServer = fromServer;
+//        this.toServer = toServer;
+//        registerUser.setStreams(toServer,fromServer);
 
         setTitle("Company Board");
         setSize(1366,768);
@@ -55,15 +55,27 @@ public class CompanyRouting extends JFrame{
         panel.setVisible(true);
         add(panel);
         add(panel2);
+        // analytics
+        // invoices
+        JPanel invoicesPanel = new InvoicesPanel();
+        // wallet
+        JPanel wallet = new Wallet(5000);
+        mainAnalyticsPanel.add(wallet);
+        // analytics panel
+        JPanel analyticsPanel = new Analytics(invoicesPanel, mainAnalyticsPanel);
+        mainAnalyticsPanel.add(analyticsPanel);
+        // invoices panel
+        mainAnalyticsPanel.add(invoicesPanel);
+        add(mainAnalyticsPanel);
         add(registration);
         add(employees);
         add(registerUser);
 
-        SidebarDesign();
+        SidebarDesign(username);
         setVisible(true);
     }
 
-    public void SidebarDesign() throws IOException {
+    public void SidebarDesign(String username) throws IOException {
         JMenuBar menuBar = new JMenuBar();
         analytics = ImageIO.read(new File("src/Desktop/Images/bar-chart-line.png"));
         dashboard = ImageIO.read(new File("src/Desktop/Images/dashboard-line.png"));
@@ -122,19 +134,9 @@ public class CompanyRouting extends JFrame{
         JLabel userAvatar=new JLabel(new ImageIcon(userAvatarImg.getScaledInstance(90,90,BufferedImage.SCALE_DEFAULT)));
         JPanel credentials=new JPanel();
         credentials.setLayout(new GridLayout(2,1));
-        JLabel userName=new JLabel("NTAKIRUTIMANA");
+        JLabel userName=new JLabel(username);
         userName.setFont(new Font("Inter", Font.BOLD, 18));
         JLabel userRole=new JLabel("           Company Admin");
-
-        JPanel logoutBtn=new JPanel();
-        JButton logout = new JButton("Logout");
-        logout.setBackground(Color.decode("#557DF8"));
-        logout.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
-        logout.setFont(new Font("Inter", Font.PLAIN, 16));
-        logout.setForeground(Color.WHITE);
-        logout.setFocusPainted(false);
-        logoutBtn.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
-        logoutBtn.add(logout);
         credentials.add(logoImg);
         credentials.add(userAvatar);
         JPanel credential2=new JPanel();
@@ -146,12 +148,8 @@ public class CompanyRouting extends JFrame{
         SideBar.add(credentials);
         SideBar.add(credential2);
         SideBar.add(menuBar);
-        SideBar.add(logoutBtn);
-    }
-    
+        SideBar.add(logout);
 
-    public static void main(final String args[]) throws IOException {
-        new CompanyRouting();
     }
 
     public  void filter(String chosen){
@@ -159,7 +157,8 @@ public class CompanyRouting extends JFrame{
             case "Analytics":
                 panel2.setVisible(false);
                 registerUser.setVisible(false);
-                panel.setVisible(true);
+                panel.setVisible(false);
+                mainAnalyticsPanel.setVisible(true);
                 break;
             case "Transactions":
                 break;

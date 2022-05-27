@@ -2,6 +2,7 @@ package Desktop.Components;
 
 
 import Desktop.Components.Routing.*;
+import Desktop.EventHandlers.ActionEventHandler;
 import Desktop.Shared.RoundBtn;
 
 import javax.swing.*;
@@ -9,14 +10,13 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.net.Socket;
 import java.sql.*;
 
 public class Login extends JFrame {
-    private static DataOutputStream toServer;
-    private static DataInputStream fromServer;
+    private  DataOutputStream toServer;
+    private  DataInputStream fromServer;
 
     private  JPanel leftPanel = new JPanel();
     private  JPanel rightPanel = new JPanel();
@@ -33,6 +33,9 @@ public class Login extends JFrame {
     Color lightGray = new Color(225, 227, 225);
 
     public Login(DataOutputStream toServer, DataInputStream fromServer) {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
         setTitle("WSMS_Y2_C");
         setSize(1366,760);
         setVisible(true);
@@ -59,7 +62,6 @@ public class Login extends JFrame {
         setLayout(new GridLayout(1,2));
         setVisible(true);
         this.setFont(new Font("Inter", Font.PLAIN, 18));
-        setSize(1000,700);
 
         setLeftPanelTexts();
         setRightPanelContent();
@@ -106,23 +108,30 @@ public class Login extends JFrame {
 
                     if (rs.next()) {
                         userId = rs.getInt("id");
+                        File loggedInUser = new File("loggedIn.txt");
+                        if(!loggedInUser.exists())
+                            loggedInUser.createNewFile();
+                        BufferedWriter writer = new BufferedWriter(new FileWriter("loggedIn.txt"));
+                        writer.write(String.valueOf(userId));
+                        writer.close();
                         username = rs.getString("name");
                         userRole = rs.getInt("role");
+                        String userUppercase=username.toUpperCase();
                         if(userRole == 1){
                             setVisible(false);
-                            new SystemAdminsRouting(toServer, fromServer);
+                            new SystemAdminsRouting(toServer, fromServer,userUppercase);
                         }else if(userRole == 2) {
                             setVisible(false);
-                            new ConfirmerRouting(toServer,fromServer);
+                            new ConfirmerRouting(userUppercase);
                         }else if(userRole == 3){
                             setVisible(false);
-                            new CitizenRouting(toServer,fromServer);
+                            new CitizenRouting(toServer,fromServer,userUppercase);
                         } else if(userRole == 4){
                             setVisible(false);
-                            new CompanyRouting();
+                            new CompanyRouting(userUppercase);
                         }else if(userRole == 5){
                             setVisible(false);
-                            new DistrictRouting(toServer,fromServer);
+                            new DistrictRouting(toServer,fromServer,userUppercase);
                         }
                     } else {
                   System.out.println("user doesn't exist");

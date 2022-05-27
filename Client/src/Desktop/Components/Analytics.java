@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Analytics extends JPanel {
-    public Analytics(JPanel invoicesPanel){
+    public Analytics(JPanel invoicesPanel, JPanel mainPanel){
         invoicesPanel.setVisible(false);
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         String analyticsParagraph = "<html><h1>Analytics</h1><h4>Your analytics includes invoices, " +
@@ -15,6 +15,23 @@ public class Analytics extends JPanel {
         String invoicesParagraph = "<html><br/><br/><br/><h4>Recent invoices issued to you</h4><br/></html>";
         String reportsParagraph = "<html><br/><br/><br/><h4>Your recent reports</h4><br/></html>";
 
+        JButton backBtn = new JButton("< Back");
+        backBtn.setBackground(Color.decode("#557DF8"));
+        backBtn.setBounds(50, 20,150, 40);
+        backBtn.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
+        backBtn.setFont(new Font("Inter", Font.BOLD, 13));
+        backBtn.setForeground(Color.WHITE);
+        backBtn.setFocusPainted(false);
+        backBtn.setVisible(false);
+
+        backBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                invoicesPanel.setVisible(false);
+                backBtn.setVisible(false);
+                setVisible(true);
+            }
+        });
 
         JLabel analyticsLabel = new JLabel(analyticsParagraph);
         JLabel invoicesParagraphLabel = new JLabel(invoicesParagraph);
@@ -27,9 +44,11 @@ public class Analytics extends JPanel {
         invoices.setFont(new Font("Inter", Font.BOLD, 13));
         invoices.setForeground(Color.WHITE);
         invoices.setFocusPainted(false);
+
         invoices.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                backBtn.setVisible(true);
                 invoicesPanel.setVisible(true);
                 setVisible(false);
             }
@@ -70,6 +89,7 @@ public class Analytics extends JPanel {
         reportsButtons.add(marginButton);
         reportsButtons.add(newReport);
 
+        mainPanel.add(backBtn);
         add(analyticsLabel, LEFT_ALIGNMENT);
         add(invoicesParagraphLabel);
         add(invoices);
