@@ -66,9 +66,38 @@ public class App extends JFrame {
         JLabel picLabel = new JLabel(new ImageIcon(myPicture));
 ;
 
-        JLabel signUp = new JLabel("Sign Up");
+        JLabel signUp = new JLabel("Our services");
+        signUp.addMouseListener(new MouseListener() {
+
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+          signUp.setForeground(Color.BLACK);
+          signUp.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+              signUp.setForeground(dodgerBlue);
+            }
+        });
         signUp.setForeground(dodgerBlue);
-        signUp.setFont(new Font("Inter", Font.PLAIN, 20));
+        signUp.setFont(new Font("Inter", Font.PLAIN, 18));
 
         JLabel label = new JLabel("Welcome to WSMS");
         JLabel label1 = new JLabel("The best online waste and security management system in Rwanda");
@@ -140,13 +169,17 @@ public class App extends JFrame {
                                                  @Override
                                                  public void actionPerformed (ActionEvent e){
 
-                                                     new Registration(false,false,true);
+                                                     try {
+                                                         new Login(toServer, fromServer);
+                                                     } catch (IOException ex) {
+                                                         throw new RuntimeException(ex);
+                                                     }
                                                      dispose();
                                                  }
                                              });
 
         picLabel.setBounds(30, 30, 150, 40);
-        signUp.setBounds(1000, 40, 100, 30);
+        signUp.setBounds(950, 40, 200, 30);
         login.setBounds(1100, 30, 120,40);
         label.setBounds(400,300, 600,50);
         label1.setBounds(450,350, 500, 30);
@@ -166,7 +199,11 @@ public class App extends JFrame {
                                         ActionListener() {
                                             @Override
                                             public void actionPerformed (ActionEvent e){
-                                                new Login(toServer, fromServer);
+                                                try {
+                                                    new Login(toServer, fromServer);
+                                                } catch (IOException ex) {
+                                                    throw new RuntimeException(ex);
+                                                }
                                                 dispose();
                                             }
                                         });

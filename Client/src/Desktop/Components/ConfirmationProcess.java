@@ -1,19 +1,23 @@
 package Desktop.Components;
 
-import Desktop.Screens.RoundBtn;
-//import Desktop.Shared.RoundBtn;
+
+import Desktop.Shared.RoundBtn;
+import org.codehaus.jackson.map.ObjectMapper;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 
 
 public class ConfirmationProcess extends JPanel{
 
-//    DataOutputStream toServer;
-//    DataInputStream fromServer;
-//    ObjectMapper mapper =new ObjectMapper();
+    DataOutputStream toServer;
+    DataInputStream fromServer;
+    ObjectMapper mapper =new ObjectMapper();
 
     JPanel confirmationLevelPanel=new JPanel();
     JPanel confirmationLevelPanel2=new JPanel();
