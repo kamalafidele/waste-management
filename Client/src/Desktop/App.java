@@ -1,108 +1,162 @@
 package Desktop;
 import Desktop.Components.Login;
-import Desktop.Screens.RoundBtn;
+import Desktop.Components.Registration;
+import Desktop.Screens.RegisterClient.RegisterClientIndex;
+import Desktop.Shared.RoundBtn;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.net.Socket;
 
 public class App extends JFrame {
     DataOutputStream toServer;
     DataInputStream fromServer;
 
-    private  JPanel leftPanel = new JPanel();
-    private  JPanel rightPanel = new JPanel();
 
     JButton login = new JButton("Login");
 
-    Color dodgerBlue = new Color(52,143,235);
+    Color dodgerBlue = new Color(52, 143, 235);
     Color lightGray = new Color(225, 227, 225);
 
     public static void main(String[] args) {
         App application = new App();
         try {
-            Socket socket = new Socket("localhost",2500);
+            Socket socket = new Socket("localhost", 3000);
             application.setStreams(socket);
 
-        } catch (Exception exception) {}
+        } catch (Exception exception) {
+        }
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-              application.initialize();
+                try {
+                    application.initialize();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
     }
 
-    public void initialize() {
+    public void initialize() throws IOException {
+        BoxLayout boxLayout = new BoxLayout(this, BoxLayout.Y_AXIS);
         setTitle("WSMS_Y2_C");
-        setSize(1366,760);
+        setSize(1366, 760);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        leftPanel.setVisible(true);
-        leftPanel.setSize(500,600);
-        leftPanel.setBackground(lightGray);
-        BoxLayout boxLayout = new BoxLayout(leftPanel, BoxLayout.Y_AXIS);
-        leftPanel.setLayout(boxLayout);
-        leftPanel.setBorder(new EmptyBorder(new Insets(150, 200, 150, 200)));
 
-        rightPanel.setVisible(true);
-        rightPanel.setSize(500,600);
-        rightPanel.setBackground(Color.WHITE);
-        GridLayout layout = new GridLayout(5,1);
-        layout.setVgap(10);
-        rightPanel.setLayout(layout);
-        rightPanel.setBorder(new EmptyBorder(200, 50, 200, 50));
+        setBackground(lightGray);
 
-        add(leftPanel);
-        add(rightPanel);
+        setLayout(null);
 
-        setLayout(new GridLayout(1,2));
-        setVisible(true);
+        BufferedImage myPicture = ImageIO.read(new File("src/Desktop/Images/logo.png"));
+        JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+;
 
-        setLeftPanelTexts();
-        setRightPanelContent();
-    }
+        JLabel signUp = new JLabel("Sign Up");
+        signUp.setForeground(dodgerBlue);
+        signUp.setFont(new Font("Inter", Font.PLAIN, 20));
 
-    public void setStreams(Socket socket) {
-         try {
-             toServer = new DataOutputStream(socket.getOutputStream());
-             fromServer = new  DataInputStream(socket.getInputStream());
-         } catch (Exception exception){}
-    }
-
-    public void setLeftPanelTexts() {
         JLabel label = new JLabel("Welcome to WSMS");
-        JLabel label1 = new JLabel("The best online waste and security");
-        JLabel label2 = new JLabel("management system in Rwanda");
+        JLabel label1 = new JLabel("The best online waste and security management system in Rwanda");
+     JButton getStarted = new JButton("Get Started");
 
-        label.setBorder(new EmptyBorder(new Insets(30,0,30,0)));
-        label.setFont(new Font(label.getFont().getName(), label.getFont().getStyle(), 30));
+getStarted.addMouseListener(new MouseListener() {
 
-        leftPanel.add(label);
-        leftPanel.add(label1);
-        leftPanel.add(label2);
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
     }
 
-    public void setRightPanelContent() {
-        login.setSize(60,40);
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        getStarted.setCursor(new Cursor(Cursor.HAND_CURSOR));
+     getStarted.setBackground(Color.LIGHT_GRAY);
+     getStarted.setForeground(Color.BLACK);
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+      getStarted.setForeground(Color.WHITE);
+      getStarted.setBackground(dodgerBlue);
+    }
+});
+        getStarted.addActionListener(new ActionListener() {
+                                                 @Override
+                                                 public void actionPerformed (ActionEvent e){
+
+                                                     new Registration(false,false,true);
+                                                     dispose();
+                                                 }
+                                             });
+
+        picLabel.setBounds(30, 30, 150, 40);
+        signUp.setBounds(1000, 40, 100, 30);
+        login.setBounds(1100, 30, 120,40);
+        label.setBounds(400,300, 600,50);
+        label1.setBounds(450,350, 500, 30);
+        getStarted.setBounds(550, 420, 180, 40);
+
+        getStarted.setBackground(dodgerBlue);
+        getStarted.setForeground(Color.WHITE);
+
+        label.setForeground(dodgerBlue);
+
+        label.setFont(new Font(label.getFont().getName(),label.getFont().getStyle(), 60));
         login.setBorder(new RoundBtn(15));
         login.setBackground(dodgerBlue);
 
         //Add action listeners to buttons
-        login.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new Login(toServer,fromServer);
-                dispose();
-            }
-        });
+        login.addActionListener(new
 
-        rightPanel.add(login);
+                ActionListener() {
+                    @Override
+                    public void actionPerformed (ActionEvent e){
+                        new Login(toServer, fromServer);
+                        dispose();
+                    }
+                });
+
+        add(picLabel);
+        add(signUp);
+        add(label);
+        add(label1);
+      add(getStarted);
+
+        add(login);
+
+
+    }
+
+    public void setStreams(Socket socket) {
+        try {
+            toServer = new DataOutputStream(socket.getOutputStream());
+            fromServer = new DataInputStream(socket.getInputStream());
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
     }
 
 }
