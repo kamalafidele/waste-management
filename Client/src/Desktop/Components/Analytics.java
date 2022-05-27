@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Analytics extends JPanel {
-    public Analytics(JPanel invoicesPanel, JPanel mainPanel){
+    public Analytics(JPanel invoicesPanel, JPanel reportsPanel, JPanel addReportPanel,JPanel mainPanel){
         invoicesPanel.setVisible(false);
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         String analyticsParagraph = "<html><h1>Analytics</h1><h4>Your analytics includes invoices, " +
@@ -60,6 +60,7 @@ public class Analytics extends JPanel {
         reportsButtons.setAlignmentX(Component.LEFT_ALIGNMENT);
         reportsButtons.setBackground(Color.white);
 
+
         JButton marginButton = new JButton("");
         marginButton.setBackground(Color.decode("#ffffff"));
         marginButton.setPreferredSize(new Dimension(0, 0));
@@ -75,6 +76,15 @@ public class Analytics extends JPanel {
         reports.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
         reports.setFont(new Font("Inter", Font.BOLD, 13));
         reports.setForeground(Color.WHITE);
+        reports.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                backBtn.setVisible(true);
+                invoicesPanel.setVisible(false);
+                reportsPanel.setVisible(true);
+                setVisible(false);
+            }
+        });
 
         JButton newReport = new JButton("+ New Report");
         newReport.setBackground(Color.decode("#557DF8"));
@@ -83,6 +93,15 @@ public class Analytics extends JPanel {
         newReport.setFont(new Font("Inter", Font.BOLD, 13));
         newReport.setForeground(Color.WHITE);
         newReport.setFocusPainted(false);
+        newReport.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                backBtn.setVisible(true);
+                invoicesPanel.setVisible(false);
+                addReportPanel.setVisible(true);
+                setVisible(false);
+            }
+        });
 
         reportsButtons.add(reports);
         reportsButtons.add(marginButton);
