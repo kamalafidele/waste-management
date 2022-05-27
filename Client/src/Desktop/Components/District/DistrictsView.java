@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
 
 public class DistrictsView extends JPanel {
     Registration registerDistrict = new Registration(true, false, false);
@@ -31,7 +32,7 @@ public class DistrictsView extends JPanel {
         Object[][] districts = mapper.readValue(response, Object[][].class);
 
         setVisible(false);
-        setBounds(200, 0, 1166, 768);
+        setBounds(0, 0, 1166, 768);
         setBorder(new EmptyBorder(new Insets(20, 30, 20, 30)));
         Object[] columns = { "id", "name", "email" };
         DistrictsTable("All Districts", districts, columns);
