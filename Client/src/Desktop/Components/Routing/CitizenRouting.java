@@ -50,7 +50,7 @@ public class CitizenRouting extends JFrame{
         // wallet
         mainAnalyticsPanel.add(new Wallet(toServer, fromServer));
         // analytics panel
-        JPanel analyticsPanel = new Analytics(invoicesPanel, mainAnalyticsPanel);
+        JPanel analyticsPanel = new Analytics(invoicesPanel, new ReportsPanel(), new NewReportPanel() ,mainAnalyticsPanel);
         mainAnalyticsPanel.add(analyticsPanel);
         // invoices panel
         mainAnalyticsPanel.add(invoicesPanel);
