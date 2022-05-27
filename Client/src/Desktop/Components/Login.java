@@ -17,8 +17,8 @@ import java.net.Socket;
 import java.sql.*;
 
 public class Login extends JFrame {
-    private static DataOutputStream toServer;
-    private static DataInputStream fromServer;
+    private  DataOutputStream toServer;
+    private  DataInputStream fromServer;
 
     private  JPanel leftPanel = new JPanel();
     private  JPanel rightPanel = new JPanel();
@@ -35,6 +35,9 @@ public class Login extends JFrame {
     Color lightGray = new Color(225, 227, 225);
 
     public Login(DataOutputStream toServer, DataInputStream fromServer) {
+        this.toServer = toServer;
+        this.fromServer = fromServer;
+
         setTitle("WSMS_Y2_C");
         setSize(1366,760);
         setVisible(true);
@@ -61,7 +64,6 @@ public class Login extends JFrame {
         setLayout(new GridLayout(1,2));
         setVisible(true);
         this.setFont(new Font("Inter", Font.PLAIN, 18));
-        setSize(1000,700);
 
         setLeftPanelTexts();
         setRightPanelContent();

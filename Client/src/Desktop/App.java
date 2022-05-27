@@ -3,7 +3,6 @@ import Desktop.Components.Login;
 import Desktop.Components.Registration;
 import Desktop.Screens.RegisterClient.RegisterClientIndex;
 import Desktop.Shared.RoundBtn;
-import Desktop.Shared.RoundBtn;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -33,7 +32,7 @@ public class App extends JFrame {
     public static void main(String[] args) {
         App application = new App();
         try {
-            Socket socket = new Socket("localhost", 2500);
+            Socket socket = new Socket("localhost", 3000);
             application.setStreams(socket);
 
         } catch (Exception exception) {

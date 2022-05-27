@@ -10,22 +10,28 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 
 public class DistrictsView extends JPanel {
     Registration registerDistrict = new Registration(true, false, false);
     JPanel container = new JPanel();
+    private DataOutputStream toSever;
+    private DataInputStream fromServer;
 
-    public DistrictsView(){
-        setVisible(false);
-        setBounds(200,0,1166,768);
+    public DistrictsView(DataOutputStream toSever, DataInputStream fromServer) {
+        this.toSever = toSever;
+        this.fromServer = fromServer;
+
+        setVisible(true);
+        setSize(300,400);
+        setBounds(190,10,1180,500);
         setBorder(new EmptyBorder(new Insets(20,30,20,30)));
         Object [][] data = {{"Kicukiro","kicukiro@gmail.com","500000", "5", "4000"},{"Nyarugenge","nyarugenge@gmail.com","800000", "10", "3000"},{"Gasabo","gasabo@gmail.com","200000", "3", "7000"}};
         Object [] columns = {"Name", "Email", "Wallet (RWF)", "Companies", "Citizens", "Actions"};
         DistrictsTable("All Districts", data, columns);
-
-        //panels
-        add(registerDistrict);
-        registerDistrict.setVisible(false);
+        setLayout(new GridLayout(1,1));
+        registerDistrict.setStreams(toSever,fromServer);
     }
 
     public void DistrictsTable(String title, Object[][] data, Object[] columns){
@@ -40,7 +46,7 @@ public class DistrictsView extends JPanel {
         label.setBorder(new EmptyBorder(new Insets(10, 0, 10, 10)));
 
         container.setBorder(new EmptyBorder(new Insets(0, 0, 0, 0)));
-        container.setPreferredSize(new Dimension(1166,700));
+        //container.setPreferredSize(new Dimension(1166,700));
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 
         addButton.setBounds(0, 0, 400, 30);
@@ -106,6 +112,8 @@ public class DistrictsView extends JPanel {
         public void actionPerformed(ActionEvent ae){
             if(ae.getActionCommand().equals("createdistrict")){
                 container.setVisible(false);
+                remove(container);
+                add(registerDistrict);
                 registerDistrict.setVisible(true);
             }
         }

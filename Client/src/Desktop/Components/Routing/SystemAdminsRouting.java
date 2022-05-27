@@ -29,7 +29,7 @@ public class SystemAdminsRouting extends JFrame{
     testPanel2 panel2=new testPanel2();
     Registration registerDistrict = new Registration(true,false, false);
     Registration registerUser = new Registration(false,false,true);
-    DistrictsView districtsView = new DistrictsView();
+    DistrictsView districtsView;
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
@@ -38,6 +38,7 @@ public class SystemAdminsRouting extends JFrame{
         this.fromServer = fromServer;
         registerUser.setStreams(toServer,fromServer);
         registerDistrict.setStreams(toServer,fromServer);
+        this.districtsView = new DistrictsView(toServer,fromServer);
 
         setTitle("System Admin Board");
         setSize(1366,768);
@@ -142,32 +143,36 @@ public class SystemAdminsRouting extends JFrame{
                 panel2.setVisible(false);
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
+                districtsView.setVisible(false);
                 panel.setVisible(true);
                 break;
             case "Transactions":
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
+                districtsView.setVisible(false);
                 break;
             case "Register Admin":
                 panel.setVisible(false);
                 panel2.setVisible(false);
                 registerDistrict.setVisible(false);
+                districtsView.setVisible(false);
                 registerUser.setVisible(true);
                 break;
             case "Dashboard":
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
+                districtsView.setVisible(false);
                 break;
             case "Districts":
                 panel.setVisible(false);
                 panel2.setVisible(false);
                 registerUser.setVisible(false);
-//                registerDistrict.setVisible(true);
                 districtsView.setVisible(true);
                 break;
             case "Notifications":
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
+                districtsView.setVisible(false);
                 CreateNotification createNotification = new CreateNotification();
                 createNotification.setStreams(toServer, fromServer);
                 break;
