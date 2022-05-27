@@ -54,7 +54,7 @@ public class DistrictRouting extends JFrame{
         // invoices
         JPanel invoicesPanel = new InvoicesPanel();
         // wallet
-        JPanel wallet = new Wallet(5000);
+        JPanel wallet = new Wallet(toServer, fromServer);
         mainAnalyticsPanel.add(wallet);
         // analytics panel
         JPanel analyticsPanel = new Analytics(invoicesPanel, mainAnalyticsPanel);
