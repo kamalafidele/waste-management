@@ -11,10 +11,7 @@ import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class CitizenRouting extends JFrame{
     ImageIcon analyticsImg,dashboardImg,TransactionsImg,NotificationsImg,DebtsImg,addAdminImg;
@@ -51,8 +48,7 @@ public class CitizenRouting extends JFrame{
         // invoices
         JPanel invoicesPanel = new InvoicesPanel();
         // wallet
-        JPanel wallet = new Wallet(5000);
-        mainAnalyticsPanel.add(wallet);
+        mainAnalyticsPanel.add(new Wallet(toServer, fromServer));
         // analytics panel
         JPanel analyticsPanel = new Analytics(invoicesPanel, mainAnalyticsPanel);
         mainAnalyticsPanel.add(analyticsPanel);
@@ -174,6 +170,7 @@ public class CitizenRouting extends JFrame{
                 break;
             case "Transactions":
                 viewNoti.setVisible(false);
+                mainAnalyticsPanel.setVisible(false);
                 step1ToDeposit.setVisible(false);
                 break;
             case "Dashboard":
@@ -181,11 +178,15 @@ public class CitizenRouting extends JFrame{
                 panel2.setVisible(true);
                 viewNoti.setVisible(false);
                 step1ToDeposit.setVisible(false);
+                mainAnalyticsPanel.setVisible(false);
+
                 break;
             case "Debts":
                 System.out.println("Debts clicked");
                 viewNoti.setVisible(false);
                 step1ToDeposit.setVisible(false);
+                mainAnalyticsPanel.setVisible(false);
+
                 break;
             case "Notifications":
                 System.out.println("Notifications clicked");
@@ -193,17 +194,22 @@ public class CitizenRouting extends JFrame{
                 panel.setVisible(false);
                 panel2.setVisible(false);
                 step1ToDeposit.setVisible(false);
+                mainAnalyticsPanel.setVisible(false);
+
                 break;
             case "choose service":
                 panel2.setVisible(false);
                 panel.setVisible(false);
                 viewNoti.setVisible(false);
+                mainAnalyticsPanel.setVisible(false);
                 step1ToDeposit.setVisible(true);
                 break;
             case "Invoices":
                 System.out.println("Invoices clicled");
                 break;
             default:
+                mainAnalyticsPanel.setVisible(false);
+
                 System.out.println();
                 break;
         }
