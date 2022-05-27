@@ -7,9 +7,14 @@ import javax.swing.table.TableCellRenderer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 
 public class Table extends JScrollPane{
+    private static DataOutputStream toServer;
+    private static DataInputStream fromServer;
     public JButton button = new JButton();
+
     public Table(Object[][] data, Object[] columns) {
 
         Color color = new Color(37, 149, 234);
@@ -83,7 +88,21 @@ public class Table extends JScrollPane{
             setText((value == null) ? "View" : value.toString());
             if(hasFocus){
                 System.out.println(data[table.getSelectedRow()][1]);
+
+                InvoiceView invoice=new InvoiceView(data[table.getSelectedRow()], table);
+                invoice.getRootPane().requestFocus();
+//              table.getCellEditor().stopCellEditing();
+                invoice.setFocusable(false);
                 hasFocus = false;
+
+                table.setVisible(false);
+                try {
+                    Thread.sleep(1);
+                    table.setVisible(true);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
             }
             return this;
         }
