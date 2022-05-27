@@ -1,5 +1,4 @@
 package Desktop.Components.Routing;
-import Desktop.Components.Registration;
 import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 import Desktop.Components.viewNotifications;
@@ -8,7 +7,6 @@ import Desktop.Components.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 import java.awt.*;
@@ -23,7 +21,7 @@ public class CitizenRouting extends JFrame{
     BufferedImage dashboard,analytics,notifications,Debts,addAdmin,transactions,logo,userAvatarImg;
     private  JPanel SideBar = new JPanel();
 
-    Logout logout=new Logout();
+    Logout logout=new Logout(this);
 
     private DataOutputStream toServer;
     private DataInputStream fromServer;
