@@ -1,4 +1,5 @@
 package Desktop.Components.Routing;
+import Desktop.Components.*;
 import Desktop.Components.CreateNotification;
 import Desktop.Components.District.DistrictsView;
 import Desktop.Components.Registration;
@@ -29,6 +30,7 @@ public class SystemAdminsRouting extends JFrame{
     testPanel2 panel2=new testPanel2();
     Registration registerDistrict = new Registration(true,false, false);
     Registration registerUser = new Registration(false,false,true);
+    AnalyticsPanel mainAnalyticsPanel = new AnalyticsPanel();
     DistrictsView districtsView;
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
@@ -53,8 +55,22 @@ public class SystemAdminsRouting extends JFrame{
         add(SideBar);
         add(panel);
         add(panel2);
+
+        // analytics
+        // invoices
+        JPanel invoicesPanel = new InvoicesPanel();
+        // wallet
+        JPanel wallet = new Wallet(5000);
+        mainAnalyticsPanel.add(wallet);
+        // analytics panel
+        JPanel analyticsPanel = new Analytics(invoicesPanel, mainAnalyticsPanel);
+        mainAnalyticsPanel.add(analyticsPanel);
+        // invoices panel
+        mainAnalyticsPanel.add(invoicesPanel);
+
         add(registerDistrict);
         add(registerUser);
+        add(mainAnalyticsPanel);
         add(districtsView);
 
         SidebarDesign();
@@ -143,8 +159,9 @@ public class SystemAdminsRouting extends JFrame{
                 panel2.setVisible(false);
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
+                panel.setVisible(false);
+                mainAnalyticsPanel.setVisible(true);
                 districtsView.setVisible(false);
-                panel.setVisible(true);
                 break;
             case "Transactions":
                 registerUser.setVisible(false);

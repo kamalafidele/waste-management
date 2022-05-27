@@ -30,6 +30,7 @@ public class CitizenRouting extends JFrame{
 
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
+    AnalyticsPanel mainAnalyticsPanel = new AnalyticsPanel();
     viewNotifications viewNoti =new viewNotifications();
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
@@ -51,15 +52,16 @@ public class CitizenRouting extends JFrame{
         JPanel invoicesPanel = new InvoicesPanel();
         // wallet
         JPanel wallet = new Wallet(5000);
-        panel2.add(wallet);
+        mainAnalyticsPanel.add(wallet);
         // analytics panel
-        JPanel analyticsPanel = new Analytics(invoicesPanel);
-        panel2.add(analyticsPanel);
+        JPanel analyticsPanel = new Analytics(invoicesPanel, mainAnalyticsPanel);
+        mainAnalyticsPanel.add(analyticsPanel);
         // invoices panel
-        panel2.add(invoicesPanel);
+        mainAnalyticsPanel.add(invoicesPanel);
 
         add(panel);
         add(panel2);
+        add(mainAnalyticsPanel);
         add(viewNoti);
         add(step1ToDeposit);
 //        add(step2ToDeposit);
@@ -164,8 +166,9 @@ public class CitizenRouting extends JFrame{
     public  void filter(String chosen){
         switch (chosen) {
             case "Analytics":
+                panel.setVisible(false);
                 panel2.setVisible(false);
-                panel.setVisible(true);
+                mainAnalyticsPanel.setVisible(true);
                 viewNoti.setVisible(false);
                 step1ToDeposit.setVisible(false);
                 break;

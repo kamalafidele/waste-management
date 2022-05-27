@@ -6,8 +6,8 @@ import java.awt.*;
 
 public class InvoicesPanel extends JPanel {
     public InvoicesPanel(){
-        Object [][] data = {{"0","Security","5000","24-05-2022"},{"0","Security","5000","24-05-2022"},{"0","Security","5000","24-05-2022"}, {"0","Security","5000","24-05-2022"}};
-        Object [] columns = {"ID", "Service", "Amount (Rwf)", "Date"};
+        Object [][] data = {{"0","Colombe","Security","5000","24-05-2022"},{"0","Colombe","Waste","5000","24-05-2022"},{"0","Colombe","Security","5000","24-05-2022"}, {"0","Colombe","Security","5000","24-05-2022"}};
+        Object [] columns = {"ID","Issued to" ,"Service", "Amount (Rwf)", "Date", "View"};
 
         setBorder(new EmptyBorder(new Insets(10, 10, 10, 10)));
         setPreferredSize(new Dimension(1025,670));
