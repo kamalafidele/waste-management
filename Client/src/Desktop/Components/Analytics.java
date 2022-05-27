@@ -75,7 +75,6 @@ public class Analytics extends JPanel {
         reports.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
         reports.setFont(new Font("Inter", Font.BOLD, 13));
         reports.setForeground(Color.WHITE);
-        reports.setFocusPainted(false);
 
         JButton newReport = new JButton("+ New Report");
         newReport.setBackground(Color.decode("#557DF8"));
@@ -98,7 +97,6 @@ public class Analytics extends JPanel {
 
         setBackground(Color.white);
         setBounds(50, 50,1025, 670);
-        setVisible(true);
     }
     void initialize(){}
 }
