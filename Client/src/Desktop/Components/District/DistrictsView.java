@@ -32,7 +32,7 @@ public class DistrictsView extends JPanel {
         Object[][] districts = mapper.readValue(response, Object[][].class);
 
         setVisible(false);
-        setBounds(0, 0, 1166, 768);
+        setBounds(200, 0, 1166, 768);
         setBorder(new EmptyBorder(new Insets(20, 30, 20, 30)));
         Object[] columns = { "id", "name", "email" };
         DistrictsTable("All Districts", districts, columns);
@@ -61,7 +61,7 @@ public class DistrictsView extends JPanel {
         label.setBorder(new EmptyBorder(new Insets(10, 0, 10, 10)));
 
         container.setBorder(new EmptyBorder(new Insets(0, 0, 0, 0)));
-        // container.setPreferredSize(new Dimension(1166,700));
+        container.setPreferredSize(new Dimension(1166, 700));
         container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
 
         addButton.setBounds(0, 0, 400, 30);
@@ -129,9 +129,7 @@ public class DistrictsView extends JPanel {
     public class ButtonClickEventHandler implements ActionListener {
         public void actionPerformed(ActionEvent ae) {
             if (ae.getActionCommand().equals("createdistrict")) {
-                container.setVisible(false);
-                remove(container);
-                add(registerDistrict);
+                setVisible(false);
                 registerDistrict.setVisible(true);
             }
         }

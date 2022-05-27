@@ -46,9 +46,12 @@ public class Registration extends JPanel {
           this.isDistrict = isDistrict;
           this.isCompany = isCompany;
           this.isUser = isUser;
+
           setVisible(false);
           setSize(300,400);
           GridLayout layout = new GridLayout(3,1);
+          layout.setVgap(0);
+          layout.setHgap(0);
 
           setLayout(layout);
           setBounds(200,10,1180,500);
@@ -147,7 +150,6 @@ public class Registration extends JPanel {
      class SubmitHandler implements ActionListener {
           @Override
           public void actionPerformed(ActionEvent e) {
-               System.out.println(toServer + " in " + fromServer);
                if(isCompany) {
                     CompanyHandler companyHandler = new CompanyHandler();
                     if(!email.getText().equals("Email") && !name.getText().equals("Name") && !tin.getText().equals("TIN")){

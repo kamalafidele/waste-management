@@ -2,7 +2,6 @@ package Desktop.Components;
 
 
 import Desktop.Components.Routing.*;
-import Desktop.EventHandlers.ActionEventHandler;
 import Desktop.Shared.RoundBtn;
 
 import javax.swing.*;
@@ -13,12 +12,11 @@ import java.awt.event.ActionListener;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.Socket;
 import java.sql.*;
 
 public class Login extends JFrame {
-    private  DataOutputStream toServer;
-    private  DataInputStream fromServer;
+    DataOutputStream toServer;
+    DataInputStream fromServer;
 
     private  JPanel leftPanel = new JPanel();
     private  JPanel rightPanel = new JPanel();
@@ -35,6 +33,7 @@ public class Login extends JFrame {
     Color lightGray = new Color(225, 227, 225);
 
     public Login(DataOutputStream toServer, DataInputStream fromServer) {
+        //setting params
         this.toServer = toServer;
         this.fromServer = fromServer;
 
@@ -64,6 +63,7 @@ public class Login extends JFrame {
         setLayout(new GridLayout(1,2));
         setVisible(true);
         this.setFont(new Font("Inter", Font.PLAIN, 18));
+        setSize(1000,700);
 
         setLeftPanelTexts();
         setRightPanelContent();
@@ -112,22 +112,21 @@ public class Login extends JFrame {
                         userId = rs.getInt("id");
                         username = rs.getString("name");
                         userRole = rs.getInt("role");
-                        String userUppercase=username.toUpperCase();
                         if(userRole == 1){
                             setVisible(false);
-                            new SystemAdminsRouting(toServer, fromServer,userUppercase);
+                            new SystemAdminsRouting(toServer, fromServer);
                         }else if(userRole == 2) {
                             setVisible(false);
-                            new ConfirmerRouting(userUppercase);
+                            new ConfirmerRouting(toServer,fromServer);
                         }else if(userRole == 3){
                             setVisible(false);
-                            new CitizenRouting(toServer,fromServer,userUppercase);
+                            new CitizenRouting(toServer,fromServer);
                         } else if(userRole == 4){
                             setVisible(false);
-                            new CompanyRouting(userUppercase);
+                            new CompanyRouting();
                         }else if(userRole == 5){
                             setVisible(false);
-                            new DistrictRouting(toServer,fromServer,userUppercase);
+                            new DistrictRouting(toServer,fromServer);
                         }
                     } else {
                   System.out.println("user doesn't exist");

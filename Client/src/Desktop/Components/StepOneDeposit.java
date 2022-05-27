@@ -78,10 +78,10 @@ public class StepOneDeposit extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 try {
                     System.out.println("wasteCollection button clicked !");
-//                    setVisible(false);
+                    setVisible(false);
                     // testPanel tp =new testPanel();
-                    // StepTwoDeposit stepTwo = new StepTwoDeposit();
-                    // stepTwo.setVisible(true);
+                    StepTwoDeposit stepTwo = new StepTwoDeposit();
+                    stepTwo.setVisible(true);
                 } catch (Exception exception) {}
             }
         });

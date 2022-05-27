@@ -6,6 +6,9 @@ import Desktop.Components.testPanel;
 import Desktop.Components.testPanel2;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -13,6 +16,10 @@ import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
@@ -23,7 +30,7 @@ public class SystemAdminsRouting extends JFrame{
 
     private DataOutputStream toServer;
     private DataInputStream fromServer;
-    Logout logout=new Logout(this);
+
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
@@ -33,14 +40,17 @@ public class SystemAdminsRouting extends JFrame{
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  SystemAdminsRouting(DataOutputStream toServer, DataInputStream fromServer,String username) throws IOException {
+    public  SystemAdminsRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException {
+        System.out.println("in ADNMIN"+toServer);
+
         this.toServer = toServer;
         this.fromServer = fromServer;
+
         registerUser.setStreams(toServer,fromServer);
         registerDistrict.setStreams(toServer,fromServer);
-        this.districtsView = new DistrictsView(toServer,fromServer);
+        districtsView = new DistrictsView(toServer,fromServer);
 
-        setTitle("System Admin Board");
+        setTitle("Company Board");
         setSize(1366,768);
         setLayout(null);
         SideBar.setVisible(true);
@@ -123,6 +133,16 @@ public class SystemAdminsRouting extends JFrame{
         JLabel userName=new JLabel("NTAKIRUTIMANA");
         userName.setFont(new Font("Inter", Font.BOLD, 18));
         JLabel userRole=new JLabel("           System Admin");
+
+        JPanel logoutBtn=new JPanel();
+        JButton logout = new JButton("Logout");
+        logout.setBackground(Color.decode("#557DF8"));
+        logout.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
+        logout.setFont(new Font("Inter", Font.PLAIN, 16));
+        logout.setForeground(Color.WHITE);
+        logout.setFocusPainted(false);
+        logoutBtn.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
+        logoutBtn.add(logout);
         credentials.add(logoImg);
         credentials.add(userAvatar);
         JPanel credential2=new JPanel();
@@ -134,7 +154,7 @@ public class SystemAdminsRouting extends JFrame{
         SideBar.add(credentials);
         SideBar.add(credential2);
         SideBar.add(menuBar);
-        SideBar.add(logout);
+        SideBar.add(logoutBtn);
     }
 
     public  void filter(String chosen){
@@ -143,36 +163,32 @@ public class SystemAdminsRouting extends JFrame{
                 panel2.setVisible(false);
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
-                districtsView.setVisible(false);
                 panel.setVisible(true);
                 break;
             case "Transactions":
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
-                districtsView.setVisible(false);
                 break;
             case "Register Admin":
                 panel.setVisible(false);
                 panel2.setVisible(false);
                 registerDistrict.setVisible(false);
-                districtsView.setVisible(false);
                 registerUser.setVisible(true);
                 break;
             case "Dashboard":
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
-                districtsView.setVisible(false);
                 break;
             case "Districts":
                 panel.setVisible(false);
                 panel2.setVisible(false);
                 registerUser.setVisible(false);
+//                registerDistrict.setVisible(true);
                 districtsView.setVisible(true);
                 break;
             case "Notifications":
                 registerUser.setVisible(false);
                 registerDistrict.setVisible(false);
-                districtsView.setVisible(false);
                 CreateNotification createNotification = new CreateNotification();
                 createNotification.setStreams(toServer, fromServer);
                 break;

@@ -28,7 +28,7 @@ public class CompanyRouting extends JFrame{
     private  JPanel SideBar = new JPanel();
     private DataOutputStream toServer;
     private DataInputStream fromServer;
-    Logout logout=new Logout(this);
+
     //PANELS
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
@@ -38,10 +38,10 @@ public class CompanyRouting extends JFrame{
 
     MenuListenerHandler listenerHandler = new MenuListenerHandler();
 
-    public  CompanyRouting(String username) throws IOException {
-//        this.fromServer = fromServer;
-//        this.toServer = toServer;
-//        registerUser.setStreams(toServer,fromServer);
+    public  CompanyRouting() throws IOException {
+        this.fromServer = fromServer;
+        this.toServer = toServer;
+        registerUser.setStreams(toServer,fromServer);
 
         setTitle("Company Board");
         setSize(1366,768);
@@ -59,11 +59,11 @@ public class CompanyRouting extends JFrame{
         add(employees);
         add(registerUser);
 
-        SidebarDesign(username);
+        SidebarDesign();
         setVisible(true);
     }
 
-    public void SidebarDesign(String username) throws IOException {
+    public void SidebarDesign() throws IOException {
         JMenuBar menuBar = new JMenuBar();
         analytics = ImageIO.read(new File("src/Desktop/Images/bar-chart-line.png"));
         dashboard = ImageIO.read(new File("src/Desktop/Images/dashboard-line.png"));
@@ -122,9 +122,19 @@ public class CompanyRouting extends JFrame{
         JLabel userAvatar=new JLabel(new ImageIcon(userAvatarImg.getScaledInstance(90,90,BufferedImage.SCALE_DEFAULT)));
         JPanel credentials=new JPanel();
         credentials.setLayout(new GridLayout(2,1));
-        JLabel userName=new JLabel(username);
+        JLabel userName=new JLabel("NTAKIRUTIMANA");
         userName.setFont(new Font("Inter", Font.BOLD, 18));
         JLabel userRole=new JLabel("           Company Admin");
+
+        JPanel logoutBtn=new JPanel();
+        JButton logout = new JButton("Logout");
+        logout.setBackground(Color.decode("#557DF8"));
+        logout.setBorder(new EmptyBorder(new Insets(12,40,12,40)));
+        logout.setFont(new Font("Inter", Font.PLAIN, 16));
+        logout.setForeground(Color.WHITE);
+        logout.setFocusPainted(false);
+        logoutBtn.setBorder(new EmptyBorder(new Insets(60,0,0,0)));
+        logoutBtn.add(logout);
         credentials.add(logoImg);
         credentials.add(userAvatar);
         JPanel credential2=new JPanel();
@@ -136,8 +146,12 @@ public class CompanyRouting extends JFrame{
         SideBar.add(credentials);
         SideBar.add(credential2);
         SideBar.add(menuBar);
-        SideBar.add(logout);
+        SideBar.add(logoutBtn);
+    }
+    
 
+    public static void main(final String args[]) throws IOException {
+        new CompanyRouting();
     }
 
     public  void filter(String chosen){
