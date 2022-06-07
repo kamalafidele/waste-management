@@ -19,21 +19,21 @@ public class PaymentRepo {
     }
 
     public ResultSet findMomoAccountByNumber(String phoneNumber){
-        return database.select("SELECT * FROM momoAccount where phoneNber = "+phoneNumber);
+        return database.select("SELECT * FROM momoaccount where phoneNber = "+phoneNumber);
     }
     public ResultSet findbankAccount(String bankNumber){
         return database.select("SELECT * FROM bankaccount where bankacc = "+bankNumber);
     }
 
 
-    public void transferMoney(String phoneNumber, int amount, String token){
+    public void transferMoney(String phoneNumber, int amount){
 
         // Reduce money from momoaccount table
 
         database.update("update momoaccount set balance = balance - " + amount + " where phoneNber = "+phoneNumber) ;
 
         // Increase  money to wallets table
-        ResultSet resultSet = database.select("SELECT * FROM users WHERE token=" + token);
+        ResultSet resultSet = database.select("SELECT * FROM users WHERE phone=" + phoneNumber);
         try{
             int WalletId = 0;
             while(resultSet.next()){

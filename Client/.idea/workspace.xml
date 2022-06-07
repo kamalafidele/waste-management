@@ -5,23 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82fbe7d3-2f8f-4474-92b6-eb4981dd6286" name="Changes" comment="Integrated Login">
+      <change afterPath="$PROJECT_DIR$/src/Desktop/Components/TransactionList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Config/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Controllers/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Controllers/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/src/Repositories/PaymentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/src/Repositories/PaymentRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Deposit$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Deposit$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Deposit$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Deposit$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Deposit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Deposit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting$MenuListenerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting$MenuListenerHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/Routing/CitizenRouting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepOneDeposit$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepOneDeposit$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepOneDeposit.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepTwoDeposit$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepTwoDeposit$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepTwoDeposit$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepTwoDeposit$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepTwoDeposit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Desktop/Components/StepTwoDeposit.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Deposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Deposit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/Routing/CitizenRouting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/Routing/CitizenRouting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Desktop/Components/StepOneDeposit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Desktop/Components/StepTwoDeposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Desktop/Components/StepTwoDeposit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

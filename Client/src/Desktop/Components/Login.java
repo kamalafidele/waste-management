@@ -101,8 +101,10 @@ public class Login extends JFrame {
                     int userRole;
                     String username;
                     try {
-                        Connection connection =  DriverManager.getConnection("jdbc:mysql://localhost:3306/LGMxUJ3u44",
-                                "root", "marv1nk@rs");
+//                        Connection connection =  DriverManager.getConnection("jdbc:mysql://localhost:3306/LGMxUJ3u44",
+//                                "root", "marv1nk@rs");
+                        Connection connection = DriverManager.getConnection("jdbc:mysql://remotemysql.com:3306/LGMxUJ3u44",
+                                "LGMxUJ3u44", "gAzBLwXOq8");
 
                         PreparedStatement st = connection
                                 .prepareStatement("SELECT * FROM `users` WHERE `email` =? AND `password` =?");

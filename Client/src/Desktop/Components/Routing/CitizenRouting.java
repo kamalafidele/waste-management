@@ -13,6 +13,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class CitizenRouting extends JFrame{
     ImageIcon analyticsImg,dashboardImg,TransactionsImg,NotificationsImg,DebtsImg,addAdminImg;
@@ -23,7 +24,7 @@ public class CitizenRouting extends JFrame{
     private DataInputStream fromServer;
 
     //PANELS
-
+    TransactionList transactionList = new TransactionList();
     testPanel panel = new testPanel();
     testPanel2 panel2=new testPanel2();
 
@@ -31,7 +32,7 @@ public class CitizenRouting extends JFrame{
 
     StepTwoDeposit step2ToDeposit;
 
-    public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException{
+    public CitizenRouting(DataOutputStream toServer, DataInputStream fromServer) throws IOException, SQLException {
         this.toServer = toServer;
         this.fromServer = fromServer;
         this.step2ToDeposit = new StepTwoDeposit(toServer,fromServer);
@@ -62,6 +63,7 @@ public class CitizenRouting extends JFrame{
         add(panel);
         add(panel2);
 //        add(depo2);
+        add(transactionList);
         add(step2ToDeposit);
 
 //       depo2.setStreams(toServer,fromServer);
@@ -185,6 +187,8 @@ public class CitizenRouting extends JFrame{
                 panel2.setVisible(true);
                 break;
             case "Transactions":
+                transactionList.setVisible(true);
+                step2ToDeposit.setVisible(false);
                 break;
             case "Dashboard":
                 panel.setVisible(false);
@@ -197,6 +201,7 @@ public class CitizenRouting extends JFrame{
                 System.out.println("Notifications clicked");
                 break;
             case "choose service":
+                transactionList.setVisible(false);
                 panel2.setVisible(false);
                 panel.setVisible(false);
                 step2ToDeposit.setVisible(true);

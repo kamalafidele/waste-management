@@ -143,11 +143,12 @@ public class Deposit extends JFrame {
                     String momoAccount = momo.getText();
                     String amt = amount.getText();
                     System.out.println(toServer);
-                    String Request = "payment/momopayment/" + momoAccount +"/"+amt +"/"+1234;
+//                    String Request = "payment/momopayment/" + momoAccount +"/"+amt +"/"+1234;
+                    String Request = "payment/momopayment/" + momoAccount +"/"+amt ;
                     sendRequest(Request);
 
-                    if (momoAccount.equalsIgnoreCase("0790880013")) {
-                        JOptionPane.showMessageDialog(Finish, "Deposit Recorded ");
+                    if (momoAccount.equalsIgnoreCase("")) {
+                        JOptionPane.showMessageDialog(Finish, " ");
                         dispose();
                     } else {
                         JOptionPane.showMessageDialog(Finish, "Invalid Number");

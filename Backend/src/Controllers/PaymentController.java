@@ -24,7 +24,7 @@ public class PaymentController {
     private DataOutputStream toClient;
     DebtController debtController=new DebtController(connection);
     long balance=debtController.balance;
-    public void momoPayment(String phoneNumber, int amount, String token ){
+    public void momoPayment(String phoneNumber, int amount){
         //Checking if the amount > 1000
         System.out.println("The amount "+amount);
         System.out.println("The boolean result "+(amount > 1000));
@@ -66,7 +66,7 @@ public class PaymentController {
 //                return;
 //            }
 //        }
-        paymentRepo.transferMoney(phoneNber, amount, token);
+        paymentRepo.transferMoney(phoneNber, amount);
 
         sendResponse("Your payment has been recorded!");
 
@@ -124,17 +124,20 @@ public class PaymentController {
         this.toClient=toClient;
         switch (request.split("/")[1]) {
             case "momopayment":
+//                String phoneNumber = request.split("/")[2];
+//                int amount =Integer.parseInt(request.split("/")[3]);
+//                String token = request.split("/")[4];
+//                this.momoPayment(phoneNumber, amount,token);
                 String phoneNumber = request.split("/")[2];
                 int amount =Integer.parseInt(request.split("/")[3]);
-                String token = request.split("/")[4];
-                this.momoPayment(phoneNumber, amount,token);
+                this.momoPayment(phoneNumber, amount);
                 break;
 
             case "bankpayment":
                 String bankNumber = request.split("/")[2];
                 int amount2 =Integer.parseInt(request.split("/")[3]);
                 String token2 = request.split("/")[4];
-                this.momoPayment(bankNumber, amount2,token2);
+                this.bankPayment(bankNumber, amount2,token2);
                 break;
             case "checkWasteDebt":
                 long userId=Long.valueOf(request.split("/")[2]);
